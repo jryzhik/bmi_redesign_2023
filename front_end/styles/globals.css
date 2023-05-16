@@ -21,11 +21,66 @@ img {
 }
 
 h1 {
-  letter-spacing: -2px;
-  line-height: 70px;
+  letter-spacing: -0.125rem;
+  line-height: 4.375rem;
 }
-h2,
-p,
+h2 {
+  letter-spacing: -0.025rem;
+  line-height: 3.125rem;
+}
+h3 {
+  letter-spacing: -0.025rem;
+  line-height: 3.125rem;
+}
+h4 {
+  letter-spacing: -0.025rem;
+  line-height: 1.625rem;
+}
+h5 {
+  letter-spacing: -0.0187rem;
+  line-height: 1.375rem;
+}
+p {
+  line-height: 1.75rem;
+}
+lt {
+  letter-spacing: 0.0625rem;
+  line-height: 1.25rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+tit {
+  letter-spacing: 0.0625rem;
+  line-height: 0.875rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+nt {
+  letter-spacing: 0.0187rem;
+  line-height: 1.25rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+st {
+  line-height: .75px;
+  font-size: .75px;
+}
+nh {
+  line-height: 1.125px;
+  font-size: .875rem;
+}
+navtxt {
+  line-height: 1.125rem;
+  font-size: .875rem;
+}
+fieldtxt {
+  line-height: 1.375px;
+  font-size: 1rem;
+}
+fieldtxtred {
+  line-height: 1.375px;
+  font-size: 1rem;
+}
 ul {
   margin: 0;
 }

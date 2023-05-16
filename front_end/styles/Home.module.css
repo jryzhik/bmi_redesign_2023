@@ -5,6 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #0070f3;
 }
 
 .title a {
@@ -38,7 +39,6 @@
   line-height: 1.5;
   font-size: 1.5rem;
 }
-
 .grid {
   display: flex;
   align-items: center;
