@@ -15,7 +15,7 @@ const Ral = Raleway(
 export default function LT(props) {
     return (
     <>
-        <lt style={{ color: props.color }} className={Ral.className}>{props.text}</lt>
+        <div id='lt' style={{ color: props.color }} className={Ral.className}>{props.text}</div>
         <br></br>
     </>
     )

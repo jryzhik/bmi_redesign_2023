@@ -48,41 +48,41 @@ p {
   line-height: 1.75rem;
   font-size: 1.3125em;
 }
-lt {
+#lt {
   letter-spacing: 0.0625rem;
   line-height: 1.25rem;
   font-size: 1rem;
   text-transform: uppercase;
 }
-tit {
+#tit {
   letter-spacing: 0.0625rem;
   line-height: 0.875rem;
   font-size: 0.75rem;
   text-transform: uppercase;
 }
-nt {
+#nt {
   letter-spacing: 0.0187rem;
   line-height: 1.25rem;
   font-size: 1rem;
   text-transform: uppercase;
 }
-st {
+#st {
   line-height: .75px;
   font-size: .75px;
 }
-nh {
+#nh {
   line-height: 1.125px;
   font-size: .875rem;
 }
-navtxt {
+#navtxt {
   line-height: 1.125rem;
   font-size: .875rem;
 }
-fieldtxt {
+#fieldtxt {
   line-height: 1.375px;
   font-size: 1rem;
 }
-fieldtxtred {
+#fieldtxtred {
   line-height: 1.375px;
   font-size: 1rem;
 }

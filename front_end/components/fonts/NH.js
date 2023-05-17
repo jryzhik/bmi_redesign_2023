@@ -15,7 +15,7 @@ const Roboto = Roboto_Slab(
 export default function NH(props) {
     return (
         <>
-            <nh style={{ color: props.color }} className={Roboto.className}>{props.text}</nh>
+            <div id='nh' style={{ color: props.color }} className={Roboto.className}>{props.text}</div>
             <br></br>
         </>
     )

@@ -15,7 +15,7 @@ const Int = Inter(
 export default function NT(props) {
     return (
     <>
-        <nt style={{ color: props.color }} className={Int.className}>{props.text}</nt>
+        <div id='nt' style={{ color: props.color }} className={Int.className}>{props.text}</div>
         <br></br>
     </>
     )
