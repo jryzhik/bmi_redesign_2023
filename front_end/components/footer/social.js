@@ -15,7 +15,7 @@ export default function Social() {
             </div>
             <div className='social_box'>
                 <a href='https://www.facebook.com/people/Byelorussian-Mission-Inc/100081091373877/'>
-                    <Image src="img/icons/facebook_icon.svg" alt='facebook' width={0} height={0} style={{ width: '8g0%', height: 'auto' }} />
+                    <Image src="img/icons/facebook_icon.svg" alt='facebook' width={0} height={0} style={{ width: '80%', height: 'auto' }} />
                 </a>
             </div>
             <div className='social_box'>

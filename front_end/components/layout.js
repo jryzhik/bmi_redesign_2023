@@ -5,9 +5,8 @@ export default function Layout({ children }) {
     return (
         <>
             <Default_nav_bar />
-            <main>{children}</main>
+                <main>{children}</main>
             <Footer/>
-
         </>
     )
 }

@@ -1,0 +1,12 @@
+.container {
+    .container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+      }
+      
+      .container .item {
+        width: 50%;
+        margin-bottom: 20px;
+      }
+}

@@ -10,7 +10,7 @@ export default function Custom404() {
   return (
     <>
       <div className='generalCenter'>
-        <Image src={childImage} alt='whoops' width={300} height={200} />
+        <Image src={childImage} alt='whoops' />
         <H1 text='404 Whoops!'></H1>
         <P text='The page you requested couldn’t be found.'/>
       </div>

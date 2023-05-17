@@ -16,7 +16,6 @@ export default function NH(props) {
     return (
         <>
             <div id='nh' style={{ color: props.color }} className={Roboto.className}>{props.text}</div>
-            <br></br>
         </>
     )
 }

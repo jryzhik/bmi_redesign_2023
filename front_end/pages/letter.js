@@ -31,8 +31,8 @@ export default function letter() {
             <TITLE text='Title - Raleway Black 12/14 1px' color={theme.colors.BLACK}></TITLE>
             <ST text='SubTitle - Roboto Slab Light 12/12 0px' color={theme.colors.BLACK}></ST>
             <NH text='Nav Heading - Roboto Slab Semibold 14/18 0px' color={theme.colors.BLACK}></NH>
-            <NAVTEXT text='Nav Text - Roboto Slab Light 14/18 0px' color={theme.colors.BLACK}></NAVTEXT>
-            <FIELDTEXT text='Field Text - Roboto Slab Light 16/22 0px' color={theme.colors.BLACK}></FIELDTEXT>
+            <NAVTEXT text='Nav Text - Roboto Slab Light 14/18 0px' color={theme.colors.BLACK}></NAVTEXT><br></br>
+            <FIELDTEXT text='Field Text - Roboto Slab Light 16/22 0px' color={theme.colors.BLACK}></FIELDTEXT><br></br>
             <FIELDTXTREG text='Field Text - Roboto Slab Regular 16/22 0px' color={theme.colors.BLACK}></FIELDTXTREG>
             
         </>

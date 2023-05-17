@@ -14,6 +14,6 @@ const Roboto = Roboto_Slab(
 
 export default function NAVTEXT(props) {
     return (
-            <div id='navtxt' style={{ color: props.color }} className={Roboto.className}>{props.text}</div>
+        <div id='navtxt' style={{ color: props.color }} className={Roboto.className}>{props.text}</div>
     )
 }
