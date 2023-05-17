@@ -9,6 +9,8 @@
     align-items: center;
     justify-content: space-between;
     height: 3rem;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
 }
 
 .menu {
