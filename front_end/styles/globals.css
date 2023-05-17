@@ -1,3 +1,6 @@
+:root {
+  background-color: #F6F6F6;
+}
 html,
 body {
   padding: 0;
@@ -21,8 +24,9 @@ img {
 }
 
 h1 {
-  letter-spacing: -0.125rem;
+  letter-spacing: -0.0725rem;
   line-height: 4.375rem;
+  font-size: 3.125em;
 }
 h2 {
   letter-spacing: -0.025rem;
@@ -42,6 +46,7 @@ h5 {
 }
 p {
   line-height: 1.75rem;
+  font-size: 1.3125em;
 }
 lt {
   letter-spacing: 0.0625rem;
@@ -93,4 +98,17 @@ ul {
 button {
   padding: 0.5rem 1rem;
   font-weight: bold;
+}
+
+.generalCenter {
+  padding-top: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+}
+
+.generalCenter > * {
+  margin: 0;
 }
