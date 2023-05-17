@@ -3,6 +3,8 @@ import styles from '../../styles/Navigation/Nav.module.css';
 import Image from 'next/image';
 import NAVTEXT from '../fonts/NAVTEXT';
 import NH from '../fonts/NH';
+import Link from 'next/link';
+
 
 import { useState } from 'react';
 
@@ -11,7 +13,7 @@ import theme from '../../styles/theme.js';
 const menu = [
     {
         primary: 'Who We Are',
-        secondary: [['Our Vision', 'vision'],['Faith Statement', 'faith'],['Annual Report', 'report']]
+        secondary: [['Our Vision', 'vision'], ['Faith Statement', 'faith'], ['Annual Report', 'report']]
     },
     {
         primary: 'Missionaries',
@@ -67,7 +69,9 @@ export default function Default_nav_bar() {
 
     return (
         <div className={styles.container}>
-            <Image src="img/logos/text_and_letter.svg" alt='BMI' width={227} height={24} />
+            <Link href="/">
+                <Image src="img/logos/text_and_letter.svg" alt='BMI' width={227} height={24} />
+            </Link>
             <div className={styles.menu}>
                 {menu.map((menu_item, index) => (
                     <div
@@ -77,7 +81,9 @@ export default function Default_nav_bar() {
                     >
                         {hoveredItem === index ? (
                             <React.Fragment>
-                                <NH text={menu_item.primary} color={theme.colors.BLACK} />
+                                <Link href={'/' + menu_item.primary}>
+                                    <NH text={menu_item.primary} color={theme.colors.BLACK} />
+                                </Link>
                                 {menu_item.secondary === null ? (
                                     console.log("null element menu")
                                 ) : (
@@ -90,11 +96,14 @@ export default function Default_nav_bar() {
                                             >
                                                 {hoveredItemSubMenu === subIndex ? (
                                                     <React.Fragment>
-                                                        {console.log("subIndex", subIndex)}
-                                                        <NH key={subIndex} text={sub_item[0]} color={theme.colors.BLACK} />
+                                                        <Link href={'/' + sub_item[1]}>
+                                                            <NH key={subIndex} text={sub_item[0]} color={theme.colors.BLACK} />
+                                                        </Link>
                                                     </React.Fragment>
                                                 ) : (
-                                                    <NAVTEXT key={subIndex} text={sub_item[0]} color={theme.colors.BLACK} />
+                                                    <Link href={'/' + sub_item[1]}>
+                                                        <NAVTEXT key={subIndex} text={sub_item[0]} color={theme.colors.BLACK} />
+                                                    </Link>
                                                 )}
                                             </div>
                                         ))}
