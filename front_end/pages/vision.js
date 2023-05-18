@@ -9,6 +9,8 @@ export default function Vision() {
             imageUrl="/../public/img/hero_images/vision.jpg"
             textParent='Who We Are'
             textChild='Our Vision'
+            headerText='A future that Jesus spoke about'
+            subText='To influence the 7 mountains of society – men and women of God must be equipped & empowered to step & take territory.'
         />
     )
 }

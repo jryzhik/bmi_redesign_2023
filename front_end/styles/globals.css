@@ -25,7 +25,7 @@ img {
 
 h1 {
   letter-spacing: -0.0725rem;
-  line-height: 4.375rem;
+  line-height: 1em;
   font-size: 3.125em;
 }
 h2 {
@@ -107,6 +107,7 @@ button {
   align-items: center;
   flex-direction: column;
   margin: 0;
+  gap: 2rem;
 }
 
 .generalCenter > * {
