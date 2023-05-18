@@ -14,9 +14,6 @@ const Roboto = Roboto_Slab(
 
 export default function ST(props) {
     return (
-        <>
             <div id='st' style={{ color: props.color }} className={Roboto.className}>{props.text}</div>
-            <br></br>
-        </>
     )
 }

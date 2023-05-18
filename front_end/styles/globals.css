@@ -67,8 +67,8 @@ p {
   text-transform: uppercase;
 }
 #st {
-  line-height: .75px;
-  font-size: .75px;
+  line-height: .75rem;
+  font-size: .75rem;
 }
 #nh {
   line-height: 1.125rem;
