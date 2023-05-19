@@ -6,7 +6,7 @@ export default function Trip() {
     <ImageNtext
             color1="#688193"
             color2="#688293"
-            imageUrl="/../public/img/hero_images/trip_registration.jpg"
+            imageUrl="/../public/img/hero_images/trip_test.jpg"
             textParent='Events'
             textChild='Trip Registration'
             headerText='Register here to go on a mission trip'

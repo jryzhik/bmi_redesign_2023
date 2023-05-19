@@ -6,7 +6,7 @@ export default function report() {
         <ImageNtext
             color1="#7FA1B8"
             color2="#B7C9D1"
-            imageUrl="/../public/img/hero_images/annual_report.jpg"
+            imageUrl="/../public/img/hero_images/report.jpg"
             textParent='Who We Are'
             textChild='Annual Report'
             headerText='We are transparent with our spending and finances'

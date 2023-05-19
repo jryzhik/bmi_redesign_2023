@@ -6,11 +6,12 @@ export default function Board() {
         <ImageNtext
             color1="#B1BFBD"
             color2="#B6C2BE"
-            imageUrl="/../public/img/hero_images/board.jpg"
+            imageUrl="/../public/img/hero_images/board_members.jpg"
             textParent='Who We Are'
             textChild='Board Members'
             headerText='Discover our team leading the charge'
             subText='Board members are responsible in keeping the organization’s goals and activity in check.'
+            imageFocus={'center -20%'}
         />
     )
 }

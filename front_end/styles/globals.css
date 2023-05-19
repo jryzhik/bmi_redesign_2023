@@ -29,7 +29,6 @@ h1 {
   margin-bottom: 0;
   margin-top: 0;
   font-size: clamp(2.5em, 4vw, 3.75em);
-
 }
 h2 {
   letter-spacing: -0.025rem;

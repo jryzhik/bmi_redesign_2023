@@ -6,11 +6,12 @@ export default function Founders() {
         <ImageNtext
             color1="#0A6C72"
             color2="#06545A"
-            imageUrl="/../public/img/hero_images/founders.jpg"
+            imageUrl="/../public/img/hero_images/founders_hero.jpg"
             textParent='Who We Are'
             textChild='The Founders'
             headerText='Rev. Andrew & Inna Ryzhkov'
             subText='Learn more about Rev. Andrew & Inna Ryzhkov, the founding members of Byelorussian Mission.'
+            imageFocus={'center 40%'}
         />
     )
 }

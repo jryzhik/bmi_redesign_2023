@@ -7,11 +7,12 @@ export default function Faith() {
         <ImageNtext
             color2="#14190C"
             color1="#14190C"
-            imageUrl="/../public/img/hero_images/faith.jpg"
+            imageUrl="/../public/img/hero_images/belief.jpg"
             textParent='Who We Are'
             textChild='Faith Statement'
             headerText='Understanding our beliefs'
             subText='Know what we stand behind and represent.'
+            imageFocus='50% -20%'
         />
     )
 }
