@@ -11,6 +11,7 @@ export default function Letter() {
             textChild='Fundraising Letter'
             headerText='Assistance Writing A Fundraising Letter'
             subText='Join us on a Mission Trip to Belarus and Israel! Use our resources to help you raise the necessary funds to travel.'
+            imageFocus='center 30%'
         />
     )
 }

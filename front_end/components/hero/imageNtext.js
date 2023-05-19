@@ -1,24 +1,19 @@
-import React from 'react'
+import React from 'react';
 import styles from '../../styles/Hero/Hero.module.css';
 import Image from 'next/image';
 import PageParentText from './pageParentText';
-import theme from '../../styles/theme'
+import theme from '../../styles/theme';
 import H1 from '../fonts/H1';
 import P from '../fonts/P';
 
-
-export default function ImageNtext({ color1, color2, imageUrl, textParent, textChild, headerText, subText, imageFocus, scale}) {
+export default function ImageNtext({ color1, color2, imageUrl, textParent, textChild, headerText, subText, imageFocus, scale }) {
     const gradient = `linear-gradient(${color1},${color2}, transparent)`;
 
     return (
         <>
             <div className={styles.container}>
                 <div className={styles.centerModule}>
-                    <PageParentText
-                        textParent={textParent}
-                        textChild={textChild}
-                        color={theme.colors.WHITE}
-                    />
+                    <PageParentText textParent={textParent} textChild={textChild} color={theme.colors.WHITE} />
                     <H1 text={headerText} color={theme.colors.WHITE} />
                     <P text={subText} color={theme.colors.WHITE} />
                 </div>
@@ -33,7 +28,7 @@ export default function ImageNtext({ color1, color2, imageUrl, textParent, textC
                         quality={100}
                         style={{
                             objectFit: 'cover',
-                            objectPosition: imageFocus, 
+                            objectPosition: imageFocus,
                             // Adjust the position to focus on the desired part of the image
                             width: '100%',
                             height: '100%',
@@ -43,14 +38,11 @@ export default function ImageNtext({ color1, color2, imageUrl, textParent, textC
                             zIndex: -100,
                             borderBottomLeftRadius: '7px',
                             borderBottomRightRadius: '7px',
-                            margin: '30px 0 0 0', // Adjust the margin values as needed
                             transform: `scale(${scale})`,
                         }}
                     />
-
                 </div>
             </div>
         </>
-
     );
 }

@@ -33,18 +33,18 @@ const menu = [
     },
     {
         primary: 'Resources',
-        secondary: [['Gallery', 'gallery'], ['Videos', 'video'], ['News', 'news'], ['Things to Know', 'brief'], ['Fundraising Letter', 'letter']]
+        secondary: [['Gallery', 'gallery'], ['Videos', 'videos'], ['News', 'news'], ['Things to Know', 'brief'], ['Fundraising Letter', 'letter']]
     },
     {
-        primary: 'Store',
+        primary: ['Store', 'store'],
         secondary: [['Books', 'books'], ['Apparel', 'apparel']]
     },
     {
-        primary: 'Donate',
+        primary: ['Donate', 'donate'],
         secondary: [['Matching Fund', 'matching'], ['Love in Action', 'ukraine'], ['Good & Evil Bible', 'literature'], ['Legacy Giving', 'legacy'], ['Trip Donation', 'pay']]
     },
     {
-        primary: 'Contact',
+        primary: ['Contact', 'contact'],
         secondary: null
     }
 
@@ -85,9 +85,20 @@ export default function Default_nav_bar() {
                     >
                         {hoveredItem === index ? (
                             <React.Fragment>
-                                <Link href={'/' + menu_item.primary}>
-                                    <NH text={menu_item.primary} color={theme.colors.BLACK} />
-                                </Link>
+                                <div className={styles.hoverME}>
+                                    {Array.isArray(menu_item.primary) ? (
+                                        <>
+                                            <Link href={'/' + menu_item.primary[1]}>
+                                                <NH text={menu_item.primary[0]} color={theme.colors.BLACK} />
+                                            </Link>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <NH text={menu_item.primary} color={theme.colors.BLACK} />
+                                        </>
+                                    )}
+                                </div>
+
                                 {menu_item.secondary === null ? (
                                     console.log("null element menu")
                                 ) : (
@@ -114,15 +125,21 @@ export default function Default_nav_bar() {
                                     </div>
                                 )}
                             </React.Fragment>
-
-
                         ) : (
-                            <NAVTEXT text={menu_item.primary} color={theme.colors.BLACK} />
+                            <>
+                                {Array.isArray(menu_item.primary) ? (
+                                    <NAVTEXT text={menu_item.primary[0]} color={theme.colors.BLACK} />
+                                ) : (
+                                    <NAVTEXT text={menu_item.primary} color={theme.colors.BLACK} />
+                                )}
+                            </>
                         )}
                     </div>
 
                 ))}
-                <Image src="img/icons/search_icon.svg" alt='search' width={16} height={16} />
+                <Link href="/search">
+                    <Image src="/img/icons/search_icon.svg" alt="search" width={16} height={16} />
+                </Link>
             </div>
         </div >
     );

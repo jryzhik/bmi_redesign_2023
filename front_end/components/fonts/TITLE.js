@@ -16,7 +16,6 @@ export default function TITLE(props) {
     return (
         <>
             <div id='tit' style={{ color: props.color }} className={Ral.className}>{props.text}</div>
-            <br></br>
         </>
     )
 }
