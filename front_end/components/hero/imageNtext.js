@@ -7,21 +7,20 @@ import H1 from '../fonts/H1';
 import P from '../fonts/P';
 
 
-export default function ImageNtext({ color1, color2, imageUrl, textParent, textChild, headerText, subText}) {
+export default function ImageNtext({ color1, color2, imageUrl, textParent, textChild, headerText, subText }) {
     const gradient = `linear-gradient(${color1},${color2}, transparent)`;
 
     return (
         <>
             <div className={styles.container}>
                 <div className={styles.centerModule}>
-                    
-                        <PageParentText
-                            textParent={textParent}
-                            textChild={textChild}
-                            color={theme.colors.WHITE}
-                        />
+                    <PageParentText
+                        textParent={textParent}
+                        textChild={textChild}
+                        color={theme.colors.WHITE}
+                    />
                     <H1 text={headerText} color={theme.colors.WHITE} />
-                    <P text={subText} color={theme.colors.WHITE}/>
+                    <P text={subText} color={theme.colors.WHITE} />
                 </div>
                 <div className={styles.gradientOverlay} style={{ backgroundImage: gradient }} />
                 <Image

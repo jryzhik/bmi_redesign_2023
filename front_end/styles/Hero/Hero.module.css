@@ -34,8 +34,21 @@
     align-items: center;
     gap: 0.23rem;
     white-space: nowrap;
+    padding-bottom: 1rem;
 }
-
+@media (max-width: 1066px) {
+    .hBox {
+      /* Styles specific to tablet size */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.23rem;
+      white-space: nowrap;
+      padding-bottom: 1rem;
+      padding-top: 7rem;
+    }
+  }
+  
 .centerModule {
     top: 16vw;
     left: 50%;

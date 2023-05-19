@@ -16,6 +16,10 @@ const menu = [
         secondary: [['Our Vision', 'vision'], ['Faith Statement', 'faith'], ['Annual Report', 'report']]
     },
     {
+        primary: 'Team',
+        secondary: [['Advisory Board', 'advisory'], ['Board Members', 'board'], ['Our Partners', 'partners'], ['The Founders', 'founders']]
+    },
+    {
         primary: 'Missionaries',
         secondary: [['Vladimir & Polina', 'gruzd'], ['Vadim & Natasha', 'konovalchuk'], ['Cassandra Lynn Grist', 'grist'], ['Dmitry & Natalia', 'alekseev']]
     },
