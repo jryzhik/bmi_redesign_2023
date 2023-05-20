@@ -10,7 +10,11 @@ const theme = {
         NAVY: '#1E335B',
         ORANGE: '#EC9D26',
         DARK_BLUE: '#2C409E',
-        BLUE: '#2D69C3'
+        BLUE: '#2D69C3',
+        MAGENTA: '#E540AD',
+        SAND: '#B6943C',
+        DARK_GREEN: '#01473F',
+        DARK_GREY: '#767676'
     },
 };
 export default theme;

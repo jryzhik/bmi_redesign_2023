@@ -1,0 +1,19 @@
+.grid {
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-top: 4vw;
+    margin-bottom: 4vw;
+    justify-content: center;
+
+}
+
+@media (max-width: 390px) {
+
+    /* Styles for mobile devices */
+    .grid {
+        justify-content: center;
+        margin-left: 1vw;
+        margin-right: 1vw;
+
+    }
+}

@@ -6,15 +6,13 @@
     padding-right: 26vw;
     gap: 1.063em;
 }
-
   @media (max-width: 390px) {
       /* Styles for mobile devices */
       .container {
         align-items: center;
-        padding-left: 10vw;
-        padding-right: 10vw;
+        padding-left: 9vw;
+        padding-right: 9vw;
     }
-
   }
 
   .primaryHeader {

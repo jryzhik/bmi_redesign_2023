@@ -141,5 +141,14 @@ button {
 .flexContainerTopItems {
   display: flex;
   flex-direction: column;
-  gap: 6em;
+  gap: 3.5em;
 }
+.horizontalBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.23rem;
+  white-space: nowrap;
+  padding-bottom: 1rem;
+}
+

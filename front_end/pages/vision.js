@@ -19,6 +19,7 @@ export default function Vision() {
                 <HeaderNComponent
                     primaryHeaderText='Sharing the Word of God'
                     SecondaryComponent={<P text='BYELORUSSIAN MISSION, INC. — is a non-profit corporation organized exclusively for charitable, religious, and educational purposes as specified in Section 501 (c) (3) of the Internal Revenue Code. The purpose of the corporation is to provide support services for orphan children and help construct church buildings in the countries of Belarus and Ukraine.' />}
+                    secondaryAllign='left'
                 />
                 <HeaderNComponent
                     primaryHeaderText='The principle purpose of Byelorussian Mission:'
@@ -29,6 +30,7 @@ export default function Vision() {
                             <P text='• To reach young adults at the University and High School level and bring them the Gospel message of Jesus’ saving grace.' />
                         </>
                     }
+                    secondaryAllign='left'
                 />
             </div>
         </>
