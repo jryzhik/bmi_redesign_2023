@@ -1,3 +1,8 @@
+.imageCircle {
+    width: 4.5em;
+    height: 4.5em;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -6,19 +11,52 @@
     padding-right: 26vw;
     gap: 1.063em;
 }
-  @media (max-width: 390px) {
-      /* Styles for mobile devices */
-      .container {
+
+@media (max-width: 390px) {
+
+    /* Styles for mobile devices */
+    .container {
         align-items: center;
         padding-left: 9vw;
         padding-right: 9vw;
     }
-  }
+}
 
-  .primaryHeader {
-      text-align: center;
-  }
+.primaryHeader {
+    text-align: center;
+}
 
-  .subComponent {
-      text-align: left;
-  }
+.subComponent {
+    text-align: left;
+}
+
+.hBox {
+    display: flex;
+    gap: 1em;
+    align-items:center;
+    justify-content: center;
+}
+
+.headPar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: clamp(0em, 1.4vw, .4em);
+
+
+}
+.barNText {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+}
+.colorBar {
+    width: .5em;
+    height: 2.5em;
+}
+.offsetLeft {
+    text-align: right;
+    position: relative;
+}

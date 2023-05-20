@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '/Users/jamesryzhkov/Documents/Business/websites/BMI2023/front_end/styles/Texts/Texts.module.css';
+import styles from '../../styles/Texts/Texts.module.css';
 import H1 from '../fonts/H1';
 
 export default function HeaderNComponent({ primaryHeaderText, SecondaryComponent, secondaryAllign}) {

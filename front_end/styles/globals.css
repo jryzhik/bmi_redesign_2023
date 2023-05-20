@@ -31,8 +31,11 @@ h1 {
   font-size: clamp(2.5em, 5vw, 4.375em);
 }
 h2 {
-  letter-spacing: -0.025rem;
-  line-height: 3.125rem;
+  letter-spacing: -1px;
+  line-height: 0em;
+  margin-bottom: 0;
+  margin-top: 0;
+  font-size: clamp(2.125em, 5vw, 3.125em);
 }
 h3 {
   letter-spacing: -0.025rem;
@@ -49,6 +52,8 @@ h5 {
 p {
   line-height: 1.75rem;
   font-size: clamp(1.063em, 2vw, 1.3125em);
+  margin: 0;
+
 
 }
 #lt {
@@ -151,4 +156,5 @@ button {
   white-space: nowrap;
   padding-bottom: 1rem;
 }
+
 

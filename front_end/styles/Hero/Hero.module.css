@@ -72,7 +72,9 @@
         margin-top: 20vw;
     }
 }
-
+.bottomSpacer {
+  padding-bottom: 4%;
+}
 .centerModule {
     display: flex;
     flex-direction: column;

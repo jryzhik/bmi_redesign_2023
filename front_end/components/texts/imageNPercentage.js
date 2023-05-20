@@ -1,0 +1,40 @@
+import React from 'react'
+import Image from 'next/image'
+import styles from '../../styles/Texts/Texts.module.css';
+import H2 from '../fonts/H2';
+import P from '../fonts/P';
+export default function ImageNPercentage({passedImage, percentText, description, color}) {
+    return (
+        <>
+            <div className={styles.hBox}>
+                <div className={styles.imageCircle} >
+                    <Image
+                        src={passedImage}
+                        width={1440}
+                        height={1081}
+                        quality={100}
+                        style={{
+                            objectFit: 'cover',
+                            // Adjust the position to focus on the desired part of the image
+                            width: '100%',
+                            height: '100%',
+                            borderRadius: '50%',
+                        }}
+                    />
+                </div>
+                <div className={styles.headPar}>
+                    <div className={styles.barNText}>
+                        <div
+                            className={styles.colorBar}
+                            style={{backgroundColor: color}}
+                        />
+                        <H2 text={percentText + '%'} />
+                    </div>
+                    <div className={styles.offsetLeft}>
+                        <P text={description} />
+                    </div>
+                </div>
+            </div>
+        </>
+    )
+}
