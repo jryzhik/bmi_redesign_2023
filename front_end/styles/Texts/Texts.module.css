@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 26vw;
+    padding-right: 26vw;
+    gap: 1.063em;
+}
+
+  @media (max-width: 390px) {
+      /* Styles for mobile devices */
+      .container {
+        align-items: center;
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
+
+  }
+
+  .primaryHeader {
+      text-align: center;
+  }
+
+  .subComponent {
+      text-align: left;
+  }

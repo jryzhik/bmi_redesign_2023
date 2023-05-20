@@ -137,3 +137,9 @@ button {
   justify-content: center;
   align-items: center;
 }
+
+.flexContainerTopItems {
+  display: flex;
+  flex-direction: column;
+  gap: 6em;
+}
