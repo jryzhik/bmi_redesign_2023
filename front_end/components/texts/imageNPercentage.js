@@ -3,7 +3,7 @@ import Image from 'next/image'
 import styles from '../../styles/Texts/Texts.module.css';
 import H2 from '../fonts/H2';
 import P from '../fonts/P';
-export default function ImageNPercentage({passedImage, percentText, description, color}) {
+export default function ImageNPercentage({ passedImage, percentText, description, color }) {
     return (
         <>
             <div className={styles.hBox}>
@@ -26,7 +26,7 @@ export default function ImageNPercentage({passedImage, percentText, description,
                     <div className={styles.barNText}>
                         <div
                             className={styles.colorBar}
-                            style={{backgroundColor: color}}
+                            style={{ backgroundColor: color }}
                         />
                         <H2 text={percentText + '%'} />
                     </div>

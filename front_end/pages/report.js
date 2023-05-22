@@ -80,29 +80,29 @@ export default function report() {
                 </Grid>
             </Grid>
             <Grid container className={styles.gridIconText} justify='center' alignItems='start' spacing={5} >
-                <Grid md={6}>
-                    <ImageNPercentage passedImage={'/../public/img/report_categories/ministry_projects.jpg'} percentText={73.03} description={'Ministry Projects'} color={theme.colors.ORANGE}/>
+                <Grid xs={12} sm={6} md={6}>
+                    <ImageNPercentage passedImage={'/../public/img/report_categories/ministry_projects.jpg'} percentText={73.03} description={'Ministry Projects'} color={theme.colors.ORANGE} />
                 </Grid>
-                <Grid md={6}>
+                <Grid xs={12} sm={6} md={6}>
                     <ImageNPercentage passedImage={'/../public/img/report_categories/mission_groups.jpg'} percentText={15.20} description={'Compensation to Officers'} color={theme.colors.DARK_BLUE} />
                 </Grid>
-                <Grid md={6}>
+                <Grid xs={12} sm={6} md={6}>
                     <ImageNPercentage passedImage={'/../public/img/report_categories/mission_groups.jpg'} percentText={4.51} description={'Mission Group Trips'} color={theme.colors.MAROON} />
                 </Grid>
-                <Grid md={6}>
-                    <ImageNPercentage passedImage={'/../public/img/report_categories/ministry_projects.jpg'} percentText={1.84} description={'Website Maintenance'} color={theme.colors.MAGENTA}/>
+                <Grid xs={12} sm={6} md={6}>
+                    <ImageNPercentage passedImage={'/../public/img/report_categories/ministry_projects.jpg'} percentText={1.84} description={'Website Maintenance'} color={theme.colors.MAGENTA} />
                 </Grid>
-                <Grid md={6}>
-                    <ImageNPercentage passedImage={'/../public/img/report_categories/ministry_projects.jpg'} percentText={1.72} description={'Office Expenses'} color={theme.colors.BLUE}/>
+                <Grid xs={12} sm={6} md={6}>
+                    <ImageNPercentage passedImage={'/../public/img/report_categories/ministry_projects.jpg'} percentText={1.72} description={'Office Expenses'} color={theme.colors.BLUE} />
                 </Grid>
-                <Grid md={6}>
-                    <ImageNPercentage passedImage={'/../public/img/report_categories/ministry_projects.jpg'} percentText={1.53} description={'Automobile Expenses'} color={theme.colors.SAND}/>
+                <Grid xs={12} sm={6} md={6}>
+                    <ImageNPercentage passedImage={'/../public/img/report_categories/ministry_projects.jpg'} percentText={1.53} description={'Automobile Expenses'} color={theme.colors.SAND} />
                 </Grid>
-                <Grid md={6}>
-                    <ImageNPercentage passedImage={'/../public/img/report_categories/ministry_projects.jpg'} percentText={'1.40'} description={'Fundraising Expenses'} color={theme.colors.DARK_GREEN}/>
+                <Grid xs={12} sm={6} md={6}>
+                    <ImageNPercentage passedImage={'/../public/img/report_categories/ministry_projects.jpg'} percentText={'1.40'} description={'Fundraising Expenses'} color={theme.colors.DARK_GREEN} />
                 </Grid>
-                <Grid md={6}>
-                    <ImageNPercentage passedImage={'/../public/img/report_categories/ministry_projects.jpg'} percentText={0.77} description={'Accounting Fees'} color={theme.colors.DARK_GREY}/>
+                <Grid xs={12} sm={6} md={6}>
+                    <ImageNPercentage passedImage={'/../public/img/report_categories/ministry_projects.jpg'} percentText={0.77} description={'Accounting Fees'} color={theme.colors.DARK_GREY} />
                 </Grid>
             </Grid>
         </>
