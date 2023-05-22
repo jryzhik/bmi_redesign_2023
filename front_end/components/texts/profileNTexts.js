@@ -4,7 +4,7 @@ import styles from '../../styles/Texts/Profiles.module.css';
 import H4 from '../fonts/H4';
 import P from '../fonts/P';
 
-export default function ProfileNTexts({passedImage, textName, textJobTitle}) {
+export default function ProfileNTexts({passedImage, textName, textJobTitle, borderRadius}) {
     return (
         <>
             <div className={styles.profilePic}>
@@ -16,12 +16,20 @@ export default function ProfileNTexts({passedImage, textName, textJobTitle}) {
                     style={{
                         objectFit: 'cover',
                         // Adjust the position to focus on the desired part of the image
-                        borderRadius: '50%',
+                        borderRadius: borderRadius,
                         marginBottom: '1.5em',
                     }}
                 />
-                <H4 text={textName}/>
-                <P text={textJobTitle}/>
+                 {textName === undefined ? (
+                    <></>
+                ) : (
+                    <H4 text={textName}/>
+                )}
+                {textJobTitle === undefined ? (
+                    <></>
+                ) : (
+                    <P text={textJobTitle}/>
+                )}
             </div>
         </>
     )

@@ -28,13 +28,14 @@ export default function Advisory() {
         imageFocus='50% 23%'
 
       />
-      <Grid container spacing={-10} >
+      <Grid container spacing={-10} justifyContent='center' >
         {team.map((member) => (
           <Grid className={styles.verticalSpacing} xs={12} sm={6} md={3} display="flex" justifyContent="center" alignItems="center" >
             <ProfileNTexts
               textName={member.name}
               textJobTitle={member.jobTitle}
               passedImage={member.imgSource}
+              borderRadius='50%'
             />
           </Grid>
         ))}
