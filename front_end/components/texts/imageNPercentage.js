@@ -3,6 +3,7 @@ import Image from 'next/image'
 import styles from '../../styles/Texts/Texts.module.css';
 import H2 from '../fonts/H2';
 import P from '../fonts/P';
+import theme from '../../styles/theme';
 export default function ImageNPercentage({ passedImage, percentText, description, color }) {
     return (
         <>
@@ -31,7 +32,7 @@ export default function ImageNPercentage({ passedImage, percentText, description
                         <H2 text={percentText + '%'} />
                     </div>
                     <div className={styles.offsetLeft}>
-                        <P text={description} />
+                        <P text={description} color={theme.colors.CHARCOAL}/>
                     </div>
                 </div>
             </div>

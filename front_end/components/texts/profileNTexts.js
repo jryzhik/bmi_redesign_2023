@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import H4 from '../fonts/H4';
 import P from '../fonts/P';
+import theme from '../../styles/theme';
 
 export default function ProfileNTexts({passedImage, textName, textJobTitle, borderRadius, passedStyle}) {
     return (
@@ -27,7 +28,7 @@ export default function ProfileNTexts({passedImage, textName, textJobTitle, bord
                 {textJobTitle === undefined ? (
                     <></>
                 ) : (
-                    <P text={textJobTitle}/>
+                    <P text={textJobTitle} color={theme.colors.CHARCOAL}/>
                 )}
             </div>
         </>

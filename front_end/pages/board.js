@@ -7,6 +7,7 @@ import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import styles from '../styles/Texts/Profiles.module.css';
 import ProfileNTexts from '../components/texts/profileNTexts'
 import passedStyles from '../styles/Texts/Profiles.module.css';
+import theme from '../styles/theme'
 
 
 const board = [
@@ -35,7 +36,7 @@ export default function Board() {
             <HeaderNComponent
                 primaryHeaderText='Integrity'
                 SecondaryComponent={
-                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' />
+                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.CHARCOAL}/>
                 }
                 secondaryAllign='center'
             />

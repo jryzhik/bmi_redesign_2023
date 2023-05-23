@@ -12,7 +12,7 @@
     gap: 1.063em;
 }
 
-@media (max-width: 390px) {
+@media (max-width: 420px) {
 
     /* Styles for mobile devices */
     .container {

@@ -1,15 +1,16 @@
 .container {
-    min-height: 640px;
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    z-index: -100;
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-    align-items: center;
-    margin-bottom: 7em;
+  min-height: 640px;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: -100;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  align-items: center;
+  margin-bottom: 7em;
 }
+
 .gradientOverlaySearch {
   position: absolute;
   top: 0;
@@ -18,99 +19,132 @@
   height: 83%;
   margin-top: 28vw;
 }
-  
-  @media (max-width: 390px) {
-    /* Styles for mobile devices */
-    .container {
-      min-height: 550px;
-    }
-  
+
+@media (max-width: 390px) {
+
+  /* Styles for mobile devices */
+  .container {
+    min-height: 550px;
   }
-  
+
+}
+
 
 .gradientOverlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
 }
 
 .pageParentText {
-    position: absolute;
-    top: 20vw;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 20vw;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .hBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.23rem;
+  white-space: nowrap;
+  padding-bottom: 1rem;
+}
+
+.centerModule {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 9vw;
+  z-index: 100;
+  position: relative;
+  text-align: center;
+  max-width: 850px;
+  /* Add this line */
+  margin: 0 auto;
+  /* Add this line to center the element horizontally */
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+.centerModuleSearch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 17vw;
+  z-index: 100;
+  position: relative;
+  text-align: center;
+  max-width: 850px;
+  /* Add this line */
+  margin: 0 auto;
+  /* Add this line to center the element horizontally */
+  padding-left: 4%;
+  padding-right: 4%;
+}
+.portraitNPageParent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 7vw;
+  gap: 3.5em;
+}
+@media (max-width: 1066px) {
+  .hBox {
+    /* Styles specific to tablet size */
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 0.23rem;
     white-space: nowrap;
     padding-bottom: 1rem;
+
+  }
+
+  .gradientOverlaySearch {
+    position: absolute;
+    top: 20;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin-top: 20vw;
+  }
+  .centerModule {
+    padding-top: 2em;
+  }
+  .centerModuleSearch {
+    padding-top: 2em;
+  }
+  .portraitNPageParent {
+    padding-top: 6em;
+  }
+}
+@media (max-width: 420px) {
+  .centerModule {
+    padding-top: 4em;
+  }
+  .centerModuleSearch {
+    padding-top: 4em;
+  }
+  
 }
 
-@media (max-width: 1066px) {
-    .hBox {
-        /* Styles specific to tablet size */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 0.23rem;
-        white-space: nowrap;
-        padding-bottom: 1rem;
-        padding-top: 4rem;
-    }
-    .gradientOverlaySearch {
-        position: absolute;
-        top: 20;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        margin-top: 20vw;
-    }
-}
 .bottomSpacer {
   padding-bottom: 4%;
 }
-.centerModule {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    top: 9vw;
-    z-index: 100;
-    position: relative;
-    text-align: center;
-    max-width: 850px; /* Add this line */
-    margin: 0 auto; /* Add this line to center the element horizontally */
-    padding-left: 4%;
-    padding-right: 4%;
-  }
-  .centerModuleSearch {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    top: 17vw;
-    z-index: 100;
-    position: relative;
-    text-align: center;
-    max-width: 850px; /* Add this line */
-    margin: 0 auto; /* Add this line to center the element horizontally */
-    padding-left: 4%;
-    padding-right: 4%;
-  }
 
-  .image {
-    margin-top: 45px;
-  }
-  .imageSearch {
-    margin-top: 45px;
-    min-height: 55vw;
-  }
+.image {
+  margin-top: 45px;
+}
 
-  
-  
+.imageSearch {
+  margin-top: 45px;
+  min-height: 55vw;
+}

@@ -49,7 +49,7 @@ export default function report() {
             <div className='flexContainerTopItems'>
                 <HeaderNComponent
                     primaryHeaderText='Expense Summary'
-                    SecondaryComponent={<P text='A breakdown of our annual report from January to December.' />}
+                    SecondaryComponent={<P color={theme.colors.CHARCOAL} text='A breakdown of our annual report from January to December.' />}
                     secondaryAllign='center'
                 />
             </div>
