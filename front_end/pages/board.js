@@ -6,6 +6,8 @@ import RoundedPhoto from '../components/images/roundedPhoto'
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import styles from '../styles/Texts/Profiles.module.css';
 import ProfileNTexts from '../components/texts/profileNTexts'
+import passedStyles from '../styles/Texts/Profiles.module.css';
+
 
 const board = [
     { name: 'Chairman – Andrew Ryzhkov', jobTitle: 'Founder/ CEO', imgSource: '/../public/img/team/andrew.jpg' },
@@ -48,6 +50,7 @@ export default function Board() {
                             textJobTitle={member.jobTitle}
                             passedImage={member.imgSource}
                             borderRadius='50%'
+                            passedStyle={passedStyles.profilePic}
                         />
                     </Grid>
                 ))}

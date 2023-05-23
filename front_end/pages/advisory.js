@@ -3,6 +3,8 @@ import React from 'react'
 import ImageNtext from '../components/hero/imageNtext'
 import ProfileNTexts from '../components/texts/profileNTexts'
 import styles from '../styles/Texts/Profiles.module.css';
+import passedStyles from '../styles/Texts/Profiles.module.css';
+
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 
 const team = [
@@ -36,6 +38,7 @@ export default function Advisory() {
               textJobTitle={member.jobTitle}
               passedImage={member.imgSource}
               borderRadius='50%'
+              passedStyle={passedStyles.profilePic}
             />
           </Grid>
         ))}

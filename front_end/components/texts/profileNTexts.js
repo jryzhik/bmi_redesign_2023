@@ -1,13 +1,12 @@
 import React from 'react'
 import Image from 'next/image'
-import styles from '../../styles/Texts/Profiles.module.css';
 import H4 from '../fonts/H4';
 import P from '../fonts/P';
 
-export default function ProfileNTexts({passedImage, textName, textJobTitle, borderRadius}) {
+export default function ProfileNTexts({passedImage, textName, textJobTitle, borderRadius, passedStyle}) {
     return (
         <>
-            <div className={styles.profilePic}>
+            <div className={passedStyle}>
                 <Image
                     src={passedImage}
                     width={240}
