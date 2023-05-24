@@ -2,12 +2,12 @@ import React from 'react'
 import Image from 'next/image'
 import styles from '../../styles/Images/Images.module.css';
 
-export default function RoundedPhoto({ imageUrl }) {
+export default function RoundedPhoto({ imageUrl, passedStyles }) {
     return (
         <div className={styles.centerContent}>
-            <div className={styles.roundedRect}>
+            <div className={passedStyles}>
                 <Image
-                    src='/img/team/all_board.jpg'
+                    src={imageUrl}
                     alt="Background"
                     width={1440}
                     height={1081}

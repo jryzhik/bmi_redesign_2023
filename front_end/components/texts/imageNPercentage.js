@@ -4,6 +4,8 @@ import styles from '../../styles/Texts/Texts.module.css';
 import H2 from '../fonts/H2';
 import P from '../fonts/P';
 import theme from '../../styles/theme';
+import BarNText from './barNText';
+
 export default function ImageNPercentage({ passedImage, percentText, description, color }) {
     return (
         <>
@@ -23,18 +25,7 @@ export default function ImageNPercentage({ passedImage, percentText, description
                         }}
                     />
                 </div>
-                <div className={styles.headPar}>
-                    <div className={styles.barNText}>
-                        <div
-                            className={styles.colorBar}
-                            style={{ backgroundColor: color }}
-                        />
-                        <H2 text={percentText + '%'} />
-                    </div>
-                    <div className={styles.offsetLeft}>
-                        <P text={description} color={theme.colors.CHARCOAL}/>
-                    </div>
-                </div>
+                <BarNText percentText={percentText + '%'} description={description} color={color}/>
             </div>
         </>
     )

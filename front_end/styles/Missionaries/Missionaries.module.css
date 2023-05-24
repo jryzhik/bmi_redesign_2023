@@ -1,12 +1,37 @@
+/* .body {
+    overflow-x: hidden;
+} */
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4em;
+    gap: 6em;
 }
 
 iframe.youtube {
     border-radius: 7px;
     width: clamp(23.375em, 80vw, 56.25em);
     height: clamp(14em, 40vw, 33.75em);
+}
+.vBox {
+    display: flex;
+    flex-direction: column;
+    gap: 3.375em;
+    padding-top: 1.063em;
+}
+.mediumNThinSection {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75em;
+}
+.statContainer {
+    display: flex;
+    gap: 3.3em;
+}
+@media (max-width: 570px) {
+    .statContainer {
+        flex-direction: column;
+        gap: 2.125em;
+    }
+    
 }

@@ -1,0 +1,132 @@
+import React, { useState } from 'react'
+import RoundedPhoto from './roundedPhoto'
+import styles from '../../styles/Images/Images.module.css';
+import Image from 'next/image';
+
+const gruzGallery = [
+    {
+        imageUrl: '/img/gallery/gruzd/sitting_fire.jpg'
+    },
+    {
+        imageUrl: '/img/gallery/gruzd/bike.jpg'
+    },
+    {
+        imageUrl: '/img/gallery/gruzd/phone.jpg'
+    },
+    {
+        imageUrl: '/img/gallery/gruzd/blow.jpg'
+    },
+    {
+        imageUrl: '/img/gallery/gruzd/teach.jpg'
+    },
+]
+// for (let i = (0 % gruzGallery.length); i < 3; i++) {
+//     console.log(gruzGallery[i].imageUrl)
+// }
+
+export default function SlideGallery() {
+    const [currentIndex, setCurrentIndex] = useState(0)
+    const [booleanStyle, setBooleanStyle] = useState(styles.notFocusedImageGallery)
+    const [left, setLeft] = React.useState(0)
+    const [right, setRight] = React.useState(0)
+    const [center, setCenter] = React.useState(0)
+    const [touchPosition, setTouchPosition] = useState(null)
+
+    const handleTouchStart = (e) => {
+        const touchDown = e.touches[0].clientX
+        setTouchPosition(touchDown)
+    }
+    const handleTouchMove = (e) => {
+        const touchDown = touchPosition
+
+        if (touchDown === null) {
+            return
+        }
+
+        const currentTouch = e.touches[0].clientX
+        const diff = touchDown - currentTouch
+
+        if (diff > 1) {
+            setCurrentIndex(currentIndex + 1)
+            setRight(1)
+            setCenter(1)
+        }
+
+        if (diff < -1) {
+            setCurrentIndex(currentIndex - 1)
+            setLeft(1)
+            setCenter(1)
+        }
+
+        setTouchPosition(null)
+    }
+
+
+    function handleClickFront() {
+        setCurrentIndex(currentIndex + 1)
+        setRight(1)
+        setCenter(1)
+    }
+    function handleClickBack() {
+        setCurrentIndex(currentIndex - 1)
+        setLeft(1)
+        setCenter(1)
+
+    }
+    function customMod(a, n) {
+        return (a - (n * Math.floor(a / n)))
+    }
+    function setToZero() {
+        setLeft(0)
+        setRight(0)
+        setCenter(0)
+    }
+    return (
+        <>
+            <div className={styles.galleryBox}>
+                <div className={styles.arrows}>
+                    <Image onClick={handleClickBack} src="img/icons/left_arrow_Gallery.svg" alt='arrow' width={0} height={0} style={{ width: '50%', height: 'auto' }} />
+                    <Image onClick={handleClickFront} src="img/icons/right_arrow_Gallery.svg" alt='arrow' width={0} height={0} style={{ width: '50%', height: 'auto' }} />
+                </div>
+                <div
+                    className={styles.image}
+                    onAnimationEnd={() => setToZero()}
+                    left={left}
+                    right={right}
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                >
+                    <RoundedPhoto
+                        imageUrl={gruzGallery[customMod(currentIndex, gruzGallery.length)].imageUrl}
+                        passedStyles={booleanStyle}
+                    />
+                </div>
+                <div
+                    className={styles.image}
+                    onAnimationEnd={() => setToZero()}
+                    center={center}
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                >
+                    <RoundedPhoto
+                        imageUrl={gruzGallery[customMod(currentIndex + 1, gruzGallery.length)].imageUrl}
+                        passedStyles={styles.focusImageGallery}
+                    />
+                </div>
+                <div
+                    className={styles.image}
+                    onAnimationEnd={() => setToZero()}
+                    left={left}
+                    right={right}
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                >
+                    <RoundedPhoto
+                        imageUrl={gruzGallery[customMod(currentIndex + 2, gruzGallery.length)].imageUrl}
+                        passedStyles={booleanStyle}
+                    />
+                </div>
+            </div>
+        </>
+    )
+}
