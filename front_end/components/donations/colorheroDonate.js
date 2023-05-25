@@ -8,7 +8,7 @@ import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 
 export default function ColorheroDonate({color, primaryText, secondaryText}) {
     return (
-        <>
+        <div className={styles.together}>
             <div className={styles.rectangleRounded}></div>
             <div style={{
                         backgroundColor: color
@@ -37,6 +37,6 @@ export default function ColorheroDonate({color, primaryText, secondaryText}) {
                     </Grid>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
