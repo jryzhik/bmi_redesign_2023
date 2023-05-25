@@ -1,0 +1,65 @@
+.container {
+    min-height: 30.813em;
+    width: 100vw;
+    margin-top: 0;
+    padding: 0;
+    position: relative;
+    border-top-left-radius: -70px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    align-items: center;
+    margin-bottom: 7em;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.688em;
+    text-align: center;
+}
+.headerNdescription {
+    display: flex;
+    flex-direction: column;
+    gap: 2.7em;
+    padding-left: 26vw;
+    padding-right: 26vw;
+
+}
+@media (max-width:850px) {
+    .headerNdescription {
+        padding-left: 6vw;
+        padding-right: 6vw;
+    }
+}
+.boxConstraint {
+    width: 60%;
+}
+.rectangleRounded {
+    min-height: 20px;
+    width: 100vw;
+    margin: 0;
+    position: absolute;
+    z-index: -10;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    align-items: center;
+    background-color: #f6f6f6;
+}
+.dollarButton {
+    display: flex;
+    width: 100vw;
+    height: 46px;
+    border-radius: 25em;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: #ffffff;
+    transition: all .2s ease-in;
+    transition: all .5s ease-out;
+}
+.dollarButton:hover {
+    /* background: linear-gradient(90deg,#ffffff, #a23404); */
+    background-color: #e2e2e2;
+
+}
+.buttonSection {
+    display: flex;
+}

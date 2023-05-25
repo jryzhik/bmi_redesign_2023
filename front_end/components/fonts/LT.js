@@ -16,7 +16,6 @@ export default function LT(props) {
     return (
     <>
         <div id='lt' style={{ color: props.color }} className={Ral.className}>{props.text}</div>
-        <br></br>
     </>
     )
 }

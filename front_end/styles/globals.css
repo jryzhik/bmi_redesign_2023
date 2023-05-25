@@ -71,9 +71,9 @@ p {
 }
 
 #lt {
-  letter-spacing: 0.0625rem;
-  line-height: 1.25rem;
-  font-size: 1rem;
+  letter-spacing: 0.019em;
+  line-height: 1.25em;
+  font-size: 1em;
   text-transform: uppercase;
 }
 

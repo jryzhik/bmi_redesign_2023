@@ -24,7 +24,7 @@ const gruzGallery = [
 //     console.log(gruzGallery[i].imageUrl)
 // }
 
-export default function SlideGallery() {
+export default function SlideGallery({galleryArray}) {
     const [currentIndex, setCurrentIndex] = useState(0)
     const [booleanStyle, setBooleanStyle] = useState(styles.notFocusedImageGallery)
     const [left, setLeft] = React.useState(0)
@@ -97,7 +97,7 @@ export default function SlideGallery() {
                     onTouchMove={handleTouchMove}
                 >
                     <RoundedPhoto
-                        imageUrl={gruzGallery[customMod(currentIndex, gruzGallery.length)].imageUrl}
+                        imageUrl={galleryArray[customMod(currentIndex, galleryArray.length)].imageUrl}
                         passedStyles={booleanStyle}
                     />
                 </div>
@@ -109,7 +109,7 @@ export default function SlideGallery() {
                     onTouchMove={handleTouchMove}
                 >
                     <RoundedPhoto
-                        imageUrl={gruzGallery[customMod(currentIndex + 1, gruzGallery.length)].imageUrl}
+                        imageUrl={galleryArray[customMod(currentIndex + 1, galleryArray.length)].imageUrl}
                         passedStyles={styles.focusImageGallery}
                     />
                 </div>
@@ -122,7 +122,7 @@ export default function SlideGallery() {
                     onTouchMove={handleTouchMove}
                 >
                     <RoundedPhoto
-                        imageUrl={gruzGallery[customMod(currentIndex + 2, gruzGallery.length)].imageUrl}
+                        imageUrl={galleryArray[customMod(currentIndex + 2, galleryArray.length)].imageUrl}
                         passedStyles={booleanStyle}
                     />
                 </div>

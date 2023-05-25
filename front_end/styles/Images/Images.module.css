@@ -70,18 +70,13 @@
     align-items: center;
 }
 
-.arrows>img {
-    background-color: #F6F6F6;
-    height: 100em;
-}
-
 .arrows {
     display: flex;
     position: absolute;
     left: 1vw;
     justify-content: center;
     gap: 91vw;
-    z-index: 100;
+    z-index: 50;
 }
 
 .arrows :hover {

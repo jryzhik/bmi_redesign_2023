@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from '../../styles/Texts/Texts.module.css';
 import H1 from '../fonts/H1';
+import theme from '../../styles/theme';
 
-export default function HeaderNComponent({ primaryHeaderText, SecondaryComponent, secondaryAllign}) {
+export default function HeaderNComponent({ primaryHeaderText, SecondaryComponent, secondaryAllign, color}) {
   const subComponentStyle = {
     textAlign: secondaryAllign,
   };
@@ -10,7 +11,7 @@ export default function HeaderNComponent({ primaryHeaderText, SecondaryComponent
   return (
     <div className={styles.container}>
       <div className={styles.primaryHeader}>
-        <H1 text={primaryHeaderText} />
+        <H1 text={primaryHeaderText} color={color} />
       </div>
       <div className={styles.subComponent} style={subComponentStyle}>
         {SecondaryComponent}
