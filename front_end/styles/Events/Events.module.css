@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    justify-content: center;
+
+}
+@media (max-width: 700px) {
+    .container {
+        margin-left: 0em;
+        margin-right: 0em;
+    }
+}
+@media (min-width: 200px) {
+    .container {
+        margin-left: 2em;
+        margin-right: 2em;
+    }
+}
+@media (min-width: 630px) {
+    .container {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+}
+@media (min-width: 600px) {
+    .container {
+        margin-left: .5em;
+        margin-right: .5em;
+    }
+}
+.searchBarNFilter {
+    display: flex;
+    width: 56.25em;
+}
+.leftPadding {
+    padding-left: .7em;
+}

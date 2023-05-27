@@ -15,7 +15,7 @@ export default function Grist() {
       <PortraitNPageParent
         textParent='Missionary'
         textChild='Cassandra Lynn Grist'
-        imgUrl="/../public/img/missionaries/gruzd.jpg"
+        imgUrl="/../public/img/missionaries/grist.jpg"
       />
       <div className={styles.container}>
         <HeaderNComponent

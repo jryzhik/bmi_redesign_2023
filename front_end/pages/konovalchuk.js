@@ -2,7 +2,6 @@ import React from 'react'
 import PortraitNPageParent from '../components/hero/portraitNPageParent'
 import HeaderNComponent from '../components/texts/HeaderNComponent'
 import P from '../components/fonts/P'
-import PMED from '../components/fonts/PMED'
 import theme from '../styles/theme'
 import styles from '../styles/Missionaries/Missionaries.module.css';
 import BarNText from '../components/texts/barNText'
@@ -33,7 +32,7 @@ export default function Konovalchuk() {
       <PortraitNPageParent
         textParent='Missionary'
         textChild='Vadim & Natasha Konavalchuk'
-        imgUrl="/../public/img/missionaries/gruzd.jpg"
+        imgUrl="/../public/img/missionaries/konovalchuk.jpg"
       />
       <div className={styles.container}>
         <HeaderNComponent

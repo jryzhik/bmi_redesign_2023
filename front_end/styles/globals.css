@@ -85,9 +85,9 @@ p {
 }
 
 #nt {
-  letter-spacing: 0.0187rem;
-  line-height: 1.25rem;
-  font-size: 1rem;
+  letter-spacing: 0.019em;
+  line-height: 1.25em;
+  font-size: 1em;
   text-transform: uppercase;
 }
 
@@ -101,8 +101,8 @@ p {
 }
 
 #nh {
-  line-height: 1.125rem;
-  font-size: .875rem;
+  line-height: 1.125em;
+  font-size: 1em;
 }
 
 #navtxt {
@@ -112,13 +112,13 @@ p {
 }
 
 #fieldtxt {
-  line-height: 1.375px;
-  font-size: 1rem;
+  line-height: 1.375em;
+  font-size: 1em;
 }
 
-#fieldtxtred {
-  line-height: 1.375px;
-  font-size: 1rem;
+#fieldtxtreg {
+  line-height: 1.375em;
+  font-size: 1em;
 }
 
 ul {
@@ -180,4 +180,7 @@ button {
   gap: 0.23rem;
   white-space: nowrap;
   padding-bottom: 1rem;
+}
+.nextui-c-bDGMeb {
+  display: none !important;
 }

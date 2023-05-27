@@ -16,7 +16,6 @@ export default function NT(props) {
     return (
     <>
         <div id='nt' style={{ color: props.color }} className={Int.className}>{props.text}</div>
-        <br></br>
     </>
     )
 }

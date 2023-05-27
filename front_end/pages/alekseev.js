@@ -32,12 +32,12 @@ export default function Alekseev() {
     <>
       <PortraitNPageParent
         textParent='Missionary'
-        textChild='Dmitriy & Natalia Alekseev'
-        imgUrl="/../public/img/missionaries/gruzd.jpg"
+        textChild='Dmitriy Alekseev'
+        imgUrl="/../public/img/missionaries/alekseev.jpg"
       />
       <div className={styles.container}>
         <HeaderNComponent
-          primaryHeaderText='Dmitriy & Natalia Alekseev'
+          primaryHeaderText='Dmitriy Alekseev'
           SecondaryComponent={
             <div className={styles.bioText}>
               <P color={theme.colors.CHARCOAL} text='I was born as the fifth child in a village in 1959. My mom died when I was seven, and by God’s grace my godly father was raising me. My older brothers and sister also influenced me to choose the right way in life. My aunt was able to give me a mother’s tender care.' />
