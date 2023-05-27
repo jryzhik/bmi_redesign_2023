@@ -2,11 +2,8 @@ import React from 'react'
 import PortraitNPageParent from '../components/hero/portraitNPageParent'
 import HeaderNComponent from '../components/texts/HeaderNComponent'
 import P from '../components/fonts/P'
-import PMED from '../components/fonts/PMED'
 import theme from '../styles/theme'
 import styles from '../styles/Missionaries/Missionaries.module.css';
-import BarNText from '../components/texts/barNText'
-import SlideGallery from '../components/images/slideGallery'
 import ColorheroDonate from '../components/donations/colorheroDonate'
 
 export default function Grist() {

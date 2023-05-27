@@ -3,11 +3,147 @@
     justify-content: center;
 
 }
+.iconNTextContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendarsBoxDouble {
+    display: flex;
+    margin-left: 4em;
+    padding-top: 8.875em;
+    gap: .3em;
+}
+
+.calendarsBoxSingle {
+    display: flex;
+    margin-left: 10.2em;
+    padding-top: 8.875em;
+}
+
+@media (min-width: 1300px) {
+
+    .iconNTextContainer {
+        margin-left: 14%;
+        margin-right: 14%;
+    }
+
+}
+
+@media (min-width: 1200px) and (max-width: 1299px) {
+
+    .iconNTextContainer {
+        margin-left: 12%;
+        margin-right: 12%;
+    }
+
+}
+
+@media (min-width: 1100px) and (max-width: 1199px) {
+
+    .iconNTextContainer {
+        margin-left: 9%;
+        margin-right: 9%;
+    }
+
+}
+
+@media (min-width: 1000px) and (max-width: 1099px) {
+
+    .iconNTextContainer {
+        margin-left: 4%;
+        margin-right: 4%;
+    }
+    .calendarsBoxDouble {
+       
+        margin-left: 6.2em;
+        padding-top: 10em;
+    }
+    
+    .calendarsBoxSingle {
+        margin-left: 11em;
+        padding-top: 10em;
+
+    }
+}
+
+@media (min-width: 900px) and (max-width: 999px) {
+
+    .iconNTextContainer {
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+    .calendarsBoxDouble {
+       
+        margin-left: 6.2em;
+        padding-top: 10em;
+    }
+    
+    .calendarsBoxSingle {
+        margin-left: 11em;
+        padding-top: 10em;
+
+    }
+
+}
+
+@media (min-width: 701px) and (max-width: 899px) {
+
+    .calendarsBoxDouble {
+       
+        margin-left: 6.2em;
+        padding-top: 10em;
+    }
+    
+    .calendarsBoxSingle {
+        margin-left: 11em;
+        padding-top: 10em;
+
+    }
+
+}
 @media (max-width: 700px) {
     .container {
         margin-left: 0em;
         margin-right: 0em;
     }
+
+    .iconNTextContainer {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+    .calendarsBoxDouble {
+       
+        margin-left: 6.2em;
+        padding-top: 10em;
+    }
+    
+    .calendarsBoxSingle {
+        margin-left: 11em;
+        padding-top: 10em;
+
+    }
+
+}
+@media (max-width: 599px) {
+
+    .iconNTextContainer {
+        flex-direction: column;
+        gap: 2em;
+        text-align: center;
+    }
+    .calendarsBoxDouble {
+       
+        margin-left: 6.2em;
+        padding-top: 10em;
+    }
+    
+    .calendarsBoxSingle {
+        margin-left: 11em;
+        padding-top: 10em;
+    }
+
 }
 @media (min-width: 200px) {
     .container {
@@ -15,22 +151,81 @@
         margin-right: 2em;
     }
 }
+
 @media (min-width: 630px) {
     .container {
         margin-left: 1em;
         margin-right: 1em;
     }
+
+
 }
+
 @media (min-width: 600px) {
     .container {
         margin-left: .5em;
         margin-right: .5em;
     }
 }
+
 .searchBarNFilter {
     display: flex;
     width: 56.25em;
 }
+
 .leftPadding {
     padding-left: .7em;
+}
+
+.calendarIconContainer {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 50;
+}
+
+.calendarIconTop {
+    display: flex;
+    justify-content: center;
+    background-color: #DE2418;
+    width: clamp(4.625em, 8vw, 5.875em);
+    height: clamp(1.625em, 8vw, 1.938em);
+    border-top-left-radius: 0.75em;
+    border-top-right-radius: 0.75em;
+}
+
+.calendarIconBottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: clamp(4.625em, 8vw, 5.875em);
+    height: clamp(3em, 8vw, 3.938em);
+    border-bottom-left-radius: 0.75em;
+    border-bottom-right-radius: 0.75em;
+}
+
+.appContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.appNCalendar {
+    position: relative;
+}
+
+.generalContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.allevents {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    padding-top: 3em;
+    margin-left: 5em;
+    margin-right: 5em;
+
 }

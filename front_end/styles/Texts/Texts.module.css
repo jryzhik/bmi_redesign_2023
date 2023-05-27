@@ -25,6 +25,13 @@
     text-align: center;
 }
 
+@media (max-width: 599px) {
+    .primaryHeader2 {
+        align-self: baseline;
+        text-align: center;
+    }
+}
+
 .subComponent {
     text-align: left;
 }
@@ -72,5 +79,14 @@
 }
 .monthName {
     padding-left: .4rem;
+}
+.containerH2NComp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.063em;
+    justify-content: center;
+    padding-left: 5vw;
+    padding-right: 5vw;
 }
 

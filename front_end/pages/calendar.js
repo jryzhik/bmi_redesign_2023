@@ -4,6 +4,8 @@ import SearchBar from '../components/texts/searchBar'
 import styles from '../styles/Events/Events.module.css';
 import DropdownDate from '../components/texts/dropdownDate';
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
+import EventIconText from '../components/events/eventIconText';
+import Link from 'next/link';
 
 
 const currentYear = new Date().getFullYear()
@@ -59,6 +61,48 @@ const yearDropDown = [
         name: currentYear + 2, key: currentYear + 2
     }
 ]
+const events = [
+    {
+        title: 'Belarus Missionary Trip',
+        imgSource: '/../public/img/events/default_event.jpg',
+        description: 'Pray for us as we invest into disciples of Christ.',
+        additionalDescription: 'This is additional information that will be included only when the event was clicked on:)',
+        start:
+        {
+            month: 'Jun', day: '28',
+        },
+        key: 'bmt'
+    },
+    {
+        title: 'Mission Belarus Camping',
+        imgSource: '/../public/img/events/tent.jpg',
+        description: 'Spend 3 great days with us as we worship our Lord. All costs go to our fundraising methods for Belarus.',
+        additionalDescription: 'This is additional information that will be included only when the event was clicked on:)',
+        start:
+        {
+            month: 'Jun', day: '28',
+        },
+        end:
+        {
+            month: 'Jul', day: '04',
+        },
+        key: 'bmcamping'
+    },
+    {
+        title: 'Church Construction',
+        imgSource: '/../public/img/events/fire.jpg',
+        description: 'Spend 3 great days with us as we worship our Lord. All costs go to our fundraising methods for Belarus.',
+        start:
+        {
+            month: 'Jun', day: '28',
+        },
+        end:
+        {
+            month: 'Jul', day: '04',
+        },
+        key: 'chuchs'
+    }
+]
 export default function Calendar() {
     return (
         <>
@@ -97,28 +141,25 @@ export default function Calendar() {
                     </Grid>
                 </Grid>
             </div>
-            {/* 
-                            <div className={styles.container}>
-
-                <div className={styles.searchBarNFilter}>
-                    <SearchBar />
-                    <div className={styles.leftPadding}>
-                        <DropdownDate
-                            title='Month'
-                            defaultKey="all"
-                            dropDownItemArray={monthsDropDown}
-                            titleFont='text'
+            <div className={styles.allevents}>
+                {events.map((event) =>
+                    <Link
+                        href={{
+                            pathname: '/event',
+                            query: event,
+                        }}
+                    >
+                        <EventIconText
+                            key={event.key}
+                            start={event.start}
+                            end={event.end}
+                            imgSource={event.imgSource}
+                            title={event.title}
+                            description={event.description}
                         />
-                    </div>
-                    <DropdownDate
-                        title='Year'
-                        defaultKey={currentYear.toString()}
-                        dropDownItemArray={yearDropDown}
-                        titleFont='number'
-                    />
-                </div>
-                            </div>
- */}
+                    </Link>
+                )}
+            </div>
         </>
     )
 }
