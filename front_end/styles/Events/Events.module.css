@@ -203,6 +203,7 @@
     height: clamp(3em, 8vw, 3.938em);
     border-bottom-left-radius: 0.75em;
     border-bottom-right-radius: 0.75em;
+    flex-direction: column;
 }
 
 .appContainer {
@@ -227,5 +228,28 @@
     padding-top: 3em;
     margin-left: 5em;
     margin-right: 5em;
-
+}
+.containerEvents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6em;
+}
+.bioText {
+    padding-top: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.startNEndBox {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+}
+.markCalendar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
 }

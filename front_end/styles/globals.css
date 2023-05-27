@@ -110,7 +110,10 @@ p {
   font-size: .875rem;
   font-size: clamp(.65rem, 1.3vw, .875rem);
 }
-
+#smbold {
+  line-height: 0.625em;
+  font-size: 0.688em;
+}
 #fieldtxt {
   line-height: 1.375em;
   font-size: 1em;

@@ -69,7 +69,7 @@ const events = [
         additionalDescription: 'This is additional information that will be included only when the event was clicked on:)',
         start:
         {
-            month: 'Jun', day: '28',
+            month: 'Jun', day: '28', year: '2023'
         },
         key: 'bmt'
     },
@@ -80,11 +80,11 @@ const events = [
         additionalDescription: 'This is additional information that will be included only when the event was clicked on:)',
         start:
         {
-            month: 'Jun', day: '28',
+            month: 'Jun', day: '28', year: '2023'
         },
         end:
         {
-            month: 'Jul', day: '04',
+            month: 'Jul', day: '04', year: '2024'
         },
         key: 'bmcamping'
     },
@@ -94,11 +94,11 @@ const events = [
         description: 'Spend 3 great days with us as we worship our Lord. All costs go to our fundraising methods for Belarus.',
         start:
         {
-            month: 'Jun', day: '28',
+            month: 'Jun', day: '28', year: '2023'
         },
         end:
         {
-            month: 'Jul', day: '04',
+            month: 'Jul', day: '04', year: '2023'
         },
         key: 'chuchs'
     }
@@ -163,7 +163,15 @@ export default function Calendar() {
                     <Link
                         href={{
                             pathname: '/event',
-                            query: event,
+                            query: {
+                                key: event.key,
+                                start: JSON.stringify(event.start),
+                                end: JSON.stringify(event.end),
+                                imgSource: event.imgSource,
+                                title: event.title,
+                                description: event.description,
+                                additionalDescription: event.additionalDescription
+                              },
                         }}
                     >
                         <div onMouseEnter={() => hoverHandle(event.key)} style={{opacity: elementOpactity(event.key), transition: 'all .2s ease-out'}} onMouseLeave={leaveHandle}>

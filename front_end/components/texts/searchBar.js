@@ -39,7 +39,6 @@ export default function SearchBar() {
     }
     return (
         <>
-            {console.log(inputText == '')}
             <div className={styles.searchBarContainer} style={{ borderColor: '#C7C7C7', color: '#000000' }}>
                 <Image src="/img/icons/search_icon.svg" alt="search" width={22} height={22} style={{ marginLeft: '6px' }} />
                 <input
