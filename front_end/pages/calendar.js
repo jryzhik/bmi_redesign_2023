@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ImageNtext from '../components/hero/imageNtext'
 import SearchBar from '../components/texts/searchBar'
 import styles from '../styles/Events/Events.module.css';
@@ -104,6 +104,23 @@ const events = [
     }
 ]
 export default function Calendar() {
+    const [selected, setSelected] = useState('')
+    function elementOpactity(key) {
+        if (selected == '') {
+            return 1
+        } else if (key != selected) {
+            return .6
+        } else {
+            return 1
+        }
+        
+    }
+    function hoverHandle(key) {
+        setSelected(key)
+    }
+    function leaveHandle() {
+        setSelected('')
+    }
     return (
         <>
             <ImageNtext
@@ -149,14 +166,16 @@ export default function Calendar() {
                             query: event,
                         }}
                     >
-                        <EventIconText
-                            key={event.key}
-                            start={event.start}
-                            end={event.end}
-                            imgSource={event.imgSource}
-                            title={event.title}
-                            description={event.description}
-                        />
+                        <div onMouseEnter={() => hoverHandle(event.key)} style={{opacity: elementOpactity(event.key), transition: 'all .2s ease-out'}} onMouseLeave={leaveHandle}>
+                            <EventIconText
+                                key={event.key}
+                                start={event.start}
+                                end={event.end}
+                                imgSource={event.imgSource}
+                                title={event.title}
+                                description={event.description}
+                            />
+                        </div>
                     </Link>
                 )}
             </div>
