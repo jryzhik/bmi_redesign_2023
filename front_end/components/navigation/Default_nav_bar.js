@@ -21,7 +21,7 @@ const menu = [
     },
     {
         primary: 'Missionaries',
-        secondary: [['Vladimir & Polina', 'gruzd'], ['Vadim & Natasha', 'konovalchuk'], ['Cassandra Lynn Grist', 'grist'], ['Dmitry & Natalia', 'alekseev']]
+        secondary: [['Vladimir & Polina', 'gruzd'], ['Vadim & Natasha', 'konovalchuk'], ['Cassandra Lynn Grist', 'grist'], ['Dmitry & Natalia', 'alekseev'], ['Vladimir & Lyudmila', 'simonovich'], ['Sergey & Olga', 'prokopenkov']]
     },
     {
         primary: 'Events',
