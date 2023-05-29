@@ -27,7 +27,7 @@ const tripDB = [
 
 export default function RegisterTrip({ color, primaryText, secondaryText }) {
     return (
-        <div className={styles.together}>
+        <div id='formSection' className={styles.together}>
             <div className={styles.rectangleRounded}></div>
             <div style={{
                 backgroundColor: color

@@ -24,7 +24,8 @@ export default function Trip() {
         subText='Join us on a Mission Trip to Belarus and Israel! Find your place in a music, construction, summer camp, or evangelization team.'
       />
       <HeaderNComponent
-        primaryHeaderText='Trips'
+        primaryHeaderText='Mission Trips'
+        SecondaryComponent={<P color={theme.colors.CHARCOAL} text='Please join us on a Mission Trip to Belarus and Israel! Find your place in a music, construction, summer camp, or evangelization team.' />}
         secondaryAllign='center'
       />
       <div className={styles.viewCalendar}>

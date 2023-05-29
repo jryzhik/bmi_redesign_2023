@@ -23,7 +23,7 @@ export default function RegisterButtonHero({ color, primaryText, secondaryText }
                     <P color={theme.colors.WHITE} text={secondaryText} />
                 </div>
                 <div className={styles.boxConstraint}>
-                    <Link href='/trip'>
+                    <Link href='/trip#formSection'>
                         <Grid container>
                             <Grid xs={12} md={12} display="flex" justifyContent="center" alignItems="center">
                                 <DollarButton text='register' passedStyle={passedStyle.dollarButton}/>
