@@ -93,3 +93,13 @@
     z-index: 0;
     position: relative;
 }
+.thinBarContainer {
+    display: flex;
+    gap: .3rem;
+    width: 100vw;
+    border: 2px solid;
+    height: 3.125em;
+    border-radius: 7px;
+    font-size: 1em;
+    justify-content: space-between;
+}

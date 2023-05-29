@@ -15,7 +15,7 @@ const Roboto = Roboto_Slab(
 export default function FIELDTEXT(props) {
     return (
         <>
-            <div id='fieldtxt' style={{ color: props.color }} className={Roboto.className}>{props.text}</div>
+            <div id='fieldtxt' style={{ color: props.color, opacity: props.opacity }} className={Roboto.className}>{props.text}</div>
             
         </>
     )

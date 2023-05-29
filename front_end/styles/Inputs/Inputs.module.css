@@ -1,0 +1,17 @@
+.thinBarContainer {
+    display: flex;
+    gap: .3rem;
+    width: 100vw;
+    border: 2px solid;
+    height: 3.125em;
+    border-radius: 7px;
+    font-size: 1em;
+}
+.thinTextArea {
+    display: flex;
+    gap: .3rem;
+    width: 100vw;
+    border: 2px solid;
+    height: 10.625em;
+    border-radius: 7px;
+}

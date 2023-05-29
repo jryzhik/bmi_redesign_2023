@@ -56,10 +56,27 @@
     transition: all .2s ease-in;
     transition: all .5s ease-out;
 }
+.dollarButtonMaroon {
+    display: flex;
+    width: 100vw;
+    height: 46px;
+    border-radius: 25em;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: #459673;
+    transition: all .2s ease-in;
+    transition: all .5s ease-out;
+    color: #ffffff;
+}
 .dollarButton:hover {
     /* background: linear-gradient(90deg,#ffffff, #a23404); */
     background-color: #e2e2e2;
-
+}
+.dollarButtonMaroon:hover {
+    /* background: linear-gradient(90deg,#ffffff, #a23404); */
+    background-color: #e2e2e2;
+    color: #000000;
 }
 .buttonSection {
     display: flex;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import ImageNtext from '../components/hero/imageNtext'
-import SearchBar from '../components/texts/searchBar'
+import SearchBar from '../components/inputs/searchBar'
 import styles from '../styles/Events/Events.module.css';
 import DropdownDate from '../components/texts/dropdownDate';
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2

@@ -7,6 +7,7 @@ import theme from '../styles/theme'
 import styles from '../styles/Events/Events.module.css';
 import CalendarIcon from '../components/events/calendarIcon';
 import H2 from '../components/fonts/H2';
+import RegisterButtonHero from '../components/events/registerButtonHero';
 
 export default function Event() {
     const router = useRouter();
@@ -33,7 +34,7 @@ export default function Event() {
                     secondaryAllign='left'
                 />
                 <div className={styles.markCalendar}>
-                    <P text='Mark you calendar:'/>
+                    <P text='Mark you calendar:' />
                     <div className={styles.startNEndBox}>
                         {startDate == null ? (
                             <></>
@@ -50,7 +51,13 @@ export default function Event() {
                         )}
                     </div>
                 </div>
+                <RegisterButtonHero
+                    color={theme.colors.NAVY}
+                    primaryText='Register'
+                    secondaryText='Registration is open for this trip.'
+                />
             </div>
+            
         </>
     )
 }

@@ -3,8 +3,9 @@ import styles from '../../styles/Donate/ColorDonate.module.css';
 import P from '../fonts/P';
 import theme from '../../styles/theme';
 import H1 from '../fonts/H1';
-import DollarButton from '../buttons/dollarButton';
+import DollarButton from '../buttons/roundedButton';
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
+
 
 export default function ColorheroDonate({color, primaryText, secondaryText}) {
     return (
@@ -20,19 +21,19 @@ export default function ColorheroDonate({color, primaryText, secondaryText}) {
                 <div className={styles.boxConstraint}>
                     <Grid container spacing={1.5} minHeight={160}>
                         <Grid xs={6} md={2.4} display="flex" justifyContent="center" alignItems="center">
-                            <DollarButton text='$25' />
+                            <DollarButton text='$25' passedStyle={styles.dollarButton}/>
                         </Grid>
                         <Grid xs={6} md={2.4} display="flex" justifyContent="center" alignItems="center">
-                            <DollarButton text='$50' />
+                            <DollarButton text='$50' passedStyle={styles.dollarButton}/>
                         </Grid>
                         <Grid xs={6} md={2.4} display="flex" justifyContent="center" alignItems="center">
-                            <DollarButton text='$100' />
+                            <DollarButton text='$100' passedStyle={styles.dollarButton}/>
                         </Grid>
                         <Grid xs={6} md={2.4} display="flex" justifyContent="center" alignItems="center">
-                            <DollarButton text='$250' />
+                            <DollarButton text='$250' passedStyle={styles.dollarButton}/>
                         </Grid>
                         <Grid xs={12} md={2.4} display="flex" justifyContent="center" alignItems="center">
-                            <DollarButton text='custom' />
+                            <DollarButton text='custom' passedStyle={styles.dollarButton}/>
                         </Grid>
                     </Grid>
                 </div>

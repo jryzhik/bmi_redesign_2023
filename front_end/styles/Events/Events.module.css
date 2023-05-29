@@ -3,6 +3,13 @@
     justify-content: center;
 
 }
+.headerNdescription {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    padding-left: 26vw;
+    padding-right: 26vw;
+}
 .iconNTextContainer {
     display: flex;
     justify-content: center;
@@ -108,7 +115,10 @@
         margin-left: 0em;
         margin-right: 0em;
     }
-
+    .headerNdescription {
+        padding-left: .5vw;
+        padding-right: .5vw;
+    }
     .iconNTextContainer {
         margin-left: 1em;
         margin-right: 1em;
@@ -252,4 +262,66 @@
     flex-direction: column;
     align-items: center;
     gap: 1em;
+}
+.together {
+    position: relative;
+}
+.rectangleRounded {
+    min-height: 20px;
+    width: 100vw;
+    margin: 0;
+    position: relative;
+    z-index: 10;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    align-items: center;
+    background-color: #f6f6f6;
+}
+.containerRegister {
+    min-height: 23em;
+    width: 100vw;
+    margin-top: -4px;
+    padding: 0;
+    position: relative;
+    border-top-left-radius: -70px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    align-items: center;
+    margin-bottom: 7em;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.688em;
+    text-align: center;
+}
+.containerRegisterForm {
+    min-height: 48.188em;
+    width: 100vw;
+    margin-top: -4px;
+    padding: 0;
+    position: relative;
+    border-top-left-radius: -70px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    align-items: center;
+    margin-bottom: 7em;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.688em;
+    text-align: center;
+}
+.registerButton {
+    width: 500px;
+}
+.boxConstraint {
+    width: 60%;
+}
+.viewCalendar {
+    width: 100vw;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-align: center;
 }
