@@ -1,7 +1,21 @@
 .roundedRectStandard {
     width: clamp(23.3755em, 70vw, 56.25em);
 }
-
+.roundedRectSmall {
+    width: clamp(23.3755em, 70vw, 26.875);
+}
+.containerWidth {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+.containerNewsGallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6em;
+}
 .focusImageGallery {
     width: clamp(21.25em, 70vw, 43.75em);
 }
@@ -78,8 +92,21 @@
     gap: 91vw;
     z-index: 50;
 }
+.arrowsNews {
+    display: flex;
+    position: absolute;
+    left: 1vw;
+    justify-content: center;
+    gap: 91vw;
+    z-index: 50;
+    margin-bottom: 3vw;
+}
 
 .arrows :hover {
+    cursor: pointer;
+}
+
+.arrowsNews :hover {
     cursor: pointer;
 }
 
@@ -98,7 +125,11 @@
     flex-direction: column;
     align-items: center;
 }
-
+.vBoxGallery {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
 .founders {
     display: flex;
     justify-content: center;
@@ -149,8 +180,17 @@
     .arrows {
         display: none;
     }
+    .arrowsNews {
+        display: none;
+    }
 
     .galleryBox {
         gap: 10px;
     }
+}
+.imageNComp {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    text-align: center;
 }

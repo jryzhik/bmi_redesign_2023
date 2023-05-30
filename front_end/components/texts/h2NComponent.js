@@ -3,13 +3,16 @@ import styles from '../../styles/Texts/Texts.module.css';
 import H2 from '../fonts/H2';
 
 export default function H2NComponent({ primaryHeaderText, SecondaryComponent, secondaryAllign, color}) {
+  const subComponentStyle = {
+    textAlign: secondaryAllign,
+  };
 
   return (
     <div className={styles.containerH2NComp}>
       <div className={styles.primaryHeader2}>
         <H2 text={primaryHeaderText} color={color} />
       </div>
-      <div className='event'>
+      <div className={styles.subComponent} style={subComponentStyle}>
         {SecondaryComponent}
       </div>
     </div>

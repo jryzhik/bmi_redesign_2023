@@ -3,27 +3,6 @@ import RoundedPhoto from './roundedPhoto'
 import styles from '../../styles/Images/Images.module.css';
 import Image from 'next/image';
 
-const gruzGallery = [
-    {
-        imageUrl: '/img/gallery/gruzd/sitting_fire.jpg'
-    },
-    {
-        imageUrl: '/img/gallery/gruzd/bike.jpg'
-    },
-    {
-        imageUrl: '/img/gallery/gruzd/phone.jpg'
-    },
-    {
-        imageUrl: '/img/gallery/gruzd/blow.jpg'
-    },
-    {
-        imageUrl: '/img/gallery/gruzd/teach.jpg'
-    },
-]
-// for (let i = (0 % gruzGallery.length); i < 3; i++) {
-//     console.log(gruzGallery[i].imageUrl)
-// }
-
 export default function SlideGallery({galleryArray}) {
     const [currentIndex, setCurrentIndex] = useState(0)
     const [booleanStyle, setBooleanStyle] = useState(styles.notFocusedImageGallery)
