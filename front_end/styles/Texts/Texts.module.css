@@ -1,7 +1,16 @@
 .imageCircle {
     width: 4.5em;
-    height:4.5em;
+    height: 4.5em;
 }
+
+.masterContainer {
+    width: 50vw;
+}
+
+.masterContainer:hover {
+    cursor: pointer;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -18,6 +27,17 @@
         align-items: center;
         padding-left: 9vw;
         padding-right: 9vw;
+    }
+
+    .masterContainer {
+        width: 80vw;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .masterContainer {
+        width: 62vw;
     }
 }
 
@@ -52,19 +72,23 @@
 
 
 }
+
 .barNText {
     display: flex;
     align-items: center;
     gap: .8rem;
 }
+
 .colorBar {
     width: .5em;
     height: 2.5em;
 }
+
 .offsetLeft {
     text-align: left;
     position: relative;
 }
+
 .searchBarContainer {
     display: flex;
     gap: .3rem;
@@ -74,12 +98,15 @@
     border-radius: 7px;
     font-size: 1em;
 }
+
 .deleteIcon:hover {
     cursor: pointer;
 }
+
 .monthName {
     padding-left: .4rem;
 }
+
 .containerH2NComp {
     display: flex;
     flex-direction: column;
@@ -89,10 +116,12 @@
     padding-left: 5vw;
     padding-right: 5vw;
 }
+
 .zback {
     z-index: 0;
     position: relative;
 }
+
 .thinBarContainer {
     display: flex;
     gap: .3rem;
@@ -103,32 +132,69 @@
     font-size: 1em;
     justify-content: space-between;
 }
+
 .bioText {
     padding-top: 2em;
     display: flex;
     flex-direction: column;
     gap: 1em;
 }
+
 .textDivider {
     display: flex;
     align-items: center;
-    --text-divider-gap: 1rem; 
-  }
-  
-  .textDivider::before,
-  .textDivider::after {
+    --text-divider-gap: 1rem;
+}
+
+.textDivider::before,
+.textDivider::after {
     content: '';
     height: 1px;
     background-color: rgb(0, 0, 0);
     flex-grow: 1;
-  }
-  
-  .textDivider::before {
+}
+
+.textDivider::before {
     margin-right: var(--text-divider-gap);
-  }
-  
-  .textDivider::after {
+}
+
+.textDivider::after {
     margin-left: var(--text-divider-gap);
-  }
-  
- 
+}
+
+.staticContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.itemsExpandingContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+}
+
+.underline {
+    padding-top: 2em;
+    border-bottom: 2px solid #373737;
+}
+
+.expandPtag {
+    padding-top: 2em;
+    transition: all .3s ease-out;
+}
+
+.hiddenText {
+    opacity: 0;
+    transition: all .1s ease-out;
+}
+.oneLine {
+    display: inline;
+}
+.twoColumn {
+    display: flex;
+    justify-content: center;
+
+}

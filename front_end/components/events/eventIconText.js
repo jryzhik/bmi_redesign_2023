@@ -1,6 +1,6 @@
 import React from 'react'
 import AppNCalendar from './appNCalendar'
-import H2NComponent from '../texts/h2NComponent copy'
+import H2NComponent from '../texts/h2NComponent'
 import P from '../fonts/P'
 import { theme } from '@nextui-org/react'
 import styles from '../../styles/Events/Events.module.css';
