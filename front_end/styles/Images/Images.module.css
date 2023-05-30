@@ -194,3 +194,8 @@
     gap: 1.5em;
     text-align: center;
 }
+iframe.youtube {
+    border-radius: 7px;
+    width: clamp(22.375em, 80vw, 26.875);
+    height: clamp(12em, 80vw, 12em);
+}

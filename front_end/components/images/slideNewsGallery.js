@@ -5,6 +5,7 @@ import Image from 'next/image';
 import H2NComponent from '../texts/h2NComponent';
 import P from '../fonts/P';
 import H4 from '../fonts/H4';
+import Link from 'next/link';
 
 export default function SlideNewsGallery({ newsArray }) {
     const [currentIndex, setCurrentIndex] = useState(0)
@@ -79,10 +80,12 @@ export default function SlideNewsGallery({ newsArray }) {
                         onTouchStart={handleTouchStart}
                         onTouchMove={handleTouchMove}
                     >
-                        <RoundedPhoto
-                            imageUrl={newsArray[customMod(currentIndex, newsArray.length)].imageUrl}
-                            passedStyles={booleanStyle}
-                        />
+                        <a href={newsArray[customMod(currentIndex, newsArray.length)].url}>
+                            <RoundedPhoto
+                                imageUrl={newsArray[customMod(currentIndex, newsArray.length)].imageUrl}
+                                passedStyles={booleanStyle}
+                            />
+                        </a>
                     </div>
                     <H4
                         text={newsArray[customMod(currentIndex, newsArray.length)].title}
@@ -96,10 +99,12 @@ export default function SlideNewsGallery({ newsArray }) {
                         onTouchStart={handleTouchStart}
                         onTouchMove={handleTouchMove}
                     >
-                        <RoundedPhoto
-                            imageUrl={newsArray[customMod(currentIndex + 1, newsArray.length)].imageUrl}
-                            passedStyles={styles.focusImageGallery}
-                        />
+                        <a href={newsArray[customMod(currentIndex + 1, newsArray.length)].url}>
+                            <RoundedPhoto
+                                imageUrl={newsArray[customMod(currentIndex + 1, newsArray.length)].imageUrl}
+                                passedStyles={styles.focusImageGallery}
+                            />
+                        </a>
                     </div>
                     <H2NComponent
                         primaryHeaderText={newsArray[customMod(currentIndex + 1, newsArray.length)].title}
@@ -118,10 +123,12 @@ export default function SlideNewsGallery({ newsArray }) {
                         onTouchStart={handleTouchStart}
                         onTouchMove={handleTouchMove}
                     >
-                        <RoundedPhoto
-                            imageUrl={newsArray[customMod(currentIndex + 2, newsArray.length)].imageUrl}
-                            passedStyles={booleanStyle}
-                        />
+                        <a href={newsArray[customMod(currentIndex + 2, newsArray.length)].url}>
+                            <RoundedPhoto
+                                imageUrl={newsArray[customMod(currentIndex + 2, newsArray.length)].imageUrl}
+                                passedStyles={booleanStyle}
+                            />
+                        </a>
                     </div>
                     <H4
                         text={newsArray[customMod(currentIndex + 2, newsArray.length)].title}

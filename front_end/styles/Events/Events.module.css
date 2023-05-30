@@ -311,6 +311,23 @@
     gap: 1.688em;
     text-align: center;
 }
+.containerSubscribe {
+    min-height: 33.4375em;
+    width: 100vw;
+    margin-top: -4px;
+    padding: 0;
+    position: relative;
+    border-top-left-radius: -70px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    align-items: center;
+    margin-bottom: 7em;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.688em;
+    text-align: center;
+}
 .registerButton {
     width: 500px;
 }

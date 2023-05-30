@@ -5,33 +5,39 @@ import P from '../components/fonts/P'
 import theme from '../styles/theme'
 import SlideNewsGallery from '../components/images/slideNewsGallery'
 import styles from '../styles/Images/Images.module.css';
+import SubscribeHero from '../components/events/subscribeHero'
 
 
 const news = [
     {
         imageUrl: '/img/gallery/gruzd/sitting_fire.jpg',
         title: 'July 2023',
-        description: 'Reuniting for the 4th of July to strengthen our team internally.'
+        description: 'Reuniting for the 4th of July to strengthen our team internally.',
+        url: 'https://google.com'
     },
     {
         imageUrl: '/img/gallery/gruzd/bike.jpg',
         title: 'August 2023',
-        description: 'of July to strengthen our team internally.'
+        description: 'of July to strengthen our team internally.',
+        url: 'https://yahoo.com'
     },
     {
         imageUrl: '/img/gallery/gruzd/phone.jpg',
         title: 'September 2023',
-        description: 'aakrsfanf testin ght ess asrjasr'
+        description: 'aakrsfanf testin ght ess asrjasr',
+        url: 'https://bing.com'
     },
     {
         imageUrl: '/img/gallery/gruzd/blow.jpg',
         title: 'October 2023',
-        description: 'Row row row your boat'
+        description: 'Row row row your boat',
+        url: 'https://duckduckgo.com'
     },
     {
         imageUrl: '/img/gallery/gruzd/teach.jpg',
         title: 'December 2023',
-        description: 'Teaching is inportnat in 21 centrure'
+        description: 'Teaching is inportnat in 21 centrure',
+        url: 'https://firefox.com'
     },
 ]
 export default function News() {
@@ -53,6 +59,11 @@ export default function News() {
                 secondaryAllign='center'
             />
             <SlideNewsGallery newsArray={news} />
+            <SubscribeHero
+                color='#016CCA'
+                primaryText='Subscribe to our weekly newsletter'
+                secondaryText='Keep up to date with all that we’re doing!'
+            />
 
         </div>
     </>

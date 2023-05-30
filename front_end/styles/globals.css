@@ -178,6 +178,8 @@ button.nextui-c-iWjDFM-gglxka-cv {
   display: flex;
   flex-direction: column;
   gap: 3.5em;
+  /* align-items: center;  */
+  /* Added after the fact VERIFY  */
 }
 
 .horizontalBox {
