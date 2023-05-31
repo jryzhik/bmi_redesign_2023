@@ -11,7 +11,19 @@ import ImageNPercentage from '../components/texts/imageNPercentage';
 
 export default function report() {
     const [value, setValue] = useState(0);
-
+    const [current, setCurrent] = useState(null)
+    function handleHover(index) {
+        setCurrent(index)
+    }
+    function elementOpactity(index) {
+        if (current == null) {
+            return 1
+        } else if (index != current) {
+            return .5
+        } else {
+            return 1
+        }
+    }
     useEffect(() => {
         const delay = 1400; // Delay in milliseconds before starting the timer
         const interval = 15; // Interval in milliseconds between value updates
@@ -54,55 +66,134 @@ export default function report() {
                 />
             </div>
             <Grid container className={styles.grid} justify='center' alignItems='start' spacing={.7}>
-                <Grid xs={6.1} md={8} >
-                    <Progress animated value={value} max={20} size="lg" style={{ '--nextui-colors-primary': theme.colors.ORANGE, borderRadius: 0 }} />
+                <Grid xs={6.1} md={8}>
+                    <div className={styles.barNTextContainer}>
+                        <Progress onMouseEnter={() => handleHover(0)} onMouseLeave={() => handleHover(null)} animated value={value} max={20} size="lg" style={{ '--nextui-colors-primary': theme.colors.ORANGE, borderRadius: 0 }} />
+                        {current == 0 ? (
+                            <P text='Ministry Projects' />
+                        ) : (
+                            <></>
+                        )}
+                    </div>
                 </Grid>
                 <Grid xs={2} md={1.82} >
-                    <Progress animated value={value} max={20} size="lg" style={{ '--nextui-colors-primary': theme.colors.DARK_BLUE, borderRadius: 0 }} />
+                    <div className={styles.barNTextContainer}>
+                        <Progress onMouseEnter={() => handleHover(1)} onMouseLeave={() => handleHover(null)} animated value={value} max={20} size="lg" style={{ '--nextui-colors-primary': theme.colors.DARK_BLUE, borderRadius: 0 }} />
+                        {current == 1 ? (
+                            <P text='Compensation to Officers' />
+                        ) : (
+                            <></>
+                        )}
+                    </div>
+
                 </Grid>
                 <Grid xs={.8} md={.7} >
-                    <Progress animated value={value} max={20} size="lg" style={{ '--nextui-colors-primary': theme.colors.MAROON, borderRadius: 0 }} />
+                    <div className={styles.barNTextContainer}>
+                        <Progress onMouseEnter={() => handleHover(2)} onMouseLeave={() => handleHover(null)} animated value={value} max={20} size="lg" style={{ '--nextui-colors-primary': theme.colors.MAROON, borderRadius: 0 }} />
+                        {current == 2 ? (
+                            <P text='Mission Group Trips' />
+                        ) : (
+                            <></>
+                        )}
+                    </div>
+
                 </Grid>
                 <Grid xs={.55} md={.35} >
-                    <Progress animated value={value} max={20} size="lg" style={{ '--nextui-colors-primary': theme.colors.MAGENTA, borderRadius: 0 }} />
+                    <div className={styles.barNTextContainer}>
+                        <Progress onMouseEnter={() => handleHover(3)} onMouseLeave={() => handleHover(null)} animated value={value} max={20} size="lg" style={{ '--nextui-colors-primary': theme.colors.MAGENTA, borderRadius: 0 }} />
+                        {current == 3 ? (
+                            <P text='Website & Technology' />
+                        ) : (
+                            <></>
+                        )}
+                    </div>
+
                 </Grid>
                 <Grid xs={.55} md={.29} >
-                    <Progress animated value={value} max={20} size="lg" style={{ '--nextui-colors-primary': theme.colors.BLUE, borderRadius: 0 }} />
+                    <div className={styles.barNTextContainer}>
+                        <Progress onMouseEnter={() => handleHover(4)} onMouseLeave={() => handleHover(null)} animated value={value} max={20} size="lg" style={{ '--nextui-colors-primary': theme.colors.BLUE, borderRadius: 0 }} />
+                        {current == 4 ? (
+                            <P text='Office Expenses' />
+                        ) : (
+                            <></>
+                        )}
+                    </div>
+
                 </Grid>
                 <Grid xs={.5} md={.25} >
-                    <Progress animated value={value} max={20} size="lg" style={{ '--nextui-colors-primary': theme.colors.SAND, borderRadius: 0 }} />
+                    <div className={styles.barNTextContainer}>
+                        <Progress onMouseEnter={() => handleHover(5)} onMouseLeave={() => handleHover(null)} animated value={value} max={20} size="lg" style={{ '--nextui-colors-primary': theme.colors.SAND, borderRadius: 0 }} />
+                        {current == 5 ? (
+                            <P text='Automobile Expenses' />
+                        ) : (
+                            <></>
+                        )}
+                    </div>
+
                 </Grid>
                 <Grid xs={.45} md={.24} >
-                    <Progress animated value={value} max={20} size="lg" style={{ '--nextui-colors-primary': theme.colors.DARK_GREEN, borderRadius: 0 }} />
+                    <div className={styles.barNTextContainer}>
+                        <Progress onMouseEnter={() => handleHover(6)} onMouseLeave={() => handleHover(null)} animated value={value} max={20} size="lg" style={{ '--nextui-colors-primary': theme.colors.DARK_GREEN, borderRadius: 0 }} />
+                        {current == 6 ? (
+                            <P text='Fundraising Expenses' />
+                        ) : (
+                            <></>
+                        )}
+                    </div>
+
                 </Grid>
                 <Grid xs={.35} md={.20} >
-                    <Progress animated value={value} max={20} size="lg" style={{ '--nextui-colors-primary': theme.colors.DARK_GREY, borderRadius: 0 }} />
+                    <div className={styles.barNTextContainer}>
+                        <Progress onMouseEnter={() => handleHover(7)} onMouseLeave={() => handleHover(null)} animated value={value} max={20} size="lg" style={{ '--nextui-colors-primary': theme.colors.DARK_GREY, borderRadius: 0 }} />
+                        {current == 7 ? (
+                            <P text='Accounting Fees' />
+                        ) : (
+                            <></>
+                        )}
+                    </div>
+
                 </Grid>
             </Grid>
             <Grid container className={styles.gridIconText} justify='center' alignItems='start' spacing={5} >
-                <Grid xs={12} sm={6} md={6}>
-                    <ImageNPercentage passedImage={'/../public/img/report_categories/ministry_projects.jpg'} percentText={73.03} description={'Ministry Projects'} color={theme.colors.ORANGE} />
+                <Grid xs={12} sm={6} md={6} >
+                    <div style={{ opacity: elementOpactity(0), transition: 'all .2s ease-out' }} >
+                        <ImageNPercentage passedImage={'/../public/img/report_categories/ministry_projects.jpg'} percentText={73.03} description={'Ministry Projects'} color={theme.colors.ORANGE} />
+                    </div>
                 </Grid>
                 <Grid xs={12} sm={6} md={6}>
-                    <ImageNPercentage passedImage={'/../public/img/report_categories/compensation.jpg'} percentText={15.20} description={'Compensation to Officers'} color={theme.colors.DARK_BLUE} />
+                    <div style={{ opacity: elementOpactity(1), transition: 'all .2s ease-out' }} >
+                        <ImageNPercentage passedImage={'/../public/img/report_categories/compensation.jpg'} percentText={15.20} description={'Compensation to Officers'} color={theme.colors.DARK_BLUE} />
+                    </div>
                 </Grid>
                 <Grid xs={12} sm={6} md={6}>
-                    <ImageNPercentage passedImage={'/../public/img/report_categories/mission_groups.jpg'} percentText={4.51} description={'Mission Group Trips'} color={theme.colors.MAROON} />
+                    <div style={{ opacity: elementOpactity(2), transition: 'all .2s ease-out' }} >
+                        <ImageNPercentage passedImage={'/../public/img/report_categories/mission_groups.jpg'} percentText={4.51} description={'Mission Group Trips'} color={theme.colors.MAROON} />
+                    </div>
                 </Grid>
                 <Grid xs={12} sm={6} md={6}>
-                    <ImageNPercentage passedImage={'/../public/img/report_categories/maintainance.jpg'} percentText={1.84} description={'Website Maintenance'} color={theme.colors.MAGENTA} />
+                    <div style={{ opacity: elementOpactity(3), transition: 'all .2s ease-out' }} >
+                        <ImageNPercentage passedImage={'/../public/img/report_categories/maintainance.jpg'} percentText={1.84} description={'Website Maintenance'} color={theme.colors.MAGENTA} />
+                    </div>
                 </Grid>
                 <Grid xs={12} sm={6} md={6}>
-                    <ImageNPercentage passedImage={'/../public/img/report_categories/office.jpg'} percentText={1.72} description={'Office Expenses'} color={theme.colors.BLUE} />
+                    <div style={{ opacity: elementOpactity(4), transition: 'all .2s ease-out' }} >
+                        <ImageNPercentage passedImage={'/../public/img/report_categories/office.jpg'} percentText={1.72} description={'Office Expenses'} color={theme.colors.BLUE} />
+                    </div>
                 </Grid>
                 <Grid xs={12} sm={6} md={6}>
-                    <ImageNPercentage passedImage={'/../public/img/report_categories/automobile.jpg'} percentText={1.53} description={'Automobile Expenses'} color={theme.colors.SAND} />
+                    <div style={{ opacity: elementOpactity(5), transition: 'all .2s ease-out' }} >
+                        <ImageNPercentage passedImage={'/../public/img/report_categories/automobile.jpg'} percentText={1.53} description={'Automobile Expenses'} color={theme.colors.SAND} />
+                    </div>
                 </Grid>
                 <Grid xs={12} sm={6} md={6}>
-                    <ImageNPercentage passedImage={'/../public/img/report_categories/fundraising.jpg'} percentText={'1.40'} description={'Fundraising Expenses'} color={theme.colors.DARK_GREEN} />
+                    <div style={{ opacity: elementOpactity(6), transition: 'all .2s ease-out' }} >
+                        <ImageNPercentage passedImage={'/../public/img/report_categories/fundraising.jpg'} percentText={'1.40'} description={'Fundraising Expenses'} color={theme.colors.DARK_GREEN} />
+                    </div>
                 </Grid>
                 <Grid xs={12} sm={6} md={6}>
-                    <ImageNPercentage passedImage={'/../public/img/report_categories/accounting.jpg'} percentText={0.77} description={'Accounting Fees'} color={theme.colors.DARK_GREY} />
+                    <div style={{ opacity: elementOpactity(7), transition: 'all .2s ease-out' }} >
+                        <ImageNPercentage passedImage={'/../public/img/report_categories/accounting.jpg'} percentText={0.77} description={'Accounting Fees'} color={theme.colors.DARK_GREY} />
+                    </div>
                 </Grid>
             </Grid>
         </>
