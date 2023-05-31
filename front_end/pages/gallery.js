@@ -8,6 +8,26 @@ import styles from '../styles/Images/Images.module.css';
 import RoundedPhoto from '../components/images/roundedPhoto'
 import H4NComponent from '../components/texts/h4NComponent'
 
+const galleryArray = [
+  {
+    title:'Republic of Georgia', description: 'Evangelism', imageUrl:'/img/team/all_board.jpg'
+  },
+  {
+    title:'Republic of Georgia', description: 'Evangelism', imageUrl:'/img/team/all_board.jpg'
+  },
+  {
+    title:'Republic of Georgia', description: 'Evangelism', imageUrl:'/img/team/all_board.jpg'
+  },
+  {
+    title:'Republic of Georgia', description: 'Evangelism', imageUrl:'/img/team/all_board.jpg'
+  },
+  {
+    title:'Republic of Georgia', description: 'Evangelism', imageUrl:'/img/team/all_board.jpg'
+  },
+  {
+    title:'Republic of Georgia', description: 'Evangelism', imageUrl:'/img/team/all_board.jpg'
+  },
+]
 
 export default function Gallery() {
   return (
@@ -30,96 +50,23 @@ export default function Gallery() {
         />
         <div className={styles.containerWidth}>
           <Grid container spacing={8} >
-            <Grid xs={12} sm={6} md={4} display="flex" justifyContent="center" alignItems="center">
+            {galleryArray.map((photo) => 
+              <Grid xs={12} sm={6} md={4} display="flex" justifyContent="center" alignItems="center">
               <div className={styles.vBoxGallery}>
                 <RoundedPhoto
-                  imageUrl={'/img/team/all_board.jpg'}
+                  imageUrl={photo.imageUrl}
                   passedStyles={styles.roundedRectSmall}
                 />
                 <H4NComponent
-                  primaryHeaderText='Republic of Georgia'
+                  primaryHeaderText={photo.title}
                   SecondaryComponent={
-                    <P color={theme.colors.CHARCOAL} text='April 2023' />
+                    <P color={theme.colors.CHARCOAL} text={photo.description} />
                   }
                   secondaryAllign='center'
                 />
               </div>
             </Grid>
-            <Grid xs={12} sm={6} md={4} display="flex" justifyContent="center" alignItems="center">
-            <div className={styles.vBoxGallery}>
-                <RoundedPhoto
-                  imageUrl={'/img/team/all_board.jpg'}
-                  passedStyles={styles.roundedRectSmall}
-                />
-                <H4NComponent
-                  primaryHeaderText='Republic of Georgia'
-                  SecondaryComponent={
-                    <P color={theme.colors.CHARCOAL} text='April 2023' />
-                  }
-                  secondaryAllign='center'
-                />
-              </div>
-            </Grid>
-            <Grid xs={12} sm={6} md={4} display="flex" justifyContent="center" alignItems="center">
-            <div className={styles.vBoxGallery}>
-                <RoundedPhoto
-                  imageUrl={'/img/team/all_board.jpg'}
-                  passedStyles={styles.roundedRectSmall}
-                />
-                <H4NComponent
-                  primaryHeaderText='Republic of Georgia'
-                  SecondaryComponent={
-                    <P color={theme.colors.CHARCOAL} text='April 2023' />
-                  }
-                  secondaryAllign='center'
-                />
-              </div>
-            </Grid>
-            <Grid xs={12} sm={6} md={4} display="flex" justifyContent="center" alignItems="center">
-            <div className={styles.vBoxGallery}>
-                <RoundedPhoto
-                  imageUrl={'/img/team/all_board.jpg'}
-                  passedStyles={styles.roundedRectSmall}
-                />
-                <H4NComponent
-                  primaryHeaderText='Republic of Georgia'
-                  SecondaryComponent={
-                    <P color={theme.colors.CHARCOAL} text='April 2023' />
-                  }
-                  secondaryAllign='center'
-                />
-              </div>
-            </Grid>
-            <Grid xs={12} sm={6} md={4} display="flex" justifyContent="center" alignItems="center">
-            <div className={styles.vBoxGallery}>
-                <RoundedPhoto
-                  imageUrl={'/img/team/all_board.jpg'}
-                  passedStyles={styles.roundedRectSmall}
-                />
-                <H4NComponent
-                  primaryHeaderText='Republic of Georgia'
-                  SecondaryComponent={
-                    <P color={theme.colors.CHARCOAL} text='April 2023' />
-                  }
-                  secondaryAllign='center'
-                />
-              </div>
-            </Grid>
-            <Grid xs={12} sm={6} md={4} display="flex" justifyContent="center" alignItems="center">
-            <div className={styles.vBoxGallery}>
-                <RoundedPhoto
-                  imageUrl={'/img/team/all_board.jpg'}
-                  passedStyles={styles.roundedRectSmall}
-                />
-                <H4NComponent
-                  primaryHeaderText='Republic of Georgia'
-                  SecondaryComponent={
-                    <P color={theme.colors.CHARCOAL} text='April 2023' />
-                  }
-                  secondaryAllign='center'
-                />
-              </div>
-            </Grid>
+            )}
           </Grid>
         </div>
       </div>
