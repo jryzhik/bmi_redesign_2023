@@ -56,6 +56,19 @@
     transition: all .2s ease-in;
     transition: all .5s ease-out;
 }
+.dollarButtonBlack {
+    display: flex;
+    width: 100vw;
+    height: 46px;
+    border-radius: 25em;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: #000000;
+    color: #ffffff;
+    transition: all .2s ease-in;
+    transition: all .5s ease-out;
+}
 .dollarButtonMaroon {
     display: flex;
     width: 100vw;
@@ -72,6 +85,10 @@
 .dollarButton:hover {
     /* background: linear-gradient(90deg,#ffffff, #a23404); */
     background-color: #e2e2e2;
+}
+.dollarButtonBlack:hover {
+    /* background: linear-gradient(90deg,#ffffff, #a23404); */
+    background-color: #373737;
 }
 .dollarButtonMaroon:hover {
     /* background: linear-gradient(90deg,#ffffff, #a23404); */

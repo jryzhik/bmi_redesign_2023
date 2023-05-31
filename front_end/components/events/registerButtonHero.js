@@ -3,7 +3,7 @@ import styles from '../../styles/Events/Events.module.css';
 import P from '../fonts/P';
 import theme from '../../styles/theme';
 import H1 from '../fonts/H1';
-import DollarButton from '../buttons/roundedButton';
+import RoundedButton from '../buttons/roundedButton';
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import Link from 'next/link';
 import passedStyle from '../../styles/Donate/ColorDonate.module.css';
@@ -26,7 +26,7 @@ export default function RegisterButtonHero({ color, primaryText, secondaryText }
                     <Link href='/trip#formSection'>
                         <Grid container>
                             <Grid xs={12} md={12} display="flex" justifyContent="center" alignItems="center">
-                                <DollarButton text='register' passedStyle={passedStyle.dollarButton}/>
+                                <RoundedButton text='register' passedStyle={passedStyle.dollarButton}/>
                             </Grid>
                         </Grid>
                     </Link>

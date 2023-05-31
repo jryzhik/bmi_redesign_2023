@@ -5,11 +5,10 @@ import Image from 'next/image';
 import H2NComponent from '../texts/h2NComponent';
 import P from '../fonts/P';
 import H4 from '../fonts/H4';
-import Link from 'next/link';
 
 export default function SlideNewsGallery({ newsArray }) {
     const [currentIndex, setCurrentIndex] = useState(0)
-    const [booleanStyle, setBooleanStyle] = useState(styles.notFocusedImageGallery)
+    const [booleanStyle, setBooleanStyle] = useState(styles.notFocusedImageWText)
     const [left, setLeft] = React.useState(0)
     const [right, setRight] = React.useState(0)
     const [center, setCenter] = React.useState(0)
@@ -87,9 +86,12 @@ export default function SlideNewsGallery({ newsArray }) {
                             />
                         </a>
                     </div>
-                    <H4
-                        text={newsArray[customMod(currentIndex, newsArray.length)].title}
-                    />
+                    <div style={{ opacity: '.7', marginBottom: '7em' }}>
+                        <H4
+                            text={newsArray[customMod(currentIndex, newsArray.length)].title}
+                        />
+
+                    </div>
                 </div>
                 <div className={styles.imageNComp}>
                     <div
@@ -130,9 +132,11 @@ export default function SlideNewsGallery({ newsArray }) {
                             />
                         </a>
                     </div>
-                    <H4
-                        text={newsArray[customMod(currentIndex + 2, newsArray.length)].title}
-                    />
+                    <div style={{ opacity: '.7', marginBottom: '7em' }}>
+                        <H4
+                            text={newsArray[customMod(currentIndex + 2, newsArray.length)].title}
+                        />
+                    </div>
                 </div>
             </div>
         </>

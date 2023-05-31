@@ -3,7 +3,6 @@ import styles from '../../styles/Events/Events.module.css';
 import P from '../fonts/P';
 import theme from '../../styles/theme';
 import H1 from '../fonts/H1';
-import DollarButton from '../buttons/roundedButton';
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import Link from 'next/link';
 import passedStyle from '../../styles/Donate/ColorDonate.module.css';

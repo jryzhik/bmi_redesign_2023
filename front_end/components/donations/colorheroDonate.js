@@ -3,8 +3,9 @@ import styles from '../../styles/Donate/ColorDonate.module.css';
 import P from '../fonts/P';
 import theme from '../../styles/theme';
 import H1 from '../fonts/H1';
-import DollarButton from '../buttons/roundedButton';
+import RoundedButton from '../buttons/roundedButton';
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
+import FiveButtonsDonate from './FiveButtonsDonate';
 
 
 export default function ColorheroDonate({color, primaryText, secondaryText}) {
@@ -18,25 +19,9 @@ export default function ColorheroDonate({color, primaryText, secondaryText}) {
                     <H1 text={primaryText} color={theme.colors.WHITE} />
                     <P color={theme.colors.WHITE} text={secondaryText} />
                 </div>
-                <div className={styles.boxConstraint}>
-                    <Grid container spacing={1.5} minHeight={160}>
-                        <Grid xs={6} md={2.4} display="flex" justifyContent="center" alignItems="center">
-                            <DollarButton text='$25' passedStyle={styles.dollarButton}/>
-                        </Grid>
-                        <Grid xs={6} md={2.4} display="flex" justifyContent="center" alignItems="center">
-                            <DollarButton text='$50' passedStyle={styles.dollarButton}/>
-                        </Grid>
-                        <Grid xs={6} md={2.4} display="flex" justifyContent="center" alignItems="center">
-                            <DollarButton text='$100' passedStyle={styles.dollarButton}/>
-                        </Grid>
-                        <Grid xs={6} md={2.4} display="flex" justifyContent="center" alignItems="center">
-                            <DollarButton text='$250' passedStyle={styles.dollarButton}/>
-                        </Grid>
-                        <Grid xs={12} md={2.4} display="flex" justifyContent="center" alignItems="center">
-                            <DollarButton text='custom' passedStyle={styles.dollarButton}/>
-                        </Grid>
-                    </Grid>
-                </div>
+                <FiveButtonsDonate
+                    buttonStyle={styles.dollarButton}
+                />
             </div>
         </div>
     )

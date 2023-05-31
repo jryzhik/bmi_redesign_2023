@@ -25,6 +25,11 @@
     height: clamp(7.5em, 30vw, 10.125em);
     opacity: .7;
 }
+.notFocusedImageWText {
+    width: clamp(15em, 70vw, 26.875em);
+    height: clamp(9.4375em, 30vw, 16.875em);
+    opacity: .7;
+}
 .image[left='1'] {
     animation: left .3s 1;
 }
@@ -99,7 +104,7 @@
     justify-content: center;
     gap: 91vw;
     z-index: 50;
-    margin-bottom: 3vw;
+    margin-bottom: 10vw;
 }
 
 .arrows :hover {

@@ -6,7 +6,7 @@ import theme from '../styles/theme'
 import styles from '../styles/Events/Events.module.css';
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import Link from 'next/link';
-import DollarButton from '../components/buttons/roundedButton'
+import RoundedButton from '../components/buttons/roundedButton'
 import passedStyle from '../styles/Donate/ColorDonate.module.css';
 import RegisterTrip from '../components/events/registerTrip'
 
@@ -33,7 +33,7 @@ export default function Trip() {
           <Link href='/calendar'>
             <Grid container spacing={1.5} minHeight={160}>
               <Grid xs={12} md={12} display="flex" justifyContent="center" alignItems="center">
-                <DollarButton text='view calendar' passedStyle={passedStyle.dollarButtonMaroon} />
+                <RoundedButton text='view calendar' passedStyle={passedStyle.dollarButtonMaroon} />
               </Grid>
             </Grid>
           </Link>
