@@ -12,9 +12,11 @@ export default function ImageNSearch({ color1, color2, imageUrl, textParent, hea
     return (
         <>
             <div className={styles.container}>
-                <div className={styles.centerModuleSearch}>
-                    <TITLE text={textParent} color={theme.colors.WHITE} />
-                    <H1 text={headerText} color={theme.colors.WHITE} />
+                <div className={styles.centerModule}>
+                    <PageParentText textParent={textParent} textChild={textChild} color={theme.colors.WHITE} />
+                    <div className={styles.bottomSpacer}>
+                        <H1 text={headerText} color={theme.colors.WHITE} />
+                    </div>
                     <P text={subText} color={theme.colors.WHITE} />
                 </div>
                 <div className={styles.gradientOverlaySearch} style={{ backgroundImage: gradient }} />
