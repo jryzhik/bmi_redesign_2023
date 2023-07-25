@@ -8,7 +8,7 @@ import { Spacer } from '@nextui-org/react';
 import styles from '../../styles/Footers/Foot.module.css';
 import Social from './social';
 
-
+var currentYear = new Date().getFullYear()
 
 export default function Footer() {
   return (
@@ -98,7 +98,7 @@ export default function Footer() {
           </Grid>
         </Grid>
         <Social/>
-        <NAVTEXT text='© Copyright 2000 - 2024 | All Rights Reserved'/>
+        <NAVTEXT text={'© Copyright 2000 - ' + currentYear +' | All Rights Reserved'}/>
         <Spacer y={1.2}/>
       </Stack>
     </>
