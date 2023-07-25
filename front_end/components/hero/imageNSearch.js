@@ -1,23 +1,20 @@
 import React from 'react';
 import styles from '../../styles/Hero/Hero.module.css';
 import Image from 'next/image';
-import theme from '../../styles/theme';
 import H1 from '../fonts/H1';
 import P from '../fonts/P';
-import TITLE from '../fonts/TITLE';
 import PageParentText from './pageParentText';
-export default function ImageNSearch({ color1, color2, imageUrl, textParent, headerText, subText }) {
+export default function ImageNSearch({ color1, color2, imageUrl, textParent, headerText, subText, textChild, textColor }) {
     const gradient = `linear-gradient(transparent,${color1},${color2})`;
-
     return (
         <>
             <div className={styles.container}>
                 <div className={styles.centerModule}>
-                    <PageParentText textParent={textParent} color={theme.colors.WHITE} />
+                    <PageParentText textParent={textParent} textChild={textChild} color={textColor} />
                     <div className={styles.bottomSpacer}>
-                        <H1 text={headerText} color={theme.colors.WHITE} />
+                        <H1 text={headerText} color={textColor} />
                     </div>
-                    <P text={subText} color={theme.colors.WHITE} />
+                    <P text={subText} color={textColor} />
                 </div>
                 <div className={styles.gradientOverlaySearch} style={{ backgroundImage: gradient }} />
                 <div className={styles.imageContainer}>

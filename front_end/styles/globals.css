@@ -152,6 +152,9 @@ button.nextui-c-iWjDFM-gglxka-cv {
   gap: 2rem;
 }
 
+.generalCenterPadding {
+  width: 90%;
+}
 .generalCenter>* {
   margin: 0;
 }

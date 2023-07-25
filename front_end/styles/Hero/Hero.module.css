@@ -88,6 +88,22 @@
   padding-left: 4%;
   padding-right: 4%;
 }
+.centerModuleTrip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 36vw;
+  z-index: 100;
+  position: relative;
+  text-align: center;
+  max-width: 850px;
+  /* Add this line */
+  margin: 0 auto;
+  /* Add this line to center the element horizontally */
+  padding-left: 4%;
+  padding-right: 4%;
+}
 
 .centerModuleSearch {
   display: flex;
@@ -152,6 +168,9 @@
   .centerModule {
     padding-top: 2em;
   }
+  .centerModuleTrip {
+    top: 21em;
+  }
   .centerModuleSearch {
     padding-top: 2em;
   }
@@ -172,13 +191,11 @@
     padding-right: 7%;
 
   }
-
-  
 }
 
 .bottomSpacer {
   text-align: center;
-  padding-bottom: 9%;
+  padding-bottom: 5%;
 }
 
 .image {
