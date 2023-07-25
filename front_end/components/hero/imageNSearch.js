@@ -5,7 +5,7 @@ import theme from '../../styles/theme';
 import H1 from '../fonts/H1';
 import P from '../fonts/P';
 import TITLE from '../fonts/TITLE';
-
+import PageParentText from './pageParentText';
 export default function ImageNSearch({ color1, color2, imageUrl, textParent, headerText, subText }) {
     const gradient = `linear-gradient(transparent,${color1},${color2})`;
 
@@ -13,7 +13,7 @@ export default function ImageNSearch({ color1, color2, imageUrl, textParent, hea
         <>
             <div className={styles.container}>
                 <div className={styles.centerModule}>
-                    <PageParentText textParent={textParent} textChild={textChild} color={theme.colors.WHITE} />
+                    <PageParentText textParent={textParent} color={theme.colors.WHITE} />
                     <div className={styles.bottomSpacer}>
                         <H1 text={headerText} color={theme.colors.WHITE} />
                     </div>
