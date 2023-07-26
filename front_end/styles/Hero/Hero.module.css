@@ -10,6 +10,18 @@
   align-items: center;
   margin-bottom: 7em;
 }
+.containerHeroSlider {
+  min-height: 885px;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: -100;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  align-items: center;
+  margin-bottom: 7em;
+}
 .containerGradient {
   height: 100vw;
   width: 100vw;
@@ -85,8 +97,8 @@
   /* Add this line */
   margin: 0 auto;
   /* Add this line to center the element horizontally */
-  padding-left: 4%;
-  padding-right: 4%;
+  padding-left: 0%;
+  padding-right: 0%;
 }
 .centerModuleTrip {
   display: flex;
@@ -167,6 +179,9 @@
   }
   .centerModule {
     padding-top: 2em;
+    padding-left: 4%;
+    padding-right: 4%;
+
   }
   .centerModuleTrip {
     top: 21em;
@@ -181,6 +196,10 @@
 @media (max-width: 420px) {
   .centerModule {
     padding-top: 4em;
+  }
+  .containerHeroSlider {
+    min-height: 800px;
+ 
   }
   .centerModuleSearch {
     padding-top: 4em;
@@ -217,3 +236,4 @@
   display: flex;
   margin-bottom: 12em;
 }
+
