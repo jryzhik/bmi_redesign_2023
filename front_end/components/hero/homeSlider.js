@@ -4,12 +4,21 @@ import Image from 'next/image';
 import theme from '../../styles/theme';
 import H1 from '../fonts/H1';
 import P from '../fonts/P';
-import TITLE from '../fonts/TITLE'
+import TITLE from '../fonts/TITLE';
 import ST from '../fonts/ST';
 
-
-export default function HomeSlider({ color1, color2, imageUrl, headerText, subText, imageFocus, scale }) {
+export default function HomeSlider({ color1, color2, imageUrl, headerText, subText, imageFocus, scale, totalElements, currentIndex, callBack }) {
     const gradient = `linear-gradient(${color1},${color2}, transparent)`;
+
+    // Create an array with 'totalElements' number of elements
+    const pillsArray = Array.from({ length: totalElements }, (_, index) => (
+        <div
+            key={index}
+            className={`${styles.pill} ${currentIndex === index ? styles.pillSelected : ''}`}
+            onClick={() => callBack(index)}
+        />
+    ));
+    
 
     return (
         <>
@@ -22,7 +31,10 @@ export default function HomeSlider({ color1, color2, imageUrl, headerText, subTe
                     <div className={styles.bottomSpacer}>
                         <H1 text={headerText} color={theme.colors.WHITE} />
                     </div>
-                    <P text={subText} color={theme.colors.WHITE} />
+                    <P text={subText} color={theme.colors.WHITE}/>
+                    <div className={styles.hBoxPill}>
+                        {pillsArray}
+                    </div>
                 </div>
                 <div className={styles.gradientOverlay} style={{ backgroundImage: gradient }} />
                 <div className={styles.imageContainer}>

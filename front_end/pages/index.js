@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import HomeSlider from '../components/hero/homeSlider';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const HeroSlider = [
   {
@@ -19,7 +19,6 @@ const HeroSlider = [
     headerText: 'Generating a Generation for God',
     subText: 'We make a living by what we get, but a life by what we give.',
     imageFocus: '50% -20%',
-
   },
   {
     imageUrl: '/img/hero_images/home_hero/KidsStanding.jpg',
@@ -29,21 +28,24 @@ const HeroSlider = [
     subText: 'We make a living by what we get, but a life by what we give.',
     imageFocus: '50% -20%',
   },
-]
-
+];
 
 export default function Home() {
-  setInterval(nextSlide, 5000);
-  const [binaryState, setBinaryState] = useState(false)
-  const [currentSlideIndex, setCurrentSlideIndex] = useState(0)
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(nextSlide, 5000);
+    return () => clearInterval(intervalId);
+  }, []);
+
   function nextSlide() {
-    setCurrentSlideIndex((currentSlideIndex + 1) % HeroSlider.length)
-    // if (binaryState === true) {
-    //   setBinaryState(false)
-    // } else {
-    //   setBinaryState(true)
-    // }
+    setCurrentSlideIndex((prevIndex) => (prevIndex + 1) % HeroSlider.length);
   }
+
+  function manualSetSlide(index) {
+    setCurrentSlideIndex(index);
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -57,8 +59,11 @@ export default function Home() {
         headerText={HeroSlider[currentSlideIndex].headerText}
         subText={HeroSlider[currentSlideIndex].subText}
         imageFocus={HeroSlider[currentSlideIndex].imageFocus}
+        totalElements={HeroSlider.length}
+        currentIndex={currentSlideIndex}
+        callBack={manualSetSlide}
       />
       {console.log(currentSlideIndex)}
     </div>
-  )
+  );
 }

@@ -10,13 +10,14 @@
   align-items: center;
   margin-bottom: 7em;
 }
+
 .containerHeroSlider {
   min-height: 885px;
   width: 100vw;
   margin: 0;
   padding: 0;
   position: relative;
-  z-index: -100;
+  z-index: 0;
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
   align-items: center;
@@ -43,14 +44,17 @@
   height: 83%;
   margin-top: 28vw;
 }
+
 .gradientOverlayFund {
   position: relative;
   width: 100%;
 }
+
 .paddingContent {
   margin-top: 5em;
   margin-bottom: 15em;
 }
+
 @media (max-width: 390px) {
 
   /* Styles for mobile devices */
@@ -83,7 +87,12 @@
   white-space: nowrap;
   padding-bottom: 1rem;
 }
-
+.hBoxPill {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+}
 .centerModule {
   display: flex;
   flex-direction: column;
@@ -100,6 +109,7 @@
   padding-left: 0%;
   padding-right: 0%;
 }
+
 .centerModuleTrip {
   display: flex;
   flex-direction: column;
@@ -133,6 +143,7 @@
   padding-left: 4%;
   padding-right: 4%;
 }
+
 .centerModuleFund {
   display: flex;
   flex-direction: column;
@@ -148,6 +159,7 @@
   padding-left: 4%;
   padding-right: 4%;
 }
+
 .portraitNPageParent {
   display: flex;
   flex-direction: column;
@@ -157,6 +169,7 @@
   padding-top: 7vw;
   gap: 3.5em;
 }
+
 @media (max-width: 1066px) {
   .hBox {
     /* Styles specific to tablet size */
@@ -177,33 +190,41 @@
     height: 100%;
     margin-top: 20vw;
   }
+
   .centerModule {
     padding-top: 2em;
     padding-left: 4%;
     padding-right: 4%;
 
   }
+
   .centerModuleTrip {
     top: 21em;
   }
+
   .centerModuleSearch {
     padding-top: 2em;
   }
+
   .portraitNPageParent {
     padding-top: 6em;
   }
 }
+
 @media (max-width: 420px) {
   .centerModule {
     padding-top: 4em;
   }
+
   .containerHeroSlider {
     min-height: 800px;
- 
+
   }
+
   .centerModuleSearch {
     padding-top: 4em;
   }
+
   .centerModuleFund {
     top: 100vw;
     padding-left: 7%;
@@ -216,7 +237,6 @@
   text-align: center;
   padding-bottom: 5%;
 }
-
 .image {
   margin-top: 45px;
 }
@@ -225,15 +245,41 @@
   margin-top: 45px;
   min-height: 55vw;
 }
+
 .imageContainerGradient {
   padding-top: 3em;
   display: flex;
   flex-direction: column;
 }
+
 .bottomImgContainer {
   height: 40vw;
   position: relative;
   display: flex;
   margin-bottom: 12em;
 }
-
+.pill {
+  margin-top: 500px;
+  width: 12px;
+  height: 6px;
+  background-color: white;
+  border-radius: 400px;
+  z-index: 90000000;
+  opacity: .4;
+  transition: opacity 0.3s;
+  position: relative;
+}
+ .pill:hover {
+  cursor: pointer;
+}
+ .pillSelected {
+  margin-top: 500px;
+  width: 12px;
+  height: 6px;
+  background-color: white;
+  border-radius: 400px;
+  z-index: 100000000;
+  opacity: 1;
+  transition: opacity 0.3s;
+  position: relative;
+}
