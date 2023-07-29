@@ -17,10 +17,10 @@
     align-items: center;
     padding-left: 26vw;
     padding-right: 26vw;
-    gap: 1.063em;
+    gap: 2.125em;
 }
 
-@media (max-width: 420px) {
+@media (max-width: 800px) {
 
     /* Styles for mobile devices */
     .container {
@@ -116,6 +116,7 @@
     padding-left: 5vw;
     padding-right: 5vw;
 }
+
 .containerH4NComp {
     display: flex;
     flex-direction: column;
@@ -199,14 +200,17 @@
     opacity: 0;
     transition: all .1s ease-out;
 }
+
 .oneLine {
     display: inline;
 }
+
 .twoColumn {
     display: flex;
     justify-content: center;
 
 }
+
 .verticalSpacer {
     padding-top: 2em;
 }

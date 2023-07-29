@@ -1,21 +1,25 @@
 .roundedRectStandard {
     width: clamp(23.3755em, 70vw, 56.25em);
 }
+
 .roundedRectSmall {
     width: clamp(23.3755em, 70vw, 26.875);
 }
+
 .containerWidth {
     width: 95%;
     display: flex;
     justify-content: center;
     align-self: center;
 }
+
 .containerNewsGallery {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 6em;
 }
+
 .focusImageGallery {
     width: clamp(21.25em, 70vw, 43.75em);
 }
@@ -25,11 +29,13 @@
     height: clamp(7.5em, 30vw, 10.125em);
     opacity: .7;
 }
+
 .notFocusedImageWText {
     width: clamp(15em, 70vw, 26.875em);
     height: clamp(9.4375em, 30vw, 16.875em);
     opacity: .7;
 }
+
 .image[left='1'] {
     animation: left .3s 1;
 }
@@ -97,6 +103,7 @@
     gap: 91vw;
     z-index: 50;
 }
+
 .arrowsNews {
     display: flex;
     position: absolute;
@@ -130,11 +137,13 @@
     flex-direction: column;
     align-items: center;
 }
+
 .vBoxGallery {
     display: flex;
     flex-direction: column;
     gap: 1.5em;
 }
+
 .founders {
     display: flex;
     justify-content: center;
@@ -158,7 +167,11 @@
     gap: 2.125em;
     padding-top: 1em;
 }
-
+.boxConstraint {
+    width: 18.75em;
+    padding-top: .6666666667em;
+  }
+  
 
 @media (max-width: 490px) {
 
@@ -185,6 +198,7 @@
     .arrows {
         display: none;
     }
+
     .arrowsNews {
         display: none;
     }
@@ -193,14 +207,60 @@
         gap: 10px;
     }
 }
+@media (min-width: 900px) and (max-width: 960px) {
+    .boxConstraint {
+        width: 17em;
+        padding-top: .6666666667em;
+      }
+}
 .imageNComp {
     display: flex;
     flex-direction: column;
     gap: 1.5em;
     text-align: center;
 }
+
 iframe.youtube {
     border-radius: 7px;
     width: clamp(22.375em, 80vw, 26.875);
     height: clamp(12em, 80vw, 12em);
 }
+
+.imageTextButtonContainer {
+    position: relative; /* Ensure that position is set to enable z-index */
+    width: 448px;
+    height: 448px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .imageTextButtonGradientOverlay {
+    position: absolute; /* Positioned absolutely within its container */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    z-index: 2; /* Set a higher z-index to overlay on top of the image */
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+  }
+  
+  .imageWrapper {
+    position: relative; /* Ensure that position is set to enable z-index */
+    z-index: 1; /* Set a lower z-index for the image, so it appears below the overlay */
+  }
+  .centerModule {
+    position: absolute;
+    z-index: 100;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: .75em;
+    padding-top: 3em;
+    flex-direction: column;
+    margin-left: 3.15em;
+    margin-right: 3.15em;
+
+  }
+  

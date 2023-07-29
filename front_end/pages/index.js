@@ -2,13 +2,27 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import HomeSlider from '../components/hero/homeSlider';
 import { useState, useEffect } from 'react';
+import HeaderNComponent from '../components/texts/HeaderNComponent';
+import P from '../components/fonts/P';
+import theme from '../styles/theme';
+import ImageTextButton from '../components/images/imageTextButton';
+import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
+import ProgressDonate from '../components/donations/progressDonate';
 
 const HeroSlider = [
+  {
+    imageUrl: '/img/hero_images/home_hero/WalkingBaptism.jpg',
+    color2: "#b1b8c1",
+    color1: "#7db0e3",
+    headerText: 'Big Mission, Big Task, Even Larger God',
+    subText: 'We make a living by what we get, but a life by what we give.',
+    imageFocus: '50% 20%',
+  },
   {
     imageUrl: '/img/hero_images/home_hero/BibleGroup.jpg',
     color1: "#cfb489",
     color2: "#996800",
-    headerText: 'Providing support and hope for the children of Belarus',
+    headerText: 'Providing support and hope for the children',
     subText: 'We make a living by what we get, but a life by what we give.',
     imageFocus: '50% -20%',
   },
@@ -16,7 +30,7 @@ const HeroSlider = [
     imageUrl: '/img/hero_images/home_hero/BaptismSmile.jpg',
     color1: "#48594c",
     color2: "#1d231f",
-    headerText: 'Generating a Generation for God',
+    headerText: 'Generating a Generation for God since 2000',
     subText: 'We make a living by what we get, but a life by what we give.',
     imageFocus: '50% -20%',
   },
@@ -24,7 +38,7 @@ const HeroSlider = [
     imageUrl: '/img/hero_images/home_hero/KidsStanding.jpg',
     color1: "#1F0E08",
     color2: "#1F0E08",
-    headerText: 'Providing support and hope for the children of Belarus',
+    headerText: 'Providing support and hope for the children',
     subText: 'We make a living by what we get, but a life by what we give.',
     imageFocus: '50% -20%',
   },
@@ -47,7 +61,7 @@ export default function Home() {
   }
 
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>Byelorussian Mission Inc.</title>
         <link rel="icon" href="/favicon.ico" />
@@ -63,7 +77,56 @@ export default function Home() {
         currentIndex={currentSlideIndex}
         callBack={manualSetSlide}
       />
-      {console.log(currentSlideIndex)}
-    </div>
+      <div className={styles.container}>
+
+        <HeaderNComponent
+          primaryHeaderText='Do all that you do as if for Christ'
+          SecondaryComponent={<P color={theme.colors.CHARCOAL} text='To influence the 7 mountains of society – men and women of God must be equipped & empowered to step & take territory.' />}
+          secondaryAllign='center'
+        />
+        {/* <div className={styles.threeBoxContainer}> */}
+        <Grid container spacing={"1.5em"} justifyContent="center" >
+          <Grid className={styles.verticalSpacing} xs={12} sm={12} md={4} lg={4} display="flex" justifyContent="center" alignItems="center" >
+            <ImageTextButton
+              color1="#8C8B85"
+              color2="#8C8B85"
+              imageUrl="/../public/img/home/pray.jpg"
+              headerText='Pray'
+              subText='Pray for us as we invest into disciples of Christ.'
+              imageFocus='50% -30%'
+              buttonText='learn more'
+            />
+          </Grid>
+          <Grid className={styles.verticalSpacing} xs={12} sm={12} md={4} lg={4} display="flex" justifyContent="center" alignItems="center" >
+            <ImageTextButton
+              color1="#170D04"
+              color2="#160C03"
+              imageUrl="/../public/img/home/give.jpg"
+              headerText='Give'
+              subText='Support us financially as we spread His good message.'
+              imageFocus='50% -30%'
+              buttonText='donate'
+            />
+          </Grid>
+          <Grid className={styles.verticalSpacing} xs={12} sm={12} md={4} lg={4} display="flex" justifyContent="center" alignItems="center" >
+            <ImageTextButton
+              color1="#374A1A"
+              color2="#384B1B"
+              imageUrl="/../public/img/home/team.jpg"
+              headerText='Go'
+              subText='Join us on missionary trips to Belarus and Ukraine.'
+              imageFocus='50% -30%'
+              buttonText='sign up'
+            />
+          </Grid>
+        </Grid>
+        <HeaderNComponent
+          primaryHeaderText="Join the fronts of God's battle"
+          SecondaryComponent={<P color={theme.colors.CHARCOAL} text='Become a financial partner with us in reaching Belarus, Ukraine, Russia, Israel, Spain, and the United States' />}
+          secondaryAllign='center'
+        />
+        <ProgressDonate/>
+      </div>
+    </>
   );
 }
