@@ -4,9 +4,52 @@
     align-items: center;
     gap: 1.5em;
 }
+
 .verticalSpacer {
     padding-top: 2em;
 }
+
 .circleContainer {
-    background-color: aqua;
+    position: relative;
+    /* Ensure that position is set to enable z-index */
+    display: grid;
+    width: 334px;
+    justify-items: center;
+    align-items: center;
+
+}
+
+.circleOuline {
+    width: 334px;
+    height: 334px;
+    border-radius: 50%;
+}
+.whiteOverlay {
+    width: 280px;
+    height: 280px;
+    position: absolute;
+}
+.vBox {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+    justify-self: center;
+    align-content: center;
+    align-items: center;
+    gap: 1em;
+}
+@media (min-width: 900px) and (max-width: 1030px) {
+    .circleContainer {
+        width: 300.6px;
+    }
+    
+    .circleOuline {
+        width: 300.6px;
+        height: 300.6px;
+    }
+    .whiteOverlay {
+        width: 252px;
+        height: 252px;
+    }
 }

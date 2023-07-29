@@ -86,7 +86,7 @@ export default function Home() {
         />
         {/* <div className={styles.threeBoxContainer}> */}
         <Grid container spacing={"1.5em"} justifyContent="center" >
-          <Grid className={styles.verticalSpacing} xs={12} sm={12} md={4} lg={4} display="flex" justifyContent="center" alignItems="center" >
+          <Grid xs={12} sm={12} md={4} lg={4} display="flex" justifyContent="center" alignItems="center" >
             <ImageTextButton
               color1="#8C8B85"
               color2="#8C8B85"
@@ -97,7 +97,7 @@ export default function Home() {
               buttonText='learn more'
             />
           </Grid>
-          <Grid className={styles.verticalSpacing} xs={12} sm={12} md={4} lg={4} display="flex" justifyContent="center" alignItems="center" >
+          <Grid xs={12} sm={12} md={4} lg={4} display="flex" justifyContent="center" alignItems="center" >
             <ImageTextButton
               color1="#170D04"
               color2="#160C03"
@@ -108,7 +108,7 @@ export default function Home() {
               buttonText='donate'
             />
           </Grid>
-          <Grid className={styles.verticalSpacing} xs={12} sm={12} md={4} lg={4} display="flex" justifyContent="center" alignItems="center" >
+          <Grid xs={12} sm={12} md={4} lg={4} display="flex" justifyContent="center" alignItems="center" >
             <ImageTextButton
               color1="#374A1A"
               color2="#384B1B"
@@ -125,7 +125,35 @@ export default function Home() {
           SecondaryComponent={<P color={theme.colors.CHARCOAL} text='Become a financial partner with us in reaching Belarus, Ukraine, Russia, Israel, Spain, and the United States' />}
           secondaryAllign='center'
         />
-        <ProgressDonate/>
+        <Grid container spacing={"1.5em"} justifyContent="center" >
+          <Grid xs={12} sm={12} md={4} lg={4} display="flex" justifyContent="center" alignItems="start" >
+            <ProgressDonate
+              imageUrl="/../public/img/donation/progress/Bible.jpg"
+              outlineColor={theme.colors.MAROON}
+              percentFilled={82}
+              primaryHeaderText="Bibles/Discipleship Material"
+              secondaryText="Help us reach our goal of raising $330,000 to print Bibles for those in Israel."
+            />
+          </Grid>
+          <Grid xs={12} sm={12} md={4} lg={4} display="flex" justifyContent="center" alignItems="start" >
+            <ProgressDonate
+              imageUrl="/../public/img/donation/progress/construction.jpg"
+              outlineColor={theme.colors.ORANGE}
+              percentFilled={91}
+              primaryHeaderText="Construction/Building Projects"
+              secondaryText="Help us reach our goal to collect $400,000 for a new church structures in Belarus."
+            />
+          </Grid>
+          <Grid xs={12} sm={12} md={4} lg={4} display="flex" justifyContent="center" alignItems="start" >
+            <ProgressDonate
+              imageUrl="/../public/img/donation/progress/orphan.jpg"
+              outlineColor={theme.colors.BLUE}
+              percentFilled={88}
+              primaryHeaderText="Orphan Adoption Program"
+              secondaryText="We need $250,000 to support and maintain a Christian facility for orphans."
+            />
+          </Grid>
+        </Grid>
       </div>
     </>
   );

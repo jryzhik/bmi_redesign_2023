@@ -116,6 +116,15 @@
     padding-left: 5vw;
     padding-right: 5vw;
 }
+.containerH3NComp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    gap: .4em;
+}
 
 .containerH4NComp {
     display: flex;
