@@ -8,6 +8,8 @@ import theme from '../styles/theme';
 import ImageTextButton from '../components/images/imageTextButton';
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import ProgressDonate from '../components/donations/progressDonate';
+import passedStyle from '../styles/Donate/ColorDonate.module.css';
+
 
 const HeroSlider = [
   {
@@ -125,6 +127,7 @@ export default function Home() {
           SecondaryComponent={<P color={theme.colors.CHARCOAL} text='Become a financial partner with us in reaching Belarus, Ukraine, Russia, Israel, Spain, and the United States' />}
           secondaryAllign='center'
         />
+        {/* PROGRESS CIRCLE SECTION START */}
         <Grid container spacing={"1.5em"} justifyContent="center" >
           <Grid xs={12} sm={12} md={4} lg={4} display="flex" justifyContent="center" alignItems="start" >
             <ProgressDonate
@@ -133,6 +136,7 @@ export default function Home() {
               percentFilled={82}
               primaryHeaderText="Bibles/Discipleship Material"
               secondaryText="Help us reach our goal of raising $330,000 to print Bibles for those in Israel."
+              passedStyle={passedStyle.dollarButtonMaroon}
             />
           </Grid>
           <Grid xs={12} sm={12} md={4} lg={4} display="flex" justifyContent="center" alignItems="start" >
@@ -142,6 +146,7 @@ export default function Home() {
               percentFilled={91}
               primaryHeaderText="Construction/Building Projects"
               secondaryText="Help us reach our goal to collect $400,000 for a new church structures in Belarus."
+              passedStyle={passedStyle.dollarButtonOrange}
             />
           </Grid>
           <Grid xs={12} sm={12} md={4} lg={4} display="flex" justifyContent="center" alignItems="start" >
@@ -151,6 +156,7 @@ export default function Home() {
               percentFilled={88}
               primaryHeaderText="Orphan Adoption Program"
               secondaryText="We need $250,000 to support and maintain a Christian facility for orphans."
+              passedStyle={passedStyle.dollarButtonBlue}
             />
           </Grid>
         </Grid>

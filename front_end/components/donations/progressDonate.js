@@ -5,7 +5,12 @@ import PERCNUM from '../fonts/PERCNUM.js';
 import theme from '../../styles/theme';
 import H3NComponent from '../texts/h3NComponent';
 import P from '../fonts/P';
-export default function ProgressDonate({ imageUrl, outlineColor, percentFilled, primaryHeaderText, secondaryText }) {
+import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
+import RoundedButton from '../buttons/roundedButton';
+import buttonCSS from '../../styles/Donate/ColorDonate.module.css';
+
+
+export default function ProgressDonate({ imageUrl, outlineColor, percentFilled, primaryHeaderText, secondaryText, passedStyle }) {
     return (
         <>
             <div className={styles.vBox}>
@@ -36,7 +41,7 @@ export default function ProgressDonate({ imageUrl, outlineColor, percentFilled, 
                     </div>
                 </div>
                 <div style={{
-                    paddingTop:"1em"
+                    paddingTop: "1em"
                 }}>
                     <H3NComponent
                         primaryHeaderText={primaryHeaderText}
@@ -45,6 +50,11 @@ export default function ProgressDonate({ imageUrl, outlineColor, percentFilled, 
                         }
                         secondaryAllign='center'
                     />
+                </div>
+                <div className={buttonCSS.buttonWidth}>
+                    <Grid xs={12} md={4} lg={4} display="flex" justifyContent="center" alignItems="center">
+                        <RoundedButton text='donate' passedStyle={passedStyle} />
+                    </Grid>
                 </div>
             </div>
         </>

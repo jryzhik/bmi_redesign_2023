@@ -33,6 +33,13 @@
 .boxConstraint {
     width: 60%;
 }
+.buttonWidth {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    width: 90%;
+    
+}
 .rectangleRounded {
     min-height: 20px;
     width: 100vw;
@@ -81,6 +88,32 @@
     transition: all .2s ease-in;
     transition: all .5s ease-out;
     color: #ffffff;
+}
+.dollarButtonOrange {
+    display: flex;
+    width: 100vw;
+    height: 46px;
+    border-radius: 25em;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: #EC9D26;
+    color: #ffffff;
+    transition: all .2s ease-in;
+    transition: all .5s ease-out;
+}
+.dollarButtonBlue{
+    display: flex;
+    width: 100vw;
+    height: 46px;
+    border-radius: 25em;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: #2D69C3;
+    color: #ffffff;
+    transition: all .2s ease-in;
+    transition: all .5s ease-out;
 }
 .dollarButton:hover {
     /* background: linear-gradient(90deg,#ffffff, #a23404); */
