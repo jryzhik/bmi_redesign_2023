@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import HomeSlider from '../components/hero/homeSlider';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import HeaderNComponent from '../components/texts/HeaderNComponent';
 import P from '../components/fonts/P';
 import theme from '../styles/theme';
@@ -46,8 +46,89 @@ const HeroSlider = [
   },
 ];
 
+const ProgressValues = [
+  {
+    percentFilled: 82,
+    primaryHeaderText: "Bibles/Discipleship Material",
+    secondaryText: "Help us reach our goal of raising $330,000 to print Bibles for those in Israel."
+  },
+  {
+    percentFilled: 20,
+    primaryHeaderText: "Construction/Building Projects",
+    secondaryText: "Help us reach our goal to collect $400,000 for a new church structures in Belarus."
+  },
+  {
+    percentFilled: 88,
+    primaryHeaderText: "Orphan/Adoption Program",
+    secondaryText: "We need $250,000 to support and maintain a Christian facility for orphans."
+  },
+]
+
 export default function Home() {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+  const [animation1, setAnimation1] = useState(0);
+  const [animation2, setAnimation2] = useState(0);
+  const [animation3, setAnimation3] = useState(0);
+
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          } else {
+            setIsVisible(false);
+          }
+        });
+      },
+      { threshold: 0.2 } // Adjust the threshold to control when the callback is triggered
+    );
+
+    const progressSection = document.querySelector('#progressSection');
+
+    if (progressSection) {
+      observer.observe(progressSection);
+    }
+
+    return () => {
+      if (progressSection) {
+        observer.unobserve(progressSection);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    let intervalId1, intervalId2, intervalId3;
+
+    function myTimer(animation, setAnimation, percentFilled, intervalId) {
+      if (animation > 1) {
+        clearInterval(intervalId);
+        return;
+      }
+
+      setAnimation((prevAnimation) => {
+        const newAnimation = prevAnimation + 1;
+        if (newAnimation >= percentFilled) {
+          clearInterval(intervalId);
+        }
+        return newAnimation;
+      });
+    }
+
+    if (isVisible) {
+      intervalId1 = setInterval(() => myTimer(animation1, setAnimation1, ProgressValues[0].percentFilled, intervalId1), 1000 / ProgressValues[0].percentFilled);
+      intervalId2 = setInterval(() => myTimer(animation2, setAnimation2, ProgressValues[1].percentFilled, intervalId2), 1000 / ProgressValues[1].percentFilled);
+      intervalId3 = setInterval(() => myTimer(animation3, setAnimation3, ProgressValues[2].percentFilled, intervalId3), 1000 / ProgressValues[2].percentFilled);
+    }
+
+    return () => {
+      clearInterval(intervalId1);
+      clearInterval(intervalId2);
+      clearInterval(intervalId3);
+    };
+  }, [isVisible]);
 
   useEffect(() => {
     const intervalId = setInterval(nextSlide, 5000);
@@ -128,14 +209,14 @@ export default function Home() {
           secondaryAllign='center'
         />
         {/* PROGRESS CIRCLE SECTION START */}
-        <Grid container spacing={"1.5em"} justifyContent="center" position="relative">
-          <Grid xs={12} sm={12} md={4}  justifyContent="center">
+        <Grid container spacing={"1.5em"} justifyContent="center" position="relative" id="progressSection">
+          <Grid xs={12} sm={12} md={4} justifyContent="center">
             <ProgressDonate
               imageUrl="/../public/img/donation/progress/Bible.jpg"
               outlineColor={theme.colors.MAROON}
-              percentFilled={82}
-              primaryHeaderText="Bibles/Discipleship Material"
-              secondaryText="Help us reach our goal of raising $330,000 to print Bibles for those in Israel."
+              percentFilled={animation1}
+              primaryHeaderText={ProgressValues[0].primaryHeaderText}
+              secondaryText={ProgressValues[0].secondaryText}
               passedStyle={passedStyle.dollarButtonMaroon}
             />
           </Grid>
@@ -143,9 +224,9 @@ export default function Home() {
             <ProgressDonate
               imageUrl="/../public/img/donation/progress/construction.jpg"
               outlineColor={theme.colors.ORANGE}
-              percentFilled={91}
-              primaryHeaderText="Construction/Building Projects"
-              secondaryText="Help us reach our goal to collect $400,000 for a new church structures in Belarus."
+              percentFilled={animation2}
+              primaryHeaderText={ProgressValues[1].primaryHeaderText}
+              secondaryText={ProgressValues[1].secondaryText}
               passedStyle={passedStyle.dollarButtonOrange}
             />
           </Grid>
@@ -153,9 +234,9 @@ export default function Home() {
             <ProgressDonate
               imageUrl="/../public/img/donation/progress/orphan.jpg"
               outlineColor={theme.colors.BLUE}
-              percentFilled={88}
-              primaryHeaderText="Orphan/Adoption Program"
-              secondaryText="We need $250,000 to support and maintain a Christian facility for orphans."
+              percentFilled={animation3}
+              primaryHeaderText={ProgressValues[2].primaryHeaderText}
+              secondaryText={ProgressValues[2].secondaryText}
               passedStyle={passedStyle.dollarButtonBlue}
             />
           </Grid>
