@@ -15,6 +15,7 @@
     gap: 1.688em;
     text-align: center;
 }
+
 .headerNdescription {
     display: flex;
     flex-direction: column;
@@ -24,22 +25,41 @@
     padding-top: 2em;
 
 }
+
 @media (max-width:850px) {
     .headerNdescription {
         padding-left: 6vw;
         padding-right: 6vw;
     }
 }
+
 .boxConstraint {
     width: 60%;
 }
+
 .buttonWidth {
     display: flex;
     justify-content: center;
     justify-items: center;
     width: 90%;
-    
+
 }
+
+.progressDonate {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    width: 90vw;
+    position: absolute;
+    bottom: -5em;
+}
+
+@media (max-width:900px) {
+    .progressDonate {
+        position: static;
+    }
+}
+
 .rectangleRounded {
     min-height: 20px;
     width: 100vw;
@@ -51,6 +71,7 @@
     align-items: center;
     background-color: #f6f6f6;
 }
+
 .dollarButton {
     display: flex;
     width: 100vw;
@@ -63,6 +84,7 @@
     transition: all .2s ease-in;
     transition: all .5s ease-out;
 }
+
 .dollarButtonBlack {
     display: flex;
     width: 100vw;
@@ -76,6 +98,7 @@
     transition: all .2s ease-in;
     transition: all .5s ease-out;
 }
+
 .dollarButtonMaroon {
     display: flex;
     width: 100vw;
@@ -89,6 +112,7 @@
     transition: all .5s ease-out;
     color: #ffffff;
 }
+
 .dollarButtonOrange {
     display: flex;
     width: 100vw;
@@ -102,7 +126,8 @@
     transition: all .2s ease-in;
     transition: all .5s ease-out;
 }
-.dollarButtonBlue{
+
+.dollarButtonBlue {
     display: flex;
     width: 100vw;
     height: 46px;
@@ -115,22 +140,27 @@
     transition: all .2s ease-in;
     transition: all .5s ease-out;
 }
+
 .dollarButton:hover {
     /* background: linear-gradient(90deg,#ffffff, #a23404); */
     background-color: #e2e2e2;
 }
+
 .dollarButtonBlack:hover {
     /* background: linear-gradient(90deg,#ffffff, #a23404); */
     background-color: #373737;
 }
+
 .dollarButtonMaroon:hover {
     /* background: linear-gradient(90deg,#ffffff, #a23404); */
     background-color: #e2e2e2;
     color: #000000;
 }
+
 .buttonSection {
     display: flex;
 }
+
 .together {
     position: relative;
 }

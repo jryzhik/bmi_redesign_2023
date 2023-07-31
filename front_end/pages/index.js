@@ -128,8 +128,8 @@ export default function Home() {
           secondaryAllign='center'
         />
         {/* PROGRESS CIRCLE SECTION START */}
-        <Grid container spacing={"1.5em"} justifyContent="center" >
-          <Grid xs={12} sm={12} md={4} lg={4} display="flex" justifyContent="center" alignItems="start" >
+        <Grid container spacing={"1.5em"} justifyContent="center" position="relative">
+          <Grid xs={12} sm={12} md={4}  justifyContent="center">
             <ProgressDonate
               imageUrl="/../public/img/donation/progress/Bible.jpg"
               outlineColor={theme.colors.MAROON}
@@ -139,7 +139,7 @@ export default function Home() {
               passedStyle={passedStyle.dollarButtonMaroon}
             />
           </Grid>
-          <Grid xs={12} sm={12} md={4} lg={4} display="flex" justifyContent="center" alignItems="start" >
+          <Grid xs={12} sm={12} md={4} justifyContent="center" >
             <ProgressDonate
               imageUrl="/../public/img/donation/progress/construction.jpg"
               outlineColor={theme.colors.ORANGE}
@@ -149,12 +149,12 @@ export default function Home() {
               passedStyle={passedStyle.dollarButtonOrange}
             />
           </Grid>
-          <Grid xs={12} sm={12} md={4} lg={4} display="flex" justifyContent="center" alignItems="start" >
+          <Grid xs={12} sm={12} md={4} justifyContent="center" >
             <ProgressDonate
               imageUrl="/../public/img/donation/progress/orphan.jpg"
               outlineColor={theme.colors.BLUE}
               percentFilled={88}
-              primaryHeaderText="Orphan Adoption Program"
+              primaryHeaderText="Orphan/Adoption Program"
               secondaryText="We need $250,000 to support and maintain a Christian facility for orphans."
               passedStyle={passedStyle.dollarButtonBlue}
             />

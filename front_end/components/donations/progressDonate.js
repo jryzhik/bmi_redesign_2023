@@ -8,6 +8,7 @@ import P from '../fonts/P';
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import RoundedButton from '../buttons/roundedButton';
 import buttonCSS from '../../styles/Donate/ColorDonate.module.css';
+import { bottomNavigationActionClasses } from '@mui/material';
 
 
 export default function ProgressDonate({ imageUrl, outlineColor, percentFilled, primaryHeaderText, secondaryText, passedStyle }) {
@@ -51,12 +52,12 @@ export default function ProgressDonate({ imageUrl, outlineColor, percentFilled, 
                         secondaryAllign='center'
                     />
                 </div>
-                <div className={buttonCSS.buttonWidth}>
-                    <Grid xs={12} md={4} lg={4} display="flex" justifyContent="center" alignItems="center">
-                        <RoundedButton text='donate' passedStyle={passedStyle} />
-                    </Grid>
-                </div>
+                <div className={buttonCSS.progressDonate}>
+                    <Grid xs={12} md={4} lg={4} display="flex" justifyContent="center" alignItems="end">
+                    <RoundedButton text='donate' passedStyle={passedStyle} />
+                </Grid>
             </div>
+        </div >
         </>
     )
 }
