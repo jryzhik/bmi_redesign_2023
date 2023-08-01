@@ -116,6 +116,7 @@
     padding-left: 5vw;
     padding-right: 5vw;
 }
+
 .containerH3NComp {
     display: flex;
     flex-direction: column;
@@ -222,4 +223,49 @@
 
 .verticalSpacer {
     padding-top: 2em;
+}
+
+.quoteContainer {
+    padding-top: 7em;
+    display: flex;
+    text-align: center;
+    width: 70vw;
+    flex-direction: column;
+    align-items: center;
+    gap: 3.5em;
+}
+
+.profileIcon {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+}
+.iconNText {
+    display: flex;
+    flex-direction: row;
+    align-items: center ;
+    gap: 1.25em;
+}
+.nameNRole {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: center;
+}
+
+.noMargin {
+    margin-top: -2em;
+    margin-bottom: -2em;
+
+}
+
+@media (max-width: 900px) {
+    .quoteContainer {
+        padding-top: 0em;
+    }
+    .profileIcon {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+    }
 }

@@ -9,6 +9,9 @@ import ImageTextButton from '../components/images/imageTextButton';
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import ProgressDonate from '../components/donations/progressDonate';
 import passedStyle from '../styles/Donate/ColorDonate.module.css';
+import Quote from '../components/texts/quote';
+import directorImage from '../public/img/home/schmidt.jpg'
+
 
 
 const HeroSlider = [
@@ -241,6 +244,12 @@ export default function Home() {
             />
           </Grid>
         </Grid>
+        <Quote
+          imageUrl={directorImage}
+          author="Carlos Shmidt"
+          role="PARTNERSHIP DIRECTOR"
+          organization="LBC"
+        />
       </div>
     </>
   );
