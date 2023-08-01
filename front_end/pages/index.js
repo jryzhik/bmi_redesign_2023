@@ -11,6 +11,7 @@ import ProgressDonate from '../components/donations/progressDonate';
 import passedStyle from '../styles/Donate/ColorDonate.module.css';
 import Quote from '../components/texts/quote';
 import directorImage from '../public/img/home/schmidt.jpg'
+import NoTextHero from '../components/hero/noTextHero';
 
 
 
@@ -164,13 +165,11 @@ export default function Home() {
         callBack={manualSetSlide}
       />
       <div className={styles.container}>
-
         <HeaderNComponent
           primaryHeaderText='Do all that you do as if for Christ'
           SecondaryComponent={<P color={theme.colors.CHARCOAL} text='To influence the 7 mountains of society – men and women of God must be equipped & empowered to step & take territory.' />}
           secondaryAllign='center'
         />
-        {/* <div className={styles.threeBoxContainer}> */}
         <Grid container spacing={"1.5em"} justifyContent="center" >
           <Grid xs={12} sm={12} md={4} lg={4} display="flex" justifyContent="center" alignItems="center" >
             <ImageTextButton
@@ -250,6 +249,12 @@ export default function Home() {
           role="PARTNERSHIP DIRECTOR"
           organization="LBC"
         />
+        <NoTextHero
+          color1="#F6F6F6"
+          color2="#FFFFFF"
+          imageUrl="/img/hero_images/hands_up.jpg"
+          imageFocus= "50% 150%"
+          />
       </div>
     </>
   );

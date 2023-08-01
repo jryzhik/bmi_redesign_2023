@@ -229,10 +229,11 @@
     padding-top: 7em;
     display: flex;
     text-align: center;
-    width: 70vw;
+    width: 60vw;
     flex-direction: column;
     align-items: center;
     gap: 3.5em;
+    margin-bottom: -5em;
 }
 
 .profileIcon {
@@ -240,12 +241,14 @@
     height: 140px;
     border-radius: 50%;
 }
+
 .iconNText {
     display: flex;
     flex-direction: row;
-    align-items: center ;
+    align-items: center;
     gap: 1.25em;
 }
+
 .nameNRole {
     display: flex;
     flex-direction: column;
@@ -262,7 +265,10 @@
 @media (max-width: 900px) {
     .quoteContainer {
         padding-top: 0em;
+        width: 80vw;
+
     }
+
     .profileIcon {
         width: 70px;
         height: 70px;

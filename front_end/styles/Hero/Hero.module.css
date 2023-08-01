@@ -23,6 +23,7 @@
   align-items: center;
   margin-bottom: 7em;
 }
+
 .containerGradient {
   height: 100vw;
   width: 100vw;
@@ -72,6 +73,14 @@
   height: 60%;
 }
 
+.gradientOverlayHands {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20%;
+}
+
 .pageParentText {
   position: absolute;
   top: 20vw;
@@ -87,12 +96,14 @@
   white-space: nowrap;
   padding-bottom: 1rem;
 }
+
 .hBoxPill {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.6rem;
 }
+
 .centerModule {
   display: flex;
   flex-direction: column;
@@ -237,6 +248,7 @@
   text-align: center;
   padding-bottom: 5%;
 }
+
 .image {
   margin-top: 45px;
 }
@@ -258,6 +270,7 @@
   display: flex;
   margin-bottom: 12em;
 }
+
 .pill {
   margin-top: 430px;
   width: 12px;
@@ -269,10 +282,12 @@
   transition: opacity 0.3s;
   position: relative;
 }
- .pill:hover {
+
+.pill:hover {
   cursor: pointer;
 }
- .pillSelected {
+
+.pillSelected {
   margin-top: 430px;
   width: 12px;
   height: 6px;
