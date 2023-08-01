@@ -12,6 +12,7 @@ import passedStyle from '../styles/Donate/ColorDonate.module.css';
 import Quote from '../components/texts/quote';
 import directorImage from '../public/img/home/schmidt.jpg'
 import NoTextHero from '../components/hero/noTextHero';
+import SlideNewsGalleryHome from '../components/images/slideNewsGalleryHome';
 
 
 
@@ -68,6 +69,38 @@ const ProgressValues = [
   },
 ]
 
+const news = [
+  {
+      imageUrl: '/img/gallery/gruzd/sitting_fire.jpg',
+      title: 'Jul 2023',
+      description: 'Reuniting for the 4th of July to strengthen our team internally.',
+      url: 'https://google.com'
+  },
+  {
+      imageUrl: '/img/gallery/gruzd/bike.jpg',
+      title: 'Aug 2023',
+      description: 'of July to strengthen our team internally.',
+      url: 'https://yahoo.com'
+  },
+  {
+      imageUrl: '/img/gallery/gruzd/phone.jpg',
+      title: 'Sept 2023',
+      description: 'aakrsfanf testin ght ess asrjasr',
+      url: 'https://bing.com'
+  },
+  {
+      imageUrl: '/img/gallery/gruzd/blow.jpg',
+      title: 'Oct 2023',
+      description: 'Row row row your boat',
+      url: 'https://duckduckgo.com'
+  },
+  {
+      imageUrl: '/img/gallery/gruzd/teach.jpg',
+      title: 'Dec 2023',
+      description: 'Teaching is inportnat in 21 centrure',
+      url: 'https://firefox.com'
+  },
+]
 export default function Home() {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [animation1, setAnimation1] = useState(0);
@@ -180,6 +213,8 @@ export default function Home() {
               subText='Pray for us as we invest into disciples of Christ.'
               imageFocus='50% -30%'
               buttonText='learn more'
+              link='/belief'
+
             />
           </Grid>
           <Grid xs={12} sm={12} md={4} lg={4} display="flex" justifyContent="center" alignItems="center" >
@@ -191,6 +226,8 @@ export default function Home() {
               subText='Support us financially as we spread His good message.'
               imageFocus='50% -30%'
               buttonText='donate'
+              link='/donate'
+
             />
           </Grid>
           <Grid xs={12} sm={12} md={4} lg={4} display="flex" justifyContent="center" alignItems="center" >
@@ -202,6 +239,7 @@ export default function Home() {
               subText='Join us on missionary trips to Belarus and Ukraine.'
               imageFocus='50% -30%'
               buttonText='sign up'
+              link='/calendar'
             />
           </Grid>
         </Grid>
@@ -253,8 +291,14 @@ export default function Home() {
           color1="#F6F6F6"
           color2="#FFFFFF"
           imageUrl="/img/hero_images/hands_up.jpg"
-          imageFocus= "50% 150%"
-          />
+          imageFocus="50% 70%"
+        />
+        <HeaderNComponent
+          primaryHeaderText="Stay updated with all we’re doing"
+          SecondaryComponent={<P color={theme.colors.CHARCOAL} text='Our monthly newsletter provides a quick recap of all the great things God is doing through Byelorussian Ministry to impact the next generation.' />}
+          secondaryAllign='center'
+        />
+        <SlideNewsGalleryHome newsArray={news}/>
       </div>
     </>
   );

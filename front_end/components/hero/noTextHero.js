@@ -7,7 +7,7 @@ export default function NoTextHero({ color1, color2, imageUrl, headerText, subTe
     const gradient = `linear-gradient(${color1},${color2}, transparent)`;
     return (
         <>
-            <div className={styles.containerHeroSlider}>
+            <div className={styles.containerNoText}>
                 <div className={styles.gradientOverlayHands} style={{ backgroundImage: gradient }} />
                 <div className={styles.imageContainer}>
                     <Image
@@ -22,7 +22,7 @@ export default function NoTextHero({ color1, color2, imageUrl, headerText, subTe
                             // Adjust the position to focus on the desired part of the image
                             position: 'absolute',
                             width: "100%",
-                            height: "70%",
+                            height: "100%",
                             top: 0,
                             left: 0,
                             zIndex: -100,

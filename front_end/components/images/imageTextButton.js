@@ -7,9 +7,11 @@ import P from '../fonts/P';
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import RoundedButton from '../buttons/roundedButton';
 import passedStyle from '../../styles/Donate/ColorDonate.module.css';
+import Link from 'next/link';
 
 
-export default function ImageTextButton({ color1, color2, imageUrl, textParent, textChild, headerText, subText, imageFocus, buttonText }) {
+
+export default function ImageTextButton({ color1, color2, imageUrl, textParent, textChild, headerText, subText, imageFocus, buttonText, link}) {
     const gradient = `linear-gradient(${color1}, ${color2}, transparent)`;
 
     return (
@@ -18,9 +20,11 @@ export default function ImageTextButton({ color1, color2, imageUrl, textParent, 
                 <H2 text={headerText} color={theme.colors.WHITE} />
                 <P text={subText} color={theme.colors.WHITE} />
                 <div className={styles.boxConstraint}>
-                    <Grid xs={12} display="flex" justifyContent="center" alignItems="center">
-                        <RoundedButton text={buttonText} passedStyle={passedStyle.dollarButton} />
-                    </Grid>
+                    <Link href={link}>
+                        <Grid xs={12} display="flex" justifyContent="center" alignItems="center">
+                            <RoundedButton text={buttonText} passedStyle={passedStyle.dollarButton} />
+                        </Grid>
+                    </Link>
                 </div>
             </div>
             <div className={styles.imageTextButtonGradientOverlay} style={{ backgroundImage: gradient }} />
