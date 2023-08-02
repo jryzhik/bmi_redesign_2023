@@ -24,6 +24,17 @@
   margin-bottom: 7em;
 }
 
+.containerHeroAdSlider {
+  min-height: 700px;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 0;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  align-items: center;
+}
 .containerNoText {
   min-height: 400px;
   width: 100vw;
@@ -133,6 +144,22 @@
   padding-right: 0%;
 }
 
+.centerModuleHeroAd {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: 5vw;
+  z-index: 100;
+  position: relative;
+  text-align: center;
+  max-width: 850px;
+  /* Add this line */
+  margin: 0 auto;
+  /* Add this line to center the element horizontally */
+  padding-left: 0%;
+  padding-right: 0%;
+}
 .centerModuleTrip {
   display: flex;
   flex-direction: column;
@@ -192,7 +219,14 @@
   padding-top: 7vw;
   gap: 3.5em;
 }
-
+@media (max-width: 900px) {
+  .centerModuleHeroAd {
+    top: 10vw;
+    padding-top: 2em;
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+}
 @media (max-width: 1066px) {
   .hBox {
     /* Styles specific to tablet size */
@@ -241,6 +275,10 @@
 
   .containerHeroSlider {
     min-height: 800px;
+
+  }
+  .containerHeroAdSlider {
+    min-height: 775px;
 
   }
 
@@ -299,13 +337,38 @@
   transition: opacity 0.3s;
   position: relative;
 }
+.pillAd {
+  margin-top: 270px;
+  width: 12px;
+  height: 6px;
+  background-color: white;
+  border-radius: 400px;
+  z-index: 90000000;
+  opacity: .4;
+  transition: opacity 0.3s;
+  position: relative;
+}
 
 .pill:hover {
+  cursor: pointer;
+}
+.pillAd:hover {
   cursor: pointer;
 }
 
 .pillSelected {
   margin-top: 430px;
+  width: 12px;
+  height: 6px;
+  background-color: white;
+  border-radius: 400px;
+  z-index: 100000000;
+  opacity: 1;
+  transition: opacity 0.3s;
+  position: relative;
+}
+.pillAdSelected {
+  margin-top: 270px;
   width: 12px;
   height: 6px;
   background-color: white;

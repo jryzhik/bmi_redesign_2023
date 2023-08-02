@@ -88,7 +88,7 @@ export default function SlideNewsGalleryHome({ newsArray }) {
                         </a>
                     </div>
                     <div style={{ marginBottom: '7em' }}>
-                        <H4NComponent
+                        <H2NComponent
                             primaryHeaderText={newsArray[customMod(currentIndex, newsArray.length)].title}
                             SecondaryComponent={
                                 <P text={newsArray[customMod(currentIndex, newsArray.length)].description} />
@@ -115,7 +115,7 @@ export default function SlideNewsGalleryHome({ newsArray }) {
                         </a>
                     </div>
                     <div style={{ marginBottom: '7em' }}>
-                        <H4NComponent
+                        <H2NComponent
                             primaryHeaderText={newsArray[customMod(currentIndex + 1, newsArray.length)].title}
                             SecondaryComponent={
                                 <P text={newsArray[customMod(currentIndex + 1, newsArray.length)].description} />
@@ -140,7 +140,7 @@ export default function SlideNewsGalleryHome({ newsArray }) {
                         </a>
                     </div>
                     <div style={{ marginBottom: '7em' }}>
-                        <H4NComponent
+                        <H2NComponent
                             primaryHeaderText={newsArray[customMod(currentIndex + 2, newsArray.length)].title}
                             SecondaryComponent={
                                 <P text={newsArray[customMod(currentIndex + 2, newsArray.length)].description} />
@@ -166,7 +166,7 @@ export default function SlideNewsGalleryHome({ newsArray }) {
                         </a>
                     </div>
                     <div style={{ marginBottom: '7em' }}>
-                        <H4NComponent
+                        <H2NComponent
                             primaryHeaderText={newsArray[customMod(currentIndex + 3, newsArray.length)].title}
                             SecondaryComponent={
                                 <P text={newsArray[customMod(currentIndex + 3, newsArray.length)].description} />
@@ -192,7 +192,7 @@ export default function SlideNewsGalleryHome({ newsArray }) {
                         </a>
                     </div>
                     <div style={{ marginBottom: '7em' }}>
-                        <H4NComponent
+                        <H2NComponent
                             primaryHeaderText={newsArray[customMod(currentIndex + 4, newsArray.length)].title}
                             SecondaryComponent={
                                 <P text={newsArray[customMod(currentIndex + 4, newsArray.length)].description} />

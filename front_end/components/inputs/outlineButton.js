@@ -38,6 +38,7 @@ export default function OutlineButton({borderColor, textColor, placeholder, type
         <>
             <div className={styles.thinBarContainer} style={{ borderColor: borderColor}}>
                 <input
+                    id={styles.inputEmail}
                     style={{ border: 'none', width: '100%', height: '100%', background: 'none', outline: 'none', color: textColor, paddingLeft: '1em'}}
                     placeholder={placeholder}
                     className={textStyle.className}

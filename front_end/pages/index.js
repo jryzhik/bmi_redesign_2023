@@ -13,9 +13,11 @@ import Quote from '../components/texts/quote';
 import directorImage from '../public/img/home/schmidt.jpg'
 import NoTextHero from '../components/hero/noTextHero';
 import SlideNewsGalleryHome from '../components/images/slideNewsGalleryHome';
+import SubscribeHero from '../components/events/subscribeHero';
+import HomeAdSlider from '../components/hero/homeAdSlider';
 
 
-
+const numberOfOrphans = 560
 const HeroSlider = [
   {
     imageUrl: '/img/hero_images/home_hero/WalkingBaptism.jpg',
@@ -51,6 +53,36 @@ const HeroSlider = [
   },
 ];
 
+const HeroAdSlider = [
+  {
+    imageUrl: '/img/donation/designated_cover/bottom/readingBible.jpg',
+    color2: "#D2A9A6",
+    color1: "#D2A9A6",
+    headerText: 'Our initiative to open children daycare centers',
+    subText: 'We are on pace to open an additional 30 centers across Belarus. Learn more about how these centers change lives.',
+    imageFocus: '50% 20%',
+    link: '/care'
+  },
+  {
+    imageUrl: '/img/donation/designated_cover/bottom/SecondaryOrphanAdoption.jpg',
+    color1: "#121413",
+    color2: "#121413",
+    headerText: 'Help provide each child a loving family',
+    subText: `Today we have ${numberOfOrphans} children in our Orphan Adoption Program. No child goes unnoticed, abandoned, or lost.`,
+    imageFocus: '50% 30%',
+    link: '/orphans'
+  },
+  {
+    imageUrl: '/img/donation/designated_cover/bottom/evangelism.jpg',
+    color1: "#8EA9BC",
+    color2: "#8EA9BC",
+    headerText: 'Support the sharing of the Gospel',
+    subText: 'We are bold in proclaiming the Good News in Christ to our fellow brothers and sisters in Belarus.',
+    imageFocus: '60% 0%',
+    link: '/gospel'
+  },
+];
+
 const ProgressValues = [
   {
     percentFilled: 82,
@@ -71,38 +103,39 @@ const ProgressValues = [
 
 const news = [
   {
-      imageUrl: '/img/gallery/gruzd/sitting_fire.jpg',
-      title: 'Jul 2023',
-      description: 'Reuniting for the 4th of July to strengthen our team internally.',
-      url: 'https://google.com'
+    imageUrl: '/img/gallery/gruzd/sitting_fire.jpg',
+    title: 'Jul 2023',
+    description: 'Reuniting for the 4th of July to strengthen our team internally.',
+    url: 'https://google.com'
   },
   {
-      imageUrl: '/img/gallery/gruzd/bike.jpg',
-      title: 'Aug 2023',
-      description: 'of July to strengthen our team internally.',
-      url: 'https://yahoo.com'
+    imageUrl: '/img/gallery/gruzd/bike.jpg',
+    title: 'Aug 2023',
+    description: 'of July to strengthen our team internally.',
+    url: 'https://yahoo.com'
   },
   {
-      imageUrl: '/img/gallery/gruzd/phone.jpg',
-      title: 'Sept 2023',
-      description: 'aakrsfanf testin ght ess asrjasr',
-      url: 'https://bing.com'
+    imageUrl: '/img/gallery/gruzd/phone.jpg',
+    title: 'Sept 2023',
+    description: 'aakrsfanf testin ght ess asrjasr',
+    url: 'https://bing.com'
   },
   {
-      imageUrl: '/img/gallery/gruzd/blow.jpg',
-      title: 'Oct 2023',
-      description: 'Row row row your boat',
-      url: 'https://duckduckgo.com'
+    imageUrl: '/img/gallery/gruzd/blow.jpg',
+    title: 'Oct 2023',
+    description: 'Row row row your boat',
+    url: 'https://duckduckgo.com'
   },
   {
-      imageUrl: '/img/gallery/gruzd/teach.jpg',
-      title: 'Dec 2023',
-      description: 'Teaching is inportnat in 21 centrure',
-      url: 'https://firefox.com'
+    imageUrl: '/img/gallery/gruzd/teach.jpg',
+    title: 'Dec 2023',
+    description: 'Teaching is inportnat in 21 centrure',
+    url: 'https://firefox.com'
   },
 ]
 export default function Home() {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+  const [currentSlideIndexAd, setCurrentSlideIndexAd] = useState(0);
   const [animation1, setAnimation1] = useState(0);
   const [animation2, setAnimation2] = useState(0);
   const [animation3, setAnimation3] = useState(0);
@@ -179,6 +212,9 @@ export default function Home() {
   function manualSetSlide(index) {
     setCurrentSlideIndex(index);
   }
+  function manualSetSlideAd(index) {
+    setCurrentSlideIndexAd(index);
+  }
 
   return (
     <>
@@ -243,6 +279,18 @@ export default function Home() {
             />
           </Grid>
         </Grid>
+        <HomeAdSlider
+          color1={HeroAdSlider[currentSlideIndexAd].color1}
+          color2={HeroAdSlider[currentSlideIndexAd].color2}
+          imageUrl={HeroAdSlider[currentSlideIndexAd].imageUrl}
+          headerText={HeroAdSlider[currentSlideIndexAd].headerText}
+          subText={HeroAdSlider[currentSlideIndexAd].subText}
+          imageFocus={HeroAdSlider[currentSlideIndexAd].imageFocus}
+          totalElements={HeroAdSlider.length}
+          currentIndex={currentSlideIndexAd}
+          callBack={manualSetSlideAd}
+          link={HeroAdSlider[currentSlideIndexAd].link}
+        />
         <HeaderNComponent
           primaryHeaderText="Join the fronts of God's battle"
           SecondaryComponent={<P color={theme.colors.CHARCOAL} text='Become a financial partner with us in reaching Belarus, Ukraine, Russia, Israel, Spain, and the United States' />}
@@ -298,7 +346,12 @@ export default function Home() {
           SecondaryComponent={<P color={theme.colors.CHARCOAL} text='Our monthly newsletter provides a quick recap of all the great things God is doing through Byelorussian Ministry to impact the next generation.' />}
           secondaryAllign='center'
         />
-        <SlideNewsGalleryHome newsArray={news}/>
+        <SlideNewsGalleryHome newsArray={news} />
+        <SubscribeHero
+          color={theme.colors.NAVY}
+          primaryText='Subscribe to our weekly newsletter'
+          secondaryText='Keep up to date with all that we’re doing!'
+        />
       </div>
     </>
   );
