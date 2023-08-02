@@ -1,52 +1,60 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react';
 import styles from '../../styles/Inputs/Inputs.module.css';
 import Image from 'next/image';
+import theme from '../../styles/theme';
 
-import {
-    Roboto_Slab
-} from '@next/font/google'
+import { Roboto_Slab } from '@next/font/google';
 
-const RobotoLight = Roboto_Slab(
-    {
-        subsets: ['latin'],
-        weight: ['300'],
-        style: ['normal']
+const RobotoLight = Roboto_Slab({
+  subsets: ['latin'],
+  weight: ['300'],
+  style: ['normal'],
+});
 
+const RobotoRegular = Roboto_Slab({
+  subsets: ['latin'],
+  weight: ['400'],
+  style: ['normal'],
+});
+
+export default function OutlineButton({ borderColor, textColor, placeholder, type, callBack }) {
+  const [themeMode, setThemeMode] = useState(styles.inputEmail);
+
+  // Use useEffect to update the themeMode state based on textColor prop
+  useEffect(() => {
+    if (textColor === theme.colors.BLACK) {
+      setThemeMode(styles.none);
+    } else {
+      setThemeMode(styles.inputEmail);
     }
-)
-const RobotoRegular = Roboto_Slab(
-    {
-        subsets: ['latin'],
-        weight: ['400'],
-        style: ['normal']
+  }, [textColor]);
 
-    }
-)
+  const [textStyle, setTextStyle] = useState(RobotoLight);
+  const [inputText, setInputText] = useState('');
 
-export default function OutlineButton({borderColor, textColor, placeholder, type}) {
-    const [textStyle, setTextStyle] = useState(RobotoLight)
-    const [inputText, setInputText] = useState('')
-    const handleChange = event => {
-        setInputText(event.target.value);
-        if (event.target.value === '') {
-            setTextStyle(RobotoLight);
-        } else {
-            setTextStyle(RobotoRegular);
-        }
+  const handleChange = (event) => {
+    setInputText(event.target.value);
+    if (event.target.value === '') {
+      setTextStyle(RobotoLight);
+    } else {
+      setTextStyle(RobotoRegular);
     }
-    return (
-        <>
-            <div className={styles.thinBarContainer} style={{ borderColor: borderColor}}>
-                <input
-                    id={styles.inputEmail}
-                    style={{ border: 'none', width: '100%', height: '100%', background: 'none', outline: 'none', color: textColor, paddingLeft: '1em'}}
-                    placeholder={placeholder}
-                    className={textStyle.className}
-                    onChange={handleChange}
-                    value={inputText}
-                    type={type}
-                />
-            </div>
-        </>
-    )
+    callBack(event.target.value)
+  };
+
+  return (
+    <>
+      <div className={styles.thinBarContainer} style={{ borderColor: borderColor }}>
+        <input
+          id={themeMode} // Use themeMode state to conditionally apply styles
+          style={{ border: 'none', width: '100%', height: '100%', background: 'none', outline: 'none', color: textColor, paddingLeft: '1em' }}
+          placeholder={placeholder}
+          className={textStyle.className}
+          onChange={handleChange}
+          value={inputText}
+          type={type}
+        />
+      </div>
+    </>
+  );
 }

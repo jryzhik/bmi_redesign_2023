@@ -144,17 +144,21 @@
 .dollarButton:hover {
     /* background: linear-gradient(90deg,#ffffff, #a23404); */
     background-color: #e2e2e2;
+    cursor: pointer;
 }
 
 .dollarButtonBlack:hover {
     /* background: linear-gradient(90deg,#ffffff, #a23404); */
     background-color: #373737;
+    cursor: pointer;
+
 }
 
 .dollarButtonMaroon:hover {
     /* background: linear-gradient(90deg,#ffffff, #a23404); */
     background-color: #e2e2e2;
     color: #000000;
+    cursor: pointer;
 }
 
 .buttonSection {

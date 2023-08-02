@@ -4,37 +4,37 @@ import HeaderNComponent from '../components/texts/HeaderNComponent'
 import P from '../components/fonts/P'
 import theme from '../styles/theme'
 import styles from '../styles/Donate/Donate.module.css';
-import FiveButtonsDonate from '../components/donations/FiveButtonsDonate'
 import buttonStyles from '../styles/Donate/ColorDonate.module.css';
 import SpecificDonationGallery from '../components/images/specificDonationGallery'
+import DonationMasterForm from '../components/donations/donationMasterForm'
 
 const fund_array = [
   {
-    imageUrl: '/img/donation/designated_cover/love_in_action.jpg',
+    imageUrl: '/img/donation/designated_cover/top/love_in_action.jpg',
     title: 'Love in Action',
     description: 'Bring relief to Ukrainian Refugees',
     url: 'ukraine'
   },
   {
-    imageUrl: '/img/donation/designated_cover/orphan_adoption.jpg',
+    imageUrl: '/img/donation/designated_cover/top/orphan_adoption.jpg',
     title: 'Orphan Adoption Program',
     description: 'Stop the destructive cycle of orphanages',
     url: 'orphans'
   },
   {
-    imageUrl: '/img/donation/designated_cover/church_construction.jpg',
+    imageUrl: '/img/donation/designated_cover/top/church_construction.jpg',
     title: 'Building Projects',
     description: 'Church, Camp, and other Construction',
     url: 'plant'
   },
   {
-    imageUrl: '/img/donation/designated_cover/good_and_evil.jpg',
+    imageUrl: '/img/donation/designated_cover/top/good_and_evil.jpg',
     title: 'Good & Evil',
     description: 'Highly effective evangelism tool',
     url: 'literature'
   },
   {
-    imageUrl: '/img/donation/designated_cover/urgent_matching.jpg',
+    imageUrl: '/img/donation/designated_cover/top/urgent_matching.jpg',
     title: 'Urgent Matching Fund',
     description: 'Help us print 50K copies of Bibles and discipleship materials',
     url: 'matching'
@@ -55,13 +55,13 @@ export default function Donate() {
         imageFocus={'center 45%'}
       />
       <div className={styles.container}>
-        <HeaderNComponent
-          primaryHeaderText='Provide a donation'
-          SecondaryComponent={<P color={theme.colors.CHARCOAL} text='Your donation enables us to reach out with the good news of Jesus Christ, serve the orphan children, equip believers for effective ministry, and inspire the next generations to impact their world. We appreciate very much your partnership!' />}
+        <DonationMasterForm
+          headerText='Provide a donation'
+          secondaryText='Your donation enables us to reach out with the good news of Jesus Christ, serve the orphan children, equip believers for effective ministry, and inspire the next generations to impact their world. We appreciate very much your partnership!'
           secondaryAllign='center'
-        />
-        <FiveButtonsDonate
+          color={theme.colors.CHARCOAL}
           buttonStyle={buttonStyles.dollarButtonBlack}
+          fund="general"
         />
         <div className={styles.verticalSpacer}></div>
         <HeaderNComponent

@@ -5,6 +5,46 @@
     gap: 1.5em;
 }
 
+.formContainer {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5em;
+}
+
+.formContainerPOP {
+    width: 50em;
+    height: 41.875em;
+    background-color: white;
+    border-radius: 12px;
+    flex-shrink: 0;
+    padding: 1em;
+
+}
+.headerForm {
+    display: flex;
+    padding-top: .125em;
+    padding-left: 3em;
+    padding-right: 3em;
+    justify-content: space-between;
+}
+.exitIcon {
+    display: flex;
+    justify-content: right;
+    transition: all .5s ease-out;}
+
+.exitIcon:hover {
+    cursor: pointer;
+    filter: drop-shadow(0 0 0.1rem rgba(0, 0, 0, 0.257));}
+
+.givingInfoSection {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2em;
+    padding-left: 3em;
+    padding-right: 3em;
+}
+
 .verticalSpacer {
     padding-top: 2em;
 }
@@ -24,11 +64,13 @@
     height: 334px;
     border-radius: 50%;
 }
+
 .whiteOverlay {
     width: 280px;
     height: 280px;
     position: absolute;
 }
+
 .vBox {
     display: flex;
     flex-direction: column;
@@ -39,15 +81,17 @@
     align-items: center;
     gap: 1em;
 }
+
 @media (min-width: 900px) and (max-width: 1030px) {
     .circleContainer {
         width: 300.6px;
     }
-    
+
     .circleOuline {
         width: 300.6px;
         height: 300.6px;
     }
+
     .whiteOverlay {
         width: 252px;
         height: 252px;
