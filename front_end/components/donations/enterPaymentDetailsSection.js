@@ -28,7 +28,8 @@ export default function EnterPaymentDetailsSection() {
                         textColor={theme.colors.BLACK}
                         type="number"
                         callBack={() => console.log("afs")}
-                    />
+                        pattern="[0-9]*"
+                        />
                 </Grid>
             </Grid>
         </div>

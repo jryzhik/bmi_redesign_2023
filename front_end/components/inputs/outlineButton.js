@@ -38,13 +38,20 @@ export default function OutlineButton({ borderColor, textColor, placeholder, typ
     // Use a regular expression to check if the value contains only alphabetical characters
     const alphabeticRegex = /^[A-Za-z]*$/;
     const isValidInput = alphabeticRegex.test(newValue);
+    const isValidNumber = /^[0-9]*$/.test(event.target.value);
 
     // If the input is valid, update the state and call the callBack function
-    console.log("We have type,", type)
-    if (isValidInput) {
-      setInputText(newValue);
-      callBack(newValue);
-    } else if (type != 'text') {
+    if (type == 'number') {
+      if (isValidNumber) {
+        setInputText(newValue);
+        callBack(newValue);
+      }
+    } else if (type == 'text') {
+      if (isValidInput) {
+        setInputText(newValue);
+        callBack(newValue);
+      }
+    } else {
       setInputText(newValue);
       callBack(newValue);
     }
