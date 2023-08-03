@@ -129,9 +129,6 @@ export default function GivingInfoSection({
             callBack={handleEmailChange}
           />
         </Grid>
-        <Grid xs={12} md={12} display="flex" justifyContent="center" alignItems="center" paddingTop={4}>
-          <RoundedButton text="continue to payment" passedStyle={passedStyle.dollarButtonBlack} callBackFunction={nextPageNValidate} />
-        </Grid>
       </Grid>
     </div>
   );
