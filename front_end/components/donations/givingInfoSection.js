@@ -69,11 +69,6 @@ export default function GivingInfoSection({
     }
   }, [customDollarValueValid]);
 
-  function nextPageNValidate() {
-    if (firstNameValid && lastNameValid && emailValid && customDollarValueValid) {
-      console.log('Clicked next page');
-    }
-  }
 
   return (
     <div className={styles.givingInfoSection}>

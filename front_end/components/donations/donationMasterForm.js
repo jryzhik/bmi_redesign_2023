@@ -31,6 +31,18 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
     const [email, setEmail] = useState('');
     const [emailValid, setEmailValid] = useState(false);
 
+    function resetDonation() {
+        setPopupVisible(false)
+        setCurrentScreenIndex(1)
+        setFirstName('')
+        setLastName('')
+        setCustomDollarValue('')
+        setEmail('')
+        setFirstNameValid(false)
+        setLastNameValid(false)
+        setCustomDollarValueValid(false)
+        setEmailValid(false)
+    }
     const setFirstNamePapa = (value) => {
         setFirstName(value);
         if (value !== '') {
@@ -107,12 +119,13 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
 
     return (
         <>
+            {console.log(firstName)}
             {popupVisible ? (
                 windowWidth < 900 ? (
                     <p>Fully mobile component goes here</p>
                 ) : (
                     <div className={styles.formContainerPOP}>
-                        <div className={styles.exitIcon} onClick={() => setPopupVisible(false)}>
+                        <div className={styles.exitIcon} onClick={() => resetDonation()}>
                             <Image
                                 className={styles.exitIcon}
                                 src={exitIcon}
@@ -151,7 +164,7 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
                             <></>
                         )}
                         <div style={{
-                            width:"70%",
+                            width: "70%",
                             position: 'absolute',
                             bottom: '60px', // Adjust the distance from the bottom as needed
                             left: '50%',
