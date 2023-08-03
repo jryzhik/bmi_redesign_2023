@@ -32,17 +32,21 @@ export default function CustomDollar({ borderColor, textColor, placeholder, type
 
   const handleChange = (event) => {
     const newValue = event.target.value;
+    // Use a regular expression to check if the value is a valid number
+    const isValidNumber = /^[0-9]*$/.test(event.target.value);
+    // Update the text style based on the input value
     if (newValue === '') {
       setTextStyle(RobotoLight);
     } else {
-      setTextStyle(RobotoRegular);
+      setTextStyle(isValidNumber ? RobotoRegular : RobotoLight);
     }
 
-    // Call the onChange function with the current inputText value
-    if (onChange) {
+    // Call the onChange function with the current inputText value if it's a valid number
+    if (onChange && isValidNumber) {
       onChange(newValue);
     }
   };
+
 
   return (
     <>
@@ -51,13 +55,13 @@ export default function CustomDollar({ borderColor, textColor, placeholder, type
           <ST color={theme.colors.BLACK} text="$" />
         </div>
         <input
-          id={themeMode} // Use themeMode state to conditionally apply styles
-          style={{ border: 'none', width: '100%', height: '100%', background: 'none', outline: 'none', color: textColor }}
-          placeholder={placeholder}
-          className={textStyle.className}
+          type={type}
+          pattern="[0-9]*"
           onChange={handleChange}
           value={value}
-          type={type}
+          placeholder={placeholder}
+          style={{ border: 'none', width: '100%', height: '100%', background: 'none', outline: 'none', color: textColor }}
+          className={textStyle.className}
         />
       </div>
     </>

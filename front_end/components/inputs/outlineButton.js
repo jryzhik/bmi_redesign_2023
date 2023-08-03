@@ -17,7 +17,7 @@ const RobotoRegular = Roboto_Slab({
   style: ['normal'],
 });
 
-export default function OutlineButton({ borderColor, textColor, placeholder, type, callBack }) {
+export default function OutlineButton({ borderColor, textColor, placeholder, type, callBack, pattern }) {
   const [themeMode, setThemeMode] = useState(styles.inputEmail);
 
   // Use useEffect to update the themeMode state based on textColor prop
@@ -33,17 +33,26 @@ export default function OutlineButton({ borderColor, textColor, placeholder, typ
   const [inputText, setInputText] = useState('');
 
   const handleChange = (event) => {
-    setInputText(event.target.value);
-    if (event.target.value === '') {
-      setTextStyle(RobotoLight);
-    } else {
-      setTextStyle(RobotoRegular);
+    const newValue = event.target.value;
+
+    // Use a regular expression to check if the value contains only alphabetical characters
+    const alphabeticRegex = /^[A-Za-z]*$/;
+    const isValidInput = alphabeticRegex.test(newValue);
+
+    // If the input is valid, update the state and call the callBack function
+    console.log("We have type,", type)
+    if (isValidInput) {
+      setInputText(newValue);
+      callBack(newValue);
+    } else if (type != 'text') {
+      setInputText(newValue);
+      callBack(newValue);
     }
-    callBack(event.target.value)
   };
 
   return (
     <>
+      {console.log(type)}
       <div className={styles.thinBarContainer} style={{ borderColor: borderColor }}>
         <input
           id={themeMode} // Use themeMode state to conditionally apply styles
@@ -52,7 +61,8 @@ export default function OutlineButton({ borderColor, textColor, placeholder, typ
           className={textStyle.className}
           onChange={handleChange}
           value={inputText}
-          type={type}
+          type={"text"}
+          pattern="[0-9]*"
         />
       </div>
     </>

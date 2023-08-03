@@ -14,12 +14,13 @@ import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import RoundedButton from '../buttons/roundedButton';
 import passedStyle from '../../styles/Donate/ColorDonate.module.css';
 import SelectPaymentSection from './selectPaymentSection';
+import EnterPaymentDetailsSection from './enterPaymentDetailsSection';
 
 
 
 export default function DonationMasterForm({ headerText, secondaryText, secondaryAllign, buttonStyle, color, fund }) {
     const [popupVisible, setPopupVisible] = useState(false);
-    const [currentScreenIndex, setCurrentScreenIndex] = useState(2)
+    const [currentScreenIndex, setCurrentScreenIndex] = useState(1)
     const [customDollarValue, setCustomDollarValue] = useState('');
     const [customDollarValueValid, setCustomDollarValueValid] = useState(false);
 
@@ -124,7 +125,7 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
     } 
     return (
         <>
-            {console.log(firstName)}
+            {console.log("firstName: ", firstName, "lastName: ", lastName, "email: ", email, "customDollarValue: ", customDollarValue)}
             {popupVisible ? (
                 windowWidth < 900 ? (
                     <p>Fully mobile component goes here</p>
@@ -171,7 +172,7 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
                             <></>
                         )}
                         {currentScreenIndex === 3 ? (
-                            <h1>section 3</h1>
+                            <EnterPaymentDetailsSection/>
                         ) : (
                             <></>
                         )}

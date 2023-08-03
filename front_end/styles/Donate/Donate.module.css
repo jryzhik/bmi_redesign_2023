@@ -58,6 +58,14 @@
     padding-right: 3em;
 }
 
+.enterPaymentDetailsSection {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3em;
+    padding-left: 3em;
+    padding-right: 3em;
+}
+
 .paymentButton {
     width: 12.75em;
     height: 5.6875em;
@@ -69,8 +77,32 @@
     justify-content: center;
     align-content: center;
     transition: all .5s ease-out;
+}
 
-    
+.paymentButtonSmall {
+    width: 3em;
+    height: 1.5em;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #C7C7C7;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    transition: all .5s ease-out;
+}
+
+.creditCardText {
+    width: 5.875em;
+    height: 1.5em;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #C7C7C7;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    transition: all .5s ease-out;
 }
 
 .paymentButton:hover {
@@ -78,6 +110,14 @@
     cursor: pointer;
 }
 
+.paymentButtonSmall:hover {
+    box-shadow: 0 0 2px #2D69C3;
+    cursor: pointer;
+}
+.creditCardText:hover {
+    box-shadow: 0 0 2px #2D69C3;
+    cursor: pointer;
+}
 .verticalSpacer {
     padding-top: 2em;
 }

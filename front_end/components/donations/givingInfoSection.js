@@ -82,7 +82,7 @@ export default function GivingInfoSection({
                         placeholder="Enter Giving Amount"
                         borderColor={theme.colors.GREY}
                         textColor={theme.colors.BLACK}
-                        type="number"
+                        type="text"
                     />
                 </Grid>
                 <Grid xs={6} md={6} display="flex" justifyContent="left" alignItems="center" paddingLeft={1} paddingBottom={1}>
@@ -98,6 +98,7 @@ export default function GivingInfoSection({
                         textColor={theme.colors.BLACK}
                         type="text"
                         callBack={setFirstName}
+                        pattern="[A-Za-z]*"
                     />
                 </Grid>
                 <Grid xs={12} md={6} display="flex" justifyContent="center" alignItems="center" paddingLeft={0.5}>
@@ -107,6 +108,7 @@ export default function GivingInfoSection({
                         textColor={theme.colors.BLACK}
                         type="text"
                         callBack={setLastName}
+                        pattern="[A-Za-z]*"
                     />
                 </Grid>
                 <Grid xs={12} md={12} display="flex" justifyContent="left" alignItems="center" paddingTop={4} paddingLeft={1} paddingBottom={1}>
