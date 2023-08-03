@@ -82,8 +82,8 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
     };
 
     function nextPageNValidate() {
-        if (firstNameValid && lastNameValid && emailValid && customDollarValueValid) {
-            console.log('Clicked next page');
+        if ((currentScreenIndex == 1) && firstNameValid && lastNameValid && emailValid && customDollarValueValid) {
+            setCurrentScreenIndex(2)
         }
     }
     const [windowWidth, setWindowWidth] = useState(0);
@@ -150,9 +150,15 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
                         ) : (
                             <></>
                         )}
-                        <div style={{ marginLeft: "3em", marginRight: "3em" }}>
+                        <div style={{
+                            width:"70%",
+                            position: 'absolute',
+                            bottom: '60px', // Adjust the distance from the bottom as needed
+                            left: '50%',
+                            transform: 'translateX(-50%)',
+                        }}>
                             <Grid xs={12} md={12} display="flex" justifyContent="center" alignItems="center" paddingTop={4}>
-                                <RoundedButton text="continue to payment" passedStyle={passedStyle.dollarButtonBlack} callBackFunction={nextPageNValidate}/>
+                                <RoundedButton text="continue to payment" passedStyle={passedStyle.dollarButtonBlack} callBackFunction={nextPageNValidate} />
                             </Grid>
                         </div>
                     </div>

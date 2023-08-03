@@ -19,6 +19,7 @@
     border-radius: 12px;
     flex-shrink: 0;
     padding: 1em;
+    position: relative;
 
 }
 .headerForm {
