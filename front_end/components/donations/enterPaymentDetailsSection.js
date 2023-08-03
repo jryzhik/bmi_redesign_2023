@@ -6,6 +6,7 @@ import AllPaymentProviderSmall from '../buttons/allPaymentProviderSmall';
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import TITLE from '../fonts/TITLE';
 import OutlineButton from '../inputs/outlineButton';
+import CreditCard from '../inputs/creditCard';
 
 export default function EnterPaymentDetailsSection() {
     return (
@@ -22,11 +23,11 @@ export default function EnterPaymentDetailsSection() {
                     <TITLE color={theme.colors.BLACK} text={"card number"} />
                 </Grid>
                 <Grid xs={12} md={12} display="flex" justifyContent="center" alignItems="center" paddingRight={0.5}>
-                    <OutlineButton
+                    <CreditCard
                         placeholder="xxxx - xxxx - xxxx - xxxx"
                         borderColor={theme.colors.GREY}
                         textColor={theme.colors.BLACK}
-                        type="number"
+                        type="creditcard"
                         callBack={() => console.log("afs")}
                         pattern="[0-9]*"
                         />

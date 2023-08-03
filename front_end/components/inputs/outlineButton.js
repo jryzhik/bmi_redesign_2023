@@ -34,6 +34,8 @@ export default function OutlineButton({ borderColor, textColor, placeholder, typ
 
   const handleChange = (event) => {
     const newValue = event.target.value;
+    const creditCardFormatValue = formatCreditCardNumber(newValue);
+
 
     // Use a regular expression to check if the value contains only alphabetical characters
     const alphabeticRegex = /^[A-Za-z]*$/;
@@ -51,15 +53,33 @@ export default function OutlineButton({ borderColor, textColor, placeholder, typ
         setInputText(newValue);
         callBack(newValue);
       }
+    } else if (type == "creditcard") {
+      setInputText(creditCardFormatValue);
+      callBack(creditCardFormatValue);
     } else {
       setInputText(newValue);
       callBack(newValue);
     }
   };
 
+  // Function to format the credit card number with hyphens
+  const formatCreditCardNumber = (value) => {
+    // Remove all non-numeric characters from the input value
+    const numericValue = value.replace(/\D/g, '');
+
+    // Add a hyphen after the 4th digit
+    let formattedValue = '';
+    for (let i = 0; i < numericValue.length; i++) {
+      if (i !== 0 && i % 4 === 0) {
+        formattedValue += '-';
+      }
+      formattedValue += numericValue[i];
+    }
+
+    return formattedValue;
+  };
   return (
     <>
-      {console.log(type)}
       <div className={styles.thinBarContainer} style={{ borderColor: borderColor }}>
         <input
           id={themeMode} // Use themeMode state to conditionally apply styles
