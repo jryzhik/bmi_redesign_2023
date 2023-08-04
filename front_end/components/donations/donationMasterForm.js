@@ -20,7 +20,7 @@ import EnterPaymentDetailsSection from './enterPaymentDetailsSection';
 
 export default function DonationMasterForm({ headerText, secondaryText, secondaryAllign, buttonStyle, color, fund }) {
     const [popupVisible, setPopupVisible] = useState(false);
-    const [currentScreenIndex, setCurrentScreenIndex] = useState(1)
+    const [currentScreenIndex, setCurrentScreenIndex] = useState(3)
     const [customDollarValue, setCustomDollarValue] = useState('');
     const [customDollarValueValid, setCustomDollarValueValid] = useState(false);
 
@@ -38,6 +38,9 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
 
     const [expiration, setExpiration] = useState('');
     const [expirationValid, setExpirationValid] = useState(false);
+
+    const [cvv, setCvv] = useState('');
+    const [cvvValid, setCvvValid] = useState(false)
 
     const [selectedPaymentOption, setSelectedPaymentOption] = useState('cc')
 
@@ -99,6 +102,14 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
             setFirstNameValid(false)
         }
     };
+    const setCvvPapa = (value) => {
+        setCvv(value);
+        if (value !== '' && value.length >= 2) {
+            setCvvValid(true)
+        } else {
+            setCvvValid(false)
+        }
+    }
     const setccNumberPapa = (value) => {
         const isValidLength = value.length === 15 || value.length === 16;
         const startsWithValidDigit = Number(value.charAt(0)) >= 3 && Number(value.charAt(0)) <= 6;
@@ -115,8 +126,6 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
         const year = Number(value.substring(3, 5));
         let currentYear = new Date().getFullYear() % 100;
         let currentMonth = new Date().getMonth() + 1
-
-        console.log("month:", month, "yearGiven:", year, "current year:", currentYear, "current month:", currentMonth)
 
         if (year == currentYear) {
             if (month <= currentMonth) {
@@ -206,7 +215,7 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
     }
     return (
         <>
-            {console.log("firstName: ", firstName, "lastName: ", lastName, "email: ", email, "customDollarValue: ", customDollarValue, "creditcard number: ", ccNumber, "ccNumberValid: ", ccNumberValid, "Expiration: ", expiration, "Expiration Valid?: ", expirationValid)}
+            {console.log("firstName: ", firstName, "lastName: ", lastName, "email: ", email, "customDollarValue: ", customDollarValue, "creditcard number: ", ccNumber, "ccNumberValid: ", ccNumberValid, "Expiration: ", expiration, "Expiration Valid?: ", expirationValid, "CVV: ", cvv)}
             {popupVisible ? (
                 windowWidth < 900 ? (
                     <p>Fully mobile component goes here</p>
@@ -260,6 +269,8 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
                                 setSelectedPaymentOption={setSelectedPaymentOption}
                                 setExpiration={setExpirationPapa}
                                 expirationValid={expirationValid}
+                                setCvv={setCvvPapa}
+                                cvvValid={cvvValid}
                             />
                         ) : (
                             <></>

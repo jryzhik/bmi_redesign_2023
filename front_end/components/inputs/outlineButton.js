@@ -17,7 +17,7 @@ const RobotoRegular = Roboto_Slab({
   style: ['normal'],
 });
 
-export default function OutlineButton({ borderColor, textColor, placeholder, type, callBack, pattern, additionalFunction }) {
+export default function OutlineButton({ borderColor, textColor, placeholder, type, callBack, pattern, additionalFunction, maxLength }) {
   const [themeMode, setThemeMode] = useState(styles.inputEmail);
 
   // Use useEffect to update the themeMode state based on textColor prop
@@ -56,7 +56,13 @@ export default function OutlineButton({ borderColor, textColor, placeholder, typ
     } else if (type == "expiration") {
       setInputText(expirationFormated);
       callBack(expirationFormated);
-    } else {
+    } else if (type == "cvv") {
+      if (isValidNumber) {
+        setInputText(newValue)
+        callBack(newValue)
+      }
+    }
+    else {
       setInputText(newValue);
       callBack(newValue);
     }
@@ -90,6 +96,7 @@ export default function OutlineButton({ borderColor, textColor, placeholder, typ
           value={inputText}
           type={type}
           pattern="[0-9]*"
+          maxLength={maxLength}
         />
       </div>
     </>
