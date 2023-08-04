@@ -232,6 +232,7 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
                                 setccNumber={setccNumberPapa}
                                 ccNumberValid={ccNumberValid}
                                 selectedPaymentOption = {selectedPaymentOption}
+                                setSelectedPaymentOption = {setSelectedPaymentOption}
                             />
                         ) : (
                             <></>

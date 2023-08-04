@@ -1,81 +1,59 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PaymentProviderButtonSmall from './paymentProviderButtonSmall';
 import styles from '../../styles/Donate/Donate.module.css';
 import Image from 'next/image';
 
-export default function AllPaymentProviderSmall({ selectedPaymentOption }) {
-  const [applePaySelected, setapplePaySelected] = useState(styles.paymentButtonSmall);
-  const [zelleSelected, setZelleSelected] = useState(styles.paymentButtonSmall);
-  const [paypalSelected, setpaypalSelected] = useState(styles.paymentButtonSmall);
-  const [venmoSelected, setvenmoSelected] = useState(styles.paymentButtonSmall);
-  const [cashAppSelected, setCashAppSelected] = useState(styles.paymentButtonSmall);
-  const [ccSelected, setCcSelected] = useState(styles.creditCardText);
+export default function AllPaymentProviderSmall({ selectedPaymentOption, setSelectedPaymentOption }) {
 
-  useEffect(() => {
-    switch (selectedPaymentOption) {
-      case 'applepay':
-        setapplePaySelected(styles.paymentButtonSmallSelected);
-        break;
-      case 'zelle':
-        setZelleSelected(styles.paymentButtonSmallSelected);
-        break;
-      case 'paypal':
-        setpaypalSelected(styles.paymentButtonSmallSelected);
-        break;
-      case 'venmo':
-        setvenmoSelected(styles.paymentButtonSmallSelected);
-        break;
-      case 'cashapp':
-        setCashAppSelected(styles.paymentButtonSmallSelected);
-        break;
-      case 'cc':
-        setCcSelected(styles.creditCardTextSelected);
-        break;
-      default:
-        // Handle other cases if needed
-        break;
-    }
-  }, [selectedPaymentOption]);
+    const handlePaymentOptionSelect = (option) => {
+        setSelectedPaymentOption(option);
+    };
 
-  return (
-    <div style={{
-      display: "flex",
-      gap: ".2em"
-    }}>
-      <PaymentProviderButtonSmall
-        imageUrl="/img/icons/apple-pay.svg"
-        width={28}
-        passedStyle={applePaySelected}
-      />
-      <PaymentProviderButtonSmall
-        imageUrl="/img/icons/zelle.svg"
-        width={28}
-        passedStyle={zelleSelected}
-      />
-      <PaymentProviderButtonSmall
-        imageUrl="/img/icons/paypal.svg"
-        width={33}
-        passedStyle={paypalSelected}
-      />
-      <PaymentProviderButtonSmall
-        imageUrl="/img/icons/venmo.svg"
-        width={29}
-        passedStyle={venmoSelected}
-      />
-      <PaymentProviderButtonSmall
-        imageUrl="/img/icons/cashapp.svg"
-        width={50}
-        passedStyle={cashAppSelected}
-      />
-      <div className={ccSelected}>
-        <Image
-          src="img/icons/creditCard.svg"
-          alt="button"
-          width={82}
-          height={13}
-          quality={100}
-        />
-      </div>
-    </div>
-  );
+    return (
+        <div style={{
+            display: "flex",
+            gap: ".2em"
+        }}>
+            <PaymentProviderButtonSmall
+                imageUrl="/img/icons/apple-pay.svg"
+                width={28}
+                passedStyle={selectedPaymentOption === 'applepay' ? styles.paymentButtonSmallSelected : styles.paymentButtonSmall}
+                handleClick={() => handlePaymentOptionSelect('applepay')}
+            />
+            <PaymentProviderButtonSmall
+                imageUrl="/img/icons/zelle.svg"
+                width={28}
+                passedStyle={selectedPaymentOption === 'zelle' ? styles.paymentButtonSmallSelected : styles.paymentButtonSmall}
+                handleClick={() => handlePaymentOptionSelect('zelle')}
+            />
+            <PaymentProviderButtonSmall
+                imageUrl="/img/icons/paypal.svg"
+                width={33}
+                passedStyle={selectedPaymentOption === 'paypal' ? styles.paymentButtonSmallSelected : styles.paymentButtonSmall}
+                handleClick={() => handlePaymentOptionSelect('paypal')}
+            />
+            <PaymentProviderButtonSmall
+                imageUrl="/img/icons/venmo.svg"
+                width={29}
+                passedStyle={selectedPaymentOption === 'venmo' ? styles.paymentButtonSmallSelected : styles.paymentButtonSmall}
+                handleClick={() => handlePaymentOptionSelect('venmo')}
+            />
+            <PaymentProviderButtonSmall
+                imageUrl="/img/icons/cashapp.svg"
+                width={50}
+                passedStyle={selectedPaymentOption === 'cashapp' ? styles.paymentButtonSmallSelected : styles.paymentButtonSmall}
+                handleClick={() => handlePaymentOptionSelect('cashapp')}
+            />
+            <div className={selectedPaymentOption === 'cc' ? styles.creditCardTextSelected : styles.creditCardText}>
+                <Image
+                    src="img/icons/creditCard.svg"
+                    alt="button"
+                    width={82}
+                    height={13}
+                    quality={100}
+                    onClick={() => handlePaymentOptionSelect('cc')}
+                />
+            </div>
+        </div>
+    );
 }

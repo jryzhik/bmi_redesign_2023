@@ -8,7 +8,7 @@ import TITLE from '../fonts/TITLE';
 import CreditCard from '../inputs/creditCard';
 import CreditCardForm from './creditCardForm';
 
-export default function EnterPaymentDetailsSection({ setccNumber, ccNumberValid, selectedPaymentOption }) {
+export default function EnterPaymentDetailsSection({ setccNumber, ccNumberValid, selectedPaymentOption, setSelectedPaymentOption }) {
     const [cardNumberLabel, setcardNumberLabel] = useState('card number');
     const [cardNumberLabelColor, setcardNumberLabelColor] = useState(theme.colors.BLACK);
 
@@ -38,12 +38,17 @@ export default function EnterPaymentDetailsSection({ setccNumber, ccNumberValid,
                 <Grid xs={12} md={12} paddingTop={1} paddingBottom={"2.6em"}>
                     <AllPaymentProviderSmall
                         selectedPaymentOption = {selectedPaymentOption}
+                        setSelectedPaymentOption = {setSelectedPaymentOption}
                     />
                 </Grid>
-                <CreditCardForm
-                    setccNumber={setccNumber}
-                    ccNumberValid={ccNumberValid}
-                />
+                {selectedPaymentOption == 'cc' ? (
+                    <CreditCardForm
+                        setccNumber={setccNumber}
+                        ccNumberValid={ccNumberValid}
+                    />
+                ) : (
+                    <></>
+                )}
             </Grid>
         </div>
     )
