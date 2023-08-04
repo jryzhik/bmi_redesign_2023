@@ -20,7 +20,7 @@ import EnterPaymentDetailsSection from './enterPaymentDetailsSection';
 
 export default function DonationMasterForm({ headerText, secondaryText, secondaryAllign, buttonStyle, color, fund }) {
     const [popupVisible, setPopupVisible] = useState(false);
-    const [currentScreenIndex, setCurrentScreenIndex] = useState(3)
+    const [currentScreenIndex, setCurrentScreenIndex] = useState(2)
     const [customDollarValue, setCustomDollarValue] = useState('');
     const [customDollarValueValid, setCustomDollarValueValid] = useState(false);
 
@@ -35,6 +35,8 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
 
     const [ccNumber, setccNumber] = useState('');
     const [ccNumberValid, setccNumberValid] = useState(false);
+
+    const [selectedPaymentOption, setSelectedPaymentOption] = useState('cc')
 
 
     function luhnAlgo(cardnumber) {
@@ -149,7 +151,7 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
     function nextPageNValidate() {
         if ((currentScreenIndex == 1) && firstNameValid && lastNameValid && emailValid && customDollarValueValid) {
             setCurrentScreenIndex(2)
-        } else if ((currentScreenIndex == 3)) {
+        } else if ((currentScreenIndex == 3) && ccNumberValid) {
             setCurrentScreenIndex(4)
         }
     }
@@ -171,8 +173,9 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
             window.removeEventListener('resize', handleResize);
         };
     }, []);
-    function paymentProviderButtonPapaHandle() {
+    function paymentProviderButtonPapaHandle(value) {
         if (currentScreenIndex == 2) {
+            setSelectedPaymentOption(value)
             setCurrentScreenIndex(3)
         }
     }
@@ -228,6 +231,7 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
                             <EnterPaymentDetailsSection
                                 setccNumber={setccNumberPapa}
                                 ccNumberValid={ccNumberValid}
+                                selectedPaymentOption = {selectedPaymentOption}
                             />
                         ) : (
                             <></>

@@ -91,6 +91,18 @@
     align-content: center;
     transition: all .5s ease-out;
 }
+.paymentButtonSmallSelected {
+    width: 3em;
+    height: 1.5em;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #000000;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    transition: all .5s ease-out;
+}
 
 .creditCardText {
     width: 5.875em;
@@ -98,6 +110,18 @@
     border-style: solid;
     border-width: 1px;
     border-color: #C7C7C7;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    transition: all .5s ease-out;
+}
+.creditCardTextSelected {
+    width: 5.875em;
+    height: 1.5em;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #000000;
     border-radius: 7px;
     display: flex;
     justify-content: center;

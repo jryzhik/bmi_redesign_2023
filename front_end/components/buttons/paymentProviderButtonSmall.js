@@ -3,9 +3,9 @@ import Image from 'next/image';
 import styles from '../../styles/Donate/Donate.module.css';
 
 
-export default function PaymentProviderButtonSmall({ imageUrl, width, handleClick }) {
+export default function PaymentProviderButtonSmall({ imageUrl, width, handleClick, passedStyle }) {
     return (
-        <div onClick={handleClick} className={styles.paymentButtonSmall}>
+        <div onClick={handleClick} className={passedStyle}>
             <Image
                 src={imageUrl}
                 alt="button"
