@@ -8,7 +8,7 @@ import TITLE from '../fonts/TITLE';
 import CreditCard from '../inputs/creditCard';
 import CreditCardForm from './creditCardForm';
 
-export default function EnterPaymentDetailsSection({ setccNumber, ccNumberValid, selectedPaymentOption, setSelectedPaymentOption }) {
+export default function EnterPaymentDetailsSection({ setccNumber, ccNumberValid, selectedPaymentOption, setSelectedPaymentOption, setExpiration, expirationValid }) {
     const [cardNumberLabel, setcardNumberLabel] = useState('card number');
     const [cardNumberLabelColor, setcardNumberLabelColor] = useState(theme.colors.BLACK);
 
@@ -45,6 +45,8 @@ export default function EnterPaymentDetailsSection({ setccNumber, ccNumberValid,
                     <CreditCardForm
                         setccNumber={setccNumber}
                         ccNumberValid={ccNumberValid}
+                        setExpiration={setExpiration}
+                        expirationValid={expirationValid}
                     />
                 ) : (
                     <></>

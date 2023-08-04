@@ -17,7 +17,7 @@ const RobotoRegular = Roboto_Slab({
   style: ['normal'],
 });
 
-export default function OutlineButton({ borderColor, textColor, placeholder, type, callBack, pattern }) {
+export default function OutlineButton({ borderColor, textColor, placeholder, type, callBack, pattern, additionalFunction }) {
   const [themeMode, setThemeMode] = useState(styles.inputEmail);
 
   // Use useEffect to update the themeMode state based on textColor prop
@@ -34,7 +34,7 @@ export default function OutlineButton({ borderColor, textColor, placeholder, typ
 
   const handleChange = (event) => {
     const newValue = event.target.value;
-    const creditCardFormatValue = formatCreditCardNumber(newValue);
+    const expirationFormated = formatExpiration(newValue);
 
 
     // Use a regular expression to check if the value contains only alphabetical characters
@@ -53,31 +53,31 @@ export default function OutlineButton({ borderColor, textColor, placeholder, typ
         setInputText(newValue);
         callBack(newValue);
       }
-    } else if (type == "creditcard") {
-      setInputText(creditCardFormatValue);
-      callBack(creditCardFormatValue);
+    } else if (type == "expiration") {
+      setInputText(expirationFormated);
+      callBack(expirationFormated);
     } else {
       setInputText(newValue);
       callBack(newValue);
     }
+    if (additionalFunction != undefined) {
+      additionalFunction()
+    }
   };
 
   // Function to format the credit card number with hyphens
-  const formatCreditCardNumber = (value) => {
-    // Remove all non-numeric characters from the input value
-    const numericValue = value.replace(/\D/g, '');
-
-    // Add a hyphen after the 4th digit
+  const formatExpiration = (value) => {
+    const numericValue = value.replace(/\D/g, '').slice(0, 4); // Take the first 4 digits
     let formattedValue = '';
     for (let i = 0; i < numericValue.length; i++) {
-      if (i !== 0 && i % 4 === 0) {
-        formattedValue += '-';
+      if (i === 2) {
+        formattedValue += '/';
       }
       formattedValue += numericValue[i];
     }
-
     return formattedValue;
   };
+
   return (
     <>
       <div className={styles.thinBarContainer} style={{ borderColor: borderColor }}>
@@ -88,7 +88,7 @@ export default function OutlineButton({ borderColor, textColor, placeholder, typ
           className={textStyle.className}
           onChange={handleChange}
           value={inputText}
-          type={"text"}
+          type={type}
           pattern="[0-9]*"
         />
       </div>

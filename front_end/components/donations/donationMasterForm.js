@@ -9,7 +9,7 @@ import ST from '../fonts/ST';
 import theme from '../../styles/theme';
 import TITLE from '../fonts/TITLE';
 import EcfaInfo from '../icons/ecfaInfo';
-import GivingInfoSection from './GivingInfoSection';
+import GivingInfoSection from './givingInfoSection';
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import RoundedButton from '../buttons/roundedButton';
 import passedStyle from '../../styles/Donate/ColorDonate.module.css';
@@ -20,7 +20,7 @@ import EnterPaymentDetailsSection from './enterPaymentDetailsSection';
 
 export default function DonationMasterForm({ headerText, secondaryText, secondaryAllign, buttonStyle, color, fund }) {
     const [popupVisible, setPopupVisible] = useState(false);
-    const [currentScreenIndex, setCurrentScreenIndex] = useState(2)
+    const [currentScreenIndex, setCurrentScreenIndex] = useState(1)
     const [customDollarValue, setCustomDollarValue] = useState('');
     const [customDollarValueValid, setCustomDollarValueValid] = useState(false);
 
@@ -35,6 +35,9 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
 
     const [ccNumber, setccNumber] = useState('');
     const [ccNumberValid, setccNumberValid] = useState(false);
+
+    const [expiration, setExpiration] = useState('');
+    const [expirationValid, setExpirationValid] = useState(false);
 
     const [selectedPaymentOption, setSelectedPaymentOption] = useState('cc')
 
@@ -105,6 +108,28 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
             setccNumberValid(true);
         } else {
             setccNumberValid(false);
+        }
+    };
+    const setExpirationPapa = (value) => {
+        const month = Number(value.substring(0, 2));
+        const year = Number(value.substring(3, 5));
+        let currentYear = new Date().getFullYear() % 100;
+        let currentMonth = new Date().getMonth() + 1
+
+        console.log("month:", month, "yearGiven:", year, "current year:", currentYear, "current month:", currentMonth)
+
+        if (year == currentYear) {
+            if (month <= currentMonth) {
+                setExpirationValid(false);
+            } else {
+                setExpiration(value);
+                setExpirationValid(true);
+            }
+        } else if (month <= 12 && year >= currentYear) {
+            setExpiration(value);
+            setExpirationValid(true);
+        } else {
+            setExpirationValid(false);
         }
     };
     const setLastNamePapa = (value) => {
@@ -181,7 +206,7 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
     }
     return (
         <>
-            {console.log("firstName: ", firstName, "lastName: ", lastName, "email: ", email, "customDollarValue: ", customDollarValue, "creditcard number: ", ccNumber, "ccNumberValid: ", ccNumberValid)}
+            {console.log("firstName: ", firstName, "lastName: ", lastName, "email: ", email, "customDollarValue: ", customDollarValue, "creditcard number: ", ccNumber, "ccNumberValid: ", ccNumberValid, "Expiration: ", expiration, "Expiration Valid?: ", expirationValid)}
             {popupVisible ? (
                 windowWidth < 900 ? (
                     <p>Fully mobile component goes here</p>
@@ -231,8 +256,10 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
                             <EnterPaymentDetailsSection
                                 setccNumber={setccNumberPapa}
                                 ccNumberValid={ccNumberValid}
-                                selectedPaymentOption = {selectedPaymentOption}
-                                setSelectedPaymentOption = {setSelectedPaymentOption}
+                                selectedPaymentOption={selectedPaymentOption}
+                                setSelectedPaymentOption={setSelectedPaymentOption}
+                                setExpiration={setExpirationPapa}
+                                expirationValid={expirationValid}
                             />
                         ) : (
                             <></>

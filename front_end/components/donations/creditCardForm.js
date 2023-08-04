@@ -4,14 +4,20 @@ import AllPaymentProviderSmall from '../buttons/allPaymentProviderSmall';
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import TITLE from '../fonts/TITLE';
 import CreditCard from '../inputs/creditCard';
+import OutlineButton from '../inputs/outlineButton';
 
-export default function CreditCardForm({ setccNumber, ccNumberValid }) {
+export default function CreditCardForm({ setccNumber, ccNumberValid, setExpiration, expirationValid }) {
     const [cardNumberLabel, setcardNumberLabel] = useState('card number');
     const [cardNumberLabelColor, setcardNumberLabelColor] = useState(theme.colors.BLACK);
 
+    const [expirationDateLabel, setExpirationDateLabel] = useState('expiration date');
+    const [expirationDateLabelColor, setExpirationDateLabelColor] = useState(theme.colors.BLACK);
+
+    const [cvcLabel, setCvcLabel] = useState('cvv');
+    const [cvcLabelColor, setCvcLabelColor] = useState(theme.colors.BLACK);
+
     // Define the changeColorNText function outside the useEffect hook
     function changeColorNText() {
-        console.log(ccNumberValid);
         if (ccNumberValid) {
             setcardNumberLabel('card number');
             setcardNumberLabelColor(theme.colors.BLACK);
@@ -19,12 +25,23 @@ export default function CreditCardForm({ setccNumber, ccNumberValid }) {
             setcardNumberLabel('please enter a valid card number');
             setcardNumberLabelColor(theme.colors.RED);
         }
+        if (expirationValid) {
+            setExpirationDateLabel('expiration');
+            setExpirationDateLabelColor(theme.colors.BLACK);
+        } else {
+            setExpirationDateLabel('please enter valid date');
+            setExpirationDateLabelColor(theme.colors.RED);
+        }
+
     }
 
     // Call the function immediately when the component mounts and whenever ccNumberValid changes
     useEffect(() => {
         changeColorNText();
     }, [ccNumberValid]);
+    useEffect(() => {
+        changeColorNText();
+    }, [expirationValid])
     return (
         <>
             <Grid xs={12} md={12} display="flex" justifyContent="left" alignItems="center" paddingLeft={2} paddingBottom={1}>
@@ -39,6 +56,32 @@ export default function CreditCardForm({ setccNumber, ccNumberValid }) {
                     callBack={changeColorNText}
                     pattern="[0-9]*"
                     setccNumber={setccNumber}
+                />
+            </Grid>
+            <Grid xs={6} md={6} display="flex" justifyContent="left" alignItems="center" paddingLeft={2} paddingBottom={1}>
+                <TITLE color={expirationDateLabelColor} text={expirationDateLabel} />
+            </Grid>
+            <Grid xs={6} md={6} display="flex" justifyContent="left" alignItems="center" paddingLeft={2} paddingBottom={1}>
+                <TITLE color={cvcLabelColor} text={cvcLabel} />
+            </Grid>
+            <Grid xs={6} md={6} display="flex" justifyContent="center" alignItems="center" paddingRight={0.5}>
+                <OutlineButton
+                    placeholder="MM/YY"
+                    borderColor={theme.colors.GREY}
+                    textColor={theme.colors.BLACK}
+                    type="expiration"
+                    callBack={setExpiration}
+                    additionalFunction={changeColorNText}
+                />
+            </Grid>
+            <Grid xs={6} md={6} display="flex" justifyContent="center" alignItems="center" paddingRight={0.5}>
+                <OutlineButton
+                    placeholder="Enter your first name"
+                    borderColor={theme.colors.GREY}
+                    textColor={theme.colors.BLACK}
+                    type="text"
+                    callBack={() => console.log("as")}
+                    pattern="[A-Za-z]*"
                 />
             </Grid>
         </>
