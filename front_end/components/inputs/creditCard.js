@@ -35,6 +35,11 @@ export default function CreditCard({ borderColor, textColor, placeholder, type, 
 
   const handleChange = (event) => {
     const newValue = event.target.value;
+    if (newValue === '') {
+      setTextStyle(RobotoLight);
+    } else {
+      setTextStyle(RobotoRegular);
+    }
     const creditCardFormatValue = formatCreditCardNumber(newValue);
     if (newValue.charAt(0) == '3') {
       setccName('american_express')

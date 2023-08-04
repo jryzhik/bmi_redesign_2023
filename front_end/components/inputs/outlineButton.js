@@ -36,6 +36,11 @@ export default function OutlineButton({ borderColor, textColor, placeholder, typ
     const newValue = event.target.value;
     const expirationFormated = formatExpiration(newValue);
 
+    if (newValue === '') {
+      setTextStyle(RobotoLight);
+    } else {
+      setTextStyle(RobotoRegular);
+    }
 
     // Use a regular expression to check if the value contains only alphabetical characters
     const alphabeticRegex = /^[A-Za-z]*$/;
