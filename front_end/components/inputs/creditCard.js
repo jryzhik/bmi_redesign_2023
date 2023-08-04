@@ -18,7 +18,7 @@ const RobotoRegular = Roboto_Slab({
   style: ['normal'],
 });
 
-export default function CreditCard({ borderColor, textColor, placeholder, type, callBack, pattern }) {
+export default function CreditCard({ borderColor, textColor, placeholder, type, callBack, pattern, setccNumber}) {
   const [themeMode, setThemeMode] = useState(styles.inputEmail);
   const [ccName, setccName] = useState(false)
   // Use useEffect to update the themeMode state based on textColor prop
@@ -48,28 +48,14 @@ export default function CreditCard({ borderColor, textColor, placeholder, type, 
       setccName(false)
     }
 
-    // Use a regular expression to check if the value contains only alphabetical characters
-    const alphabeticRegex = /^[A-Za-z]*$/;
-    const isValidInput = alphabeticRegex.test(newValue);
     const isValidNumber = /^[0-9]*$/.test(event.target.value);
 
     // If the input is valid, update the state and call the callBack function
-    if (type == 'number') {
-      if (isValidNumber) {
-        setInputText(newValue);
-        callBack(newValue);
-      }
-    } else if (type == 'text') {
-      if (isValidInput) {
-        setInputText(newValue);
-        callBack(newValue);
-      }
-    } else if (type == "creditcard") {
+   if (type == "creditcard") {
       setInputText(creditCardFormatValue);
       callBack(creditCardFormatValue);
-    } else {
-      setInputText(newValue);
-      callBack(newValue);
+      console.log("from crrdiasfasf", newValue)
+      setccNumber(newValue.replace(/-/g, ''))
     }
   };
 
@@ -101,10 +87,12 @@ export default function CreditCard({ borderColor, textColor, placeholder, type, 
           value={inputText}
           type={"text"}
           pattern="[0-9]*"
+          maxLength={19}
         />
         {ccName ? (
           <Image
             src={`/img/icons/${ccName}.svg`}
+            alt={ccName}
             width={40}
             height={20}
             quality={100}

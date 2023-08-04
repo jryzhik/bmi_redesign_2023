@@ -20,7 +20,7 @@ import EnterPaymentDetailsSection from './enterPaymentDetailsSection';
 
 export default function DonationMasterForm({ headerText, secondaryText, secondaryAllign, buttonStyle, color, fund }) {
     const [popupVisible, setPopupVisible] = useState(false);
-    const [currentScreenIndex, setCurrentScreenIndex] = useState(1)
+    const [currentScreenIndex, setCurrentScreenIndex] = useState(3)
     const [customDollarValue, setCustomDollarValue] = useState('');
     const [customDollarValueValid, setCustomDollarValueValid] = useState(false);
 
@@ -33,6 +33,47 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
     const [email, setEmail] = useState('');
     const [emailValid, setEmailValid] = useState(false);
 
+    const [ccNumber, setccNumber] = useState('');
+    const [ccNumberValid, setccNumberValid] = useState(false);
+
+
+    function luhnAlgo(cardnumber) {
+        const length = cardnumber.length
+        var totalSum = 0
+        for (let i = length - 1; i >= 0; i--) {
+            if (length % 2 != 0) {
+                // AMEX CARDS
+                if (i % 2 != 0) {
+                    if ((Number(cardnumber.charAt(i)) * 2) > 9) {
+                        totalSum += (Number(cardnumber.charAt(i)) * 2) % 10 + 1
+                    } else {
+                        totalSum += Number(cardnumber.charAt(i)) * 2
+                    }
+                } else {
+                    totalSum += Number(cardnumber.charAt(i))
+                }
+            } else {
+                //Other cards
+                if (i % 2 == 0) {
+                    if ((Number(cardnumber.charAt(i)) * 2) > 9) {
+                        totalSum += (Number(cardnumber.charAt(i)) * 2) % 10 + 1
+                    } else {
+                        totalSum += Number(cardnumber.charAt(i)) * 2
+                    }
+                } else {
+                    totalSum += Number(cardnumber.charAt(i))
+                }
+            }
+        }
+        if (totalSum % 10 == 0) {
+            console.log("card valid")
+            return true
+        } else {
+            console.log("card invalid")
+            return false
+
+        }
+    }
     function resetDonation() {
         setPopupVisible(false)
         setCurrentScreenIndex(1)
@@ -53,7 +94,16 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
             setFirstNameValid(false)
         }
     };
-
+    const setccNumberPapa = (value) => {
+        if (value.length == 15 || value.length == 16) {
+            if (Number(value.charAt(0)) >= 3 && Number(value.charAt(0)) <= 6) {
+                if (luhnAlgo(value)) {
+                    setccNumber(value)
+                    setccNumberValid(true)
+                }
+            }
+        }
+    }
     const setLastNamePapa = (value) => {
         setLastName(value);
         if (value !== '') {
@@ -98,6 +148,8 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
     function nextPageNValidate() {
         if ((currentScreenIndex == 1) && firstNameValid && lastNameValid && emailValid && customDollarValueValid) {
             setCurrentScreenIndex(2)
+        } else if ((currentScreenIndex == 3)) {
+            setCurrentScreenIndex(4)
         }
     }
     const [windowWidth, setWindowWidth] = useState(0);
@@ -122,10 +174,10 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
         if (currentScreenIndex == 2) {
             setCurrentScreenIndex(3)
         }
-    } 
+    }
     return (
         <>
-            {console.log("firstName: ", firstName, "lastName: ", lastName, "email: ", email, "customDollarValue: ", customDollarValue)}
+            {console.log("firstName: ", firstName, "lastName: ", lastName, "email: ", email, "customDollarValue: ", customDollarValue, "creditcard number: ", ccNumber, "ccNumberValid: ", ccNumberValid)}
             {popupVisible ? (
                 windowWidth < 900 ? (
                     <p>Fully mobile component goes here</p>
@@ -166,13 +218,20 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
                         )}
                         {currentScreenIndex === 2 ? (
                             <SelectPaymentSection
-                                paymentButtonClickHandle = {paymentProviderButtonPapaHandle}
+                                paymentButtonClickHandle={paymentProviderButtonPapaHandle}
                             />
                         ) : (
                             <></>
                         )}
                         {currentScreenIndex === 3 ? (
-                            <EnterPaymentDetailsSection/>
+                            <EnterPaymentDetailsSection
+                                setccNumber={setccNumberPapa}
+                            />
+                        ) : (
+                            <></>
+                        )}
+                        {currentScreenIndex === 4 ? (
+                            <h1>section 4</h1>
                         ) : (
                             <></>
                         )}

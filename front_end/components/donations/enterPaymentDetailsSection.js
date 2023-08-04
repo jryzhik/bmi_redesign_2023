@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react';
 import styles from '../../styles/Donate/Donate.module.css';
 import H2 from '../fonts/H2';
 import theme from '../../styles/theme';
 import AllPaymentProviderSmall from '../buttons/allPaymentProviderSmall';
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import TITLE from '../fonts/TITLE';
-import OutlineButton from '../inputs/outlineButton';
 import CreditCard from '../inputs/creditCard';
 
-export default function EnterPaymentDetailsSection() {
+export default function EnterPaymentDetailsSection({setccNumber}) {
+    const [cardNumberLabel, setcardNumberLabel] = useState('card number');
+    const [cardNumberLabelColor, setcardNumberLabelColor] = useState(theme.colors.BLACK);
     return (
         <div className={styles.enterPaymentDetailsSection}>
             <H2 color={theme.colors.BLACK} text="Enter your payment details." />
@@ -20,7 +21,7 @@ export default function EnterPaymentDetailsSection() {
                     <AllPaymentProviderSmall />
                 </Grid>
                 <Grid xs={12} md={12} display="flex" justifyContent="left" alignItems="center" paddingLeft={2} paddingBottom={1}>
-                    <TITLE color={theme.colors.BLACK} text={"card number"} />
+                    <TITLE color={cardNumberLabelColor} text={cardNumberLabel} />
                 </Grid>
                 <Grid xs={12} md={12} display="flex" justifyContent="center" alignItems="center" paddingRight={0.5}>
                     <CreditCard
@@ -28,9 +29,10 @@ export default function EnterPaymentDetailsSection() {
                         borderColor={theme.colors.GREY}
                         textColor={theme.colors.BLACK}
                         type="creditcard"
-                        callBack={() => console.log("afs")}
+                        callBack={() => console.log("ddg")}
                         pattern="[0-9]*"
-                        />
+                        setccNumber = {setccNumber}
+                    />
                 </Grid>
             </Grid>
         </div>
