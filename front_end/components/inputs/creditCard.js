@@ -18,7 +18,7 @@ const RobotoRegular = Roboto_Slab({
   style: ['normal'],
 });
 
-export default function CreditCard({ borderColor, textColor, placeholder, type, callBack, pattern, setccNumber}) {
+export default function CreditCard({ borderColor, textColor, placeholder, type, callBack, pattern, setccNumber }) {
   const [themeMode, setThemeMode] = useState(styles.inputEmail);
   const [ccName, setccName] = useState(false)
   // Use useEffect to update the themeMode state based on textColor prop
@@ -51,12 +51,11 @@ export default function CreditCard({ borderColor, textColor, placeholder, type, 
     const isValidNumber = /^[0-9]*$/.test(event.target.value);
 
     // If the input is valid, update the state and call the callBack function
-   if (type == "creditcard") {
+    if (type == "creditcard") {
       setInputText(creditCardFormatValue);
-      callBack(creditCardFormatValue);
-      console.log("from crrdiasfasf", newValue)
       setccNumber(newValue.replace(/-/g, ''))
     }
+    callBack();
   };
 
   // Function to format the credit card number with hyphens

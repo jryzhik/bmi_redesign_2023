@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from '../../styles/Donate/Donate.module.css';
 import H2 from '../fonts/H2';
 import theme from '../../styles/theme';
@@ -7,9 +7,26 @@ import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import TITLE from '../fonts/TITLE';
 import CreditCard from '../inputs/creditCard';
 
-export default function EnterPaymentDetailsSection({setccNumber}) {
+export default function EnterPaymentDetailsSection({ setccNumber, ccNumberValid }) {
     const [cardNumberLabel, setcardNumberLabel] = useState('card number');
     const [cardNumberLabelColor, setcardNumberLabelColor] = useState(theme.colors.BLACK);
+
+    // Define the changeColorNText function outside the useEffect hook
+    function changeColorNText() {
+        console.log(ccNumberValid);
+        if (ccNumberValid) {
+            setcardNumberLabel('card number');
+            setcardNumberLabelColor(theme.colors.BLACK);
+        } else {
+            setcardNumberLabel('please enter a valid card number');
+            setcardNumberLabelColor(theme.colors.RED);
+        }
+    }
+
+    // Call the function immediately when the component mounts and whenever ccNumberValid changes
+    useEffect(() => {
+        changeColorNText();
+    }, [ccNumberValid]);
     return (
         <div className={styles.enterPaymentDetailsSection}>
             <H2 color={theme.colors.BLACK} text="Enter your payment details." />
@@ -29,9 +46,9 @@ export default function EnterPaymentDetailsSection({setccNumber}) {
                         borderColor={theme.colors.GREY}
                         textColor={theme.colors.BLACK}
                         type="creditcard"
-                        callBack={() => console.log("ddg")}
+                        callBack={changeColorNText}
                         pattern="[0-9]*"
-                        setccNumber = {setccNumber}
+                        setccNumber={setccNumber}
                     />
                 </Grid>
             </Grid>

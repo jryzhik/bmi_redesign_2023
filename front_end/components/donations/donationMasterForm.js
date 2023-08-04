@@ -95,15 +95,16 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
         }
     };
     const setccNumberPapa = (value) => {
-        if (value.length == 15 || value.length == 16) {
-            if (Number(value.charAt(0)) >= 3 && Number(value.charAt(0)) <= 6) {
-                if (luhnAlgo(value)) {
-                    setccNumber(value)
-                    setccNumberValid(true)
-                }
-            }
+        const isValidLength = value.length === 15 || value.length === 16;
+        const startsWithValidDigit = Number(value.charAt(0)) >= 3 && Number(value.charAt(0)) <= 6;
+
+        if (isValidLength && startsWithValidDigit && luhnAlgo(value)) {
+            setccNumber(value);
+            setccNumberValid(true);
+        } else {
+            setccNumberValid(false);
         }
-    }
+    };
     const setLastNamePapa = (value) => {
         setLastName(value);
         if (value !== '') {
@@ -226,6 +227,7 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
                         {currentScreenIndex === 3 ? (
                             <EnterPaymentDetailsSection
                                 setccNumber={setccNumberPapa}
+                                ccNumberValid={ccNumberValid}
                             />
                         ) : (
                             <></>
