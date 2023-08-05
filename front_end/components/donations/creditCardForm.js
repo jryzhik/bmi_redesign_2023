@@ -117,7 +117,7 @@ export default function CreditCardForm({ setccNumber, ccNumberValid, setExpirati
                         valueSelected={feeOptIn}
                     />
                     <div style={{ display: "flex", flexDirection: "column" }}>
-                        <FIELDTEXT color={theme.colors.BLACK} text={`Add $${feeAmount} to cover payment services`} />
+                        <FIELDTEXT color={theme.colors.BLACK} text={`Add $${feeAmount} to cover processing fee`} />
                         <ST color={theme.colors.CHARCOAL} text="*Required with AMEX" />
                     </div>
                 </div>

@@ -15,12 +15,14 @@ import RoundedButton from '../buttons/roundedButton';
 import passedStyle from '../../styles/Donate/ColorDonate.module.css';
 import SelectPaymentSection from './selectPaymentSection';
 import EnterPaymentDetailsSection from './enterPaymentDetailsSection';
+import OverviewDonationSection from './overviewDonationSection';
 
 
 
 export default function DonationMasterForm({ headerText, secondaryText, secondaryAllign, buttonStyle, color, fund }) {
     const [popupVisible, setPopupVisible] = useState(false);
-    const [currentScreenIndex, setCurrentScreenIndex] = useState(3)
+    const [currentScreenIndex, setCurrentScreenIndex] = useState(1)
+
     const [customDollarValue, setCustomDollarValue] = useState('');
     const [customDollarValueValid, setCustomDollarValueValid] = useState(false);
 
@@ -45,9 +47,19 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
     const [reoccuringSelected, setreoccuringSelected] = useState(false)
     const [feeOptIn, setfeeOptIn] = useState(false)
 
-
+    const [totalAmount, setTotalAmount] = useState('')
     const [selectedPaymentOption, setSelectedPaymentOption] = useState('cc')
 
+    useEffect(() => {
+        if (feeOptIn) {
+            const stripeFeeAmount = ((customDollarValue * parseFloat(process.env.NEXT_PUBLIC_STRIPE_FEE_PERCENT) / 100) + parseFloat(process.env.NEXT_PUBLIC_STRIPE_CONSTANT_AMOUNT)).toFixed(2);
+            const total = parseFloat(customDollarValue) + parseFloat(stripeFeeAmount);
+
+            setTotalAmount(total.toFixed(2));
+        } else {
+            setTotalAmount(customDollarValue)
+        }
+    }, [customDollarValue, feeOptIn]);
 
     function luhnAlgo(cardnumber) {
         const length = cardnumber.length
@@ -92,6 +104,7 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
         setFirstName('')
         setLastName('')
         setCustomDollarValue('')
+        setTotalAmount('')
         setEmail('')
         setFirstNameValid(false)
         setLastNameValid(false)
@@ -172,6 +185,7 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
     const masterCallBack = (value) => {
         setPopupVisible(true);
         setCustomDollarValue(value);
+        setTotalAmount(value)
         if (value !== '') {
             setCustomDollarValueValid(true);
         } else {
@@ -219,7 +233,7 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
     }
     return (
         <>
-            {console.log("firstName: ", firstName, "lastName: ", lastName, "email: ", email, "customDollarValue: ", customDollarValue, "creditcard number: ", ccNumber, "ccNumberValid: ", ccNumberValid, "Expiration: ", expiration, "Expiration Valid?: ", expirationValid, "CVV: ", cvv, "Monthly?: ", reoccuringSelected, "fee opt in: ", feeOptIn, "FEEPERCENT from env: ", process.env.DB_USER)}
+            {console.log("firstName: ", firstName, "lastName: ", lastName, "email: ", email, "customDollarValue: ", customDollarValue, "creditcard number: ", ccNumber, "ccNumberValid: ", ccNumberValid, "Expiration: ", expiration, "Expiration Valid?: ", expirationValid, "CVV: ", cvv, "Monthly?: ", reoccuringSelected, "fee opt in: ", feeOptIn, " TOTAL AMOUNT ", totalAmount)}
             {popupVisible ? (
                 windowWidth < 900 ? (
                     <p>Fully mobile component goes here</p>
@@ -247,7 +261,9 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
                                 handleCustomDollarChange={handleCustomDollarChange}
                                 customDollarValue={customDollarValue}
                                 customDollarValueValid={customDollarValueValid}
+                                firstName={firstName}
                                 setFirstName={setFirstNamePapa}
+                                lastName={lastName}
                                 setLastName={setLastNamePapa}
                                 handleEmailChange={handleEmailChange}
                                 firstNameValid={firstNameValid}
@@ -285,7 +301,10 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
                             <></>
                         )}
                         {currentScreenIndex === 4 ? (
-                            <h1>section 4</h1>
+                            <OverviewDonationSection
+                                totalAmount={totalAmount}
+                                setCurrentScreenIndex={setCurrentScreenIndex}
+                            />
                         ) : (
                             <></>
                         )}
@@ -297,7 +316,7 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
                             transform: 'translateX(-50%)',
                         }}>
                             <Grid xs={12} md={12} display="flex" justifyContent="center" alignItems="center" paddingTop={4}>
-                                <RoundedButton text="continue to payment" passedStyle={passedStyle.dollarButtonBlack} callBackFunction={nextPageNValidate} />
+                                <RoundedButton text={currentScreenIndex === 3 ? "overview" : "continue to payment"} passedStyle={passedStyle.dollarButtonBlack} callBackFunction={nextPageNValidate} />
                             </Grid>
                         </div>
                     </div>

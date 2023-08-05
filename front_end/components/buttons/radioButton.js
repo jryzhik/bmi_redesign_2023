@@ -13,7 +13,7 @@ export default function RadioButton({ callBack, valueSelected }) {
     return (
         <>
             {selected ? (
-                <div style={{ alignSelf: "baseline"}}>
+                <div className={styles.radioButtonSelected}>
                     <Image
                         src="img/icons/checkGreen.svg"
                         alt="button"

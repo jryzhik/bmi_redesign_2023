@@ -79,6 +79,20 @@
     transition: all .5s ease-out;
 }
 
+.overviewDonationSection {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3em;
+    padding-left: 3em;
+    padding-right: 3em;
+    align-items: center;
+}
+.editText {
+    text-decoration: underline;
+}
+.editText:hover {
+    cursor: pointer;
+}
 .paymentButtonSmall {
     width: 3em;
     height: 1.5em;
@@ -91,6 +105,7 @@
     align-content: center;
     transition: all .5s ease-out;
 }
+
 .paymentButtonSmallSelected {
     width: 3em;
     height: 1.5em;
@@ -115,6 +130,7 @@
     align-content: center;
     transition: all .5s ease-out;
 }
+
 .creditCardTextSelected {
     width: 5.875em;
     height: 1.5em;
@@ -136,10 +152,12 @@
     box-shadow: 0 0 2px #2D69C3;
     cursor: pointer;
 }
+
 .creditCardText:hover {
     box-shadow: 0 0 2px #2D69C3;
     cursor: pointer;
 }
+
 .verticalSpacer {
     padding-top: 2em;
 }
@@ -176,6 +194,7 @@
     align-items: center;
     gap: 1em;
 }
+
 .radioButtonUnselected {
     border-radius: 50%;
     border-color: #C7C7C7;
@@ -183,11 +202,30 @@
     width: 1.5em;
     height: 1.5em;
     border-style: solid;
+    transition: all .2s ease-out;
 }
+
 .radioButtonSelected {
+    align-self: baseline;
     border-radius: 50%;
+    border-color: #459673;
+    border-width: 2px;
     width: 1.5em;
     height: 1.5em;
+    border-style: solid;
+    transition: all 1s ease-out;
+}
+
+.radioButtonUnselected:hover {
+    cursor: pointer;
+    border-color: #459673;
+
+}
+
+.radioButtonSelected:hover {
+    cursor: pointer;
+    border-color: #C7C7C7;
+
 }
 
 @media (min-width: 900px) and (max-width: 1030px) {

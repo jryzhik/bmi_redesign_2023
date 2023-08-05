@@ -10,11 +10,14 @@ import CustomDollar from '../inputs/customDollar';
 export default function GivingInfoSection({
     handleCustomDollarChange,
     customDollarValue,
+    firstName,
     setFirstName,
+    lastName,
     setLastName,
     handleEmailChange,
     firstNameValid,
     lastNameValid,
+    email,
     emailValid,
     customDollarValueValid,
 }) {
@@ -99,6 +102,7 @@ export default function GivingInfoSection({
                         type="text"
                         callBack={setFirstName}
                         pattern="[A-Za-z]*"
+                        value={firstName}
                     />
                 </Grid>
                 <Grid xs={12} md={6} display="flex" justifyContent="center" alignItems="center" paddingLeft={0.5}>
@@ -109,6 +113,7 @@ export default function GivingInfoSection({
                         type="text"
                         callBack={setLastName}
                         pattern="[A-Za-z]*"
+                        value={lastName}
                     />
                 </Grid>
                 <Grid xs={12} md={12} display="flex" justifyContent="left" alignItems="center" paddingTop={4} paddingLeft={1} paddingBottom={1}>
@@ -122,6 +127,7 @@ export default function GivingInfoSection({
                         type="email"
                         onChange={handleEmailChange}
                         callBack={handleEmailChange}
+                        value={email}
                     />
                 </Grid>
             </Grid>
