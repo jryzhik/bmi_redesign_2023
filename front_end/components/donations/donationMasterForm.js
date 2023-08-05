@@ -219,7 +219,7 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
     }
     return (
         <>
-            {console.log("firstName: ", firstName, "lastName: ", lastName, "email: ", email, "customDollarValue: ", customDollarValue, "creditcard number: ", ccNumber, "ccNumberValid: ", ccNumberValid, "Expiration: ", expiration, "Expiration Valid?: ", expirationValid, "CVV: ", cvv, "Monthly?: ", reoccuringSelected, "fee opt in: ", feeOptIn)}
+            {console.log("firstName: ", firstName, "lastName: ", lastName, "email: ", email, "customDollarValue: ", customDollarValue, "creditcard number: ", ccNumber, "ccNumberValid: ", ccNumberValid, "Expiration: ", expiration, "Expiration Valid?: ", expirationValid, "CVV: ", cvv, "Monthly?: ", reoccuringSelected, "fee opt in: ", feeOptIn, "FEEPERCENT from env: ", process.env.DB_USER)}
             {popupVisible ? (
                 windowWidth < 900 ? (
                     <p>Fully mobile component goes here</p>
@@ -279,6 +279,7 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
                                 reoccuringSelected={reoccuringSelected}
                                 setfeeOptIn={setfeeOptIn}
                                 feeOptIn={feeOptIn}
+                                stripeFeeAmount={((customDollarValue * parseFloat(process.env.NEXT_PUBLIC_STRIPE_FEE_PERCENT) / 100) + parseFloat(process.env.NEXT_PUBLIC_STRIPE_CONSTANT_AMOUNT)).toFixed(2)}
                             />
                         ) : (
                             <></>
