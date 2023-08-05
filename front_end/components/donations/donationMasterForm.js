@@ -20,7 +20,7 @@ import EnterPaymentDetailsSection from './enterPaymentDetailsSection';
 
 export default function DonationMasterForm({ headerText, secondaryText, secondaryAllign, buttonStyle, color, fund }) {
     const [popupVisible, setPopupVisible] = useState(false);
-    const [currentScreenIndex, setCurrentScreenIndex] = useState(1)
+    const [currentScreenIndex, setCurrentScreenIndex] = useState(3)
     const [customDollarValue, setCustomDollarValue] = useState('');
     const [customDollarValueValid, setCustomDollarValueValid] = useState(false);
 
@@ -41,6 +41,10 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
 
     const [cvv, setCvv] = useState('');
     const [cvvValid, setCvvValid] = useState(false)
+
+    const [reoccuringSelected, setreoccuringSelected] = useState(false)
+    const [feeOptIn, setfeeOptIn] = useState(false)
+
 
     const [selectedPaymentOption, setSelectedPaymentOption] = useState('cc')
 
@@ -185,7 +189,7 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
     function nextPageNValidate() {
         if ((currentScreenIndex == 1) && firstNameValid && lastNameValid && emailValid && customDollarValueValid) {
             setCurrentScreenIndex(2)
-        } else if ((currentScreenIndex == 3) && ccNumberValid) {
+        } else if ((currentScreenIndex == 3) && ccNumberValid && expirationValid && cvvValid) {
             setCurrentScreenIndex(4)
         }
     }
@@ -215,7 +219,7 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
     }
     return (
         <>
-            {console.log("firstName: ", firstName, "lastName: ", lastName, "email: ", email, "customDollarValue: ", customDollarValue, "creditcard number: ", ccNumber, "ccNumberValid: ", ccNumberValid, "Expiration: ", expiration, "Expiration Valid?: ", expirationValid, "CVV: ", cvv)}
+            {console.log("firstName: ", firstName, "lastName: ", lastName, "email: ", email, "customDollarValue: ", customDollarValue, "creditcard number: ", ccNumber, "ccNumberValid: ", ccNumberValid, "Expiration: ", expiration, "Expiration Valid?: ", expirationValid, "CVV: ", cvv, "Monthly?: ", reoccuringSelected, "fee opt in: ", feeOptIn)}
             {popupVisible ? (
                 windowWidth < 900 ? (
                     <p>Fully mobile component goes here</p>
@@ -271,6 +275,10 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
                                 expirationValid={expirationValid}
                                 setCvv={setCvvPapa}
                                 cvvValid={cvvValid}
+                                setreoccuringSelected={setreoccuringSelected}
+                                reoccuringSelected={reoccuringSelected}
+                                setfeeOptIn={setfeeOptIn}
+                                feeOptIn={feeOptIn}
                             />
                         ) : (
                             <></>

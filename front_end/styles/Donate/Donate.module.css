@@ -176,6 +176,19 @@
     align-items: center;
     gap: 1em;
 }
+.radioButtonUnselected {
+    border-radius: 50%;
+    border-color: #C7C7C7;
+    border-width: 2px;
+    width: 1.5em;
+    height: 1.5em;
+    border-style: solid;
+}
+.radioButtonSelected {
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+}
 
 @media (min-width: 900px) and (max-width: 1030px) {
     .circleContainer {

@@ -5,8 +5,11 @@ import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import TITLE from '../fonts/TITLE';
 import CreditCard from '../inputs/creditCard';
 import OutlineButton from '../inputs/outlineButton';
+import RadioButton from '../buttons/radioButton';
+import FIELDTEXT from '../fonts/FIELDTEXT';
+import ST from '../fonts/ST';
 
-export default function CreditCardForm({ setccNumber, ccNumberValid, setExpiration, expirationValid, setCvv, cvvValid }) {
+export default function CreditCardForm({ setccNumber, ccNumberValid, setExpiration, expirationValid, setCvv, cvvValid, feeAmount, setreoccuringSelected, reoccuringSelected, setfeeOptIn, feeOptIn }) {
     const [cardNumberLabel, setcardNumberLabel] = useState('card number');
     const [cardNumberLabelColor, setcardNumberLabelColor] = useState(theme.colors.BLACK);
 
@@ -72,7 +75,7 @@ export default function CreditCardForm({ setccNumber, ccNumberValid, setExpirati
             <Grid xs={6} md={6} display="flex" justifyContent="left" alignItems="center" paddingLeft={2} paddingBottom={1}>
                 <TITLE color={cvvLabelColor} text={cvvLabel} />
             </Grid>
-            <Grid xs={6} md={6} display="flex" justifyContent="center" alignItems="center" paddingRight={0.5}>
+            <Grid xs={6} md={6} display="flex" justifyContent="center" alignItems="center" paddingRight={0.5} paddingBottom={"1.5em"}>
                 <OutlineButton
                     placeholder="MM/YY"
                     borderColor={theme.colors.GREY}
@@ -82,7 +85,7 @@ export default function CreditCardForm({ setccNumber, ccNumberValid, setExpirati
                     additionalFunction={changeColorNText}
                 />
             </Grid>
-            <Grid xs={6} md={6} display="flex" justifyContent="center" alignItems="center" paddingRight={0.5}>
+            <Grid xs={6} md={6} display="flex" justifyContent="center" alignItems="center" paddingRight={0.5} paddingBottom={"1.5em"}>
                 <OutlineButton
                     placeholder="XXX"
                     borderColor={theme.colors.GREY}
@@ -92,6 +95,32 @@ export default function CreditCardForm({ setccNumber, ccNumberValid, setExpirati
                     additionalFunction={changeColorNText}
                     maxLength={4}
                 />
+            </Grid>
+            <Grid xs={6} md={6} display="flex" justifyContent="left" alignItems="center" paddingLeft={2} paddingBottom={1}>
+                <TITLE color={theme.colors.BLACK} text={"Reoccurring donation"} />
+            </Grid>
+            <Grid xs={6} md={6} display="flex" justifyContent="left" alignItems="center" paddingLeft={2} paddingBottom={1}>
+                <TITLE color={theme.colors.BLACK} text={"Processing fee"} />
+            </Grid>
+            <Grid xs={6} md={6} display="flex" justifyContent="left" alignItems="start" paddingLeft={2}>
+                <div style={{ display: 'flex', gap: ".5em" }}>
+                    <RadioButton
+                        callBack={setreoccuringSelected}
+                        valueSelected={reoccuringSelected} />
+                    <FIELDTEXT color={theme.colors.BLACK} text="Make this a monthly donation" />
+                </div>
+            </Grid>
+            <Grid xs={6} md={6} display="flex" justifyContent="left" alignItems="start" paddingLeft={2}>
+                <div style={{ display: 'flex', gap: ".5em" }}>
+                    <RadioButton
+                        callBack={setfeeOptIn}
+                        valueSelected={feeOptIn}
+                    />
+                    <div style={{ display: "flex", flexDirection: "column" }}>
+                        <FIELDTEXT color={theme.colors.BLACK} text={`Add $${feeAmount} to cover payment services`} />
+                        <ST color={theme.colors.CHARCOAL} text="*Required with AMEX" />
+                    </div>
+                </div>
             </Grid>
         </>
     )
