@@ -66,6 +66,14 @@
     padding-right: 3em;
 }
 
+.thankYouSection {
+    display: flex;
+    flex-direction: column;
+    padding-top: 3em;
+    padding-left: 3em;
+    padding-right: 3em;
+}
+
 .paymentButton {
     width: 12.75em;
     height: 5.6875em;
@@ -87,12 +95,15 @@
     padding-right: 3em;
     align-items: center;
 }
+
 .editText {
     text-decoration: underline;
 }
+
 .editText:hover {
     cursor: pointer;
 }
+
 .paymentButtonSmall {
     width: 3em;
     height: 1.5em;
