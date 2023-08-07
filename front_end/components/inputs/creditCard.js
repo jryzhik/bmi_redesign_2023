@@ -18,7 +18,7 @@ const RobotoRegular = Roboto_Slab({
   style: ['normal'],
 });
 
-export default function CreditCard({ borderColor, textColor, placeholder, type, callBack, pattern, setccNumber }) {
+export default function CreditCard({ borderColor, textColor, placeholder, type, callBack, pattern, setccNumber, value }) {
   const [themeMode, setThemeMode] = useState(styles.inputEmail);
   const [ccName, setccName] = useState(false)
   // Use useEffect to update the themeMode state based on textColor prop
@@ -31,7 +31,7 @@ export default function CreditCard({ borderColor, textColor, placeholder, type, 
   }, [textColor]);
 
   const [textStyle, setTextStyle] = useState(RobotoLight);
-  const [inputText, setInputText] = useState('');
+  const [inputText, setInputText] = useState(value);
 
   const handleChange = (event) => {
     const newValue = event.target.value;

@@ -283,12 +283,15 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
                         )}
                         {currentScreenIndex === 3 ? (
                             <EnterPaymentDetailsSection
+                                ccNumber={ccNumber}
                                 setccNumber={setccNumberPapa}
                                 ccNumberValid={ccNumberValid}
                                 selectedPaymentOption={selectedPaymentOption}
                                 setSelectedPaymentOption={setSelectedPaymentOption}
+                                expiration={expiration}
                                 setExpiration={setExpirationPapa}
                                 expirationValid={expirationValid}
+                                cvv={cvv}
                                 setCvv={setCvvPapa}
                                 cvvValid={cvvValid}
                                 setreoccuringSelected={setreoccuringSelected}

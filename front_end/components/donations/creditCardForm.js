@@ -9,7 +9,7 @@ import RadioButton from '../buttons/radioButton';
 import FIELDTEXT from '../fonts/FIELDTEXT';
 import ST from '../fonts/ST';
 
-export default function CreditCardForm({ setccNumber, ccNumberValid, setExpiration, expirationValid, setCvv, cvvValid, feeAmount, setreoccuringSelected, reoccuringSelected, setfeeOptIn, feeOptIn }) {
+export default function CreditCardForm({ ccNumber, expiration, cvv, setccNumber, ccNumberValid, setExpiration, expirationValid, setCvv, cvvValid, feeAmount, setreoccuringSelected, reoccuringSelected, setfeeOptIn, feeOptIn }) {
     const [cardNumberLabel, setcardNumberLabel] = useState('card number');
     const [cardNumberLabelColor, setcardNumberLabelColor] = useState(theme.colors.BLACK);
 
@@ -67,6 +67,7 @@ export default function CreditCardForm({ setccNumber, ccNumberValid, setExpirati
                     callBack={changeColorNText}
                     pattern="[0-9]*"
                     setccNumber={setccNumber}
+                    value={ccNumber}
                 />
             </Grid>
             <Grid xs={6} md={6} display="flex" justifyContent="left" alignItems="center" paddingLeft={2} paddingBottom={1}>
@@ -83,6 +84,7 @@ export default function CreditCardForm({ setccNumber, ccNumberValid, setExpirati
                     type="expiration"
                     callBack={setExpiration}
                     additionalFunction={changeColorNText}
+                    value={expiration}
                 />
             </Grid>
             <Grid xs={6} md={6} display="flex" justifyContent="center" alignItems="center" paddingRight={0.5} paddingBottom={"1.5em"}>
@@ -94,6 +96,7 @@ export default function CreditCardForm({ setccNumber, ccNumberValid, setExpirati
                     callBack={setCvv}
                     additionalFunction={changeColorNText}
                     maxLength={4}
+                    value={cvv}
                 />
             </Grid>
             <Grid xs={6} md={6} display="flex" justifyContent="left" alignItems="center" paddingLeft={2} paddingBottom={1}>

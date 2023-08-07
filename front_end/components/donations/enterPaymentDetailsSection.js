@@ -8,7 +8,7 @@ import TITLE from '../fonts/TITLE';
 import CreditCard from '../inputs/creditCard';
 import CreditCardForm from './creditCardForm';
 
-export default function EnterPaymentDetailsSection({ setccNumber, ccNumberValid, selectedPaymentOption, setSelectedPaymentOption, setExpiration, expirationValid, setCvv, cvvValid, setreoccuringSelected, reoccuringSelected, setfeeOptIn, feeOptIn, stripeFeeAmount }) {
+export default function EnterPaymentDetailsSection({ ccNumber, expiration, cvv, setccNumber, ccNumberValid, selectedPaymentOption, setSelectedPaymentOption, setExpiration, expirationValid, setCvv, cvvValid, setreoccuringSelected, reoccuringSelected, setfeeOptIn, feeOptIn, stripeFeeAmount }) {
     const [cardNumberLabel, setcardNumberLabel] = useState('card number');
     const [cardNumberLabelColor, setcardNumberLabelColor] = useState(theme.colors.BLACK);
 
@@ -43,10 +43,13 @@ export default function EnterPaymentDetailsSection({ setccNumber, ccNumberValid,
                 </Grid>
                 {selectedPaymentOption == 'cc' ? (
                     <CreditCardForm
+                        ccNumber={ccNumber}
                         setccNumber={setccNumber}
                         ccNumberValid={ccNumberValid}
+                        expiration={expiration}
                         setExpiration={setExpiration}
                         expirationValid={expirationValid}
+                        cvv={cvv}
                         setCvv={setCvv}
                         cvvValid={cvvValid}
                         feeAmount={stripeFeeAmount}
