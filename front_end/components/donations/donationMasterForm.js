@@ -21,7 +21,7 @@ import OverviewDonationSection from './overviewDonationSection';
 
 export default function DonationMasterForm({ headerText, secondaryText, secondaryAllign, buttonStyle, color, fund }) {
     const [popupVisible, setPopupVisible] = useState(false);
-    const [currentScreenIndex, setCurrentScreenIndex] = useState(1)
+    const [currentScreenIndex, setCurrentScreenIndex] = useState(4)
 
     const [customDollarValue, setCustomDollarValue] = useState('');
     const [customDollarValueValid, setCustomDollarValueValid] = useState(false);
@@ -48,7 +48,7 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
     const [feeOptIn, setfeeOptIn] = useState(false)
 
     const [totalAmount, setTotalAmount] = useState('')
-    const [selectedPaymentOption, setSelectedPaymentOption] = useState('cc')
+    const [selectedPaymentOption, setSelectedPaymentOption] = useState('credit card')
 
     useEffect(() => {
         if (feeOptIn) {
@@ -205,6 +205,8 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
             setCurrentScreenIndex(2)
         } else if ((currentScreenIndex == 3) && ccNumberValid && expirationValid && cvvValid) {
             setCurrentScreenIndex(4)
+        } else if (currentScreenIndex ==4) {
+            setCurrentScreenIndex(5)
         }
     }
     const [windowWidth, setWindowWidth] = useState(0);
@@ -307,7 +309,18 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
                             <OverviewDonationSection
                                 totalAmount={totalAmount}
                                 setCurrentScreenIndex={setCurrentScreenIndex}
+                                firstName={firstName}
+                                lastName={lastName}
+                                email={email}
+                                selectedPaymentOption={selectedPaymentOption}
+                                ccNumber={ccNumber}
+                                reoccuringSelected={reoccuringSelected}
                             />
+                        ) : (
+                            <></>
+                        )}
+                        {currentScreenIndex === 5 ? (
+                            <h2>section 5</h2>
                         ) : (
                             <></>
                         )}
@@ -319,7 +332,7 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
                             transform: 'translateX(-50%)',
                         }}>
                             <Grid xs={12} md={12} display="flex" justifyContent="center" alignItems="center" paddingTop={4}>
-                                <RoundedButton text={currentScreenIndex === 3 ? "overview" : "continue to payment"} passedStyle={passedStyle.dollarButtonBlack} callBackFunction={nextPageNValidate} />
+                                <RoundedButton text={currentScreenIndex === 3 ? "overview" : currentScreenIndex === 4 ? "give" : "continue to payment"} passedStyle={passedStyle.dollarButtonBlack} callBackFunction={nextPageNValidate} />
                             </Grid>
                         </div>
                     </div>

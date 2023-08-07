@@ -41,7 +41,7 @@ export default function EnterPaymentDetailsSection({ ccNumber, expiration, cvv, 
                         setSelectedPaymentOption = {setSelectedPaymentOption}
                     />
                 </Grid>
-                {selectedPaymentOption == 'cc' ? (
+                {selectedPaymentOption == 'credit card' ? (
                     <CreditCardForm
                         ccNumber={ccNumber}
                         setccNumber={setccNumber}

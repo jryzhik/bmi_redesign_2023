@@ -15,7 +15,7 @@ export default function SelectPaymentSection({ paymentButtonClickHandle }) {
                         <PaymentProviderButton
                             imageUrl="/img/icons/apple-pay.svg"
                             width={100}
-                            handleClick={() => paymentButtonClickHandle('applepay')}
+                            handleClick={() => paymentButtonClickHandle('apple pay')}
                         />
                     </Grid>
                     <Grid xs={4} md={4} padding={1}>
@@ -51,7 +51,7 @@ export default function SelectPaymentSection({ paymentButtonClickHandle }) {
                         <PaymentProviderButton
                             imageUrl="/img/icons/creditInfo.svg"
                             width={150}
-                            handleClick={() => paymentButtonClickHandle('cc')}
+                            handleClick={() => paymentButtonClickHandle('credit card')}
                         />
                     </Grid>
                 </Grid>

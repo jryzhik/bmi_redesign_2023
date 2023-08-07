@@ -17,8 +17,8 @@ export default function AllPaymentProviderSmall({ selectedPaymentOption, setSele
             <PaymentProviderButtonSmall
                 imageUrl="/img/icons/apple-pay.svg"
                 width={28}
-                passedStyle={selectedPaymentOption === 'applepay' ? styles.paymentButtonSmallSelected : styles.paymentButtonSmall}
-                handleClick={() => handlePaymentOptionSelect('applepay')}
+                passedStyle={selectedPaymentOption === 'apple pay' ? styles.paymentButtonSmallSelected : styles.paymentButtonSmall}
+                handleClick={() => handlePaymentOptionSelect('apple pay')}
             />
             <PaymentProviderButtonSmall
                 imageUrl="/img/icons/zelle.svg"
@@ -44,14 +44,14 @@ export default function AllPaymentProviderSmall({ selectedPaymentOption, setSele
                 passedStyle={selectedPaymentOption === 'cashapp' ? styles.paymentButtonSmallSelected : styles.paymentButtonSmall}
                 handleClick={() => handlePaymentOptionSelect('cashapp')}
             />
-            <div className={selectedPaymentOption === 'cc' ? styles.creditCardTextSelected : styles.creditCardText}>
+            <div className={selectedPaymentOption === 'credit card' ? styles.creditCardTextSelected : styles.creditCardText}>
                 <Image
                     src="img/icons/creditCard.svg"
                     alt="button"
                     width={82}
                     height={13}
                     quality={100}
-                    onClick={() => handlePaymentOptionSelect('cc')}
+                    onClick={() => handlePaymentOptionSelect('credit card')}
                 />
             </div>
         </div>
