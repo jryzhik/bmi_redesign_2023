@@ -7,6 +7,7 @@ import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import TITLE from '../fonts/TITLE';
 import CreditCard from '../inputs/creditCard';
 import CreditCardForm from './creditCardForm';
+import Payment from './Payment';
 
 export default function EnterPaymentDetailsSection({ ccNumber, expiration, cvv, setccNumber, ccNumberValid, selectedPaymentOption, setSelectedPaymentOption, setExpiration, expirationValid, setCvv, cvvValid, setreoccuringSelected, reoccuringSelected, setfeeOptIn, feeOptIn, stripeFeeAmount }) {
     const [cardNumberLabel, setcardNumberLabel] = useState('card number');
@@ -37,11 +38,12 @@ export default function EnterPaymentDetailsSection({ ccNumber, expiration, cvv, 
                 </Grid>
                 <Grid xs={12} md={12} paddingTop={1} paddingBottom={"2.6em"}>
                     <AllPaymentProviderSmall
-                        selectedPaymentOption = {selectedPaymentOption}
-                        setSelectedPaymentOption = {setSelectedPaymentOption}
+                        selectedPaymentOption={selectedPaymentOption}
+                        setSelectedPaymentOption={setSelectedPaymentOption}
                     />
                 </Grid>
                 {selectedPaymentOption == 'credit card' ? (
+
                     <CreditCardForm
                         ccNumber={ccNumber}
                         setccNumber={setccNumber}
@@ -58,6 +60,13 @@ export default function EnterPaymentDetailsSection({ ccNumber, expiration, cvv, 
                         setfeeOptIn={setfeeOptIn}
                         feeOptIn={feeOptIn}
                     />
+                ) : (
+                    <></>
+                )},
+                {selectedPaymentOption == 'apple pay' ? (
+                    <Grid xs={12} md={12}>
+                        <Payment />
+                    </Grid>
                 ) : (
                     <></>
                 )}
