@@ -62,7 +62,7 @@ export default function EnterPaymentDetailsSection({ ccNumber, expiration, cvv, 
                     />
                 ) : (
                     <></>
-                )},
+                )}
                 {selectedPaymentOption == 'apple pay' ? (
                     <Grid xs={12} md={12}>
                         <Payment />

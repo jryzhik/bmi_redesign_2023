@@ -239,6 +239,27 @@
 
 }
 
+#stripe_button_submit {
+    display: flex;
+    width: 100vw;
+    height: 46px;
+    border-radius: 25em;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: #000000;
+    color: #ffffff;
+    transition: all .2s ease-in;
+    transition: all .5s ease-out;
+    font-family: '__Inter_c782c5', '__Inter_Fallback_c782c5';
+    font-weight: 900;
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: 1em;
+    border: none;
+
+}
+
 @media (min-width: 900px) and (max-width: 1030px) {
     .circleContainer {
         width: 300.6px;

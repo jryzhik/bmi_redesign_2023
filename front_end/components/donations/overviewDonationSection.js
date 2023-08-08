@@ -13,9 +13,9 @@ export default function OverviewDonationSection({ totalAmount, setCurrentScreenI
             <H1 color={theme.colors.BLACK} text={`Give $${totalAmount}`} />
             <div style={{ display: "flex", justifyContent: 'space-between', width: "42em", paddingTop: "3em" }}>
                 <H4 color={theme.colors.BLACK} text='Giving details' />
-                <div onClick={() => setCurrentScreenIndex(1)} className={styles.editText}>
+                {/* <div onClick={() => setCurrentScreenIndex(1)} className={styles.editText}>
                     <FIELDTEXT color={theme.colors.BLACK} text='Edit' />
-                </div>
+                </div> */}
             </div>
             <div style={{ display: "flex", alignSelf: "flex-start", gap: "5em", paddingTop: "2em" }}>
                 <div style={{}}>
@@ -29,9 +29,9 @@ export default function OverviewDonationSection({ totalAmount, setCurrentScreenI
             </div>
             <div style={{ display: "flex", justifyContent: 'space-between', width: "42em", paddingTop: "2em" }}>
                 <H4 color={theme.colors.BLACK} text='Payment details' />
-                <div onClick={() => setCurrentScreenIndex(2)} className={styles.editText}>
+                {/* <div onClick={() => setCurrentScreenIndex(2)} className={styles.editText}>
                     <FIELDTEXT color={theme.colors.BLACK} text='Edit' />
-                </div>
+                </div> */}
             </div>
             <div style={{ display: "flex", alignSelf: "flex-start", paddingTop: "2em" }}>
                 <div style={{}}>
