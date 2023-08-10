@@ -14,7 +14,7 @@
 
 .formContainerPOP {
     width: 50em;
-    height: 41.875em;
+    height: auto;
     background-color: white;
     border-radius: 12px;
     flex-shrink: 0;
@@ -90,9 +90,6 @@
 .overviewDonationSection {
     display: flex;
     flex-direction: column;
-    padding-top: 3em;
-    padding-left: 3em;
-    padding-right: 3em;
     align-items: center;
 }
 

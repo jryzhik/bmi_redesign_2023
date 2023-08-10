@@ -6,18 +6,25 @@ import Grid from '@mui/material/Unstable_Grid2';
 import RoundedButton from "../buttons/roundedButton";
 import SubmitButton from "../buttons/submitButton";
 import passedStyle from '../../styles/Donate/ColorDonate.module.css';
+import OverviewDonationSection from "./overviewDonationSection";
+import AddressForm from "./addressForm";
 
-function Payment() {
+
+function Payment({ totalAmount, firstName, lastName, email, selectedPaymentOption, reoccuringSelected, setHeaderText }) {
   const [stripePromise, setStripePromise] = useState(null);
   const [clientSecret, setClientSecret] = useState("");
-  const [elementViewForm, setElementViewForm] = useState({ display: "block" });
-  const [elementViewOver, setElementViewOver] = useState({ display: "none" });
-  const [ready, setReady] = useState(true)
 
-  function hidePaymentShowOverview() {
+  const [ready, setReady] = useState(false)
+
+  const [addressVisible, setAddressVisible] = useState({ display: "grid" })
+  const [paymentVisible, setPaymentVisible] = useState({ display: "none" })
+
+  const loader = 'auto';
+
+  function setViewablePapa() {
     if (ready) {
-      setElementViewForm({ display: "none" })
-      setElementViewOver({ display: "block"})
+      setAddressVisible({ display: "none" })
+      setPaymentVisible({ display: "grid" })
     }
   }
   useEffect(() => {
@@ -28,34 +35,44 @@ function Payment() {
   }, []);
 
   useEffect(() => {
+
     fetch("/create-payment-intent", {
       method: "POST",
-      body: JSON.stringify({}),
-    }).then(async (result) => {
-      const { clientSecret } = await result.json();
-      setClientSecret(clientSecret);
-    });
+      headers: {
+        "Content-Type": "application/json" // Set the content type to JSON
+      },
+      body: JSON.stringify({number: totalAmount * 100}),
+    })
+      .then(async (result) => {
+        const { clientSecret } = await result.json();
+        setClientSecret(clientSecret);
+      })
+      .catch((error) => {
+        console.error("Error fetching client secret:", error);
+      });
   }, []);
 
   return (
     <>
       {clientSecret && stripePromise && (
-        <div style={elementViewForm}>
-          <Elements stripe={stripePromise} options={{ clientSecret }}>
-            <CheckoutForm 
-              setReady={setReady}
-            />
+        <div style={{ paddingTop: "3em" }}>
+          <Elements stripe={stripePromise} options={{ clientSecret, loader }}>
+            <div style={addressVisible}>
+              <AddressForm setReady={setReady} />
+              <Grid xs={12} md={12} display="flex" justifyContent="center" alignItems="center" paddingTop={4}>
+                <RoundedButton text="next" passedStyle={passedStyle.dollarButtonBlack} callBackFunction={setViewablePapa} />
+              </Grid>
+            </div>
+            <div style={paymentVisible}>
+              <CheckoutForm />
+              <Grid xs={12} md={12} display="flex" justifyContent="center" alignItems="center" paddingTop={4}>
+                <SubmitButton />
+              </Grid>
+            </div>
+
           </Elements>
-          <Grid xs={12} md={12} display="flex" justifyContent="center" alignItems="center" paddingTop={4}>
-            <RoundedButton text="Overview" passedStyle={passedStyle.dollarButtonBlack} callBackFunction={hidePaymentShowOverview} />
-          </Grid>
         </div>
       )}
-      <div style={elementViewOver}>
-        <Grid xs={12} md={12} display="flex" justifyContent="center" alignItems="center" paddingTop={4}>
-          <SubmitButton />
-        </Grid>
-      </div>
     </>
   );
 }

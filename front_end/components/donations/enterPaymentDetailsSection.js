@@ -9,9 +9,10 @@ import CreditCard from '../inputs/creditCard';
 import CreditCardForm from './creditCardForm';
 import Payment from './Payment';
 
-export default function EnterPaymentDetailsSection({ ccNumber, expiration, cvv, setccNumber, ccNumberValid, selectedPaymentOption, setSelectedPaymentOption, setExpiration, expirationValid, setCvv, cvvValid, setreoccuringSelected, reoccuringSelected, setfeeOptIn, feeOptIn, stripeFeeAmount }) {
+export default function EnterPaymentDetailsSection({ ccNumber, expiration, cvv, setccNumber, ccNumberValid, selectedPaymentOption, setSelectedPaymentOption, setExpiration, expirationValid, setCvv, cvvValid, setreoccuringSelected, reoccuringSelected, setfeeOptIn, feeOptIn, stripeFeeAmount,totalAmount, firstName, lastName, email }) {
     const [cardNumberLabel, setcardNumberLabel] = useState('card number');
     const [cardNumberLabelColor, setcardNumberLabelColor] = useState(theme.colors.BLACK);
+    const [headerText, setHeaderText] = useState('Enter your payment details.')
 
     // Define the changeColorNText function outside the useEffect hook
     function changeColorNText() {
@@ -31,17 +32,8 @@ export default function EnterPaymentDetailsSection({ ccNumber, expiration, cvv, 
     }, [ccNumberValid]);
     return (
         <div className={styles.enterPaymentDetailsSection}>
-            <H2 color={theme.colors.BLACK} text="Enter your payment details." />
+            <H2 color={theme.colors.BLACK} text={headerText} />
             <Grid container >
-                <Grid xs={12} md={12} paddingLeft={2} paddingTop={"2.6em"}>
-                    <TITLE color={theme.colors.BLACK} text={"Payment Option"} />
-                </Grid>
-                <Grid xs={12} md={12} paddingTop={1} paddingBottom={"2.6em"}>
-                    <AllPaymentProviderSmall
-                        selectedPaymentOption={selectedPaymentOption}
-                        setSelectedPaymentOption={setSelectedPaymentOption}
-                    />
-                </Grid>
                 {selectedPaymentOption == 'credit card' ? (
 
                     <CreditCardForm
@@ -65,7 +57,15 @@ export default function EnterPaymentDetailsSection({ ccNumber, expiration, cvv, 
                 )}
                 {selectedPaymentOption == 'apple pay' ? (
                     <Grid xs={12} md={12}>
-                        <Payment />
+                        <Payment
+                            totalAmount={totalAmount}
+                            firstName={firstName}
+                            lastName={lastName}
+                            email={email}
+                            selectedPaymentOption={selectedPaymentOption}
+                            reoccuringSelected={reoccuringSelected}
+                            setHeaderText={setHeaderText}
+                        />
                     </Grid>
                 ) : (
                     <></>

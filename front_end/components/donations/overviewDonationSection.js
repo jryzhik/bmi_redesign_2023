@@ -7,62 +7,46 @@ import FIELDTEXT from '../fonts/FIELDTEXT';
 import TITLE from '../fonts/TITLE';
 import CcCardOverview from './ccCardOverview';
 import Image from 'next/image';
-export default function OverviewDonationSection({ totalAmount, setCurrentScreenIndex, firstName, lastName, email, selectedPaymentOption, ccNumber, reoccuringSelected }) {
+import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
+import RadioButton from '../buttons/radioButton';
+import ST from '../fonts/ST';
+import H2 from '../fonts/H2';
+import AmountEnter from '../inputs/amountEnter';
+
+export default function OverviewDonationSection({ setCustomDollarValue, totalAmount, firstName, lastName, email, selectedPaymentOption, reoccuringSelected, setfeeOptIn, setreoccuringSelected, feeOptIn, stripeFeeAmount }) {
     return (
         <div className={styles.overviewDonationSection}>
-            <H1 color={theme.colors.BLACK} text={`Give $${totalAmount}`} />
-            <div style={{ display: "flex", justifyContent: 'space-between', width: "42em", paddingTop: "3em" }}>
-                <H4 color={theme.colors.BLACK} text='Giving details' />
-                {/* <div onClick={() => setCurrentScreenIndex(1)} className={styles.editText}>
-                    <FIELDTEXT color={theme.colors.BLACK} text='Edit' />
-                </div> */}
-            </div>
-            <div style={{ display: "flex", alignSelf: "flex-start", gap: "5em", paddingTop: "2em" }}>
-                <div style={{}}>
-                    <TITLE color={theme.colors.BLACK} text="name" />
-                    <FIELDTEXT color={theme.colors.BLACK} text={`${firstName} ${lastName}`} />
-                </div>
-                <div style={{}}>
-                    <TITLE color={theme.colors.BLACK} text="email" />
-                    <FIELDTEXT color={theme.colors.BLACK} text={email} />
-                </div>
-            </div>
-            <div style={{ display: "flex", justifyContent: 'space-between', width: "42em", paddingTop: "2em" }}>
-                <H4 color={theme.colors.BLACK} text='Payment details' />
-                {/* <div onClick={() => setCurrentScreenIndex(2)} className={styles.editText}>
-                    <FIELDTEXT color={theme.colors.BLACK} text='Edit' />
-                </div> */}
-            </div>
-            <div style={{ display: "flex", alignSelf: "flex-start", paddingTop: "2em" }}>
-                <div style={{}}>
-                    <TITLE color={theme.colors.BLACK} text={selectedPaymentOption} />
-                    <CcCardOverview
-                        ccNumber={ccNumber}
-                    />
-                </div>
-            </div>
-            {reoccuringSelected ? (
-                <>
-                    <div style={{ display: "flex", alignSelf: "flex-start", paddingTop: "1em" }}>
-                        <div>
-                            <TITLE color={theme.colors.BLACK} text="Reoccurring donation" />
-                            <div style={{ display: "flex", alignSelf: "flex-start", gap: "1em", paddingTop: ".4em" }}>
-                                <Image
-                                    src="img/icons/checkGreen.svg"
-                                    alt="button"
-                                    width={24}
-                                    height={24}
-                                    quality={100}
-                                />
-                                <FIELDTEXT color={theme.colors.BLACK} text="This amount will be donated monthly" />
-                            </div>
-                        </div>
+            <div style={{ display: "flex", justifyContent: 'center', width: "42em", paddingTop: "3em", paddingBottom: "3em" }}>
+                <AmountEnter totalAmount={totalAmount} setCustomDollarValue={setCustomDollarValue}/>
+                {/* <H1 color={theme.colors.BLACK} text={`$${totalAmount}`} /> */}
 
+            </div>
+
+            <Grid xs={12} md={12} display="flex" flexDirection= "column" justifyContent="end" alignItems="start" alignSelf="start" gap={"2em"} paddingLeft={"3em"} paddingBottom={"2em"}>
+                <div style={{ display: "flex", flexDirection: "column", gap: ".5em" }}>
+                    <TITLE color={theme.colors.BLACK} text={"Reoccurring donation"} />
+                    <div style={{ display: 'flex', gap: ".5em" }}>
+                        <RadioButton
+                            callBack={setreoccuringSelected}
+                            valueSelected={reoccuringSelected} />
+                        <FIELDTEXT color={theme.colors.BLACK} text="Make this a monthly donation" />
                     </div>
-                </>
-            ) : (
-                <></>
-            )}
+                </div>
+                <div style={{ display: "flex", flexDirection: "column", gap: ".5em"}}>
+                    <TITLE color={theme.colors.BLACK} text={"Processing fee"} />
+                    <div style={{ display: 'flex', gap: ".5em" }}>
+                        <RadioButton
+                            callBack={setfeeOptIn}
+                            valueSelected={feeOptIn}
+                        />
+                        <div style={{ display: "flex", flexDirection: "column" }}>
+                            <FIELDTEXT color={theme.colors.BLACK} text={`Add $${stripeFeeAmount} to cover processing fee`} />
+                            <ST color={theme.colors.CHARCOAL} text="*Required with AMEX" />
+                        </div>
+                    </div>
+                </div>
+            </Grid>
+
         </div>
     )
 }

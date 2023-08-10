@@ -22,7 +22,7 @@ import ThankyouSection from './thankyouSection';
 
 export default function DonationMasterForm({ headerText, secondaryText, secondaryAllign, buttonStyle, color, fund }) {
     const [popupVisible, setPopupVisible] = useState(false);
-    const [currentScreenIndex, setCurrentScreenIndex] = useState(3)
+    const [currentScreenIndex, setCurrentScreenIndex] = useState(1)
 
     const [customDollarValue, setCustomDollarValue] = useState('');
     const [customDollarValueValid, setCustomDollarValueValid] = useState(false);
@@ -62,43 +62,6 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
         }
     }, [customDollarValue, feeOptIn]);
 
-    function luhnAlgo(cardnumber) {
-        const length = cardnumber.length
-        var totalSum = 0
-        for (let i = length - 1; i >= 0; i--) {
-            if (length % 2 != 0) {
-                // AMEX CARDS
-                if (i % 2 != 0) {
-                    if ((Number(cardnumber.charAt(i)) * 2) > 9) {
-                        totalSum += (Number(cardnumber.charAt(i)) * 2) % 10 + 1
-                    } else {
-                        totalSum += Number(cardnumber.charAt(i)) * 2
-                    }
-                } else {
-                    totalSum += Number(cardnumber.charAt(i))
-                }
-            } else {
-                //Other cards
-                if (i % 2 == 0) {
-                    if ((Number(cardnumber.charAt(i)) * 2) > 9) {
-                        totalSum += (Number(cardnumber.charAt(i)) * 2) % 10 + 1
-                    } else {
-                        totalSum += Number(cardnumber.charAt(i)) * 2
-                    }
-                } else {
-                    totalSum += Number(cardnumber.charAt(i))
-                }
-            }
-        }
-        if (totalSum % 10 == 0) {
-            console.log("card valid")
-            return true
-        } else {
-            console.log("card invalid")
-            return false
-
-        }
-    }
     function resetDonation() {
         setPopupVisible(false)
         setCurrentScreenIndex(1)
@@ -111,6 +74,9 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
         setLastNameValid(false)
         setCustomDollarValueValid(false)
         setEmailValid(false)
+        setreoccuringSelected(false)
+        setfeeOptIn(false)
+
     }
     const setFirstNamePapa = (value) => {
         setFirstName(value);
@@ -202,7 +168,7 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
     };
 
     function nextPageNValidate() {
-        if ((currentScreenIndex == 1) && firstNameValid && lastNameValid && emailValid && customDollarValueValid) {
+        if ((currentScreenIndex == 1) && totalAmount != '') {
             setCurrentScreenIndex(2)
         } else if ((currentScreenIndex == 3) && ccNumberValid && expirationValid && cvvValid) {
             setCurrentScreenIndex(4)
@@ -263,19 +229,21 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
                             <EcfaInfo />
                         </div>
                         {currentScreenIndex === 1 ? (
-                            <GivingInfoSection
-                                handleCustomDollarChange={handleCustomDollarChange}
-                                customDollarValue={customDollarValue}
-                                customDollarValueValid={customDollarValueValid}
+                            <OverviewDonationSection
+                                setCustomDollarValue={setCustomDollarValue}
+                                totalAmount={totalAmount}
+                                setCurrentScreenIndex={setCurrentScreenIndex}
                                 firstName={firstName}
-                                setFirstName={setFirstNamePapa}
                                 lastName={lastName}
-                                setLastName={setLastNamePapa}
-                                handleEmailChange={handleEmailChange}
-                                firstNameValid={firstNameValid}
-                                lastNameValid={lastNameValid}
-                                emailValid={emailValid}
                                 email={email}
+                                selectedPaymentOption={selectedPaymentOption}
+                                ccNumber={ccNumber}
+                                reoccuringSelected={reoccuringSelected}
+                                feeOptIn={feeOptIn}
+                                setfeeOptIn={setfeeOptIn}
+                                setreoccuringSelected={setreoccuringSelected}
+                                stripeFeeAmount={((customDollarValue * parseFloat(process.env.NEXT_PUBLIC_STRIPE_FEE_PERCENT) / 100) + parseFloat(process.env.NEXT_PUBLIC_STRIPE_CONSTANT_AMOUNT)).toFixed(2)}
+
                             />
                         ) : (
                             <></>
@@ -305,6 +273,10 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
                                 setfeeOptIn={setfeeOptIn}
                                 feeOptIn={feeOptIn}
                                 stripeFeeAmount={((customDollarValue * parseFloat(process.env.NEXT_PUBLIC_STRIPE_FEE_PERCENT) / 100) + parseFloat(process.env.NEXT_PUBLIC_STRIPE_CONSTANT_AMOUNT)).toFixed(2)}
+                                totalAmount={totalAmount}
+                                firstName={firstName}
+                                lastName={lastName}
+                                email={email}
                             />
                         ) : (
                             <></>
@@ -332,13 +304,15 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
                         )}
                         <div style={{
                             width: "70%",
-                            position: 'absolute',
-                            bottom: '60px', // Adjust the distance from the bottom as needed
+                            position: 'relative',
+                            bottom: '10px', // Adjust the distance from the bottom as needed
                             left: '50%',
                             transform: 'translateX(-50%)',
                         }}>
-                            <Grid xs={12} md={12} display="flex" justifyContent="center" alignItems="center" paddingTop={4}>
-                                <RoundedButton text={currentScreenIndex === 3 ? "overview" : currentScreenIndex === 4 ? "give" : currentScreenIndex === 5 ? "close" : "continue to payment"} passedStyle={passedStyle.dollarButtonBlack} callBackFunction={nextPageNValidate} />
+                            <Grid xs={12} md={12} display="flex" justifyContent="center" alignItems="center" paddingTop={4} paddingBottom={3}>
+                                {currentScreenIndex !== 3 ? (
+                                    <RoundedButton text={currentScreenIndex === 3 ? "overview" : currentScreenIndex === 4 ? "give" : currentScreenIndex === 5 ? "close" : "continue to payment"} passedStyle={passedStyle.dollarButtonBlack} callBackFunction={nextPageNValidate} />
+                                ) : (<></>)}
                             </Grid>
                         </div>
                     </div>

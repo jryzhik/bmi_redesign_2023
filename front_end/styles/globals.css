@@ -1,12 +1,7 @@
 :root {
   background-color: #F6F6F6;
 }
-.p-Field label {
-  color: red !important; /* Change this to the color you want */
-}
-.p-FieldLabel {
-  color: red;
-}
+
 html,
 body {
   padding: 0;

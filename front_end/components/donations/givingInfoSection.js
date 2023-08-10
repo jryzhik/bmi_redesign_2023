@@ -102,7 +102,7 @@ export default function GivingInfoSection({
                         type="text"
                         callBack={setFirstName}
                         pattern="[A-Za-z]*"
-                        value={firstName}
+                        // value={firstName}
                     />
                 </Grid>
                 <Grid xs={12} md={6} display="flex" justifyContent="center" alignItems="center" paddingLeft={0.5}>
@@ -113,7 +113,7 @@ export default function GivingInfoSection({
                         type="text"
                         callBack={setLastName}
                         pattern="[A-Za-z]*"
-                        value={lastName}
+                        // value={lastName}
                     />
                 </Grid>
                 <Grid xs={12} md={12} display="flex" justifyContent="left" alignItems="center" paddingTop={4} paddingLeft={1} paddingBottom={1}>
