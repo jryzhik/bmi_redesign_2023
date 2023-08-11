@@ -2,12 +2,12 @@ module.exports = {
     async rewrites() {
         return [
             {
-                source: '/create-payment-intent/:path*',
-                destination: 'http://localhost:5252/create-payment-intent/:path*',
+                source: '/stripe/create-payment-intent/:path*',
+                destination: 'http://localhost:5252/stripe/create-payment-intent/:path*',
             },
             {
-                source: '/config/:path*',
-                destination: 'http://localhost:5252/config/:path*',
+                source: '/stripe/config/:path*',
+                destination: 'http://localhost:5252/stripe/config/:path*',
             },
         ];
     },

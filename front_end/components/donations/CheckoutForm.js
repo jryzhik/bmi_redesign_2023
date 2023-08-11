@@ -2,13 +2,12 @@ import { PaymentElement } from "@stripe/react-stripe-js";
 import { useState } from "react";
 import { useStripe, useElements } from "@stripe/react-stripe-js";
 
-export default function CheckoutForm({ setReady }) {
+export default function CheckoutForm({ setReady, setPaymentSuccess }) {
   const stripe = useStripe();
   const elements = useElements();
 
   const [message, setMessage] = useState(null);
   const [isProcessing, setIsProcessing] = useState(false);
-  console.log("conditions", !isProcessing && stripe && elements)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,18 +19,27 @@ export default function CheckoutForm({ setReady }) {
     }
 
     setIsProcessing(true);
+    try {
+      const { error } = await stripe.confirmPayment({
+        elements,
+        confirmParams: {
+          // Make sure to change this to your payment completion page
+          return_url: `${window.location.origin}/completion`,
+        },
+        redirect: "if_required",
+      });
 
-    const { error } = await stripe.confirmPayment({
-      elements,
-      confirmParams: {
-        // Make sure to change this to your payment completion page
-        return_url: `${window.location.origin}/completion`,
-      },
-    });
-    if (error.type === "card_error" || error.type === "validation_error") {
-      setMessage(error.message);
-    } else {
-      setMessage("An unexpected error occured.");
+      // If no error occurred, the payment was successful
+      if (!error) {
+        setPaymentSuccess(true)
+        console.log("no error")
+      } else if (error.type === "card_error" || error.type === "validation_error") {
+        setMessage(error.message);
+      } else {
+        setMessage("An unexpected error occurred.");
+      }
+    } catch (e) {
+      console.error("An error occurred:", e);
     }
 
     setIsProcessing(false);

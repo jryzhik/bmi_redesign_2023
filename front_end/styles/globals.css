@@ -204,3 +204,10 @@ button.nextui-c-iWjDFM-gglxka-cv {
 .nextui-c-bDGMeb {
   display: none !important;
 }
+
+.paypal-button.paypal-button-number-3.paypal-button-layout-vertical.paypal-button-shape-rect.paypal-button-number-multiple.paypal-button-env-sandbox.paypal-button-color-black.paypal-button-text-color-white.paypal-logo-color-white {
+	display: none;
+}
+.paypal-button.paypal-button-color-black {
+  display: none;
+}

@@ -8,11 +8,11 @@ import TITLE from '../fonts/TITLE';
 import CreditCard from '../inputs/creditCard';
 import CreditCardForm from './creditCardForm';
 import Payment from './Payment';
+import PayPalDonateButton from '../buttons/paypalDonateButton';
 
-export default function EnterPaymentDetailsSection({ ccNumber, expiration, cvv, setccNumber, ccNumberValid, selectedPaymentOption, setSelectedPaymentOption, setExpiration, expirationValid, setCvv, cvvValid, setreoccuringSelected, reoccuringSelected, setfeeOptIn, feeOptIn, stripeFeeAmount,totalAmount, firstName, lastName, email }) {
+export default function EnterPaymentDetailsSection({ ccNumber, expiration, cvv, setccNumber, ccNumberValid, selectedPaymentOption, setSelectedPaymentOption, setExpiration, expirationValid, setCvv, cvvValid, setreoccuringSelected, reoccuringSelected, setfeeOptIn, feeOptIn, stripeFeeAmount,totalAmount, firstName, lastName, email, fund }) {
     const [cardNumberLabel, setcardNumberLabel] = useState('card number');
     const [cardNumberLabelColor, setcardNumberLabelColor] = useState(theme.colors.BLACK);
-    const [headerText, setHeaderText] = useState('Enter your payment details.')
 
     // Define the changeColorNText function outside the useEffect hook
     function changeColorNText() {
@@ -32,7 +32,6 @@ export default function EnterPaymentDetailsSection({ ccNumber, expiration, cvv, 
     }, [ccNumberValid]);
     return (
         <div className={styles.enterPaymentDetailsSection}>
-            <H2 color={theme.colors.BLACK} text={headerText} />
             <Grid container >
                 {selectedPaymentOption == 'credit card' ? (
 
@@ -64,9 +63,14 @@ export default function EnterPaymentDetailsSection({ ccNumber, expiration, cvv, 
                             email={email}
                             selectedPaymentOption={selectedPaymentOption}
                             reoccuringSelected={reoccuringSelected}
-                            setHeaderText={setHeaderText}
+                            fund={fund}
                         />
                     </Grid>
+                ) : (
+                    <></>
+                )}
+                {selectedPaymentOption == 'paypal' ? (
+                   <PayPalDonateButton/>      
                 ) : (
                     <></>
                 )}

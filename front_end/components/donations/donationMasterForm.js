@@ -277,6 +277,7 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
                                 firstName={firstName}
                                 lastName={lastName}
                                 email={email}
+                                fund={fund}
                             />
                         ) : (
                             <></>
