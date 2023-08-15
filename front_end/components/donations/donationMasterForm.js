@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import HeaderNComponent from '../texts/HeaderNComponent';
 import FiveButtonsDonate from './FiveButtonsDonate';
 import P from '../fonts/P';
 import styles from '../../styles/Donate/Donate.module.css';
@@ -17,6 +16,7 @@ import SelectPaymentSection from './selectPaymentSection';
 import EnterPaymentDetailsSection from './enterPaymentDetailsSection';
 import OverviewDonationSection from './overviewDonationSection';
 import ThankyouSection from './thankyouSection';
+import HeaderNComponent from '../texts/HeaderNComponent.js';
 
 
 
@@ -282,7 +282,7 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
                         ) : (
                             <></>
                         )}
-                        {currentScreenIndex === 4 ? (
+                        {/* {currentScreenIndex === 4 ? (
                             <OverviewDonationSection
                                 totalAmount={totalAmount}
                                 setCurrentScreenIndex={setCurrentScreenIndex}
@@ -302,7 +302,7 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
                             />
                         ) : (
                             <></>
-                        )}
+                        )} */}
                         <div style={{
                             width: "70%",
                             position: 'relative',

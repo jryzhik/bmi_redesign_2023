@@ -7,7 +7,6 @@ import RoundedButton from '../buttons/roundedButton';
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import FiveButtonsDonate from './FiveButtonsDonate';
 
-
 export default function ColorheroDonate({color, primaryText, secondaryText}) {
     return (
         <div className={styles.together}>
