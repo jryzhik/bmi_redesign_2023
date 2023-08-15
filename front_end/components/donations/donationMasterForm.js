@@ -16,8 +16,7 @@ import SelectPaymentSection from './selectPaymentSection';
 import EnterPaymentDetailsSection from './enterPaymentDetailsSection';
 import OverviewDonationSection from './overviewDonationSection';
 import ThankyouSection from './thankyouSection';
-import HeaderNComponent from '../texts/HeaderNComponent.js';
-
+import HeaderNComponent from '../texts/HeaderNComponent';
 
 
 export default function DonationMasterForm({ headerText, secondaryText, secondaryAllign, buttonStyle, color, fund }) {
