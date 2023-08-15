@@ -256,7 +256,9 @@
     text-transform: uppercase;
     font-size: 1em;
     border: none;
-
+}
+#stripe_button_submit:hover {
+    cursor: pointer;
 }
 
 @media (min-width: 900px) and (max-width: 1030px) {

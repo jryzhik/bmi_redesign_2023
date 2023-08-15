@@ -6,6 +6,10 @@ import PaymentProviderButton from '../buttons/paymentProviderButton';
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 
 export default function SelectPaymentSection({ paymentButtonClickHandle }) {
+    function zelleHandle() {
+        paymentButtonClickHandle('zelle')
+        window.open(process.env.NEXT_PUBLIC_ZELLE_LINK, '_blank');
+    }
     return (
         <div className={styles.selectPaymentSection}>
             <H2 color={theme.colors.BLACK} text="Select your payment option" />
@@ -22,7 +26,7 @@ export default function SelectPaymentSection({ paymentButtonClickHandle }) {
                         <PaymentProviderButton
                             imageUrl="/img/icons/zelle.svg"
                             width={100}
-                            handleClick={() => paymentButtonClickHandle('zelle')}
+                            handleClick={zelleHandle}
                         />
                     </Grid>
                     <Grid xs={4} md={4} padding={1}>

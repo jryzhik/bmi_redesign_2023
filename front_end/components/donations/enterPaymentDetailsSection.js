@@ -9,6 +9,7 @@ import CreditCard from '../inputs/creditCard';
 import CreditCardForm from './creditCardForm';
 import Payment from './Payment';
 import PayPalDonateButton from '../buttons/paypalDonateButton';
+import VenmoButton from '../buttons/VenmoButton';
 
 export default function EnterPaymentDetailsSection({ ccNumber, expiration, cvv, setccNumber, ccNumberValid, selectedPaymentOption, setSelectedPaymentOption, setExpiration, expirationValid, setCvv, cvvValid, setreoccuringSelected, reoccuringSelected, setfeeOptIn, feeOptIn, stripeFeeAmount, totalAmount, firstName, lastName, email, fund }) {
     const [cardNumberLabel, setcardNumberLabel] = useState('card number');
@@ -33,7 +34,7 @@ export default function EnterPaymentDetailsSection({ ccNumber, expiration, cvv, 
     return (
         <div className={styles.enterPaymentDetailsSection}>
             <Grid container >
-                {selectedPaymentOption == 'credit card' ? (
+                {/* {selectedPaymentOption == 'credit card' ? (
 
                     <CreditCardForm
                         ccNumber={ccNumber}
@@ -53,8 +54,8 @@ export default function EnterPaymentDetailsSection({ ccNumber, expiration, cvv, 
                     />
                 ) : (
                     <></>
-                )}
-                {selectedPaymentOption == 'apple pay' ? (
+                )} */}
+                {selectedPaymentOption === 'apple pay' || selectedPaymentOption === 'cashapp' || selectedPaymentOption === 'credit card' ? (
                     <Grid xs={12} md={12}>
                         <Payment
                             totalAmount={totalAmount}
@@ -71,7 +72,21 @@ export default function EnterPaymentDetailsSection({ ccNumber, expiration, cvv, 
                 )}
                 {selectedPaymentOption == 'paypal' ? (
                     <Grid xs={12} md={12}>
-                        <PayPalDonateButton totalAmount={totalAmount} />
+                        <PayPalDonateButton totalAmount={totalAmount} fund={fund} />
+                    </Grid>
+                ) : (
+                    <></>
+                )}
+                {selectedPaymentOption == 'venmo' ? (
+                    <Grid xs={12} md={12}>
+                        <VenmoButton totalAmount={totalAmount} fund={fund} />
+                    </Grid>
+                ) : (
+                    <></>
+                )}
+                {selectedPaymentOption == 'zelle' ? (
+                    <Grid xs={12} md={12}>
+                        
                     </Grid>
                 ) : (
                     <></>

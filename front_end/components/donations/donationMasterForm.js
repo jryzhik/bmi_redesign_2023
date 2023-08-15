@@ -311,7 +311,7 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
                             transform: 'translateX(-50%)',
                         }}>
                             <Grid xs={12} md={12} display="flex" justifyContent="center" alignItems="center" paddingTop={4} paddingBottom={3}>
-                                {currentScreenIndex !== 3 ? (
+                                {currentScreenIndex !== 3 && currentScreenIndex !== 2 ? (
                                     <RoundedButton text={currentScreenIndex === 3 ? "overview" : currentScreenIndex === 4 ? "give" : currentScreenIndex === 5 ? "close" : "continue to payment"} passedStyle={passedStyle.dollarButtonBlack} callBackFunction={nextPageNValidate} />
                                 ) : (<></>)}
                             </Grid>
