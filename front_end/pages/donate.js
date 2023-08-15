@@ -1,6 +1,6 @@
 import React from 'react'
 import ImageNtext from '../components/hero/imageNtext'
-import HeaderNComponent from '../components/texts/HeaderNComponent'
+import HeaderNComponent from '../components/texts/headerNComponent'
 import P from '../components/fonts/P'
 import theme from '../styles/theme'
 import styles from '../styles/Donate/Donate.module.css';
