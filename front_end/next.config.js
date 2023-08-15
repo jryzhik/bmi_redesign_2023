@@ -9,6 +9,14 @@ module.exports = {
                 source: '/stripe/config/:path*',
                 destination: 'http://localhost:5252/stripe/config/:path*',
             },
+            {
+                source: '/paypal/orders',
+                destination: 'http://localhost:5252/paypal/orders',
+            },
+            {
+                source: '/paypal/orders/:path*',
+                destination: 'http://localhost:5252/paypal/orders/:path*',
+            }
         ];
     },
 };
