@@ -1,7 +1,8 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { PayPalScriptProvider, PayPalButtons, FUNDING } from "@paypal/react-paypal-js";
+import styles from '../../styles/Donate/Donate.module.css';
 
-function PayPalDonateButton() {
+function PayPalDonateButton({ totalAmount }) {
     const FUNDING_SOURCES = [
         FUNDING.PAYPAL,
         // FUNDING.VENMO,
@@ -14,13 +15,12 @@ function PayPalDonateButton() {
     };
 
     return (
-        <div>
+        <div className={styles.paypalbutton}>
             <PayPalScriptProvider options={initialOptions}>
                 {
                     FUNDING_SOURCES.map(fundingSource => {
                         return (
                             <PayPalButtons
-                                ref={paypalButtonRef} // Set the ref for the PayPal button
                                 fundingSource={fundingSource}
                                 key={fundingSource}
                                 style={{
@@ -31,7 +31,11 @@ function PayPalDonateButton() {
                                 createOrder={async (data, actions) => {
                                     try {
                                         const response = await fetch("http://localhost:5252/paypal/orders", {
-                                            method: "POST"
+                                            method: "POST",
+                                            headers: {
+                                                "Content-Type": "application/json" // Set the content type to JSON
+                                            },
+                                            body: JSON.stringify({ number: totalAmount }),
                                         });
 
                                         const details = await response.json();

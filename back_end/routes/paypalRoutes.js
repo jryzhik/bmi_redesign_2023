@@ -27,7 +27,7 @@ const generateAccessToken = async () => {
    
 };
 
-const createOrder = async () => {
+const createOrder = async (number) => {
     const accessToken = await generateAccessToken();
     const url = `${base}/v2/checkout/orders`;
     const payload = {
@@ -36,7 +36,7 @@ const createOrder = async () => {
         {
             amount: {
             currency_code: "USD",
-            value: "0.02",
+            value: number,
             },
         },
         ],
@@ -79,8 +79,9 @@ async function handleResponse(response) {
 }
 
 router.post("/orders", async (req, res) => {
+    const { number } = req.body;
     try{
-        const response = await createOrder();
+        const response = await createOrder(number);
         res.json(response);
     } catch(error) {
         console.error("Failed to create order:", error);

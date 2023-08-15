@@ -65,6 +65,9 @@
     padding-left: 3em;
     padding-right: 3em;
 }
+.enterPaymentDetailsSection > .paypalbutton {
+    align-self: center;
+}
 
 .thankYouSection {
     display: flex;

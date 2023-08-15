@@ -10,7 +10,7 @@ import CreditCardForm from './creditCardForm';
 import Payment from './Payment';
 import PayPalDonateButton from '../buttons/paypalDonateButton';
 
-export default function EnterPaymentDetailsSection({ ccNumber, expiration, cvv, setccNumber, ccNumberValid, selectedPaymentOption, setSelectedPaymentOption, setExpiration, expirationValid, setCvv, cvvValid, setreoccuringSelected, reoccuringSelected, setfeeOptIn, feeOptIn, stripeFeeAmount,totalAmount, firstName, lastName, email, fund }) {
+export default function EnterPaymentDetailsSection({ ccNumber, expiration, cvv, setccNumber, ccNumberValid, selectedPaymentOption, setSelectedPaymentOption, setExpiration, expirationValid, setCvv, cvvValid, setreoccuringSelected, reoccuringSelected, setfeeOptIn, feeOptIn, stripeFeeAmount, totalAmount, firstName, lastName, email, fund }) {
     const [cardNumberLabel, setcardNumberLabel] = useState('card number');
     const [cardNumberLabelColor, setcardNumberLabelColor] = useState(theme.colors.BLACK);
 
@@ -70,7 +70,9 @@ export default function EnterPaymentDetailsSection({ ccNumber, expiration, cvv, 
                     <></>
                 )}
                 {selectedPaymentOption == 'paypal' ? (
-                   <PayPalDonateButton/>      
+                    <Grid xs={12} md={12}>
+                        <PayPalDonateButton totalAmount={totalAmount} />
+                    </Grid>
                 ) : (
                     <></>
                 )}
