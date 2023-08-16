@@ -3,7 +3,7 @@ import { PayPalScriptProvider, PayPalButtons, FUNDING } from "@paypal/react-payp
 import styles from '../../styles/Donate/Donate.module.css';
 import ThankyouSection from '../donations/thankyouSection';
 
-function PayPalDonateButton({ totalAmount, fund }) {
+export default function PayPalDonateButton({ totalAmount, fund }) {
     const [paymentSuccess, setPaymentSuccess] = useState(false)
     const [paymentVisible, setPaymentVisible] = useState({ display: "grid" })
     const [thanksVisible, setThanksVisible] = useState({ display: "none" })
@@ -114,5 +114,3 @@ function PayPalDonateButton({ totalAmount, fund }) {
 
     );
 }
-
-export default PayPalDonateButton;

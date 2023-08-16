@@ -52,8 +52,8 @@ export default function MobileSelectPaymentSection({ paymentButtonClickHandle })
             </Grid>
             <Grid xs={12} md={12} display={"flex"} padding={.5} justifyContent={"center"}>
                 <MobilePaymentProviderButton
-                    imageUrl="/img/icons/creditInfo.svg"
-                    width={120}
+                    imageUrl="/img/icons/creditcard.svg"
+                    width={100}
                     handleClick={() => paymentButtonClickHandle('credit card')}
                 />
             </Grid>
