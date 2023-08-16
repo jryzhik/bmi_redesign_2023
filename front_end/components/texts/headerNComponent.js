@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from '../../styles/Texts/Texts.module.css';
 import H1 from '../fonts/H1';
-import theme from '../../styles/theme';
 
 export default function HeaderNComponent({ primaryHeaderText, SecondaryComponent, secondaryAllign, color}) {
   const subComponentStyle = {
