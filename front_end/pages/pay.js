@@ -12,7 +12,7 @@ export default function pay() {
             <ImageNDonate
                 color1="#D0D5DF"
                 color2="#D7DBE4"
-                imageUrl="/../public/img/hero_images/trip_donation.jpg"
+                imageUrl="/img/hero_images/trip_donation.jpg"
                 textParent='Donate'
                 headerText='Making Trip Donations'
                 subText='Make your trip donation here, with convenient online platforms.'

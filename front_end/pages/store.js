@@ -6,7 +6,7 @@ export default function Store() {
     <ImageNtext
     color1="#180F06"
     color2="#352924"
-    imageUrl="/../public/img/hero_images/store.jpg"
+    imageUrl="/img/hero_images/store.jpg"
     textParent='Store'
     textChild='All Products'
     headerText='Check out all the merchandise we offer'

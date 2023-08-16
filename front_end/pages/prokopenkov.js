@@ -32,7 +32,7 @@ export default function Prokopenkov() {
       <PortraitNPageParent
         textParent='Missionary'
         textChild='Sergey & Olga Prokopenkov'
-        imgUrl="/../public/img/missionaries/prokopenkov.jpg"
+        imgUrl="/img/missionaries/prokopenkov.jpg"
       />
       <div className={styles.container}>
         <HeaderNComponent

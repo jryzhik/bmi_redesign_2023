@@ -64,7 +64,7 @@ const yearDropDown = [
 const events = [
     {
         title: 'Belarus Missionary Trip',
-        imgSource: '/../public/img/events/default_event.jpg',
+        imgSource: '/img/events/default_event.jpg',
         description: 'Pray for us as we invest into disciples of Christ.',
         additionalDescription: 'This is additional information that will be included only when the event was clicked on:)',
         start:
@@ -75,7 +75,7 @@ const events = [
     },
     {
         title: 'Mission Belarus Camping',
-        imgSource: '/../public/img/events/tent.jpg',
+        imgSource: '/img/events/tent.jpg',
         description: 'Spend 3 great days with us as we worship our Lord. All costs go to our fundraising methods for Belarus.',
         additionalDescription: 'This is additional information that will be included only when the event was clicked on:)',
         start:
@@ -90,7 +90,7 @@ const events = [
     },
     {
         title: 'Church Construction',
-        imgSource: '/../public/img/events/fire.jpg',
+        imgSource: '/img/events/fire.jpg',
         description: 'Spend 3 great days with us as we worship our Lord. All costs go to our fundraising methods for Belarus.',
         start:
         {
@@ -125,7 +125,7 @@ export default function Calendar() {
             <ImageNtext
                 color1="#040504"
                 color2="#050502"
-                imageUrl="/../public/img/hero_images/events.jpg"
+                imageUrl="/img/hero_images/events.jpg"
                 textParent='Events'
                 textChild='Calendar'
                 headerText='Upcoming Events'

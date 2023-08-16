@@ -42,7 +42,7 @@ export default function Videos() {
       <ImageNtext
         color1="#8D896E"
         color2="#8D896E"
-        imageUrl="/../public/img/hero_images/videos.jpg"
+        imageUrl="/img/hero_images/videos.jpg"
         textParent='Resources'
         textChild='Videos'
         headerText='See awesome things in the works'

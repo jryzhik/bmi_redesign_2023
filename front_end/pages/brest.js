@@ -61,8 +61,8 @@ export default function brest() {
         <ImageNGradient
             color1="#312822"
             color2="#63351A"
-            imageUrlTop="/../public/img/hero_images/brest_bible_church.jpg"
-            imageUrlBottom="/../public/img/hero_images/brest_bible_church_bottom.jpg"
+            imageUrlTop="/img/hero_images/brest_bible_church.jpg"
+            imageUrlBottom="/img/hero_images/brest_bible_church_bottom.jpg"
             textParent='Donate'
             textChild='BBC'
             headerText='Brest Bible Church building fund donations'

@@ -33,7 +33,7 @@ export default function Gruzd() {
             <PortraitNPageParent
                 textParent='Missionary'
                 textChild='Vladimir & Polina Gruzd'
-                imgUrl="/../public/img/missionaries/gruzd.jpg"
+                imgUrl="/img/missionaries/gruzd.jpg"
             />
             <div className={styles.container}>
                 <HeaderNComponent

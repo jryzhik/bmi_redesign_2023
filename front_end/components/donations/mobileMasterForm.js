@@ -4,7 +4,7 @@ import ST from '../fonts/ST';
 import theme from '../../styles/theme';
 import TITLE from '../fonts/TITLE';
 import EcfaInfo from '../icons/ecfaInfo';
-import exitIcon from '../../public/img/icons/exit.svg';
+import exitIcon from '/img/icons/exit.svg';
 import Image from 'next/image';
 import MobileOverviewDonationSection from './mobileOverviewDonationSection';
 import MobileSelectPaymentSection from './mobileSelectPaymentSection';

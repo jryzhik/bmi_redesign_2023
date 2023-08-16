@@ -11,7 +11,7 @@ export default function Letter() {
             <ImageNtext
                 color1="#404E26"
                 color2="#404E26"
-                imageUrl="/../public/img/hero_images/fundraising.jpg"
+                imageUrl="/img/hero_images/fundraising.jpg"
                 textParent='Resources'
                 textChild='Fundraising Letter'
                 headerText='Assistance Writing A Fundraising Letter'

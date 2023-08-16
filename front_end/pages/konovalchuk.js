@@ -32,7 +32,7 @@ export default function Konovalchuk() {
       <PortraitNPageParent
         textParent='Missionary'
         textChild='Vadim & Natasha Konavalchuk'
-        imgUrl="/../public/img/missionaries/konovalchuk.jpg"
+        imgUrl="/img/missionaries/konovalchuk.jpg"
       />
       <div className={styles.container}>
         <HeaderNComponent

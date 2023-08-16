@@ -33,7 +33,7 @@ export default function Alekseev() {
       <PortraitNPageParent
         textParent='Missionary'
         textChild='Dmitriy Alekseev'
-        imgUrl="/../public/img/missionaries/alekseev.jpg"
+        imgUrl="/img/missionaries/alekseev.jpg"
       />
       <div className={styles.container}>
         <HeaderNComponent

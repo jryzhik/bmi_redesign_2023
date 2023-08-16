@@ -35,7 +35,7 @@ export default function Gallery() {
       <ImageNtext
         color1="#B4C5CD"
         color2="#B4C5CD"
-        imageUrl="/../public/img/hero_images/gallery.jpg"
+        imageUrl="/img/hero_images/gallery.jpg"
         textParent='Resources'
         textChild='Gallery'
         headerText='View our contributions in digital format'

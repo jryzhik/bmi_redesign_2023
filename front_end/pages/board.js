@@ -12,13 +12,13 @@ import imagePassedStyles from '../styles/Images/Images.module.css';
 
 
 const board = [
-    { name: 'Chairman – Andrew Ryzhkov', jobTitle: 'Founder/ CEO', imgSource: '/../public/img/team/andrew.jpg' },
-    { name: 'Director – Ken E. & Judy Brockman', jobTitle: 'MEM, LLC', imgSource: '/../public/img/team/micah.jpg' },
-    { name: 'Dr. Dennis Kozakoff', jobTitle: 'CEO/ USDigiComm Corporation', imgSource: '/../public/img/team/wes.jpg' },
-    { name: 'Director – David Thayer', jobTitle: 'Senior Software Developer for Microsoft', imgSource: '/../public/img/team/phil.jpg' },
-    { name: 'Director — Chuck Capell', jobTitle: 'Delta Pilot', imgSource: '/../public/img/team/phil.jpg' },
-    { name: 'Director — Tom Boissseau', jobTitle: 'Live Sound, Film, Video & Installs', imgSource: '/../public/img/team/phil.jpg' },
-    { name: 'Secretary — Inna Ryzhkov', jobTitle: 'Attorney', imgSource: '/../public/img/team/phil.jpg' },
+    { name: 'Chairman – Andrew Ryzhkov', jobTitle: 'Founder/ CEO', imgSource: '/img/team/andrew.jpg' },
+    { name: 'Director – Ken E. & Judy Brockman', jobTitle: 'MEM, LLC', imgSource: '/img/team/micah.jpg' },
+    { name: 'Dr. Dennis Kozakoff', jobTitle: 'CEO/ USDigiComm Corporation', imgSource: '/img/team/wes.jpg' },
+    { name: 'Director – David Thayer', jobTitle: 'Senior Software Developer for Microsoft', imgSource: '/img/team/phil.jpg' },
+    { name: 'Director — Chuck Capell', jobTitle: 'Delta Pilot', imgSource: '/img/team/phil.jpg' },
+    { name: 'Director — Tom Boissseau', jobTitle: 'Live Sound, Film, Video & Installs', imgSource: '/img/team/phil.jpg' },
+    { name: 'Secretary — Inna Ryzhkov', jobTitle: 'Attorney', imgSource: '/img/team/phil.jpg' },
 
 ]
 export default function Board() {
@@ -27,7 +27,7 @@ export default function Board() {
             <ImageNtext
                 color1="#B1BFBD"
                 color2="#B6C2BE"
-                imageUrl="/../public/img/hero_images/board_members.jpg"
+                imageUrl="/img/hero_images/board_members.jpg"
                 textParent='Who We Are'
                 textChild='Board Members'
                 headerText='Discover our team leading the charge'

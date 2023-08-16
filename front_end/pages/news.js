@@ -45,7 +45,7 @@ export default function News() {
         <ImageNtext
             color1="#1C2530"
             color2="#202832"
-            imageUrl="/../public/img/hero_images/news.jpg"
+            imageUrl="/img/hero_images/news.jpg"
             textParent='Resources'
             textChild='News'
             headerText='Stay updated with all we’re doing'

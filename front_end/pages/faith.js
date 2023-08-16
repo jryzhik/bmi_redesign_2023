@@ -10,7 +10,7 @@ export default function Faith() {
             <ImageNtext
                 color2="#14190C"
                 color1="#14190C"
-                imageUrl="/../public/img/hero_images/belief.jpg"
+                imageUrl="/img/hero_images/belief.jpg"
                 textParent='Who We Are'
                 textChild='Faith Statement'
                 headerText='Understanding our beliefs'

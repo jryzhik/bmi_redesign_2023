@@ -12,11 +12,11 @@ import theme from '../styles/theme'
 const founders = [
     {
         name: 'Andrew',
-        imgSource: '/../public/img/team/andrew.jpg'
+        imgSource: '/img/team/andrew.jpg'
     },
     {
         name: 'Inna',
-        imgSource: '/../public/img/team/ina.jpg'
+        imgSource: '/img/team/ina.jpg'
     }
 ]
 export default function Founders() {
@@ -34,7 +34,7 @@ export default function Founders() {
             <ImageNtext
                 color1="#0A6C72"
                 color2="#06545A"
-                imageUrl="/../public/img/hero_images/founders_hero.jpg"
+                imageUrl="/img/hero_images/founders_hero.jpg"
                 textParent='Who We Are'
                 textChild='The Founders'
                 headerText='Rev. Andrew & Inna Ryzhkov'

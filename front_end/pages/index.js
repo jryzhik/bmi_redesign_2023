@@ -244,7 +244,7 @@ export default function Home() {
             <ImageTextButton
               color1="#8C8B85"
               color2="#8C8B85"
-              imageUrl="/../public/img/home/pray.jpg"
+              imageUrl="/img/home/pray.jpg"
               headerText='Pray'
               subText='Pray for us as we invest into disciples of Christ.'
               imageFocus='50% -30%'
@@ -257,7 +257,7 @@ export default function Home() {
             <ImageTextButton
               color1="#170D04"
               color2="#160C03"
-              imageUrl="/../public/img/home/give.jpg"
+              imageUrl="/img/home/give.jpg"
               headerText='Give'
               subText='Support us financially as we spread His good message.'
               imageFocus='50% -30%'
@@ -270,7 +270,7 @@ export default function Home() {
             <ImageTextButton
               color1="#374A1A"
               color2="#384B1B"
-              imageUrl="/../public/img/home/team.jpg"
+              imageUrl="/img/home/team.jpg"
               headerText='Go'
               subText='Join us on missionary trips to Belarus and Ukraine.'
               imageFocus='50% -30%'
@@ -300,7 +300,7 @@ export default function Home() {
         <Grid container spacing={"1.5em"} justifyContent="center" position="relative" id="progressSection">
           <Grid xs={12} sm={12} md={4} justifyContent="center">
             <ProgressDonate
-              imageUrl="/../public/img/donation/progress/Bible.jpg"
+              imageUrl="/img/donation/progress/Bible.jpg"
               outlineColor={theme.colors.MAROON}
               percentFilled={animation1}
               primaryHeaderText={ProgressValues[0].primaryHeaderText}
@@ -310,7 +310,7 @@ export default function Home() {
           </Grid>
           <Grid xs={12} sm={12} md={4} justifyContent="center" >
             <ProgressDonate
-              imageUrl="/../public/img/donation/progress/construction.jpg"
+              imageUrl="/img/donation/progress/construction.jpg"
               outlineColor={theme.colors.ORANGE}
               percentFilled={animation2}
               primaryHeaderText={ProgressValues[1].primaryHeaderText}
@@ -320,7 +320,7 @@ export default function Home() {
           </Grid>
           <Grid xs={12} sm={12} md={4} justifyContent="center" >
             <ProgressDonate
-              imageUrl="/../public/img/donation/progress/orphan.jpg"
+              imageUrl="/img/donation/progress/orphan.jpg"
               outlineColor={theme.colors.BLUE}
               percentFilled={animation3}
               primaryHeaderText={ProgressValues[2].primaryHeaderText}

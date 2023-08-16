@@ -32,7 +32,7 @@ export default function Simonovich() {
       <PortraitNPageParent
         textParent='Missionary'
         textChild='Vladimir & Lyudmila Simonovich.'
-        imgUrl="/../public/img/missionaries/simonovich.jpg"
+        imgUrl="/img/missionaries/simonovich.jpg"
       />
       <div className={styles.container}>
         <HeaderNComponent

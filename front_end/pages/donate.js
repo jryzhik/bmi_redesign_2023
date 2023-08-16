@@ -47,7 +47,7 @@ export default function Donate() {
       <ImageNtext
         color1="#383B39"
         color2="#383B39"
-        imageUrl="/../public/img/hero_images/donate.jpg"
+        imageUrl="/img/hero_images/donate.jpg"
         textParent='Donate'
         textChild='General Donation'
         headerText='Support us in changing the world for Christ'

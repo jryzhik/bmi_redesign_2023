@@ -52,7 +52,7 @@ export default function report() {
             <ImageNtext
                 color1="#7FA1B8"
                 color2="#B7C9D1"
-                imageUrl="/../public/img/hero_images/report.jpg"
+                imageUrl="/img/hero_images/report.jpg"
                 textParent='Who We Are'
                 textChild='Annual Report'
                 headerText='We are transparent with our spending and finances'
@@ -157,42 +157,42 @@ export default function report() {
             <Grid container className={styles.gridIconText} justify='center' alignItems='start' spacing={5} >
                 <Grid xs={12} sm={6} md={6} >
                     <div style={{ opacity: elementOpactity(0), transition: 'all .2s ease-out' }} >
-                        <ImageNPercentage passedImage={'/../public/img/report_categories/ministry_projects.jpg'} percentText={73.03} description={'Ministry Projects'} color={theme.colors.ORANGE} />
+                        <ImageNPercentage passedImage={'/img/report_categories/ministry_projects.jpg'} percentText={73.03} description={'Ministry Projects'} color={theme.colors.ORANGE} />
                     </div>
                 </Grid>
                 <Grid xs={12} sm={6} md={6}>
                     <div style={{ opacity: elementOpactity(1), transition: 'all .2s ease-out' }} >
-                        <ImageNPercentage passedImage={'/../public/img/report_categories/compensation.jpg'} percentText={15.20} description={'Compensation to Officers'} color={theme.colors.DARK_BLUE} />
+                        <ImageNPercentage passedImage={'/img/report_categories/compensation.jpg'} percentText={15.20} description={'Compensation to Officers'} color={theme.colors.DARK_BLUE} />
                     </div>
                 </Grid>
                 <Grid xs={12} sm={6} md={6}>
                     <div style={{ opacity: elementOpactity(2), transition: 'all .2s ease-out' }} >
-                        <ImageNPercentage passedImage={'/../public/img/report_categories/mission_groups.jpg'} percentText={4.51} description={'Mission Group Trips'} color={theme.colors.MAROON} />
+                        <ImageNPercentage passedImage={'/img/report_categories/mission_groups.jpg'} percentText={4.51} description={'Mission Group Trips'} color={theme.colors.MAROON} />
                     </div>
                 </Grid>
                 <Grid xs={12} sm={6} md={6}>
                     <div style={{ opacity: elementOpactity(3), transition: 'all .2s ease-out' }} >
-                        <ImageNPercentage passedImage={'/../public/img/report_categories/maintainance.jpg'} percentText={1.84} description={'Website Maintenance'} color={theme.colors.MAGENTA} />
+                        <ImageNPercentage passedImage={'/img/report_categories/maintainance.jpg'} percentText={1.84} description={'Website Maintenance'} color={theme.colors.MAGENTA} />
                     </div>
                 </Grid>
                 <Grid xs={12} sm={6} md={6}>
                     <div style={{ opacity: elementOpactity(4), transition: 'all .2s ease-out' }} >
-                        <ImageNPercentage passedImage={'/../public/img/report_categories/office.jpg'} percentText={1.72} description={'Office Expenses'} color={theme.colors.BLUE} />
+                        <ImageNPercentage passedImage={'/img/report_categories/office.jpg'} percentText={1.72} description={'Office Expenses'} color={theme.colors.BLUE} />
                     </div>
                 </Grid>
                 <Grid xs={12} sm={6} md={6}>
                     <div style={{ opacity: elementOpactity(5), transition: 'all .2s ease-out' }} >
-                        <ImageNPercentage passedImage={'/../public/img/report_categories/automobile.jpg'} percentText={1.53} description={'Automobile Expenses'} color={theme.colors.SAND} />
+                        <ImageNPercentage passedImage={'/img/report_categories/automobile.jpg'} percentText={1.53} description={'Automobile Expenses'} color={theme.colors.SAND} />
                     </div>
                 </Grid>
                 <Grid xs={12} sm={6} md={6}>
                     <div style={{ opacity: elementOpactity(6), transition: 'all .2s ease-out' }} >
-                        <ImageNPercentage passedImage={'/../public/img/report_categories/fundraising.jpg'} percentText={'1.40'} description={'Fundraising Expenses'} color={theme.colors.DARK_GREEN} />
+                        <ImageNPercentage passedImage={'/img/report_categories/fundraising.jpg'} percentText={'1.40'} description={'Fundraising Expenses'} color={theme.colors.DARK_GREEN} />
                     </div>
                 </Grid>
                 <Grid xs={12} sm={6} md={6}>
                     <div style={{ opacity: elementOpactity(7), transition: 'all .2s ease-out' }} >
-                        <ImageNPercentage passedImage={'/../public/img/report_categories/accounting.jpg'} percentText={0.77} description={'Accounting Fees'} color={theme.colors.DARK_GREY} />
+                        <ImageNPercentage passedImage={'/img/report_categories/accounting.jpg'} percentText={0.77} description={'Accounting Fees'} color={theme.colors.DARK_GREY} />
                     </div>
                 </Grid>
             </Grid>

@@ -14,7 +14,7 @@ export default function Contact() {
       <ImageNtext
         color1="#1F2010"
         color2="#786E33"
-        imageUrl="/../public/img/hero_images/contact.jpg"
+        imageUrl="/img/hero_images/contact.jpg"
         textParent='contact us'
         textChild=''
         headerText='We’d love to hear any questions you have'
