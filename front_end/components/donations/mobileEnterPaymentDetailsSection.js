@@ -1,7 +1,7 @@
 import React from 'react'
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import Payment from './Payment';
-import PayPalDonateButton from '../buttons/paypalDonateButton';
+import PayPalDonateButton from '../buttons/PaypalDonateButton';
 import H3 from '../fonts/H3';
 import theme from '../../styles/theme';
 import VenmoButton from '../buttons/VenmoButton';

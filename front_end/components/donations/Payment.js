@@ -6,7 +6,7 @@ import Grid from '@mui/material/Unstable_Grid2';
 import RoundedButton from "../buttons/roundedButton";
 import SubmitButton from "../buttons/submitButton";
 import passedStyle from '../../styles/Donate/ColorDonate.module.css';
-import AddressForm from "./addressForm";
+import AddressForm from "./AddressForm";
 import ThankyouSection from "./thankyouSection";
 import H2 from "../fonts/H2";
 import theme from "../../styles/theme";
