@@ -50,38 +50,6 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
 
     const [totalAmount, setTotalAmount] = useState('')
     const [selectedPaymentOption, setSelectedPaymentOption] = useState('credit card')
-    const [isSmallScreen, setIsSmallScreen] = useState(false);
-
-
-    useEffect(() => {
-        const handleResize = () => {
-            setIsSmallScreen(window.innerWidth < 900);
-        };
-
-        // Add event listener to handle window resize
-        window.addEventListener('resize', handleResize);
-
-        // Initial check
-        handleResize();
-
-        // Cleanup the event listener on component unmount
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
-
-    const bodyStyles = isSmallScreen
-        ? { overflow: 'hidden' }
-        : { overflow: 'visible' }; // Adjust 'visible' to your desired default value
-
-    useEffect(() => {
-        document.body.style.overflow = "scroll";
-
-        return () => {
-            document.body.style.overflow = "scroll";
-        };
-    }, [isSmallScreen]);
-
 
     useEffect(() => {
         if (feeOptIn) {
@@ -216,7 +184,6 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
     useEffect(() => {
         const handleResize = () => {
             setWindowWidth(window.innerWidth);
-            setIsSmallScreen(window.innerWidth < 900);
         };
 
         // Add event listener to handle window resize
@@ -224,14 +191,12 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
 
         // Initial window width
         setWindowWidth(window.innerWidth);
-        setIsSmallScreen(window.innerWidth < 900);
 
         // Cleanup the event listener on component unmount
         return () => {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
-
     function paymentProviderButtonPapaHandle(value) {
         if (currentScreenIndex == 2) {
             setSelectedPaymentOption(value)
@@ -261,7 +226,7 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
                         lastName={lastName}
                         email={email}
                         selectedPaymentOption={selectedPaymentOption}
-
+                        
 
 
                     />
