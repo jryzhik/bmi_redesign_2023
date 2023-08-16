@@ -3,7 +3,7 @@ import styles from '../../styles/Donate/Donate.module.css';
 import theme from '../../styles/theme';
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import Payment from './Payment';
-import PayPalDonateButton from '../buttons/PaypalDonateButton';
+import PayPalDonateButton from '../buttons/PayPalDonateButton';
 import VenmoButton from '../buttons/VenmoButton';
 import H3 from '../fonts/H3';
 
