@@ -17,6 +17,7 @@ import EnterPaymentDetailsSection from './enterPaymentDetailsSection';
 import OverviewDonationSection from './overviewDonationSection';
 import ThankyouSection from './thankyouSection';
 import HeaderNComponent from '../texts/headerNComponent';
+import MobileMasterForm from './mobileMasterForm';
 
 
 export default function DonationMasterForm({ headerText, secondaryText, secondaryAllign, buttonStyle, color, fund }) {
@@ -49,6 +50,38 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
 
     const [totalAmount, setTotalAmount] = useState('')
     const [selectedPaymentOption, setSelectedPaymentOption] = useState('credit card')
+    const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsSmallScreen(window.innerWidth < 900);
+        };
+
+        // Add event listener to handle window resize
+        window.addEventListener('resize', handleResize);
+
+        // Initial check
+        handleResize();
+
+        // Cleanup the event listener on component unmount
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    const bodyStyles = isSmallScreen
+        ? { overflow: 'hidden' }
+        : { overflow: 'visible' }; // Adjust 'visible' to your desired default value
+
+    useEffect(() => {
+        document.body.style.overflow = "scroll";
+
+        return () => {
+            document.body.style.overflow = "scroll";
+        };
+    }, [isSmallScreen]);
+
 
     useEffect(() => {
         if (feeOptIn) {
@@ -183,6 +216,7 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
     useEffect(() => {
         const handleResize = () => {
             setWindowWidth(window.innerWidth);
+            setIsSmallScreen(window.innerWidth < 900);
         };
 
         // Add event listener to handle window resize
@@ -190,12 +224,14 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
 
         // Initial window width
         setWindowWidth(window.innerWidth);
+        setIsSmallScreen(window.innerWidth < 900);
 
         // Cleanup the event listener on component unmount
         return () => {
             window.removeEventListener('resize', handleResize);
         };
     }, []);
+
     function paymentProviderButtonPapaHandle(value) {
         if (currentScreenIndex == 2) {
             setSelectedPaymentOption(value)
@@ -207,7 +243,28 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
             {console.log("firstName: ", firstName, "lastName: ", lastName, "email: ", email, "customDollarValue: ", customDollarValue, "creditcard number: ", ccNumber, "ccNumberValid: ", ccNumberValid, "Expiration: ", expiration, "Expiration Valid?: ", expirationValid, "CVV: ", cvv, "Monthly?: ", reoccuringSelected, "fee opt in: ", feeOptIn, " TOTAL AMOUNT ", totalAmount)}
             {popupVisible ? (
                 windowWidth < 900 ? (
-                    <p>Fully mobile component goes here</p>
+                    <MobileMasterForm
+                        fund={fund}
+                        resetDonation={resetDonation}
+                        setCustomDollarValue={setCustomDollarValue}
+                        totalAmount={totalAmount}
+                        setreoccuringSelected={setreoccuringSelected}
+                        reoccuringSelected={reoccuringSelected}
+                        feeOptIn={feeOptIn}
+                        setfeeOptIn={setfeeOptIn}
+                        stripeFeeAmount={((customDollarValue * parseFloat(process.env.NEXT_PUBLIC_STRIPE_FEE_PERCENT) / 100) + parseFloat(process.env.NEXT_PUBLIC_STRIPE_CONSTANT_AMOUNT)).toFixed(2)}
+                        currentScreenIndex={currentScreenIndex}
+                        nextPageNValidate={nextPageNValidate}
+                        customDollarValue={customDollarValue}
+                        paymentButtonClickHandle={paymentProviderButtonPapaHandle}
+                        firstName={firstName}
+                        lastName={lastName}
+                        email={email}
+                        selectedPaymentOption={selectedPaymentOption}
+
+
+
+                    />
                 ) : (
                     <div className={styles.formContainerPOP}>
                         <div className={styles.exitIcon} onClick={() => resetDonation()}>

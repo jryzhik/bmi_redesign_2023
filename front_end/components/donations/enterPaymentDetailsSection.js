@@ -1,15 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import styles from '../../styles/Donate/Donate.module.css';
-import H2 from '../fonts/H2';
 import theme from '../../styles/theme';
-import AllPaymentProviderSmall from '../buttons/allPaymentProviderSmall';
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
-import TITLE from '../fonts/TITLE';
-import CreditCard from '../inputs/creditCard';
-import CreditCardForm from './creditCardForm';
 import Payment from './Payment';
 import PayPalDonateButton from '../buttons/paypalDonateButton';
 import VenmoButton from '../buttons/VenmoButton';
+import H3 from '../fonts/H3';
 
 export default function EnterPaymentDetailsSection({ ccNumber, expiration, cvv, setccNumber, ccNumberValid, selectedPaymentOption, setSelectedPaymentOption, setExpiration, expirationValid, setCvv, cvvValid, setreoccuringSelected, reoccuringSelected, setfeeOptIn, feeOptIn, stripeFeeAmount, totalAmount, firstName, lastName, email, fund }) {
     const [cardNumberLabel, setcardNumberLabel] = useState('card number');
@@ -86,7 +82,7 @@ export default function EnterPaymentDetailsSection({ ccNumber, expiration, cvv, 
                 )}
                 {selectedPaymentOption == 'zelle' ? (
                     <Grid xs={12} md={12}>
-                        
+                        <H3 color={theme.colors.BLACK} text="Please follow all directions through seperate zelle window" />
                     </Grid>
                 ) : (
                     <></>

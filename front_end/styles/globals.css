@@ -9,7 +9,10 @@ body {
   font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   overflow-x: hidden;
+}
 
+.overflowHidden {
+  overflow: hidden;
 }
 
 a {
@@ -95,10 +98,12 @@ p {
   font-size: 1em;
   text-transform: uppercase;
 }
+
 #percnum {
   letter-spacing: -0.125rem;
   font-size: clamp(2.5em, 5vw, 4.375em);
 }
+
 #nh:hover {
   cursor: pointer;
 }
@@ -118,10 +123,12 @@ p {
   font-size: .875rem;
   font-size: clamp(.65rem, 1.3vw, .875rem);
 }
+
 #smbold {
   line-height: 0.625em;
   font-size: 0.688em;
 }
+
 #fieldtxt {
   line-height: 1.375em;
   font-size: 1em;
@@ -145,6 +152,7 @@ button {
   padding: 0.5rem 1rem;
   font-weight: bold;
 }
+
 button.nextui-c-iWjDFM-gglxka-cv {
   padding-left: .4em;
   padding-top: .1em;
@@ -163,6 +171,7 @@ button.nextui-c-iWjDFM-gglxka-cv {
 .generalCenterPadding {
   width: 90%;
 }
+
 .generalCenter>* {
   margin: 0;
 }
@@ -201,13 +210,15 @@ button.nextui-c-iWjDFM-gglxka-cv {
   white-space: nowrap;
   padding-bottom: 1rem;
 }
+
 .nextui-c-bDGMeb {
   display: none !important;
 }
 
 .paypal-button.paypal-button-number-3.paypal-button-layout-vertical.paypal-button-shape-rect.paypal-button-number-multiple.paypal-button-env-sandbox.paypal-button-color-black.paypal-button-text-color-white.paypal-logo-color-white {
-	display: none;
+  display: none;
 }
+
 .paypal-button.paypal-button-color-black {
   display: none;
 }

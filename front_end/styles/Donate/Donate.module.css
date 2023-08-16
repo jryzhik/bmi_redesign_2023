@@ -42,6 +42,26 @@
     filter: drop-shadow(0 0 0.1rem rgba(0, 0, 0, 0.257));
 }
 
+.exitIconMobileWrapper {
+    position: fixed;
+    top: 5%;
+    right: 10%;
+    transition: all 0.5s ease-out;
+}
+
+.exitIconMobile {
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+
+}
+
+.exitIconMobileWrapper:hover .exitIconMobile {
+    filter: drop-shadow(0 0 0.1rem rgba(0, 0, 0, 0.5));
+    transition: all 0.5s ease-out;
+
+    /* Adjust the shadow value as needed */
+}
+
 .givingInfoSection {
     display: flex;
     flex-direction: column;
@@ -65,7 +85,8 @@
     padding-left: 3em;
     padding-right: 3em;
 }
-.enterPaymentDetailsSection > .paypalbutton {
+
+.enterPaymentDetailsSection>.paypalbutton {
     align-self: center;
 }
 
@@ -79,6 +100,19 @@
 .paymentButton {
     width: 12.75em;
     height: 5.6875em;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #C7C7C7;
+    border-radius: 7px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    transition: all .5s ease-out;
+}
+
+.paymentButtonMobile {
+    width: 80vw;
+    height: 4.125em;
     border-style: solid;
     border-width: 1px;
     border-color: #C7C7C7;
@@ -154,6 +188,11 @@
 }
 
 .paymentButton:hover {
+    box-shadow: 0 0 6px #2D69C3;
+    cursor: pointer;
+}
+
+.paymentButtonMobile:hover {
     box-shadow: 0 0 6px #2D69C3;
     cursor: pointer;
 }
@@ -257,8 +296,25 @@
     font-size: 1em;
     border: none;
 }
+
 #stripe_button_submit:hover {
     cursor: pointer;
+}
+
+.popup_overlay {
+    justify-content: center;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 9999;
+}
+
+.popup_container {
+    padding: 3em;
 }
 
 @media (min-width: 900px) and (max-width: 1030px) {
