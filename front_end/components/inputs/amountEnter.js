@@ -10,16 +10,24 @@ const imb_plex_sand = IBM_Plex_Sans({
     style: ['italic', 'normal'],
 });
 
-export default function AmountEnter({ totalAmount, setCustomDollarValue }) {
+export default function AmountEnter({ totalAmount, setCustomDollarValue, offset }) {
     const [inputValue, setInputValue] = useState(totalAmount);
     const [containerWidth, setContainerWidth] = useState(17); // Initial width in 'em'
     const inputRef = useRef(null);
+    const [dollarWidth, setDollarWidth] = useState(10)
+    useEffect(() => {
+        if (offset === 145) {
+            setDollarWidth(30);
+        } else if (offset === 115) {
+            setDollarWidth(100);
+        }
+    }, [offset]);
 
     const calculateInputWidth = () => {
         if (inputRef.current) {
             const inputText = inputRef.current.value || '0'; // Use '0' if the input is empty
             const fontSize = 50; // Adjust based on your design
-            const width = inputText.length * fontSize * 0.8 + 115; // Adjust multiplier as needed
+            const width = inputText.length * fontSize * .8 + offset; // Adjust multiplier as needed
             setContainerWidth(width);
         }
     };
@@ -36,12 +44,14 @@ export default function AmountEnter({ totalAmount, setCustomDollarValue }) {
     };
 
     return (
+        
         <div className={styles.amountEnterContainer} style={{ width: `${containerWidth}px` }}>
             <div style={{ opacity: ".3" }}>
+                {console.log('THIS IS  offset', offset, "Dollar width: ", dollarWidth)}
                 <Image
                     src={dollarIcon}
                     alt="$"
-                    width={100}
+                    width={dollarWidth}
                     height={30}
                     quality={100}
                 />

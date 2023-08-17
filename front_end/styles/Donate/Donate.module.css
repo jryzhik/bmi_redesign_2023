@@ -259,8 +259,8 @@
     border-radius: 50%;
     border-color: #459673;
     border-width: 2px;
-    width: 1.5em;
-    height: 1.5em;
+    width: 24px;
+    height: 24px;
     border-style: solid;
     transition: all 1s ease-out;
 }

@@ -17,7 +17,7 @@ export default function OverviewDonationSection({ setCustomDollarValue, totalAmo
     return (
         <div className={styles.overviewDonationSection}>
             <div style={{ display: "flex", justifyContent: 'center', width: "42em", paddingTop: "3em", paddingBottom: "3em" }}>
-                <AmountEnter totalAmount={totalAmount} setCustomDollarValue={setCustomDollarValue}/>
+                <AmountEnter totalAmount={totalAmount} setCustomDollarValue={setCustomDollarValue} offset={115}/>
                 {/* <H1 color={theme.colors.BLACK} text={`$${totalAmount}`} /> */}
 
             </div>

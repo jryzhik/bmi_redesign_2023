@@ -13,7 +13,7 @@ export default function MobileOverviewDonationSection({totalAmount, setCustomDol
     return (
         <>
             <div style={{ display: "flex", justifyContent: 'center', paddingTop: "3em", paddingBottom: "3em" }}>
-                <AmountEnter totalAmount={totalAmount} setCustomDollarValue={setCustomDollarValue} />
+                <AmountEnter totalAmount={totalAmount} setCustomDollarValue={setCustomDollarValue} offset={145} />
             </div>
             <Grid container gap={1} justifyContent={"center"}>
                 <Grid xs={12} padding={1} width={"70%"}>
