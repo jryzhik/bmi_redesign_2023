@@ -83,7 +83,7 @@ function Payment({ totalAmount, firstName, lastName, email, selectedPaymentOptio
                 </Grid>
               </div>
               <div style={paymentVisible}>
-                <CheckoutForm setPaymentSuccess={setPaymentSuccess} />
+                <CheckoutForm setPaymentSuccess={setPaymentSuccess} fund={fund} />
                 <Grid xs={12} md={12} display="flex" justifyContent="center" alignItems="center" paddingTop={4}>
                   <SubmitButton />
                 </Grid>
