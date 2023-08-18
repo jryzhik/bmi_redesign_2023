@@ -1,15 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import RoundedPhoto from './roundedPhoto'
 import styles from '../../styles/Images/Images.module.css';
 import Image from 'next/image';
 
-export default function SlideGallery({galleryArray}) {
+export default function SlideGallery({ galleryArray }) {
     const [currentIndex, setCurrentIndex] = useState(0)
     const [booleanStyle, setBooleanStyle] = useState(styles.notFocusedImageGallery)
     const [left, setLeft] = React.useState(0)
     const [right, setRight] = React.useState(0)
     const [center, setCenter] = React.useState(0)
     const [touchPosition, setTouchPosition] = useState(null)
+
+    
+
 
     const handleTouchStart = (e) => {
         const touchDown = e.touches[0].clientX

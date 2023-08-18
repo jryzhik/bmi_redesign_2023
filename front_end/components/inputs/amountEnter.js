@@ -47,7 +47,6 @@ export default function AmountEnter({ totalAmount, setCustomDollarValue, offset 
         
         <div className={styles.amountEnterContainer} style={{ width: `${containerWidth}px` }}>
             <div style={{ opacity: ".3" }}>
-                {console.log('THIS IS  offset', offset, "Dollar width: ", dollarWidth)}
                 <Image
                     src={dollarIcon}
                     alt="$"

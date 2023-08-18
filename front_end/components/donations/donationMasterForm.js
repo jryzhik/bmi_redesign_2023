@@ -50,6 +50,18 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
 
     const [totalAmount, setTotalAmount] = useState('')
     const [selectedPaymentOption, setSelectedPaymentOption] = useState('credit card')
+    const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+    const [windowWidth, setWindowWidth] = useState(0);
+
+    useEffect(() => {
+        if (windowWidth < 900 && popupVisible) {
+            document.documentElement.style.overflowY = "hidden";
+        } else {
+            document.documentElement.style.overflowY = "visible";
+        }
+    }, [windowWidth, popupVisible]);
+
 
     useEffect(() => {
         if (feeOptIn) {
@@ -179,8 +191,6 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
             resetDonation()
         }
     }
-    const [windowWidth, setWindowWidth] = useState(0);
-
     useEffect(() => {
         const handleResize = () => {
             setWindowWidth(window.innerWidth);
@@ -203,6 +213,7 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
             setCurrentScreenIndex(3)
         }
     }
+
     return (
         <>
             {console.log("firstName: ", firstName, "lastName: ", lastName, "email: ", email, "customDollarValue: ", customDollarValue, "creditcard number: ", ccNumber, "ccNumberValid: ", ccNumberValid, "Expiration: ", expiration, "Expiration Valid?: ", expirationValid, "CVV: ", cvv, "Monthly?: ", reoccuringSelected, "fee opt in: ", feeOptIn, " TOTAL AMOUNT ", totalAmount)}
@@ -226,7 +237,7 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
                         lastName={lastName}
                         email={email}
                         selectedPaymentOption={selectedPaymentOption}
-                        
+
 
 
                     />

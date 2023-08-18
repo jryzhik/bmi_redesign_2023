@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import RoundedPhoto from './roundedPhoto'
 import styles from '../../styles/Images/Images.module.css';
 import Image from 'next/image';
@@ -14,6 +14,17 @@ export default function SpecificDonationGallery({ fundArray }) {
     const [right, setRight] = React.useState(0)
     const [center, setCenter] = React.useState(0)
     const [touchPosition, setTouchPosition] = useState(null)
+    
+    useEffect(() => {
+        // Apply styles when the component mounts
+        document.body.style.overflowX = "hidden";
+    
+        // Cleanup by removing the styles when the component unmounts
+        return () => {
+          document.body.style.overflowX = "";
+        };
+      }, []); // Empty dependency array ensures the effect runs only once on mount
+    
 
     const handleTouchStart = (e) => {
         const touchDown = e.touches[0].clientX

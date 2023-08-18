@@ -47,6 +47,7 @@
     top: 5%;
     right: 10%;
     transition: all 0.5s ease-out;
+    z-index: 1000000;
 }
 
 .exitIconMobile {
@@ -302,6 +303,7 @@
 }
 
 .popup_overlay {
+    overflow-y: auto;
     justify-content: center;
     display: flex;
     position: fixed;
