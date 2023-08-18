@@ -55,6 +55,7 @@ export default function Mobile_nav_bar({ menu }) {
             <Mobile_menu
                 menuExpanded={menuExpanded}
                 toggleMenu={toggleMenu}
+                menuArray={menu}
             />
             <div className={styles.container}>
                 <Link href="/">

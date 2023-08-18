@@ -4,6 +4,7 @@ const theme = {
         WHITE: '#ffffff',
         CHARCOAL: '#373737',
         GREY: '#C7C7C7',
+        MENU_GREY: '#9e9e9e',
         SNOW: '#F6F6F6',
         RED: '#DE2418',
         MAROON: '#459673',

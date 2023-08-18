@@ -11,7 +11,7 @@
     height: 3rem;
     border-bottom-left-radius: 7px;
     border-bottom-right-radius: 7px;
-    z-index: 10000;
+    z-index: 8000;
 }
 
 .menu {
@@ -50,13 +50,14 @@
     z-index: 9999;
     pointer-events: auto;
     /* Allow interaction with open menu */
-    transition: opacity 0.2s ease-out;
+    transition: opacity 0.15s ease-out;
 }
 
 .mobile_menu_containerOFF {
     opacity: 0;
     visibility: hidden;
-    pointer-events: none; /* Prevent interaction with hidden menu */
+    pointer-events: none;
+    /* Prevent interaction with hidden menu */
     display: flex;
     position: fixed;
     top: 0;
@@ -65,7 +66,7 @@
     height: 100%;
     background-color: white;
     z-index: 9999;
-    transition: opacity 0.2s ease-out, visibility 0s 0.2s;
+    transition: opacity 0.15s ease-out, visibility 0s 0.15s;
 }
 
 .exitIconMobileWrapper {
@@ -82,4 +83,28 @@
     cursor: pointer;
 
     /* Adjust the shadow value as needed */
+}
+
+.menu_main_content {
+    padding: 3em;
+}
+
+.mobile_expandingContainerClosed {
+    opacity: .5;
+}
+
+.mobile_expandingContainerOpen {
+    opacity: 1;
+    transition: opacity 0.15s ease-in;
+
+}
+
+.mobile_expandingContainerClosed:hover {
+    cursor: pointer;
+    transition: opacity 0.15s ease-out;
+
+}
+
+.mobile_expandingContainerOpen:hover {
+    cursor: pointer;
 }
