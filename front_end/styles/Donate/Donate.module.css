@@ -59,6 +59,7 @@
 .exitIconMobileWrapper:hover .exitIconMobile {
     filter: drop-shadow(0 0 0.1rem rgba(0, 0, 0, 0.5));
     transition: all 0.5s ease-out;
+    cursor: pointer;
 
     /* Adjust the shadow value as needed */
 }

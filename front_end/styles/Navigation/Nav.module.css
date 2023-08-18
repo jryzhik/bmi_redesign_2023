@@ -36,3 +36,50 @@
     padding-bottom: 1rem;
     margin-left: -1rem;
 }
+
+.mobile_menu_container {
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 9999;
+    pointer-events: auto;
+    /* Allow interaction with open menu */
+    transition: opacity 0.2s ease-out;
+}
+
+.mobile_menu_containerOFF {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* Prevent interaction with hidden menu */
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 9999;
+    transition: opacity 0.2s ease-out, visibility 0s 0.2s;
+}
+
+.exitIconMobileWrapper {
+    position: fixed;
+    top: 5%;
+    right: 3%;
+    transition: all 0.5s ease-out;
+    z-index: 1000000;
+}
+
+.exitIconMobileWrapper:hover .exitIconMobile {
+    filter: drop-shadow(0 0 0.1rem rgba(0, 0, 0, 0.5));
+    transition: all 0.5s ease-out;
+    cursor: pointer;
+
+    /* Adjust the shadow value as needed */
+}
