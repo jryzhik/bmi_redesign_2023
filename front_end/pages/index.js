@@ -217,7 +217,7 @@ export default function Home() {
   }
 
   return (
-    <>
+    <div className='overflow_x'>
       <Head>
         <title>Byelorussian Mission Inc.</title>
         <link rel="icon" href="/favicon.ico" />
@@ -353,6 +353,6 @@ export default function Home() {
           secondaryText='Keep up to date with all that we’re doing!'
         />
       </div>
-    </>
+    </div>
   );
 }
