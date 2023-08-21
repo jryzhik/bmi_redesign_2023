@@ -30,11 +30,11 @@ const menu = [
     },
     {
         primary: ['Store', 'store'],
-        secondary: [['Books', 'books'], ['Apparel', 'apparel']]
+        secondary: [['Store Home', 'store'], ['Books', 'books'], ['Apparel', 'apparel']]
     },
     {
         primary: ['Donate', 'donate'],
-        secondary: [['Matching Fund', 'matching'], ['Love in Action', 'ukraine'], ['Good & Evil Bible', 'literature'], ['Legacy Giving', 'legacy'], ['Trip Donation', 'pay']]
+        secondary: [['General Fund', 'donate'], ['Matching Fund', 'matching'], ['Love in Action', 'ukraine'], ['Good & Evil Bible', 'literature'], ['Legacy Giving', 'legacy'], ['Trip Donation', 'pay']]
     },
     {
         primary: ['Contact', 'contact'],
