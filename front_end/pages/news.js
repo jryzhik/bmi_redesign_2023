@@ -6,41 +6,41 @@ import theme from '../styles/theme'
 import SlideNewsGallery from '../components/images/slideNewsGallery'
 import styles from '../styles/Images/Images.module.css';
 import SubscribeHero from '../components/events/subscribeHero'
+import clientPromise from '../lib/mongo/connect'
 
-
-const news = [
-    {
-        imageUrl: '/img/gallery/gruzd/sitting_fire.jpg',
-        title: 'July 2023',
-        description: 'Reuniting for the 4th of July to strengthen our team internally.',
-        url: 'https://google.com'
-    },
-    {
-        imageUrl: '/img/gallery/gruzd/bike.jpg',
-        title: 'August 2023',
-        description: 'of July to strengthen our team internally.',
-        url: 'https://yahoo.com'
-    },
-    {
-        imageUrl: '/img/gallery/gruzd/phone.jpg',
-        title: 'September 2023',
-        description: 'aakrsfanf testin ght ess asrjasr',
-        url: 'https://bing.com'
-    },
-    {
-        imageUrl: '/img/gallery/gruzd/blow.jpg',
-        title: 'October 2023',
-        description: 'Row row row your boat',
-        url: 'https://duckduckgo.com'
-    },
-    {
-        imageUrl: '/img/gallery/gruzd/teach.jpg',
-        title: 'December 2023',
-        description: 'Teaching is inportnat in 21 centrure',
-        url: 'https://firefox.com'
-    },
-]
-export default function News() {
+// const news = [
+//     {
+//         imageUrl: '/img/gallery/gruzd/sitting_fire.jpg',
+//         title: 'July 2023',
+//         description: 'Reuniting for the 4th of July to strengthen our team internally.',
+//         url: 'https://google.com'
+//     },
+//     {
+//         imageUrl: '/img/gallery/gruzd/bike.jpg',
+//         title: 'August 2023',
+//         description: 'of July to strengthen our team internally.',
+//         url: 'https://yahoo.com'
+//     },
+//     {
+//         imageUrl: '/img/gallery/gruzd/phone.jpg',
+//         title: 'September 2023',
+//         description: 'aakrsfanf testin ght ess asrjasr',
+//         url: 'https://bing.com'
+//     },
+//     {
+//         imageUrl: '/img/gallery/gruzd/blow.jpg',
+//         title: 'October 2023',
+//         description: 'Row row row your boat',
+//         url: 'https://duckduckgo.com'
+//     },
+//     {
+//         imageUrl: '/img/gallery/gruzd/teach.jpg',
+//         title: 'December 2023',
+//         description: 'Teaching is inportnat in 21 centrure',
+//         url: 'https://firefox.com'
+//     },
+// ]
+export default function News( {news }) {
     return (<>
         <ImageNtext
             color1="#1C2530"
@@ -68,4 +68,24 @@ export default function News() {
         </div>
     </>
     )
+}
+
+export async function getServerSideProps() {
+    try {
+        const client = await clientPromise;
+        const db = client.db("masterdb");
+
+        const news = await db
+            .collection("news")
+            .find({})
+            .sort({ name_of_date_field : 1})
+            .limit(20)
+            .toArray();
+
+        return {
+            props: { news: JSON.parse(JSON.stringify(news)) },
+        };
+    } catch (e) {
+        console.error(e);
+    }
 }

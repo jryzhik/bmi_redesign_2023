@@ -15,6 +15,8 @@ import NoTextHero from '../components/hero/noTextHero';
 import SlideNewsGalleryHome from '../components/images/slideNewsGalleryHome';
 import SubscribeHero from '../components/events/subscribeHero';
 import HomeAdSlider from '../components/hero/homeAdSlider';
+import clientPromise from '../lib/mongo/connect'
+
 
 
 const numberOfOrphans = 560
@@ -101,39 +103,7 @@ const ProgressValues = [
   },
 ]
 
-const news = [
-  {
-    imageUrl: '/img/gallery/gruzd/sitting_fire.jpg',
-    title: 'Jul 2023',
-    description: 'Reuniting for the 4th of July to strengthen our team internally.',
-    url: 'https://google.com'
-  },
-  {
-    imageUrl: '/img/gallery/gruzd/bike.jpg',
-    title: 'Aug 2023',
-    description: 'of July to strengthen our team internally.',
-    url: 'https://yahoo.com'
-  },
-  {
-    imageUrl: '/img/gallery/gruzd/phone.jpg',
-    title: 'Sept 2023',
-    description: 'aakrsfanf testin ght ess asrjasr',
-    url: 'https://bing.com'
-  },
-  {
-    imageUrl: '/img/gallery/gruzd/blow.jpg',
-    title: 'Oct 2023',
-    description: 'Row row row your boat',
-    url: 'https://duckduckgo.com'
-  },
-  {
-    imageUrl: '/img/gallery/gruzd/teach.jpg',
-    title: 'Dec 2023',
-    description: 'Teaching is inportnat in 21 centrure',
-    url: 'https://firefox.com'
-  },
-]
-export default function Home() {
+export default function Home({ news }) {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [currentSlideIndexAd, setCurrentSlideIndexAd] = useState(0);
   const [animation1, setAnimation1] = useState(0);
@@ -355,4 +325,24 @@ export default function Home() {
       </div>
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  try {
+      const client = await clientPromise;
+      const db = client.db("masterdb");
+
+      const news = await db
+          .collection("news")
+          .find({})
+          .sort({ name_of_date_field : 1})
+          .limit(20)
+          .toArray();
+
+      return {
+          props: { news: JSON.parse(JSON.stringify(news)) },
+      };
+  } catch (e) {
+      console.error(e);
+  }
 }
