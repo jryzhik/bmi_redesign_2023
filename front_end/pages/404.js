@@ -12,12 +12,9 @@ export default function Custom404() {
       <div className='generalCenter'>
         <Image src={childImage} alt='whoops' />
         <H1 text='404 Whoops!'></H1>
-        <P text='The page you requested couldn’t be found.'/>
+        {/* <P text='The page you requested couldn’t be found.'/> */}
+        <P text='We are developing this page... 🛠️'/>
       </div>
-      {/* <Stack alignContent={'center'} margin={4} spacing={2}>
-        <Image src={childImage} alt='whoops' width={300} height={200} />
-        <h3>ss</h3>
-      </Stack> */}
     </>
   )
 }

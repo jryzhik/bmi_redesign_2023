@@ -10,22 +10,22 @@ import H4NComponent from '../components/texts/h4NComponent'
 
 const galleryArray = [
   {
-    title:'Republic of Georgia', description: 'Evangelism', imageUrl:'/img/team/all_board.jpg'
+    title:'Pastors Conference', description: 'Kobryn', imageUrl:'/img/gallery/general/pastor_conference.jpg'
   },
   {
-    title:'Republic of Georgia', description: 'Evangelism', imageUrl:'/img/team/all_board.jpg'
+    title:'Summer Camp', description: 'Berezino', imageUrl:'/img/gallery/general/summer_camp_berezino.jpg'
   },
   {
-    title:'Republic of Georgia', description: 'Evangelism', imageUrl:'/img/team/all_board.jpg'
+    title:'Youth Baptized', description: 'Brest', imageUrl:'/img/gallery/general/brest-baptism.jpg'
   },
   {
-    title:'Republic of Georgia', description: 'Evangelism', imageUrl:'/img/team/all_board.jpg'
+    title:'Equipping with Literature', description: 'Imenin', imageUrl:'/img/gallery/general/book_distribution_youth.jpg'
   },
   {
-    title:'Republic of Georgia', description: 'Evangelism', imageUrl:'/img/team/all_board.jpg'
+    title:'Foundation of camp', description: 'Mozyr', imageUrl:'/img/gallery/general/construction_camp_mozyr.jpg'
   },
   {
-    title:'Republic of Georgia', description: 'Evangelism', imageUrl:'/img/team/all_board.jpg'
+    title:'Camp Building Progress', description: 'Bobruisk', imageUrl:'/img/gallery/general/construction_camp_bobruisk.jpg'
   },
 ]
 

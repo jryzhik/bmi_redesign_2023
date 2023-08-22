@@ -17,7 +17,7 @@ export default function MobileOverviewDonationSection({totalAmount, setCustomDol
             </div>
             <Grid container gap={1} justifyContent={"center"}>
                 <Grid xs={12} padding={1} width={"70%"}>
-                    <div style={{ display: "flex", flexDirection: "column", gap: ".5em", position: "relative" }}>
+                    {/* <div style={{ display: "flex", flexDirection: "column", gap: ".5em", position: "relative" }}>
                         <TITLE color={theme.colors.BLACK} text={"Reoccurring donation"} />
                         <div style={{ display: 'flex', gap: ".5em" }}>
                             <RadioButton
@@ -25,7 +25,7 @@ export default function MobileOverviewDonationSection({totalAmount, setCustomDol
                                 valueSelected={reoccuringSelected} />
                             <FIELDTEXT color={theme.colors.BLACK} text="Make this a monthly donation" />
                         </div>
-                    </div>
+                    </div> */}
                 </Grid>
                 <Grid xs={12} padding={1} width={"70%"}>
                     <div style={{ display: "flex", flexDirection: "column", gap: ".5em" }}>

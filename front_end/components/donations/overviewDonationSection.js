@@ -23,7 +23,7 @@ export default function OverviewDonationSection({ setCustomDollarValue, totalAmo
             </div>
 
             <Grid xs={12} md={12} display="flex" flexDirection= "column" justifyContent="end" alignItems="start" alignSelf="start" gap={"2em"} paddingLeft={"3em"} paddingBottom={"2em"}>
-                <div style={{ display: "flex", flexDirection: "column", gap: ".5em" }}>
+                {/* <div style={{ display: "flex", flexDirection: "column", gap: ".5em" }}>
                     <TITLE color={theme.colors.BLACK} text={"Reoccurring donation"} />
                     <div style={{ display: 'flex', gap: ".5em" }}>
                         <RadioButton
@@ -31,7 +31,7 @@ export default function OverviewDonationSection({ setCustomDollarValue, totalAmo
                             valueSelected={reoccuringSelected} />
                         <FIELDTEXT color={theme.colors.BLACK} text="Make this a monthly donation" />
                     </div>
-                </div>
+                </div> */}
                 <div style={{ display: "flex", flexDirection: "column", gap: ".5em"}}>
                     <TITLE color={theme.colors.BLACK} text={"Processing fee"} />
                     <div style={{ display: 'flex', gap: ".5em" }}>

@@ -3,7 +3,6 @@ import React from 'react'
 import ImageNtext from '../components/hero/imageNtext'
 import ProfileNTexts from '../components/texts/profileNTexts'
 import styles from '../styles/Texts/Profiles.module.css';
-import passedStyles from '../styles/Texts/Profiles.module.css';
 
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 
@@ -30,7 +29,7 @@ export default function Advisory() {
         imageFocus='50% 23%'
 
       />
-      <Grid container spacing={-10} justifyContent='center' >
+      <Grid paddingLeft={4} paddingRight={4} container spacing={3} justifyContent='center'>
         {team.map((member) => (
           <Grid className={styles.verticalSpacing} xs={12} sm={6} md={3} display="flex" justifyContent="center" alignItems="center" >
             <ProfileNTexts
@@ -38,7 +37,7 @@ export default function Advisory() {
               textJobTitle={member.jobTitle}
               passedImage={member.imgSource}
               borderRadius='50%'
-              passedStyle={passedStyles.profilePic}
+              passedStyle={styles.profilePic}
             />
           </Grid>
         ))}

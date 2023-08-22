@@ -13,12 +13,12 @@ import imagePassedStyles from '../styles/Images/Images.module.css';
 
 const board = [
     { name: 'Chairman – Andrew Ryzhkov', jobTitle: 'Founder/ CEO', imgSource: '/img/team/andrew.jpg' },
-    { name: 'Director – Ken E. & Judy Brockman', jobTitle: 'MEM, LLC', imgSource: '/img/team/micah.jpg' },
-    { name: 'Dr. Dennis Kozakoff', jobTitle: 'CEO/ USDigiComm Corporation', imgSource: '/img/team/wes.jpg' },
-    { name: 'Director – David Thayer', jobTitle: 'Senior Software Developer for Microsoft', imgSource: '/img/team/phil.jpg' },
-    { name: 'Director — Chuck Capell', jobTitle: 'Delta Pilot', imgSource: '/img/team/phil.jpg' },
-    { name: 'Director — Tom Boissseau', jobTitle: 'Live Sound, Film, Video & Installs', imgSource: '/img/team/phil.jpg' },
-    { name: 'Secretary — Inna Ryzhkov', jobTitle: 'Attorney', imgSource: '/img/team/phil.jpg' },
+    { name: 'Director — Chuck Capell', jobTitle: 'Delta Pilot', imgSource: '/img/team/chuck.jpg' },
+    { name: 'Director — Tom Boissseau', jobTitle: 'Live Sound, Film, Video & Installs', imgSource: '/img/team/tom.jpg' },
+    { name: 'Director – Ken E. & Judy Brockman', jobTitle: 'MEM, LLC', imgSource: '/img/team/ken.jpg' },
+    { name: 'Dr. Dennis Kozakoff', jobTitle: 'CEO/ USDigiComm Corporation', imgSource: '/img/team/dennis.jpg' },
+    { name: 'Secretary — Inna Ryzhkov', jobTitle: 'Attorney', imgSource: '/img/team/ina.jpg' },
+    { name: 'Director – David Thayer', jobTitle: 'Senior Software Developer for Microsoft', imgSource: '/img/team/david.jpg' },
 
 ]
 export default function Board() {
@@ -42,11 +42,11 @@ export default function Board() {
                     }
                     secondaryAllign='center'
                 />
-                <RoundedPhoto
+                {/* <RoundedPhoto
                     imageUrl={'/img/team/all_board.jpg'}
                     passedStyles={imagePassedStyles.roundedRectStandard}
-                />
-                <Grid container spacing={-10} justifyContent="center" >
+                /> */}
+                <Grid paddingLeft={4} paddingRight={4} container spacing={3} justifyContent='center'>
                     {board.map((member) => (
                         <Grid className={styles.verticalSpacing} xs={12} sm={6} md={3} display="flex" justifyContent="center" alignItems="center" >
                             <ProfileNTexts
