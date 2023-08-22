@@ -8,38 +8,6 @@ import styles from '../styles/Images/Images.module.css';
 import SubscribeHero from '../components/events/subscribeHero'
 import clientPromise from '../lib/mongo/connect'
 
-// const news = [
-//     {
-//         imageUrl: '/img/gallery/gruzd/sitting_fire.jpg',
-//         title: 'July 2023',
-//         description: 'Reuniting for the 4th of July to strengthen our team internally.',
-//         url: 'https://google.com'
-//     },
-//     {
-//         imageUrl: '/img/gallery/gruzd/bike.jpg',
-//         title: 'August 2023',
-//         description: 'of July to strengthen our team internally.',
-//         url: 'https://yahoo.com'
-//     },
-//     {
-//         imageUrl: '/img/gallery/gruzd/phone.jpg',
-//         title: 'September 2023',
-//         description: 'aakrsfanf testin ght ess asrjasr',
-//         url: 'https://bing.com'
-//     },
-//     {
-//         imageUrl: '/img/gallery/gruzd/blow.jpg',
-//         title: 'October 2023',
-//         description: 'Row row row your boat',
-//         url: 'https://duckduckgo.com'
-//     },
-//     {
-//         imageUrl: '/img/gallery/gruzd/teach.jpg',
-//         title: 'December 2023',
-//         description: 'Teaching is inportnat in 21 centrure',
-//         url: 'https://firefox.com'
-//     },
-// ]
 export default function News( {news }) {
     return (<>
         <ImageNtext

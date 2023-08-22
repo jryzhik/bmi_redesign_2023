@@ -1,11 +1,27 @@
-import React from 'react'
-import AppNCalendar from './appNCalendar'
-import H2NComponent from '../texts/h2NComponent'
-import P from '../fonts/P'
-import { theme } from '@nextui-org/react'
+import React, { useEffect, useState } from 'react';
+import AppNCalendar from './appNCalendar';
+import H2NComponent from '../texts/h2NComponent';
+import P from '../fonts/P';
+import { theme } from '@nextui-org/react';
 import styles from '../../styles/Events/Events.module.css';
 
 export default function EventIconText({ start, end, imgSource, title, description }) {
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const secondaryAlignment = screenWidth < 600 ? 'center' : 'left';
+
   return (
     <div className={styles.generalContainer}>
       <div className={styles.iconNTextContainer}>
@@ -19,9 +35,9 @@ export default function EventIconText({ start, end, imgSource, title, descriptio
           SecondaryComponent={
             <P color={theme.colors.CHARCOAL} text={description} />
           }
-          secondaryAllign='left'
+          secondaryAllign={secondaryAlignment}
         />
       </div>
     </div>
-  )
+  );
 }

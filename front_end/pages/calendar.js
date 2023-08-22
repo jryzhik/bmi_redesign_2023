@@ -6,6 +6,7 @@ import DropdownDate from '../components/texts/dropdownDate';
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import EventIconText from '../components/events/eventIconText';
 import Link from 'next/link';
+import clientPromise from '../lib/mongo/connect'
 
 
 const currentYear = new Date().getFullYear()
@@ -61,49 +62,8 @@ const yearDropDown = [
         name: currentYear + 2, key: currentYear + 2
     }
 ]
-const events = [
-    {
-        title: 'Belarus Missionary Trip',
-        imgSource: '/img/events/default_event.jpg',
-        description: 'Pray for us as we invest into disciples of Christ.',
-        additionalDescription: 'This is additional information that will be included only when the event was clicked on:)',
-        start:
-        {
-            month: 'Jun', day: '28', year: '2023'
-        },
-        key: 'bmt'
-    },
-    {
-        title: 'Mission Belarus Camping',
-        imgSource: '/img/events/tent.jpg',
-        description: 'Spend 3 great days with us as we worship our Lord. All costs go to our fundraising methods for Belarus.',
-        additionalDescription: 'This is additional information that will be included only when the event was clicked on:)',
-        start:
-        {
-            month: 'Jun', day: '28', year: '2023'
-        },
-        end:
-        {
-            month: 'Jul', day: '04', year: '2024'
-        },
-        key: 'bmcamping'
-    },
-    {
-        title: 'Church Construction',
-        imgSource: '/img/events/fire.jpg',
-        description: 'Spend 3 great days with us as we worship our Lord. All costs go to our fundraising methods for Belarus.',
-        start:
-        {
-            month: 'Jun', day: '28', year: '2023'
-        },
-        end:
-        {
-            month: 'Jul', day: '04', year: '2023'
-        },
-        key: 'chuchs'
-    }
-]
-export default function Calendar() {
+
+export default function Calendar( { events }) {
     const [selected, setSelected] = useState('')
     function elementOpactity(key) {
         if (selected == '') {
@@ -163,7 +123,7 @@ export default function Calendar() {
                         href={{
                             pathname: '/event',
                             query: {
-                                key: event.key,
+                                key: event._id,
                                 start: JSON.stringify(event.start),
                                 end: JSON.stringify(event.end),
                                 imgSource: event.imgSource,
@@ -188,4 +148,24 @@ export default function Calendar() {
             </div>
         </>
     )
+}
+
+export async function getServerSideProps() {
+    try {
+        const client = await clientPromise;
+        const db = client.db("masterdb");
+
+        const events = await db
+            .collection("events")
+            .find({})
+            .sort({ name_of_date_field : 1})
+            .limit(20)
+            .toArray();
+
+        return {
+            props: { events: JSON.parse(JSON.stringify(events)) },
+        };
+    } catch (e) {
+        console.error(e);
+    }
 }
