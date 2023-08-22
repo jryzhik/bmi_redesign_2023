@@ -19,7 +19,7 @@ import clientPromise from '../lib/mongo/connect'
 
 
 
-const numberOfOrphans = 560
+const numberOfOrphans = 585
 const HeroSlider = [
   {
     imageUrl: '/img/hero_images/home_hero/WalkingBaptism.jpg',
@@ -87,19 +87,19 @@ const HeroAdSlider = [
 
 const ProgressValues = [
   {
-    percentFilled: 82,
+    percentFilled: 78,
     primaryHeaderText: "Bibles/Discipleship Material",
-    secondaryText: "Help us reach our goal of raising $330,000 to print Bibles for those in Israel."
+    secondaryText: "Help us reach our goal of raising $400,000 to print Bibles for those in Israel."
   },
   {
-    percentFilled: 20,
+    percentFilled: 82,
     primaryHeaderText: "Construction/Building Projects",
-    secondaryText: "Help us reach our goal to collect $400,000 for a new church structures in Belarus."
+    secondaryText: "Help us reach our goal to collect $200,000 for a new church structures in Belarus."
   },
   {
-    percentFilled: 88,
+    percentFilled: 71,
     primaryHeaderText: "Orphan/Adoption Program",
-    secondaryText: "We need $250,000 to support and maintain a Christian facility for orphans."
+    secondaryText: "We need $350,000 to support and maintain a Christian facility for orphans."
   },
 ]
 
