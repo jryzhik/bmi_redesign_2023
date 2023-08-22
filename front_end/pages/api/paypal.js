@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 
-const base = "https://paypal.com";
+const base = "https://api-m.paypal.com";
 
 const generateAccessToken = async () => {
     try {
