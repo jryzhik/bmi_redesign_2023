@@ -153,6 +153,11 @@
     cursor: pointer;
 
 }
+.dollarButtonMaroon:hover {
+    /* background: linear-gradient(90deg,#ffffff, #a23404); */
+    background-color: #4fac84;
+    cursor: pointer;
+}
 
 .dollarButtonMaroon:hover {
     /* background: linear-gradient(90deg,#ffffff, #a23404); */
@@ -160,7 +165,9 @@
     color: #000000;
     cursor: pointer;
 }
-
+.dollarButtonOrange:hover {
+    cursor: pointer;
+}
 .buttonSection {
     display: flex;
 }
