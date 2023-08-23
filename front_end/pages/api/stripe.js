@@ -17,12 +17,14 @@ export default async (req, res) => {
     } else if (method === 'POST') {
         if (body.action === 'create-payment-intent') {
             const { number } = body;
+            const { fund } = body;
 
             try {
                 const paymentIntent = await stripe.paymentIntents.create({
                     currency: 'USD',
                     amount: number,
                     automatic_payment_methods: { enabled: true },
+                    description: `${fund} Fund`,
                 });
 
                 res.json({

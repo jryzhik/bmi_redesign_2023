@@ -56,7 +56,7 @@ function Payment({ totalAmount, firstName, lastName, email, selectedPaymentOptio
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ action: 'create-payment-intent', number: totalAmount * 100 }),
+      body: JSON.stringify({ action: 'create-payment-intent', number: totalAmount * 100, fund: fund }),
     })
       .then(async (result) => {
         const { clientSecret } = await result.json();
