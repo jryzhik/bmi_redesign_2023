@@ -54,6 +54,7 @@ export default function Alekseev() {
           color='#3E462E'
           primaryText='Help us show the Father’s love towards orphans'
           secondaryText='We seek to embrace orphaned children with the warm love of the Father and to help guide them on the right path.'
+          fund={"Alekseev Missionary Fund"}
         />
       </div>
     </>

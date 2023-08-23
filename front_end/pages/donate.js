@@ -59,7 +59,7 @@ export default function Donate() {
           headerText='Provide a donation'
           secondaryText='Your donation enables us to reach out with the good news of Jesus Christ, serve the orphan children, equip believers for effective ministry, and inspire the next generations to impact their world. We appreciate very much your partnership!'
           secondaryAllign='center'
-          color={theme.colors.CHARCOAL}
+          color={theme.colors.BLACK}
           buttonStyle={buttonStyles.dollarButtonBlack}
           fund="general"
         />

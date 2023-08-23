@@ -53,6 +53,7 @@ export default function Simonovich() {
           color='#42656B'
           primaryText='Help Orphaned Children Find a Home '
           secondaryText='Join the Movement to End the Orphan Crisis and Provide Loving Homes for Every Child'
+          fund={"Simonovich Missionary Fund"}
         />
       </div>
     </>

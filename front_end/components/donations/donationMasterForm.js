@@ -356,6 +356,7 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
                         primaryHeaderText={headerText}
                         SecondaryComponent={<P color={color} text={secondaryText} />}
                         secondaryAllign={secondaryAllign}
+                        color={color}
                     />
                     <FiveButtonsDonate buttonStyle={buttonStyle} masterCallBackFunction={masterCallBack} />
                 </div>
