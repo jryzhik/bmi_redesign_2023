@@ -78,8 +78,8 @@ export default function SlideNewsGallery({ newsArray }) {
         <>
             <div className={styles.galleryBox}>
                 <div className={styles.arrowsNews}>
-                    <Image onClick={handleClickBack} src="/img/icons/left_arrow_Gallery.svg" alt='arrow' width={0} height={0} style={{ width: '50%', height: 'auto' }} />
-                    <Image onClick={handleClickFront} src="/img/icons/right_arrow_Gallery.svg" alt='arrow' width={0} height={0} style={{ width: '50%', height: 'auto' }} />
+                    <Image onClick={handleClickBack} src="/img/icons/left_arrow_gallery.svg" alt='arrow' width={0} height={0} style={{ width: '50%', height: 'auto' }} />
+                    <Image onClick={handleClickFront} src="/img/icons/right_arrow_gallery.svg" alt='arrow' width={0} height={0} style={{ width: '50%', height: 'auto' }} />
                 </div>
                 <div className={styles.imageNComp}>
                     <div
