@@ -1,12 +1,5 @@
 module.exports = {
-    // Add the .well-known folder to the public array
-    publicRuntimeConfig: {
-      public: [
-        // Include other public assets if needed
-        '.well-known',
-      ],
-    },
-    // Your other config options...
+   
     async rewrites() {
       return [
         {
