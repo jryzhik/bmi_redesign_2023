@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Dropdown } from "@nextui-org/react";
 import theme from '../../styles/theme';
 import FIELDTEXT from '../fonts/FIELDTEXT';
@@ -7,13 +7,15 @@ import styles from '../../styles/Texts/Texts.module.css';
 import Image from 'next/image';
 import NT from '../fonts/NT';
 
-export default function DropdownDate({ title, defaultKey, dropDownItemArray, titleFont }) {
+export default function DropdownDate({ title, defaultKey, dropDownItemArray, titleFont, callBack }) {
     const [selected, setSelected] = React.useState(new Set([defaultKey]));
     const selectedValue = React.useMemo(
         () => Array.from(selected).join(", ").replaceAll("_", " "),
         [selected]
     );
-
+    useEffect(()=> {
+        callBack(selected)
+    }, [selected])
     return (
         <>
             <Dropdown>

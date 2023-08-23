@@ -36,7 +36,7 @@ const monthsDropDown = [
         name: 'August', key: 'aug'
     },
     {
-        name: 'September', key: 'jan'
+        name: 'September', key: 'sep'
     },
     {
         name: 'October', key: 'oct'
@@ -65,6 +65,31 @@ const yearDropDown = [
 
 export default function Calendar( { events }) {
     const [selected, setSelected] = useState('')
+    const [selectedMonth, setSelectedMonth] = useState('')
+    const [selectedYear, setSelectedYear] = useState('')
+
+    function filterEvents() {
+        return events.filter(event => {
+            const eventMonthKey = event.start.month;
+            const eventYearKey = event.start.year;
+
+            const formatedSelectedMonth = Array.from(selectedMonth)[0]
+            const formatedSelectedYear = Array.from(selectedYear)[0]
+
+            const eventYear = parseInt(eventYearKey);
+            console.log("Selected Month: ", Array.from(selectedMonth)[0], 'eventMonthKey: ', eventMonthKey, "selectedYear:", Array.from(selectedYear)[0], "eventYearKey", eventYearKey)
+            if (
+                (formatedSelectedMonth === '' || formatedSelectedMonth === 'all' || eventMonthKey === formatedSelectedMonth) &&
+                (formatedSelectedYear === '' || eventYear == formatedSelectedYear)
+            ) {
+                return true;
+            }
+            return false;
+        });
+    }
+
+    const filteredEvents = filterEvents();
+
     function elementOpactity(key) {
         if (selected == '') {
             return 1
@@ -82,6 +107,7 @@ export default function Calendar( { events }) {
     }
     return (
         <>
+            {console.log("year", selectedYear, "month", selectedMonth)}
             <ImageNtext
                 color1="#040504"
                 color2="#050502"
@@ -104,6 +130,7 @@ export default function Calendar( { events }) {
                                 defaultKey="all"
                                 dropDownItemArray={monthsDropDown}
                                 titleFont='text'
+                                callBack={setSelectedMonth}
                             />
                         </div>
                     </Grid>
@@ -113,12 +140,13 @@ export default function Calendar( { events }) {
                             defaultKey={currentYear.toString()}
                             dropDownItemArray={yearDropDown}
                             titleFont='number'
+                            callBack={setSelectedYear}
                         />
                     </Grid>
                 </Grid>
             </div>
             <div className={styles.allevents}>
-                {events.map((event) =>
+                {filteredEvents.map((event) =>
                     <Link
                         href={{
                             pathname: '/event',
