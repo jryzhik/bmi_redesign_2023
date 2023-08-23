@@ -6,18 +6,20 @@ import { theme } from '@nextui-org/react';
 import styles from '../../styles/Events/Events.module.css';
 
 export default function EventIconText({ start, end, imgSource, title, description }) {
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [screenWidth, setScreenWidth] = useState(0);
 
   useEffect(() => {
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
     };
 
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
+    if (typeof window !== 'undefined') {
+      setScreenWidth(window.innerWidth);
+      window.addEventListener('resize', handleResize);
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }
   }, []);
 
   const secondaryAlignment = screenWidth < 600 ? 'center' : 'left';
