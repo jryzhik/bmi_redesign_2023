@@ -44,7 +44,7 @@ export default function HomeSlider({ color1, color2, imageUrl, headerText, subTe
                         alt="Background"
                         width={1440}
                         height={1471}
-                        quality={100}
+                        quality={80}
                         style={{
                             objectFit: 'cover',
                             objectPosition: imageFocus,
@@ -58,7 +58,7 @@ export default function HomeSlider({ color1, color2, imageUrl, headerText, subTe
                             borderBottomLeftRadius: '7px',
                             borderBottomRightRadius: '7px',
                             transform: `scale(${scale})`,
-                            priority
+                            priority: true,
                         }}
                     />
                 </div>

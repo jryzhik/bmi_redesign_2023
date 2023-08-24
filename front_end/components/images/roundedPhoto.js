@@ -11,7 +11,7 @@ export default function RoundedPhoto({ imageUrl, passedStyles }) {
                     alt="Background"
                     width={1440}
                     height={1081}
-                    quality={100}
+                    quality={75}
                     style={{
                         objectFit: 'fill',
                         // Adjust the position to focus on the desired part of the image
