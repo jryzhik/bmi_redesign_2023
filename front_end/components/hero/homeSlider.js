@@ -58,6 +58,7 @@ export default function HomeSlider({ color1, color2, imageUrl, headerText, subTe
                             borderBottomLeftRadius: '7px',
                             borderBottomRightRadius: '7px',
                             transform: `scale(${scale})`,
+                            priority
                         }}
                     />
                 </div>
