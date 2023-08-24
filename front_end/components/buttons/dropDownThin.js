@@ -39,7 +39,7 @@ export default function DropDownThin({ title, defaultKey, dropDownItemArray, tit
                         onSelectionChange={setSelected}
                     >
                         {dropDownItemArray.map((item) =>
-                            <Dropdown.Item key={item.key}> <FIELDTEXT color={theme.colors.CHARCOAL} text={item.name} /></Dropdown.Item>
+                            <Dropdown.Item key={item.title}> <FIELDTEXT color={theme.colors.CHARCOAL} text={item.title} /></Dropdown.Item>
                         )}
                     </Dropdown.Menu>
                 </div>

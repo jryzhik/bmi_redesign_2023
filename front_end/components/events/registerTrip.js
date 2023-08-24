@@ -11,20 +11,20 @@ import OutlineTextArea from '../inputs/outlineTextArea';
 import RoundedButton from '../buttons/roundedButton';
 import DropDownThin from '../buttons/dropDownThin';
 
-const tripDB = [
-    {
-        name: 'Belarus Construction', key: 'Belarus Construction'
-    },
-    {
-        name: 'Pastors Conference Fall', key: 'Pastors Conference Fall'
-    },
-    {
-        name: 'Summer VBS', key: 'Summer VBS'
-    }
-]
+// const tripDB = [
+//     {
+//         name: 'Belarus Construction', key: 'Belarus Construction'
+//     },
+//     {
+//         name: 'Pastors Conference Fall', key: 'Pastors Conference Fall'
+//     },
+//     {
+//         name: 'Summer VBS', key: 'Summer VBS'
+//     }
+// ]
 
 
-export default function RegisterTrip({ color, primaryText, secondaryText }) {
+export default function RegisterTrip({ color, primaryText, secondaryText, tripDB }) {
     return (
         <div id='formSection' className={styles.together}>
             <div className={styles.rectangleRounded}></div>

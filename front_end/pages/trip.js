@@ -9,9 +9,11 @@ import Link from 'next/link';
 import RoundedButton from '../components/buttons/roundedButton'
 import passedStyle from '../styles/Donate/ColorDonate.module.css';
 import RegisterTrip from '../components/events/registerTrip'
+import clientPromise from '../lib/mongo/connect'
 
 
-export default function Trip() {
+export default function Trip({ tripDB }) {
+  console.log("trip object", tripDB )
   return (
     <>
       <ImageNtext
@@ -43,7 +45,28 @@ export default function Trip() {
         color={theme.colors.NAVY}
         primaryText='Register'
         secondaryText='Registration is open for this trip.'
+        tripDB={tripDB}
       />
     </>
   )
+}
+
+export async function getServerSideProps() {
+  try {
+      const client = await clientPromise;
+      const db = client.db("masterdb");
+
+      const tripDB = await db
+          .collection("events")
+          .find({})
+          .sort({ name_of_date_field : 1})
+          .limit(20)
+          .toArray();
+
+      return {
+          props: { tripDB: JSON.parse(JSON.stringify(tripDB)) },
+      };
+  } catch (e) {
+      console.error(e);
+  }
 }
