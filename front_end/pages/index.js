@@ -19,7 +19,6 @@ import clientPromise from '../lib/mongo/connect'
 
 
 
-const numberOfOrphans = 585
 const HeroSlider = [
   {
     imageUrl: '/img/hero_images/home_hero/WalkingBaptism.jpg',
@@ -55,55 +54,7 @@ const HeroSlider = [
   },
 ];
 
-const HeroAdSlider = [
-  {
-    imageUrl: '/img/donation/designated_cover/bottom/readingBible.jpg',
-    color2: "#D2A9A6",
-    color1: "#D2A9A6",
-    headerText: 'Our initiative to open children daycare centers',
-    subText: 'We are on pace to open an additional 30 centers across Belarus. Learn more about how these centers change lives.',
-    imageFocus: '50% 20%',
-    link: '/care'
-  },
-  {
-    imageUrl: '/img/donation/designated_cover/bottom/SecondaryOrphanAdoption.jpg',
-    color1: "#121413",
-    color2: "#121413",
-    headerText: 'Help provide each child a loving family',
-    subText: `Today we have ${numberOfOrphans} children in our Orphan Adoption Program. No child goes unnoticed, abandoned, or lost.`,
-    imageFocus: '50% 30%',
-    link: '/orphans'
-  },
-  {
-    imageUrl: '/img/donation/designated_cover/bottom/evangelism.jpg',
-    color1: "#8EA9BC",
-    color2: "#8EA9BC",
-    headerText: 'Support the sharing of the Gospel',
-    subText: 'We are bold in proclaiming the Good News in Christ to our fellow brothers and sisters in Belarus.',
-    imageFocus: '60% 0%',
-    link: '/gospel'
-  },
-];
-
-const ProgressValues = [
-  {
-    percentFilled: 78,
-    primaryHeaderText: "Bibles/Discipleship Material",
-    secondaryText: "Help us reach our goal of raising $400,000 to print Bibles for those in Israel."
-  },
-  {
-    percentFilled: 82,
-    primaryHeaderText: "Construction/Building Projects",
-    secondaryText: "Help us reach our goal to collect $200,000 for a new church structures in Belarus."
-  },
-  {
-    percentFilled: 71,
-    primaryHeaderText: "Orphan/Adoption Program",
-    secondaryText: "We need $350,000 to support and maintain a Christian facility for orphans."
-  },
-]
-
-export default function Home({ news }) {
+export default function Home({ news, stats }) {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [currentSlideIndexAd, setCurrentSlideIndexAd] = useState(0);
   const [animation1, setAnimation1] = useState(0);
@@ -111,6 +62,54 @@ export default function Home({ news }) {
   const [animation3, setAnimation3] = useState(0);
 
   const [isVisible, setIsVisible] = useState(false);
+
+  const ProgressValues = [
+    {
+      percentFilled: stats[0].percentBible,
+      primaryHeaderText: "Bibles/Discipleship Material",
+      secondaryText: `Help us reach our goal of raising ${stats[0].goalBible.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })} to print Bibles for those in Israel.`
+    },
+    {
+      percentFilled: stats[0].percentBuilding,
+      primaryHeaderText: "Construction/Building Projects",
+      secondaryText: `Help us reach our goal to collect ${stats[0].goalBuilding.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })} for a new church structures in Belarus.`
+    },
+    {
+      percentFilled: stats[0].percentOrphan,
+      primaryHeaderText: "Orphan/Adoption Program",
+      secondaryText: `We need ${stats[0].goalOrphan.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })} to support and maintain a Christian facility for orphans.`
+    },
+  ]
+
+  const HeroAdSlider = [
+    {
+      imageUrl: '/img/donation/designated_cover/bottom/readingBible.jpg',
+      color2: "#D2A9A6",
+      color1: "#D2A9A6",
+      headerText: 'Our initiative to open children daycare centers',
+      subText: 'We are on pace to open an additional 30 centers across Belarus. Learn more about how these centers change lives.',
+      imageFocus: '50% 20%',
+      link: '/care'
+    },
+    {
+      imageUrl: '/img/donation/designated_cover/bottom/SecondaryOrphanAdoption.jpg',
+      color1: "#121413",
+      color2: "#121413",
+      headerText: 'Help provide each child a loving family',
+      subText: `Today we have ${stats[0].numberOrphans} children in our Orphan Adoption Program. No child goes unnoticed, abandoned, or lost.`,
+      imageFocus: '50% 30%',
+      link: '/orphans'
+    },
+    {
+      imageUrl: '/img/donation/designated_cover/bottom/evangelism.jpg',
+      color1: "#8EA9BC",
+      color2: "#8EA9BC",
+      headerText: 'Support the sharing of the Gospel',
+      subText: 'We are bold in proclaiming the Good News in Christ to our fellow brothers and sisters in Belarus.',
+      imageFocus: '60% 0%',
+      link: '/gospel'
+    },
+  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -329,20 +328,26 @@ export default function Home({ news }) {
 
 export async function getServerSideProps() {
   try {
-      const client = await clientPromise;
-      const db = client.db("masterdb");
+    const client = await clientPromise;
+    const db = client.db("masterdb");
 
-      const news = await db
-          .collection("news")
-          .find({})
-          .sort({ name_of_date_field : 1})
-          .limit(20)
-          .toArray();
+    const news = await db
+      .collection("news")
+      .find({})
+      .sort({ name_of_date_field: 1 })
+      .limit(20)
+      .toArray();
 
-      return {
-          props: { news: JSON.parse(JSON.stringify(news)) },
-      };
+    const stats = await db
+      .collection("stats")
+      .find({})
+      .limit(1)
+      .toArray();
+
+    return {
+      props: { news: JSON.parse(JSON.stringify(news)), stats: JSON.parse(JSON.stringify(stats)) },
+    };
   } catch (e) {
-      console.error(e);
+    console.error(e);
   }
 }
