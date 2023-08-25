@@ -1,6 +1,7 @@
 import fetch from 'node-fetch';
 
 const base = "https://api-m.paypal.com";
+// const base = "https://api-m.sandbox.paypal.com";
 
 const generateAccessToken = async () => {
     try {
@@ -20,7 +21,7 @@ const generateAccessToken = async () => {
     }
 };
 
-const createOrder = async (number) => {
+const createOrder = async (number, fund) => {
     const accessToken = await generateAccessToken();
     const url = `${base}/v2/checkout/orders`;
     const payload = {
@@ -31,6 +32,7 @@ const createOrder = async (number) => {
                     currency_code: "USD",
                     value: number,
                 },
+                description: `${fund} Fund` 
             },
         ],
     };
@@ -77,8 +79,9 @@ export default async function handler(req, res) {
 
         if (action === 'create-order') {
             const { number } = req.body;
+            const { fund }  = req.body;
             try {
-                const response = await createOrder(number);
+                const response = await createOrder(number, fund);
                 res.status(200).json(response);
             } catch (error) {
                 console.error("Failed to create order:", error);

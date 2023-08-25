@@ -20,7 +20,9 @@ export default function Mobile_nav_bar({ menu }) {
             />
             <div className={styles.container}>
                 <Link href="/">
-                    <Image src="img/logos/text_and_letter.svg" alt='BMI' width={227} height={24} />
+                    <div className='logo'>
+                        <Image src="img/logos/text_and_letter.svg" alt='BMI' width={227} height={24} />
+                    </div>
                 </Link>
                 <div className={styles.menu}>
                     <Link href="/search">

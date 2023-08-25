@@ -89,11 +89,8 @@ function Payment({ totalAmount, firstName, lastName, email, selectedPaymentOptio
                 </Grid>
               </div>
               <div style={thanksVisible}>
-                <ThankyouSection
-                  fund={fund}
-                />
+                <ThankyouSection fund={fund.split(" ")[0]} />
               </div>
-
             </Elements>
           </div>
         </>

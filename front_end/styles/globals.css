@@ -222,3 +222,6 @@ button.nextui-c-iWjDFM-gglxka-cv {
 .paypal-button.paypal-button-color-black {
   display: none;
 }
+.logo:hover {
+  cursor: pointer;
+}

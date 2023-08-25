@@ -18,8 +18,8 @@ export default function MobileMasterForm({ firstName, lastName, email, selectedP
             <div className={styles.popup_container}>
                 <div style={{ display: "flex", flexDirection: "column", gap: "1em" }}>
                     <div style={{ display: 'flex', gap: '.2rem', alignItems: 'center', alignSelf: "center" }}>
-                        <ST color={theme.colors.CHARCOAL} text="Funds Go Towards:" />
-                        <TITLE color={theme.colors.CHARCOAL} text={fund} />
+                        <ST color={theme.colors.CHARCOAL} text="Designation:" />
+                        <TITLE color={theme.colors.CHARCOAL} text={`${fund} FUND`} />
                     </div>
                     <div style={{ display: "flex", justifyContent: "center" }}>
                         <EcfaInfo />

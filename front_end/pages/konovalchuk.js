@@ -52,7 +52,7 @@ export default function Konovalchuk() {
           color='#6B5942'
           primaryText='Your gift provides Bibles for new believers'
           secondaryText='Our goal is to provide each new believer and family with a Bible so they can continue on their journey with Christ.'
-          fund={"Konovalchuk Missionary Fund"}
+          fund={"missionary | Konovalchuk"}
         />
       </div>
     </>

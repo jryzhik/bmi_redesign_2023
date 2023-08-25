@@ -255,8 +255,8 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
                         </div>
                         <div className={styles.headerForm}>
                             <div style={{ display: 'flex', gap: '.2rem', alignItems: 'center' }}>
-                                <ST color={theme.colors.CHARCOAL} text="Funds Go Towards:" />
-                                <TITLE color={theme.colors.CHARCOAL} text={fund} />
+                                <ST color={theme.colors.CHARCOAL} text="Designation:" />
+                                <TITLE color={theme.colors.CHARCOAL} text={`${fund} FUND`} />
                             </div>
                             <EcfaInfo />
                         </div>

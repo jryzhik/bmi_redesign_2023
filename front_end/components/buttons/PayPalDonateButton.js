@@ -46,7 +46,7 @@ export default function PayPalDonateButton({ totalAmount, fund }) {
                                             headers: {
                                                 "Content-Type": "application/json"
                                             },
-                                            body: JSON.stringify({ action: 'create-order', number: totalAmount }),
+                                            body: JSON.stringify({ action: 'create-order', number: totalAmount, fund: fund }),
                                         });
 
                                         const details = await response.json();
@@ -81,7 +81,7 @@ export default function PayPalDonateButton({ totalAmount, fund }) {
                             />
                         </div>
                         <div style={thanksVisible}>
-                            <ThankyouSection fund={fund} />
+                            <ThankyouSection fund={fund.split(" ")[0]} />
                         </div>
                     </>
                 ))}

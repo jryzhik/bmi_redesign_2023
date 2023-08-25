@@ -53,7 +53,7 @@ export default function Prokopenkov() {
           color='#45426B'
           primaryText='Help make Christian homes replace orphanages'
           secondaryText='Fostering a Christian culture of family for vulnerable children.'
-          fund={"Prokopenkov Missionary Fund"}
+          fund={"missionary | Prokopenkov"}
         />
       </div>
     </>

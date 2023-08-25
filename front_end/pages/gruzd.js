@@ -73,7 +73,7 @@ export default function Gruzd() {
                     color='#BC592D'
                     primaryText='Your gift impacts a child directly'
                     secondaryText='Providing direct support into building the next generation in Belarus based on the principles of Jesus Christ.'
-                    fund={"Gruzd Missionary Fund"}
+                    fund={"missionary | Gruzd"}
                 />
             </div>
         </>
