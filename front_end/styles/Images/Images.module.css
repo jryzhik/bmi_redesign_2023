@@ -274,6 +274,7 @@ iframe.youtube {
     height: clamp(358px, 448px);
     display: flex;
     justify-content: center;
+    overflow-x: hidden;
 }
 
 .imageTextButtonGradientOverlay {
@@ -308,5 +309,5 @@ iframe.youtube {
     flex-direction: column;
     margin-left: 3.15em;
     margin-right: 3.15em;
-
+    justify-self: center;
 }
