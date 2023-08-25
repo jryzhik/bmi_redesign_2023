@@ -64,13 +64,22 @@ export default function Layout({ children }) {
 
     return (
         <>
-            {windowWidth < 900 ? (
-                <Mobile_nav_bar menu={menu}/>
-            ) : (
-                <Default_nav_bar menu={menu} />
-            )}
-            <main>{children}</main>
-            <Footer />
+            {
+                windowWidth < 900 ? (
+                    <>
+                        <Mobile_nav_bar menu={menu} />
+                        <main>{children}</main>
+                    </>
+
+                ) : (
+                    <>
+                        <Default_nav_bar menu={menu} />
+                        <main>{children}</main>
+                        <Footer />
+                    </>
+                )
+            }
         </>
+
     );
 }

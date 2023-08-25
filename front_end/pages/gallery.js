@@ -49,9 +49,9 @@ export default function Gallery() {
           secondaryAllign='center'
         />
         <div className={styles.containerWidth}>
-          <Grid container spacing={8} >
+          <Grid container  >
             {galleryArray.map((photo) => 
-              <Grid xs={12} sm={6} md={4} display="flex" justifyContent="center" alignItems="center">
+              <Grid xs={12} sm={6} md={4} paddingLeft={1} paddingRight={1} paddingBottom={5}display="flex" justifyContent="center" alignItems="start">
               <div className={styles.vBoxGallery}>
                 <RoundedPhoto
                   imageUrl={photo.imageUrl}

@@ -13,7 +13,7 @@ import imagePassedStyles from '../styles/Images/Images.module.css';
 
 const board = [
     { name: 'Chairman – Andrew Ryzhkov', jobTitle: 'Founder/ CEO', imgSource: '/img/team/andrew.jpg' },
-    { name: 'Director — Chuck Capell', jobTitle: 'Delta Pilot', imgSource: '/img/team/chuck.jpg' },
+    { name: 'Director — Chuck Capell', jobTitle: 'Retired Pilot', imgSource: '/img/team/chuck.jpg' },
     { name: 'Director — Tom Boissseau', jobTitle: 'Live Sound, Film, Video & Installs', imgSource: '/img/team/tom.jpg' },
     { name: 'Director – Ken E. & Judy Brockman', jobTitle: 'MEM, LLC', imgSource: '/img/team/ken.jpg' },
     { name: 'Dr. Dennis Kozakoff', jobTitle: 'CEO/ USDigiComm Corporation', imgSource: '/img/team/dennis.jpg' },
@@ -46,7 +46,7 @@ export default function Board() {
                     imageUrl={'/img/team/all_board.jpg'}
                     passedStyles={imagePassedStyles.roundedRectStandard}
                 /> */}
-                <Grid paddingLeft={4} paddingRight={4} container spacing={3} justifyContent='center'>
+                <Grid paddingLeft={4} paddingRight={4} container gap={3} justifyContent='center'>
                     {board.map((member) => (
                         <Grid className={styles.verticalSpacing} xs={12} sm={6} md={3} display="flex" justifyContent="center" alignItems="center" >
                             <ProfileNTexts

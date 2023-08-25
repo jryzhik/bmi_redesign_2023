@@ -11,9 +11,7 @@
     flex-direction: column;
     gap: 5em;
 }
-.verticalSpacing {
-    padding-bottom: 8em;
-}
+
 
 .profilePicScaleSelected {
     display: flex;

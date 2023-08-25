@@ -48,8 +48,8 @@ export default function report() {
 
 
     return (
-        <>
-            <ImageNtext
+        <div className='overflow_x'>
+        <ImageNtext
                 color1="#7FA1B8"
                 color2="#B7C9D1"
                 imageUrl="/img/hero_images/report.jpg"
@@ -196,6 +196,6 @@ export default function report() {
                     </div>
                 </Grid>
             </Grid>
-        </>
+        </div>
     )
 }

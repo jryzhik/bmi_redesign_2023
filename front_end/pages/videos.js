@@ -56,10 +56,10 @@ export default function Videos() {
           secondaryAllign='center'
         />
         <div className={styles.containerWidth}>
-          <Grid container spacing={8} >
+          <Grid container>
             {videoArray.map((video) =>
-              <Grid xs={12} sm={6} md={4} display="flex" justifyContent="center" alignItems="center">
-                <div className={styles.vBoxGallery}>
+              <Grid xs={12} sm={6} md={4} display="flex" paddingBottom={5}justifyContent="center" alignItems="start">
+              <div className={styles.vBoxGallery}>
                   <iframe className={styles.youtube} src={video.videoUrl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
                   <H4NComponent

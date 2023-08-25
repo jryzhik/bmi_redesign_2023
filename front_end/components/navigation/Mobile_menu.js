@@ -42,7 +42,16 @@ export default function Mobile_menu({ menuExpanded, toggleMenu, menuArray }) {
                         onClick={() => setFocusedIndex(index)}
                     >
                         {item.primary.length == 2 ? (
-                            <H3 text={item.primary[0]} />
+                            item.secondary == null ? (
+                                <Link href={'/' + item.primary[1]}>
+                                    <div onClick={toggleMenu}>
+                                        <H3 text={item.primary[0]} />
+                                    </div>
+                                </Link>
+                            )
+                                : (
+                                    <H3 text={item.primary[0]} />
+                                )
                         ) : (
                             <H3 text={item.primary} />
                         )}

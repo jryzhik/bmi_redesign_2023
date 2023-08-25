@@ -17,7 +17,6 @@ const team = [
 export default function Advisory() {
   return (
     <>
-
       <ImageNtext
         color2="#AFA596"
         color1="#7B746B"
@@ -29,9 +28,9 @@ export default function Advisory() {
         imageFocus='50% 23%'
 
       />
-      <Grid paddingLeft={4} paddingRight={4} container spacing={3} justifyContent='center'>
+      <Grid paddingLeft={4} paddingRight={4} container gap={3} justifyContent='center'>
         {team.map((member) => (
-          <Grid className={styles.verticalSpacing} xs={12} sm={6} md={3} display="flex" justifyContent="center" alignItems="center" >
+          <Grid xs={12} sm={6} md={3} display="flex" justifyContent="center" alignItems="center" >
             <ProfileNTexts
               textName={member.name}
               textJobTitle={member.jobTitle}
