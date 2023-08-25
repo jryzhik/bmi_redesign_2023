@@ -270,8 +270,8 @@ iframe.youtube {
 .imageTextButtonContainer {
     position: relative;
     /* Ensure that position is set to enable z-index */
-    width: 448px;
-    height: 448px;
+    width: clamp(358px, 448px);
+    height: clamp(358px, 448px);
     display: flex;
     justify-content: center;
 }
