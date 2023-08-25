@@ -7,7 +7,7 @@ import styles from '../styles/Texts/Texts.module.css';
 
 export default function Letter() {
     return (
-        <>
+        <div className='overflow_x'>
             <ImageNtext
                 color1="#404E26"
                 color2="#404E26"
@@ -58,13 +58,13 @@ export default function Letter() {
                                 <P color={theme.colors.CHARCOAL} text='Tear off and send along with donations' />
                             </div>
                             <P color={theme.colors.CHARCOAL} text='This gift of $____________is designated for ' />
-                            <P color={theme.colors.CHARCOAL} text='________________________________________for their mission trip to' />
+                            <P color={theme.colors.CHARCOAL} text='_________________for their mission trip to' />
                             <P color={theme.colors.CHARCOAL} text='Belarus on the dates ______________________. I understand this gift is to support a short-term mission trip to Belarus. No goods or services have been provided for this donation.' />
                         </div>
                     }
                     secondaryAllign='left'
                 />
             </div>
-        </>
+        </div>
     )
 }
