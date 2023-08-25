@@ -25,7 +25,6 @@ export default function MobileEnterPaymentDetailsSection({ selectedPaymentOption
             )}
             {selectedPaymentOption == 'paypal' ? (
                 <Grid xs={12} md={12} paddingTop={10} display="flex" flexDirection="column" gap={3}>
-                    <H3 color={theme.colors.BLACK} text="Please click on PayPal" />
                     <PayPalDonateButton totalAmount={totalAmount} fund={fund} />
                 </Grid>
             ) : (
@@ -33,7 +32,6 @@ export default function MobileEnterPaymentDetailsSection({ selectedPaymentOption
             )}
             {selectedPaymentOption == 'venmo' ? (
                 <Grid xs={12} md={12} paddingTop={10} display="flex" flexDirection="column" gap={3}>
-                    <H3 color={theme.colors.BLACK} text="Please click on Venmo" />
                     <VenmoButton totalAmount={totalAmount} fund={fund} />
                 </Grid>
             ) : (
