@@ -11,7 +11,7 @@ const team = [
   { name: 'Micah Linder', jobTitle: 'Video Director', imgSource: '/img/team/micah.jpg' },
   { name: 'Wesley Cantrell', jobTitle: 'Former CEO Lanier Corporation', imgSource: '/img/team/wes.jpg' },
   { name: 'Phil Bettis', jobTitle: 'Law Group, LLC', imgSource: '/img/team/phil.jpg' },
-  { name: 'Ray & Brenda Beddingfield', jobTitle: 'Law Group, LLC', imgSource: '/img/team/phil.jpg' },
+  { name: 'Ray & Brenda Beddingfield', jobTitle: 'Law Group, LLC', imgSource: '/img/team/bedingfield.jpg' },
 
 ]
 export default function Advisory() {
