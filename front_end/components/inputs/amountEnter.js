@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import styles from '../../styles/Inputs/Inputs.module.css';
-import { IBM_Plex_Sans } from '@next/font/google';
+import { IBM_Plex_Sans } from "next/font/google";
 import Image from 'next/image';
 import dollarIcon from '../../public/img/icons/dollar-sign.svg';
 

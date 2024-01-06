@@ -1,7 +1,7 @@
 import React from 'react'
 import {
     Inter
-} from '@next/font/google'
+} from "next/font/google"
 
 const Int = Inter(
     {

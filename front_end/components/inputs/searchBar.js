@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import {
     Roboto_Slab
-} from '@next/font/google'
+} from "next/font/google"
 
 const RobotoLight = Roboto_Slab(
     {

@@ -3,7 +3,7 @@ import styles from '../../styles/Inputs/Inputs.module.css';
 import theme from '../../styles/theme';
 import ST from '../fonts/ST';
 
-import { Roboto_Slab } from '@next/font/google';
+import { Roboto_Slab } from "next/font/google";
 
 const RobotoLight = Roboto_Slab({
   subsets: ['latin'],

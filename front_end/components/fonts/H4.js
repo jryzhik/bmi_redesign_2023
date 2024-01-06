@@ -1,6 +1,6 @@
 import React from 'react'
 import { IBM_Plex_Sans
-} from '@next/font/google'
+} from "next/font/google"
 
 const imb_plex_sand = IBM_Plex_Sans(
     {

@@ -4,7 +4,7 @@ import Image from 'next/image';
 import theme from '../../styles/theme';
 
 
-import { Roboto_Slab } from '@next/font/google';
+import { Roboto_Slab } from "next/font/google";
 
 const RobotoLight = Roboto_Slab({
   subsets: ['latin'],

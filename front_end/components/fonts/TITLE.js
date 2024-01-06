@@ -1,7 +1,7 @@
 import React from 'react'
 import {
     Raleway
-} from '@next/font/google'
+} from "next/font/google"
 
 const Ral = Raleway(
     {

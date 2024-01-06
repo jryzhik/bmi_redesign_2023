@@ -1,6 +1,6 @@
 import React from 'react'
 import { Roboto_Slab
-} from '@next/font/google'
+} from "next/font/google"
 
 const Roboto = Roboto_Slab(
     {
