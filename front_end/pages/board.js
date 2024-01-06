@@ -14,10 +14,11 @@ import imagePassedStyles from '../styles/Images/Images.module.css';
 const board = [
     { name: 'Chairman – Andrew Ryzhkov', jobTitle: 'Founder/ CEO', imgSource: '/img/team/andrew.jpg' },
     { name: 'Director — Chuck Capell', jobTitle: 'Retired Pilot', imgSource: '/img/team/chuck.jpg' },
-    { name: 'Director — Tom Boissseau', jobTitle: 'Live Sound, Film, Video & Installs', imgSource: '/img/team/tom.jpg' },
+    { name: 'Director — Tom Boisseau', jobTitle: 'Live Sound, Film, Video & Installs', imgSource: '/img/team/tom.jpg' },
     { name: 'Director – Ken E. & Judy Brockman', jobTitle: 'MEM, LLC', imgSource: '/img/team/ken.jpg' },
     { name: 'Dr. Dennis Kozakoff', jobTitle: 'CEO/ USDigiComm Corporation', imgSource: '/img/team/dennis.jpg' },
     { name: 'Secretary — Inna Ryzhkov', jobTitle: 'Attorney', imgSource: '/img/team/ina.jpg' },
+    { name: 'Director - Lisa Boisseau', jobTitle: 'Professor @ GGC', imgSource: '/img/team/lisa_b.jpg' },
     { name: 'Director – David Thayer', jobTitle: 'Senior Software Developer for Microsoft', imgSource: '/img/team/david.jpg' },
 
 ]
