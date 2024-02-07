@@ -154,7 +154,7 @@ export default function report() {
 
                 </Grid>
             </Grid>
-            <Grid container className={styles.gridIconText} justify='center' alignItems='start' spacing={5} >
+            <Grid container className={styles.gridIconText} justify='center' justifyContent='center' alignItems='start' spacing={5} >
                 <Grid xs={12} sm={6} md={6} >
                     <div style={{ opacity: elementOpactity(0), transition: 'all .2s ease-out' }} >
                         <ImageNPercentage passedImage={'/img/report_categories/ministry_projects.jpg'} percentText={73.03} description={'Ministry Projects'} color={theme.colors.ORANGE} />
