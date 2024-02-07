@@ -183,11 +183,37 @@ export async function getServerSideProps() {
         const client = await clientPromise;
         const db = client.db("masterdb");
 
+        // Add a projection to map 'start.month' strings to numerical values for sorting
         const events = await db
             .collection("events")
-            .find({})
-            .sort({ name_of_date_field : 1})
-            .limit(20)
+            .aggregate([
+                {
+                    $addFields: {
+                        // Convert month strings to numerical values
+                        "sortMonth": {
+                            $switch: {
+                                branches: [
+                                    { case: { $eq: ["$start.month", "jan"] }, then: 1 },
+                                    { case: { $eq: ["$start.month", "feb"] }, then: 2 },
+                                    { case: { $eq: ["$start.month", "mar"] }, then: 3 },
+                                    { case: { $eq: ["$start.month", "apr"] }, then: 4 },
+                                    { case: { $eq: ["$start.month", "may"] }, then: 5 },
+                                    { case: { $eq: ["$start.month", "jun"] }, then: 6 },
+                                    { case: { $eq: ["$start.month", "jul"] }, then: 7 },
+                                    { case: { $eq: ["$start.month", "aug"] }, then: 8 },
+                                    { case: { $eq: ["$start.month", "sep"] }, then: 9 },
+                                    { case: { $eq: ["$start.month", "oct"] }, then: 10 },
+                                    { case: { $eq: ["$start.month", "nov"] }, then: 11 },
+                                    { case: { $eq: ["$start.month", "dec"] }, then: 12 },
+                                ],
+                                default: 0 // Handle 'All' or any unexpected values
+                            }
+                        }
+                    }
+                },
+                { $sort: { "start.year": 1, "sortMonth": 1 } }, // Sort by year, then by the numerical month
+                { $limit: 20 }
+            ])
             .toArray();
 
         return {
@@ -195,5 +221,6 @@ export async function getServerSideProps() {
         };
     } catch (e) {
         console.error(e);
+        return { props: { events: [] } }; // Return empty array in case of error
     }
 }
