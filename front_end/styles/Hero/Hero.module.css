@@ -11,6 +11,7 @@
   margin-bottom: 7em;
 }
 
+
 .containerHeroSlider {
   min-height: 800px;
   width: 100vw;
@@ -35,6 +36,7 @@
   border-bottom-right-radius: 7px;
   align-items: center;
 }
+
 .containerNoText {
   min-height: 400px;
   width: 100vw;
@@ -72,6 +74,8 @@
 .gradientOverlayFund {
   position: relative;
   width: 100%;
+  margin-top: clamp(22em, 40vw, 30em);
+  margin-bottom: -16em;
 }
 
 .paddingContent {
@@ -85,7 +89,6 @@
   .container {
     min-height: 550px;
   }
-
 }
 
 .gradientOverlay {
@@ -160,6 +163,7 @@
   padding-left: 0%;
   padding-right: 0%;
 }
+
 .centerModuleTrip {
   display: flex;
   flex-direction: column;
@@ -219,6 +223,7 @@
   padding-top: 7vw;
   gap: 3.5em;
 }
+
 @media (max-width: 900px) {
   .centerModuleHeroAd {
     top: 10vw;
@@ -227,6 +232,7 @@
     padding-right: 4%;
   }
 }
+
 @media (max-width: 1066px) {
   .hBox {
     /* Styles specific to tablet size */
@@ -277,6 +283,7 @@
     min-height: 800px;
 
   }
+
   .containerHeroAdSlider {
     min-height: 775px;
 
@@ -308,22 +315,92 @@
   min-height: 55vw;
 }
 
-.imageContainerGradient {
+.imageContainerGradientBrest {
   padding-top: 3em;
   display: flex;
   flex-direction: column;
 }
 
+.mainImageBrest {
+  /* object-position: clamp(-125px, calc((100vw - 390px) * 0.2778), 0px) calc(-1 * clamp(-1000px, 40vw, 1000px)) !important; */
+  /* object-position: clamp(-100px, -5vw, -600px) -200px !important; */
+  object-position: -100px -140px !important;
+}
+
+.bottomImgContainerBrest {
+  display: flex;
+  margin-bottom: 12em;
+  object-position: 90px -40px !important;
+}
+.wrapperBottomContainer {
+  scale:1.5;
+  z-index: -100;
+  height: 40vw; /* Adjust based on desired crop */
+  position: relative;
+  overflow: hidden; /* Ensure image excess is cropped */
+}
+@media (min-width: 390px) {
+  .mainImageBrest  {
+    object-position: -80px -140px !important;
+    scale: 1.25;
+  }
+}
+
+@media (min-width: 500px) {
+  .mainImageBrest  {
+    object-position: -20px -140px !important;
+  }
+}
+
+@media (min-width: 700px) {
+  .mainImageBrest  {
+    object-position: 0px -250px !important;
+    scale: 1;
+  }
+}
+@media (min-width: 800px) {
+  .mainImageBrest  {
+    object-position: 0px -300px !important;
+    scale: 1;
+  }
+}
+
+@media (min-width: 900px) {
+  .mainImageBrest  {
+    object-position: 0px -350px !important;
+    scale: 1;
+  }
+}
+
+@media (min-width: 1000px) {
+  .mainImageBrest  {
+    object-position: 0px -400px !important;
+    scale: 1;
+  }
+}
+
+@media (min-width: 1100px) {
+  .mainImageBrest  {
+    object-position: 0px -450px !important;
+    scale: 1;
+  }
+}
+
+@media (min-width: 1200px) {
+  .mainImageBrest  {
+    object-position: 0px -500px !important;
+  }
+}
+
+@media (min-width: 1300px) {
+  .mainImageBrest {
+    object-position: 0px -600px !important;
+  }
+}
+
 .imageContainer {
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
-}
-
-.bottomImgContainer {
-  height: 40vw;
-  position: relative;
-  display: flex;
-  margin-bottom: 12em;
 }
 
 .pill {
@@ -337,6 +414,7 @@
   transition: opacity 0.3s;
   position: relative;
 }
+
 .pillAd {
   margin-top: 270px;
   width: 12px;
@@ -352,6 +430,7 @@
 .pill:hover {
   cursor: pointer;
 }
+
 .pillAd:hover {
   cursor: pointer;
 }
@@ -367,6 +446,7 @@
   transition: opacity 0.3s;
   position: relative;
 }
+
 .pillAdSelected {
   margin-top: 270px;
   width: 12px;
