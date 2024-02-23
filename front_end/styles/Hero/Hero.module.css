@@ -320,7 +320,8 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-
+  display: flex;
+  position: relative;
 }
 
 .mainImageBrest {
@@ -346,7 +347,7 @@
 }
 @media (min-width: 390px) {
   .mainImageBrest  {
-    object-position: -80px -140px !important;
+    object-position: 0px 400px !important;
     scale: 1.25;
 
   }
@@ -426,7 +427,7 @@
 
 @media (min-width: 1300px) {
   .mainImageBrest {
-    object-position: 0px -600px !important;
+    object-position: 0px -1500px !important;
   }
   .wrapperBottomContainer {
     scale:1.5;

@@ -20,16 +20,14 @@ export default function ImageNGradient({ color1, color2, imageUrlTop, imageUrlBo
                 height={1081}
                 quality={100}
                 style={{
-                    objectFit: 'cover',
+                    objectFit: 'contain',
                     // objectPosition: imageFocus,
-                    // Adjust the position to focus on the desired part of the image
                     width: '100%',
                     height: '100%',
                     position: 'absolute',
                     top: 0,
                     left: 0,
                     zIndex: -100,
-                    transform: `scale(${scale1})`
                 }}
             />
             <div className={styles.gradientOverlayFund} style={{ backgroundImage: gradient }}>
