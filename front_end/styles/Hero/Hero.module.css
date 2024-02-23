@@ -325,30 +325,44 @@
   /* object-position: clamp(-125px, calc((100vw - 390px) * 0.2778), 0px) calc(-1 * clamp(-1000px, 40vw, 1000px)) !important; */
   /* object-position: clamp(-100px, -5vw, -600px) -200px !important; */
   object-position: -100px -140px !important;
+  scale: 1.25;
 }
 
 .bottomImgContainerBrest {
   display: flex;
   margin-bottom: 12em;
-  object-position: 90px -40px !important;
+  object-position: 40px 30px !important;
 }
 .wrapperBottomContainer {
-  scale:1.5;
+  scale:2;
   z-index: -100;
-  height: 40vw; /* Adjust based on desired crop */
+  height: 60vw; /* Adjust based on desired crop */
   position: relative;
   overflow: hidden; /* Ensure image excess is cropped */
+  margin-bottom: 5em;
 }
 @media (min-width: 390px) {
   .mainImageBrest  {
     object-position: -80px -140px !important;
     scale: 1.25;
   }
+  .bottomImgContainerBrest {
+    object-position: 50px 30px !important;
+  }
+  .wrapperBottomContainer {
+    height: 60vw; /* Adjust based on desired crop */
+  }
 }
 
 @media (min-width: 500px) {
   .mainImageBrest  {
     object-position: -20px -140px !important;
+  }
+  .bottomImgContainerBrest {
+    object-position: 65px 30px !important;
+  }
+  .wrapperBottomContainer {
+    height: 60vw; /* Adjust based on desired crop */
   }
 }
 
@@ -357,11 +371,24 @@
     object-position: 0px -250px !important;
     scale: 1;
   }
+  .bottomImgContainerBrest {
+    object-position: 80px 10px !important;
+  }
+  .wrapperBottomContainer {
+    height: 50vw; /* Adjust based on desired crop */
+  }
 }
 @media (min-width: 800px) {
   .mainImageBrest  {
     object-position: 0px -300px !important;
     scale: 1;
+  }
+  .bottomImgContainerBrest {
+    object-position: 80px 0px !important;
+  }
+  .wrapperBottomContainer {
+    height: 40vw; /* Adjust based on desired crop */
+    scale: 1.8;
   }
 }
 
@@ -395,6 +422,15 @@
 @media (min-width: 1300px) {
   .mainImageBrest {
     object-position: 0px -600px !important;
+  }
+  .wrapperBottomContainer {
+    scale:1.5;
+    height: 40vw; /* Adjust based on desired crop */
+    margin-bottom: 5em;
+  }
+  .bottomImgContainerBrest {
+    margin-bottom: 12em;
+    object-position: 90px -40px !important;
   }
 }
 
