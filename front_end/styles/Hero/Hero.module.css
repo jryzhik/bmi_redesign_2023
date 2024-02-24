@@ -331,7 +331,7 @@
 .mainImageBrest {
   /* object-position: clamp(-125px, calc((100vw - 390px) * 0.2778), 0px) calc(-1 * clamp(-1000px, 40vw, 1000px)) !important; */
   /* object-position: clamp(-100px, -5vw, -600px) -200px !important; */
-  object-position: 0px 675px !important;
+  object-position: 0px 400px !important;
   scale: 1.5;
 }
 
@@ -349,7 +349,7 @@
 }
 @media (min-width: 390px) {
   .mainImageBrest  {
-    object-position: 0px 400px !important;
+    object-position: 0px 220px !important;
     scale: 1.25;
 
   }
@@ -360,7 +360,7 @@
 
 @media (min-width: 500px) {
   .mainImageBrest  {
-    object-position: 0px 300px !important;
+    object-position: 0px 60px !important;
     scale: 1.25;
   }
   .bottomImgContainerBrest {
@@ -373,7 +373,7 @@
 
 @media (min-width: 600px) {
   .mainImageBrest  {
-    object-position: 0px 100px !important;
+    object-position: 0px 0px !important;
     scale: 1.25;
   }
 }
