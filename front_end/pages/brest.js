@@ -58,106 +58,108 @@ export default function brest() {
     }, [])
 
     return (
-        <ImageNGradient
-            color1="#312822"
-            color2="#63351A"
-            imageUrlTop="/img/hero_images/brest_bible_church.jpg"
-            imageUrlBottom="/img/hero_images/brest_bible_church_bottom.jpg"
-            textParent='Donate'
-            textChild='BBC'
-            headerText='Brest Bible Church building fund donations'
-            subText='Brest Bible Church is developing into a christian stronghold that will change the lives of thousands of young people.'
-            // imageFocus={'0 -200px'}
-            imageFocus={offsetX1 + 'px ' + offsetY1 + 'px'}
-            scale1={scale1}
-            scale2={scale2}
-            content={
-                <div className={styles.paddingContent}>
-                    <HeaderNComponent
-                        primaryHeaderText='Integrity'
-                        SecondaryComponent={
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.WHITE} />
-                        }
-                        secondaryAllign='center'
-                        color={theme.colors.WHITE}
-                    />
-                    <HeaderNComponent
-                        primaryHeaderText='Integrity'
-                        SecondaryComponent={
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                        }
-                        secondaryAllign='center'
-                    />
-                    <HeaderNComponent
-                        primaryHeaderText='Integrity'
-                        SecondaryComponent={
-                            <>
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                            </>
-                        }
-                        secondaryAllign='center'
-                    />
-                    <HeaderNComponent
-                        primaryHeaderText='Integrity'
-                        SecondaryComponent={
-                            <>
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                            </>
-                        }
-                        secondaryAllign='center'
-                    />
-                    <HeaderNComponent
-                        primaryHeaderText='Integrity'
-                        SecondaryComponent={
-                            <>
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                            </>
-                        }
-                        secondaryAllign='center'
-                    />
-                    <HeaderNComponent
-                        primaryHeaderText='Integrity'
-                        SecondaryComponent={
-                            <>
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                            <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
-                            </>
-                        }
-                        secondaryAllign='center'
-                    />                    
-                </div>
-            }
-        />
+        <div style={{ overflowX: 'hidden'}}>
+            <ImageNGradient
+                color1="#312822"
+                color2="#63351A"
+                imageUrlTop="/img/hero_images/brest_bible_church.jpg"
+                imageUrlBottom="/img/hero_images/brest_bible_church_bottom.jpg"
+                textParent='Donate'
+                textChild='BBC'
+                headerText='Brest Bible Church building fund donations'
+                subText='Brest Bible Church is developing into a christian stronghold that will change the lives of thousands of young people.'
+                // imageFocus={'0 -200px'}
+                imageFocus={offsetX1 + 'px ' + offsetY1 + 'px'}
+                scale1={scale1}
+                scale2={scale2}
+                content={
+                    <div className={styles.paddingContent}>
+                        <HeaderNComponent
+                            primaryHeaderText='Integrity'
+                            SecondaryComponent={
+                                <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.WHITE} />
+                            }
+                            secondaryAllign='center'
+                            color={theme.colors.WHITE}
+                        />
+                        <HeaderNComponent
+                            primaryHeaderText='Integrity'
+                            SecondaryComponent={
+                                <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                            }
+                            secondaryAllign='center'
+                        />
+                        <HeaderNComponent
+                            primaryHeaderText='Integrity'
+                            SecondaryComponent={
+                                <>
+                                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                                </>
+                            }
+                            secondaryAllign='center'
+                        />
+                        <HeaderNComponent
+                            primaryHeaderText='Integrity'
+                            SecondaryComponent={
+                                <>
+                                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                                </>
+                            }
+                            secondaryAllign='center'
+                        />
+                        <HeaderNComponent
+                            primaryHeaderText='Integrity'
+                            SecondaryComponent={
+                                <>
+                                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                                </>
+                            }
+                            secondaryAllign='center'
+                        />
+                        <HeaderNComponent
+                            primaryHeaderText='Integrity'
+                            SecondaryComponent={
+                                <>
+                                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                                    <P text='Our goal is to serve with integrity being a responsible Shepard over the finances entrusted to us.' color={theme.colors.BLACK} />
+                                </>
+                            }
+                            secondaryAllign='center'
+                        />
+                    </div>
+                }
+            />
+        </div>
     )
 }

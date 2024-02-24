@@ -298,31 +298,33 @@ export default function Home({ news, stats }) {
             />
           </Grid>
         </Grid>
-        <Quote
-          imageUrl={directorImage}
-          author="Carlos Shmidt"
-          role="PARTNERSHIP DIRECTOR"
-          organization="LBC"
-        />
-        <NoTextHero
-          color1="#F6F6F6"
-          color2="#FFFFFF"
-          imageUrl="/img/hero_images/hands_up.jpg"
-          imageFocus="50% 70%"
-        />
-        <HeaderNComponent
-          primaryHeaderText="Stay updated with all we’re doing"
-          SecondaryComponent={<P color={theme.colors.CHARCOAL} text='Our monthly newsletter provides a quick recap of all the great things God is doing through Byelorussian Ministry to impact the next generation.' />}
-          secondaryAllign='center'
-        />
-        <SlideNewsGalleryHome newsArray={news} />
-        <SubscribeHero
-          color={theme.colors.NAVY}
-          primaryText='Subscribe to our weekly newsletter'
-          secondaryText='Keep up to date with all that we’re doing!'
-        />
-      </div>
+        <div style={{ paddingTop: '7em'}}/>
+      <Quote
+        imageUrl={directorImage}
+        author="Carlos Shmidt"
+        role="PARTNERSHIP DIRECTOR"
+        organization="LBC"
+        quoteText={"There is a great openness; and we have the privilege of partnering with Belarus’ pastors to start churches and reach people for the Lord."}
+      />
+      <NoTextHero
+        color1="#F6F6F6"
+        color2="#FFFFFF"
+        imageUrl="/img/hero_images/hands_up.jpg"
+        imageFocus="50% 70%"
+      />
+      <HeaderNComponent
+        primaryHeaderText="Stay updated with all we’re doing"
+        SecondaryComponent={<P color={theme.colors.CHARCOAL} text='Our monthly newsletter provides a quick recap of all the great things God is doing through Byelorussian Ministry to impact the next generation.' />}
+        secondaryAllign='center'
+      />
+      <SlideNewsGalleryHome newsArray={news} />
+      <SubscribeHero
+        color={theme.colors.NAVY}
+        primaryText='Subscribe to our weekly newsletter'
+        secondaryText='Keep up to date with all that we’re doing!'
+      />
     </div>
+    </div >
   );
 }
 
