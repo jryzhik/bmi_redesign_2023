@@ -35,7 +35,7 @@ export default function brest() {
                         secondaryAllign='left'
                         color={theme.colors.WHITE}
                     />
-                    <iframe className={styles.youtube} src="https://www.youtube.com/embed/ZBL5AqXoqiU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe className={styles.youtube} src="https://www.youtube.com/embed/6I66WzWh_lM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     <Quote
                         imageUrl={profileIgor}
                         author="Igar Kanyuchka"
