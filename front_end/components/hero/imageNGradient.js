@@ -8,12 +8,12 @@ import TITLE from '../fonts/TITLE';
 import PageParentText from './pageParentText';
 
 
-export default function ImageNGradient({ color1, color2, imageUrlTop, imageUrlBottom, textParent, textChild, headerText, subText, imageFocus, scale1, scale2, content }) {
+export default function ImageNGradient({ color1, color2, imageUrlTop, imageUrlBottom, content, style_containerTop, style_imgTop, style_containerBottom, style_imgBottom }) {
     const gradient = `linear-gradient(to bottom, transparent 0, ${color1} 10em, ${color2} calc(100% - 15em), transparent 100%)`;
     return (
-        <div className={styles.imageContainerGradientBrest}>
+        <div className={style_containerTop}>
             <Image
-                className={styles.mainImageBrest}
+                className={style_imgTop}
                 src={imageUrlTop}
                 alt="Background"
                 width={1440}
@@ -33,9 +33,9 @@ export default function ImageNGradient({ color1, color2, imageUrlTop, imageUrlBo
             <div className={styles.gradientOverlayFund} style={{ backgroundImage: gradient }}>
                 {content}
             </div>
-            <div className={styles.wrapperBottomContainer}>
+            <div className={style_containerBottom}>
                 <Image
-                    className={styles.bottomImgContainerBrest}
+                    className={style_imgBottom}
                     src={imageUrlBottom}
                     alt="Background"
                     width={1440}

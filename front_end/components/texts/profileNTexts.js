@@ -4,7 +4,7 @@ import H4 from '../fonts/H4';
 import P from '../fonts/P';
 import theme from '../../styles/theme';
 
-export default function ProfileNTexts({passedImage, textName, textJobTitle, borderRadius, passedStyle}) {
+export default function ProfileNTexts({passedImage, textName, textJobTitle, borderRadius, passedStyle, color}) {
     return (
         <>
             <div className={passedStyle}>
@@ -23,10 +23,12 @@ export default function ProfileNTexts({passedImage, textName, textJobTitle, bord
                  {textName === undefined ? (
                     <></>
                 ) : (
-                    <H4 text={textName}/>
+                    <H4 text={textName} color={color}/>
                 )}
                 {textJobTitle === undefined ? (
                     <></>
+                ) : color === undefined ? (
+                    <P text={textJobTitle} color={color}/>
                 ) : (
                     <P text={textJobTitle} color={theme.colors.CHARCOAL}/>
                 )}

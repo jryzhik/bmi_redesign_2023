@@ -3,7 +3,7 @@ import RoundedPhoto from './roundedPhoto'
 import styles from '../../styles/Images/Images.module.css';
 import Image from 'next/image';
 
-export default function SlideGallery({ galleryArray }) {
+export default function SlideGallery({ galleryArray, filter }) {
     const [currentIndex, setCurrentIndex] = useState(0)
     const [booleanStyle, setBooleanStyle] = useState(styles.notFocusedImageGallery)
     const [left, setLeft] = React.useState(0)
@@ -75,8 +75,8 @@ export default function SlideGallery({ galleryArray }) {
         <>
             <div className={styles.galleryBox}>
                 <div className={styles.arrows}>
-                    <Image onClick={handleClickBack} src="/img/icons/left_arrow_gallery.svg" alt='arrow' width={0} height={0} style={{ width: '50%', height: 'auto' }} />
-                    <Image onClick={handleClickFront} src="/img/icons/right_arrow_gallery.svg" alt='arrow' width={0} height={0} style={{ width: '50%', height: 'auto' }} />
+                    <Image onClick={handleClickBack} src="/img/icons/left_arrow_gallery.svg" alt='arrow' width={0} height={0} style={{ filter: filter, width: '50%', height: 'auto' }} />
+                    <Image onClick={handleClickFront} src="/img/icons/right_arrow_gallery.svg" alt='arrow' width={0} height={0} style={{ filter: filter, width: '50%', height: 'auto' }} />
                 </div>
                 <div
                     className={styles.image}

@@ -9,6 +9,11 @@ import profileIgor from '../public/img/missionaries/igorKanyuchka.jpg'
 import DonationMasterForm from '../components/donations/donationMasterForm'
 import buttonStyles from '../styles/Donate/ColorDonate.module.css';
 
+const style_containerTop = styles.imageContainerGradientBrest;
+const style_imgTop = styles.mainImageBrest;
+const style_containerBottom = styles.wrapperBottomContainerBrest;
+const style_imgBottom = styles.bottomImgContainerBrest;
+
 export default function brest() {
 
     return (
@@ -17,14 +22,10 @@ export default function brest() {
             color2="#63351A"
             imageUrlTop="/img/hero_images/brest_bible_church.jpg"
             imageUrlBottom="/img/hero_images/brest_bible_church_bottom.jpg"
-            textParent='Donate'
-            textChild='BBC'
-            headerText='Brest Bible Church building fund donations'
-            subText='Brest Bible Church is developing into a christian stronghold that will change the lives of thousands of young people.'
-            imageFocus={'0 -200px'}
-            // imageFocus={100 + 'px ' + 200 + 'px'}
-            scale1={1}
-            scale2={1}
+            style_containerTop = {style_containerTop}
+            style_imgTop = {style_imgTop}
+            style_imgBottom = {style_imgBottom}
+            style_containerBottom = {style_containerBottom}
             content={
                 <div className={styles.paddingContent}>
                     <HeaderNComponent
