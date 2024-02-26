@@ -346,6 +346,15 @@
   position: relative;
 }
 
+.imageContainerGradientGospel {
+  padding-top: 3em;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+}
+
 
 .mainImageBrest {
   /* object-position: clamp(-125px, calc((100vw - 390px) * 0.2778), 0px) calc(-1 * clamp(-1000px, 40vw, 1000px)) !important; */
@@ -364,57 +373,86 @@
   scale: 2.5;
 }
 
+.mainImageGospel {
+  object-position: 10px 570px !important;
+  scale: 1.8;
+}
+
 .bottomImgContainerBrest {
   display: flex;
   margin-bottom: 12em;
   object-position: 50px 30px !important;
 }
 
-.bottomImgContainerCare{
+.bottomImgContainerCare {
   display: flex;
   margin-bottom: 12em;
   object-position: -25px 30px !important;
 }
 
-.bottomImgContainerPlant{
+.bottomImgContainerPlant {
   display: flex;
   margin-bottom: 12em;
   object-position: 0px -10px !important;
 }
+
+.bottomImgContainerGospel {
+  display: flex;
+  margin-bottom: 12em;
+  object-position: -25px 30px !important;
+}
+
 .wrapperBottomContainerBrest {
-  scale:2;
+  scale: 2;
   z-index: -100;
-  height: 60vw; /* Adjust based on desired crop */
+  height: 60vw;
+  /* Adjust based on desired crop */
   position: relative;
   margin-bottom: 5em;
 }
+
 .wrapperBottomContainerCare {
-  scale:2;
+  scale: 2;
   z-index: -100;
-  height: 60vw; /* Adjust based on desired crop */
+  height: 60vw;
+  /* Adjust based on desired crop */
   position: relative;
   margin-bottom: 5em;
 }
+
 .wrapperBottomContainerPlant {
-  scale:1.8;
+  scale: 1.8;
   z-index: -100;
-  height: 60vw; /* Adjust based on desired crop */
+  height: 60vw;
+  /* Adjust based on desired crop */
   position: relative;
   margin-bottom: 5em;
 }
+
+.wrapperBottomContainerGospel {
+  scale: 2;
+  z-index: -100;
+  height: 60vw;
+  /* Adjust based on desired crop */
+  position: relative;
+  margin-bottom: 5em;
+}
+
 @media (min-width: 390px) {
-  .mainImageBrest  {
+  .mainImageBrest {
     object-position: 0px 220px !important;
     scale: 1.25;
 
   }
+
   .bottomImgContainerBrest {
     object-position: 50px 30px !important;
   }
 
-  .mainImageCare  {
+  .mainImageCare {
     object-position: -50px 1300px !important;
   }
+
   .bottomImgContainerCare {
     object-position: -30px 30px !important;
   }
@@ -422,24 +460,35 @@
   .mainImagePlant {
     object-position: -20px 870px !important;
   }
+
+  .mainImageGospel {
+    object-position: 10px 530px !important;
+    scale: 1.8;
+  }
 }
 
 @media (min-width: 430px) {
   .mainImagePlant {
     object-position: -20px 830px !important;
   }
+
+  .mainImageGospel {
+    object-position: 10px 480px !important;
+    scale: 1.8;
+  }
 }
 
 @media (min-width: 500px) {
-  .mainImageBrest  {
+  .mainImageBrest {
     object-position: 0px 60px !important;
     scale: 1.25;
   }
+
   .bottomImgContainerBrest {
     object-position: 65px 30px !important;
   }
 
-  .mainImageCare  {
+  .mainImageCare {
     object-position: -50px 1200px !important;
   }
 
@@ -447,109 +496,171 @@
     object-position: -25px 700px !important;
     scale: 2.2;
   }
+
+  .mainImageGospel {
+    object-position: 10px 370px !important;
+    scale: 1.6;
+  }
+
+  .bottomImgContainerGospel {
+    object-position: -30px 30px !important;
+  }
 }
 
 @media (min-width: 600px) {
-  .mainImageBrest  {
+  .mainImageBrest {
     object-position: 0px 0px !important;
     scale: 1.25;
   }
-  .mainImageCare  {
+
+  .mainImageCare {
     object-position: -50px 1160px !important;
   }
+
   .mainImagePlant {
     object-position: -25px 690px !important;
+  }
+
+  .mainImageGospel {
+    object-position: 10px 320px !important;
+  }
+
+  .wrapperBottomContainerGospel {
+    scale: 1.6;
+  }
+
+  .bottomImgContainerGospel {
+    object-position: -35px 30px !important;
   }
 }
 
 @media (min-width: 700px) {
-  .mainImageBrest  {
+  .mainImageBrest {
     object-position: 0px -250px !important;
     scale: 1;
   }
+
   .bottomImgContainerBrest {
     object-position: 80px 10px !important;
   }
+
   .wrapperBottomContainerBrest {
-    height: 50vw; /* Adjust based on desired crop */
+    height: 50vw;
+    /* Adjust based on desired crop */
   }
 
-  .mainImageCare  {
+  .mainImageCare {
     object-position: -50px 1140px !important;
   }
+
   .bottomImgContainerCare {
     object-position: -45px 30px !important;
   }
+
   .mainImagePlant {
     object-position: -25px 650px !important;
   }
+
+  .mainImageGospel {
+    object-position: 20px 260px !important;
+    scale: 1.5;
+  }
 }
+
 @media (min-width: 801px) {
-  .mainImageBrest  {
+  .mainImageBrest {
     object-position: 0px -300px !important;
     scale: 1;
   }
+
   .bottomImgContainerBrest {
     object-position: 80px 0px !important;
   }
-  .mainImageCare  {
+
+  .mainImageCare {
     object-position: -50px 1200px !important;
   }
+
   .bottomImgContainerCare {
     object-position: -55px 30px !important;
   }
+
   .wrapperBottomContainerBrest {
-    height: 40vw; /* Adjust based on desired crop */
+    height: 40vw;
+    /* Adjust based on desired crop */
     scale: 1.8;
   }
+
   .mainImagePlant {
     object-position: -25px 800px !important;
+  }
+
+  .mainImageGospel {
+    object-position: 20px 150px !important;
+    scale: 1.3;
   }
 }
 
 @media (min-width: 900px) {
-  .mainImageBrest  {
+  .mainImageBrest {
     object-position: 0px -350px !important;
     scale: 1;
   }
 
-  .mainImageCare  {
+  .mainImageCare {
     object-position: 0px -30px !important;
     scale: 1;
   }
+
   .bottomImgContainerCare {
     object-position: 0px -150px !important;
   }
+
   .wrapperBottomContainerCare {
-      scale: 1;
-      height: 40vw;
+    scale: 1;
+    height: 40vw;
   }
+
   .mainImagePlant {
     object-position: 0px 0px !important;
     scale: 1;
   }
 
-  .bottomImgContainerPlant{
+  .bottomImgContainerPlant {
     display: flex;
     margin-bottom: 12em;
     object-position: 0px -100px !important;
   }
 
   .wrapperBottomContainerPlant {
-    scale:1;
+    scale: 1;
     z-index: -100;
-    height: 60vw; /* Adjust based on desired crop */
+    height: 60vw;
+    /* Adjust based on desired crop */
     position: relative;
     margin-bottom: 5em;
+  }
+
+  .mainImageGospel {
+    object-position: 0px -200px !important;
+    scale: 1;
+  }
+  .wrapperBottomContainerGospel {
+    scale: 1;
+  }
+
+  .bottomImgContainerGospel {
+    object-position: 0px -50px !important;
   }
 }
 
 @media (min-width: 1000px) {
-  .mainImageBrest  {
+  .mainImageBrest {
     object-position: 0px -400px !important;
     scale: 1;
   }
-  .bottomImgContainerPlant{
+
+  .bottomImgContainerPlant {
     display: flex;
     margin-bottom: 12em;
     object-position: 0px -150px !important;
@@ -557,55 +668,65 @@
 }
 
 @media (min-width: 1100px) {
-  .mainImageBrest  {
+  .mainImageBrest {
     object-position: 0px -450px !important;
     scale: 1;
   }
 
-  .mainImageCare  {
+  .mainImageCare {
     object-position: 0px -80px !important;
     scale: 1;
   }
+
   .bottomImgContainerCare {
     object-position: 0px -200px !important;
   }
-  .bottomImgContainerPlant{
+
+  .bottomImgContainerPlant {
     display: flex;
     margin-bottom: 12em;
     object-position: 0px -200px !important;
   }
-  
+
 }
 
 @media (min-width: 1200px) {
-  .mainImageBrest  {
+  .mainImageBrest {
     object-position: 0px -500px !important;
   }
 }
 
 @media (min-width: 1300px) {
-  
-  .mainImageBrest  {
+
+  .mainImageBrest {
     object-position: 0px -600px !important;
 
   }
 
-  .mainImageCare  {
+  .mainImageCare {
     object-position: 0px -150px !important;
     scale: 1;
   }
 
   .wrapperBottomContainerBrest {
-    scale:1.5;
-    height: 40vw; /* Adjust based on desired crop */
+    scale: 1.5;
+    height: 40vw;
+    /* Adjust based on desired crop */
     margin-bottom: 5em;
   }
+
   .bottomImgContainerBrest {
     margin-bottom: 12em;
     object-position: 90px -40px !important;
   }
-  .bottomImgContainerPlant{
+
+  .bottomImgContainerPlant {
     object-position: 0px -250px !important;
+  }
+
+  .mainImageGospel {
+    object-position: 0px -360px !important;
+
   }
 }
 

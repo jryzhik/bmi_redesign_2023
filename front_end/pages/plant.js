@@ -79,7 +79,7 @@ export default function plant() {
                         secondaryAllign='center'
                         color={theme.colors.WHITE}
                         buttonStyle={buttonStyles.dollarButton}
-                        fund={"DayCare Centers"}
+                        fund={"Church Planting"}
                     />
                 </div>
             }

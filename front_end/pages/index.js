@@ -101,7 +101,7 @@ export default function Home({ news, stats }) {
       link: '/orphans'
     },
     {
-      imageUrl: '/img/donation/designated_cover/bottom/evangelism.jpg',
+      imageUrl: '/img/hero_images/evangelism_bottom.jpg',
       color1: "#8EA9BC",
       color2: "#8EA9BC",
       headerText: 'Support the sharing of the Gospel',

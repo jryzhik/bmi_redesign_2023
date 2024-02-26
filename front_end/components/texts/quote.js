@@ -17,14 +17,14 @@ export default function Quote({ imageUrl, author, role, organization, quoteText,
             />
             <H2 color={color} text={quoteText} />
             <div className={styles.iconNText}>
-                <Image
+                {imageUrl === null ? (<></>) : (<Image
                     className={styles.profileIcon}
                     src={imageUrl} // Use the imageUrl prop here
                     alt="Schmidt"
                     width={140}
                     height={140}
                     quality={100}
-                />
+                />)}
                 <div className={styles.nameNRole}>
                     <div className={styles.noMargin}>
                         <H5 color={color} text={author} />

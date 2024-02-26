@@ -22,10 +22,10 @@ export default function brest() {
             color2="#63351A"
             imageUrlTop="/img/hero_images/brest_bible_church.jpg"
             imageUrlBottom="/img/hero_images/brest_bible_church_bottom.jpg"
-            style_containerTop = {style_containerTop}
-            style_imgTop = {style_imgTop}
-            style_imgBottom = {style_imgBottom}
-            style_containerBottom = {style_containerBottom}
+            style_containerTop={style_containerTop}
+            style_imgTop={style_imgTop}
+            style_imgBottom={style_imgBottom}
+            style_containerBottom={style_containerBottom}
             content={
                 <div className={styles.paddingContent}>
                     <HeaderNComponent
@@ -45,8 +45,8 @@ export default function brest() {
                         quoteText={"We are grateful to God for His mercy and grace towards us and for the possibility to be His instruments in proclaiming the Gospel in our city. We are witnesses of how God changes the hearts of people."}
                         colorQuote={{ filter: 'invert(100%)' }}
                         color={theme.colors.WHITE}
-
-                    /><div style={{paddingBottom: "1rem"}}/>
+                    />
+                    <div style={{ paddingBottom: "1rem" }} />
                     <DonationMasterForm
                         headerText={"Help us construct the community church"}
                         secondaryText={"Your support financially allows us to provide help in planting local churches across Belarus."}
