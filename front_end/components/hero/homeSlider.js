@@ -39,6 +39,7 @@ export default function HomeSlider({ color1, color2, imageUrl, headerText, subTe
                 <div className={styles.gradientOverlay} style={{ backgroundImage: gradient }} />
                 <div className={styles.imageContainer}>
                     <Image
+                        priority={true}
                         src={imageUrl}
                         className={styles.image}
                         alt="Background"
