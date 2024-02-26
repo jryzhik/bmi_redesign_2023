@@ -358,7 +358,7 @@
 .bottomImgContainerCare{
   display: flex;
   margin-bottom: 12em;
-  object-position: 50px 30px !important;
+  object-position: -25px 30px !important;
 }
 
 .wrapperBottomContainerBrest {
@@ -389,7 +389,7 @@
     object-position: -50px 1300px !important;
   }
   .bottomImgContainerCare {
-    object-position: 50px 30px !important;
+    object-position: -30px 30px !important;
   }
 }
 
@@ -403,10 +403,7 @@
   }
 
   .mainImageCare  {
-    object-position: -50px 630px !important;
-  }
-  .bottomImgContainerCare {
-    object-position: 50px 30px !important;
+    object-position: -50px 1200px !important;
   }
 }
 
@@ -416,10 +413,7 @@
     scale: 1.25;
   }
   .mainImageCare  {
-    object-position: -100px 600px !important;
-  }
-  .bottomImgContainerCare {
-    object-position: 50px 30px !important;
+    object-position: -50px 1160px !important;
   }
 }
 
@@ -436,10 +430,10 @@
   }
 
   .mainImageCare  {
-    object-position: -100px 1000px !important;
+    object-position: -50px 1140px !important;
   }
   .bottomImgContainerCare {
-    object-position: 50px 30px !important;
+    object-position: -45px 30px !important;
   }
 }
 @media (min-width: 800px) {
@@ -449,6 +443,12 @@
   }
   .bottomImgContainerBrest {
     object-position: 80px 0px !important;
+  }
+  .mainImageCare  {
+    object-position: -50px 1200px !important;
+  }
+  .bottomImgContainerCare {
+    object-position: -55px 30px !important;
   }
   .wrapperBottomContainerBrest {
     height: 40vw; /* Adjust based on desired crop */
@@ -467,7 +467,11 @@
     scale: 1;
   }
   .bottomImgContainerCare {
-    object-position: 50px 30px !important;
+    object-position: 0px -150px !important;
+  }
+  .wrapperBottomContainerCare {
+      scale: 1;
+      height: 40vw;
   }
 }
 
@@ -488,6 +492,10 @@
     object-position: 0px -80px !important;
     scale: 1;
   }
+  .bottomImgContainerCare {
+    object-position: 0px -200px !important;
+  }
+  
 }
 
 @media (min-width: 1200px) {
