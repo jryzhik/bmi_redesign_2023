@@ -35,6 +35,7 @@ export default function ImageNGradient({ color1, color2, imageUrlTop, imageUrlBo
             </div>
             <div className={style_containerBottom}>
                 <Image
+                    priority={false}
                     className={style_imgBottom}
                     src={imageUrlBottom}
                     alt="Background"
