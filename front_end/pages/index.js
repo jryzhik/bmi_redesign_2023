@@ -92,7 +92,7 @@ export default function Home({ news, stats }) {
       link: '/care'
     },
     {
-      imageUrl: '/img/donation/designated_cover/bottom/SecondaryOrphanAdoption.jpg',
+      imageUrl: '/img/hero_images/SecondaryOrphanAdoption.jpg',
       color1: "#121413",
       color2: "#121413",
       headerText: 'Help provide each child a loving family',

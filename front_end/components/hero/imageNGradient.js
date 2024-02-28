@@ -13,6 +13,7 @@ export default function ImageNGradient({ color1, color2, imageUrlTop, imageUrlBo
     return (
         <div className={style_containerTop}>
             <Image
+                priority
                 className={style_imgTop}
                 src={imageUrlTop}
                 alt="Background"
