@@ -59,7 +59,7 @@ export default function matching({ stats }) {
                         secondaryAllign='center'
                         color={theme.colors.WHITE}
                         buttonStyle={buttonStyles.dollarButton}
-                        fund={"Orphan Adoption"}
+                        fund={"Bible Matching"}
                     />
                 </div>
             }
