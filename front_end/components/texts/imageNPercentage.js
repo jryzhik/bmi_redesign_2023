@@ -6,7 +6,7 @@ import P from '../fonts/P';
 import theme from '../../styles/theme';
 import BarNText from './barNText';
 
-export default function ImageNPercentage({ passedImage, percentText, description, color }) {
+export default function ImageNPercentage({ passedImage, percentText, description, color, colorText, opacity }) {
     return (
         <>
             <div className={styles.hBox}>
@@ -25,7 +25,7 @@ export default function ImageNPercentage({ passedImage, percentText, description
                         }}
                     />
                 </div>
-                <BarNText percentText={percentText + '%'} description={description} color={color}/>
+                <BarNText percentText={percentText + '%'} description={description} color={color} colorText={colorText} opacity={opacity}/>
             </div>
         </>
     )
