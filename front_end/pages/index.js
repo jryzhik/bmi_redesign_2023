@@ -62,20 +62,23 @@ export default function Home({ news, stats }) {
   const [animation3, setAnimation3] = useState(0);
 
   const [isVisible, setIsVisible] = useState(false);
-
+  function percentConvert(raisedAmount, goalAmount) {
+    console.log("percent HEJE", raisedAmount, goalAmount)
+    return Number((100 * (raisedAmount / goalAmount)).toFixed(2)); 
+  }
   const ProgressValues = [
     {
-      percentFilled: stats[0].percentBible,
+      percentFilled: percentConvert(stats[0].amountRaisedBible, stats[0].goalBible),
       primaryHeaderText: "Bibles/Discipleship Material",
       secondaryText: `Help us reach our goal of raising ${stats[0].goalBible.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })} to print Bibles for those in Israel.`
     },
     {
-      percentFilled: stats[0].percentBuilding,
+      percentFilled: percentConvert(stats[0].amountRaisedBuilding, stats[0].goalBuilding),
       primaryHeaderText: "Construction/Building Projects",
       secondaryText: `Help us reach our goal to collect ${stats[0].goalBuilding.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })} for a new church structures in Belarus.`
     },
     {
-      percentFilled: stats[0].percentOrphan,
+      percentFilled: percentConvert(stats[0].amountRaisedOrphan, stats[0].goalOrphan),
       primaryHeaderText: "Orphan/Adoption Program",
       secondaryText: `We need ${stats[0].goalOrphan.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })} to support and maintain a Christian facility for orphans.`
     },
