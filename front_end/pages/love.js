@@ -68,7 +68,7 @@ export default function love({ stats }) {
                     <PercentBarNIcons
                         color1={"#EC9D26"}
                         color2={"#FFFFFF"}
-                        passedImage1={"/img/donation/progressIcons/Bible.jpg"}
+                        passedImage1={"/img/donation/progressIcons/Love.jpg"}
                         passedImage2={"/img/donation/progressIcons/remainingMoneyIcon.jpg"}
                         amountRaised={stats[0].amountRaisedLOVE}
                         goal={stats[0].goalLOVE}

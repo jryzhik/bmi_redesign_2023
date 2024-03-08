@@ -34,7 +34,7 @@ const menu = [
     },
     {
         primary: ['Donate', 'donate'],
-        secondary: [['General Fund', 'donate'], ['Matching Fund', 'matching'], ['Love in Action', 'ukraine'], ['Good & Evil Bible', 'literature'], ['Legacy Giving', 'legacy'], ['Trip Donation', 'pay']]
+        secondary: [['General Fund', 'donate'], ['Matching Fund', 'matching'], ['Love in Action', 'love'], ['Good & Evil Bible', 'literature'], ['Legacy Giving', 'legacy'], ['Trip Donation', 'pay']]
     },
     {
         primary: ['Contact', 'contact'],

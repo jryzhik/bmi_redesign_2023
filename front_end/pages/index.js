@@ -63,7 +63,6 @@ export default function Home({ news, stats }) {
 
   const [isVisible, setIsVisible] = useState(false);
   function percentConvert(raisedAmount, goalAmount) {
-    console.log("percent HEJE", raisedAmount, goalAmount)
     return Number((100 * (raisedAmount / goalAmount)).toFixed(2)); 
   }
   const ProgressValues = [
