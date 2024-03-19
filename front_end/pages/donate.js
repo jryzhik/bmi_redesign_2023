@@ -13,7 +13,7 @@ const fund_array = [
     imageUrl: '/img/donation/designated_cover/top/love_in_action.jpg',
     title: 'Love in Action',
     description: 'Bring relief to Ukrainian Refugees',
-    url: 'ukraine'
+    url: 'love'
   },
   {
     imageUrl: '/img/donation/designated_cover/top/orphan_adoption.jpg',
