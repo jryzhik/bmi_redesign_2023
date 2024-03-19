@@ -18,9 +18,11 @@ import OverviewDonationSection from './overviewDonationSection';
 import ThankyouSection from './thankyouSection';
 import HeaderNComponent from '../texts/HeaderNComponent';
 import MobileMasterForm from './mobileMasterForm';
+import RoundedButtonMoney from '../buttons/roundedButtonMoney';
 
 
-export default function DonationMasterForm({ headerText, secondaryText, secondaryAllign, buttonStyle, color, fund }) {
+
+export default function DonationMasterForm({ headerText, secondaryText, secondaryAllign, buttonStyle, single, color, fund }) {
     const [popupVisible, setPopupVisible] = useState(false);
     const [currentScreenIndex, setCurrentScreenIndex] = useState(1)
 
@@ -358,7 +360,12 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
                         secondaryAllign={secondaryAllign}
                         color={color}
                     />
-                    <FiveButtonsDonate buttonStyle={buttonStyle} masterCallBackFunction={masterCallBack} />
+                    {single ? (<div className="generalCenterPadding" style={{ width: '60%' }}>
+                        <Grid xs={12} md={12} paddingTop="2.5em" display="flex" justifyContent="center" alignItems="center">
+                            <RoundedButtonMoney text='donate' passedStyle={passedStyle.dollarButtonBlack} amount={""} callBackFunction={masterCallBack} />
+                        </Grid>
+                    </div>) : (<FiveButtonsDonate buttonStyle={buttonStyle} masterCallBackFunction={masterCallBack} />
+                    )}
                 </div>
             )}
         </>
