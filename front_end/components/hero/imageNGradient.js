@@ -1,12 +1,6 @@
 import React from 'react';
 import styles from '../../styles/Hero/Hero.module.css';
 import Image from 'next/image';
-import theme from '../../styles/theme';
-import H1 from '../fonts/H1';
-import P from '../fonts/P';
-import TITLE from '../fonts/TITLE';
-import PageParentText from './pageParentText';
-
 
 export default function ImageNGradient({ color1, color2, imageUrlTop, imageUrlBottom, content, style_containerTop, style_imgTop, style_containerBottom, style_imgBottom }) {
     const gradient = `linear-gradient(to bottom, transparent 0, ${color1} 10em, ${color2} calc(100% - 15em), transparent 100%)`;
