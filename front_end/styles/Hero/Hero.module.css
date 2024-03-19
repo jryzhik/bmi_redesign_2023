@@ -400,6 +400,15 @@
   position: relative;
 }
 
+.imageContainerGradientLegacy {
+  padding-top: 3em;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+}
+
 .mainImageBrest {
   /* object-position: clamp(-125px, calc((100vw - 390px) * 0.2778), 0px) calc(-1 * clamp(-1000px, 40vw, 1000px)) !important; */
   /* object-position: clamp(-100px, -5vw, -600px) -200px !important; */
@@ -445,6 +454,11 @@
 .mainImageLiterature {
   object-position: 0px 965px !important;
   scale: 2.3;
+}
+
+.mainImageLegacy {
+  object-position: 0px 710px !important;
+  scale: 3;
 }
 
 .bottomImgContainerBrest {
@@ -499,6 +513,11 @@
   display: flex;
   margin-bottom: 12em;
   object-position: -10px -100px !important;
+}
+
+.bottomImgContainerLegacy {
+  display: flex;
+  object-position: -10px -160px !important;
 }
 
 .wrapperBottomContainerBrest {
@@ -583,6 +602,14 @@
   margin-bottom: 5em;
 }
 
+.wrapperBottomContainerLegacy {
+  scale: 1.3;
+  z-index: -100;
+  height: 70vw;
+  /* Adjust based on desired crop */
+  position: relative;
+}
+
 @media (min-width: 390px) {
   .mainImageBrest {
     object-position: 0px 220px !important;
@@ -631,6 +658,12 @@
     object-position: 0px 950px !important;
   }
 
+  .mainImageLegacy{
+    scale: 3.3;
+    object-position: 0px 690px !important;
+
+  }
+
 }
 
 @media (min-width: 430px) {
@@ -657,6 +690,10 @@
 
   .mainImageLiterature{
     object-position: 0px 920px !important;
+  }
+
+  .mainImageLegacy{
+    object-position: 0px 630px !important;
   }
 }
 
@@ -726,6 +763,14 @@
   .mainImageLiterature{
     object-position: 0px 880px !important;
   }
+
+  .mainImageLegacy{
+    object-position: 0px 550px !important;
+  }
+  .bottomImgContainerLegacy {
+    display: flex;
+    object-position: -10px -220px !important;
+  }
 }
 
 @media (min-width: 600px) {
@@ -794,6 +839,14 @@
 
   .mainImageLiterature{
     object-position: 0px 780px !important;
+  }
+
+  .mainImageLegacy{
+    object-position: 0px 450px !important;
+    scale: 3;
+  }
+  .bottomImgContainerLegacy {
+    object-position: -30px -280px !important;
   }
 }
 
@@ -874,6 +927,9 @@
   .mainImageLiterature{
     object-position: 0px 670px !important;
   }
+  .bottomImgContainerLegacy {
+    object-position: -30px -350px !important;
+  }
 }
 
 @media (min-width: 801px) {
@@ -953,6 +1009,13 @@
 
   .mainImageLiterature{
     object-position: 0px 670px !important;
+  }
+
+  .mainImageLegacy{
+    object-position: 0px 520px !important;
+  }
+  .bottomImgContainerLegacy {
+    object-position: -30px -400px !important;
   }
 }
 
@@ -1078,6 +1141,17 @@
   .mainImageLiterature{
     object-position: 0px -30px !important;
   }
+
+  .mainImageLegacy{
+    scale: 2;
+    object-position: 0px 340px !important;
+  }
+  .wrapperBottomContainerLegacy {
+    scale: 1;
+  }
+  .bottomImgContainerLegacy {
+    object-position: 0px -490px !important;
+  }
 }
 
 @media (min-width: 1000px) {
@@ -1110,6 +1184,9 @@
 
   .bottomImgContainerLiterature {
     object-position: 0px -480px !important;
+  }
+  .bottomImgContainerLegacy {
+    object-position: 0px -500px !important;
   }
 }
 
@@ -1163,6 +1240,9 @@
   .bottomImgContainerLiterature {
     object-position: 0px -470px !important;
   }
+  .bottomImgContainerLegacy {
+    object-position: 0px -550px !important;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -1197,6 +1277,13 @@
 
   .bottomImgContainerLiterature {
     object-position: 0px -550px !important;
+  }
+  .mainImageLegacy{
+    scale: 1;
+    object-position: 0px -115px !important;
+  }
+  .bottomImgContainerLegacy {
+    object-position: 0px -650px !important;
   }
 }
 
@@ -1266,6 +1353,14 @@
   .bottomImgContainerLiterature {
     object-position: 0px -650px !important;
   }
+
+  .mainImageLegacy{
+    scale: 1.2;
+    object-position: 0px -30px !important;
+  }
+  .bottomImgContainerLegacy {
+    object-position: 0px -730px !important;
+  }
 }
 
 .imageContainer {
@@ -1333,4 +1428,16 @@ iframe.youtube {
   border-radius: 7px;
   width: clamp(23.375em, 80vw, 56.25em);
   height: clamp(14em, 40vw, 33.75em);
+}
+
+.containerContact {
+  width: 100vw;
+  padding: 1em;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  text-align: center;
 }
