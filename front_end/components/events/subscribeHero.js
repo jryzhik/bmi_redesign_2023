@@ -7,9 +7,8 @@ import Grid from '@mui/material/Unstable_Grid2';
 import passedStyle from '../../styles/Donate/ColorDonate.module.css';
 // Import your custom components
 // Assuming OutlineButton and RoundedButton are adjusted for form usage
-import OutlineButton from '../inputs/OutlineButton';
-import RoundedButton from '../buttons/RoundedButton';
-
+import OutlineButton from '../inputs/outlineButton';
+import RoundedButton from '../buttons/roundedButton';
 
 const SubscribeHero = ({ color, primaryText, secondaryText }) => {
     useEffect(() => {
@@ -39,18 +38,6 @@ const SubscribeHero = ({ color, primaryText, secondaryText }) => {
     useEffect(() => {
         console.log(email)
     }, [email]);
-
-
-    // Example callback function for OutlineButton (adjust as necessary)
-    const handleEmailChange = (email) => {
-        console.log(email); // Implement as needed
-    };
-
-    // Example callback function for RoundedButton (adjust as necessary)
-    const handleSubscribeClick = () => {
-        // Since the form submission is handled by Mailchimp's script,
-        // you might not need to implement this unless additional client-side logic is required
-    };
 
     return (
         <div id='formSection' className={styles.together} style={{ backgroundColor: color }}>
