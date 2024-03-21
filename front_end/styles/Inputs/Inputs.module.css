@@ -1,7 +1,7 @@
 .thinBarContainer {
     display: flex;
     gap: .3rem;
-    width: 100vw;
+    width: 100%;
     border: 2px solid;
     height: 3.125em;
     border-radius: 7px;

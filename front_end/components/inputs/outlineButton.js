@@ -17,7 +17,7 @@ const RobotoRegular = Roboto_Slab({
   style: ['normal'],
 });
 
-export default function OutlineButton({ borderColor, textColor, placeholder, type, callBack, pattern, additionalFunction, maxLength, value }) {
+export default function OutlineButton({ borderColor, textColor, placeholder, type, callBack, pattern, additionalFunction, maxLength, value, name }) {
   const [themeMode, setThemeMode] = useState(styles.inputEmail);
 
   // Use useEffect to update the themeMode state based on textColor prop
@@ -102,6 +102,8 @@ export default function OutlineButton({ borderColor, textColor, placeholder, typ
           type={type}
           pattern="[0-9]*"
           maxLength={maxLength}
+          required
+          name={name}
         />
       </div>
     </>
