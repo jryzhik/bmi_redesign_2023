@@ -64,8 +64,26 @@ const SubscribeHero = ({ color, primaryText, secondaryText }) => {
                                 {/* <OutlineButton placeholder="Email Address" type="email" name="EMAIL" borderColor={theme.colors.SNOW} textColor={theme.colors.WHITE} callBack={handleEmailChange} /> */}
                             </div>
                             <div id="mce-responses" className="clear foot">
-                                <div className="response" id="mce-error-response" style={{ display: 'none' }}></div>
-                                <div className="response" id="mce-success-response" style={{ display: 'none' }}></div>
+                                <div className="response" id="mce-error-response" style={{
+                                    display: 'none',
+                                    fontFamily: "'Inter', sans-serif", // Apply Inter font
+                                    fontWeight: '400',
+                                    fontSize: '.8em',
+                                    letterSpacing: '0.019em',
+                                    marginTop: '2em',
+                                    color: '#FFFFFF'
+                                }}
+                                    ></div>
+                                <div className="response" id="mce-success-response" style={{
+                                    display: 'none',
+                                    fontFamily: "'Inter', sans-serif", // Apply Inter font
+                                    fontWeight: '400',
+                                    fontSize: '.8em',
+                                    letterSpacing: '0.019em',
+                                    marginTop: '2em',
+                                    color: '#FFFFFF'
+                                }}>
+                                </div>
                             </div>
                             {/* A hidden input to trick bots */}
                             <div style={{ position: 'absolute', left: '-5000px' }} aria-hidden="true">
