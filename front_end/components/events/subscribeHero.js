@@ -96,14 +96,24 @@ const SubscribeHero = ({ color, primaryText, secondaryText }) => {
                                         type="submit"
                                         name="subscribe"
                                         id="mc-embedded-subscribe"
-                                        class={passedStyle.dollarButton}
                                         value="SUBSCRIBE"
                                         style={{
                                             fontFamily: "'Inter', sans-serif", // Apply Inter font
                                             fontWeight: '900',
                                             fontSize: '1em',
                                             letterSpacing: '0.019em',
-                                            marginTop: '2em'
+                                            marginTop: '2em',
+                                            color: '#000000',
+                                            display: 'flex',
+                                            width: '100%',
+                                            height: '46px',
+                                            borderRadius: '25em',
+                                            justifyContent: 'center',
+                                            alignItems: 'center',
+                                            position: 'relative',
+                                            background: '#ffffff',
+                                            border:'none',
+
                                         }}
                                     />
                                 </div>
