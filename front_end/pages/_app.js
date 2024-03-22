@@ -7,7 +7,7 @@ export default function MyApp({ Component, pageProps }) {
   
   return (
     <Layout>
-      <Analytics />
+      <Analytics /><SpeedInsights/>
       <Component {...pageProps} />
     </Layout>
   );
