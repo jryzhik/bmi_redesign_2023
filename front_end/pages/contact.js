@@ -58,11 +58,7 @@ export default function Contact() {
             SecondaryComponent={<P color={theme.colors.CHARCOAL} text='Fill out the form to send us a message.' />}
             secondaryAllign='center'
           />
-          <ContactForm
-            color={theme.colors.BLACK}
-            primaryText='Contact'
-            secondaryText='Fill out the form to send us a message.'
-          />
+          <ContactForm/>
         </div>
       </div>
     </>

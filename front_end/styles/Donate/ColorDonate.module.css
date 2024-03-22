@@ -142,6 +142,25 @@
     transition: all .5s ease-out;
 }
 
+.submitButtonBlack {
+    font-family: Inter;
+    font-weight: 900;
+    font-size: 1em;
+    letter-spacing: 0.019em;
+    color: #ffffff;
+    display: flex;
+    width: 100%;
+    height: 46px;
+    border-radius: 25em;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: #000000;
+    border: none;
+    transition: all .2s ease-in;
+    transition: all .5s ease-out;
+}
+
 .dollarButton:hover {
     /* background: linear-gradient(90deg,#ffffff, #a23404); */
     background-color: #e2e2e2;
@@ -152,8 +171,13 @@
     /* background: linear-gradient(90deg,#ffffff, #a23404); */
     background-color: #373737;
     cursor: pointer;
-
 }
+.submitButtonBlack:hover {
+    background-color: #373737;
+    cursor: pointer;
+    
+}
+
 .dollarButtonMaroon:hover {
     /* background: linear-gradient(90deg,#ffffff, #a23404); */
     background-color: #4fac84;
@@ -166,9 +190,11 @@
     color: #000000;
     cursor: pointer;
 }
+
 .dollarButtonOrange:hover {
     cursor: pointer;
 }
+
 .buttonSection {
     display: flex;
 }

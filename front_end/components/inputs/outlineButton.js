@@ -43,7 +43,7 @@ export default function OutlineButton({ borderColor, textColor, placeholder, typ
     }
 
     // Use a regular expression to check if the value contains only alphabetical characters
-    const alphabeticRegex = /^[A-Za-z]*$/;
+    const alphabeticRegex = /^[A-Za-z ]*$/;
     const isValidInput = alphabeticRegex.test(newValue);
     const isValidNumber = /^[0-9]*$/.test(event.target.value);
 
@@ -100,7 +100,6 @@ export default function OutlineButton({ borderColor, textColor, placeholder, typ
           onChange={handleChange}
           value={inputText}
           type={type}
-          pattern="[0-9]*"
           maxLength={maxLength}
           required
           name={name}

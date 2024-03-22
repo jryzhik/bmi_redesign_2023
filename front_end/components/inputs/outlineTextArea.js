@@ -23,7 +23,7 @@ const RobotoRegular = Roboto_Slab(
     }
 )
 
-export default function OutlineTextArea({borderColor, textColor, placeholder, type}) {
+export default function OutlineTextArea({borderColor, textColor, placeholder, type, name}) {
     const [textStyle, setTextStyle] = useState(RobotoLight)
     const [inputText, setInputText] = useState('')
     const handleChange = event => {
@@ -45,6 +45,7 @@ export default function OutlineTextArea({borderColor, textColor, placeholder, ty
                     onChange={handleChange}
                     value={inputText}
                     type={type}
+                    name={name}
                 />
             </div>
         </>
