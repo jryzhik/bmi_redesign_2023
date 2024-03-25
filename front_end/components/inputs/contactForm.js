@@ -7,7 +7,6 @@ import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import passedStyle from '../../styles/Donate/ColorDonate.module.css';
 import OutlineButton from './outlineButton';
 import OutlineTextArea from './outlineTextArea';
-import RoundedButton from '../buttons/roundedButton';
 
 const ContactForm = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -96,9 +95,7 @@ const ContactForm = () => {
                             type="submit"
                             value="SEND"
                             disabled={isSubmitting}
-                            
                         />
-                        {/* <input type="submit" value="Send" disabled={isSubmitting} /> */}
                         {stateMessage && <P text={stateMessage} />}
                     </Grid>
                 </Grid>

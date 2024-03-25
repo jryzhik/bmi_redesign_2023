@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Dropdown } from "@nextui-org/react";
 import theme from '../../styles/theme';
 import FIELDTEXT from '../fonts/FIELDTEXT';
@@ -7,8 +7,13 @@ import styles from '../../styles/Texts/Texts.module.css';
 import Image from 'next/image';
 import FIELDTXTREG from '../fonts/FIELDTXTREG';
 
-export default function DropDownThin({ title, defaultKey, dropDownItemArray, titleFont, borderColor, textColor }) {
+export default function DropDownThin({ dropDownItemArray, borderColor, textColor, callBack }) {
     const [selected, setSelected] = React.useState("Select Trip");
+
+    useEffect(() => {
+        const myArray = Array.from(selected);
+        callBack(myArray[0]);
+    }, [selected])
     const selectedValue = React.useMemo(
         () => Array.from(selected).join(", ").replaceAll("_", " "),
         [selected]
