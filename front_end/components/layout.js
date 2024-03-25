@@ -22,7 +22,7 @@ const menu = [
     },
     {
         primary: 'Ministries',
-        secondary: [['Brest Bible Church', 'brest'], ['Day Care Centers', 'care'], ['Church Planting', 'plant'], ['Evangelism', 'gospel'], ['Orphan Adoption', 'orphans'], ['Youth Outreach', 'youth']]
+        secondary: [['Brest Bible Church', 'brest'], ['Day Care Centers', 'daycare'], ['Church Planting', 'plant'], ['Evangelism', 'gospel'], ['Orphan Adoption', 'orphans'], ['Youth Outreach', 'youth']]
     },
     {
         primary: 'Resources',

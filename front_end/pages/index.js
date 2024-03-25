@@ -220,7 +220,7 @@ export default function Home({ news, stats }) {
               subText='Pray for us as we invest into disciples of Christ.'
               imageFocus='50% -30%'
               buttonText='learn more'
-              link='/belief'
+              link='/vision'
 
             />
           </Grid>

@@ -44,7 +44,7 @@ const dayCareGallery = [
     },
 ]
 
-export default function care() {
+export default function daycare() {
 
     return (
         <ImageNGradient
