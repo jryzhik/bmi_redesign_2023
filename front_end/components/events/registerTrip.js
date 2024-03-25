@@ -78,10 +78,12 @@ export default function RegisterTrip({ color, primaryText, secondaryText, tripDB
                 <div style={{
                     backgroundColor: color
                 }} className={styles.containerRegisterForm}>
-                    {stateMessage ? (<div className={styles.headerNdescription}>
-                        <H1 text={"Hooray! ✈️"} color={theme.colors.WHITE} />
-                        <P color={theme.colors.WHITE} text={stateMessage} />
-                    </div>) : (
+                    {stateMessage ? (
+                        <div className={styles.headerNdescription}>
+                            <H1 text={"Hooray! ✈️"} color={theme.colors.WHITE} />
+                            <P color={theme.colors.WHITE} text={stateMessage} />
+                        </div>
+                    ) : (
                         <>
                             <div className={styles.headerNdescription}>
                                 <H1 text={primaryText} color={theme.colors.WHITE} />
@@ -141,13 +143,12 @@ export default function RegisterTrip({ color, primaryText, secondaryText, tripDB
                                     </Grid>
                                     <Grid xs={12} md={12} display="flex" justifyContent="center" alignItems="center" flexDirection={'column'}>
                                         <input
-                                            className={passedStyle.submitButtonBlack}
+                                            className={passedStyle.submitButtonWhite}
                                             type="submit"
                                             value="SEND"
                                             disabled={isSubmitting}
 
                                         />
-                                        {stateMessage && <P text={stateMessage} />}
 
                                     </Grid>
                                 </Grid>
