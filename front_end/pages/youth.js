@@ -21,16 +21,16 @@ const style_imgBottom = styles.bottomImgContainerYouth;
 
 const plantingGallery = [
     {
-        imageUrl: '/img/gallery/gruzd/sitting_fire.jpg'
+        imageUrl: '/img/ministries/youthOutreach/pit_stop.jpg'
+    },
+    {
+        imageUrl: '/img/ministries/youthOutreach/pit_stop.jpg'
     },
     {
         imageUrl: '/img/ministries/planting/baptisms.jpg'
     },
     {
-        imageUrl: '/img/ministries/planting/baptisms.jpg'
-    },
-    {
-        imageUrl: '/img/gallery/gruzd/blow.jpg'
+        imageUrl: '/img/ministries/youthOutreach/pit_stop2.jpg'
     },
     {
         imageUrl: '/img/gallery/gruzd/teach.jpg'
