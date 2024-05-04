@@ -39,10 +39,7 @@ export default function Footer() {
             <Grid xs={6} sm={6} md={2}>
               <Stack spacing={2}>
                 <NH text='Missionaries' />
-                <NAVTEXT text='Vlad & Polina' />
                 <NAVTEXT text='Cassandra' />
-                <NAVTEXT text='Vadim & Natasha' />
-                <NAVTEXT text='Dmitry & Natasha' />
               </Stack>
             </Grid>
             <Grid xs={6} sm={6} md={2}>
