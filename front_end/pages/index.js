@@ -85,7 +85,7 @@ export default function Home({ news, stats }) {
 
   const HeroAdSlider = [
     {
-      imageUrl: '/img/donation/designated_cover/bottom/readingBible.jpg',
+      imageUrl: '/img/donation/designated_cover/bottom/readingBible_compress.jpg',
       color2: "#D2A9A6",
       color1: "#D2A9A6",
       headerText: 'Our initiative to open children daycare centers',
