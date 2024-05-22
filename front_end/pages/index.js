@@ -192,6 +192,7 @@ export default function Home({ news, stats }) {
       <Head>
         <title>Byelorussian Mission Inc.</title>
         <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/favicon.ico"></link>
         <link rel="preload" as="image" href="/_next/image?url=%2Fimg%2Fhero_images%2Fhome_hero%2FBaptismSmile.jpg&w=3840&q=80" imagesrcset="/_next/image?url=%2Fimg%2Fhero_images%2Fhome_hero%2FBaptismSmile.jpg&w=1920&q=80 1x, /_next/image?url=%2Fimg%2Fhero_images%2Fhome_hero%2FBaptismSmile.jpg&w=3840&q=80 2x" />
       </Head>
       <HomeSlider
