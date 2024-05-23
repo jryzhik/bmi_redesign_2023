@@ -36,9 +36,9 @@ export default function matching({ stats }) {
                         primaryHeaderText='The matching fund challenge'
                         SecondaryComponent={
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.3125em' }}>
-                                <P color={theme.colors.WHITE} text='Our ministry has been incredibly blessed to receive a very generous matching fund challenge of $200,000 to print new Bibles & Christian Literature for distribution in 9 different countries!' />
-                                <P color={theme.colors.WHITE} text='On behalf of Byelorussian Mission, we are incredibly grateful for your partnership in the Lord’s Work in past years printing. If the Lord leads you, please help us raise $200,000 to continue to reach many sinners for Him during this difficult time in Eastern Europe and Beyond.' />
-                                <P color={theme.colors.WHITE} text='It is estimated that just one Bible ends up touching statistically 5-7 people! Of those, 42% end up coming to faith! So, we want to print 40,000 Russian Bibles, which could impact 200,000 to 250,000 people! What a God given challenge! Let’s join together to spread life!!' />
+                                <P color={theme.colors.WHITE} text='Our ministry has been incredibly blessed to receive a very generous matching fund challenge of $250,000 to print new Bibles & Christian Literature for distribution in 9 different countries!' />
+                                <P color={theme.colors.WHITE} text='On behalf of Byelorussian Mission, we are incredibly grateful for your partnership in the Lord’s Work in past years printing. If the Lord leads you, please help us raise $250,000 to continue to reach many sinners for Him during this difficult time in Eastern Europe and Beyond.' />
+                                <P color={theme.colors.WHITE} text='It is estimated that just one Bible ends up touching statistically 5-7 people! Of those, 42% end up coming to faith! So, we want to print 50,000 Russian Bibles, which could impact 250,000 to 350,000 people! What a God given challenge! Let’s join together to spread life!!' />
                             </div>
                         }
                         secondaryAllign='left'
