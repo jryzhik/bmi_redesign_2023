@@ -51,13 +51,22 @@
     justify-content: center;
     align-items: end;
     width: 90vw;
-    position: absolute;
-    bottom: -5em;
+}
+.progressDonate:hover {
+    cursor: pointer;
+}
+
+.colorButtonDonateContainer {
+    display:flex;
+    height: 17em;
 }
 
 @media (max-width:900px) {
     .progressDonate {
         position: static;
+    }
+    .colorButtonDonateContainer {
+        height: auto;
     }
 }
 

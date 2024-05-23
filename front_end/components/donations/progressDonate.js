@@ -11,9 +11,8 @@ import buttonCSS from '../../styles/Donate/ColorDonate.module.css';
 import { useRouter } from 'next/navigation'
 
 
-export default function ProgressDonate({ imageUrl, outlineColor, percentFilled, primaryHeaderText, secondaryText, passedStyle }) {
+export default function ProgressDonate({ imageUrl, outlineColor, percentFilled, primaryHeaderText, secondaryText, passedStyle, routeURL }) {
     const router = useRouter()
-
     return (
         <>
             <div className={styles.vBox}>
@@ -46,17 +45,19 @@ export default function ProgressDonate({ imageUrl, outlineColor, percentFilled, 
                 <div style={{
                     paddingTop: "1em"
                 }}>
-                    <H3NComponent
-                        primaryHeaderText={primaryHeaderText}
-                        SecondaryComponent={
-                            <P color={theme.colors.CHARCOAL} text={secondaryText} />
-                        }
-                        secondaryAllign='center'
-                    />
+                    <div className={buttonCSS.colorButtonDonateContainer}>
+                        <H3NComponent
+                            primaryHeaderText={primaryHeaderText}
+                            SecondaryComponent={
+                                <P color={theme.colors.CHARCOAL} text={secondaryText} />
+                            }
+                            secondaryAllign='center'
+                        />
+                    </div>
                 </div>
-                <div className={buttonCSS.progressDonate} onClick={() => router.push('/donate')}>
+                <div className={buttonCSS.progressDonate} onClick={() => router.push(routeURL)}>
                     <Grid xs={12} md={4} lg={4} display="flex" justifyContent="center" alignItems="end">
-                        <RoundedButton text='donate' passedStyle={passedStyle}/>
+                        <RoundedButton text='donate' passedStyle={passedStyle} />
                     </Grid>
                 </div>
             </div >

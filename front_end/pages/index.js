@@ -79,7 +79,7 @@ export default function Home({ news, stats }) {
     {
       percentFilled: percentConvert(stats[0].amountRaisedOrphan, stats[0].goalOrphan),
       primaryHeaderText: "Orphan/Adoption Program",
-      secondaryText: `We need ${stats[0].goalOrphan.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })} to support and maintain a Christian facility for orphans.`
+      secondaryText: `We need ${stats[0].goalOrphan.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 })} to adopt, support, and maintain ${stats[0].numberOrphans} orphans in safe, Christian homes.`
     },
   ]
 
@@ -279,6 +279,7 @@ export default function Home({ news, stats }) {
               primaryHeaderText={ProgressValues[0].primaryHeaderText}
               secondaryText={ProgressValues[0].secondaryText}
               passedStyle={passedStyle.dollarButtonMaroon}
+              routeURL={'/literature'}
             />
           </Grid>
           <Grid xs={12} sm={12} md={4} justifyContent="center" >
@@ -289,6 +290,7 @@ export default function Home({ news, stats }) {
               primaryHeaderText={ProgressValues[1].primaryHeaderText}
               secondaryText={ProgressValues[1].secondaryText}
               passedStyle={passedStyle.dollarButtonOrange}
+              routeURL={'/plant'}
             />
           </Grid>
           <Grid xs={12} sm={12} md={4} justifyContent="center" >
@@ -299,10 +301,11 @@ export default function Home({ news, stats }) {
               primaryHeaderText={ProgressValues[2].primaryHeaderText}
               secondaryText={ProgressValues[2].secondaryText}
               passedStyle={passedStyle.dollarButtonBlue}
+              routeURL={'/orphans'}
             />
           </Grid>
         </Grid>
-        <div style={{ paddingTop: '7em'}}/>
+        <div style={{ paddingTop: '2em'}}/>
       <Quote
         imageUrl={directorImage}
         author="Carlos Shmidt"
