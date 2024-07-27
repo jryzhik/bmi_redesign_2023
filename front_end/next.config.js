@@ -13,4 +13,8 @@ module.exports = {
         // Other rewrite rules...
       ];
     },
+    
+    images: {
+      domains: ['mcusercontent.com'],
+    },
   };
