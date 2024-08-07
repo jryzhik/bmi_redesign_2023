@@ -36,7 +36,7 @@ function PercentBarNIcons({
         />
         <ImageNPercentage
           passedImage={passedImage2}
-          percentText={100 - percentRaised} description={`${formatDollarAmount(goal - amountRaised)} Needed`}
+          percentText={Number(100 - percentRaised).toFixed(2)} description={`${formatDollarAmount(goal - amountRaised)} Needed`}
           color={color2}
           opacity={.4}
           colorText={theme.colors.WHITE}
