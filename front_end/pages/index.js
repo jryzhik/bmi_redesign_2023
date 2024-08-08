@@ -91,7 +91,7 @@ export default function Home({ news, stats }) {
       headerText: 'Our initiative to open children daycare centers',
       subText: 'We are on pace to open an additional 30 centers across Belarus. Learn more about how these centers change lives.',
       imageFocus: '50% 20%',
-      link: '/care'
+      link: '/daycare'
     },
     {
       imageUrl: '/img/hero_images/SecondaryOrphanAdoption.jpg',
