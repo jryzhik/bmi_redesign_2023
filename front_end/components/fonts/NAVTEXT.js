@@ -11,7 +11,6 @@ export default function NAVTEXT({ text, link }) {
   return (
     <a
       id="navtxt"
-      href={link}
       className={Roboto.className}
       style={{ color: "inherit", textDecoration: "none" }}
     >

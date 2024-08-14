@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
 import Image from "next/image";
 import NH from "../fonts/NH";
@@ -110,7 +111,9 @@ export default function Footer() {
               <Stack spacing={2}>
                 <NH text={section.section} />
                 {section.links.map((link, idx) => (
-                  <NAVTEXT key={idx} text={link.text} link={link.link} />
+                  <Link key={idx} href={link.link} passHref>
+                    <NAVTEXT text={link.text} />
+                  </Link>
                 ))}
               </Stack>
             </Grid>

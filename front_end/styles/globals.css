@@ -1,10 +1,9 @@
 :root {
-  background-color: #F6F6F6;
+  background-color: #f6f6f6;
 }
 
 html {
   overflow-x: hidden;
-
 }
 body {
   padding: 0;
@@ -51,7 +50,6 @@ h3 {
   margin-bottom: 0;
   margin-top: 0;
   line-height: 2.3125rem;
-
 }
 
 h4 {
@@ -60,7 +58,6 @@ h4 {
   font-size: clamp(1.25em, 5vw, 1.5em);
   margin-bottom: 0;
   margin-top: 0;
-
 }
 
 h5 {
@@ -73,8 +70,6 @@ p {
   line-height: 1.75rem;
   font-size: clamp(1.063em, 2vw, 1.3125em);
   margin: 0;
-
-
 }
 
 #lt {
@@ -89,7 +84,6 @@ p {
   line-height: 0.875rem;
   font-size: 0.75rem;
   text-transform: uppercase;
-
 }
 
 #nt {
@@ -109,8 +103,8 @@ p {
 }
 
 #st {
-  line-height: .75em;
-  font-size: .75em;
+  line-height: 0.75em;
+  font-size: 0.75em;
 }
 
 #nh {
@@ -120,8 +114,8 @@ p {
 
 #navtxt {
   line-height: 1.125rem;
-  font-size: .875rem;
-  font-size: clamp(.65rem, 1.3vw, .875rem);
+  font-size: 0.875rem;
+  font-size: clamp(0.65rem, 1.3vw, 0.875rem);
 }
 
 #smbold {
@@ -154,8 +148,8 @@ button {
 }
 
 button.nextui-c-iWjDFM-gglxka-cv {
-  padding-left: .4em;
-  padding-top: .1em;
+  padding-left: 0.4em;
+  padding-top: 0.1em;
 }
 
 .generalCenter {
@@ -172,7 +166,7 @@ button.nextui-c-iWjDFM-gglxka-cv {
   width: 90%;
 }
 
-.generalCenter>* {
+.generalCenter > * {
   margin: 0;
 }
 
@@ -185,7 +179,7 @@ button.nextui-c-iWjDFM-gglxka-cv {
 .social_box {
   display: flex;
   border: solid;
-  border-color: #D8D8D8;
+  border-color: #d8d8d8;
   border-radius: 4px;
   border-width: 1px;
   min-width: 2rem;
@@ -224,4 +218,24 @@ button.nextui-c-iWjDFM-gglxka-cv {
 }
 .logo:hover {
   cursor: pointer;
+}
+
+/* MARK:: page-transition */
+
+.page-transition-enter {
+  opacity: 0;
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
 }
