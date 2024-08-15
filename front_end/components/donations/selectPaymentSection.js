@@ -12,7 +12,7 @@ export default function SelectPaymentSection({ paymentButtonClickHandle }) {
     }
     return (
         <div className={styles.selectPaymentSection}>
-            <H2 color={theme.colors.BLACK} text="Select your payment option" />
+            <H2 color={theme.colors.BLACK} text="Select your donation option" />
             <div style={{ paddingTop: "5em" }}>
                 <Grid container >
                     <Grid xs={4} md={4} padding={1}>

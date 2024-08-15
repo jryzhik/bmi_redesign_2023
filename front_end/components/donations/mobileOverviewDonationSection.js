@@ -43,7 +43,7 @@ export default function MobileOverviewDonationSection({totalAmount, setCustomDol
                     </div>
                 </Grid>
                 <Grid xs={12} md={12} display="flex" justifyContent="center" alignItems="center" paddingTop={4} paddingBottom={3} width={"70%"}>
-                    <RoundedButton text={currentScreenIndex === 3 ? "overview" : currentScreenIndex === 4 ? "give" : currentScreenIndex === 5 ? "close" : "continue to payment"} passedStyle={passedStyle.dollarButtonBlack} callBackFunction={nextPageNValidate} />
+                    <RoundedButton text={currentScreenIndex === 3 ? "overview" : currentScreenIndex === 4 ? "give" : currentScreenIndex === 5 ? "close" : "continue to donation"} passedStyle={passedStyle.dollarButtonBlack} callBackFunction={nextPageNValidate} />
                 </Grid>
             </Grid>
         </>

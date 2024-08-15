@@ -13,7 +13,7 @@ export default function MobileSelectPaymentSection({ paymentButtonClickHandle })
     return (
         <Grid container justifyContent={"center"}>
             <Grid xs={12} md={12} display={"flex"} paddingBottom={3} paddingTop={1} justifyContent={"center"}>
-                <H3 color={theme.colors.BLACK} text="Select your payment option" />
+                <H3 color={theme.colors.BLACK} text="Select your donation option" />
             </Grid>
             <Grid xs={12} md={12} display={"flex"} padding={.5} justifyContent={"center"}>
                 <MobilePaymentProviderButton

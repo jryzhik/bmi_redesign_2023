@@ -72,7 +72,7 @@ function Payment({ totalAmount, firstName, lastName, email, selectedPaymentOptio
       {clientSecret && stripePromise && (
         <>
           <div style={addressVisible}>
-            <H2 color={theme.colors.BLACK} text="Enter your payment details." />
+            <H2 color={theme.colors.BLACK} text="Enter your donation details." />
           </div>
           <div style={{ paddingTop: "3em" }}>
             <Elements stripe={stripePromise} options={{ clientSecret, loader }}>
