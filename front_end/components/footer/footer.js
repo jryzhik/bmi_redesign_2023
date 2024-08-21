@@ -79,8 +79,11 @@ const footerNavData = [
   {
     section: "Store",
     links: [
-      { text: "Books", link: "/store" },
-      { text: "Apparel", link: "/store" },
+      { text: "Store", link: "https://shop.belarusmission.org/" },
+      {
+        text: "All products",
+        link: "https://shop.belarusmission.org/collections/all",
+      },
     ],
   },
 ];
