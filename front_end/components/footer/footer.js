@@ -89,7 +89,7 @@ const footerNavData = [
 
 export default function Footer() {
   return (
-    <Stack spacing={2} className="generalCenter">
+      <Stack spacing={5} className="generalCenter">
       <Grid container spacing={3}
             alignItems="start">
         {/* Логотип выровнен по левому краю без дополнительного отступа */}
@@ -123,11 +123,13 @@ export default function Footer() {
           ))}
         </Grid>
       </Grid>
+        <Stack spacing={2.5}>
       <Social />
       <NAVTEXT
         text={`© Copyright 2000 - ${currentYear} | All Rights Reserved`}
         link="#"
       />
+        </Stack>
       <Spacer y={1.2} />
     </Stack>
   );
