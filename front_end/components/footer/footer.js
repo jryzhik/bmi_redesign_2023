@@ -5,8 +5,7 @@ import Image from "next/image";
 import NH from "../fonts/NH";
 import NAVTEXT from "../fonts/NAVTEXT";
 import Stack from "@mui/material/Stack";
-import { Spacer } from "@nextui-org/react";
-import styles from "../../styles/Footers/Foot.module.css";
+import {Spacer} from "@nextui-org/react";
 import Social from "./social";
 
 var currentYear = new Date().getFullYear();
@@ -91,24 +90,25 @@ const footerNavData = [
 export default function Footer() {
   return (
     <Stack spacing={2} className="generalCenter">
-      <Grid container spacing={3} alignItems="start">
+      <Grid container spacing={3}
+            alignItems="start">
         {/* Логотип выровнен по левому краю без дополнительного отступа */}
         <Grid
-          item
-          xs={12}
-          sm={12}
-          md={12}
-          display="flex"
-          justifyContent="flex-start"
+            item
+            xs={3}
+            sm={3}
+            md={3}
+            display="flex"
+            justifyContent="flex-start"
         >
           <Image
-            src="img/logos/logo_stack.svg"
-            alt="BMI"
-            width={187}
-            height={91.8}
+              src="img/logos/logo_stack.svg"
+              alt="BMI"
+              width={187}
+              height={91.8}
           />
         </Grid>
-        <Grid item container xs={12} spacing={4} justifyContent="flex-start">
+        <Grid item container xs={9} spacing={4} justifyContent="flex-start">
           {footerNavData.map((section, index) => (
             <Grid key={index} item xs={6} sm={4} md={2}>
               <Stack spacing={2}>
