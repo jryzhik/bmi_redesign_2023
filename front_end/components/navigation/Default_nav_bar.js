@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import styles from "../../styles/Navigation/Nav.module.css";
 import Image from "next/image";
 import NAVTEXT from "../fonts/NAVTEXT";
