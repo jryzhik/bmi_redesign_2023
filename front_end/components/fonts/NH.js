@@ -1,14 +1,11 @@
 import React from 'react'
-import {
-    Roboto_Slab
-} from "next/font/google"
+import {Roboto_Slab} from "next/font/google"
 
 const Roboto = Roboto_Slab(
     {
         subsets: ['latin'],
         weight: ["300", "600"],
         style: ['normal']
-
     }
 )
 
