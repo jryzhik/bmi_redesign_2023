@@ -97,15 +97,18 @@ export default function Footer() {
           }}
       >
       <Grid container spacing={3}
-            alignItems="start">
+            alignItems="start"
+            sx={{justifyContent: {xs: 'center', md: 'initial'}}}
+      >
         {/* Логотип выровнен по левому краю без дополнительного отступа */}
         <Grid
             item
-            xs={3}
-            sm={3}
+            xs={12}
             md={3}
             display="flex"
-            justifyContent="flex-start"
+            sx={{
+              justifyContent: {xs: "center", md: "flex-start"}
+            }}
         >
           <Image
               src="img/logos/logo_stack.svg"
@@ -114,22 +117,32 @@ export default function Footer() {
               height={91.8}
           />
         </Grid>
-        <Grid item container xs={9} spacing={4} justifyContent="flex-start">
+        <Grid
+            item
+            container
+            xs={12}
+            md={8}
+            spacing={4}
+            justifyContent="flex-start"
+            sx={{
+              margin: {xs: "20px auto 0 auto", md: "20px 0 0 0"},
+            }}
+        >
           {footerNavData.map((section, index) => (
-            <Grid key={index} item xs={6} sm={4} md={2}>
-              <Stack spacing={2}>
-                <NH text={section.section} />
-                {section.links.map((link, idx) => (
-                  <Link key={idx} href={link.link} passHref>
-                    <NAVTEXT text={link.text} />
-                  </Link>
-                ))}
-              </Stack>
-            </Grid>
+              <Grid key={index} item xs={6} sm={4} md={2}>
+                <Stack spacing={2}>
+                  <NH text={section.section}/>
+                  {section.links.map((link, idx) => (
+                      <Link key={idx} href={link.link} passHref>
+                        <NAVTEXT text={link.text}/>
+                      </Link>
+                  ))}
+                </Stack>
+              </Grid>
           ))}
         </Grid>
       </Grid>
-        <Stack spacing={2.5}>
+        <Stack spacing={2}>
       <Social />
       <NAVTEXT
         text={`© Copyright 2000 - ${currentYear} | All Rights Reserved`}
