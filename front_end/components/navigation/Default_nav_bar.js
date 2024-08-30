@@ -5,8 +5,6 @@ import NAVTEXT from "../fonts/NAVTEXT";
 import NH from "../fonts/NH";
 import Link from "next/link";
 
-import { useState } from "react";
-
 import theme from "../../styles/theme.js";
 
 export default function Default_nav_bar({ menu }) {
