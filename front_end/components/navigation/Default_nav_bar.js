@@ -11,13 +11,22 @@ import theme from "../../styles/theme.js";
 
 export default function Default_nav_bar({ menu }) {
   const [hoveredItem, setHoveredItem] = useState(null);
+    const [hoverTimeout, setHoverTimeout] = useState(null);
 
-  const handleMouseEnter = (index) => {
-    setHoveredItem(index);
-  };
+    const handleMouseEnter = (index) => {
+        if (hoverTimeout) {
+            clearTimeout(hoverTimeout);
+            setHoverTimeout(null);
+        }
+        setHoveredItem(index);
+    };
 
   const handleMouseLeave = () => {
-    setHoveredItem(null);
+      const timeout = setTimeout(() => {
+          setHoveredItem(null);
+      }, 1500);
+
+      setHoverTimeout(timeout);
   };
 
   const [hoveredItemSubMenu, sethoveredItemSubMenu] = useState(null);
