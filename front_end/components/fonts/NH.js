@@ -6,7 +6,7 @@ import {
 const Roboto = Roboto_Slab(
     {
         subsets: ['latin'],
-        weight: ['600'],
+        weight: ["300", "600"],
         style: ['normal']
 
     }
