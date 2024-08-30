@@ -63,12 +63,19 @@ export default function Default_nav_bar({ menu }) {
                         <NH
                           text={menu_item.primary[0]}
                           color={theme.colors.BLACK}
+                          fontweight="300"
+                          decoration="underline"
                         />
                       </Link>
                     </>
                   ) : (
                     <>
-                      <NH text={menu_item.primary} color={theme.colors.BLACK} />
+                        <NH
+                            text={menu_item.primary}
+                            color={theme.colors.BLACK}
+                            fontweight="300"
+                            decoration="underline"
+                        />
                     </>
                   )}
                 </div>
@@ -90,6 +97,8 @@ export default function Default_nav_bar({ menu }) {
                                 key={subIndex}
                                 text={sub_item[0]}
                                 color={theme.colors.BLACK}
+                                fontweight="300"
+                                decoration="underline"
                               />
                             </Link>
                           </React.Fragment>
