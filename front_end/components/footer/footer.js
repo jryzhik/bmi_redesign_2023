@@ -89,7 +89,13 @@ const footerNavData = [
 
 export default function Footer() {
   return (
-      <Stack spacing={5} className="generalCenter">
+      <Stack
+          spacing={5}
+          alignItems="center"
+          sx={{
+            paddingTop: "60px",
+          }}
+      >
       <Grid container spacing={3}
             alignItems="start">
         {/* Логотип выровнен по левому краю без дополнительного отступа */}
