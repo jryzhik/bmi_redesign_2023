@@ -120,7 +120,7 @@ export default function Footer() {
         <Grid
             item
             container
-            xs={12}
+            xs={6}
             md={8}
             spacing={4}
             justifyContent="flex-start"
