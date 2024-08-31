@@ -65,25 +65,47 @@ export default function Default_nav_bar({ menu }) {
               <React.Fragment>
                 <div className={styles.hoverME}>
                   {Array.isArray(menu_item.primary) ? (
-                    <>
-                      <Link href={"/" + menu_item.primary[1]}>
-                        <NH
-                          text={menu_item.primary[0]}
-                          color={theme.colors.BLACK}
-                          fontweight="300"
-                          decoration="underline"
-                        />
-                      </Link>
-                    </>
+                      menu_item.primary[1] === router.pathname.replace("/", "") ?
+                          (
+                              <NH
+                                  text={menu_item.primary[0]}
+                                  color={theme.colors.BLACK}
+                                  fontweight="600"
+                              />
+                          )
+                          :
+                          (
+                              <Link href={"/" + menu_item.primary[1]}>
+                                  <NH
+                                      text={menu_item.primary[0]}
+                                      color={theme.colors.BLACK}
+                                      fontweight="300"
+                                      decoration="underline"
+                                  />
+                              </Link>
+                          )
                   ) : (
-                    <>
-                        <NH
-                            text={menu_item.primary}
-                            color={theme.colors.BLACK}
-                            fontweight="300"
-                            decoration="underline"
-                        />
-                    </>
+                      isLinkActive(router.pathname, menu_item.secondary) ?
+                          (
+                              <>
+                                  <NH
+                                      text={menu_item.primary}
+                                      color={theme.colors.BLACK}
+                                      fontweight="600"
+                                  />
+                              </>
+
+                          ) : (
+                              <Link href={"/" + menu_item.primary[1]}>
+                                  <NH
+                                      text={menu_item.primary}
+                                      color={theme.colors.BLACK}
+                                      decoration="underline"
+                                      fontweight="300"
+
+                                  />
+                              </Link>
+                          )
                   )}
                 </div>
 
@@ -98,17 +120,31 @@ export default function Default_nav_bar({ menu }) {
                         onMouseLeave={handleMouseLeaveSub}
                       >
                         {hoveredItemSubMenu === subIndex ? (
-                          <React.Fragment>
-                            <Link href={"/" + sub_item[1]}>
-                              <NH
-                                key={subIndex}
-                                text={sub_item[0]}
-                                color={theme.colors.BLACK}
-                                fontweight="300"
-                                decoration="underline"
-                              />
-                            </Link>
-                          </React.Fragment>
+                            sub_item[1] === router.pathname.replace("/", "") ?
+                                (
+                                    <React.Fragment>
+                                        <Link href={"/" + sub_item[1]}>
+                                            <NH
+                                                key={subIndex}
+                                                text={sub_item[0]}
+                                                color={theme.colors.BLACK}
+                                                fontweight="600"
+                                            />
+                                        </Link>
+                                    </React.Fragment>
+                                ) : (
+                                    <React.Fragment>
+                                        <Link href={"/" + sub_item[1]}>
+                                            <NH
+                                                key={subIndex}
+                                                text={sub_item[0]}
+                                                color={theme.colors.BLACK}
+                                                fontweight="300"
+                                                decoration="underline"
+                                            />
+                                        </Link>
+                                    </React.Fragment>
+                                )
                         ) : (
                             sub_item[1] === router.pathname.replace("/", "") ?
                                 (
@@ -116,8 +152,7 @@ export default function Default_nav_bar({ menu }) {
                                         key={subIndex}
                                         text={sub_item[0]}
                                         color={theme.colors.BLACK}
-                                        fontweight="300"
-                                        decoration="underline"
+                                        fontweight="600"
                                     />
                                 ) : (
                                     <Link href={"/" + sub_item[1]}>
@@ -139,26 +174,27 @@ export default function Default_nav_bar({ menu }) {
                 {Array.isArray(menu_item.primary) ? (
                     menu_item.primary[1] === router.pathname.replace("/", "") ?
                         (
+
                             <NH
                                 text={menu_item.primary[0]}
                                 color={theme.colors.BLACK}
-                                fontweight="300"
-                                decoration="underline"
+                                fontweight="600"
                             />
                         )
                         :
-                        (<NAVTEXT
-                    text={menu_item.primary[0]}
-                    color={theme.colors.BLACK}
-                        />)
+                        (
+                            <NAVTEXT
+                                text={menu_item.primary[0]}
+                                color={theme.colors.BLACK}
+                            />
+                        )
                 ) : (
                     isLinkActive(router.pathname, menu_item.secondary) ?
                         (
                             <NH
                                 text={menu_item.primary}
                                 color={theme.colors.BLACK}
-                                fontweight="300"
-                                decoration="underline"
+                                fontweight="600"
                             />
                         )
                         : (
