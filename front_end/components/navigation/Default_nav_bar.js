@@ -96,7 +96,6 @@ export default function Default_nav_bar({ menu }) {
                               </>
 
                           ) : (
-                              <Link href={"/" + menu_item.primary[1]}>
                                   <NH
                                       text={menu_item.primary}
                                       color={theme.colors.BLACK}
@@ -104,7 +103,6 @@ export default function Default_nav_bar({ menu }) {
                                       fontweight="300"
 
                                   />
-                              </Link>
                           )
                   )}
                 </div>
