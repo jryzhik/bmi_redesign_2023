@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, {useEffect, useState} from 'react'
 import styles from '../../styles/Navigation/Nav.module.css';
 import Image from 'next/image';
 import exitIcon from '../../public/img/icons/exit.svg';
