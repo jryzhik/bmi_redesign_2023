@@ -50,22 +50,34 @@ export default function Mobile_menu({ menuExpanded, toggleMenu, menuArray }) {
                             item.secondary == null ? (
                                 <Link href={'/' + item.primary[1]}>
                                     <div onClick={toggleMenu}>
-                                        <H3 text={item.primary[0]} />
+                                        <H3 text={item.primary[0]}
+                                            textDecoration={item.primary[1] === router.pathname.replace("/", "") ? "underline" : "none"}/>
                                     </div>
                                 </Link>
                             )
                                 : (
-                                    <H3 text={item.primary[0]} />
+                                    <H3 text={item.primary[0]}
+                                        textDecoration={isLinkActive(router.pathname, item.secondary) ? "underline" : "none"}/>
                                 )
                         ) : (
-                            <H3 text={item.primary} />
+                            <H3 text={item.primary}
+                                textDecoration={isLinkActive(router.pathname, item.secondary) ? "underline" : "none"}/>
                         )}
-                        <div className={index === focusedIndex ? styles.page_container_linksACTIVE : styles.page_container_linksOFF} style={{ display: "flex", flexDirection: "column", gap: ".1em", paddingLeft: "1em" }}>
+                        <div
+                            className={index === focusedIndex || isLinkActive(router.pathname, item.secondary) ? styles.page_container_linksACTIVE : styles.page_container_linksOFF}
+                            style={{display: "flex", flexDirection: "column", gap: ".1em", paddingLeft: "1em"}}>
                             {item.secondary !== null ? (
                                 item.secondary.map((subpage) => (
                                     <Link href={'/' + subpage[1]}>
                                         <div onClick={toggleMenu} style={{ paddingTop: ".15em", paddingBottom: ".15em" }}>
-                                            <P text={subpage[0]} />
+                                            {
+                                                subpage[1] === router.pathname.replace("/", "") ?
+                                                    (
+                                                        <P text={subpage[0]} textDecoration={"underline"}/>
+                                                    ) : (
+                                                        <P text={subpage[0]}/>
+                                                    )
+                                            }
                                         </div>
                                     </Link>
                                 ))
