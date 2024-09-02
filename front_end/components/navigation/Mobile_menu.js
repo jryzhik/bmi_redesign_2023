@@ -7,6 +7,9 @@ import P from '../fonts/P';
 import Link from 'next/link';
 import {useRouter} from "next/router";
 
+const isLinkActive = (link, menu) => {
+    if (menu) return menu.some(([text, url]) => url === link.replace("/", ""))
+};
 
 export default function Mobile_menu({ menuExpanded, toggleMenu, menuArray }) {
     const [menuExpandedStyle, setmenuExpandedStyle] = useState(styles.mobile_menu_containerOFF)
