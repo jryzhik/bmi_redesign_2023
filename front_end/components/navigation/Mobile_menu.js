@@ -5,11 +5,13 @@ import exitIcon from '../../public/img/icons/exit.svg';
 import H3 from '../fonts/H3';
 import P from '../fonts/P';
 import Link from 'next/link';
+import {useRouter} from "next/router";
 
 
 export default function Mobile_menu({ menuExpanded, toggleMenu, menuArray }) {
     const [menuExpandedStyle, setmenuExpandedStyle] = useState(styles.mobile_menu_containerOFF)
     const [focusedIndex, setFocusedIndex] = useState()
+    const router = useRouter();
 
     useEffect(() => {
         if (menuExpanded) {
