@@ -1,11 +1,9 @@
-import React, { useState } from 'react'
-import RoundedPhoto from './roundedPhoto'
+import React, {useState} from 'react';
+import RoundedPhoto from './roundedPhoto';
 import styles from '../../styles/Images/Images.module.css';
 import Image from 'next/image';
 import H2NComponent from '../texts/h2NComponent';
-import H4NComponent from '../texts/h4NComponent';
 import P from '../fonts/P';
-import H4 from '../fonts/H4';
 
 export default function SlideNewsGalleryHome({ newsArray }) {
     const [currentIndex, setCurrentIndex] = useState(0)
@@ -68,8 +66,10 @@ export default function SlideNewsGalleryHome({ newsArray }) {
         <>
             <div className={styles.galleryBoxHome}>
                 <div className={styles.arrowsHome}>
-                    <Image onClick={handleClickBack} src="/img/icons/left_arrow_gallery.svg" alt='arrow' width={0} height={0} style={{ width: '50%', height: 'auto' }} />
-                    <Image onClick={handleClickFront} src="/img/icons/right_arrow_gallery.svg" alt='arrow' width={0} height={0} style={{ width: '50%', height: 'auto' }} />
+                    <Image onClick={handleClickBack} src="/img/icons/left_arrow_gallery.svg" alt="arrow" width={0}
+                           height={0} style={{width: '5%', height: 'auto'}} />
+                    <Image onClick={handleClickFront} src="/img/icons/right_arrow_gallery.svg" alt="arrow" width={0}
+                           height={0} style={{width: '5%', height: 'auto'}} />
                 </div>
                 <div className={styles.imageNComp}>
                     <div

@@ -132,9 +132,10 @@
 .arrowsHome {
     display: flex;
     position: absolute;
-    left: 1vw;
-    justify-content: center;
-    gap: 90vw;
+    width: 100%;
+    padding: 0 1vw;
+    left: 0;
+    justify-content: space-between;
     z-index: 50;
     margin-bottom: 18vw;
     align-self: center;
