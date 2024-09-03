@@ -1,20 +1,20 @@
 module.exports = {
-   
     async rewrites() {
-      return [
-        {
-          source: '/stripe/create-payment-intent/:path*',
-          destination: 'http://localhost:5252/stripe/create-payment-intent/:path*',
-        },
-        {
-          source: '/stripe/config/:path*',
-          destination: 'http://localhost:5252/stripe/config/:path*',
-        },
-        // Other rewrite rules...
-      ];
+        return [
+            {
+                source: "/stripe/create-payment-intent/:path*",
+                destination:
+                    "http://localhost:5252/stripe/create-payment-intent/:path*",
+            },
+            {
+                source: "/stripe/config/:path*",
+                destination: "http://localhost:5252/stripe/config/:path*",
+            },
+            // Other rewrite rules...
+        ];
     },
-    
+
     images: {
-      domains: ['mcusercontent.com'],
+        domains: ["mcusercontent.com"],
     },
-  };
+};
