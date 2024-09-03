@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import theme from '../../styles/theme.js';
 import Link from 'next/link';
 import styles from '../../styles/Navigation/Nav.module.css';
 import Image from 'next/image';
@@ -10,6 +9,16 @@ export default function Mobile_nav_bar({menu}) {
 
   function toggleMenu() {
     setmenuExpanded(!menuExpanded);
+    if (!menuExpanded) {
+      document.body.style.overflowY = 'hidden';
+      document.body.style.width = '100vw';
+      document.body.style.height = '100vh';
+    } else {
+      document.body.style.removeProperty('overflow-y');
+      document.body.style.removeProperty('height');
+      document.body.style.removeProperty('width');
+
+    }
   }
   return (
     <>
