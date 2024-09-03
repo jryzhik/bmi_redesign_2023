@@ -1,12 +1,12 @@
 import React from "react";
 import Link from "next/link";
-import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
 import Image from "next/image";
 import NH from "../fonts/NH";
 import NAVTEXT from "../fonts/NAVTEXT";
 import Stack from "@mui/material/Stack";
 import {Spacer} from "@nextui-org/react";
 import Social from "./social";
+import styles from '../../styles/Footers/Foot.module.css'
 
 var currentYear = new Date().getFullYear();
 
@@ -89,17 +89,19 @@ const footerNavData = [
 
 export default function Footer() {
   return (
-      <Stack spacing={5} className="generalCenter">
-      <Grid container spacing={3}
-            alignItems="start">
+      <Stack
+          spacing={5}
+          alignItems="center"
+          sx={{
+            paddingTop: "60px",
+          }}
+      >
+        <div
+            className={styles.footer__container}
+      >
         {/* Логотип выровнен по левому краю без дополнительного отступа */}
-        <Grid
-            item
-            xs={3}
-            sm={3}
-            md={3}
-            display="flex"
-            justifyContent="flex-start"
+          <span
+              className={styles.footer__logo}
         >
           <Image
               src="img/logos/logo_stack.svg"
@@ -107,23 +109,26 @@ export default function Footer() {
               width={187}
               height={91.8}
           />
-        </Grid>
-        <Grid item container xs={9} spacing={4} justifyContent="flex-start">
+        </span>
+          <ul
+              className={styles.footer__nav}
+        >
           {footerNavData.map((section, index) => (
-            <Grid key={index} item xs={6} sm={4} md={2}>
-              <Stack spacing={2}>
-                <NH text={section.section} />
-                {section.links.map((link, idx) => (
-                  <Link key={idx} href={link.link} passHref>
-                    <NAVTEXT text={link.text} />
-                  </Link>
-                ))}
-              </Stack>
-            </Grid>
+              <li
+                  className={styles.footer__item}
+                  key={index}
+              >
+                  <NH text={section.section}/>
+                  {section.links.map((link, idx) => (
+                      <Link key={idx} href={link.link} passHref>
+                        <NAVTEXT text={link.text}/>
+                      </Link>
+                  ))}
+              </li>
           ))}
-        </Grid>
-      </Grid>
-        <Stack spacing={2.5}>
+          </ul>
+        </div>
+        <Stack spacing={2}>
       <Social />
       <NAVTEXT
         text={`© Copyright 2000 - ${currentYear} | All Rights Reserved`}

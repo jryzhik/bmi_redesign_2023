@@ -172,8 +172,8 @@ button.nextui-c-iWjDFM-gglxka-cv {
 
 .social_buttons {
   display: flex;
-  justify-content: space-evenly;
-  gap: 1em;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .social_box {

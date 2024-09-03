@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import Default_nav_bar from './navigation/Default_nav_bar';
 import Footer from './footer/footer';
 import Mobile_nav_bar from './navigation/Mobile_nav_bar';
@@ -69,6 +69,7 @@ export default function Layout({ children }) {
                     <>
                         <Mobile_nav_bar menu={menu} />
                         <main>{children}</main>
+                        <Footer/>
                     </>
 
                 ) : (

@@ -1,5 +1,5 @@
 import React from "react";
-import { Roboto_Slab } from "next/font/google";
+import {Roboto_Slab} from "next/font/google";
 
 const Roboto = Roboto_Slab({
   subsets: ["latin"],
@@ -7,14 +7,14 @@ const Roboto = Roboto_Slab({
   style: ["normal"],
 });
 
-export default function NAVTEXT({ text, link }) {
+export default function NAVTEXT({text}) {
   return (
-    <a
+      <span
       id="navtxt"
       className={Roboto.className}
-      style={{ color: "inherit", textDecoration: "none" }}
+      style={{color: "inherit", textDecoration: "none", whiteSpace: "nowrap"}}
     >
       {text}
-    </a>
+    </span>
   );
 }
