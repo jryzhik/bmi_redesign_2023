@@ -1,5 +1,5 @@
 import React from "react";
-import { Roboto_Slab } from "next/font/google";
+import {Roboto_Slab} from "next/font/google";
 
 const Roboto = Roboto_Slab({
   subsets: ["latin"],
@@ -20,6 +20,7 @@ export default function NH(props) {
         textDecoration: props.decoration || "none",
         borderBottom:
           props.decoration === "underline" ? "1px solid transparent" : "none",
+          textWrap: "nowrap",
       }}
       className={Roboto.className}
     >
