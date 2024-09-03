@@ -12,7 +12,7 @@ export default function NAVTEXT({text}) {
       <span
       id="navtxt"
       className={Roboto.className}
-      style={{ color: "inherit", textDecoration: "none" }}
+      style={{color: "inherit", textDecoration: "none", whiteSpace: "nowrap"}}
     >
       {text}
     </span>

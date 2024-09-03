@@ -1,7 +1,5 @@
 import React from 'react'
-import {
-    Roboto_Slab
-} from "next/font/google"
+import {Roboto_Slab} from "next/font/google"
 
 const Roboto = Roboto_Slab(
     {
@@ -14,6 +12,6 @@ const Roboto = Roboto_Slab(
 
 export default function NH(props) {
     return (
-        <div id='nh' style={{ color: props.color }} className={Roboto.className}>{props.text}</div>
+        <div id='nh' style={{color: props.color, whiteSpace: "nowrap"}} className={Roboto.className}>{props.text}</div>
     )
 }
