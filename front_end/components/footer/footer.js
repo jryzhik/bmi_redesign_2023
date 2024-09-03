@@ -120,7 +120,7 @@ export default function Footer() {
               >
                   <NH text={section.section}/>
                   {section.links.map((link, idx) => (
-                      <Link key={idx} href={link.link} passHref>
+                      <Link className={styles.footer__link} key={idx} href={link.link} passHref>
                         <NAVTEXT text={link.text}/>
                       </Link>
                   ))}
