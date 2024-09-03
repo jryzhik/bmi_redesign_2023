@@ -10,3 +10,79 @@
         margin-bottom: 20px;
       }
 }
+
+.footer {
+}
+
+.footer__container {
+    width: 100%;
+    padding: 0 17vw;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr;
+    margin: auto 0;
+    align-items: start;
+    grid-template-areas: "logo logo no nav nav nav nav nav nav nav nav nav";
+}
+
+.footer__logo {
+    grid-column: 3 span;
+    display: flex;
+    justify-content: flex-start;
+    column-gap: 20px;
+    grid-area: logo;
+}
+
+.footer__nav {
+    grid-column: 8 span;
+    gap: 64px;
+    column-count: 5; /* Устанавливаем количество колонок */
+    grid-area: nav;
+}
+
+.footer__item {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    break-inside: avoid; /* Чтобы каждый элемент полностью располагался в колонке */
+    margin-bottom: 4rem; /* Отступ между элементами по вертикали */
+    gap: 1em;
+}
+
+@media (max-width: 1000px) {
+    .footer__container {
+        justify-content: center;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-areas: "logo logo logo logo logo logo" "nav nav nav nav nav nav";
+        gap: 64px;
+    }
+
+    .footer__logo {
+        grid-column: 6 span;
+        justify-content: center;
+    }
+
+    .footer__nav {
+        grid-column: 6 span;
+    }
+
+    .footer__item {
+        margin-bottom: 3rem;
+    }
+}
+
+@media (max-width: 1440px) {
+    .footer__container {
+        padding: 0 10vw;
+    }
+
+    .footer__nav {
+        column-count: 4;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer__nav {
+        column-count: 2;
+    }
+}

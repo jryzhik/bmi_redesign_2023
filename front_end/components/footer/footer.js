@@ -1,12 +1,12 @@
 import React from "react";
 import Link from "next/link";
-import Grid from "@mui/material/Unstable_Grid2"; // Grid version 2
 import Image from "next/image";
 import NH from "../fonts/NH";
 import NAVTEXT from "../fonts/NAVTEXT";
 import Stack from "@mui/material/Stack";
 import {Spacer} from "@nextui-org/react";
 import Social from "./social";
+import styles from '../../styles/Footers/Foot.module.css'
 
 var currentYear = new Date().getFullYear();
 
@@ -96,19 +96,12 @@ export default function Footer() {
             paddingTop: "60px",
           }}
       >
-      <Grid container spacing={3}
-            alignItems="start"
-            sx={{justifyContent: {xs: 'center', md: 'initial'}}}
+        <div
+            className={styles.footer__container}
       >
         {/* Логотип выровнен по левому краю без дополнительного отступа */}
-        <Grid
-            item
-            xs={12}
-            md={3}
-            display="flex"
-            sx={{
-              justifyContent: {xs: "center", md: "flex-start"}
-            }}
+          <span
+              className={styles.footer__logo}
         >
           <Image
               src="img/logos/logo_stack.svg"
@@ -116,32 +109,25 @@ export default function Footer() {
               width={187}
               height={91.8}
           />
-        </Grid>
-        <Grid
-            item
-            container
-            xs={6}
-            md={8}
-            spacing={4}
-            justifyContent="flex-start"
-            sx={{
-              margin: {xs: "20px auto 0 auto", md: "20px 0 0 0"},
-            }}
+        </span>
+          <ul
+              className={styles.footer__nav}
         >
           {footerNavData.map((section, index) => (
-              <Grid key={index} item xs={6} sm={4} md={2}>
-                <Stack spacing={2}>
+              <li
+                  className={styles.footer__item}
+                  key={index}
+              >
                   <NH text={section.section}/>
                   {section.links.map((link, idx) => (
                       <Link key={idx} href={link.link} passHref>
                         <NAVTEXT text={link.text}/>
                       </Link>
                   ))}
-                </Stack>
-              </Grid>
+              </li>
           ))}
-        </Grid>
-      </Grid>
+          </ul>
+        </div>
         <Stack spacing={2}>
       <Social />
       <NAVTEXT
