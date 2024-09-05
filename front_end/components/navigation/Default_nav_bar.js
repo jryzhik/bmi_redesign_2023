@@ -1,11 +1,11 @@
-import React, {useState} from "react";
-import styles from "../../styles/Navigation/Nav.module.css";
-import Image from "next/image";
-import NAVTEXT from "../fonts/NAVTEXT";
-import NH from "../fonts/NH";
-import Link from "next/link";
-import {useRouter} from "next/router";
-import theme from "../../styles/theme.js";
+import React, {useEffect, useState} from 'react';
+import styles from '../../styles/Navigation/Nav.module.css';
+import Image from 'next/image';
+import NAVTEXT from '../fonts/NAVTEXT';
+import NH from '../fonts/NH';
+import Link from 'next/link';
+import {useRouter} from 'next/router';
+import theme from '../../styles/theme.js';
 
 export default function Default_nav_bar({ menu }) {
   const [hoveredItem, setHoveredItem] = useState(null);
@@ -43,6 +43,13 @@ export default function Default_nav_bar({ menu }) {
 
     const router = useRouter();
 
+  useEffect(() => {
+    if (hoverTimeout) {
+      clearTimeout(hoverTimeout);
+      setHoverTimeout(null);
+    }
+    setHoveredItem(null);
+  }, [router]);
 
   return (
     <div className={styles.container}>
