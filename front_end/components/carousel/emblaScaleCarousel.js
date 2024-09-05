@@ -1,0 +1,32 @@
+import React from 'react';
+import Styles from '../../styles/Carousel/CarouselScale.module.css';
+import H2NComponent from '../texts/h2NComponent';
+import P from '../fonts/P';
+import RoundedPhoto from '../images/roundedPhoto';
+import theme from '../../styles/theme';
+
+const EmblaScaleCarousel = (props) => {
+  const {slides} = props;
+  return slides.map(({_id, imageUrl, title, url, description}) => (
+    <a className={Styles.slideEmblaScale} key={_id} href={url}>
+      <article>
+        <RoundedPhoto
+          imageUrl={imageUrl}
+          containerStyle={{marginBottom: '2rem'}}
+        />
+        {title ? (
+          <H2NComponent
+            primaryHeaderText={title}
+            primaryStyle={{textAlign: 'center'}}
+            SecondaryComponent={
+              <P style={{color: theme.colors.CHARCOAL}} text={description} />
+            }
+            secondaryAllign="center"
+          />
+        ) : null}
+      </article>
+    </a>
+  ));
+};
+
+export default EmblaScaleCarousel;
