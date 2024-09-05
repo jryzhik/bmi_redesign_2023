@@ -11,7 +11,7 @@ import H1 from '../fonts/H1';
 const EmblaHomeHeroCarousel = (props) => {
   const {slides} = props;
   return slides.map(
-    ({headerText, subText, imageUrl, imageFocus, scale, color1, color2}) => (
+    ({headerText, subText, imageUrl, imageFocus, color1, color2}) => (
       <article className={Styles.slideEmblaHero} key={headerText}>
         <div
           style={{
