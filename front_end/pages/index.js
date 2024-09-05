@@ -235,7 +235,7 @@ export default function Home({news, stats}) {
 
       <EmblaCarousel
         dots
-        style={{marginBottom: '5rem'}}
+        style={{marginBottom: '7rem'}}
         autoplay={{
           playOnInit: true,
           delay: 3000,

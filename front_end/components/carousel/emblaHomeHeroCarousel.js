@@ -49,8 +49,8 @@ const EmblaHomeHeroCarousel = (props) => {
           <Image
             priority={true}
             src={imageUrl}
-            className={styles.image}
             alt="Background"
+            className={styles.image}
             width={1440}
             height={1471}
             quality={80}
@@ -65,7 +65,6 @@ const EmblaHomeHeroCarousel = (props) => {
               zIndex: -100,
               borderBottomLeftRadius: '7px',
               borderBottomRightRadius: '7px',
-              transform: `scale(${scale})`,
               priority: true,
             }}
           />
@@ -74,6 +73,7 @@ const EmblaHomeHeroCarousel = (props) => {
           className={styles.gradientOverlay}
           style={{
             backgroundImage: `linear-gradient(${color1},${color2}, transparent)`,
+            zIndex: -80,
           }}
         />
       </article>
