@@ -26,6 +26,9 @@
     "stripe": "^12.17.0"
   },
   "devDependencies": {
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "stylelint": "16.9.0",
+    "stylelint-order": "6.0.4",
+    "stylelint-config-recommended": "^14.0.1"
   }
 }
