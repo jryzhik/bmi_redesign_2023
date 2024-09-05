@@ -28,7 +28,7 @@
 
 .embla__dots {
     position: absolute;
-    right: 45%;
+    left: 50%;
     bottom: -2.5vh;
     z-index: 3;
     display: flex;
