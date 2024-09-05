@@ -1,0 +1,14 @@
+.slideEmblaScale {
+    --slide-height: 19rem;
+    --slide-spacing: 1rem;
+    --slide-size: 700px;
+    flex: 1 0 var(--slide-size);
+    padding-left: var(--slide-spacing);
+    min-width: 0;
+    transform: translate3d(0, 0, 0);
+    transition: opacity 0.3s ease-in-out;
+}
+
+.slideEmblaScale:not(.isSnapped) {
+    opacity: .8
+}
