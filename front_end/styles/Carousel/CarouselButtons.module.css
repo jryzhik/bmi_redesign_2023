@@ -1,0 +1,25 @@
+.buttonsEmbla__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: none;
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.buttonsEmbla__button svg {
+    width: 5vw;
+    height: 5vh;
+    fill: #000;
+    stroke: #fff;
+    stroke-width: 2px;
+}
+
+.buttonsEmbla__button:hover {
+    transform: scale(1.2);
+}
+
+.buttonsEmbla__button._tapped {
+    transform: scale(0.9);
+}
