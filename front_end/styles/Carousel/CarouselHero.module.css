@@ -1,5 +1,5 @@
 .slideEmblaHero {
-    --slide-height: 80vh;
+    --slide-height: 90vh;
     --slide-size: 100vw;
 
     flex: 0 0 var(--slide-size);
