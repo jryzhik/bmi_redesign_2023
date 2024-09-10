@@ -90,7 +90,7 @@ export default function plant() {
           />
           <EmblaCarousel
             buttons
-            scale={0.3}
+            scale={0.5}
             classNames={{snapped: ScaleStyles.isSnapped}}
             options={{
               dragFree: true,

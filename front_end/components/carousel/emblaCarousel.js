@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useRef, useState} from 'react';
+import React, {useCallback, useEffect, useRef} from 'react';
 import {
   NextButton,
   PrevButton,
@@ -13,23 +13,6 @@ import Fade from 'embla-carousel-fade';
 import ClassNames from 'embla-carousel-class-names';
 
 const EmblaCarousel = (props) => {
-  const [windowWidth, setWindowWidth] = useState(0);
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    // Add event listener to handle window resize
-    window.addEventListener('resize', handleResize);
-
-    // Initial window width
-    setWindowWidth(window.innerWidth);
-
-    // Cleanup the event listener on component unmount
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
   const {
     children,
     options,

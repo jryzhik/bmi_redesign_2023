@@ -12,7 +12,12 @@ const EmblaScaleCarousel = (props) => {
       <article>
         <RoundedPhoto
           imageUrl={imageUrl}
-          containerStyle={{marginBottom: '2rem'}}
+          containerStyle={{
+            marginBottom: '2rem',
+            width: '100%',
+            height: '100%',
+            display: 'block',
+          }}
         />
         {title ? (
           <H2NComponent

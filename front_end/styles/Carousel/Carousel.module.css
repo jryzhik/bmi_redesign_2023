@@ -18,14 +18,14 @@
     position: absolute;
     left: 0;
     right: 0;
-    top: 40%;
+    top: 50%;
     z-index: 50;
     display: flex;
     justify-content: space-between;
     width: 100vw;
     height: max-content;
     -webkit-tap-highlight-color: transparent;
-    transform: translateY(-45%);
+    transform: translateY(-50%);
     user-select: none;
     -webkit-touch-callout: none;
 }
@@ -76,11 +76,5 @@
 
     .embla__dot._active.embla__dot::after {
         opacity: 1;
-    }
-}
-
-@media (max-width: 590px) {
-    .embla__buttons {
-        top: 30%;
     }
 }
