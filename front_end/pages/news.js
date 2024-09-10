@@ -38,9 +38,6 @@ export default function News({news}) {
           buttons
           scale={0.3}
           classNames={{snapped: ScaleStyles.isSnapped}}
-          style={{
-            marginTop: '10vh',
-          }}
           options={{
             dragFree: true,
             loop: true,
