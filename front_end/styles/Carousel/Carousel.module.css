@@ -33,7 +33,7 @@
 .embla__dots {
     position: absolute;
     left: 50%;
-    bottom: -2.5vh;
+    bottom: 2.5vh;
     z-index: 3;
     display: flex;
     flex-wrap: wrap;

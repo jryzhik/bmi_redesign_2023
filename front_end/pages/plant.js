@@ -6,7 +6,6 @@ import theme from '../styles/theme';
 import styles from '../styles/Hero/Hero.module.css';
 import DonationMasterForm from '../components/donations/donationMasterForm';
 import buttonStyles from '../styles/Donate/ColorDonate.module.css';
-import SlideGallery from '../components/images/slideGallery';
 import EmblaCarousel from '../components/carousel/emblaCarousel';
 import ScaleStyles from '../styles/Carousel/CarouselScale.module.css';
 import EmblaScaleCarousel from '../components/carousel/emblaScaleCarousel';
@@ -88,10 +87,6 @@ export default function plant() {
             }
             secondaryAllign="left"
             color={theme.colors.WHITE}
-          />
-          <SlideGallery
-            galleryArray={plantingGallery}
-            filter={'invert(100%)'}
           />
           <EmblaCarousel
             buttons
