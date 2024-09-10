@@ -73,8 +73,8 @@
     .embla__dot:hover.embla__dot::after {
         opacity: 1;
     }
+}
 
-    .embla__dot._active.embla__dot::after {
-        opacity: 1;
-    }
+.embla__dot._active.embla__dot::after {
+    opacity: 1;
 }
