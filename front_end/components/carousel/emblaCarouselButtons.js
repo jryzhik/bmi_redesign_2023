@@ -51,10 +51,13 @@ export const usePrevNextButtons = (emblaApi) => {
 };
 
 export const PrevButton = (props) => {
-  const {...restProps} = props;
+  const {additionalClass, ...restProps} = props;
 
   return (
-    <button {...restProps} className={Styles.buttonsEmbla__button}>
+    <button
+      {...restProps}
+      className={Styles.buttonsEmbla__button + ' ' + additionalClass}
+    >
       <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle id="bg" cx="25" cy="25" r="25" stroke="none" />
         <path id="arrow" d="M27 19L21 25L27 31" />
@@ -64,10 +67,13 @@ export const PrevButton = (props) => {
 };
 
 export const NextButton = (props) => {
-  const {...restProps} = props;
+  const {additionalClass, ...restProps} = props;
 
   return (
-    <button {...restProps} className={Styles.buttonsEmbla__button}>
+    <button
+      {...restProps}
+      className={Styles.buttonsEmbla__button + ' ' + additionalClass}
+    >
       <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
         <circle
           cx="25"
