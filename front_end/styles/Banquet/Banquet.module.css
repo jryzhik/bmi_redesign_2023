@@ -1,0 +1,13 @@
+.container {
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.welcomeWrapper{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	font-weight: 300;
+}
