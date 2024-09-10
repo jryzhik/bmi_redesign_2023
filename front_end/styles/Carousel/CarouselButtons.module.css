@@ -8,6 +8,7 @@
     cursor: pointer;
 }
 
+
 .buttonsEmbla__button svg {
     width: 5vw;
     height: 5vh;
@@ -16,10 +17,31 @@
     stroke-width: 2px;
 }
 
-.buttonsEmbla__button:hover {
-    transform: scale(1.2);
+.buttonsEmbla__button.isDark svg {
+    fill: #fff;
+    stroke: #000;
 }
 
+@media (max-width: 900px) {
+    .buttonsEmbla__button svg {
+        width: 7vw;
+        height: 7vh;
+    }
+}
+
+@media (max-width: 590px) {
+    .buttonsEmbla__button svg {
+        width: 12vw;
+        height: 12vh;
+    }
+}
+
+
+@media (any-pointer: hover) {
+    .buttonsEmbla__button:hover {
+        transform: scale(1.2);
+    }
+}
 .buttonsEmbla__button._tapped {
     transform: scale(0.9);
 }

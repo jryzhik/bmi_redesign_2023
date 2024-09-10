@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useRef} from 'react';
+import React, {useCallback, useEffect, useRef, useState} from 'react';
 import {
   NextButton,
   PrevButton,
@@ -6,12 +6,30 @@ import {
 } from './emblaCarouselButtons';
 import useEmblaCarousel from 'embla-carousel-react';
 import Styles from '../../styles/Carousel/Carousel.module.css';
+import buttonStyles from '../../styles/Carousel/CarouselButtons.module.css';
 import {DotButton, useDotButton} from './emblaCarouselDot';
 import Autoplay from 'embla-carousel-autoplay';
 import Fade from 'embla-carousel-fade';
 import ClassNames from 'embla-carousel-class-names';
 
 const EmblaCarousel = (props) => {
+  const [windowWidth, setWindowWidth] = useState(0);
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    // Add event listener to handle window resize
+    window.addEventListener('resize', handleResize);
+
+    // Initial window width
+    setWindowWidth(window.innerWidth);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
   const {
     children,
     options,
@@ -117,8 +135,16 @@ const EmblaCarousel = (props) => {
       </div>
       {buttons ? (
         <div className={Styles.embla__buttons}>
-          <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-          <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
+          <PrevButton
+            additionalClass={buttons.isDark ? ` ${buttonStyles.isDark}` : null}
+            onClick={onPrevButtonClick}
+            disabled={prevBtnDisabled}
+          />
+          <NextButton
+            additionalClass={buttons.isDark ? ` ${buttonStyles.isDark}` : null}
+            onClick={onNextButtonClick}
+            disabled={nextBtnDisabled}
+          />
         </div>
       ) : null}
       {dots ? (

@@ -9,3 +9,14 @@
     transform: translate3d(0, 0, 0);
 }
 
+@media (max-width: 1200px) {
+    .slideEmblaNews {
+        --slide-size: 33vw;
+    }
+}
+
+@media (max-width: 720px) {
+    .slideEmblaNews {
+        --slide-size: 70vw;
+    }
+}

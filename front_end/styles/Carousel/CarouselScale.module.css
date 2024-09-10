@@ -12,3 +12,9 @@
 .slideEmblaScale:not(.isSnapped) {
     opacity: .8
 }
+
+@media (max-width: 1000px) {
+    .slideEmblaScale {
+        --slide-size: 80vw;
+    }
+}

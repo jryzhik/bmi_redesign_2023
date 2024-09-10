@@ -9,3 +9,14 @@
     transform: translate3d(0, 0, 0);
 }
 
+@media (max-width: 1000px) {
+    .slideEmblaHero {
+        padding-top: 12vh;
+    }
+}
+
+@media (max-width: 490px) {
+    .slideEmblaHero {
+        padding-top: 9vh;
+    }
+}

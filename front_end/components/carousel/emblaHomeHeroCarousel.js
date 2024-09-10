@@ -33,7 +33,7 @@ const EmblaHomeHeroCarousel = (props) => {
               flexDirection: 'column',
               alignItems: 'center',
               justifyItems: 'center',
-              maxWidth: '45vw',
+              maxWidth: '60vw',
               gap: '2rem',
             }}
           >

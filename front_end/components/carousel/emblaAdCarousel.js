@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Styles from '../../styles/Carousel/CarouselAd.module.css';
 import styles from '../../styles/Hero/Hero.module.css';
 import H1 from '../fonts/H1';
@@ -11,6 +11,24 @@ import RoundedButton from '../buttons/roundedButton';
 import {dollarButton} from '../../styles/Donate/ColorDonate.module.css';
 
 const EmblaAdCarousel = (props) => {
+  const [windowWidth, setWindowWidth] = useState(0);
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    // Add event listener to handle window resize
+    window.addEventListener('resize', handleResize);
+
+    // Initial window width
+    setWindowWidth(window.innerWidth);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   const {slides} = props;
   console.log(slides);
   return slides.map(
@@ -39,7 +57,7 @@ const EmblaAdCarousel = (props) => {
               flexDirection: 'column',
               alignItems: 'center',
               justifyItems: 'center',
-              maxWidth: '45vw',
+              maxWidth: windowWidth <= 1000 ? '80vw' : '45vw',
               gap: '2rem',
             }}
           >

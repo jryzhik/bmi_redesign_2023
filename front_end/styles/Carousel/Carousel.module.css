@@ -5,7 +5,7 @@
 }
 
 .embla__viewport {
-    overflow: visible;
+    overflow: hidden;
 }
 
 .embla__container {
@@ -23,7 +23,11 @@
     display: flex;
     justify-content: space-between;
     width: 100vw;
+    height: max-content;
+    -webkit-tap-highlight-color: transparent;
     transform: translateY(-45%);
+    user-select: none;
+    -webkit-touch-callout: none;
 }
 
 .embla__dots {
@@ -65,10 +69,18 @@
     transition: opacity .2s ease-in;
 }
 
-.embla__dot:hover.embla__dot::after {
-    opacity: 1;
+@media (any-hover: hover) {
+    .embla__dot:hover.embla__dot::after {
+        opacity: 1;
+    }
+
+    .embla__dot._active.embla__dot::after {
+        opacity: 1;
+    }
 }
 
-.embla__dot._active.embla__dot::after {
-    opacity: 1;
+@media (max-width: 590px) {
+    .embla__buttons {
+        top: 30%;
+    }
 }
