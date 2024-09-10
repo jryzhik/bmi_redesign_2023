@@ -8,7 +8,7 @@ import theme from '../../styles/theme';
 const EmblaScaleCarousel = (props) => {
   const {slides} = props;
   return slides.map(({_id, imageUrl, title, url, description}) => (
-    <a className={Styles.slideEmblaScale} key={_id} href={url}>
+    <a className={Styles.slideEmblaScale} key={_id ? _id : imageUrl} href={url}>
       <article>
         <RoundedPhoto
           imageUrl={imageUrl}
@@ -19,7 +19,9 @@ const EmblaScaleCarousel = (props) => {
             primaryHeaderText={title}
             primaryStyle={{textAlign: 'center'}}
             SecondaryComponent={
-              <P style={{color: theme.colors.CHARCOAL}} text={description} />
+              description ? (
+                <P style={{color: theme.colors.CHARCOAL}} text={description} />
+              ) : null
             }
             secondaryAllign="center"
           />
