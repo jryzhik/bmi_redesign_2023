@@ -9,7 +9,10 @@ const imb_plex_sand = IBM_Plex_Sans({
 
 export default function H2(props) {
   return (
-    <h2 style={{color: props.color}} className={imb_plex_sand.className}>
+    <h2
+      style={{...props.style, color: props.color}}
+      className={imb_plex_sand.className}
+    >
       {props.text}
     </h2>
   );
