@@ -26,6 +26,7 @@ export default function P(props) {
           style={{
             color: props.color,
             textDecoration: props.textDecoration,
+            textAlign: props.textAlign,
           }}
           className={Roboto.className}
         >

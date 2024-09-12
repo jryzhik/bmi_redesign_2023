@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import HomeSlider from '../components/hero/homeSlider';
-import {useState, useEffect, useRef} from 'react';
+import {useEffect, useState} from 'react';
 import HeaderNComponent from '../components/texts/HeaderNComponent';
 import P from '../components/fonts/P';
 import theme from '../styles/theme';
@@ -12,9 +11,11 @@ import passedStyle from '../styles/Donate/ColorDonate.module.css';
 import Quote from '../components/texts/quote';
 import directorImage from '../public/img/home/schmidt.jpg';
 import NoTextHero from '../components/hero/noTextHero';
-import SlideNewsGalleryHome from '../components/images/slideNewsGalleryHome';
+import EmblaHomeCarouselNews from '../components/carousel/emblaHomeCarouselNews';
+import EmblaHomeHeroCarousel from '../components/carousel/emblaHomeHeroCarousel';
+import EmblaCarousel from '../components/carousel/emblaCarousel';
+import EmblaAdCarousel from '../components/carousel/emblaAdCarousel';
 import SubscribeHero from '../components/events/subscribeHero';
-import HomeAdSlider from '../components/hero/homeAdSlider';
 import clientPromise from '../lib/mongo/connect';
 
 const HeroSlider = [
@@ -53,8 +54,6 @@ const HeroSlider = [
 ];
 
 export default function Home({news, stats}) {
-  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
-  const [currentSlideIndexAd, setCurrentSlideIndexAd] = useState(0);
   const [animation1, setAnimation1] = useState(0);
   const [animation2, setAnimation2] = useState(0);
   const [animation3, setAnimation3] = useState(0);
@@ -220,22 +219,6 @@ export default function Home({news, stats}) {
     };
   }, [isVisible]);
 
-  useEffect(() => {
-    const intervalId = setInterval(nextSlide, 5000);
-    return () => clearInterval(intervalId);
-  }, []);
-
-  function nextSlide() {
-    setCurrentSlideIndex((prevIndex) => (prevIndex + 1) % HeroSlider.length);
-  }
-
-  function manualSetSlide(index) {
-    setCurrentSlideIndex(index);
-  }
-  function manualSetSlideAd(index) {
-    setCurrentSlideIndexAd(index);
-  }
-
   return (
     <div className="overflow_x">
       <Head>
@@ -246,20 +229,25 @@ export default function Home({news, stats}) {
           rel="preload"
           as="image"
           href="/_next/image?url=%2Fimg%2Fhero_images%2Fhome_hero%2FBaptismSmile.jpg&w=3840&q=80"
-          imagesrcset="/_next/image?url=%2Fimg%2Fhero_images%2Fhome_hero%2FBaptismSmile.jpg&w=1920&q=80 1x, /_next/image?url=%2Fimg%2Fhero_images%2Fhome_hero%2FBaptismSmile.jpg&w=3840&q=80 2x"
+          imageSrcSet="/_next/image?url=%2Fimg%2Fhero_images%2Fhome_hero%2FBaptismSmile.jpg&w=1920&q=80 1x, /_next/image?url=%2Fimg%2Fhero_images%2Fhome_hero%2FBaptismSmile.jpg&w=3840&q=80 2x"
         />
       </Head>
-      <HomeSlider
-        color1={HeroSlider[currentSlideIndex].color1}
-        color2={HeroSlider[currentSlideIndex].color2}
-        imageUrl={HeroSlider[currentSlideIndex].imageUrl}
-        headerText={HeroSlider[currentSlideIndex].headerText}
-        subText={HeroSlider[currentSlideIndex].subText}
-        imageFocus={HeroSlider[currentSlideIndex].imageFocus}
-        totalElements={HeroSlider.length}
-        currentIndex={currentSlideIndex}
-        callBack={manualSetSlide}
-      />
+
+      <EmblaCarousel
+        dots
+        style={{marginBottom: '7rem'}}
+        autoplay={{
+          playOnInit: true,
+          delay: 3000,
+          stopOnInteraction: false,
+          stopOnFocusIn: false,
+        }}
+        fade
+        options={{dragFree: true, loop: true, slidesToScroll: 1}}
+      >
+        <EmblaHomeHeroCarousel slides={HeroSlider} />
+      </EmblaCarousel>
+
       <div className={styles.container}>
         <HeaderNComponent
           primaryHeaderText="Do all that you do as if for Christ"
@@ -333,18 +321,20 @@ export default function Home({news, stats}) {
             />
           </Grid>
         </Grid>
-        <HomeAdSlider
-          color1={HeroAdSlider[currentSlideIndexAd].color1}
-          color2={HeroAdSlider[currentSlideIndexAd].color2}
-          imageUrl={HeroAdSlider[currentSlideIndexAd].imageUrl}
-          headerText={HeroAdSlider[currentSlideIndexAd].headerText}
-          subText={HeroAdSlider[currentSlideIndexAd].subText}
-          imageFocus={HeroAdSlider[currentSlideIndexAd].imageFocus}
-          totalElements={HeroAdSlider.length}
-          currentIndex={currentSlideIndexAd}
-          callBack={manualSetSlideAd}
-          link={HeroAdSlider[currentSlideIndexAd].link}
-        />
+        <EmblaCarousel
+          dots
+          fade
+          style={{marginBottom: '3rem'}}
+          autoplay={{
+            playOnInit: true,
+            delay: 5000,
+            stopOnInteraction: false,
+            stopOnFocusIn: false,
+          }}
+          options={{dragFree: true, loop: true, slidesToScroll: 1}}
+        >
+          <EmblaAdCarousel slides={HeroAdSlider} />
+        </EmblaCarousel>
         <HeaderNComponent
           primaryHeaderText="Join the fronts of God's battle"
           SecondaryComponent={
@@ -423,7 +413,13 @@ export default function Home({news, stats}) {
           }
           secondaryAllign="center"
         />
-        <SlideNewsGalleryHome newsArray={news} />
+        <EmblaCarousel
+          options={{dragFree: true, loop: true, slidesToScroll: 1}}
+          buttons
+        >
+          <EmblaHomeCarouselNews slides={news} />
+          <EmblaHomeCarouselNews slides={news} />
+        </EmblaCarousel>
         <SubscribeHero
           color={theme.colors.NAVY}
           primaryText="Subscribe to our weekly newsletter"
