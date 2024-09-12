@@ -1,0 +1,113 @@
+import H2 from '../fonts/H2';
+import styles from '../../styles/Banquet/Tickets.module.css';
+import Quantity from '../quanitity';
+import P from '../fonts/P';
+const tickets = [
+  {
+    title: 'Standard',
+    description: 'Perfect for those who value impactful events and memorable evenings',
+    colorPrimary: '#C2EDFF',
+    colorSecondary: '#E7F8FF',
+    price: 75,
+    items: [
+      {title: 'Prime Seating', validate: true},
+      {title: 'Network Time', validate: true},
+      {title: 'Complimentary Spiritual Books', validate: true},
+      {title: 'Reserved Parking', validate: false},
+      {title: 'VIP Table', validate: false},
+      {title: 'Private Table for 10', validate: false},
+    ],
+  },
+  {
+    title: 'VIP Ticket',
+    description: 'Perfect for those who value extra comfort and exclusivity',
+    colorPrimary: '#80F8AD',
+    colorSecondary: '#E4FFEE',
+    price: 150,
+    items: [
+      {title: 'Prime Seating', validate: true},
+      {title: 'Network Time', validate: true},
+      {title: 'Complimentary Spiritual Books', validate: true},
+      {title: 'Reserved Parking', validate: true},
+      {title: 'VIP Table', validate: true},
+      {title: 'Private Table for 10', validate: false},
+    ],
+  },
+  {
+    title: 'Full Table',
+    description: 'Perfect for generous groups who value impactful giving and the power of the Gospel',
+    colorPrimary: '#FFDE2F',
+    colorSecondary: '#FFF5C3',
+    price: 1500,
+    items: [
+      {title: 'Prime Seating', validate: true},
+      {title: 'Network Time', validate: true},
+      {title: 'Complimentary Spiritual Books', validate: true},
+      {title: 'Reserved Parking', validate: true},
+      {title: 'VIP Table', validate: true},
+      {title: 'Private Table for 10', validate: true},
+    ],
+  },
+];
+const Tickets = () => {
+  return (
+    <section id="tickets" className={styles.tickets}>
+      <div className={styles.ticketsTitle}>
+        <H2 text="We’ll be very happy to see you at the banquet" />
+      </div>
+      <div className={styles.ticketsBox}>
+        <div className={styles.ticketsWrapper}>
+          {tickets.map((item) => (
+            <div className={styles.ticketsCard}>
+              <div className={styles.ticketsCardTop} style={{backgroundColor: item.colorPrimary}}>
+                <h2 className={styles.ticketsCardTitle}>{item.title}</h2>
+                <p className={styles.ticketsCardDescr}>{item.description} </p>
+                <div className={styles.ticketsPrice}>
+                  <span className={styles.ticketsPriceValue}>{item.price}</span>
+                  <span>/ seat</span>
+                </div>
+              </div>
+              <div className={styles.ticketsCardBody} style={{backgroundColor: item.colorSecondary}}>
+                <ul>
+                  {item.items.map((item, index) => (
+                    <li key={item.index}>
+                      {item.validate === true ? (
+                        <div className={styles.ticketsCardBodyIconCheck}>
+                          <svg width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 3L3.625 5.5L8 0.5" stroke="#346174" />
+                          </svg>
+                        </div>
+                      ) : (
+                        <div className={styles.ticketsCardBodyIconXmark}>
+                          <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L4.5 4.5M8 8L4.5 4.5M4.5 4.5L8 1L1 8" stroke="#E7F8FF" />
+                          </svg>
+                        </div>
+                      )}
+                      {item.title}
+                    </li>
+                  ))}
+                </ul>
+                <div className={styles.quantity}>
+                  <span>Quantity</span>
+                </div>
+                <Quantity />
+                <a className={styles.ticketsButton} href="#">
+                  {item.title === 'Full Table' ? 'Reserve Your table' : 'Reserve Your Spot'}
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className={styles.contentBox}>
+          <h2 className={styles.contentBoxTitle}>One Bible can touch 7 lives!</h2>
+          <P text="Our goal is to raise $250,000 to print Bibles and Christian literature. " />
+          <P text="Every dollar you give will be doubled, amplifying your impact! With one Bible touching 7 lives, imagine the power of reaching up to 350,000 souls!" />
+          <P text="Together, let's spread the life-changing Word of God across Eastern Europe and beyond." />
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Tickets;

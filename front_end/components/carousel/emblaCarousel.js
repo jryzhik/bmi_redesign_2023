@@ -1,9 +1,5 @@
 import React, {useCallback, useEffect, useRef} from 'react';
-import {
-  NextButton,
-  PrevButton,
-  usePrevNextButtons,
-} from './emblaCarouselButtons';
+import {NextButton, PrevButton, usePrevNextButtons} from './emblaCarouselButtons';
 import useEmblaCarousel from 'embla-carousel-react';
 import Styles from '../../styles/Carousel/Carousel.module.css';
 import buttonStyles from '../../styles/Carousel/CarouselButtons.module.css';
@@ -13,17 +9,7 @@ import Fade from 'embla-carousel-fade';
 import ClassNames from 'embla-carousel-class-names';
 
 const EmblaCarousel = (props) => {
-  const {
-    children,
-    options,
-    buttons,
-    dots,
-    style,
-    autoplay,
-    fade,
-    classNames,
-    scale,
-  } = props;
+  const {children, options, buttons, dots, style, autoplay, fade, classNames, scale} = props;
   const plugins = [];
   autoplay ? plugins.push(Autoplay(autoplay)) : null;
   fade ? plugins.push(Fade()) : null;
@@ -34,8 +20,7 @@ const EmblaCarousel = (props) => {
     const tweenFactor = useRef(0);
     const tweenNodes = useRef([]);
 
-    const numberWithinRange = (number, min, max) =>
-      Math.min(Math.max(number, min), max);
+    const numberWithinRange = (number, min, max) => Math.min(Math.max(number, min), max);
 
     const setTweenNodes = useCallback((emblaApi) => {
       tweenNodes.current = emblaApi.slideNodes().map((slideNode) => {
@@ -44,8 +29,7 @@ const EmblaCarousel = (props) => {
     }, []);
 
     const setTweenFactor = useCallback((emblaApi) => {
-      tweenFactor.current =
-        TWEEN_FACTOR_BASE * emblaApi.scrollSnapList().length;
+      tweenFactor.current = TWEEN_FACTOR_BASE * emblaApi.scrollSnapList().length;
     }, []);
 
     const tweenScale = useCallback((emblaApi, eventName) => {
@@ -102,12 +86,7 @@ const EmblaCarousel = (props) => {
     }, [emblaApi, tweenScale]);
   }
 
-  const {
-    prevBtnDisabled,
-    nextBtnDisabled,
-    onPrevButtonClick,
-    onNextButtonClick,
-  } = usePrevNextButtons(emblaApi);
+  const {prevBtnDisabled, nextBtnDisabled, onPrevButtonClick, onNextButtonClick} = usePrevNextButtons(emblaApi);
 
   const {selectedIndex, scrollSnaps, onDotButtonClick} = useDotButton(emblaApi);
 
@@ -118,16 +97,8 @@ const EmblaCarousel = (props) => {
       </div>
       {buttons ? (
         <div className={Styles.embla__buttons}>
-          <PrevButton
-            additionalClass={buttons.isDark ? ` ${buttonStyles.isDark}` : null}
-            onClick={onPrevButtonClick}
-            disabled={prevBtnDisabled}
-          />
-          <NextButton
-            additionalClass={buttons.isDark ? ` ${buttonStyles.isDark}` : null}
-            onClick={onNextButtonClick}
-            disabled={nextBtnDisabled}
-          />
+          <PrevButton additionalClass={buttons.isDark ? ` ${buttonStyles.isDark}` : null} onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
+          <NextButton additionalClass={buttons.isDark ? ` ${buttonStyles.isDark}` : null} onClick={onNextButtonClick} disabled={nextBtnDisabled} />
         </div>
       ) : null}
       {dots ? (
@@ -136,9 +107,7 @@ const EmblaCarousel = (props) => {
             <DotButton
               key={index}
               onClick={() => onDotButtonClick(index)}
-              className={Styles.embla__dot.concat(
-                index === selectedIndex ? ` ${Styles._active}` : '',
-              )}
+              className={Styles.embla__dot.concat(index === selectedIndex ? ` ${Styles._active}` : '')}
             />
           ))}
         </div>

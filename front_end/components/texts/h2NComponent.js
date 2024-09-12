@@ -2,13 +2,7 @@ import React from 'react';
 import styles from '../../styles/Texts/Texts.module.css';
 import H2 from '../fonts/H2';
 
-export default function H2NComponent({
-  primaryHeaderText,
-  SecondaryComponent,
-  primaryStyle,
-  secondaryAllign,
-  color,
-}) {
+export default function H2NComponent({primaryHeaderText, SecondaryComponent, primaryStyle, secondaryAllign, color}) {
   const subComponentStyle = {
     textAlign: secondaryAllign,
   };

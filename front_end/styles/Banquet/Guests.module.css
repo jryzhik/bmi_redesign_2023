@@ -1,0 +1,30 @@
+.guests {
+	padding: 80px 0;
+}
+.container {
+	max-width: 950px;
+	margin: 0 auto;
+}
+.title {
+	margin-bottom: 80px;
+	text-align: center;
+}
+.wrapper {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+.guest {
+	text-align: center;
+}
+.guest img {
+	width: 240px;
+	height: 240px;
+	border-radius: 50%;
+	object-fit: 100%;
+	margin-bottom: 30px;
+}
+.guestName {
+	font-size: 24px;
+	font-weight: 600;
+	margin-bottom: 8px;
+}

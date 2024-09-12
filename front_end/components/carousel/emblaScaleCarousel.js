@@ -19,18 +19,14 @@ const EmblaScaleCarousel = (props) => {
             display: 'block',
           }}
         />
-        {title ? (
+        {title && (
           <H2NComponent
             primaryHeaderText={title}
-            primaryStyle={{textAlign: 'center'}}
-            SecondaryComponent={
-              description ? (
-                <P style={{color: theme.colors.CHARCOAL}} text={description} />
-              ) : null
-            }
+            primaryStyle={{textAlign: 'center', fontSize: '34px'}}
+            SecondaryComponent={description ? <P style={{color: theme.colors.CHARCOAL}} text={description} /> : null}
             secondaryAllign="center"
           />
-        ) : null}
+        )}
       </article>
     </a>
   ));

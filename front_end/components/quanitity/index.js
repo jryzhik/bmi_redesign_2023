@@ -3,7 +3,7 @@ import {useState} from 'react';
 import styles from '../../styles/Quantity/Quantity.module.css';
 const Quantity = () => {
   const [count, setCount] = useState(1);
-  const increment = () => setCount((prevCount) => prevCount + 1);
+  const increment = () => setCount((prevCount) => Math.min(10, prevCount + 1));
   const decrement = () => setCount((prevCount) => Math.max(1, prevCount - 1));
   return (
     <div className={styles.stepper}>

@@ -1,0 +1,44 @@
+.welcome {
+	background-color: #FFF;
+	padding: 80px 0;
+	transform: translateY(-7rem);
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	text-align: center;
+	align-items: center;
+	max-width: 700px;
+	margin: 0 auto;
+}
+
+.title {
+	font-size: 50px;
+	font-weight: 600;
+	text-align: center;
+	margin-bottom: 24px;
+}
+.subtitle {
+	font-size: 24px;
+	line-height: 26px;
+	font-weight: 600;
+	margin-bottom: 40px;
+	text-align: center;
+	max-width: 405px;
+	margin: 0 auto 40px auto;	
+}
+
+.button {
+	padding: 14px 44px;
+	background-color: #1E335B;
+	font-size: 12px;
+	font-weight: 900;
+	border-radius: 100px;
+	color: #FFF;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin-top: 30px;
+}
+

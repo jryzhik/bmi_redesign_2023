@@ -1,0 +1,40 @@
+.impact {
+	background: #82B1FF;
+	padding: 80px 20px;
+}
+
+.wrapper {
+	max-width: 700px;
+	margin: 0 auto;
+	text-align: center;
+}
+.title {
+	font-size: 70px;
+	line-height: 1;
+	margin-bottom: 37px;
+	text-align: center;
+	color: #FFF;
+	font-weight: 600;
+}
+
+.wrapper p {
+	text-align: center;
+	color: #FFF;
+	margin-bottom: 55px;
+}
+.buttons {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.button {
+	background-color: #fff;
+	width: 130px;
+	height: 46px;
+	display: grid;
+	place-items: center;
+	border-radius: 100px;
+	text-transform: uppercase;
+	font-weight: 900;
+}
