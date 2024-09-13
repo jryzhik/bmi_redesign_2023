@@ -24,3 +24,27 @@
   margin: 0 15px;
   font-size: 18px;
 }
+
+
+.quantity {
+	font-size: 16px;
+	font-weight: 500;
+	color: #5A5A5A;
+	margin-bottom: 12px;
+	display: block;
+}
+
+
+.cardButton {
+	padding: 14px 40px;
+	background-color: #000;
+	font-size: 12px;
+	font-weight: 900;
+	border-radius: 100px;
+	color: #FFF;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	display: block;
+	text-align: center;
+	margin-top: 24px;
+}

@@ -13,15 +13,23 @@ const plantingGallery = [
   },
   {
     imageUrl: '/img/ministries/planting/baptisms.jpg',
+    title: 'Orphan Adoption Program',
+    description: 'Pray for us as we invest into disciples of Christ.',
   },
   {
     imageUrl: '/img/ministries/planting/baptisms.jpg',
+    title: 'Orphan Adoption Program',
+    description: 'Pray for us as we invest into disciples of Christ.',
   },
   {
     imageUrl: '/img/gallery/gruzd/blow.jpg',
+    title: 'Orphan Adoption Program',
+    description: 'Pray for us as we invest into disciples of Christ.',
   },
   {
     imageUrl: '/img/gallery/gruzd/teach.jpg',
+    title: 'Orphan Adoption Program',
+    description: 'Pray for us as we invest into disciples of Christ.',
   },
 ];
 const Slider = () => {

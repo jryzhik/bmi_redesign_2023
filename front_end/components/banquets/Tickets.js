@@ -4,11 +4,13 @@ import Quantity from '../quanitity';
 import P from '../fonts/P';
 const tickets = [
   {
+    id: 1,
     title: 'Standard',
     description: 'Perfect for those who value impactful events and memorable evenings',
     colorPrimary: '#C2EDFF',
     colorSecondary: '#E7F8FF',
     price: 75,
+    link: 'https://2ay5glqvmz7.typeform.com/to/L9tk8LdO#quantity',
     items: [
       {title: 'Prime Seating', validate: true},
       {title: 'Network Time', validate: true},
@@ -19,11 +21,13 @@ const tickets = [
     ],
   },
   {
+    id: 2,
     title: 'VIP Ticket',
     description: 'Perfect for those who value extra comfort and exclusivity',
     colorPrimary: '#80F8AD',
     colorSecondary: '#E4FFEE',
     price: 150,
+    link: 'https://2ay5glqvmz7.typeform.com/to/fWctUyn9#quantity',
     items: [
       {title: 'Prime Seating', validate: true},
       {title: 'Network Time', validate: true},
@@ -34,11 +38,13 @@ const tickets = [
     ],
   },
   {
+    id: 3,
     title: 'Full Table',
     description: 'Perfect for generous groups who value impactful giving and the power of the Gospel',
     colorPrimary: '#FFDE2F',
     colorSecondary: '#FFF5C3',
     price: 1500,
+    link: 'https://2ay5glqvmz7.typeform.com/to/ffhHndrV',
     items: [
       {title: 'Prime Seating', validate: true},
       {title: 'Network Time', validate: true},
@@ -60,7 +66,11 @@ const Tickets = () => {
           {tickets.map((item) => (
             <div className={styles.card}>
               <span className={`${styles.shape} ${styles.shapeLeftTop}`}></span>
+              <span className={`${styles.shape} ${styles.shapeCenterTop}`}></span>
               <span className={`${styles.shape} ${styles.shapeRightTop}`}></span>
+
+              <span className={`${styles.shape} ${styles.shapeLeftBottom}`}></span>
+              <span className={`${styles.shape} ${styles.shapeRightBottom}`}></span>
               <div className={styles.cardTop} style={{backgroundColor: item.colorPrimary}}>
                 <h2 className={styles.cardTitle}>{item.title}</h2>
                 <p className={styles.cardDescr}>{item.description} </p>
@@ -90,13 +100,7 @@ const Tickets = () => {
                     </li>
                   ))}
                 </ul>
-                <div className={styles.quantity}>
-                  <span>Quantity</span>
-                </div>
-                <Quantity />
-                <a className={styles.cardButton} href="#">
-                  {item.title === 'Full Table' ? 'Reserve Your table' : 'Reserve Your Spot'}
-                </a>
+                <Quantity item={item} />
               </div>
             </div>
           ))}
