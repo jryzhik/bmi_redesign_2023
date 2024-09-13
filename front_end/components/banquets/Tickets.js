@@ -52,33 +52,35 @@ const tickets = [
 const Tickets = () => {
   return (
     <section id="tickets" className={styles.tickets}>
-      <div className={styles.ticketsTitle}>
+      <div className={styles.title}>
         <H2 text="We’ll be very happy to see you at the banquet" />
       </div>
-      <div className={styles.ticketsBox}>
-        <div className={styles.ticketsWrapper}>
+      <div className={styles.parent}>
+        <div className={styles.wrapper}>
           {tickets.map((item) => (
-            <div className={styles.ticketsCard}>
-              <div className={styles.ticketsCardTop} style={{backgroundColor: item.colorPrimary}}>
-                <h2 className={styles.ticketsCardTitle}>{item.title}</h2>
-                <p className={styles.ticketsCardDescr}>{item.description} </p>
-                <div className={styles.ticketsPrice}>
-                  <span className={styles.ticketsPriceValue}>{item.price}</span>
+            <div className={styles.card}>
+              <span className={`${styles.shape} ${styles.shapeLeftTop}`}></span>
+              <span className={`${styles.shape} ${styles.shapeRightTop}`}></span>
+              <div className={styles.cardTop} style={{backgroundColor: item.colorPrimary}}>
+                <h2 className={styles.cardTitle}>{item.title}</h2>
+                <p className={styles.cardDescr}>{item.description} </p>
+                <div className={styles.cardPrice}>
+                  <span className={styles.cardPriceValue}>{item.price}</span>
                   <span>/ seat</span>
                 </div>
               </div>
-              <div className={styles.ticketsCardBody} style={{backgroundColor: item.colorSecondary}}>
+              <div className={styles.cardBody} style={{backgroundColor: item.colorSecondary}}>
                 <ul>
                   {item.items.map((item, index) => (
                     <li key={item.index}>
                       {item.validate === true ? (
-                        <div className={styles.ticketsCardBodyIconCheck}>
+                        <div className={styles.cardBodyIconCheck}>
                           <svg width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 3L3.625 5.5L8 0.5" stroke="#346174" />
                           </svg>
                         </div>
                       ) : (
-                        <div className={styles.ticketsCardBodyIconXmark}>
+                        <div className={styles.cardBodyIconXmark}>
                           <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 1L4.5 4.5M8 8L4.5 4.5M4.5 4.5L8 1L1 8" stroke="#E7F8FF" />
                           </svg>
@@ -92,7 +94,7 @@ const Tickets = () => {
                   <span>Quantity</span>
                 </div>
                 <Quantity />
-                <a className={styles.ticketsButton} href="#">
+                <a className={styles.cardButton} href="#">
                   {item.title === 'Full Table' ? 'Reserve Your table' : 'Reserve Your Spot'}
                 </a>
               </div>
@@ -100,6 +102,10 @@ const Tickets = () => {
           ))}
         </div>
         <div className={styles.contentBox}>
+          <span className={`${styles.shape} ${styles.shapeLeftTop}`}></span>
+          <span className={`${styles.shape} ${styles.shapeRightTop}`}></span>
+          <span className={`${styles.shape} ${styles.shapeLeftBottom}`}></span>
+          <span className={`${styles.shape} ${styles.shapeRightBottom}`}></span>
           <h2 className={styles.contentBoxTitle}>One Bible can touch 7 lives!</h2>
           <P text="Our goal is to raise $250,000 to print Bibles and Christian literature. " />
           <P text="Every dollar you give will be doubled, amplifying your impact! With one Bible touching 7 lives, imagine the power of reaching up to 350,000 souls!" />

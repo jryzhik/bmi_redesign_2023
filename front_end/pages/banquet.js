@@ -23,7 +23,6 @@ const Banquet = () => {
       <Guests />
       <Tickets />
       <Performance />
-      <Slider />
       <Impact />
     </>
   );

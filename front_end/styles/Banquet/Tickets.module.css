@@ -1,37 +1,45 @@
-.tickets {
-	padding: 80px 0;
+.parent {
+	padding: 0 20px;
 }
 
-.ticketsTitle {
+.title {
 	text-align: center;
 	margin: 0 auto 60px;
 	max-width: 700px;
 }
 
-.ticketsBox {
+.box {
 	box-shadow: 0px 4px 34.1px rgba(0, 0, 0, 0.20);
 	max-width: 900px;
 	margin: 0 auto;
+
 }
 
-.ticketsWrapper {
+.wrapper {
 	display: flex;
 	justify-content: center;
+	align-items: stretch;
+	
 }
 
-.ticketsCardTop {
+.card {
+	position: relative;
+	height: 100%;
+}
+
+.cardTop {
 	padding: 28px 32px;
 	background-color: #C2EDFF;
 }
 
-.ticketsCardTitle {
+.cardTitle {
 	font-size: 30px;
 	font-weight: 600;
 	line-height: 36px;
 	margin-bottom: 12px;
 }
 
-.ticketsCardDescr {
+.cardDescr {
 	max-width: 200px;
 	font-weight: 500;
 	font-size: 15px;
@@ -41,14 +49,14 @@
 	min-height: 55px;
 }
 
-.ticketsPriceValue {
+.cardPriceValue {
 	font-size: 45px;
 	font-weight: 600;
 	line-height: 54px;
 	position: relative;
 }
 
-.ticketsPriceValue::before {
+.cardPriceValue::before {
 	content: '$';
 	position: absolute;
 	left: -15px;
@@ -56,21 +64,21 @@
 	font-size: 18px;
 }
 
-.ticketsPrice {
+.cardPrice {
 	padding-left: 15px;
 }
 
-.ticketsPrice span:last-child {
+.cardPrice span:last-child {
 	color: #5A5A5A;
 	font-weight: 500;
 }
 
-.ticketsCardBody {
+.cardBody {
 	padding: 30px;
 	background-color: #E7F8FF;
 }
 
-.ticketsCardBody ul li {
+.cardBody ul li {
 	margin-bottom: 14px;
 	display: flex;
 	align-items: center;
@@ -78,8 +86,8 @@
 	font-weight: 500;
 }
 
-.ticketsCardBodyIconXmark, 
-.ticketsCardBodyIconCheck {
+.cardBodyIconXmark,
+.cardBodyIconCheck {
 	width: 15px;
 	height: 15px;
 	display: grid;
@@ -87,19 +95,19 @@
 	border-radius: 50%;
 }
 
-.ticketsCardBodyIconCheck {
+.cardBodyIconCheck {
 	background-color: #C2EDFF;
 }
 
-.ticketsCard:nth-child(2) .ticketsCardBodyIconCheck {
+.card:nth-child(2) .cardBodyIconCheck {
 	background-color: #83FFB2;
 }
 
-.ticketsCard:last-child .ticketsCardBodyIconCheck {
+.card:last-child .cardCardBodyIconCheck {
 	background-color: #FFDE2F;
 }
 
-.ticketsCardBodyIconXmark {
+.cardBodyIconXmark {
 	background-color: black;
 	color: #fff;
 }
@@ -112,20 +120,9 @@
 	display: block;
 }
 
-.contentBox {
-	max-width: 910px;
-	margin: 0 auto;
-	background-color: #fff;
-	padding: 26px 32px;
-}
 
-.contentBoxTitle {
-	font-size: 20px;
-	font-weight: 600;
-	margin-bottom: 30px;
-}
 
-.ticketsButton {
+.cardButton {
 	padding: 14px 40px;
 	background-color: #000;
 	font-size: 12px;
@@ -139,7 +136,98 @@
 	margin-top: 24px;
 }
 
+
+.contentBox {
+	max-width: 910px;
+	margin: 0 auto;
+	background-color: #fff;
+	padding: 26px 32px;
+	position: relative;
+}
+
+.contentBoxTitle {
+	font-size: 20px;
+	font-weight: 600;
+	margin-bottom: 30px;
+}
+
+
 .contentBox p {
 	font-size: 18px;
 	margin-bottom: 5px;
+}
+
+.shape {
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	background-color: #F6F6F6;
+	border-radius: 50%;
+}
+
+.card .shapeLeftTop {
+	top: -4px;
+	left: -12px;
+}
+
+.card .shapeRightTop {
+	top: -4px;
+	right: -12px;
+}
+
+.contentBox .shapeLeftTop {
+	top: -10px;
+	left: -11px;
+}
+
+.contentBox .shapeRightTop {
+	top: -10px;
+	right: -11px;
+}
+
+.contentBox .shapeLeftBottom {
+	bottom: -10px;
+	left: -11px;
+}
+
+.contentBox .shapeRightBottom {
+	bottom: -10px;
+	right: -11px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+	.wrapper {
+		flex-direction: column;
+		align-items: center;
+		gap: 32px;
+		margin-bottom: 32px;
+	}
+
+	.card {
+		width: 100%;
+	}
+
+	.cardBody {
+		padding: 20px;
+	}
+
+	.cardButton {
+		padding: 15px;
+	}
+
+	.cardTop {
+		padding: 20px;
+		background-color: #C2EDFF;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.cardBody {
+		padding: 32px;
+	}
+	.cardTop {
+		padding: 32px;
+	}
 }

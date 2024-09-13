@@ -1,7 +1,8 @@
 
 
 .journey {
-	padding: 0 0 80px 0;
+	padding: 0 20px 80px 20px;
+	overflow-x: hidden;
 }
 
 .title {
@@ -58,4 +59,16 @@
 
 .item:last-child span {
 	font-size: 20px;
+}
+
+@media screen and (max-width: 768px) {
+		.journey {
+			padding: 0 20px 50px 20px;
+		}
+		.list {
+			grid-template-columns: 1fr;
+		}
+		.item:after {
+			width: 90%;
+		}	
 }
