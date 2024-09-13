@@ -64,7 +64,7 @@ const Tickets = () => {
       <div className={styles.parent}>
         <div className={styles.wrapper}>
           {tickets.map((item) => (
-            <div className={styles.card}>
+            <div className={styles.card} id={item.id}>
               <span className={`${styles.shape} ${styles.shapeLeftTop}`}></span>
               <span className={`${styles.shape} ${styles.shapeCenterTop}`}></span>
               <span className={`${styles.shape} ${styles.shapeRightTop}`}></span>

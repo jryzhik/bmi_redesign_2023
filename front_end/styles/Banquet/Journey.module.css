@@ -29,10 +29,7 @@
 	padding-top: 5px;
 }
 
-
-.item:before {
-	counter-increment: list 1;
-	content: "0" counter(list) " .";
+.order {
 	position: absolute;
 	color: #9C9C9C; 
 	top: -13px;

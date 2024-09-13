@@ -30,9 +30,9 @@
 }
 
 @media screen and (max-width: 768px) {
-	.guests {
-		padding: 50px 20px;
-	}
+		.guests {
+			padding: 50px 20px;
+		}
 		.wrapper {
 			grid-template-columns: 1fr;
 			gap : 64px;

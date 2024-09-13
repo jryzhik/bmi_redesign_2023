@@ -1,5 +1,6 @@
 .tickets {
 	padding: 0 20px;
+	scroll-margin-top: 100px;
 }
 
 .parent {
@@ -27,6 +28,7 @@
 .card {
 	position: relative;
 	height: 100%;
+	max-width: 350px;
 }
 
 .cardTop {
@@ -79,6 +81,9 @@
 	padding: 30px;
 	background-color: #E7F8FF;
 }
+.cardBody ul {
+	margin-bottom: 25px;
+}
 
 .cardBody ul li {
 	margin-bottom: 14px;
@@ -86,6 +91,10 @@
 	align-items: center;
 	gap: 12px;
 	font-weight: 500;
+}
+
+.cardBody ul li:last-child {
+	margin-bottom: 0;
 }
 
 .cardBodyIconXmark,
@@ -120,6 +129,8 @@
 	background-color: #fff;
 	padding: 26px 32px;
 	position: relative;
+	border-top: 3px dashed #E0E0E0;
+
 }
 
 .contentBoxTitle {
@@ -153,15 +164,7 @@
 	top: -10px
 }
 
-.card .shapeRightBottom {
-	bottom: -4px;
-	right: -12px;
-}
 
-.card .shapeLeftBottom {
-	bottom: -4px;
-	left: -12px;
-}
 
 .card .shapeRightTop {
 	top: -4px;
@@ -188,6 +191,17 @@
 	right: -11px;
 }
 
+.card .shapeRightBottom {
+	bottom: -4px;
+	right: -12px;
+	opacity: 0;
+}
+
+.card .shapeLeftBottom {
+	bottom: -4px;
+	left: -12px;
+	opacity: 0;
+}
 
 
 @media screen and (max-width: 768px) {
@@ -213,6 +227,14 @@
 	.cardTop {
 		padding: 20px;
 		background-color: #C2EDFF;
+	}
+
+	.card .shapeRightBottom {
+		opacity: 1;
+	}
+	
+	.card .shapeLeftBottom {
+		opacity: 1;
 	}
 }
 

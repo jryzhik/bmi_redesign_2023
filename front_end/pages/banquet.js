@@ -7,6 +7,9 @@ import Guests from '../components/banquets/Guests';
 import Tickets from '../components/banquets/Tickets';
 import Performance from '../components/banquets/Performance'
 import Slider from '../components/banquets/Slider'
+import DonationMasterForm from '../components/donations/donationMasterForm';
+import theme from '../styles/theme';
+import buttonStyles from '../styles/Donate/ColorDonate.module.css';
 
 const Banquet = () => {
   return (
@@ -25,6 +28,14 @@ const Banquet = () => {
       <Performance />
       <Slider />
       <Impact />
+      {/* <DonationMasterForm
+          headerText="Can't make it this time, yet want to have an impact?"
+          secondaryText="Join us in embracing orphaned children with the Father's love and guiding them towards a brighter future."
+          secondaryAllign="center"
+          color={theme.colors.BLACK}
+          buttonStyle={buttonStyles.dollarButtonBlack}
+          fund="general"
+        /> */}
     </>
   );
 };

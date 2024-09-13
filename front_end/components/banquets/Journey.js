@@ -1,13 +1,14 @@
 import H2 from '../fonts/H2';
 import styles from '../../styles/Banquet/Journey.module.css';
 const journeyItems = [
-  'Groundbreaking Initiatives',
-  'Music Perfomance',
-  'Founders Speech',
-  'Vision for the Future',
-  'Special Guest Insights',
-  'Secret Part',
+  {order: 1, title: 'Groundbreaking Initiatives'},
+  {order: 4, title: 'Vision for the Future'},
+  {order: 2, title: 'Music Perfomance'},
+  {order: 5, title: 'Special Guest Insights'},
+  {order: 3, title: 'Founders Speech'},
+  {order: 6, title: 'Secret Part '},
 ];
+
 const Journey = () => {
   return (
     <section id="journey" className={styles.journey}>
@@ -16,7 +17,11 @@ const Journey = () => {
       </div>
       <ul className={styles.list}>
         {journeyItems.map((item, index) => (
-          <li className={styles.item} key={index}>{item} </li>
+          <li className={styles.item} key={index}>
+            <div className={styles.order}>0{item.order}.</div>
+            {item.title}
+            <span>{item.order === 6 && 'and more...'}</span>
+          </li>
         ))}
       </ul>
     </section>

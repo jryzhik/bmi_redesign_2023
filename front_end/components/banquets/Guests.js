@@ -7,17 +7,17 @@ const guests = [
   {
     name: 'Dr. Anthony George ',
     jobTitle: 'Senior Pastor First Baptist Atlanta',
-    imgSource: '/img/team/andrew.jpg',
+    imgSource: '/img/banquet/guest-1.png',
   },
   {
     name: 'Dr. Phil Roberts',
     jobTitle: 'Director of International Theological Education',
-    imgSource: '/img/team/chuck.jpg',
+    imgSource: '/img/banquet/guest-2.png',
   },
   {
     name: 'Rev. Andrew & Inna Ryzhkov',
     jobTitle: ' The founding members of Byelorussian Mission.',
-    imgSource: '/img/team/tom.jpg',
+    imgSource: '/img/banquet/guest-3.png',
   },
 ];
 const Guests = () => {
