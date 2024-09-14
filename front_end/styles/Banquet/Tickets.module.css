@@ -129,7 +129,7 @@
 	background-color: #fff;
 	padding: 26px 32px;
 	position: relative;
-	border-top: 3px dashed #E0E0E0;
+	border-top: 2px dashed #C9C9C9;
 
 }
 
@@ -154,21 +154,25 @@
 }
 
 .card .shapeLeftTop {
-	top: -4px;
-	left: -12px;
+	left: -15px;
+	top: -12px;
+	width: 32px;
+}
+
+.card .shapeRightTop {
+	display: none;
+}
+
+.card:last-child .shapeRightTop {
+	display: block;
+	right: -10px;
+	top: -12px
 }
 
 .card .shapeCenterTop {
 	left: 50%;
 	transform: translate(-50%);
-	top: -10px
-}
-
-
-
-.card .shapeRightTop {
-	top: -4px;
-	right: -12px;
+	top: -14px;
 }
 
 .contentBox .shapeLeftTop {
