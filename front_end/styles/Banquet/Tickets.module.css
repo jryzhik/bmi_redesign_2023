@@ -1,5 +1,5 @@
 .tickets {
-	padding: 0 20px;
+	padding: 50px 20px;
 	scroll-margin-top: 100px;
 }
 
@@ -239,6 +239,16 @@
 	
 	.card .shapeLeftBottom {
 		opacity: 1;
+	}
+	.card .shapeRightTop {
+		display: block;
+		right: -15px;
+		top: -12px;
+		width: 32px;
+	}	
+
+	.contentBox {
+		border-top: none;
 	}
 }
 
