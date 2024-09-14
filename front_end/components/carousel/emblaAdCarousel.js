@@ -31,89 +31,74 @@ const EmblaAdCarousel = (props) => {
 
   const {slides} = props;
   console.log(slides);
-  return slides.map(
-    ({
-      headerText,
-      subText,
-      imageUrl,
-      link,
-      imageFocus,
-      scale,
-      color1,
-      color2,
-    }) => (
-      <article className={Styles.slideEmblaAd} key={headerText}>
+  return slides.map(({headerText, subText, imageUrl, link, imageFocus, color1, color2}) => (
+    <article className={Styles.slideEmblaAd} key={headerText}>
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      >
         <div
           style={{
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'center',
             alignItems: 'center',
+            justifyItems: 'center',
+            maxWidth: windowWidth <= 1000 ? '80vw' : '45vw',
+            gap: '2rem',
           }}
         >
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyItems: 'center',
-              maxWidth: windowWidth <= 1000 ? '80vw' : '45vw',
-              gap: '2rem',
-            }}
-          >
-            <H1
-              text={headerText}
-              textAlign={'center'}
-              color={theme.colors.WHITE}
-            />
-            <P text={subText} textAlign={'center'} color={theme.colors.WHITE} />
-            <Link href={link} style={{width: '100%'}}>
-              <Grid
-                xs={12}
-                md={12}
-                display="flex"
-                justifyContent="center"
-                alignItems="center"
-              >
-                <RoundedButton text="learn more" passedStyle={dollarButton} />
-              </Grid>
-            </Link>
-          </div>
+          <H1 text={headerText} textAlign={'center'} color={theme.colors.WHITE} />
+          <P text={subText} textAlign={'center'} color={theme.colors.WHITE} />
+          <Link href={link} style={{width: '100%'}}>
+            <Grid xs={12} md={12} display="flex" justifyContent="center" alignItems="center">
+              <RoundedButton text="learn more" passedStyle={dollarButton} />
+            </Grid>
+          </Link>
         </div>
-        <div className={styles.imageContainer}>
-          <Image
-            priority={true}
-            src={imageUrl}
-            className={styles.image}
-            alt="Background"
-            width={1440}
-            height={1471}
-            quality={80}
-            style={{
-              objectFit: 'cover',
-              objectPosition: imageFocus,
-              width: '100%',
-              height: '100%',
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              zIndex: -100,
-              borderBottomLeftRadius: '7px',
-              borderBottomRightRadius: '7px',
-              transform: `scale(${scale})`,
-              priority: true,
-            }}
-          />
-        </div>
-        <div
-          className={styles.gradientOverlay}
+      </div>
+      <div
+        className={styles.imageContainer}
+        style={{
+          borderBottomLeftRadius: '7px',
+          position: 'absolute',
+          borderBottomRightRadius: '7px',
+          top: 0,
+          right: 0,
+          left: 0,
+          bottom: 0,
+          zIndex: -100,
+        }}
+      >
+        <Image
+          priority={true}
+          src={imageUrl}
+          alt="Background"
+          width={1440}
+          height={1471}
+          quality={80}
           style={{
-            backgroundImage: `linear-gradient(${color1},${color2}, transparent)`,
+            objectFit: 'cover',
+            borderBottomRightRadius: '7px',
+            borderBottomLeftRadius: '7px',
+            objectPosition: imageFocus,
+            width: '99.2%',
+            height: '100%',
+            priority: true,
           }}
         />
-      </article>
-    ),
-  );
+      </div>
+      <div
+        className={styles.gradientOverlay}
+        style={{
+          backgroundImage: `linear-gradient(${color1},${color2}, transparent)`,
+        }}
+      />
+    </article>
+  ));
 };
 
 export default EmblaAdCarousel;
