@@ -14,7 +14,7 @@ const tickets = [
     items: [
       {title: 'Prime Seating', validate: true},
       {title: 'Network Time', validate: true},
-      {title: 'Complimentary Spiritual Books', validate: true},
+      {title: 'Gourmet Dinner', validate: true},
       {title: 'Reserved Parking', validate: false},
       {title: 'VIP Table', validate: false},
       {title: 'Private Table for 10', validate: false},
@@ -31,7 +31,7 @@ const tickets = [
     items: [
       {title: 'Prime Seating', validate: true},
       {title: 'Network Time', validate: true},
-      {title: 'Complimentary Spiritual Books', validate: true},
+      {title: 'Gourmet Dinner', validate: true},
       {title: 'Reserved Parking', validate: true},
       {title: 'VIP Table', validate: true},
       {title: 'Private Table for 10', validate: false},
@@ -48,7 +48,7 @@ const tickets = [
     items: [
       {title: 'Prime Seating', validate: true},
       {title: 'Network Time', validate: true},
-      {title: 'Complimentary Spiritual Books', validate: true},
+      {title: 'Gourmet Dinner', validate: true},
       {title: 'Reserved Parking', validate: true},
       {title: 'VIP Table', validate: true},
       {title: 'Private Table for 10', validate: true},
