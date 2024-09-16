@@ -65,18 +65,12 @@ const Tickets = () => {
         <div className={styles.wrapper}>
           {tickets.map((item) => (
             <div className={styles.card} id={item.id}>
-              <span className={`${styles.shape} ${styles.shapeLeftTop}`}></span>
-              <span className={`${styles.shape} ${styles.shapeCenterTop}`}></span>
-              <span className={`${styles.shape} ${styles.shapeRightTop}`}></span>
-
-              <span className={`${styles.shape} ${styles.shapeLeftBottom}`}></span>
-              <span className={`${styles.shape} ${styles.shapeRightBottom}`}></span>
               <div className={styles.cardTop} style={{backgroundColor: item.colorPrimary}}>
                 <h2 className={styles.cardTitle}>{item.title}</h2>
                 <p className={styles.cardDescr}>{item.description} </p>
                 <div className={styles.cardPrice}>
                   <span className={styles.cardPriceValue}>{item.price}</span>
-                  <span>/ seat</span>
+                  <span>/ {item.id !== 3 ? 'seat' : 'table'}</span>
                 </div>
               </div>
               <div className={styles.cardBody} style={{backgroundColor: item.colorSecondary}}>
