@@ -7,29 +7,38 @@ import H2 from '../fonts/H2';
 import P from '../fonts/P';
 const plantingGallery = [
   {
-    imageUrl: '/img/gallery/gruzd/sitting_fire.jpg',
-    title: 'Orphan Adoption Program',
-    description: 'Pray for us as we invest into disciples of Christ.',
+    imageUrl: '/img/hero_images/brest_bible_church.jpg',
+    title: 'Brest Bible Church Building Fund',
+    description: 'Brest Bible Church is developing into a christian stronghold that will change the lives of thousands of young people.',
   },
   {
-    imageUrl: '/img/ministries/planting/baptisms.jpg',
-    title: 'Orphan Adoption Program',
-    description: 'Pray for us as we invest into disciples of Christ.',
+    imageUrl: '/img/hero_images/daycare_main.jpg',
+    title: 'Day Care Centers',
+    description:
+      'Presently we have 16 Daycare Centers in Belarus! Our main goal for these centers is to build Christ’s Kingdom by introducing children to Jesus Christ.',
   },
   {
-    imageUrl: '/img/ministries/planting/baptisms.jpg',
-    title: 'Orphan Adoption Program',
-    description: 'Pray for us as we invest into disciples of Christ.',
+    imageUrl: '/img/hero_images/plant_church_main.jpg',
+    title: 'Church planting',
+    description:
+      'Planting churches to serve the local community. The people of Belarus are suffering from the effects of three generations of Communist domination and Atheism.',
   },
   {
-    imageUrl: '/img/gallery/gruzd/blow.jpg',
-    title: 'Orphan Adoption Program',
-    description: 'Pray for us as we invest into disciples of Christ.',
+    imageUrl: '/img/hero_images/evangelism_main.jpg',
+    title: 'Evangelism',
+    description:
+      'The people of Belarus cry out, for what they do not know. God, however, knows what they need and has made provision for them.We need only bring them the word of that provision.',
   },
   {
-    imageUrl: '/img/gallery/gruzd/teach.jpg',
+    imageUrl: '/img/hero_images/orphanAdoption_main.jpg',
     title: 'Orphan Adoption Program',
-    description: 'Pray for us as we invest into disciples of Christ.',
+    description: 'Ending the toxic cycle of broken home. What we are doing is placing orphans in Christian families.',
+  },
+  {
+    imageUrl: '/img/hero_images/youth_main.jpg',
+    title: 'Youth Outreach',
+    description:
+      'Because of contacts that this organization has within the university system of Belarus, we are able to have open access to the campuses across the country.',
   },
 ];
 const Slider = () => {
