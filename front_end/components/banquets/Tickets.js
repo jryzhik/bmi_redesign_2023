@@ -100,7 +100,12 @@ const Tickets = () => {
                     </li>
                   ))}
                 </ul>
-                <Quantity item={item} />
+                {item.id !== 3 && <Quantity item={item} />}
+                {item.id === 3 && (
+                  <a className={styles.cardButton} href={item.link}>
+                    Reserve Your table
+                  </a>
+                )}
               </div>
             </div>
           ))}

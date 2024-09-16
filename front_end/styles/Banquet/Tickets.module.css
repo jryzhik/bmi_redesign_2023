@@ -22,12 +22,13 @@
 	display: flex;
 	justify-content: center;
 	align-items: stretch;
-	
+	height: auto;
+	overflow: hidden;
 }
 
 .card {
 	position: relative;
-	height: 100%;
+	width: 100%;
 	max-width: 350px;
 }
 
@@ -80,7 +81,12 @@
 .cardBody {
 	padding: 30px;
 	background-color: #E7F8FF;
+	height: 420px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
+
 .cardBody ul {
 	margin-bottom: 25px;
 }
@@ -121,6 +127,20 @@
 .cardBodyIconXmark {
 	background-color: black;
 	color: #fff;
+}
+
+.cardButton {
+	padding: 14px 40px;
+	background-color: #000;
+	font-size: 12px;
+	font-weight: 900;
+	border-radius: 100px;
+	color: #FFF;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	display: block;
+	text-align: center;
+	margin-top: 24px;
 }
 
 
@@ -222,10 +242,12 @@
 
 	.cardBody {
 		padding: 20px;
+		height: 100%;
 	}
 
 	.cardButton {
 		padding: 15px;
+		margin-top: 0;
 	}
 
 	.cardTop {
@@ -236,16 +258,17 @@
 	.card .shapeRightBottom {
 		opacity: 1;
 	}
-	
+
 	.card .shapeLeftBottom {
 		opacity: 1;
 	}
+
 	.card .shapeRightTop {
 		display: block;
 		right: -15px;
 		top: -12px;
 		width: 32px;
-	}	
+	}
 
 	.contentBox {
 		border-top: none;
@@ -256,6 +279,7 @@
 	.cardBody {
 		padding: 32px;
 	}
+
 	.cardTop {
 		padding: 32px;
 	}

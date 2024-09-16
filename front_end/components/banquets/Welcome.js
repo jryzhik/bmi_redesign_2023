@@ -13,10 +13,7 @@ const Welcome = () => {
         <P text="BMI has been busy with impactful projects Bible Printing, the Orphan Adoption Program, and so much more." />
         <P text="Join us for an evening with a special guest, live music, and a look at our exciting future plans!" />
         <P text="Be a Part of Our Mission – Get Your Tickets Today" />
-        <a className={styles.button} href="#tickets">
-          {' '}
-          Reserve your spot{' '}
-        </a>
+        <a className={styles.button} href="#tickets"> Reserve your spot</a>
       </div>
     </section>
   );
