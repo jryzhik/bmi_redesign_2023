@@ -103,7 +103,7 @@ const Tickets = () => {
                 {item.id !== 3 && <Quantity item={item} />}
                 {item.id === 3 && (
                   <a className={styles.cardButton} href={item.link}>
-                    Reserve Your table
+                    Reserve Your Table
                   </a>
                 )}
               </div>
