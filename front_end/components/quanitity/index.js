@@ -44,7 +44,7 @@ const Quantity = ({item}) => {
           </svg>
         </button>
       </div>
-      <a className={styles.cardButton} href={item.id == 3 ? item.link : `${item.link}&quantity=${count}`}>
+      <a className={styles.cardButton} href={item.id == 3 ? item.link : `${item.link}#quantity=${count}`}>
         {item.id == 3 ? 'Reserve Your table' : 'Reserve Your Spot'}
       </a>
     </>
