@@ -11,6 +11,10 @@ const isLinkActive = (link, menu) => {
   if (menu) return menu.some(([text, url]) => url === link.replace("/", ""));
 };
 
+const isExternalLink = (url) => {
+  return url.startsWith('http') || url.startsWith('https');
+};
+
 export default function Mobile_menu({ menuExpanded, toggleMenu, menuArray }) {
   const [menuExpandedStyle, setmenuExpandedStyle] = useState(
     styles.mobile_menu_containerOFF
@@ -53,23 +57,43 @@ export default function Mobile_menu({ menuExpanded, toggleMenu, menuArray }) {
           >
             {item.primary.length === 2 ? (
               item.secondary == null ? (
-                <Link href={"/" + item.primary[1]}>
-                  <div onClick={toggleMenu}>
-                    <H3
-                      text={item.primary[0]}
-                      textDecoration={
-                        item.primary[1] === router.pathname.replace("/", "")
-                          ? "underline"
-                          : "none"
-                      }
-                      fontWeight={
-                        item.primary[1] === router.pathname.replace("/", "")
-                          ? "bold"
-                          : "normal"
-                      }
-                    />
-                  </div>
-                </Link>
+                isExternalLink(item.primary[1]) ? (
+                  <a href={item.primary[1]} target="_blank" rel="noopener noreferrer">
+                    <div onClick={toggleMenu}>
+                      <H3
+                        text={item.primary[0]}
+                        textDecoration={
+                          item.primary[1] === router.pathname.replace("/", "")
+                            ? "underline"
+                            : "none"
+                        }
+                        fontWeight={
+                          item.primary[1] === router.pathname.replace("/", "")
+                            ? "bold"
+                            : "normal"
+                        }
+                      />
+                    </div>
+                  </a>
+                ) : (
+                  <Link href={"/" + item.primary[1]}>
+                    <div onClick={toggleMenu}>
+                      <H3
+                        text={item.primary[0]}
+                        textDecoration={
+                          item.primary[1] === router.pathname.replace("/", "")
+                            ? "underline"
+                            : "none"
+                        }
+                        fontWeight={
+                          item.primary[1] === router.pathname.replace("/", "")
+                            ? "bold"
+                            : "normal"
+                        }
+                      />
+                    </div>
+                  </Link>
+                )
               ) : (
                 <H3
                   text={item.primary[0]}
@@ -116,22 +140,41 @@ export default function Mobile_menu({ menuExpanded, toggleMenu, menuArray }) {
             >
               {item.secondary !== null ? (
                 item.secondary.map((subpage) => (
-                  <Link href={"/" + subpage[1]}>
-                    <div
-                      onClick={toggleMenu}
-                      style={{ paddingTop: ".15em", paddingBottom: ".15em" }}
-                    >
-                      {subpage[1] === router.pathname.replace("/", "") ? (
-                        <P
-                          text={subpage[0]}
-                          fontWeight="bold"
-                          textDecoration={"underline"}
-                        />
-                      ) : (
-                        <P text={subpage[0]} />
-                      )}
-                    </div>
-                  </Link>
+                  isExternalLink(subpage[1]) ? (
+                    <a href={subpage[1]} target="_blank" rel="noopener noreferrer">
+                      <div
+                        onClick={toggleMenu}
+                        style={{ paddingTop: ".15em", paddingBottom: ".15em" }}
+                      >
+                        {subpage[1] === router.pathname.replace("/", "") ? (
+                          <P
+                            text={subpage[0]}
+                            fontWeight="bold"
+                            textDecoration={"underline"}
+                          />
+                        ) : (
+                          <P text={subpage[0]} />
+                        )}
+                      </div>
+                    </a>
+                  ) : (
+                    <Link href={"/" + subpage[1]}>
+                      <div
+                        onClick={toggleMenu}
+                        style={{ paddingTop: ".15em", paddingBottom: ".15em" }}
+                      >
+                        {subpage[1] === router.pathname.replace("/", "") ? (
+                          <P
+                            text={subpage[0]}
+                            fontWeight="bold"
+                            textDecoration={"underline"}
+                          />
+                        ) : (
+                          <P text={subpage[0]} />
+                        )}
+                      </div>
+                    </Link>
+                  )
                 ))
               ) : (
                 <></>
