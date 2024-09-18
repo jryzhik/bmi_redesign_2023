@@ -11,9 +11,6 @@ export default function FiveButtonsDonate({buttonStyle, masterCallBackFunction})
     <div className={styles.boxConstraint}>
       <Grid container spacing={1.5} minHeight={160}>
         <Grid xs={6} md={2.4} display="flex" justifyContent="center" alignItems="center">
-          <RoundedButtonMoney text="$25" passedStyle={buttonStyle} amount={25} callBackFunction={callBackClick} />
-        </Grid>
-        <Grid xs={6} md={2.4} display="flex" justifyContent="center" alignItems="center">
           <RoundedButtonMoney text="$50" passedStyle={buttonStyle} amount={50} callBackFunction={callBackClick} />
         </Grid>
         <Grid xs={6} md={2.4} display="flex" justifyContent="center" alignItems="center">
@@ -21,6 +18,9 @@ export default function FiveButtonsDonate({buttonStyle, masterCallBackFunction})
         </Grid>
         <Grid xs={6} md={2.4} display="flex" justifyContent="center" alignItems="center">
           <RoundedButtonMoney text="$250" passedStyle={buttonStyle} amount={250} callBackFunction={callBackClick} />
+        </Grid>
+        <Grid xs={6} md={2.4} display="flex" justifyContent="center" alignItems="center">
+          <RoundedButtonMoney text="$500" passedStyle={buttonStyle} amount={500} callBackFunction={callBackClick} />
         </Grid>
         <Grid xs={12} md={2.4} display="flex" justifyContent="center" alignItems="center">
           <RoundedButtonMoney text="custom" passedStyle={buttonStyle} amount={''} callBackFunction={callBackClick} />
