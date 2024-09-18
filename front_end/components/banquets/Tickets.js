@@ -2,6 +2,20 @@ import H2 from '../fonts/H2';
 import styles from '../../styles/Banquet/Tickets.module.css';
 import Quantity from '../quanitity';
 import P from '../fonts/P';
+import {useEffect} from 'react';
+
+function openTypeformPopup(url) {
+  window.typeformEmbed.makePopup(url, {
+    mode: 'popup',
+    autoOpen: true,
+    hideHeaders: true,
+    hideFooters: true,
+    onSubmit: function () {
+      console.log('Typeform successfully submitted');
+    },
+  });
+}
+
 const tickets = [
   {
     id: 1,
@@ -56,6 +70,17 @@ const tickets = [
   },
 ];
 const Tickets = () => {
+  useEffect(() => {
+    // Load Typeform embed script
+    const script = document.createElement('script');
+    script.src = 'https://embed.typeform.com/embed.js';
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <section id="tickets" className={styles.tickets}>
       <div className={styles.title}>
@@ -102,7 +127,7 @@ const Tickets = () => {
                 </ul>
                 {item.id !== 3 && <Quantity item={item} />}
                 {item.id === 3 && (
-                  <a className={styles.cardButton} href={item.link}>
+                  <a className={styles.cardButton} onClick={() => openTypeformPopup(item.link)} href="#3">
                     Reserve Your Table
                   </a>
                 )}
