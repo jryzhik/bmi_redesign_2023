@@ -1,13 +1,13 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from '../../styles/Navigation/Nav.module.css';
 import Image from 'next/image';
 import NAVTEXT from '../fonts/NAVTEXT';
 import NH from '../fonts/NH';
 import Link from 'next/link';
-import {useRouter} from 'next/router';
+import { useRouter } from 'next/router';
 import theme from '../../styles/theme.js';
 
-export default function Default_nav_bar({menu}) {
+export default function Default_nav_bar({ menu }) {
   const [hoveredItem, setHoveredItem] = useState(null);
   const [hoverTimeout, setHoverTimeout] = useState(null);
 
@@ -51,6 +51,17 @@ export default function Default_nav_bar({menu}) {
     setHoveredItem(null);
   }, [router]);
 
+  const isExternalLink = (url) => {
+    return url.startsWith('http://') || url.startsWith('https://');
+  };
+
+  const renderLink = (url, children) => {
+    if (isExternalLink(url)) {
+      return <a href={url}>{children}</a>;
+    }
+    return <Link href={'/' + url}>{children}</Link>;
+  };
+
   return (
     <div className={styles.container}>
       <Link href="/">
@@ -66,14 +77,12 @@ export default function Default_nav_bar({menu}) {
                     menu_item.primary[1] === router.pathname.replace('/', '') ? (
                       <NH text={menu_item.primary[0]} color={theme.colors.BLACK} fontweight="600" />
                     ) : (
-                      <Link href={'/' + menu_item.primary[1]}>
+                      renderLink(menu_item.primary[1], 
                         <NH text={menu_item.primary[0]} color={theme.colors.BLACK} fontweight="300" decoration="underline" />
-                      </Link>
+                      )
                     )
                   ) : isLinkActive(router.pathname, menu_item.secondary) ? (
-                    <>
-                      <NH text={menu_item.primary} color={theme.colors.BLACK} fontweight="600" />
-                    </>
+                    <NH text={menu_item.primary} color={theme.colors.BLACK} fontweight="600" />
                   ) : (
                     <NH text={menu_item.primary} color={theme.colors.BLACK} decoration="underline" fontweight="300" />
                   )}
@@ -87,24 +96,20 @@ export default function Default_nav_bar({menu}) {
                       <div key={subIndex} onMouseEnter={() => handleMouseEnterSub(subIndex)} onMouseLeave={handleMouseLeaveSub}>
                         {hoveredItemSubMenu === subIndex ? (
                           sub_item[1] === router.pathname.replace('/', '') ? (
-                            <React.Fragment>
-                              <Link href={'/' + sub_item[1]}>
-                                <NH key={subIndex} text={sub_item[0]} color={theme.colors.BLACK} fontweight="600" />
-                              </Link>
-                            </React.Fragment>
+                            renderLink(sub_item[1],
+                              <NH key={subIndex} text={sub_item[0]} color={theme.colors.BLACK} fontweight="600" />
+                            )
                           ) : (
-                            <React.Fragment>
-                              <Link href={'/' + sub_item[1]}>
-                                <NH key={subIndex} text={sub_item[0]} color={theme.colors.BLACK} fontweight="300" decoration="underline" />
-                              </Link>
-                            </React.Fragment>
+                            renderLink(sub_item[1],
+                              <NH key={subIndex} text={sub_item[0]} color={theme.colors.BLACK} fontweight="300" decoration="underline" />
+                            )
                           )
                         ) : sub_item[1] === router.pathname.replace('/', '') ? (
                           <NH key={subIndex} text={sub_item[0]} color={theme.colors.BLACK} fontweight="600" />
                         ) : (
-                          <Link href={'/' + sub_item[1]}>
+                          renderLink(sub_item[1],
                             <NAVTEXT key={subIndex} text={sub_item[0]} color={theme.colors.BLACK} />
-                          </Link>
+                          )
                         )}
                       </div>
                     ))}

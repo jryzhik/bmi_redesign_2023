@@ -54,12 +54,8 @@ const menu = [
     ],
   },
   {
-    primary: ['Store', 'store'],
-    secondary: [
-      ['Store Home', 'store'],
-      ['Books', 'books'],
-      ['Apparel', 'apparel'],
-    ],
+    primary: ['Store', 'https://shop.belarusmission.org'],
+    secondary: null,
   },
   {
     primary: ['Donate', 'donate'],
