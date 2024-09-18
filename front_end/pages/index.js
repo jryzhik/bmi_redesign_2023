@@ -33,7 +33,7 @@ const HeroSlider = [
     color2: '#996800',
     headerText: 'Providing support and hope for the children',
     subText: 'We make a living by what we get, but a life by what we give.',
-    imageFocus: '50% -20%',
+    imageFocus: '50% 20%',
   },
   {
     imageUrl: '/img/hero_images/home_hero/BaptismSmile.jpg',
@@ -41,7 +41,7 @@ const HeroSlider = [
     color2: '#1d231f',
     headerText: 'Generating a Generation for God since 2000',
     subText: 'We make a living by what we get, but a life by what we give.',
-    imageFocus: '50% -20%',
+    imageFocus: '50% 20%',
   },
   {
     imageUrl: '/img/hero_images/home_hero/KidsStanding.jpg',
