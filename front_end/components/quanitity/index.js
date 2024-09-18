@@ -1,20 +1,10 @@
 import React from 'react';
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import styles from '../../styles/Quantity/Quantity.module.css';
 const Quantity = ({item}) => {
   const [count, setCount] = useState(1);
   const increment = () => setCount((prevCount) => Math.min(10, prevCount + 1));
   const decrement = () => setCount((prevCount) => Math.max(1, prevCount - 1));
-
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://embed.typeform.com/embed.js';
-    script.async = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
 
   const openTypeformPopup = (url) => {
     window.typeformEmbed.makePopup(url, {
