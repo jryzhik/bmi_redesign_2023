@@ -19,7 +19,7 @@ const galleryArray = [
     title:'Youth Baptized', description: 'Brest', imageUrl:'/img/gallery/general/brest-baptism.jpg'
   },
   {
-    title:'Equipping with Literature', description: 'Imenin', imageUrl:'/img/gallery/general/book_distribution_youth.jpg'
+    title:'Equipping with Literature', description: 'Iminin', imageUrl:'/img/gallery/general/book_distribution_youth.jpg'
   },
   {
     title:'Foundation of camp', description: 'Mozyr', imageUrl:'/img/gallery/general/construction_camp_mozyr.jpg'
