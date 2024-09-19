@@ -1,87 +1,88 @@
-import React from "react";
-import Link from "next/link";
-import Image from "next/image";
-import NH from "../fonts/NH";
-import NAVTEXT from "../fonts/NAVTEXT";
-import Stack from "@mui/material/Stack";
-import {Spacer} from "@nextui-org/react";
-import Social from "./social";
-import styles from '../../styles/Footers/Foot.module.css'
+import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import NH from '../fonts/NH';
+import NAVTEXT from '../fonts/NAVTEXT';
+import Stack from '@mui/material/Stack';
+import {Spacer} from '@nextui-org/react';
+import Social from './social';
+import styles from '../../styles/Footers/Foot.module.css';
+import BezalelCopyright from './BezalelCopyright';
 
 var currentYear = new Date().getFullYear();
 
 const footerNavData = [
   {
-    section: "Who We Are",
+    section: 'Who We Are',
     links: [
-      { text: "Our Vision", link: "/vision" },
-      { text: "Faith Statement", link: "/faith" },
-      { text: "Annual Report", link: "/report" },
+      {text: 'Our Vision', link: '/vision'},
+      {text: 'Faith Statement', link: '/faith'},
+      {text: 'Annual Report', link: '/report'},
     ],
   },
   {
-    section: "Team",
+    section: 'Team',
     links: [
-      { text: "Advisory Board", link: "/advisory" },
-      { text: "Board Members", link: "/board" },
-      { text: "Our Partners", link: "/partners" },
-      { text: "Founders", link: "/founders" },
+      {text: 'Advisory Board', link: '/advisory'},
+      {text: 'Board Members', link: '/board'},
+      {text: 'Our Partners', link: '/partners'},
+      {text: 'Founders', link: '/founders'},
     ],
   },
   {
-    section: "Missionaries",
-    links: [{ text: "Cassandra", link: "/grist" }],
+    section: 'Missionaries',
+    links: [{text: 'Cassandra', link: '/grist'}],
   },
   {
-    section: "Ministries",
+    section: 'Ministries',
     links: [
-      { text: "Brest Bible Church", link: "/brest" },
-      { text: "DayCare Centers", link: "/daycare" },
-      { text: "Evangelism", link: "/plant" },
-      { text: "Orphan Adoption", link: "/gospel" },
-      { text: "Youth Outreach", link: "/orphans" },
-      { text: "Books Printing", link: "/youth" },
+      {text: 'Brest Bible Church', link: '/brest'},
+      {text: 'DayCare Centers', link: '/daycare'},
+      {text: 'Evangelism', link: '/plant'},
+      {text: 'Orphan Adoption', link: '/gospel'},
+      {text: 'Youth Outreach', link: '/orphans'},
+      {text: 'Books Printing', link: '/youth'},
     ],
   },
   {
-    section: "Events",
+    section: 'Events',
     links: [
-      { text: "Calendar", link: "/calendar" },
-      { text: "Trip Registration", link: "/trip" },
+      {text: 'Calendar', link: '/calendar'},
+      {text: 'Trip Registration', link: '/trip'},
     ],
   },
   {
-    section: "Resources",
+    section: 'Resources',
     links: [
-      { text: "Gallery", link: "/gallery" },
-      { text: "Videos", link: "/videos" },
-      { text: "News", link: "/news" },
-      { text: "Things to Know", link: "/brief" },
-      { text: "Fundraising Letter", link: "/letter" },
+      {text: 'Gallery', link: '/gallery'},
+      {text: 'Videos', link: '/videos'},
+      {text: 'News', link: '/news'},
+      {text: 'Things to Know', link: '/brief'},
+      {text: 'Fundraising Letter', link: '/letter'},
     ],
   },
   {
-    section: "Contact Us",
-    links: [{ text: "Contact", link: "/contact" }],
+    section: 'Contact Us',
+    links: [{text: 'Contact', link: '/contact'}],
   },
   {
-    section: "Donate",
+    section: 'Donate',
     links: [
-      { text: "General", link: "/donate" },
-      { text: "Urgent Matching Fund", link: "/matching" },
-      { text: "Love in Action Initiative", link: "/love" },
-      { text: "Good & Evil Bible", link: "/literature" },
-      { text: "Legacy Giving", link: "/legacy" },
-      { text: "Trip Donations", link: "/pay" },
+      {text: 'General', link: '/donate'},
+      {text: 'Urgent Matching Fund', link: '/matching'},
+      {text: 'Love in Action Initiative', link: '/love'},
+      {text: 'Good & Evil Bible', link: '/literature'},
+      {text: 'Legacy Giving', link: '/legacy'},
+      {text: 'Trip Donations', link: '/pay'},
     ],
   },
   {
-    section: "Store",
+    section: 'Store',
     links: [
-      { text: "Store", link: "https://shop.belarusmission.org/" },
+      {text: 'Store', link: 'https://shop.belarusmission.org/'},
       {
-        text: "All products",
-        link: "https://shop.belarusmission.org/collections/all",
+        text: 'All products',
+        link: 'https://shop.belarusmission.org/collections/all',
       },
     ],
   },
@@ -89,52 +90,46 @@ const footerNavData = [
 
 export default function Footer() {
   return (
-      <Stack
-          spacing={5}
-          alignItems="center"
-          sx={{
-            paddingTop: "60px",
-          }}
-      >
-        <div
-            className={styles.footer__container}
-      >
+    <Stack
+      spacing={5}
+      alignItems="center"
+      sx={{
+        paddingTop: '60px',
+      }}
+    >
+      <div className={styles.footer__container}>
         {/* Логотип выровнен по левому краю без дополнительного отступа */}
-          <span
-              className={styles.footer__logo}
-        >
-          <Image
-              src="img/logos/logo_stack.svg"
-              alt="BMI"
-              width={187}
-              height={91.8}
-          />
+        <span className={styles.footer__logo}>
+          <Image src="img/logos/logo_stack.svg" alt="BMI" width={187} height={91.8} />
         </span>
-          <ul
-              className={styles.footer__nav}
-        >
+        <ul className={styles.footer__nav}>
           {footerNavData.map((section, index) => (
-              <li
-                  className={styles.footer__item}
-                  key={index}
-              >
-                  <NH text={section.section}/>
-                  {section.links.map((link, idx) => (
-                      <Link className={styles.footer__link} key={idx} href={link.link} passHref>
-                        <NAVTEXT text={link.text}/>
-                      </Link>
-                  ))}
-              </li>
+            <li className={styles.footer__item} key={index}>
+              <NH text={section.section} />
+              {section.links.map((link, idx) => (
+                <Link className={styles.footer__link} key={idx} href={link.link} passHref>
+                  <NAVTEXT text={link.text} />
+                </Link>
+              ))}
+            </li>
           ))}
-          </ul>
+        </ul>
+      </div>
+      <Stack spacing={2}>
+        <Social />
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0.5em',
+            justifyItems: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <NAVTEXT text={`© Copyright 2000 - ${currentYear} | All Rights Reserved`} link="#" />
+          <BezalelCopyright id="navtxt" />
         </div>
-        <Stack spacing={2}>
-      <Social />
-      <NAVTEXT
-        text={`© Copyright 2000 - ${currentYear} | All Rights Reserved`}
-        link="#"
-      />
-        </Stack>
+      </Stack>
       <Spacer y={1.2} />
     </Stack>
   );
