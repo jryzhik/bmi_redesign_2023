@@ -20,6 +20,15 @@ import clientPromise from '../lib/mongo/connect';
 
 const HeroSlider = [
   {
+    imageUrl: '/img/banquet/hero-bg.jpg',
+    color2: '#81b0ff',
+    color1: '#81b0ff',
+    headerText: 'Fearless for the Gospel',
+    subText: 'Banquet - Forsyth Conference Center | November 14th',
+    imageFocus: '50% 20%',
+    link: "banquet"
+  },
+  {
     imageUrl: '/img/hero_images/home_hero/WalkingBaptism.jpg',
     color2: '#b1b8c1',
     color1: '#7db0e3',

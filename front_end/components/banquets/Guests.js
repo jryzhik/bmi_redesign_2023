@@ -4,11 +4,11 @@ import H2 from '../fonts/H2';
 import P from '../fonts/P';
 
 const guests = [
-  {
-    name: 'Dr. Anthony George ',
-    jobTitle: 'Senior Pastor First Baptist Atlanta',
-    imgSource: '/img/banquet/guest-1.png',
-  },
+  // {
+  //   name: 'Dr. Anthony George ',
+  //   jobTitle: 'Senior Pastor First Baptist Atlanta',
+  //   imgSource: '/img/banquet/guest-1.png',
+  // },
   {
     name: 'Dr. Phil Roberts',
     jobTitle: 'Director of International Theological Education',
