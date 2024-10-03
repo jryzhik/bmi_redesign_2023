@@ -6,7 +6,7 @@
 .pnp.js
 
 # testing
-# redeploy
+# just to redeploy
 /coverage
 
 # next.js
