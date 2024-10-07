@@ -26,7 +26,7 @@ const HeroSlider = [
     headerText: 'Fearless for the Gospel',
     subText: 'Banquet - Forsyth Conference Center | November 14th',
     imageFocus: '50% 20%',
-    link: "banquet"
+    link: "banquet#tickets"
   },
   {
     imageUrl: '/img/hero_images/home_hero/WalkingBaptism.jpg',
