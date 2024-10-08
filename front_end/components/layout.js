@@ -28,6 +28,7 @@ const menu = [
   {
     primary: 'Events',
     secondary: [
+      ['Banquet', 'banquet'],
       ['Calendar', 'calendar'],
       ['Trip Registration', 'trip'],
     ],
