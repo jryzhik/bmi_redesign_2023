@@ -1,9 +1,10 @@
 {
-  "parser": "typescript",
-  "printWidth": 150,
-  "tabWidth": 2,
-  "singleQuote": true,
-  "trailingComma": "all",
-  "arrowParens": "always",
-  "bracketSpacing": false
+   "parser": "typescript",
+   "tabWidth": 3,
+   "printWidth": 132,
+   "semi": true,
+   "useTabs": false,
+   "singleQuote": true,
+   "trailingComma": "es5",
+   "bracketSpacing": true
 }
