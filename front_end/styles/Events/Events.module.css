@@ -35,6 +35,20 @@
     padding-top: 8.875em;
 }
 
+.containerH2NComp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.063em;
+    justify-content: center;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+.subComponent {
+    text-align: left;
+}
+
 @media (min-width: 1300px) {
 
     .iconNTextContainer {

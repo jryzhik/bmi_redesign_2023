@@ -1,9 +1,6 @@
-:root {
-  background-color: #f6f6f6;
-}
-
 html {
   scroll-behavior: smooth;
+  background-color: #f6f6f6;
 }
 
 body {
@@ -19,7 +16,7 @@ body {
 }
 
 main {
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 a {

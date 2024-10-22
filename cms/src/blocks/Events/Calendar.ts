@@ -1,46 +1,28 @@
 import type { Block } from 'payload/types';
 
 const Calendar: Block = {
-   slug: 'eventblock',
+   slug: 'calendarblock',
 
    labels: {
-      singular: 'Event block',
-      plural: 'Event blocks',
+      singular: 'Calendar block',
+      plural: 'Calendar blocks',
    },
    fields: [
       {
-         name: 'title',
-         label: 'Name of the event',
-         type: 'text',
-         required: true,
-      },
-      {
-         name: 'short',
-         label: 'Short description',
-         type: 'text',
-      },
-      {
-         name: 'description',
-         label: 'Description',
-         type: 'textarea',
-      },
-      {
-         name: 'datetime',
-         label: 'Date and time',
-         type: 'date',
-         required: true,
-         admin: {
-            date: {
-               pickerAppearance: 'default',
-               displayFormat: 'd MMM yyy',
-            },
+         name: 'calendarSelected',
+         label: 'The choice of calendar happenings',
+         type: 'relationship',
+         relationTo: 'happenings',
+         hasMany: true,
+         filterOptions: ({ relationTo }) => {
+            if (relationTo === 'happenings') {
+               return {
+                  _status: {
+                     equals: 'published',
+                  },
+               };
+            }
          },
-      },
-      {
-         name: 'eventImage',
-         label: 'Picture',
-         type: 'upload',
-         relationTo: 'media',
       },
    ],
 };

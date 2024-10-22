@@ -10,6 +10,7 @@ import Users from './collections/Users';
 // import Pages from './collections/Pages';
 import { Media } from './collections/Media';
 import Events from './collections/Events';
+import Happenings from './collections/Happenings';
 
 export default buildConfig({
    // cors: ['*'],
@@ -47,7 +48,7 @@ export default buildConfig({
          elements: ['h1', 'h2', 'h3', 'h4', 'link', 'blockquote', 'ol', 'ul', 'textAlign', 'indent', 'upload'],
       },
    }),
-   collections: [Users, Events, Media],
+   collections: [Users, Events, Happenings, Media],
    typescript: {
       outputFile: path.resolve(__dirname, 'payload-types.ts'),
    },

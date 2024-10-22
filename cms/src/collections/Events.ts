@@ -1,6 +1,7 @@
 import Hero from '../blocks/Events/Hero';
 import Calendar from '../blocks/Events/Calendar';
 import { isAppAccess } from '../access/isAppAccess';
+import { getAlias } from '../tools/getAlias';
 import type { CollectionConfig } from 'payload/types';
 
 const Events: CollectionConfig = {
@@ -39,10 +40,11 @@ const Events: CollectionConfig = {
          label: 'Calendar Layout',
          type: 'blocks',
          blocks: [Calendar],
+         maxRows: 1,
       },
       {
          name: 'alias',
-         label: 'Page alias',
+         label: 'Choose the events reflected on the page',
          type: 'text',
          admin: {
             position: 'sidebar',
@@ -51,7 +53,7 @@ const Events: CollectionConfig = {
             beforeValidate: [
                ({ value, data }) => {
                   const { title } = data;
-                  return value || (title as string).toLocaleLowerCase().split(' ').join('_');
+                  return value || getAlias(title);
                },
             ],
          },
