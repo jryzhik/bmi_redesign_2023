@@ -6,7 +6,7 @@ const Welcome = () => {
     <section id="welcome" className={styles.welcome}>
       <h2 className={styles.title}>November 14, 7-9 PM</h2>
       <h3 className={styles.subtitle}>
-        Forsyth Conference Center, 3410 <br /> Ronald Reagan BLVD
+        Forsyth Conference Center,<br /> 3410 Ronald Reagan Blvd, Cumming, GA 30041
       </h3>
       <div className={styles.wrapper}>
         <P text="After a 4-year pause, the Annual Fundraiser Banquet is back!" />
