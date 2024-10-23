@@ -1,13 +1,13 @@
 import path from 'path';
 
 import { payloadCloud } from '@payloadcms/plugin-cloud';
-import { postgresAdapter } from '@payloadcms/db-postgres';
+// import { postgresAdapter } from '@payloadcms/db-postgres';
+import { mongooseAdapter } from '@payloadcms/db-mongodb';
 import { webpackBundler } from '@payloadcms/bundler-webpack';
 import { slateEditor } from '@payloadcms/richtext-slate';
 import { buildConfig } from 'payload/config';
 
 import Users from './collections/Users';
-// import Pages from './collections/Pages';
 import { Media } from './collections/Media';
 import Events from './collections/Events';
 import Happenings from './collections/Happenings';
@@ -16,6 +16,7 @@ export default buildConfig({
    // cors: ['*'],
    cors: [
       '*',
+      'https://byelorussianmission.org',
       'http://localhost',
       'http://localhost:3000',
       'http://localhost:3001',
@@ -28,6 +29,7 @@ export default buildConfig({
       'https://localhost:3000/admin/login',
    ],
    // csrf: [
+   //    'https://byelorussianmission.org',
    //    'http://localhost',
    //    'http://localhost:3000',
    //    'http://localhost:3000/admin',
@@ -35,6 +37,7 @@ export default buildConfig({
    //    'http://localhost:3000/admin/logout',
    //    'https://localhost',
    //    'https://localhost:3000',
+   //    'https://localhost:3001',
    //    'https://localhost:3000/admin',
    //    'https://localhost:3000/admin/login',
    //    'https://localhost:3000/admin/logout',
@@ -56,9 +59,12 @@ export default buildConfig({
       schemaOutputFile: path.resolve(__dirname, 'generated-schema.graphql'),
    },
    plugins: [payloadCloud()],
-   db: postgresAdapter({
-      pool: {
-         connectionString: process.env.DATABASE_URI,
-      },
+   // db: postgresAdapter({
+   //    pool: {
+   //       connectionString: process.env.DATABASE_URI,
+   //    },
+   // }),
+   db: mongooseAdapter({
+      url: process.env.DATABASE_URI,
    }),
 });

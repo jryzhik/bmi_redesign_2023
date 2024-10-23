@@ -14,6 +14,12 @@ export const Media: CollectionConfig = {
       staticDir: 'media',
       imageSizes: [
          {
+            name: 'minithumbnail',
+            width: 256,
+            height: 252,
+            position: 'centre',
+         },
+         {
             name: 'thumbnail',
             width: 400,
             height: 300,

@@ -68,29 +68,33 @@ export default function Calendar({ hero, calendar }) {
             </Grid>
          </div>
 
-         <div className={styles.allevents}>
-            {calendar.map((event) => (
-               <Link
-                  key={event.id}
-                  href={{
-                     pathname: eventPath,
-                     query: {
-                        id: event.id,
-                     },
-                  }}
-               >
-                  <div style={{ transition: 'all .2s ease-out' }}>
-                     <EventHappening
-                        key={event.id}
-                        title={event.happeningTitle}
-                        description={event.happeningDescription}
-                        imgSource={event.happeningImage.url}
-                        dateTime={event.happeningDatetime}
-                     />
-                  </div>
-               </Link>
-            ))}
-         </div>
+         {calendar.length ? (
+            <div className={styles.allevents}>
+               {calendar.map((event) => (
+                  <Link
+                     key={event.id}
+                     href={{
+                        pathname: eventPath,
+                        query: {
+                           id: event.id,
+                        },
+                     }}
+                  >
+                     <div style={{ transition: 'all .2s ease-out' }}>
+                        <EventHappening
+                           key={event.id}
+                           title={event.happeningTitle}
+                           description={event.happeningDescription}
+                           imgSource={event.happeningImage.url}
+                           dateTime={event.happeningDatetime}
+                        />
+                     </div>
+                  </Link>
+               ))}
+            </div>
+         ) : (
+            <h3 className={styles.no_events_container}>There are no events!</h3>
+         )}
       </>
    );
 }
@@ -115,8 +119,8 @@ export async function getServerSideProps() {
 
       return {
          props: {
-            hero: heroContent,
-            calendar: calendarSelected,
+            hero: heroContent || null,
+            calendar: calendarSelected || [],
          },
       };
    } catch (e) {

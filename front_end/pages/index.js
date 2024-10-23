@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import HeaderNComponent from '../components/texts/HeaderNComponent';
 import P from '../components/fonts/P';
 import theme from '../styles/theme';
@@ -66,6 +66,7 @@ export default function Home({ news, stats }) {
    const [animation1, setAnimation1] = useState(0);
    const [animation2, setAnimation2] = useState(0);
    const [animation3, setAnimation3] = useState(0);
+   const carouselKey = useMemo(() => Math.random().toString(32));
 
    const [isVisible, setIsVisible] = useState(false);
    function percentConvert(raisedAmount, goalAmount) {
@@ -225,7 +226,7 @@ export default function Home({ news, stats }) {
             fade
             options={{ dragFree: true, loop: true, slidesToScroll: 1 }}
          >
-            <EmblaHomeHeroCarousel slides={HeroSlider} />
+            <EmblaHomeHeroCarousel key={carouselKey} slides={HeroSlider} />
          </EmblaCarousel>
 
          <div className={styles.container}>
@@ -252,6 +253,7 @@ export default function Home({ news, stats }) {
                      link="/vision"
                   />
                </Grid>
+
                <Grid xs={12} sm={12} md={4} lg={4} display="flex" justifyContent="center" alignItems="center">
                   <ImageTextButton
                      color1="#170D04"
@@ -264,6 +266,7 @@ export default function Home({ news, stats }) {
                      link="/donate"
                   />
                </Grid>
+
                <Grid xs={12} sm={12} md={4} lg={4} display="flex" justifyContent="center" alignItems="center">
                   <ImageTextButton
                      color1="#374A1A"
@@ -277,6 +280,7 @@ export default function Home({ news, stats }) {
                   />
                </Grid>
             </Grid>
+
             <EmblaCarousel
                dots
                fade
@@ -291,6 +295,7 @@ export default function Home({ news, stats }) {
             >
                <EmblaAdCarousel slides={HeroAdSlider} />
             </EmblaCarousel>
+
             <HeaderNComponent
                primaryHeaderText="Join the fronts of God's battle"
                SecondaryComponent={
@@ -314,6 +319,7 @@ export default function Home({ news, stats }) {
                      routeURL={'/literature'}
                   />
                </Grid>
+
                <Grid xs={12} sm={12} md={4} justifyContent="center">
                   <ProgressDonate
                      imageUrl="/img/donation/progress/construction.jpg"
@@ -325,6 +331,7 @@ export default function Home({ news, stats }) {
                      routeURL={'/plant'}
                   />
                </Grid>
+
                <Grid xs={12} sm={12} md={4} justifyContent="center">
                   <ProgressDonate
                      imageUrl="/img/donation/progress/orphan.jpg"
@@ -337,7 +344,9 @@ export default function Home({ news, stats }) {
                   />
                </Grid>
             </Grid>
+
             <div style={{ paddingTop: '2em' }} />
+
             <Quote
                imageUrl={directorImage}
                author="Carlos Shmidt"
@@ -347,7 +356,9 @@ export default function Home({ news, stats }) {
                   'There is a great openness; and we have the privilege of partnering with Belarus’ pastors to start churches and reach people for the Lord.'
                }
             />
+
             <NoTextHero color1="#F6F6F6" color2="#FFFFFF" imageUrl="/img/hero_images/hands_up.jpg" imageFocus="50% 70%" />
+
             <HeaderNComponent
                primaryHeaderText="Stay updated with all we’re doing"
                SecondaryComponent={
@@ -362,6 +373,7 @@ export default function Home({ news, stats }) {
                <EmblaHomeCarouselNews slides={news} />
                <EmblaHomeCarouselNews slides={news} />
             </EmblaCarousel>
+
             <SubscribeHero
                color={theme.colors.NAVY}
                primaryText="Subscribe to our weekly newsletter"

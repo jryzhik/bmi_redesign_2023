@@ -1,384 +1,373 @@
 .container {
-    display: flex;
-    justify-content: center;
-
+   display: flex;
+   justify-content: center;
 }
 
 .generalContainer {
-    display: flex;
+   display: flex;
 }
 
 .headerNdescription {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5em;
-    padding-left: 26vw;
-    padding-right: 26vw;
+   display: flex;
+   flex-direction: column;
+   gap: 1.5em;
+   padding-left: 26vw;
+   padding-right: 26vw;
 }
 
 .iconNTextContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 .calendarsBoxDouble {
-    display: flex;
-    margin-left: 4em;
-    padding-top: 8.875em;
-    gap: .3em;
+   display: flex;
+   margin-left: 4em;
+   padding-top: 8.875em;
+   gap: .3em;
 }
 
 .calendarsBoxSingle {
-    display: flex;
-    margin-left: 10.2em;
-    padding-top: 8.875em;
+   display: flex;
+   margin-left: 10.2em;
+   padding-top: 8.875em;
 }
 
 .containerH2NComp {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.063em;
-    justify-content: center;
-    padding-left: 5vw;
-    padding-right: 5vw;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 1.063em;
+   justify-content: center;
+   padding-left: 5vw;
+   padding-right: 5vw;
 }
 
 .subComponent {
-    text-align: left;
+   text-align: left;
 }
 
 @media (min-width: 1300px) {
-
-    .iconNTextContainer {
-        margin-left: 14%;
-        margin-right: 14%;
-    }
-
+   .iconNTextContainer {
+      margin-left: 14%;
+      margin-right: 14%;
+   }
 }
 
 @media (min-width: 1200px) and (max-width: 1299px) {
-
-    .iconNTextContainer {
-        margin-left: 12%;
-        margin-right: 12%;
-    }
-
+   .iconNTextContainer {
+      margin-left: 12%;
+      margin-right: 12%;
+   }
 }
 
 @media (min-width: 1100px) and (max-width: 1199px) {
-
-    .iconNTextContainer {
-        margin-left: 9%;
-        margin-right: 9%;
-    }
-
+   .iconNTextContainer {
+      margin-left: 9%;
+      margin-right: 9%;
+   }
 }
 
 @media (min-width: 1000px) and (max-width: 1099px) {
+   .iconNTextContainer {
+      margin-left: 4%;
+      margin-right: 4%;
+   }
 
-    .iconNTextContainer {
-        margin-left: 4%;
-        margin-right: 4%;
-    }
+   .calendarsBoxDouble {
+      margin-left: 6.2em;
+      padding-top: 10em;
+   }
 
-    .calendarsBoxDouble {
-
-        margin-left: 6.2em;
-        padding-top: 10em;
-    }
-
-    .calendarsBoxSingle {
-        margin-left: 11em;
-        padding-top: 10em;
-
-    }
+   .calendarsBoxSingle {
+      margin-left: 11em;
+      padding-top: 10em;
+   }
 }
 
 @media (min-width: 900px) and (max-width: 999px) {
+   .iconNTextContainer {
+      margin-left: 3%;
+      margin-right: 3%;
+   }
 
-    .iconNTextContainer {
-        margin-left: 3%;
-        margin-right: 3%;
-    }
+   .calendarsBoxDouble {
+      margin-left: 6.2em;
+      padding-top: 10em;
+   }
 
-    .calendarsBoxDouble {
-
-        margin-left: 6.2em;
-        padding-top: 10em;
-    }
-
-    .calendarsBoxSingle {
-        margin-left: 11em;
-        padding-top: 10em;
-
-    }
+   .calendarsBoxSingle {
+      margin-left: 11em;
+      padding-top: 10em;
+   }
 
 }
 
 @media (min-width: 701px) and (max-width: 899px) {
+   .calendarsBoxDouble {
+      margin-left: 6.2em;
+      padding-top: 10em;
+   }
 
-    .calendarsBoxDouble {
-
-        margin-left: 6.2em;
-        padding-top: 10em;
-    }
-
-    .calendarsBoxSingle {
-        margin-left: 11em;
-        padding-top: 10em;
-
-    }
+   .calendarsBoxSingle {
+      margin-left: 11em;
+      padding-top: 10em;
+   }
 
 }
 
 @media (max-width: 700px) {
-    .container {
-        margin-left: 0em;
-        margin-right: 0em;
-    }
+   .container {
+      margin-left: 0em;
+      margin-right: 0em;
+   }
 
-    .headerNdescription {
-        padding-left: .5vw;
-        padding-right: .5vw;
-    }
+   .headerNdescription {
+      padding-left: .5vw;
+      padding-right: .5vw;
+   }
 
-    .iconNTextContainer {
-        margin-left: 1em;
-        margin-right: 1em;
-    }
+   .iconNTextContainer {
+      margin-left: 1em;
+      margin-right: 1em;
+   }
 
-    .calendarsBoxDouble {
+   .calendarsBoxDouble {
+      margin-left: 6.2em;
+      padding-top: 10em;
+   }
 
-        margin-left: 6.2em;
-        padding-top: 10em;
-    }
-
-    .calendarsBoxSingle {
-        margin-left: 11em;
-        padding-top: 10em;
-
-    }
+   .calendarsBoxSingle {
+      margin-left: 11em;
+      padding-top: 10em;
+   }
 
 }
 
 @media (max-width: 599px) {
+   .iconNTextContainer {
+      flex-direction: column;
+      gap: 2em;
+      text-align: center;
+   }
 
-    .iconNTextContainer {
-        flex-direction: column;
-        gap: 2em;
-        text-align: center;
-    }
+   .calendarsBoxDouble {
+      margin-left: 6.2em;
+      padding-top: 10em;
+   }
 
-    .calendarsBoxDouble {
-
-        margin-left: 6.2em;
-        padding-top: 10em;
-    }
-
-    .calendarsBoxSingle {
-        margin-left: 11em;
-        padding-top: 10em;
-    }
-
+   .calendarsBoxSingle {
+      margin-left: 11em;
+      padding-top: 10em;
+   }
 }
 
 @media (min-width: 200px) {
-    .container {
-        margin-left: 2em;
-        margin-right: 2em;
-    }
+   .container {
+      margin-left: 2em;
+      margin-right: 2em;
+   }
 }
 
 @media (min-width: 630px) {
-    .container {
-        margin-left: 1em;
-        margin-right: 1em;
-    }
-
-
+   .container {
+      margin-left: 1em;
+      margin-right: 1em;
+   }
 }
 
 @media (min-width: 600px) {
-    .container {
-        margin-left: .5em;
-        margin-right: .5em;
-    }
+   .container {
+      margin-left: .5em;
+      margin-right: .5em;
+   }
 }
+
 @media (max-width: 600px) {
-    .generalContainer {
-        justify-content: center;
-    }
+   .generalContainer {
+      justify-content: center;
+   }
 }
+
 .searchBarNFilter {
-    display: flex;
-    width: 56.25em;
+   display: flex;
+   width: 56.25em;
 }
 
 .leftPadding {
-    padding-left: .7em;
+   padding-left: .7em;
 }
 
 .calendarIconContainer {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    z-index: 50;
+   display: flex;
+   flex-direction: column;
+   position: relative;
+   z-index: 50;
 }
 
 .calendarIconTop {
-    display: flex;
-    justify-content: center;
-    background-color: #DE2418;
-    width: clamp(4.625em, 8vw, 5.875em);
-    height: clamp(1.625em, 8vw, 1.938em);
-    border-top-left-radius: 0.75em;
-    border-top-right-radius: 0.75em;
+   display: flex;
+   justify-content: center;
+   background-color: #DE2418;
+   width: clamp(4.625em, 8vw, 5.875em);
+   height: clamp(1.625em, 8vw, 1.938em);
+   border-top-left-radius: 0.75em;
+   border-top-right-radius: 0.75em;
 }
 
 .calendarIconBottom {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    width: clamp(4.625em, 8vw, 5.875em);
-    height: clamp(3em, 8vw, 3.938em);
-    border-bottom-left-radius: 0.75em;
-    border-bottom-right-radius: 0.75em;
-    flex-direction: column;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: white;
+   width: clamp(4.625em, 8vw, 5.875em);
+   height: clamp(3em, 8vw, 3.938em);
+   border-bottom-left-radius: 0.75em;
+   border-bottom-right-radius: 0.75em;
+   flex-direction: column;
 }
 
 .appContainer {
-    position: absolute;
-    top: 0;
-    left: 0;
+   position: absolute;
+   top: 0;
+   left: 0;
 }
 
 .appNCalendar {
-    position: relative;
+   position: relative;
 }
 
 .allevents {
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
-    padding-top: 3em;
-    margin-left: 5em;
-    margin-right: 5em;
+   display: flex;
+   flex-direction: column;
+   gap: 2em;
+   padding-top: 3em;
+   margin-left: 5em;
+   margin-right: 5em;
 }
 
 .containerEvents {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6em;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 6em;
 }
 
 .bioText {
-    padding-top: 2em;
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
+   padding-top: 2em;
+   display: flex;
+   flex-direction: column;
+   gap: 1em;
 }
 
 .startNEndBox {
-    display: flex;
-    gap: 1em;
-    justify-content: center;
-    align-items: center;
+   display: flex;
+   gap: 1em;
+   justify-content: center;
+   align-items: center;
 }
 
 .markCalendar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1em;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 1em;
 }
 
 .together {
-    position: relative;
+   position: relative;
 }
 
 .rectangleRounded {
-    min-height: 20px;
-    width: 100vw;
-    margin: 0;
-    position: relative;
-    z-index: 10;
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-    align-items: center;
-    background-color: #f6f6f6;
+   min-height: 20px;
+   width: 100vw;
+   margin: 0;
+   position: relative;
+   z-index: 10;
+   border-bottom-left-radius: 7px;
+   border-bottom-right-radius: 7px;
+   align-items: center;
+   background-color: #f6f6f6;
 }
 
 .containerRegister {
-    min-height: 23em;
-    width: 100vw;
-    margin-top: -4px;
-    padding: 0;
-    position: relative;
-    border-top-left-radius: -70px;
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-    align-items: center;
-    margin-bottom: 7em;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    gap: 1.688em;
-    text-align: center;
+   min-height: 23em;
+   width: 100vw;
+   margin-top: -4px;
+   padding: 0;
+   position: relative;
+   border-top-left-radius: -70px;
+   border-bottom-left-radius: 7px;
+   border-bottom-right-radius: 7px;
+   align-items: center;
+   margin-bottom: 7em;
+   justify-content: center;
+   display: flex;
+   flex-direction: column;
+   gap: 1.688em;
+   text-align: center;
 }
 
 .containerRegisterForm {
-    min-height: 48.188em;
-    width: 100vw;
-    margin-top: -4px;
-    padding: 0;
-    position: relative;
-    border-top-left-radius: -70px;
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-    align-items: center;
-    margin-bottom: 7em;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    gap: 1.688em;
-    text-align: center;
+   min-height: 48.188em;
+   width: 100vw;
+   margin-top: -4px;
+   padding: 0;
+   position: relative;
+   border-top-left-radius: -70px;
+   border-bottom-left-radius: 7px;
+   border-bottom-right-radius: 7px;
+   align-items: center;
+   margin-bottom: 7em;
+   justify-content: center;
+   display: flex;
+   flex-direction: column;
+   gap: 1.688em;
+   text-align: center;
 }
 
 .containerSubscribe {
-    min-height: 33.4375em;
-    width: 100vw;
-    margin-top: -4px;
-    padding: 0;
-    position: relative;
-    border-top-left-radius: -70px;
-    border-bottom-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-    align-items: center;
-    margin-bottom: 7em;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    gap: 1.688em;
-    text-align: center;
+   min-height: 33.4375em;
+   width: 100vw;
+   margin-top: -4px;
+   padding: 0;
+   position: relative;
+   border-top-left-radius: -70px;
+   border-bottom-left-radius: 7px;
+   border-bottom-right-radius: 7px;
+   align-items: center;
+   margin-bottom: 7em;
+   justify-content: center;
+   display: flex;
+   flex-direction: column;
+   gap: 1.688em;
+   text-align: center;
 }
 
 .registerButton {
-    width: 500px;
+   width: 500px;
 }
 
 .boxConstraint {
-    width: 60%;    
+   width: 60%;    
 }
 
 .viewCalendar {
-    width: 100vw;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    text-align: center;
+   width: 100vw;
+   position: relative;
+   align-items: center;
+   justify-content: center;
+   display: flex;
+   text-align: center;
+}
+
+.no_events_container {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: 100%;
+   padding: 70px 10px 10px;
+   text-align: center;
 }
