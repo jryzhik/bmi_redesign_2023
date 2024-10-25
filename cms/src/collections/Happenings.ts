@@ -6,6 +6,7 @@ const Happenings: CollectionConfig = {
    slug: 'happenings',
    admin: {
       useAsTitle: 'title',
+      listSearchableFields: ['title', 'description', 'happeningTitle', 'happeningDescription', 'happeningText'],
    },
    access: {
       read: isAppAccess,

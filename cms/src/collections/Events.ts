@@ -8,6 +8,7 @@ const Events: CollectionConfig = {
    slug: 'events',
    admin: {
       useAsTitle: 'title',
+      listSearchableFields: ['title', 'description'],
    },
    access: {
       read: isAppAccess,
@@ -48,6 +49,7 @@ const Events: CollectionConfig = {
          type: 'text',
          admin: {
             position: 'sidebar',
+            readOnly: true,
          },
          hooks: {
             beforeValidate: [

@@ -7,6 +7,7 @@ const Users: CollectionConfig = {
    auth: true,
    admin: {
       useAsTitle: 'email',
+      listSearchableFields: ['userFirstName', 'userLastName', 'role'],
    },
    access: {
       read: isAccess,
