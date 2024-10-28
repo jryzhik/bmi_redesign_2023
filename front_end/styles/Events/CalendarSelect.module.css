@@ -1,0 +1,111 @@
+.detail_select {
+   position: relative;
+   color: #373737;
+   outline: none;
+   min-width: fit-content;
+}
+
+.detail_select_summary {
+   display: flex;
+   gap: 0.4rem;
+   cursor: pointer;
+   min-width: fit-content;
+}
+
+.detail_select_summary::-webkit-details-marker {
+   content: none;
+   list-style: none
+}
+
+.detail_select_summary::marker {
+   content: none;
+   list-style: none
+}
+
+.detail_select_arrow {
+   color: #000000;
+}
+
+.detail_select_output {
+   display: inline-block;
+   height: 100%;
+   vertical-align: middle;
+   text-transform: uppercase;
+   font-size: 1em;
+   line-height: 1.25em;
+   letter-spacing: 0.1em;
+   color: #000000;
+   pointer-events: none;
+}
+
+.detail_select_title {
+   line-height: 1.375em;
+   font-size: 1em;
+
+}
+
+.detail::details-content {
+   display: block;
+   block-size: 0;
+   transition: block-size .8s ease 0s, content-visibility .8 ease 0s;
+   content-visibility: hidden;
+}
+
+.detail[open]::details-content {
+   block-size: auto;
+   content-visibility: visible;
+}
+
+.detail_select_content {
+   position: absolute;
+   top: calc(100% + 1.23em);
+   right: 0;
+   width: 100%;
+   min-width: 200px;
+   padding: 8px;
+   max-height: 70vh;
+   background-color: #fff;
+   border-radius: 14px;
+   overflow-x: hidden;
+   z-index: 100;
+}
+
+.detail_select_content_item {
+   width: 100%;
+   height: 100%;
+   padding: 5px 32px 5px 12px;
+   font-size: 1em;
+   line-height: 1.375em;
+   color: #373737;
+   border-radius: 8px;
+   cursor: pointer;
+}
+
+.detail_select_content_item:hover,
+.detail_select_content_item_active {
+   background-color: #eceef0;
+}
+
+.detail_select_content_item_active {
+   position: relative;
+}
+
+.detail_select_content_item_active::after {
+   content: '✓';
+   display: inline-block;
+   position: absolute;
+   width: 2rem;
+   height: 2rem;
+   right: 0;
+   top: 50%;
+   transform: translateY(-30%);
+   text-align: center;
+   line-height: 1;
+}
+
+@media all and (max-width: 899.5px) {
+   .detail_select_content {
+      left: 50%;
+      transform: translateX(-50%);
+   }
+}

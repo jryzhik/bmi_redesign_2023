@@ -14,26 +14,25 @@ import Events from './collections/Events';
 import Happenings from './collections/Happenings';
 
 export default buildConfig({
-   // cors: ['*'],
    cors: [
       '*',
-      // 'https://byelorussianmission.org',
-      // 'http://localhost',
-      // 'http://localhost:3000',
-      // 'http://localhost:3001',
-      // 'https://localhost',
-      // 'https://localhost:3000',
-      // 'https://localhost:3001',
+      'https://byelorussianmission.org',
+      'http://localhost:3001',
+      'http://localhost:3000',
+      'http://localhost',
+      'https://localhost:3001',
+      'https://localhost:3000',
+      'https://localhost',
    ],
-   // csrf: [
-   //    'https://byelorussianmission.org',
-   //    'http://localhost',
-   //    'http://localhost:3000',
-   //    'http://localhost:3001',
-   //    'https://localhost',
-   //    'https://localhost:3000',
-   //    'https://localhost:3001',
-   // ],
+   csrf: [
+      'https://byelorussianmission.org',
+      'http://localhost:3001',
+      'http://localhost:3000',
+      'http://localhost',
+      'https://localhost:3001',
+      'https://localhost:3000',
+      'https://localhost',
+   ],
    admin: {
       user: Users.slug,
       bundler: webpackBundler(),

@@ -5,7 +5,7 @@ import theme from '../../styles/theme';
 
 export default function ProfileNTexts({ passedImage, textName, textJobTitle, borderRadius, passedStyle, color }) {
    const imageSize = 240;
-   const imageQquality = 100;
+   const imageQuality = 100;
 
    return (
       <>
@@ -14,8 +14,9 @@ export default function ProfileNTexts({ passedImage, textName, textJobTitle, bor
                src={passedImage}
                width={imageSize}
                height={imageSize}
-               quality={imageQquality}
+               quality={imageQuality}
                loading="lazy"
+               alt=''
                style={{
                   objectFit: 'cover',
                   // Adjust the position to focus on the desired part of the image

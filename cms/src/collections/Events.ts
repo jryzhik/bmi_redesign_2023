@@ -21,12 +21,16 @@ const Events: CollectionConfig = {
          name: 'title',
          label: 'Page title',
          type: 'text',
+         maxLength: 25,
+         index: true,
          required: true,
       },
       {
          name: 'description',
          label: 'Page description',
          type: 'textarea',
+         maxLength: 150,
+         index: true,
          required: true,
       },
       {
@@ -34,6 +38,7 @@ const Events: CollectionConfig = {
          label: 'Hero Layout',
          type: 'blocks',
          blocks: [Hero],
+         index: true,
          maxRows: 1,
       },
       {
@@ -41,12 +46,14 @@ const Events: CollectionConfig = {
          label: 'Calendar Layout',
          type: 'blocks',
          blocks: [Calendar],
+         index: true,
          maxRows: 1,
       },
       {
          name: 'alias',
          label: 'Choose the events reflected on the page',
          type: 'text',
+         index: true,
          admin: {
             position: 'sidebar',
             readOnly: true,

@@ -1,5 +1,5 @@
-import styles from '../../styles/Texts/Texts.module.css';
 import H1 from '../fonts/H1';
+import styles from '../../styles/Texts/Texts.module.css';
 
 export default function HeaderNComponent({ primaryHeaderText, SecondaryComponent, secondaryAllign, color }) {
    const subComponentStyle = {

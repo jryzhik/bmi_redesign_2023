@@ -14,6 +14,7 @@ const Calendar: Block = {
          type: 'relationship',
          relationTo: 'happenings',
          hasMany: true,
+         index: true,
          filterOptions: ({ relationTo }) => {
             if (relationTo === 'happenings') {
                return {

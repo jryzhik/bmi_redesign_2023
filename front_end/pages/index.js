@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useId, useMemo, useState } from 'react';
 import HeaderNComponent from '../components/texts/HeaderNComponent';
 import P from '../components/fonts/P';
 import theme from '../styles/theme';
@@ -67,8 +67,10 @@ export default function Home({ news, stats }) {
    const [animation2, setAnimation2] = useState(0);
    const [animation3, setAnimation3] = useState(0);
    const carouselKey = useMemo(() => Math.random().toString(32));
+   const id = useId();
 
    const [isVisible, setIsVisible] = useState(false);
+
    function percentConvert(raisedAmount, goalAmount) {
       return Number((100 * (raisedAmount / goalAmount)).toFixed(2));
    }
@@ -215,6 +217,7 @@ export default function Home({ news, stats }) {
          </Head>
 
          <EmblaCarousel
+            key={`${id}-1`}
             dots
             style={{ marginBottom: '7rem' }}
             autoplay={{
@@ -226,7 +229,7 @@ export default function Home({ news, stats }) {
             fade
             options={{ dragFree: true, loop: true, slidesToScroll: 1 }}
          >
-            <EmblaHomeHeroCarousel key={carouselKey} slides={HeroSlider} />
+            <EmblaHomeHeroCarousel key={`${id}-${carouselKey}`} slides={HeroSlider} />
          </EmblaCarousel>
 
          <div className={styles.container}>
@@ -282,6 +285,7 @@ export default function Home({ news, stats }) {
             </Grid>
 
             <EmblaCarousel
+               key={`${id}-2`}
                dots
                fade
                style={{ marginBottom: '3rem' }}
@@ -369,7 +373,7 @@ export default function Home({ news, stats }) {
                }
                secondaryAllign="center"
             />
-            <EmblaCarousel options={{ dragFree: true, loop: true, slidesToScroll: 1 }} buttons>
+            <EmblaCarousel key={`${id}-3`} options={{ dragFree: true, loop: true, slidesToScroll: 1 }} buttons>
                <EmblaHomeCarouselNews slides={news} />
                <EmblaHomeCarouselNews slides={news} />
             </EmblaCarousel>

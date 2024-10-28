@@ -12,22 +12,26 @@ const Event: Block = {
          name: 'title',
          label: 'Name of the event',
          type: 'text',
+         index: true,
          required: true,
       },
       {
          name: 'short',
          label: 'Short description',
          type: 'text',
+         index: true,
       },
       {
          name: 'description',
          label: 'Description',
          type: 'textarea',
+         index: true,
       },
       {
          name: 'datetime',
          label: 'Date and time',
          type: 'date',
+         index: true,
          required: true,
          admin: {
             date: {

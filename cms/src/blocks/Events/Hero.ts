@@ -12,11 +12,13 @@ const Hero: Block = {
          name: 'title',
          label: 'Hero Title',
          type: 'text',
+         index: true,
       },
       {
          name: 'description',
          label: 'Hero description',
          type: 'textarea',
+         index: true,
       },
       {
          name: 'heroBackground',

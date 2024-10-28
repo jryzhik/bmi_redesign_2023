@@ -24,7 +24,7 @@ export default function DropdownDate({ title, defaultKey, dropDownItemArray, tit
                style={{ '--nextui-colors-successLightActive': theme.colors.MAROON, zIndex: '0' }}
                light
                color="success"
-               id={buttonId}
+               onPressStart={undefined}
             >
                <FIELDTEXT color={theme.colors.CHARCOAL} text={title} />
 

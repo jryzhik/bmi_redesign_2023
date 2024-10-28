@@ -1,3 +1,39 @@
+export const calendarBlocks = {
+   hero: 'Calendar Hero',
+   alias: 'calendar',
+};
+
+export const dropDowns = {
+   month: {
+      name: 'month',
+      title: 'Month',
+      id: 'month-select',
+      defaultValue: 'all',
+   },
+   year: {
+      name: 'year',
+      title: 'Year',
+      id: 'year-select',
+      defaultValue: 'all',
+   },
+};
+
+export const monthsArray = [
+   'January',
+   'February',
+   'March',
+   'April',
+   'May',
+   'June',
+   'July',
+   'August',
+   'September',
+   'October',
+   'November',
+   'December',
+   'All',
+];
+
 export const monthsDropDown = [
    {
       name: 'January',
@@ -137,5 +173,33 @@ export const menu = [
    {
       primary: ['Contact', 'contact'],
       secondary: null,
+   },
+];
+
+export const paymentProviderButtonsContent = [
+   {
+      url: '/img/icons/apple-pay.svg',
+      iconWidth: 28,
+      label: 'apple pay',
+   },
+   {
+      url: '/img/icons/zelle.svg',
+      iconWidth: 28,
+      label: 'zelle',
+   },
+   {
+      url: '/img/icons/paypal.svg',
+      iconWidth: 33,
+      label: 'paypal',
+   },
+   {
+      url: '/img/icons/venmo.svg',
+      iconWidth: 29,
+      label: 'venmo',
+   },
+   {
+      url: '/img/icons/cashapp.svg',
+      iconWidth: 50,
+      label: 'cashapp',
    },
 ];

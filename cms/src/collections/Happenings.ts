@@ -19,35 +19,45 @@ const Happenings: CollectionConfig = {
          name: 'title',
          label: 'Page title',
          type: 'text',
+         maxLength: 25,
          required: true,
+         index: true,
       },
       {
          name: 'description',
          label: 'Page description',
          type: 'textarea',
+         maxLength: 150,
          required: true,
+         index: true,
       },
       {
          name: 'happeningTitle',
          label: 'Name of the happening',
          type: 'text',
+         maxLength: 25,
          required: true,
+         index: true,
       },
       {
          name: 'happeningDescription',
          label: 'Description of the happening',
          type: 'text',
+         maxLength: 55,
+         index: true,
       },
       {
          name: 'happeningText',
          label: 'Text of the happening',
          type: 'textarea',
+         index: true,
       },
       {
          name: 'happeningDatetime',
          label: 'Date and time of the happening',
          type: 'date',
          required: true,
+         index: true,
          admin: {
             date: {
                pickerAppearance: 'default',
@@ -65,15 +75,16 @@ const Happenings: CollectionConfig = {
          name: 'alias',
          label: 'Page alias',
          type: 'text',
-         hidden: true,
+         index: true,
          admin: {
             position: 'sidebar',
+            readOnly: true,
          },
          hooks: {
             beforeValidate: [
-               ({ value, data }) => {
+               ({ data }) => {
                   const { title } = data;
-                  return value || getAlias(title);
+                  return getAlias(title);
                },
             ],
          },

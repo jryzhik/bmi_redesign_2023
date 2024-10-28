@@ -1,1 +1,2 @@
-export const getAlias = (string: string) => string.toLocaleLowerCase().split(' ').join('_').replace(/[^\w]/gi, '');
+export const getAlias = (string: string) =>
+   encodeURIComponent(string.split(' ').join('_')).toLocaleLowerCase().replace(/[^\w]/gi, '');

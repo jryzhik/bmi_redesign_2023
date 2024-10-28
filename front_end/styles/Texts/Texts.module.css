@@ -282,6 +282,16 @@
     width: 100vw;
 }
 
+.search_input::placeholder {
+   color: #7E868C;
+}
+
+.search_input:focus::placeholder,
+.search_input:focus-visible::placeholder,
+.search_input:focus-within::placeholder {
+   color: transparent;
+}
+
 @media (max-width: 700px) {
     .percentBarContainer {
         flex-direction: column;

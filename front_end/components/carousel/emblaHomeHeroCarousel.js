@@ -1,22 +1,24 @@
-import React from 'react';
-import Styles from '../../styles/Carousel/CarouselHero.module.css';
-import theme from '../../styles/theme';
-import P from '../fonts/P';
+import Link from 'next/link';
 import Image from 'next/image';
-import styles from '../../styles/Hero/Hero.module.css';
+import { useId } from 'react';
+import P from '../fonts/P';
 import TITLE from '../fonts/TITLE';
 import ST from '../fonts/ST';
 import H1 from '../fonts/H1';
-import Link from 'next/link';
+import theme from '../../styles/theme';
+import Styles from '../../styles/Carousel/CarouselHero.module.css';
+import styles from '../../styles/Hero/Hero.module.css';
 
 const EmblaHomeHeroCarousel = (props) => {
    const { slides } = props;
+   const id = useId();
+
    return slides.map(({ headerText, subText, imageUrl, imageFocus, color1, color2, link }) => {
       const ContentWrapper = link ? Link : 'div';
       const wrapperProps = link ? { href: `/${link}` } : {};
 
       return (
-         <article className={Styles.slideEmblaHero} key={headerText}>
+         <article className={Styles.slideEmblaHero}>
             <ContentWrapper {...wrapperProps}>
                <div
                   style={{

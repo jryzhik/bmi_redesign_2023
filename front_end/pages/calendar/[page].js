@@ -1,9 +1,10 @@
+import qs from 'qs';
 import PortraitNPageParent from '../../components/hero/portraitNPageParent';
 import HeaderNComponent from '../../components/texts/HeaderNComponent';
-import P from '../../components/fonts/P';
-import theme from '../../styles/theme';
 import CalendarIcon from '../../components/events/calendarIcon';
 import RegisterButtonHero from '../../components/events/registerButtonHero';
+import P from '../../components/fonts/P';
+import theme from '../../styles/theme';
 import styles from '../../styles/Events/Events.module.css';
 
 export default function Event({
@@ -12,14 +13,19 @@ export default function Event({
       happeningDescription,
       happeningText,
       happeningDatetime,
-      happeningImage: { url },
+      happeningImage: {
+         url,
+         sizes: {
+            minithumbnail: { url: thumbnail },
+         },
+      },
    },
 }) {
    const [, month, day, year] = new Date(happeningDatetime).toString().split(' ');
 
    return (
       <>
-         <PortraitNPageParent textParent="Events" textChild={happeningTitle} imgUrl={url} />
+         <PortraitNPageParent textParent="Events" textChild={happeningTitle} imgUrl={thumbnail || url} />
 
          <div className={styles.containerEvents}>
             <HeaderNComponent
@@ -53,21 +59,42 @@ export default function Event({
 }
 
 export async function getServerSideProps(context) {
-   const { query } = context;
-   const { id } = query;
+   const {
+      params: { page },
+   } = context;
+   const searchQuery = qs.stringify(
+      {
+         where: {
+            alias: {
+               equals: page,
+            },
+         },
+      },
+      { addQueryPrefix: true, encode: false }
+   );
 
    try {
-      const resp = await fetch(`${process.env.NEXT_PUBLIC_REST_URL}/api/happenings/${id}`);
+      const resp = await fetch(`${process.env.NEXT_PUBLIC_REST_URL}/api/happenings${searchQuery}`);
 
       if (!resp.ok) {
          throw new Error('CMS access error!');
       }
 
-      const data = await resp.json();
+      const req = await resp.json();
+      const {
+         totalDocs,
+         docs: [data],
+      } = req;
+
+      if (!totalDocs) {
+         return {
+            notFound: true,
+         };
+      }
 
       return { props: { event: data } };
    } catch (err) {
-      console.error(e);
+      console.error(err);
       return { props: { event: {} } };
    }
 }
