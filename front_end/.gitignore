@@ -6,7 +6,6 @@
 .pnp.js
 
 # testing
-# just to redeploy
 /coverage
 
 # next.js
@@ -14,6 +13,7 @@
 /out/
 
 # production
+# redeploy
 /build
 
 # misc
