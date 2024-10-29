@@ -6,6 +6,9 @@ export const Media: CollectionConfig = {
       singular: 'Media',
       plural: 'Media',
    },
+   admin: {
+      description: 'Graphic elements of the site (pictures, photos, etc.)'
+   },
    access: {
       read: () => true,
    },

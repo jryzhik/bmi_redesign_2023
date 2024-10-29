@@ -9,6 +9,7 @@ const Events: CollectionConfig = {
    admin: {
       useAsTitle: 'title',
       listSearchableFields: ['title', 'description'],
+      description: 'Pages of the Events group from the menu.'
    },
    access: {
       read: isAppAccess,

@@ -7,6 +7,7 @@ const Happenings: CollectionConfig = {
    admin: {
       useAsTitle: 'title',
       listSearchableFields: ['title', 'description', 'happeningTitle', 'happeningDescription', 'happeningText'],
+      description: 'Pages of events in the calendar.',
    },
    access: {
       read: isAppAccess,
@@ -14,6 +15,7 @@ const Happenings: CollectionConfig = {
    versions: {
       drafts: true,
    },
+   defaultSort: 'happeningDatetime',
    fields: [
       {
          name: 'title',

@@ -12,7 +12,7 @@ export function CalendarDateSort({ calendar }) {
    );
    const isYears = !!yearsArray.length;
    const isSM = useMediaQuery('(max-width: 899.5px)');
-   const sortSelectSMpaddingTop = '25px';
+   const sxStyles = { paddingTop: '25px' };
 
    useEffect(() => {
       [dropDowns.month.name, dropDowns.year.name].forEach((key) => {
@@ -29,7 +29,7 @@ export function CalendarDateSort({ calendar }) {
             display="flex"
             justifyContent="center"
             alignItems="center"
-            {...(isSM ? { sx: { paddingTop: sortSelectSMpaddingTop } } : {})}
+            {...(isSM ? { sx: sxStyles } : {})}
          >
             <div className={styles.leftPadding}>
                <CalendarSelect
@@ -49,7 +49,7 @@ export function CalendarDateSort({ calendar }) {
                display="flex"
                justifyContent="center"
                alignItems="center"
-               {...(isSM ? { sx: { paddingTop: sortSelectSMpaddingTop } } : {})}
+               {...(isSM ? { sx: sxStyles } : {})}
             >
                <CalendarSelect
                   id={dropDowns.year.id}

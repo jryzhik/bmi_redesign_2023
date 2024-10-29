@@ -9,13 +9,13 @@ import { buildConfig } from 'payload/config';
 import search from '@payloadcms/plugin-search';
 
 import Users from './collections/Users';
-import { Media } from './collections/Media';
 import Events from './collections/Events';
 import Happenings from './collections/Happenings';
+import { Media } from './collections/Media';
+import { MagicNumbers } from './collections/MagicNumbers';
 
 export default buildConfig({
    cors: [
-      '*',
       'https://byelorussianmission.org',
       'http://localhost:3001',
       'http://localhost:3000',
@@ -42,7 +42,7 @@ export default buildConfig({
          elements: ['h1', 'h2', 'h3', 'h4', 'link', 'blockquote', 'ol', 'ul', 'textAlign', 'indent', 'upload'],
       },
    }),
-   collections: [Users, Events, Happenings, Media],
+   collections: [Users, Events, Happenings, Media, MagicNumbers],
    typescript: {
       outputFile: path.resolve(__dirname, 'payload-types.ts'),
    },

@@ -16,53 +16,11 @@ import EmblaHomeHeroCarousel from '../components/carousel/emblaHomeHeroCarousel'
 import EmblaCarousel from '../components/carousel/emblaCarousel';
 import EmblaAdCarousel from '../components/carousel/emblaAdCarousel';
 import SubscribeHero from '../components/events/subscribeHero';
+import { HeroSlider } from '../tools/constants';
 import clientPromise from '../lib/mongo/connect';
 
-const HeroSlider = [
-   {
-      imageUrl: '/img/banquet/hero-bg.jpg',
-      color2: '#81b0ff',
-      color1: '#81b0ff',
-      headerText: 'Fearless for the Gospel',
-      subText: 'Banquet - Forsyth Conference Center | November 14th',
-      imageFocus: '50% 20%',
-      link: 'banquet#tickets',
-   },
-   {
-      imageUrl: '/img/hero_images/home_hero/WalkingBaptism.jpg',
-      color2: '#b1b8c1',
-      color1: '#7db0e3',
-      headerText: 'Big Mission, Big Task, Even Larger God',
-      subText: 'We make a living by what we get, but a life by what we give.',
-      imageFocus: '50% 20%',
-   },
-   {
-      imageUrl: '/img/hero_images/home_hero/BibleGroup.jpg',
-      color1: '#cfb489',
-      color2: '#996800',
-      headerText: 'Providing support and hope for the children',
-      subText: 'We make a living by what we get, but a life by what we give.',
-      imageFocus: '50% 20%',
-   },
-   {
-      imageUrl: '/img/hero_images/home_hero/BaptismSmile.jpg',
-      color1: '#48594c',
-      color2: '#1d231f',
-      headerText: 'Generating a Generation for God since 2000',
-      subText: 'We make a living by what we get, but a life by what we give.',
-      imageFocus: '50% 20%',
-   },
-   {
-      imageUrl: '/img/hero_images/home_hero/KidsStanding.jpg',
-      color1: '#1F0E08',
-      color2: '#1F0E08',
-      headerText: 'Providing support and hope for the children',
-      subText: 'We make a living by what we get, but a life by what we give.',
-      imageFocus: '50% -20%',
-   },
-];
-
-export default function Home({ news, stats }) {
+export default function Home({ news, numbers }) {
+   const currencyFormater = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
    const [animation1, setAnimation1] = useState(0);
    const [animation2, setAnimation2] = useState(0);
    const [animation3, setAnimation3] = useState(0);
@@ -74,33 +32,28 @@ export default function Home({ news, stats }) {
    function percentConvert(raisedAmount, goalAmount) {
       return Number((100 * (raisedAmount / goalAmount)).toFixed(2));
    }
+
    const ProgressValues = [
       {
-         percentFilled: percentConvert(stats[0].amountRaisedBible, stats[0].goalBible),
+         percentFilled: percentConvert(numbers.amountRaisedBible, numbers.goalBible),
          primaryHeaderText: 'Bibles/Discipleship Material',
-         secondaryText: `Help us reach our goal of raising ${stats[0].goalBible.toLocaleString('en-US', {
-            style: 'currency',
-            currency: 'USD',
-            maximumFractionDigits: 0,
-         })} to print Bibles for those in Israel.`,
+         secondaryText: `Help us reach our goal of raising ${currencyFormater.format(
+            numbers.goalBible
+         )} to print Bibles for those in Israel.`,
       },
       {
-         percentFilled: percentConvert(stats[0].amountRaisedBuilding, stats[0].goalBuilding),
+         percentFilled: percentConvert(numbers.amountRaisedBuilding, numbers.goalBuilding),
          primaryHeaderText: 'Construction/Building Projects',
-         secondaryText: `Help us reach our goal to collect ${stats[0].goalBuilding.toLocaleString('en-US', {
-            style: 'currency',
-            currency: 'USD',
-            maximumFractionDigits: 0,
-         })} for a new church structures in Belarus.`,
+         secondaryText: `Help us reach our goal to collect ${currencyFormater.format(
+            numbers.goalBuilding
+         )} for a new church structures in Belarus.`,
       },
       {
-         percentFilled: percentConvert(stats[0].amountRaisedOrphan, stats[0].goalOrphan),
+         percentFilled: percentConvert(numbers.amountRaisedOrphan, numbers.goalOrphan),
          primaryHeaderText: 'Orphan/Adoption Program',
-         secondaryText: `We need ${stats[0].goalOrphan.toLocaleString('en-US', {
-            style: 'currency',
-            currency: 'USD',
-            maximumFractionDigits: 0,
-         })} to adopt, support, and maintain ${stats[0].numberOrphans} orphans in safe, Christian homes.`,
+         secondaryText: `We need ${currencyFormater.format(numbers.goalOrphan)} to adopt, support, and maintain ${
+            numbers.numberOrphans
+         } orphans in safe, Christian homes.`,
       },
    ];
 
@@ -120,7 +73,7 @@ export default function Home({ news, stats }) {
          color1: '#121413',
          color2: '#121413',
          headerText: 'Help provide each child a loving family',
-         subText: `Today we have ${stats[0].numberOrphans} children in our Orphan Adoption Program. No child goes unnoticed, abandoned, or lost.`,
+         subText: `Today we have ${numbers.numberOrphans} children in our Orphan Adoption Program. No child goes unnoticed, abandoned, or lost.`,
          imageFocus: '50% 30%',
          link: '/orphans',
       },
@@ -395,12 +348,13 @@ export async function getServerSideProps() {
 
       const news = await db.collection('news').find({}).sort({ name_of_date_field: 1 }).limit(20).toArray();
 
-      const stats = await db.collection('stats').find({}).limit(1).toArray();
+      const resp = await fetch(`${process.env.NEXT_PUBLIC_REST_URL}/api/magicnumbers/672006177bbcfed472859d68?draft=false`);
+      const data = await resp.json();
 
       return {
          props: {
             news: JSON.parse(JSON.stringify(news)),
-            stats: JSON.parse(JSON.stringify(stats)),
+            numbers: data,
          },
       };
    } catch (e) {

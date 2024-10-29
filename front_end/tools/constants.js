@@ -203,3 +203,47 @@ export const paymentProviderButtonsContent = [
       label: 'cashapp',
    },
 ];
+
+export const HeroSlider = [
+   {
+      imageUrl: '/img/banquet/hero-bg.jpg',
+      color2: '#81b0ff',
+      color1: '#81b0ff',
+      headerText: 'Fearless for the Gospel',
+      subText: 'Banquet - Forsyth Conference Center | November 14th',
+      imageFocus: '50% 20%',
+      link: 'banquet#tickets',
+   },
+   {
+      imageUrl: '/img/hero_images/home_hero/WalkingBaptism.jpg',
+      color2: '#b1b8c1',
+      color1: '#7db0e3',
+      headerText: 'Big Mission, Big Task, Even Larger God',
+      subText: 'We make a living by what we get, but a life by what we give.',
+      imageFocus: '50% 20%',
+   },
+   {
+      imageUrl: '/img/hero_images/home_hero/BibleGroup.jpg',
+      color1: '#cfb489',
+      color2: '#996800',
+      headerText: 'Providing support and hope for the children',
+      subText: 'We make a living by what we get, but a life by what we give.',
+      imageFocus: '50% 20%',
+   },
+   {
+      imageUrl: '/img/hero_images/home_hero/BaptismSmile.jpg',
+      color1: '#48594c',
+      color2: '#1d231f',
+      headerText: 'Generating a Generation for God since 2000',
+      subText: 'We make a living by what we get, but a life by what we give.',
+      imageFocus: '50% 20%',
+   },
+   {
+      imageUrl: '/img/hero_images/home_hero/KidsStanding.jpg',
+      color1: '#1F0E08',
+      color2: '#1F0E08',
+      headerText: 'Providing support and hope for the children',
+      subText: 'We make a living by what we get, but a life by what we give.',
+      imageFocus: '50% -20%',
+   },
+];

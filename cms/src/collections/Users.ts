@@ -8,6 +8,7 @@ const Users: CollectionConfig = {
    admin: {
       useAsTitle: 'email',
       listSearchableFields: ['userFirstName', 'userLastName', 'role'],
+      description: 'Users who are allowed to access the site.'
    },
    access: {
       read: isAccess,
