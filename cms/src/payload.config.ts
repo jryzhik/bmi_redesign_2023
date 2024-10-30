@@ -17,6 +17,8 @@ import { MagicNumbers } from './collections/MagicNumbers';
 export default buildConfig({
    cors: [
       'https://byelorussianmission.org',
+      'https://byelorussianmission.org:3000',
+      'https://byelorussianmission.org:3001',
       'http://localhost:3001',
       'http://localhost:3000',
       'http://localhost',
@@ -26,6 +28,8 @@ export default buildConfig({
    ],
    csrf: [
       'https://byelorussianmission.org',
+      'https://byelorussianmission.org:3000',
+      'https://byelorussianmission.org:3001',
       'http://localhost:3001',
       'http://localhost:3000',
       'http://localhost',
