@@ -67,6 +67,6 @@ export async function getServerSideProps() {
       };
    } catch (e) {
       console.error(e);
-      return { ok: false, reason: e.message, cause: e.cause };
+      return { props: { ok: false, reason: e.message, cause: e.cause } };
    }
 }

@@ -27,6 +27,8 @@ export default function Home({ news, numbers }) {
    const carouselKey = useMemo(() => Math.random().toString(32));
    const id = useId();
 
+   console.log('news: ', news); // ! Log
+
    const [isVisible, setIsVisible] = useState(false);
 
    function percentConvert(raisedAmount, goalAmount) {
@@ -359,6 +361,6 @@ export async function getServerSideProps() {
       };
    } catch (e) {
       console.error(e);
-      return { numbers: {}, ok: false, reason: e.message, cause: e.cause };
+      return { props: { numbers: {}, ok: false, reason: e.message, cause: e.cause } };
    }
 }
