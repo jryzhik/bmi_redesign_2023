@@ -66,6 +66,6 @@ export async function getServerSideProps() {
       };
    } catch (e) {
       console.error(e);
-      return { props: { hero: {}, calendar: [] } }; // Return empty array in case of error
+      return { props: { hero: {}, calendar: [], ok: false, reason: e.message, cause: e.cause } };
    }
 }

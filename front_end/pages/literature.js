@@ -116,5 +116,6 @@ export async function getServerSideProps() {
       };
    } catch (e) {
       console.error(e);
+      return { numbers: {}, ok: false, reason: e.message, cause: e.cause };
    }
 }

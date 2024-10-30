@@ -95,6 +95,6 @@ export async function getServerSideProps(context) {
       return { props: { event: data } };
    } catch (err) {
       console.error(err);
-      return { props: { event: {} } };
+      return { props: { event: {}, ok: false, reason: e.message, cause: e.cause } };
    }
 }
