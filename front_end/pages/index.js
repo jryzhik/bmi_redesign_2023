@@ -25,11 +25,8 @@ export default function Home({ news, numbers }) {
    const [animation2, setAnimation2] = useState(0);
    const [animation3, setAnimation3] = useState(0);
    const carouselKey = useMemo(() => Math.random().toString(32));
-   const id = useId();
-
-   console.log('news: ', news); // ! Log
-
    const [isVisible, setIsVisible] = useState(false);
+   const id = useId();
 
    function percentConvert(raisedAmount, goalAmount) {
       return Number((100 * (raisedAmount / goalAmount)).toFixed(2));
