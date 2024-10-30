@@ -358,6 +358,6 @@ export async function getServerSideProps() {
       };
    } catch (e) {
       console.error(e);
-      return { props: { numbers: {}, ok: false, reason: e.message, cause: e.cause } };
+      return { props: { news: [{}], numbers: {}, ok: false, reason: e.message, cause: e.cause } };
    }
 }
