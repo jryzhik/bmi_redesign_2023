@@ -26,6 +26,18 @@ module.exports = {
             port: '',
             pathname: '/**',
          },
+         {
+            protocol: 'https',
+            hostname: 'byelorussianmission.org',
+            port: '',
+            pathname: '/**',
+         },
+         {
+            protocol: 'https',
+            hostname: 'bmi-redesign-2023-cj5i-5afhra7fy-infobyelorussians-projects.vercel.app',
+            port: '',
+            pathname: '/**',
+         },
       ],
    },
 };
