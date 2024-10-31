@@ -2,11 +2,11 @@
    "version": 2,
    "builds": [
       {
-         "src": "../cms",
+         "src": "cms",
          "use": "@vercel/node"
       },
       {
-         "src": "./",
+         "src": "front_end",
          "use": "@vercel/node"
       }
    ]
