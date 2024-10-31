@@ -13,7 +13,7 @@
 /out/
 
 # production
-# redeploy
+# redeploy 1
 /build
 
 # misc
