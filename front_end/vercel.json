@@ -1,0 +1,13 @@
+{
+   "version": 2,
+   "builds": [
+      {
+         "src": "../cms",
+         "use": "@vercel/node"
+      },
+      {
+         "src": "./",
+         "use": "@vercel/node"
+      }
+   ]
+}
