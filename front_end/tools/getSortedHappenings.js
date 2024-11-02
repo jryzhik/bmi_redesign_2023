@@ -16,7 +16,9 @@ export async function getSortedHappenings(params = {}) {
       urlArray.push(`year=${encodeURI(year)}`);
    }
 
-   const url = `${process.env.NEXT_PUBLIC_LOCALHOST_URL}/api/happenings${!!urlArray.length ? '?' + urlArray.join('&') : ''}`;
+   const url = `${process.env.NEXT_PUBLIC_LOCALHOST_URL}:${process.env.NEXT_PUBLIC_FRONT_PORT}/api/happenings${
+      !!urlArray.length ? '?' + urlArray.join('&') : ''
+   }`;
 
    try {
       const resp = await fetch(url);

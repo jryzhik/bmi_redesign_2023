@@ -2,7 +2,7 @@ import { getDoc } from '../../tools/getDoc';
 import { calendarBlocks } from '../../tools/constants';
 
 export default async function handler(req, res) {
-   const { searchParams } = new URL(`${process.env.NEXT_PUBLIC_LOCALHOST_URL}/${req.url}`);
+   const { searchParams } = new URL(`${process.env.NEXT_PUBLIC_LOCALHOST_URL}:${process.env.NEXT_PUBLIC_FRONT_PORT}/${req.url}`);
    const search = searchParams.get('search') || '';
    const month = searchParams.get('month');
    const year = searchParams.get('year');

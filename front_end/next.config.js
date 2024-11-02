@@ -12,7 +12,7 @@ module.exports = {
          },
          {
             source: '/media/:path*',
-            destination: 'http://localhost:3000/media/:path*',
+            destination: `${process.env.NEXT_PUBLIC_REST_URL}/media/:path*`,
          },
       ];
    },

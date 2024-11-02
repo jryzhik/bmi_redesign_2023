@@ -18,7 +18,9 @@ export async function getReturnCalendarHappenings(params = {}) {
 
    try {
       const resp = await fetch(
-         `${process.env.NEXT_PUBLIC_LOCALHOST_URL}/api/events${!!urlArray.length ? '?' + urlArray.join('&') : ''}`
+         `${process.env.NEXT_PUBLIC_LOCALHOST_URL}:${process.env.NEXT_PUBLIC_FRONT_PORT}/api/events${
+            !!urlArray.length ? '?' + urlArray.join('&') : ''
+         }`
       );
 
       if (!resp.ok) {

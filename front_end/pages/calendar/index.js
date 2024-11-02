@@ -47,6 +47,7 @@ export async function getServerSideProps() {
       }
 
       const data = await resp.json();
+
       const { docs } = data;
       const doc = getDoc(docs, calendarBlocks.alias);
       const {

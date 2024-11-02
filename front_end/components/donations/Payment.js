@@ -1,102 +1,106 @@
-import React, { useEffect, useState } from "react";
-import { Elements } from "@stripe/react-stripe-js";
-import CheckoutForm from "./CheckoutForm";
-import { loadStripe } from "@stripe/stripe-js";
-import Grid from "@mui/material/Unstable_Grid2";
-import RoundedButton from "../buttons/roundedButton";
-import SubmitButton from "../buttons/submitButton";
-import passedStyle from "../../styles/Donate/ColorDonate.module.css";
-import AddressForm from "./AddressForm";
-import ThankyouSection from "./thankyouSection";
-import H2 from "../fonts/H2";
-import theme from "../../styles/theme";
+import React, { useEffect, useState } from 'react';
+import { Elements } from '@stripe/react-stripe-js';
+import CheckoutForm from './CheckoutForm';
+import { loadStripe } from '@stripe/stripe-js';
+import Grid from '@mui/material/Unstable_Grid2';
+import RoundedButton from '../buttons/roundedButton';
+import SubmitButton from '../buttons/submitButton';
+import passedStyle from '../../styles/Donate/ColorDonate.module.css';
+import AddressForm from './AddressForm';
+import ThankyouSection from './thankyouSection';
+import H2 from '../fonts/H2';
+import theme from '../../styles/theme';
 
 function Payment({ totalAmount, firstName, lastName, email, selectedPaymentOption, reoccuringSelected, fund }) {
-  const [stripePromise, setStripePromise] = useState(null);
-  const [clientSecret, setClientSecret] = useState("");
-  const [paymentSuccess, setPaymentSuccess] = useState(false);
+   const [stripePromise, setStripePromise] = useState(null);
+   const [clientSecret, setClientSecret] = useState('');
+   const [paymentSuccess, setPaymentSuccess] = useState(false);
 
-  const [ready, setReady] = useState(false);
+   const [ready, setReady] = useState(false);
 
-  const [addressVisible, setAddressVisible] = useState({ display: "grid" });
-  const [paymentVisible, setPaymentVisible] = useState({ display: "none" });
-  const [thanksVisible, setThanksVisible] = useState({ display: "none" });
+   const [addressVisible, setAddressVisible] = useState({ display: 'grid' });
+   const [paymentVisible, setPaymentVisible] = useState({ display: 'none' });
+   const [thanksVisible, setThanksVisible] = useState({ display: 'none' });
 
-  const loader = 'auto';
+   const loader = 'auto';
 
-  useEffect(() => {
-    if (paymentSuccess) {
-      setAddressVisible({ display: "none" });
-      setPaymentVisible({ display: "none" });
-      setThanksVisible({ display: "grid" });
-    }
-  }, [paymentSuccess]);
+   useEffect(() => {
+      if (paymentSuccess) {
+         setAddressVisible({ display: 'none' });
+         setPaymentVisible({ display: 'none' });
+         setThanksVisible({ display: 'grid' });
+      }
+   }, [paymentSuccess]);
 
-  function setViewablePapa() {
-    if (ready) {
-      setAddressVisible({ display: "none" });
-      setPaymentVisible({ display: "grid" });
-    }
-  }
+   function setViewablePapa() {
+      if (ready) {
+         setAddressVisible({ display: 'none' });
+         setPaymentVisible({ display: 'grid' });
+      }
+   }
 
-  useEffect(() => {
-    fetch('/api/stripe?action=config') // Send action as a query parameter
-      .then(async (result) => {
-        const { publishableKey } = await result.json();
-        setStripePromise(loadStripe(publishableKey));
+   useEffect(() => {
+      fetch('/api/stripe?action=config') // Send action as a query parameter
+         .then(async (result) => {
+            const { publishableKey } = await result.json();
+            setStripePromise(loadStripe(publishableKey));
+         })
+         .catch((error) => {
+            console.error('Error fetching publishable key:', error);
+         });
+   }, []);
+
+   useEffect(() => {
+      fetch('/api/stripe', {
+         method: 'POST',
+         headers: {
+            'Content-Type': 'application/json',
+         },
+         body: JSON.stringify({ action: 'create-payment-intent', number: totalAmount * 100, fund: fund }),
       })
-      .catch((error) => {
-        console.error('Error fetching publishable key:', error);
-      });
-  }, []);
+         .then(async (result) => {
+            const { clientSecret } = await result.json();
+            setClientSecret(clientSecret);
+         })
+         .catch((error) => {
+            console.error('Error fetching client secret:', error);
+         });
+   }, []);
 
-  useEffect(() => {
-    fetch('/api/stripe', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ action: 'create-payment-intent', number: totalAmount * 100, fund: fund }),
-    })
-      .then(async (result) => {
-        const { clientSecret } = await result.json();
-        setClientSecret(clientSecret);
-      })
-      .catch((error) => {
-        console.error('Error fetching client secret:', error);
-      });
-  }, []);
-
-  return (
-    <>
-      {clientSecret && stripePromise && (
-        <>
-          <div style={addressVisible}>
-            <H2 color={theme.colors.BLACK} text="Enter your donation details." />
-          </div>
-          <div style={{ paddingTop: "3em" }}>
-            <Elements stripe={stripePromise} options={{ clientSecret, loader }}>
-              <div style={addressVisible}>
-                <AddressForm setReady={setReady} />
-                <Grid xs={12} md={12} display="flex" justifyContent="center" alignItems="center" paddingTop={4}>
-                  <RoundedButton text="next" passedStyle={passedStyle.dollarButtonBlack} callBackFunction={setViewablePapa} />
-                </Grid>
-              </div>
-              <div style={paymentVisible}>
-                <CheckoutForm setPaymentSuccess={setPaymentSuccess} fund={fund} />
-                <Grid xs={12} md={12} display="flex" justifyContent="center" alignItems="center" paddingTop={4}>
-                  <SubmitButton />
-                </Grid>
-              </div>
-              <div style={thanksVisible}>
-                <ThankyouSection fund={fund.split(" ")[0]} />
-              </div>
-            </Elements>
-          </div>
-        </>
-      )}
-    </>
-  );
+   return (
+      <>
+         {clientSecret && stripePromise && (
+            <>
+               <div style={addressVisible}>
+                  <H2 color={theme.colors.BLACK} text="Enter your donation details." />
+               </div>
+               <div style={{ paddingTop: '3em' }}>
+                  <Elements stripe={stripePromise} options={{ clientSecret, loader }}>
+                     <div style={addressVisible}>
+                        <AddressForm setReady={setReady} />
+                        <Grid xs={12} md={12} display="flex" justifyContent="center" alignItems="center" paddingTop={4}>
+                           <RoundedButton
+                              text="next"
+                              passedStyle={passedStyle.dollarButtonBlack}
+                              callBackFunction={setViewablePapa}
+                           />
+                        </Grid>
+                     </div>
+                     <div style={paymentVisible}>
+                        <CheckoutForm setPaymentSuccess={setPaymentSuccess} fund={fund} />
+                        <Grid xs={12} md={12} display="flex" justifyContent="center" alignItems="center" paddingTop={4}>
+                           <SubmitButton />
+                        </Grid>
+                     </div>
+                     <div style={thanksVisible}>
+                        <ThankyouSection fund={fund.split(' ')[0]} />
+                     </div>
+                  </Elements>
+               </div>
+            </>
+         )}
+      </>
+   );
 }
 
 export default Payment;
