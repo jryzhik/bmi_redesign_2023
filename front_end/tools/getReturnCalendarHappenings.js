@@ -3,6 +3,7 @@ import { dropDowns } from './constants';
 export async function getReturnCalendarHappenings(params = {}) {
    const { search, month, year } = params;
    const urlArray = [];
+   const fetchOptions = { mode: 'no-cors' };
 
    if (!!search) {
       urlArray.push(`search=${encodeURI(search)}`);
@@ -20,7 +21,8 @@ export async function getReturnCalendarHappenings(params = {}) {
       const resp = await fetch(
          `${process.env.NEXT_PUBLIC_LOCALHOST_URL}:${process.env.NEXT_PUBLIC_FRONT_PORT}/api/events${
             !!urlArray.length ? '?' + urlArray.join('&') : ''
-         }`
+         }`,
+         fetchOptions
       );
 
       if (!resp.ok) {

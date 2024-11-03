@@ -3,6 +3,7 @@ import { dropDowns } from './constants';
 export async function getSortedHappenings(params = {}) {
    const { search, month, year } = params;
    const urlArray = [];
+   const fetchOptions = { mode: 'no-cors' };
 
    if (!!search) {
       urlArray.push(`search=${encodeURI(search)}`);
@@ -21,7 +22,7 @@ export async function getSortedHappenings(params = {}) {
    }`;
 
    try {
-      const resp = await fetch(url);
+      const resp = await fetch(url, fetchOptions);
 
       if (!resp.ok) {
          throw new Error('Ooops! CMS access error!');

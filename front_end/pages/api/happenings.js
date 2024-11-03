@@ -5,6 +5,7 @@ export default async function handler(req, res) {
    const search = searchParams.get('search') || '';
    const month = searchParams.get('month');
    const year = searchParams.get('year');
+   const fetchOptions = { mode: 'no-cors' };
 
    const searchQueryObject = {
       where: {
@@ -52,7 +53,8 @@ export default async function handler(req, res) {
       const resp = await fetch(
          `${process.env.NEXT_PUBLIC_REST_URL}/api/happenings${
             !!search ? searchQuery + '&sort=happeningDatetime' : '?sort=happeningDatetime'
-         }`
+         }`,
+         fetchOptions
       );
 
       if (!resp.ok) {

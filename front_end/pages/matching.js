@@ -71,8 +71,13 @@ export default function matching({ numbers }) {
 }
 
 export async function getServerSideProps() {
+   const fetchOptions = { mode: 'no-cors' };
+
    try {
-      const resp = await fetch(`${process.env.NEXT_PUBLIC_REST_URL}/api/magicnumbers/672006177bbcfed472859d68?draft=false`);
+      const resp = await fetch(
+         `${process.env.NEXT_PUBLIC_REST_URL}/api/magicnumbers/672006177bbcfed472859d68?draft=false`,
+         fetchOptions
+      );
       const data = await resp.json();
 
       return {

@@ -72,9 +72,10 @@ export async function getServerSideProps(context) {
       },
       { addQueryPrefix: true, encode: false }
    );
+   const fetchOptions = { mode: 'no-cors' };
 
    try {
-      const resp = await fetch(`${process.env.NEXT_PUBLIC_REST_URL}/api/happenings${searchQuery}`);
+      const resp = await fetch(`${process.env.NEXT_PUBLIC_REST_URL}/api/happenings${searchQuery}`, fetchOptions);
 
       if (!resp.ok) {
          throw new Error('CMS access error!');

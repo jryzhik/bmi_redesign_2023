@@ -39,8 +39,10 @@ export default function Calendar({ hero, calendar }) {
 }
 
 export async function getServerSideProps() {
+   const fetchOptions = { mode: 'no-cors' };
+
    try {
-      const resp = await fetch(`${process.env.NEXT_PUBLIC_REST_URL}/api/events`);
+      const resp = await fetch(`${process.env.NEXT_PUBLIC_REST_URL}/api/events`, fetchOptions);
 
       if (!resp.ok) {
          throw new Error('Ooops! CMS access error!');

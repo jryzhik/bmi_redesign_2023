@@ -341,13 +341,18 @@ export default function Home({ news, numbers }) {
 }
 
 export async function getServerSideProps() {
+   const fetchOptions = { mode: 'no-cors' };
+
    try {
       const client = await clientPromise;
       const db = client.db('masterdb');
 
       const news = await db.collection('news').find({}).sort({ name_of_date_field: 1 }).limit(20).toArray();
 
-      const resp = await fetch(`${process.env.NEXT_PUBLIC_REST_URL}/api/magicnumbers/672006177bbcfed472859d68?draft=false`);
+      const resp = await fetch(
+         `${process.env.NEXT_PUBLIC_REST_URL}/api/magicnumbers/672006177bbcfed472859d68?draft=false`,
+         fetchOptions
+      );
       const data = await resp.json();
 
       return {
