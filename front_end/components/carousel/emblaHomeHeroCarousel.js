@@ -16,10 +16,11 @@ const EmblaHomeHeroCarousel = (props) => {
    return slides.map(({ headerText, subText, imageUrl, imageFocus, color1, color2, link }) => {
       const ContentWrapper = link ? Link : 'div';
       const wrapperProps = link ? { href: `/${link}` } : {};
+      const isBanquetLink = link && link.startsWith('banquet');
 
       return (
          <article className={Styles.slideEmblaHero}>
-            <ContentWrapper {...wrapperProps}>
+            <ContentWrapper {...wrapperProps} {...(link ? { passHref: true } : {})}>
                <div
                   style={{
                      display: 'flex',
@@ -49,6 +50,8 @@ const EmblaHomeHeroCarousel = (props) => {
 
                      <P text={subText} textAlign={'center'} color={theme.colors.WHITE} />
                   </div>
+
+                  {isBanquetLink && <button className={Styles.card_button}>Reserve Your Spot</button>}
                </div>
 
                <div

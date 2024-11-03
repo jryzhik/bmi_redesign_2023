@@ -1,22 +1,48 @@
-.slideEmblaHero {
-    --slide-height: 90vh;
-    --slide-size: 100vw;
+.card_button {
+   display: inline-block;
+	padding: 14px 40px;
+	background-color: #fff;
+	font-size: 12px;
+	font-weight: 900;
+	border-radius: 100px;
+   border: none;
+   outline: none;
+	color: #000;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	display: block;
+	text-align: center;
+	margin-top: 24px;
+   pointer-events: none;
+}
 
-    flex: 0 0 var(--slide-size);
-    padding-top: 15vh;
-    min-width: 0;
-    min-height: var(--slide-height);
-    transform: translate3d(0, 0, 0);
+.slideEmblaHero {
+   --slide-height: 90vh;
+   --slide-size: 100vw;
+
+   flex: 0 0 var(--slide-size);
+   padding-top: 15vh;
+   min-width: 0;
+   min-height: var(--slide-height);
+   transform: translate3d(0, 0, 0);
 }
 
 @media (max-width: 1000px) {
-    .slideEmblaHero {
-        padding-top: 12vh;
-    }
+   .slideEmblaHero {
+      padding-top: 12vh;
+   }
+
+   .card_button {
+      margin: 12vh 0;
+   }
 }
 
 @media (max-width: 490px) {
-    .slideEmblaHero {
-        padding-top: 9vh;
-    }
+   .slideEmblaHero {
+      padding-top: 9vh;
+   }
+
+   .card_button {
+      margin: 9vh 0;
+   }
 }

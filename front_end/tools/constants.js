@@ -129,10 +129,14 @@ export const menu = [
    {
       primary: 'Events',
       secondary: [
-         ['Banquet', 'banquet'],
+         // ['Banquet', 'banquet'],
          ['Calendar', 'calendar'],
          ['Trip Registration', 'trip'],
       ],
+   },
+   {
+      primary: ['Banquet', 'banquet'],
+      secondary: null,
    },
    {
       primary: 'Ministries',

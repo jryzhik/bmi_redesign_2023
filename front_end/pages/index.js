@@ -16,6 +16,7 @@ import EmblaHomeHeroCarousel from '../components/carousel/emblaHomeHeroCarousel'
 import EmblaCarousel from '../components/carousel/emblaCarousel';
 import EmblaAdCarousel from '../components/carousel/emblaAdCarousel';
 import SubscribeHero from '../components/events/subscribeHero';
+import { useMediaQuery } from '../hooks/useMediaQuery';
 import { HeroSlider } from '../tools/constants';
 import clientPromise from '../lib/mongo/connect';
 
@@ -27,8 +28,10 @@ export default function Home({ news, numbers }) {
    const carouselKey = useMemo(() => Math.random().toString(32));
    const [isVisible, setIsVisible] = useState(false);
    const id = useId();
+   const isMedia = useMediaQuery('(min-width: 900px)');
    const progressWidthStyles = {
       flexBasis: '33.333% !important',
+      maxWidth: '33.333% !important',
    };
 
    function percentConvert(raisedAmount, goalAmount) {
@@ -177,7 +180,7 @@ export default function Home({ news, numbers }) {
             style={{ marginBottom: '7rem' }}
             autoplay={{
                playOnInit: true,
-               delay: 3000,
+               delay: 5000,
                stopOnInteraction: false,
                stopOnFocusIn: false,
             }}
@@ -267,7 +270,7 @@ export default function Home({ news, numbers }) {
             />
             {/* PROGRESS CIRCLE SECTION START */}
             <Grid container spacing={'1.5em'} justifyContent="center" position="relative" id="progressSection">
-               <Grid xs={12} sm={12} md={4} justifyContent="center" sx={progressWidthStyles}>
+               <Grid xs={12} sm={12} md={4} justifyContent="center" {...(isMedia ? { sx: progressWidthStyles } : {})}>
                   <ProgressDonate
                      imageUrl="/img/donation/progress/Bible.jpg"
                      outlineColor={theme.colors.MAROON}

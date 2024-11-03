@@ -157,9 +157,10 @@ export default function Default_nav_bar({ menu }) {
                   )}
                </div>
             ))}
-            <Link href="/search">
+
+            {/* <Link href="/search">
                <Image src="/img/icons/search_icon.svg" alt="search" width={16} height={16} />
-            </Link>
+            </Link> */}
          </div>
       </div>
    );

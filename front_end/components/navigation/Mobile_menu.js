@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import H3 from '../fonts/H3';
 import P from '../fonts/P';
-import exitIcon from '../../public/img/icons/exit.svg';
+import closeMenuIcon from '../../assets/icons/menu/closeMenu.svg';
 import styles from '../../styles/Navigation/Nav.module.css';
 
 const isLinkActive = (link, menu) => {
@@ -19,6 +19,7 @@ export default function Mobile_menu({ menuExpanded, toggleMenu, menuArray }) {
    const [menuExpandedStyle, setmenuExpandedStyle] = useState(styles.mobile_menu_containerOFF);
    const [focusedIndex, setFocusedIndex] = useState();
    const router = useRouter();
+   const closeMenuIconSize = 36;
 
    useEffect(() => {
       if (menuExpanded) {
@@ -32,8 +33,8 @@ export default function Mobile_menu({ menuExpanded, toggleMenu, menuArray }) {
    return (
       <div className={menuExpandedStyle}>
          <div className={styles.exitIconMobileWrapper} onClick={toggleMenu}>
-            <div className={styles.exitIconMobile}>
-               <Image src={exitIcon} alt="Schmidt" width={30} height={30} quality={100} />
+            <div className={styles.exitIconMobile} style={{ color: '#000000' }}>
+               <Image src={closeMenuIcon} alt="Schmidt" width={closeMenuIconSize} height={closeMenuIconSize} quality={100} />
             </div>
          </div>
 
