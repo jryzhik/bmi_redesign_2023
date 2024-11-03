@@ -4,6 +4,7 @@ export async function getSortedHappenings(params = {}) {
    const { search, month, year } = params;
    const urlArray = [];
    const fetchOptions = { mode: 'no-cors' };
+   const isLocalUrl = process.env.NEXT_PUBLIC_LOCALHOST_URL === 'http://localhost';
 
    if (!!search) {
       urlArray.push(`search=${encodeURI(search)}`);
@@ -17,9 +18,9 @@ export async function getSortedHappenings(params = {}) {
       urlArray.push(`year=${encodeURI(year)}`);
    }
 
-   const url = `${process.env.NEXT_PUBLIC_LOCALHOST_URL}:${process.env.NEXT_PUBLIC_FRONT_PORT}/api/happenings${
-      !!urlArray.length ? '?' + urlArray.join('&') : ''
-   }`;
+   const url = `${process.env.NEXT_PUBLIC_LOCALHOST_URL}:${
+      isLocalUrl ? ':' + process.env.NEXT_PUBLIC_FRONT_PORT : ''
+   }/api/happenings${!!urlArray.length ? '?' + urlArray.join('&') : ''}`;
 
    try {
       const resp = await fetch(url, fetchOptions);
