@@ -2,11 +2,11 @@ import Link from 'next/link';
 import useSWR from 'swr';
 import { EventHappening } from './EventHappening';
 import { Loader } from '../loader/loader';
-import { getAllCalendarHappenings } from '../../tools/getAllCalendarHappenings';
+import { getReturnCalendarHappenings } from '../../tools/getReturnCalendarHappenings';
 import styles from '../../styles/Events/Events.module.css';
 
 export const CalendarEvents = () => {
-   const { data: happenings, isLoading } = useSWR('happenings', getAllCalendarHappenings);
+   const { data: happenings, isLoading } = useSWR('happenings', () => getReturnCalendarHappenings());
 
    if (isLoading) {
       return <Loader />;

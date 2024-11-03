@@ -27,6 +27,9 @@ export default function Home({ news, numbers }) {
    const carouselKey = useMemo(() => Math.random().toString(32));
    const [isVisible, setIsVisible] = useState(false);
    const id = useId();
+   const progressWidthStyles = {
+      flexBasis: '33.333% !important',
+   };
 
    function percentConvert(raisedAmount, goalAmount) {
       return Number((100 * (raisedAmount / goalAmount)).toFixed(2));
@@ -264,7 +267,7 @@ export default function Home({ news, numbers }) {
             />
             {/* PROGRESS CIRCLE SECTION START */}
             <Grid container spacing={'1.5em'} justifyContent="center" position="relative" id="progressSection">
-               <Grid xs={12} sm={12} md={4} justifyContent="center">
+               <Grid xs={12} sm={12} md={4} justifyContent="center" sx={progressWidthStyles}>
                   <ProgressDonate
                      imageUrl="/img/donation/progress/Bible.jpg"
                      outlineColor={theme.colors.MAROON}
