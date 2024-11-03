@@ -28,7 +28,31 @@ module.exports = {
          },
          {
             protocol: 'https',
+            hostname: 'belarusmission.org',
+            port: '',
+            pathname: '/**',
+         },
+         {
+            protocol: 'https',
             hostname: 'byelorussianmission.org',
+            port: '',
+            pathname: '/**',
+         },
+         {
+            protocol: 'https',
+            hostname: 'www.belarusmission.org',
+            port: '',
+            pathname: '/**',
+         },
+         {
+            protocol: 'https',
+            hostname: 'www.byelorussianmission.org',
+            port: '',
+            pathname: '/**',
+         },
+         {
+            protocol: 'https',
+            hostname: 'bmi-redesign-2023-cj5i.vercel.app',
             port: '',
             pathname: '/**',
          },
