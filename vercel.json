@@ -1,13 +1,8 @@
 {
-   "version": 2,
-   "builds": [
+   "rewrites": [
       {
-         "src": "cms",
-         "use": "@vercel/node"
-      },
-      {
-         "src": "front_end",
-         "use": "@vercel/node"
+         "source": "/(.*)",
+         "destination": "/"
       }
    ]
 }
