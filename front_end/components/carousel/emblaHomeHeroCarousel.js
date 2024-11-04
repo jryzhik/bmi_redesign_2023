@@ -20,7 +20,7 @@ const EmblaHomeHeroCarousel = (props) => {
 
       return (
          <article className={Styles.slideEmblaHero}>
-            <ContentWrapper {...wrapperProps} {...(link ? { passHref: true } : {})}>
+            <ContentWrapper {...wrapperProps}>
                <div
                   style={{
                      display: 'flex',

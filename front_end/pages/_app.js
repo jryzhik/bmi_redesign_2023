@@ -9,7 +9,7 @@ export default function MyApp({ Component, pageProps }) {
       <Layout>
          <Analytics />
          <SpeedInsights />
-         <PageTransition timeout={250} classNames="page-transition">
+         <PageTransition timeout={25} classNames="page-transition">
             <Component {...pageProps} />
          </PageTransition>
       </Layout>
