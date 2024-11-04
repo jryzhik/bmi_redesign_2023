@@ -1,4 +1,5 @@
 import { getDoc } from './getDoc';
+import { getDateSorting } from './getDateSorting';
 import { dropDowns, calendarBlocks } from './constants';
 
 export async function getReturnCalendarHappenings(params = {}) {
@@ -39,9 +40,7 @@ export async function getReturnCalendarHappenings(params = {}) {
          calendarSelected = calendarSelected.filter((doc) => new Date(doc.happeningDatetime).getFullYear() === +year);
       }
 
-      calendarSelected.sort((a, b) => new Date(a.happeningDatetime) - new Date(b.happeningDatetime));
-
-      return calendarSelected || [];
+      return getDateSorting(calendarSelected) || [];
    } catch (e) {
       console.error(e);
       return [];
