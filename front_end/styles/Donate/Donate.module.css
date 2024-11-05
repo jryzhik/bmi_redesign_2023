@@ -1,338 +1,339 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5em;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 1.5em;
 }
 
 .formContainer {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    gap: 2.5em;
+   align-items: center;
+   display: flex;
+   flex-direction: column;
+   gap: 2.5em;
 }
 
 .formContainerPOP {
-    width: 50em;
-    height: auto;
-    background-color: white;
-    border-radius: 12px;
-    flex-shrink: 0;
-    padding: 1em;
-    position: relative;
-    margin: 0 auto;
+   width: 50em;
+   height: auto;
+   background-color: white;
+   border-radius: 12px;
+   flex-shrink: 0;
+   padding: 1em;
+   position: relative;
+   margin: 0 auto;
 
 }
 
 .headerForm {
-    display: flex;
-    padding-top: .125em;
-    padding-left: 3em;
-    padding-right: 3em;
-    justify-content: space-between;
+   display: flex;
+   padding-top: .125em;
+   padding-left: 3em;
+   padding-right: 3em;
+   justify-content: space-between;
 }
 
 .exitIcon {
-    display: flex;
-    justify-content: right;
-    transition: all .5s ease-out;
+   display: flex;
+   justify-content: right;
+   transition: all .5s ease-out;
 }
 
 .exitIcon:hover {
-    cursor: pointer;
-    filter: drop-shadow(0 0 0.1rem rgba(0, 0, 0, 0.257));
+   cursor: pointer;
+   filter: drop-shadow(0 0 0.1rem rgba(0, 0, 0, 0.257));
 }
 
 .exitIconMobileWrapper {
-    position: fixed;
-    top: 5%;
-    right: 10%;
-    transition: all 0.5s ease-out;
-    z-index: 1000000;
+   position: fixed;
+   top: 5%;
+   right: 10%;
+   transition: all 0.5s ease-out;
+   z-index: 1000000;
 }
 
 .exitIconMobile {
-    cursor: pointer;
-    transition: all 0.5s ease-out;
+   cursor: pointer;
+   transition: all 0.5s ease-out;
 
 }
 
 .exitIconMobileWrapper:hover .exitIconMobile {
-    filter: drop-shadow(0 0 0.1rem rgba(0, 0, 0, 0.5));
-    transition: all 0.5s ease-out;
-    cursor: pointer;
+   filter: drop-shadow(0 0 0.1rem rgba(0, 0, 0, 0.5));
+   transition: all 0.5s ease-out;
+   cursor: pointer;
 
-    /* Adjust the shadow value as needed */
+   /* Adjust the shadow value as needed */
 }
 
 .givingInfoSection {
-    display: flex;
-    flex-direction: column;
-    padding-top: 3em;
-    padding-left: 3em;
-    padding-right: 3em;
+   display: flex;
+   flex-direction: column;
+   padding-top: 3em;
+   padding-left: 3em;
+   padding-right: 3em;
 }
 
 .selectPaymentSection {
-    display: flex;
-    flex-direction: column;
-    padding-top: 3em;
-    padding-left: 3em;
-    padding-right: 3em;
+   display: flex;
+   flex-direction: column;
+   padding-top: 3em;
+   padding-left: 3em;
+   padding-right: 3em;
 }
 
 .enterPaymentDetailsSection {
-    display: flex;
-    flex-direction: column;
-    padding-top: 3em;
-    padding-left: 3em;
-    padding-right: 3em;
+   display: flex;
+   flex-direction: column;
+   padding-top: 3em;
+   padding-left: 3em;
+   padding-right: 3em;
 }
 
 .enterPaymentDetailsSection>.paypalbutton {
-    align-self: center;
+   align-self: center;
 }
 
 .thankYouSection {
-    display: flex;
-    flex-direction: column;
-    padding-left: 3em;
-    padding-right: 3em;
+   display: flex;
+   flex-direction: column;
+   padding-left: 3em;
+   padding-right: 3em;
 }
 
 .paymentButton {
-    width: 12.75em;
-    height: 5.6875em;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #C7C7C7;
-    border-radius: 7px;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    transition: all .5s ease-out;
+   width: 12.75em;
+   height: 5.6875em;
+   border-style: solid;
+   border-width: 1px;
+   border-color: #C7C7C7;
+   border-radius: 7px;
+   display: flex;
+   justify-content: center;
+   align-content: center;
+   transition: all .5s ease-out;
 }
 
 .paymentButtonMobile {
-    width: 80vw;
-    height: 4.125em;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #C7C7C7;
-    border-radius: 7px;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    transition: all .5s ease-out;
+   width: 80vw;
+   height: 4.125em;
+   border-style: solid;
+   border-width: 1px;
+   border-color: #C7C7C7;
+   border-radius: 7px;
+   display: flex;
+   justify-content: center;
+   align-content: center;
+   transition: all .5s ease-out;
 }
 
 .overviewDonationSection {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
 }
 
 .editText {
-    text-decoration: underline;
+   text-decoration: underline;
 }
 
 .editText:hover {
-    cursor: pointer;
+   cursor: pointer;
 }
 
 .paymentButtonSmall {
-    width: 3em;
-    height: 1.5em;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #C7C7C7;
-    border-radius: 7px;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    transition: all .5s ease-out;
+   width: 3em;
+   height: 1.5em;
+   border-style: solid;
+   border-width: 1px;
+   border-color: #C7C7C7;
+   border-radius: 7px;
+   display: flex;
+   justify-content: center;
+   align-content: center;
+   transition: all .5s ease-out;
 }
 
 .paymentButtonSmallSelected {
-    width: 3em;
-    height: 1.5em;
-    border-style: solid;
-    border-width: 2px;
-    border-color: #000000;
-    border-radius: 7px;
-    display: flex;
-    justify-content: center;
-    align-content: center;
+   width: 3em;
+   height: 1.5em;
+   border-style: solid;
+   border-width: 2px;
+   border-color: #000000;
+   border-radius: 7px;
+   display: flex;
+   justify-content: center;
+   align-content: center;
 }
 
 .creditCardText {
-    width: 5.875em;
-    height: 1.5em;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #C7C7C7;
-    border-radius: 7px;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    transition: all .5s ease-out;
+   width: 5.875em;
+   height: 1.5em;
+   border-style: solid;
+   border-width: 1px;
+   border-color: #C7C7C7;
+   border-radius: 7px;
+   display: flex;
+   justify-content: center;
+   align-content: center;
+   transition: all .5s ease-out;
 }
 
 .creditCardTextSelected {
-    width: 5.875em;
-    height: 1.5em;
-    border-style: solid;
-    border-width: 2px;
-    border-color: #000000;
-    border-radius: 7px;
-    display: flex;
-    justify-content: center;
-    align-content: center;
+   width: 5.875em;
+   height: 1.5em;
+   border-style: solid;
+   border-width: 2px;
+   border-color: #000000;
+   border-radius: 7px;
+   display: flex;
+   justify-content: center;
+   align-content: center;
 }
 
 .paymentButton:hover {
-    box-shadow: 0 0 6px #2D69C3;
-    cursor: pointer;
+   box-shadow: 0 0 6px #2D69C3;
+   cursor: pointer;
 }
 
 .paymentButtonMobile:hover {
-    box-shadow: 0 0 6px #2D69C3;
-    cursor: pointer;
+   box-shadow: 0 0 6px #2D69C3;
+   cursor: pointer;
 }
 
 .paymentButtonSmall:hover {
-    box-shadow: 0 0 2px #2D69C3;
-    cursor: pointer;
+   box-shadow: 0 0 2px #2D69C3;
+   cursor: pointer;
 }
 
 .creditCardText:hover {
-    box-shadow: 0 0 2px #2D69C3;
-    cursor: pointer;
+   box-shadow: 0 0 2px #2D69C3;
+   cursor: pointer;
 }
 
 .verticalSpacer {
-    padding-top: 2em;
+   padding-top: 2em;
 }
 
 .circleContainer {
-    position: relative;
-    /* Ensure that position is set to enable z-index */
-    display: grid;
-    width: 334px;
-    justify-items: center;
-    align-items: center;
+   position: relative;
+   /* Ensure that position is set to enable z-index */
+   display: grid;
+   width: 334px;
+   justify-items: center;
+   align-items: center;
 
 }
 
 .circleOuline {
-    width: 334px;
-    height: 334px;
-    border-radius: 50%;
+   width: 334px;
+   height: 334px;
+   border-radius: 50%;
 }
 
 .whiteOverlay {
-    width: 280px;
-    height: 280px;
-    position: absolute;
+   width: 280px;
+   height: 280px;
+   position: absolute;
 }
 
 .vBox {
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-    justify-content: center;
-    justify-self: center;
-    align-content: center;
-    align-items: center;
-    gap: 1em;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   justify-items: center;
+   justify-self: center;
+   align-content: center;
+   align-items: center;
+   gap: 1em;
+   max-width: 100%;
 }
 
 .radioButtonUnselected {
-    border-radius: 50%;
-    border-color: #C7C7C7;
-    border-width: 2px;
-    width: 1.5em;
-    height: 1.5em;
-    border-style: solid;
-    transition: all .2s ease-out;
+   border-radius: 50%;
+   border-color: #C7C7C7;
+   border-width: 2px;
+   width: 1.5em;
+   height: 1.5em;
+   border-style: solid;
+   transition: all .2s ease-out;
 }
 
 .radioButtonSelected {
-    align-self: baseline;
-    border-radius: 50%;
-    border-color: #459673;
-    border-width: 2px;
-    width: 24px;
-    height: 24px;
-    border-style: solid;
-    transition: all 1s ease-out;
+   align-self: baseline;
+   border-radius: 50%;
+   border-color: #459673;
+   border-width: 2px;
+   width: 24px;
+   height: 24px;
+   border-style: solid;
+   transition: all 1s ease-out;
 }
 
 .radioButtonUnselected:hover {
-    cursor: pointer;
-    border-color: #459673;
+   cursor: pointer;
+   border-color: #459673;
 
 }
 
 .radioButtonSelected:hover {
-    cursor: pointer;
-    border-color: #C7C7C7;
+   cursor: pointer;
+   border-color: #C7C7C7;
 
 }
 
 #stripe_button_submit {
-    display: flex;
-    width: 100vw;
-    height: 46px;
-    border-radius: 25em;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    background: #000000;
-    color: #ffffff;
-    transition: all .2s ease-in;
-    transition: all .5s ease-out;
-    font-family: 'Inter';
-    font-weight: 900;
-    font-style: normal;
-    text-transform: uppercase;
-    font-size: 1em;
-    border: none;
+   display: flex;
+   width: 100vw;
+   height: 46px;
+   border-radius: 25em;
+   justify-content: center;
+   align-items: center;
+   position: relative;
+   background: #000000;
+   color: #ffffff;
+   transition: all .2s ease-in;
+   transition: all .5s ease-out;
+   font-family: 'Inter';
+   font-weight: 900;
+   font-style: normal;
+   text-transform: uppercase;
+   font-size: 1em;
+   border: none;
 }
 
 #stripe_button_submit:hover {
-    cursor: pointer;
+   cursor: pointer;
 }
 
 .popup_overlay {
-    overflow-y: auto;
-    justify-content: center;
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    z-index: 9999;
+   overflow-y: auto;
+   justify-content: center;
+   display: flex;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: white;
+   z-index: 9999;
 }
 
 .popup_container {
-    padding: 3em;
+   padding: 3em;
 }
 
 @media (min-width: 900px) and (max-width: 1030px) {
-    .circleContainer {
-        width: 300.6px;
-    }
+   .circleContainer {
+      width: 300.6px;
+   }
 
-    .circleOuline {
-        width: 300.6px;
-        height: 300.6px;
-    }
+   .circleOuline {
+      width: 300.6px;
+      height: 300.6px;
+   }
 
-    .whiteOverlay {
-        width: 252px;
-        height: 252px;
-    }
+   .whiteOverlay {
+      width: 252px;
+      height: 252px;
+   }
 }
