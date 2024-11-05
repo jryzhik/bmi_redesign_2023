@@ -320,6 +320,7 @@
 
 .popup_container {
    padding: 3em;
+   max-width: 100%;
 }
 
 @media (min-width: 900px) and (max-width: 1030px) {
