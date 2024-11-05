@@ -1,228 +1,232 @@
 .container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: -4px;
-    margin-bottom: 7em;
-    border-top-left-radius: -70px;
-    border-bottom-right-radius: 7px;
-    border-bottom-left-radius: 7px;
-    padding-top: 3em;
-    padding-bottom: 3em;
-    width: 100vw;
-    min-height: auto;
-    text-align: center;
-    gap: 1.688em;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   margin-top: -4px;
+   margin-bottom: 7em;
+   border-top-left-radius: -70px;
+   border-bottom-right-radius: 7px;
+   border-bottom-left-radius: 7px;
+   padding-top: 3em;
+   padding-bottom: 3em;
+   width: 100vw;
+   min-height: auto;
+   text-align: center;
+   gap: 1.688em;
 }
 
 .headerNdescription {
-    display: flex;
-    flex-direction: column;
-    padding-top: 2em;
-    padding-right: 26vw;
-    padding-left: 26vw;
-    gap: 1.5em;
+   display: flex;
+   flex-direction: column;
+   padding-top: 2em;
+   padding-right: 26vw;
+   padding-left: 26vw;
+   gap: 1.5em;
 
 }
 
 @media (max-width:850px) {
-    .headerNdescription {
-        padding-right: 6vw;
-        padding-left: 6vw;
-    }
+   .headerNdescription {
+      padding-right: 6vw;
+      padding-left: 6vw;
+   }
 }
 
 .boxConstraint {
-    width: 60%;
+   width: 60%;
 }
 
 .buttonWidth {
-    display: flex;
-    justify-content: center;
-    justify-items: center;
-    width: 90%;
+   display: flex;
+   justify-content: center;
+   justify-items: center;
+   width: 90%;
 
 }
 
 .progressDonate {
-    display: flex;
-    align-items: end;
-    justify-content: center;
-    width: 90vw;
+   display: flex;
+   align-items: end;
+   justify-content: center;
+   width: 90vw;
 }
 .progressDonate:hover {
-    cursor: pointer;
+   cursor: pointer;
 }
 
 .colorButtonDonateContainer {
-    display:flex;
-    height: 17em;
+   display:flex;
+   height: 17em;
 }
 
 @media (max-width:900px) {
-    .progressDonate {
-        position: static;
-    }
-    .colorButtonDonateContainer {
-        height: auto;
-    }
+   .progressDonate {
+      position: static;
+   }
+   .colorButtonDonateContainer {
+      height: auto;
+   }
 }
 
 .rectangleRounded {
-    position: relative;
-    z-index: 10;
-    align-items: center;
-    margin: 0;
-    border-bottom-right-radius: 7px;
-    border-bottom-left-radius: 7px;
-    width: 100vw;
-    min-height: 20px;
-    background-color: #f6f6f6;
+   position: relative;
+   z-index: 10;
+   align-items: center;
+   margin: 0;
+   border-bottom-right-radius: 7px;
+   border-bottom-left-radius: 7px;
+   width: 100vw;
+   min-height: 20px;
+   background-color: #f6f6f6;
 }
 
 .dollarButton {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 25em;
-    width: 100%;
-    height: 46px;
-    background: #ffffff;
-    transition: all .5s ease-in;
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 25em;
+   width: 100%;
+   height: 46px;
+   background: #ffffff;
+   transition: all .5s ease-in;
 }
 
 .dollarButtonBlack {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 25em;
-    width: 100vw;
-    height: 46px;
-    color: #ffffff;
-    background: #000000;
-    transition: all .5s ease-out;
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 10px;
+   min-width: fit-content;
+   min-height: fit-content;
+   text-align: center;
+   border-radius: 25em;
+   width: 100vw;
+   height: 46px;
+   color: #ffffff;
+   background: #000000;
+   transition: all .5s ease-out;
 }
 
 .dollarButtonMaroon {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 25em;
-    width: 100vw;
-    height: 46px;
-    color: #ffffff;
-    background: #459673;
-    transition: all .5s ease-out;
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 25em;
+   width: 100vw;
+   height: 46px;
+   color: #ffffff;
+   background: #459673;
+   transition: all .5s ease-out;
 }
 
 .dollarButtonOrange {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 25em;
-    width: 100vw;
-    height: 46px;
-    color: #ffffff;
-    background: #EC9D26;
-    transition: all .5s ease-out;
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 25em;
+   width: 100vw;
+   height: 46px;
+   color: #ffffff;
+   background: #EC9D26;
+   transition: all .5s ease-out;
 }
 
 .dollarButtonBlue {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 25em;
-    width: 100vw;
-    height: 46px;
-    color: #ffffff;
-    background: #2D69C3;
-    transition: all .5s ease-out;
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border-radius: 25em;
+   width: 100vw;
+   height: 46px;
+   color: #ffffff;
+   background: #2D69C3;
+   transition: all .5s ease-out;
 }
 
 .submitButtonBlack {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    border-radius: 25em;
-    width: 100%;
-    height: 46px;
-    font-family: Inter;
-    font-weight: 900;
-    font-size: 1em;
-    letter-spacing: 0.019em;
-    color: #ffffff;
-    background: #000000;
-    transition: all .5s ease-out;
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border: none;
+   border-radius: 25em;
+   width: 100%;
+   height: 46px;
+   font-family: Inter;
+   font-weight: 900;
+   font-size: 1em;
+   letter-spacing: 0.019em;
+   color: #ffffff;
+   background: #000000;
+   transition: all .5s ease-out;
 }
 
 .submitButtonWhite {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    border-radius: 25em;
-    width: 100%;
-    height: 46px;
-    font-family: Inter;
-    font-weight: 900;
-    font-size: 1em;
-    letter-spacing: 0.019em;
-    color: #000000;
-    background: #ffffff;
-    transition: all .5s ease-out;
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border: none;
+   border-radius: 25em;
+   width: 100%;
+   height: 46px;
+   font-family: Inter;
+   font-weight: 900;
+   font-size: 1em;
+   letter-spacing: 0.019em;
+   color: #000000;
+   background: #ffffff;
+   transition: all .5s ease-out;
 }
 
 .dollarButton:hover {
-    /* background: linear-gradient(90deg,#ffffff, #a23404); */
-    background-color: #e2e2e2;
-    cursor: pointer;
+   /* background: linear-gradient(90deg,#ffffff, #a23404); */
+   background-color: #e2e2e2;
+   cursor: pointer;
 }
 
 .dollarButtonBlack:hover {
-    /* background: linear-gradient(90deg,#ffffff, #a23404); */
-    background-color: #373737;
-    cursor: pointer;
+   /* background: linear-gradient(90deg,#ffffff, #a23404); */
+   background-color: #373737;
+   cursor: pointer;
 }
 .submitButtonBlack:hover {
-    background-color: #373737;
-    cursor: pointer;    
+   background-color: #373737;
+   cursor: pointer;    
 }
 
 .submitButtonWhite:hover {
-    background-color: #d8e2ea;
-    cursor: pointer;    
+   background-color: #d8e2ea;
+   cursor: pointer;    
 }
 .dollarButtonMaroon:hover {
-    /* background: linear-gradient(90deg,#ffffff, #a23404); */
-    background-color: #4fac84;
-    cursor: pointer;
+   /* background: linear-gradient(90deg,#ffffff, #a23404); */
+   background-color: #4fac84;
+   cursor: pointer;
 }
 
 .dollarButtonMaroon:hover {
-    color: #000000;
-    /* background: linear-gradient(90deg,#ffffff, #a23404); */
-    background-color: #e2e2e2;
-    cursor: pointer;
+   color: #000000;
+   /* background: linear-gradient(90deg,#ffffff, #a23404); */
+   background-color: #e2e2e2;
+   cursor: pointer;
 }
 
 .dollarButtonOrange:hover {
-    cursor: pointer;
+   cursor: pointer;
 }
 
 .buttonSection {
-    display: flex;
+   display: flex;
 }
 
 .together {
-    position: relative;
+   position: relative;
 }

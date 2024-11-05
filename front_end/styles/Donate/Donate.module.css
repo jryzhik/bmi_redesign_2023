@@ -254,6 +254,8 @@
    border-width: 2px;
    width: 1.5em;
    height: 1.5em;
+   min-width: 1.5em;
+   min-height: 1.5em;
    border-style: solid;
    transition: all .2s ease-out;
 }
@@ -265,6 +267,8 @@
    border-width: 2px;
    width: 24px;
    height: 24px;
+   min-width: 24px;
+   min-height: 24px;
    border-style: solid;
    transition: all 1s ease-out;
 }
