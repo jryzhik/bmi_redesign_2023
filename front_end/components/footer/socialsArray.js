@@ -11,7 +11,7 @@ export const socials = [
       width: '100%',
    },
    {
-      link: 'mailto:info@byelorussianmission.org"',
+      link: 'mailto:info@byelorussianmission.org',
       icon: email,
       alt: 'email',
       width: '100%',

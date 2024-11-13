@@ -196,7 +196,7 @@ export default function Home({ news, numbers }) {
                SecondaryComponent={
                   <P
                      color={theme.colors.CHARCOAL}
-                     text="To influence the 7 mountains of society – men and women of God must be equipped & empowered to step & take territory."
+                     text="To influence society – men and women of God must be equipped & empowered to step & take territory."
                   />
                }
                secondaryAllign="center"
