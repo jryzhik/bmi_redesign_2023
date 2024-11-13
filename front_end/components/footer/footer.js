@@ -8,6 +8,7 @@ import NAVTEXT from '../fonts/NAVTEXT';
 import styles from '../../styles/Footers/Foot.module.css';
 import logo from '../../assets/icons/logos/logo_stack.svg';
 import { footerNavData } from './footerNavData';
+import BezalelCopyright from './BezalelCopyright';
 
 const logoWidth = 187;
 const logoHeight = 91.8;
@@ -44,9 +45,10 @@ export default function Footer() {
             </ul>
          </div>
 
-         <Stack spacing={2}>
+         <Stack spacing={2} alignItems="center">
             <Social />
             <NAVTEXT text={`© Copyright 2000 - ${currentYear} | All Rights Reserved`} />
+            <BezalelCopyright />
          </Stack>
 
          <Spacer y={1.2} />

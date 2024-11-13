@@ -1,23 +1,25 @@
-import React, { useEffect } from 'react';
-import { Dropdown } from '@nextui-org/react';
-import theme from '../../styles/theme';
-import FIELDTEXT from '../fonts/FIELDTEXT';
-import LT from '../fonts/LT';
-import styles from '../../styles/Texts/Texts.module.css';
+import { useEffect, useMemo, useState } from 'react';
 import Image from 'next/image';
+import { Dropdown } from '@nextui-org/react';
+import FIELDTEXT from '../fonts/FIELDTEXT';
 import FIELDTXTREG from '../fonts/FIELDTXTREG';
+import LT from '../fonts/LT';
+import theme from '../../styles/theme';
+import styles from '../../styles/Texts/Texts.module.css';
 
-export default function DropDownThin({ dropDownItemArray, borderColor, textColor, callBack }) {
-   const [selected, setSelected] = React.useState('Select Trip');
+export default function DropDownThin({ dropDownItemArray = [], borderColor, textColor, callBack }) {
+   const loadingMessage = 'Loading events...';
+   const [selected, setSelected] = useState('Select Trip');
+   const selectedValue = useMemo(() => Array.from(selected).join(', ').replaceAll('_', ' '), [selected]);
+
+   function handleClick() {
+      document.getElementById('buttondrop').click();
+   }
 
    useEffect(() => {
       const myArray = Array.from(selected);
       callBack(myArray[0]);
    }, [selected]);
-   const selectedValue = React.useMemo(() => Array.from(selected).join(', ').replaceAll('_', ' '), [selected]);
-   function handleClick() {
-      document.getElementById('buttondrop').click();
-   }
 
    return (
       <div className={styles.thinBarContainer} style={{ borderColor: borderColor }}>
