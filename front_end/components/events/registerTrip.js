@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
-import styles from '../../styles/Events/Events.module.css';
+'use client';
+import { useState } from 'react';
+import useSWR from 'swr';
+import { getReturnCalendarHappenings } from '../../tools/getReturnCalendarHappenings';
 import P from '../fonts/P';
 import theme from '../../styles/theme';
 import H1 from '../fonts/H1';
@@ -10,27 +12,21 @@ import OutlineTextArea from '../inputs/outlineTextArea';
 import RoundedButton from '../buttons/roundedButton';
 import DropDownThin from '../buttons/dropDownThin';
 import emailjs from '@emailjs/browser';
+import styles from '../../styles/Events/Events.module.css';
 
-// const tripDB = [
-//     {
-//         name: 'Belarus Construction', key: 'Belarus Construction'
-//     },
-//     {
-//         name: 'Pastors Conference Fall', key: 'Pastors Conference Fall'
-//     },
-//     {
-//         name: 'Summer VBS', key: 'Summer VBS'
-//     }
-// ]
-
-export default function RegisterTrip({ color, primaryText, secondaryText, tripDB }) {
-   const [tripSelection, setTripSelection] = useState();
+export default function RegisterTrip({ color, primaryText, secondaryText }) {
+   const { data: tripHappenings = [] } = useSWR('triphappenings', () => getReturnCalendarHappenings());
+   const [tripSelection, setTripSelection] = useState('');
    const [fullName, setFullName] = useState('');
    const [email, setEmail] = useState('');
    const [message, setMessage] = useState('');
 
    const [isSubmitting, setIsSubmitting] = useState(false);
    const [stateMessage, setStateMessage] = useState(null);
+
+   const tripSelectionOnChangeHandler = (e) => {
+      setTripSelection(e.target.value);
+   };
 
    const sendEmail = (e) => {
       e.persist();
@@ -101,6 +97,7 @@ export default function RegisterTrip({ color, primaryText, secondaryText, tripDB
                                  callBack={setFullName}
                               />
                            </Grid>
+
                            <Grid xs={12} md={12} display="flex" justifyContent="center" alignItems="center">
                               <OutlineButton
                                  placeholder="Email Address"
@@ -111,25 +108,31 @@ export default function RegisterTrip({ color, primaryText, secondaryText, tripDB
                                  callBack={setEmail}
                               />
                            </Grid>
+
                            <Grid xs={12} md={12} display="flex" justifyContent="center" alignItems="center">
                               <DropDownThin
+                                 key={'BelarusConstruction'}
                                  defaultKey={'BelarusConstruction'}
-                                 dropDownItemArray={tripDB}
+                                 dropDownItemArray={tripHappenings}
                                  titleFont="number"
                                  placeholder="Select Mission Trip"
                                  borderColor={theme.colors.SNOW}
                                  textColor={theme.colors.WHITE}
-                                 callBack={setTripSelection}
+                                 callBack={(value) => {
+                                    setTripSelection(value);
+                                 }}
                               />
                               <input
                                  type="text"
                                  name="trip_selection"
                                  value={tripSelection}
+                                 onChange={tripSelectionOnChangeHandler}
                                  style={{
                                     display: 'none',
                                  }}
                               />
                            </Grid>
+
                            <Grid xs={12} md={12} display="flex" justifyContent="center" alignItems="center">
                               <OutlineTextArea
                                  placeholder="Please write a short message on who you are and why you are interested in going!"
@@ -140,6 +143,7 @@ export default function RegisterTrip({ color, primaryText, secondaryText, tripDB
                                  callBack={setMessage}
                               />
                            </Grid>
+
                            <Grid
                               xs={12}
                               md={12}

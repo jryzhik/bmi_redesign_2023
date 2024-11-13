@@ -9,10 +9,8 @@ import Link from 'next/link';
 import RoundedButton from '../components/buttons/roundedButton';
 import passedStyle from '../styles/Donate/ColorDonate.module.css';
 import RegisterTrip from '../components/events/registerTrip';
-import clientPromise from '../lib/mongo/connect';
 
-export default function Trip({ tripDB }) {
-   console.log('trip object', tripDB);
+export default function Trip() {
    return (
       <>
          <ImageNtext
@@ -24,6 +22,7 @@ export default function Trip({ tripDB }) {
             headerText="Register here to go on a mission trip"
             subText="Join us on a Mission Trip to Belarus and Israel! Find your place in a music, construction, summer camp, or evangelization team."
          />
+
          <HeaderNComponent
             primaryHeaderText="Mission Trips"
             SecondaryComponent={
@@ -34,6 +33,7 @@ export default function Trip({ tripDB }) {
             }
             secondaryAllign="center"
          />
+
          <div className={styles.viewCalendar}>
             <div className={styles.boxConstraint}>
                <Link href="/calendar">
@@ -45,28 +45,8 @@ export default function Trip({ tripDB }) {
                </Link>
             </div>
          </div>
-         <RegisterTrip
-            color={theme.colors.NAVY}
-            primaryText="Register"
-            secondaryText="Registration is open for this trip."
-            tripDB={tripDB}
-         />
+
+         <RegisterTrip color={theme.colors.NAVY} primaryText="Register" secondaryText="Registration is open for this trip." />
       </>
    );
-}
-
-export async function getServerSideProps() {
-   try {
-      const client = await clientPromise;
-      const db = client.db('masterdb');
-
-      const tripDB = await db.collection('events').find({}).sort({ name_of_date_field: 1 }).limit(20).toArray();
-
-      return {
-         props: { tripDB: JSON.parse(JSON.stringify(tripDB)) },
-      };
-   } catch (e) {
-      console.error(e);
-      return { props: { tripDB: [{}], ok: false, reason: e.message, cause: e.cause } };
-   }
 }
