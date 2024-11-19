@@ -134,10 +134,10 @@ export const menu = [
          ['Trip Registration', 'trip'],
       ],
    },
-   {
-      primary: ['Banquet', 'banquet'],
-      secondary: null,
-   },
+   // {
+   //    primary: ['Banquet', 'banquet'],
+   //    secondary: null,
+   // },
    {
       primary: 'Ministries',
       secondary: [
@@ -209,15 +209,15 @@ export const paymentProviderButtonsContent = [
 ];
 
 export const HeroSlider = [
-   {
-      imageUrl: '/img/banquet/hero-bg.jpg',
-      color2: '#81b0ff',
-      color1: '#81b0ff',
-      headerText: 'Fearless for the Gospel',
-      subText: 'Banquet - Forsyth Conference Center | November 14th',
-      imageFocus: '50% 20%',
-      link: 'banquet#tickets',
-   },
+   // {
+   //    imageUrl: '/img/banquet/hero-bg.jpg',
+   //    color2: '#81b0ff',
+   //    color1: '#81b0ff',
+   //    headerText: 'Fearless for the Gospel',
+   //    subText: 'Banquet - Forsyth Conference Center | November 14th',
+   //    imageFocus: '50% 20%',
+   //    link: 'banquet#tickets',
+   // },
    {
       imageUrl: '/img/hero_images/home_hero/WalkingBaptism.jpg',
       color2: '#b1b8c1',
