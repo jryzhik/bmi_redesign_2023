@@ -63,8 +63,7 @@ export default function Donate() {
           secondaryText="Your donation enables us to reach out with the good news of Jesus Christ, serve the orphan children, equip believers for effective ministry, and inspire the next generations to impact their world. We appreciate very much your partnership!"
           secondaryAllign="center"
           color={theme.colors.BLACK}
-          buttonStyle={buttonStyles.dollarButtonBlack}
-          fund="general"
+          widgetID='j9k05g'
         />
         <div className={styles.verticalSpacer}></div>
         <HeaderNComponent
