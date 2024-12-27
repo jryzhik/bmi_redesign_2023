@@ -20,7 +20,7 @@ export default function Trip() {
             textParent="Events"
             textChild="Trip Registration"
             headerText="Register here to go on a mission trip"
-            subText="Join us on a Mission Trip to Belarus and Israel! Find your place in a music, construction, summer camp, or evangelization team."
+            subText=""
          />
 
          <HeaderNComponent
