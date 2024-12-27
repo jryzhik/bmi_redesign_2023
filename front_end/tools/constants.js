@@ -223,7 +223,7 @@ export const HeroSlider = [
       color2: '#b1b8c1',
       color1: '#7db0e3',
       headerText: 'Big Mission, Big Task, Even Larger God',
-      subText: 'We make a living by what we get, but a life by what we give.',
+      subText: '',
       imageFocus: '50% 20%',
    },
    {
@@ -231,7 +231,7 @@ export const HeroSlider = [
       color1: '#cfb489',
       color2: '#996800',
       headerText: 'Providing support and hope for the children',
-      subText: 'We make a living by what we get, but a life by what we give.',
+      subText: '',
       imageFocus: '50% 20%',
    },
    {
@@ -239,7 +239,7 @@ export const HeroSlider = [
       color1: '#48594c',
       color2: '#1d231f',
       headerText: 'Generating a Generation for God since 2000',
-      subText: 'We make a living by what we get, but a life by what we give.',
+      subText: '',
       imageFocus: '50% 20%',
    },
    {
@@ -247,7 +247,7 @@ export const HeroSlider = [
       color1: '#1F0E08',
       color2: '#1F0E08',
       headerText: 'Providing support and hope for the children',
-      subText: 'We make a living by what we get, but a life by what we give.',
+      subText: '',
       imageFocus: '50% -20%',
    },
 ];
