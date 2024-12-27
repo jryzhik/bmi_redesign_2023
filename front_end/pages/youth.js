@@ -92,8 +92,7 @@ export default function orphans() {
             }
             secondaryAllign="center"
             color={theme.colors.BLACK}
-            buttonStyle={buttonStyles.dollarButtonBlack}
-            fund={'Youth Outreach'}
+            widgetID='p746wj'
           />
         </div>
       }

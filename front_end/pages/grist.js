@@ -31,7 +31,7 @@ export default function Grist() {
           color='#2D69C3'
           primaryText='Help us reach immigrant families in Atlanta'
           secondaryText='We look to help newly immigrated families in Atlanta with their needs and introduce them to Jesus.'
-          fund={"missionary | Grist"}
+          widgetID='gM4evL'
         />
       </div>
     </>

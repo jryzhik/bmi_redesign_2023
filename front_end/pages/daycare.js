@@ -140,8 +140,7 @@ export default function daycare() {
             }
             secondaryAllign="center"
             color={theme.colors.WHITE}
-            buttonStyle={buttonStyles.dollarButton}
-            fund={'DayCare Centers'}
+            widgetID='gOkeJg'
           />
         </div>
       }

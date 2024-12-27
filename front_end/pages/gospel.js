@@ -62,8 +62,7 @@ export default function gospel() {
             }
             secondaryAllign="center"
             color={theme.colors.WHITE}
-            buttonStyle={buttonStyles.dollarButton}
-            fund={'Evangelism'}
+            widgetID='p746wj'
           />
         </div>
       }

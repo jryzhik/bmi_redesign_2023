@@ -52,8 +52,7 @@ export default function brest() {
                         secondaryText={"Your support financially allows us to provide help in planting local churches across Belarus."}
                         secondaryAllign='center'
                         color={theme.colors.WHITE}
-                        buttonStyle={buttonStyles.dollarButton}
-                        fund={"construction | BBC"}
+                        widgetID='jNWewL'
                     />
                 </div>
             }

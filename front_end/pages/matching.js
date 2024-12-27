@@ -61,8 +61,7 @@ export default function matching({ numbers }) {
                   secondaryText={'Help us get a Bible to every household in Belarus.'}
                   secondaryAllign="center"
                   color={theme.colors.WHITE}
-                  buttonStyle={buttonStyles.dollarButton}
-                  fund={'Bible Matching'}
+                  widgetID='LvG0Zg'
                />
             </div>
          }

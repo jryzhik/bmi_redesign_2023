@@ -30,9 +30,7 @@ export default function legacy() {
                         secondaryText={"Make your trip donation here, with convenient online platforms."}
                         secondaryAllign='center'
                         color={theme.colors.BLACK}
-                        buttonStyle={buttonStyles.dollarButton}
-                        fund={"trip donation"}
-                        single={true}
+                        widgetID='L4y6Gg'
                     />
                     <div style={{paddingTop: '1.2em'}}></div>
                 </div>

@@ -88,8 +88,7 @@ export default function love({ numbers }) {
                   secondaryText={'Provide life altering support to those directly displaced from their homes due to the war.'}
                   secondaryAllign="center"
                   color={theme.colors.WHITE}
-                  buttonStyle={buttonStyles.dollarButton}
-                  fund={'Love in Action'}
+                  widgetID='LYP5vj'
                />
             </div>
          }

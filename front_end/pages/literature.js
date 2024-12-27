@@ -97,8 +97,7 @@ export default function literature({ numbers }) {
                   }
                   secondaryAllign="center"
                   color={theme.colors.WHITE}
-                  buttonStyle={buttonStyles.dollarButton}
-                  fund={'Good & Evil'}
+                  widgetID='LvG0Zg'
                />
             </div>
          }

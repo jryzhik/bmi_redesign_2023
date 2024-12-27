@@ -10,7 +10,7 @@ import DonationMasterForm from './donationMasterForm';
 import buttonStyles from '../../styles/Donate/ColorDonate.module.css';
 
 
-export default function ColorheroDonate({ color, primaryText, secondaryText, fund }) {
+export default function ColorheroDonate({ color, primaryText, secondaryText, widgetID }) {
     return (
         <div className={styles.together}>
             <div className={styles.rectangleRounded}></div>
@@ -23,7 +23,7 @@ export default function ColorheroDonate({ color, primaryText, secondaryText, fun
                     secondaryAllign='center'
                     color={theme.colors.WHITE}
                     buttonStyle={buttonStyles.dollarButton}
-                    fund={fund}
+                    widgetID={widgetID}
                 />
             </div>
         </div>

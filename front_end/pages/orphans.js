@@ -104,8 +104,7 @@ export default function orphans() {
             }
             secondaryAllign="center"
             color={theme.colors.WHITE}
-            buttonStyle={buttonStyles.dollarButton}
-            fund={'Orphan Adoption'}
+            widgetID='LqaRGL'
           />
         </div>
       }

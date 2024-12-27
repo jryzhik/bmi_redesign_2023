@@ -108,7 +108,7 @@ export default function plant() {
             secondaryAllign="center"
             color={theme.colors.WHITE}
             buttonStyle={buttonStyles.dollarButton}
-            fund={'Church Planting'}
+            widgetID='jNWewL'
           />
         </div>
       }
