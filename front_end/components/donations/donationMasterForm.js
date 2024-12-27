@@ -1,28 +1,20 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Script from 'next/script';
 import styles from '../../styles/Donate/Donate.module.css';
 import HeaderNComponent from '../texts/HeaderNComponent';
 import P from '../fonts/P';
 
 export default function DonationMasterForm({ headerText, secondaryText, secondaryAllign, color, widgetID }) {
-    const [showApplePay, setShowApplePay] = useState(false);
-
-    useEffect(() => {
-        if (window.ApplePaySession && ApplePaySession.canMakePayments()) {
-            setShowApplePay(true);
-        }
-    }, []);
-
-    const handleApplePay = () => {
-        window.open(`https://givebutter.com/${widgetID}`, '_blank');
-    };
 
     return (
         <>
+            {/* Load the modified local script */}
             <Script
-                src="/js/latest.umd.cjs?acct=ajjQbn3T6YpCI7Vx&p=other"
+                src="/js/latest.umd.cjs?acct=ajjQbn3T6YpCI7Vx&p=other"  // Pass query params in the local script URL
                 strategy="lazyOnload"
-                onLoad={() => console.log("📜 Modified Givebutter script loaded")}
+                onLoad={() => {
+                    console.log("📜 Modified Givebutter script loaded");
+                }}
             />
             <div className={styles.formContainer}>
                 <HeaderNComponent
@@ -31,14 +23,6 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
                     secondaryAllign={secondaryAllign}
                     color={color}
                 />
-                {showApplePay && (
-                    <button 
-                        onClick={handleApplePay}
-                        className={styles.applePayButton}
-                    >
-                        Pay with Apple Pay
-                    </button>
-                )}
                 <div className={styles.giveButter}>
                     <givebutter-widget id={widgetID}></givebutter-widget>
                 </div>
