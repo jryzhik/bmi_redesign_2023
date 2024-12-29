@@ -484,7 +484,7 @@ Please see https://iframe-resizer.com/upgrade for more details.
             alt="Powered by Bezalel Lab ®"
             width="182"
             height="18"
-            src="img/logos/bezalel_lab_powered_givebutter.svg"
+            src="img/logos/bezalel_lab_outline_powered.svg"
             draggable="false"
           />
         </a>

@@ -89,6 +89,7 @@ export default function love({ numbers }) {
                   secondaryAllign="center"
                   color={theme.colors.WHITE}
                   widgetID='LYP5vj'
+                  giveButterID='K6xf4g'
                />
             </div>
          }

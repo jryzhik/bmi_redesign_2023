@@ -64,6 +64,7 @@ export default function Donate() {
           secondaryAllign="center"
           color={theme.colors.BLACK}
           widgetID='j9k05g'
+          giveButterID='MaO7NH'
         />
         <div className={styles.verticalSpacer}></div>
         <HeaderNComponent

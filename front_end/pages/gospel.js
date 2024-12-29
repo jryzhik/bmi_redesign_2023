@@ -63,6 +63,7 @@ export default function gospel() {
             secondaryAllign="center"
             color={theme.colors.WHITE}
             widgetID='p746wj'
+            giveButterID='OH66p2'
           />
         </div>
       }

@@ -31,6 +31,7 @@ export default function legacy() {
                         secondaryAllign='center'
                         color={theme.colors.BLACK}
                         widgetID='L4y6Gg'
+                        giveButterID='gZTL7W'
                     />
                     <div style={{paddingTop: '1.2em'}}></div>
                 </div>

@@ -109,6 +109,7 @@ export default function plant() {
             color={theme.colors.WHITE}
             buttonStyle={buttonStyles.dollarButton}
             widgetID='jNWewL'
+            giveButterID='EwsEOq'
           />
         </div>
       }
