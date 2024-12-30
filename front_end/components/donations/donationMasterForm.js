@@ -18,7 +18,6 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
         if (color == theme.colors.WHITE) {
             setisDark(false);
         }
-        setShowApplePay(true);
     }, []);
 
     const handleApplePay = () => {
