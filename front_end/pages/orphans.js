@@ -17,21 +17,21 @@ const style_imgTop = styles.mainImageOrphan;
 const style_containerBottom = styles.wrapperBottomContainerOrphan;
 const style_imgBottom = styles.bottomImgContainerOrphan;
 
-const plantingGallery = [
+const orphanGallery = [
+  {
+    imageUrl: '/img/ministries/orphans/orphan_soccer.jpg',
+  },
+  {
+    imageUrl: '/img/ministries/orphans/orphan_reading.jpg',
+  },
+  {
+    imageUrl: '/img/ministries/orphans/orphan_eating.jpg',
+  },
   {
     imageUrl: '/img/gallery/gruzd/sitting_fire.jpg',
   },
   {
-    imageUrl: '/img/ministries/planting/baptisms.jpg',
-  },
-  {
-    imageUrl: '/img/ministries/planting/baptisms.jpg',
-  },
-  {
-    imageUrl: '/img/gallery/gruzd/blow.jpg',
-  },
-  {
-    imageUrl: '/img/gallery/gruzd/teach.jpg',
+    imageUrl: '/img/ministries/orphans/orphan_reading2.jpg',
   },
 ];
 
@@ -95,7 +95,7 @@ export default function orphans() {
               slidesToScroll: 1,
             }}
           >
-            <EmblaScaleCarousel slides={plantingGallery} />
+            <EmblaScaleCarousel slides={orphanGallery} />
           </EmblaCarousel>
           <DonationMasterForm
             headerText={'Help provide each child a loving family'}
