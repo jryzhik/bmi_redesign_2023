@@ -17,7 +17,7 @@ export const dropDowns = {
       defaultValue: 'all',
    },
 };
- 
+
 export const monthsArray = [
    'January',
    'February',
@@ -158,10 +158,6 @@ export const menu = [
          ['Things to Know', 'brief'],
          ['Fundraising Letter', 'letter'],
       ],
-   },
-   {
-      primary: ['Store', 'https://shop.belarusmission.org'],
-      secondary: null,
    },
    {
       primary: ['Donate', 'donate'],

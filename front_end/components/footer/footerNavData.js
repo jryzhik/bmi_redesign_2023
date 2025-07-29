@@ -63,14 +63,4 @@ export const footerNavData = [
          { text: 'Trip Donations', link: '/pay' },
       ],
    },
-   {
-      section: 'Store',
-      links: [
-         { text: 'Store', link: 'https://shop.belarusmission.org/' },
-         {
-            text: 'All products',
-            link: 'https://shop.belarusmission.org/collections/all',
-         },
-      ],
-   },
 ];
