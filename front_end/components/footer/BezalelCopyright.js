@@ -27,7 +27,7 @@ const BezalelCopyright = ({ ...props }) => {
             target="_blank"
             rel="noopener noreferrer"
          >
-            <span>Powered By</span>
+            <span>Crafted By</span>
 
             <Image
                src="/img/logos/bezalel_lab.svg"
