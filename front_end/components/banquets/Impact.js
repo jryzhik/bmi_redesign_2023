@@ -10,11 +10,13 @@ const Impact = () => {
       <div className={styles.wrapper}>
       <DonationMasterForm
         headerText="Can't make it this time, yet want to have an impact?"
-        secondaryText="Join us in embracing orphaned children with the Father's love and guiding them towards a brighter future."
+        secondaryText=""
         secondaryAllign="center"
         color={theme.colors.WHITE}
         buttonStyle={styles.button}
         fund="general"
+        widgetID='j9k05g'
+        giveButterID='MaO7NH'
       />
       </div>
     </section>
