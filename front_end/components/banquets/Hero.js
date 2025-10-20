@@ -23,8 +23,9 @@ const Hero = () => {
           <P text="Banquet Fundraisers" />
         </div>
         <div className={styles.content}>
-          <H1 text="Fearless for the Gospel" />
-          <P text="“For God has not given us a spirit of fear, but of power and of love and of a sound mind”" />
+          <H1 text="Beyond the Borders" />
+          <P text="“I will give you every place where you set your foot…”
+Joshua 1:3" />
         </div>
       </div>
     </div>

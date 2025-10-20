@@ -23,8 +23,8 @@ const tickets = [
     description: 'Perfect for those who value impactful events and memorable evenings',
     colorPrimary: '#C2EDFF',
     colorSecondary: '#E7F8FF',
-    price: 75,
-    link: 'https://2ay5glqvmz7.typeform.com/to/L9tk8LdO',
+    price: 100,
+    link: 'https://2ay5glqvmz7.typeform.com/to/I4smDxD6',
     items: [
       {title: 'Prime Seating', validate: true},
       {title: 'Network Time', validate: true},
@@ -34,31 +34,31 @@ const tickets = [
       {title: 'Private Table for 10', validate: false},
     ],
   },
-  {
-    id: 2,
-    title: 'VIP Ticket',
-    description: 'Perfect for those who value extra comfort and exclusivity',
-    colorPrimary: '#80F8AD',
-    colorSecondary: '#E4FFEE',
-    price: 150,
-    link: 'https://2ay5glqvmz7.typeform.com/to/fWctUyn9',
-    items: [
-      {title: 'Prime Seating', validate: true},
-      {title: 'Network Time', validate: true},
-      {title: 'Gourmet Dinner', validate: true},
-      {title: 'Reserved Parking', validate: true},
-      {title: 'VIP Table', validate: true},
-      {title: 'Private Table for 10', validate: false},
-    ],
-  },
+  // {
+  //   id: 2,
+  //   title: 'VIP Ticket',
+  //   description: 'Perfect for those who value extra comfort and exclusivity',
+  //   colorPrimary: '#80F8AD',
+  //   colorSecondary: '#E4FFEE',
+  //   price: 150,
+  //   link: 'https://2ay5glqvmz7.typeform.com/to/fWctUyn9',
+  //   items: [
+  //     {title: 'Prime Seating', validate: true},
+  //     {title: 'Network Time', validate: true},
+  //     {title: 'Gourmet Dinner', validate: true},
+  //     {title: 'Reserved Parking', validate: true},
+  //     {title: 'VIP Table', validate: true},
+  //     {title: 'Private Table for 10', validate: false},
+  //   ],
+  // },
   {
     id: 3,
     title: 'Full Table',
     description: 'Perfect for generous groups who value impactful giving and the power of the Gospel',
     colorPrimary: '#FFDE2F',
     colorSecondary: '#FFF5C3',
-    price: 1500,
-    link: 'https://2ay5glqvmz7.typeform.com/to/ffhHndrV',
+    price: 1000,
+    link: 'https://2ay5glqvmz7.typeform.com/to/bz6wBa8e',
     items: [
       {title: 'Prime Seating', validate: true},
       {title: 'Network Time', validate: true},
@@ -140,9 +140,8 @@ const Tickets = () => {
           <span className={`${styles.shape} ${styles.shapeRightTop}`}></span>
           <span className={`${styles.shape} ${styles.shapeLeftBottom}`}></span>
           <span className={`${styles.shape} ${styles.shapeRightBottom}`}></span>
-          <h2 className={styles.contentBoxTitle}>One Bible can touch 7 lives!</h2>
-          <P text="Our goal is to raise $250,000 to print Bibles and Christian literature. " />
-          <P text="Every dollar you give will be doubled, amplifying your impact! With one Bible touching 7 lives, imagine the power of reaching up to 350,000 souls!" />
+          <h2 className={styles.contentBoxTitle}>Reaching Beyond to the Pagan Nations</h2>
+          <P text="In this next phase of ministry, our goal is to send 1,000,000 Bibles and to train pastors in the regions (Russia, Kazakhstan, Kyrgystan…) to start new churches." />
           <P text="Together, let's spread the life-changing Word of God across Eastern Europe and beyond." />
         </div>
       </div>

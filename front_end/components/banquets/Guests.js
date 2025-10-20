@@ -10,8 +10,8 @@ const guests = [
   //   imgSource: '/img/banquet/guest-1.png',
   // },
   {
-    name: 'Dr. Phil Roberts',
-    jobTitle: 'Director of International Theological Education',
+    name: 'Dr. Paul Steffans',
+    jobTitle: '15th Generation Descendant of Reformer - Martin Luther',
     imgSource: '/img/banquet/guest-2.png',
   },
   {
