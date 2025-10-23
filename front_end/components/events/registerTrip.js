@@ -1,6 +1,7 @@
 'use client';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import useSWR from 'swr';
+import ReCAPTCHA from 'react-google-recaptcha';
 import { getReturnCalendarHappenings } from '../../tools/getReturnCalendarHappenings';
 import P from '../fonts/P';
 import theme from '../../styles/theme';
@@ -20,146 +21,184 @@ export default function RegisterTrip({ color, primaryText, secondaryText }) {
    const [fullName, setFullName] = useState('');
    const [email, setEmail] = useState('');
    const [message, setMessage] = useState('');
-
    const [isSubmitting, setIsSubmitting] = useState(false);
    const [stateMessage, setStateMessage] = useState(null);
+   const [recaptchaToken, setRecaptchaToken] = useState(null);
+   const recaptchaRef = useRef(null);
 
    const tripSelectionOnChangeHandler = (e) => {
       setTripSelection(e.target.value);
    };
 
+   const handleRecaptchaChange = (token) => {
+      setRecaptchaToken(token);
+   };
+
    const sendEmail = (e) => {
       e.persist();
       e.preventDefault();
+
+      // Check if reCAPTCHA is completed
+      if (!recaptchaToken) {
+         setStateMessage('Please complete the reCAPTCHA verification');
+         setTimeout(() => {
+            setStateMessage(null);
+         }, 5000);
+         return;
+      }
+
       setIsSubmitting(true);
       emailjs
-         .sendForm(
-            process.env.NEXT_PUBLIC_REACT_APP_SERVICE_ID,
-            process.env.NEXT_PUBLIC_REACT_APP_TEMPLATE_ID_TRIP,
-            e.target,
-            process.env.NEXT_PUBLIC_REACT_APP_PUBLIC_KEY
-         )
-         .then(
-            (result) => {
-               setStateMessage(
-                  "We are so glad you want to Join to so the Lord's work! Please give us up to 48 hours to get in touch with you!"
-               );
-               setIsSubmitting(false);
-               setTimeout(() => {
-                  setStateMessage(null);
-               }, 5000); // hide message after 5 seconds
-            },
-            (error) => {
-               console.log(error);
-               setStateMessage('Something went wrong, please try again later');
-               setIsSubmitting(false);
-               setTimeout(() => {
-                  setStateMessage(null);
-               }, 5000); // hide message after 5 seconds
-            }
-         );
+          .sendForm(
+              process.env.NEXT_PUBLIC_REACT_APP_SERVICE_ID,
+              process.env.NEXT_PUBLIC_REACT_APP_TEMPLATE_ID_TRIP,
+              e.target,
+              process.env.NEXT_PUBLIC_REACT_APP_PUBLIC_KEY
+          )
+          .then(
+              (result) => {
+                 setStateMessage(
+                     "We are so glad you want to Join to do the Lord's work! Please give us up to 48 hours to get in touch with you!"
+                 );
+                 setIsSubmitting(false);
+                 setRecaptchaToken(null);
+                 recaptchaRef.current?.reset();
+                 setTimeout(() => {
+                    setStateMessage(null);
+                 }, 5000);
+              },
+              (error) => {
+                 console.log(error);
+                 setStateMessage('Something went wrong, please try again later');
+                 setIsSubmitting(false);
+                 setRecaptchaToken(null);
+                 recaptchaRef.current?.reset();
+                 setTimeout(() => {
+                    setStateMessage(null);
+                 }, 5000);
+              }
+          );
 
       // Clears the form after sending the email
       e.target.reset();
+      setFullName('');
+      setEmail('');
+      setMessage('');
+      setTripSelection('');
    };
 
    return (
-      <form onSubmit={sendEmail}>
-         <div id="formSection" className={styles.together}>
-            <div className={styles.rectangleRounded}></div>
-            <div
-               style={{
-                  backgroundColor: color,
-               }}
-               className={styles.containerRegisterForm}
-            >
-               {stateMessage ? (
-                  <div className={styles.headerNdescription}>
-                     <H1 text={'Hooray! ✈️'} color={theme.colors.WHITE} />
-                     <P color={theme.colors.WHITE} text={stateMessage} />
-                  </div>
-               ) : (
-                  <>
-                     <div className={styles.headerNdescription}>
-                        <H1 text={primaryText} color={theme.colors.WHITE} />
-                        <P color={theme.colors.WHITE} text={secondaryText} />
-                     </div>
+       <form onSubmit={sendEmail}>
+          <div id="formSection" className={styles.together}>
+             <div className={styles.rectangleRounded}></div>
+             <div
+                 style={{
+                    backgroundColor: color,
+                 }}
+                 className={styles.containerRegisterForm}
+             >
+                {stateMessage ? (
+                    <div className={styles.headerNdescription}>
+                       <H1 text={'Hooray! ✈️'} color={theme.colors.WHITE} />
+                       <P color={theme.colors.WHITE} text={stateMessage} />
+                    </div>
+                ) : (
+                    <>
+                       <div className={styles.headerNdescription}>
+                          <H1 text={primaryText} color={theme.colors.WHITE} />
+                          <P color={theme.colors.WHITE} text={secondaryText} />
+                       </div>
 
-                     <div className={styles.boxConstraint}>
-                        <Grid container gap={2}>
-                           <Grid xs={12} md={12} display="flex" justifyContent="center" alignItems="center">
-                              <OutlineButton
-                                 placeholder="Full Name"
-                                 borderColor={theme.colors.SNOW}
-                                 textColor={theme.colors.WHITE}
-                                 type="text"
-                                 name={'user_name'}
-                                 callBack={setFullName}
-                              />
-                           </Grid>
+                       <div className={styles.boxConstraint}>
+                          <Grid container gap={2}>
+                             <Grid xs={12} md={12} display="flex" justifyContent="center" alignItems="center">
+                                <OutlineButton
+                                    placeholder="Full Name"
+                                    borderColor={theme.colors.SNOW}
+                                    textColor={theme.colors.WHITE}
+                                    type="text"
+                                    name={'user_name'}
+                                    callBack={setFullName}
+                                />
+                             </Grid>
 
-                           <Grid xs={12} md={12} display="flex" justifyContent="center" alignItems="center">
-                              <OutlineButton
-                                 placeholder="Email Address"
-                                 borderColor={theme.colors.SNOW}
-                                 textColor={theme.colors.WHITE}
-                                 type="email"
-                                 name="user_email"
-                                 callBack={setEmail}
-                              />
-                           </Grid>
+                             <Grid xs={12} md={12} display="flex" justifyContent="center" alignItems="center">
+                                <OutlineButton
+                                    placeholder="Email Address"
+                                    borderColor={theme.colors.SNOW}
+                                    textColor={theme.colors.WHITE}
+                                    type="email"
+                                    name="user_email"
+                                    callBack={setEmail}
+                                />
+                             </Grid>
 
-                           <Grid xs={12} md={12} display="flex" justifyContent="center" alignItems="center">
-                              <DropDownThin
-                                 key={'BelarusConstruction'}
-                                 defaultKey={'BelarusConstruction'}
-                                 dropDownItemArray={tripHappenings}
-                                 titleFont="number"
-                                 placeholder="Select Mission Trip"
-                                 borderColor={theme.colors.SNOW}
-                                 textColor={theme.colors.WHITE}
-                                 callBack={(value) => {
-                                    setTripSelection(value);
-                                 }}
-                              />
-                              <input
-                                 type="text"
-                                 name="trip_selection"
-                                 value={tripSelection}
-                                 onChange={tripSelectionOnChangeHandler}
-                                 style={{
-                                    display: 'none',
-                                 }}
-                              />
-                           </Grid>
+                             <Grid xs={12} md={12} display="flex" justifyContent="center" alignItems="center">
+                                <DropDownThin
+                                    key={'BelarusConstruction'}
+                                    defaultKey={'BelarusConstruction'}
+                                    dropDownItemArray={tripHappenings}
+                                    titleFont="number"
+                                    placeholder="Select Mission Trip"
+                                    borderColor={theme.colors.SNOW}
+                                    textColor={theme.colors.WHITE}
+                                    callBack={(value) => {
+                                       setTripSelection(value);
+                                    }}
+                                />
+                                <input
+                                    type="text"
+                                    name="trip_selection"
+                                    value={tripSelection}
+                                    onChange={tripSelectionOnChangeHandler}
+                                    style={{
+                                       display: 'none',
+                                    }}
+                                />
+                             </Grid>
 
-                           <Grid xs={12} md={12} display="flex" justifyContent="center" alignItems="center">
-                              <OutlineTextArea
-                                 placeholder="Please write a short message on who you are and why you are interested in going!"
-                                 borderColor={theme.colors.SNOW}
-                                 textColor={theme.colors.WHITE}
-                                 type="text"
-                                 name="message"
-                                 callBack={setMessage}
-                              />
-                           </Grid>
+                             <Grid xs={12} md={12} display="flex" justifyContent="center" alignItems="center">
+                                <OutlineTextArea
+                                    placeholder="Please write a short message on who you are and why you are interested in going!"
+                                    borderColor={theme.colors.SNOW}
+                                    textColor={theme.colors.WHITE}
+                                    type="text"
+                                    name="message"
+                                    callBack={setMessage}
+                                />
+                             </Grid>
 
-                           <Grid
-                              xs={12}
-                              md={12}
-                              display="flex"
-                              justifyContent="center"
-                              alignItems="center"
-                              flexDirection={'column'}
-                           >
-                              <input className={passedStyle.submitButtonWhite} type="submit" value="SEND" disabled={isSubmitting} />
-                           </Grid>
-                        </Grid>
-                     </div>
-                  </>
-               )}
-            </div>
-         </div>
-      </form>
+                             {/* reCAPTCHA v2 Checkbox */}
+                             <Grid xs={12} md={12} display="flex" justifyContent="center" alignItems="center">
+                                <ReCAPTCHA
+                                    ref={recaptchaRef}
+                                    sitekey="6Ld0SzMUAAAAAIii0M4uivMZoXoqA0Ew_moQxgO3"
+                                    onChange={handleRecaptchaChange}
+                                    theme="dark"
+                                />
+                             </Grid>
+
+                             <Grid
+                                 xs={12}
+                                 md={12}
+                                 display="flex"
+                                 justifyContent="center"
+                                 alignItems="center"
+                                 flexDirection={'column'}
+                             >
+                                <input
+                                    className={passedStyle.submitButtonWhite}
+                                    type="submit"
+                                    value="SEND"
+                                    disabled={isSubmitting || !recaptchaToken}
+                                />
+                             </Grid>
+                          </Grid>
+                       </div>
+                    </>
+                )}
+             </div>
+          </div>
+       </form>
    );
 }
