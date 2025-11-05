@@ -19,6 +19,8 @@ export default function Document() {
                         `,
                     }}
                 />
+                {/* Hotjar -  tracking */}
+                <script src="https://t.contentsquare.net/uxa/c90a1c34deb60.js"/>
 
                 {/* Meta Pixel Code - Add this */}
                 <script
@@ -41,15 +43,15 @@ export default function Document() {
                     <img
                         height="1"
                         width="1"
-                        style={{ display: 'none' }}
+                        style={{display: 'none'}}
                         src="https://www.facebook.com/tr?id=1103676561967720&ev=PageView&noscript=1"
                         alt=""
                     />
                 </noscript>
             </Head>
             <body>
-            <Main />
-            <NextScript />
+            <Main/>
+            <NextScript/>
             </body>
         </Html>
     );
