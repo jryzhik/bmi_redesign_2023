@@ -13,27 +13,29 @@ export const CalendarEvents = () => {
    }
 
    return happenings && happenings.length ? (
-      <div className={styles.allevents}>
-         {happenings.map((event) => (
-            <Link
-               key={event.id}
-               href={{
-                  pathname: `/calendar/${event.alias}`,
-               }}
-            >
-               <div style={{ transition: 'all .2s ease-out' }}>
-                  <EventHappening
-                     key={event.id}
-                     title={event.happeningTitle}
-                     description={event.happeningDescription}
-                     imgSource={event.happeningImage?.sizes?.minithumbnail?.url || event.happeningImage.url}
-                     dateTime={event.happeningDatetime}
-                  />
-               </div>
-            </Link>
-         ))}
-      </div>
+       <div className={styles.allevents}>
+          {happenings.map((event) => (
+              <Link
+                  key={event.id}
+                  href={{
+                     pathname: event.alias === 'annual_banquet_26_dinner'
+                         ? '/banquet'
+                         : `/calendar/${event.alias}`,
+                  }}
+              >
+                 <div style={{ transition: 'all .2s ease-out' }}>
+                    <EventHappening
+                        key={event.id}
+                        title={event.happeningTitle}
+                        description={event.happeningDescription}
+                        imgSource={event.happeningImage?.sizes?.minithumbnail?.url || event.happeningImage.url}
+                        dateTime={event.happeningDatetime}
+                    />
+                 </div>
+              </Link>
+          ))}
+       </div>
    ) : (
-      <h3 className={styles.no_events_container}>There are no events!</h3>
+       <h3 className={styles.no_events_container}>There are no events!</h3>
    );
 };
