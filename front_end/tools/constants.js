@@ -205,14 +205,22 @@ export const paymentProviderButtonsContent = [
 ];
 
 export const HeroSlider = [
+   // {
+   //    imageUrl: '/img/banquet/hero-bg.jpg',
+   //    color2: '#DD9B29',
+   //    color1: '#DD9B29',
+   //    headerText: 'Beyond the Borders',
+   //    subText: 'Banquet - Forsyth Conference Center | Nov 22nd | 6PM',
+   //    imageFocus: '50% 20%',
+   //    link: 'banquet#tickets',
+   // },
    {
-      imageUrl: '/img/banquet/hero-bg.jpg',
-      color2: '#DD9B29',
-      color1: '#DD9B29',
-      headerText: 'Beyond the Borders',
-      subText: 'Banquet - Forsyth Conference Center | Nov 22nd | 6PM',
+      imageUrl: '/img/hero_images/home_hero/BibleLiterature-min.jpg',
+      color2: '#60989F',
+      color1: '#325F66',
+      headerText: 'Bibles & Discipleship Material to the Lost',
+      subText: '',
       imageFocus: '50% 20%',
-      link: 'banquet#tickets',
    },
    {
       imageUrl: '/img/hero_images/home_hero/WalkingBaptism.jpg',
