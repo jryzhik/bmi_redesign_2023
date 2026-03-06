@@ -9,6 +9,12 @@ import H4NComponent from '../components/texts/h4NComponent'
 
 const videoArray = [
   {
+    title: 'Beyond the Borders', description: '2026 VISION', videoUrl: 'https://www.youtube.com/embed/v71BHlOk0RM'
+  },
+  {
+    title: '70x7 Testimony', description: 'Forgiving Impact', videoUrl: 'https://www.youtube.com/embed/uozl3XMHokU'
+  },
+  {
     title: 'End of Year', description: '2021', videoUrl: 'https://www.youtube.com/embed/ZQ7XUR7tT9E'
   },
   {
