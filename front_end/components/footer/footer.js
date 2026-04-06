@@ -17,41 +17,41 @@ var currentYear = new Date().getFullYear();
 
 export default function Footer() {
    return (
-      <Stack
-         spacing={5}
-         alignItems="center"
-         sx={{
-            paddingTop: '60px',
-         }}
-      >
-         <div className={styles.footer__container}>
-            {/* Логотип выровнен по левому краю без дополнительного отступа */}
+       <Stack
+           spacing={5}
+           alignItems="center"
+           sx={{
+              paddingTop: '60px',
+           }}
+       >
+          <div className={styles.footer__container}>
             <span className={styles.footer__logo}>
                <Image src={logo} alt="BMI" width={logoWidth} height={logoHeight} />
             </span>
 
-            <ul className={styles.footer__nav}>
-               {footerNavData.map((section, index) => (
-                  <li className={styles.footer__item} key={index}>
-                     <NH text={section.section} />
+             <ul className={styles.footer__nav}>
+                {footerNavData.map((section, index) => (
+                    <li className={styles.footer__item} key={index}>
+                       <NH text={section.section} />
 
-                     {section.links.map((link, idx) => (
-                        <Link className={styles.footer__link} key={idx} href={link.link} passHref>
-                           <NAVTEXT text={link.text} />
-                        </Link>
-                     ))}
-                  </li>
-               ))}
-            </ul>
-         </div>
+                       {section.links.map((link, idx) => (
+                           <Link className={styles.footer__link} key={idx} href={link.link} passHref>
+                              <NAVTEXT text={link.text} />
+                           </Link>
+                       ))}
+                    </li>
+                ))}
+             </ul>
+          </div>
 
-         <Stack spacing={2} alignItems="center">
-            <Social />
-            <NAVTEXT text={`© Copyright 2000 - ${currentYear} | All Rights Reserved`} />
-            <BezalelCopyright />
-         </Stack>
+          <Stack spacing={2} alignItems="center">
+             <Social />
+             <NAVTEXT text="3395 Chamblee Gap Road, Cumming, GA 30040" />
+             <NAVTEXT text={`© Copyright 2000 - ${currentYear} | All Rights Reserved`} />
+             <BezalelCopyright />
+          </Stack>
 
-         <Spacer y={1.2} />
-      </Stack>
+          <Spacer y={1.2} />
+       </Stack>
    );
 }

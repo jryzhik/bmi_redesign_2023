@@ -18,13 +18,13 @@ export default function Contact() {
         textParent='contact us'
         textChild=''
         headerText='We’d love to hear any questions you have'
-        subText='The purpose of the corporation is to provide support services for orphan children and help construct church buildings in the countries of Belarus and Ukraine.'
+        subText='The purpose of the corporation is to provide support services for orphan children and help construct church buildings in the countries of Eastern Europe, "Stan", and Israel.'
         imageFocus={'center 40%'}
       />
       <div className='flexContainerTopItems'>
         <HeaderNComponent
           primaryHeaderText='Message us'
-          SecondaryComponent={<P color={theme.colors.CHARCOAL} text='Byelorussian Mission, INC. — is a non-profit corporation organized exclusively for charitable, religious, and educational purposes as specified in Section 501 (c) (3) of the Internal Revenue Code. The purpose of the corporation is to provide support services for orphan children and help construct church buildings in the countries of Belarus and Ukraine. We’d love to hear from you and will be happy to answer any questions you have. Fill out the form below and our staff will be in touch with you shortly.' />}
+          SecondaryComponent={<P color={theme.colors.CHARCOAL} text='Byelorussian Mission, INC. — is a non-profit corporation organized exclusively for charitable, religious, and educational purposes as specified in Section 501 (c) (3) of the Internal Revenue Code. The purpose of the corporation is to provide support services for orphan children and help construct church buildings in the countries of Eastern Europe, "Stan", and Israel. We’d love to hear from you and will be happy to answer any questions you have. Fill out the form below and our staff will be in touch with you shortly.' />}
           secondaryAllign='center'
         />
         <div className={styles.itemsExpandingContainer}>

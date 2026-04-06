@@ -20,7 +20,7 @@ export default function Vision() {
             <div className='flexContainerTopItems'>
                 <HeaderNComponent
                     primaryHeaderText='Sharing the Word of God'
-                    SecondaryComponent={<P color={theme.colors.CHARCOAL} text='BYELORUSSIAN MISSION, INC. — is a non-profit corporation organized exclusively for charitable, religious, and educational purposes as specified in Section 501 (c) (3) of the Internal Revenue Code. The purpose of the corporation is to provide support services for orphan children and help construct church buildings in the countries of Belarus and Ukraine.' />}
+                    SecondaryComponent={<P color={theme.colors.CHARCOAL} text='BYELORUSSIAN MISSION, INC. — is a non-profit corporation organized exclusively for charitable, religious, and educational purposes as specified in Section 501 (c) (3) of the Internal Revenue Code. The purpose of the corporation is to provide support services for orphan children and help construct church buildings in the countries of Eastern Europe, "Stan", and Israel.' />}
                     secondaryAllign='left'
                 />
                 <HeaderNComponent
