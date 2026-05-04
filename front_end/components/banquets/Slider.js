@@ -15,7 +15,7 @@ const plantingGallery = [
     imageUrl: '/img/hero_images/daycare_main.jpg',
     title: 'Day Care Centers',
     description:
-      ‘Presently we have 16 Daycare Centers in Eastern Europe! Our main goal for these centers is to build Christ’s Kingdom by introducing children to Jesus Christ.’,
+      "Presently we have 16 Daycare Centers in Eastern Europe! Our main goal for these centers is to build Christ’s Kingdom by introducing children to Jesus Christ.",
   },
   {
     imageUrl: '/img/hero_images/plant_church_main.jpg',
