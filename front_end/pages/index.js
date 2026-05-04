@@ -51,7 +51,7 @@ export default function Home({ news, numbers }) {
          primaryHeaderText: 'Construction/Building Projects',
          secondaryText: `Help us reach our goal to collect ${currencyFormater.format(
             numbers.goalBuilding
-         )} for a new church structures in Belarus.`,
+         )} for a new church structures in Eastern Europe.`,
       },
       {
          percentFilled: percentConvert(numbers.amountRaisedOrphan, numbers.goalOrphan),
@@ -69,7 +69,7 @@ export default function Home({ news, numbers }) {
          color1: '#D2A9A6',
          headerText: 'Our initiative to open children daycare centers',
          subText:
-            'We are on pace to open an additional 30 centers across Belarus. Learn more about how these centers change lives.',
+            'We are on pace to open an additional 30 centers across Eastern Europe. Learn more about how these centers change lives.',
          imageFocus: '50% 20%',
          link: '/daycare',
       },
@@ -87,7 +87,7 @@ export default function Home({ news, numbers }) {
          color1: '#8EA9BC',
          color2: '#8EA9BC',
          headerText: 'Support the sharing of the Gospel',
-         subText: 'We are bold in proclaiming the Good News in Christ to our fellow brothers and sisters in Belarus.',
+         subText: 'We are bold in proclaiming the Good News in Christ to our fellow brothers and sisters in Eastern Europe.',
          imageFocus: '60% 0%',
          link: '/gospel',
       },
@@ -234,7 +234,7 @@ export default function Home({ news, numbers }) {
                      color2="#384B1B"
                      imageUrl="/img/home/team.jpg"
                      headerText="Go"
-                     subText="Join us on missionary trips to Belarus and Ukraine."
+                     subText="Join us on missionary trips to Eastern Europe and Ukraine."
                      imageFocus="50% -30%"
                      buttonText="sign up"
                      link="/calendar"
@@ -263,7 +263,7 @@ export default function Home({ news, numbers }) {
                SecondaryComponent={
                   <P
                      color={theme.colors.CHARCOAL}
-                     text="Become a financial partner with us in reaching Belarus, Ukraine, Russia, Israel, Spain, and the United States"
+                     text="Become a financial partner with us in reaching Eastern Europe, Ukraine, Russia, Israel, Spain, and the United States"
                   />
                }
                secondaryAllign="center"
@@ -315,7 +315,7 @@ export default function Home({ news, numbers }) {
                role="PARTNERSHIP DIRECTOR"
                organization="LBC"
                quoteText={
-                  'There is a great openness; and we have the privilege of partnering with Belarus’ pastors to start churches and reach people for the Lord.'
+                  ‘There is a great openness; and we have the privilege of partnering with Eastern European pastors to start churches and reach people for the Lord.’
                }
             />
 

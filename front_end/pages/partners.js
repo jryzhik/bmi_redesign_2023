@@ -36,7 +36,7 @@ export default function Partners() {
         textParent='Who We Are'
         textChild='Our Partners'
         headerText='Organizations that have teamed up with us'
-        subText='Join the many businesses and churches that support our mission in Belarus and Ukraine.'
+        subText='Join the many businesses and churches that support our mission in Eastern Europe and Ukraine.'
         imageFocus={'center 20%'}
       />
       <Grid container spacing={-10} justifyContent="center" >

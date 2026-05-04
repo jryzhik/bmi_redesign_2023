@@ -28,7 +28,7 @@ export default function Trip() {
             SecondaryComponent={
                <P
                   color={theme.colors.CHARCOAL}
-                  text="Please join us on a Mission Trip to Belarus and Israel! Find your place in a music, construction, summer camp, or evangelization team."
+                  text="Please join us on a Mission Trip to Eastern Europe and Israel! Find your place in a music, construction, summer camp, or evangelization team."
                />
             }
             secondaryAllign="center"

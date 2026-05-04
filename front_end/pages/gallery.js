@@ -39,7 +39,7 @@ export default function Gallery() {
         textParent='Resources'
         textChild='Gallery'
         headerText='View our contributions in digital format'
-        subText='Explore our work on the ground in Belarus, Ukraine, Israel and the States'
+        subText='Explore our work on the ground in Eastern Europe, Ukraine, Israel and the States'
         imageFocus={'center 40%'}
       />
       <div className='flexContainerTopItems'>

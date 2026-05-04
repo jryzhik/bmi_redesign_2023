@@ -55,7 +55,7 @@ export default function love({ numbers }) {
                      <div style={{ display: 'flex', flexDirection: 'column', gap: '1.3125em' }}>
                         <P
                            color={theme.colors.WHITE}
-                           text="Since the invasion of Ukraine, the world has watched in distress as countless lives have been upended. In response, Love in Action has established a robust process to deliver food, funding, and essential supplies directly to those caught in the crossfire. Our efforts are focused on aiding refugees, who face the dire consequences of war, including a lack of food, shelter, and basic hygiene. Through the support of our church plants along the Belarus-Poland border, we've been able to offer a glimmer of hope, providing not just material aid but also spiritual solace to those in need."
+                           text="Since the invasion of Ukraine, the world has watched in distress as countless lives have been upended. In response, Love in Action has established a robust process to deliver food, funding, and essential supplies directly to those caught in the crossfire. Our efforts are focused on aiding refugees, who face the dire consequences of war, including a lack of food, shelter, and basic hygiene. Through the support of our church plants along the Eastern European border, we've been able to offer a glimmer of hope, providing not just material aid but also spiritual solace to those in need."
                         />
                      </div>
                   }

@@ -58,7 +58,7 @@ export default function plant() {
               >
                 <P
                   color={theme.colors.WHITE}
-                  text="The people of Belarus are suffering from the effects of three generations of Communist domination and Atheism. While the Eastern Orthodox Church has survived and has begun rebuilding, they have devolved into an empty ritualism that fails to satisfy the spiritual hunger of the people. Because of a dead, dry and unfulfilling church experience, there now exists a widespread apathy towards religion."
+                  text="The people of Eastern Europe are suffering from the effects of three generations of Communist domination and Atheism. While the Eastern Orthodox Church has survived and has begun rebuilding, they have devolved into an empty ritualism that fails to satisfy the spiritual hunger of the people. Because of a dead, dry and unfulfilling church experience, there now exists a widespread apathy towards religion."
                 />
                 <P
                   color={theme.colors.WHITE}
@@ -103,7 +103,7 @@ export default function plant() {
           <DonationMasterForm
             headerText={'Bring freedom to entire cities'}
             secondaryText={
-              'Help us bring significant transformation and revival to communities across Belarus.'
+              'Help us bring significant transformation and revival to communities across Eastern Europe.'
             }
             secondaryAllign="center"
             color={theme.colors.WHITE}

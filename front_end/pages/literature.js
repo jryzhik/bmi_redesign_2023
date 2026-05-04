@@ -32,7 +32,7 @@ export default function literature({ numbers }) {
                      <div style={{ display: 'flex', flexDirection: 'column', gap: '1.3125em' }}>
                         <P
                            color={theme.colors.WHITE}
-                           text="Organizers of mission trips to Belarus are adamant that ten dollars is a small investment to reap such a tremendous dividend for the Kingdom, sharing the Gospel in this country where 99 percent of its people do not believe in a personal Christ."
+                           text="Organizers of mission trips to Eastern Europe are adamant that ten dollars is a small investment to reap such a tremendous dividend for the Kingdom, sharing the Gospel in this region where 99 percent of its people do not believe in a personal Christ."
                         />
                         <P
                            color={theme.colors.WHITE}
@@ -40,7 +40,7 @@ export default function literature({ numbers }) {
                         />
                         <P
                            color={theme.colors.WHITE}
-                           text="Leaders in Belarus and Israel are excited about the impact of this soul-winning tool. Statistics show that 40 percent of people who receive the book give trust in Christ and commit to live for Him. Since 2000, many churches have sent teams to partner with Byelorussian Mission and have taken part in Bible distribution efforts and witnessed first-hand the effectiveness of this outreach method."
+                           text="Leaders in Eastern Europe and Israel are excited about the impact of this soul-winning tool. Statistics show that 40 percent of people who receive the book give trust in Christ and commit to live for Him. Since 2000, many churches have sent teams to partner with Byelorussian Mission and have taken part in Bible distribution efforts and witnessed first-hand the effectiveness of this outreach method."
                         />
                      </div>
                   }

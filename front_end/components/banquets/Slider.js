@@ -15,19 +15,19 @@ const plantingGallery = [
     imageUrl: '/img/hero_images/daycare_main.jpg',
     title: 'Day Care Centers',
     description:
-      'Presently we have 16 Daycare Centers in Belarus! Our main goal for these centers is to build Christ’s Kingdom by introducing children to Jesus Christ.',
+      ‘Presently we have 16 Daycare Centers in Eastern Europe! Our main goal for these centers is to build Christ’s Kingdom by introducing children to Jesus Christ.’,
   },
   {
     imageUrl: '/img/hero_images/plant_church_main.jpg',
     title: 'Church planting',
     description:
-      'Planting churches to serve the local community. The people of Belarus are suffering from the effects of three generations of Communist domination and Atheism.',
+      'Planting churches to serve the local community. The people of Eastern Europe are suffering from the effects of three generations of Communist domination and Atheism.',
   },
   {
     imageUrl: '/img/hero_images/evangelism_main.jpg',
     title: 'Evangelism',
     description:
-      'The people of Belarus cry out, for what they do not know. God, however, knows what they need and has made provision for them.We need only bring them the word of that provision.',
+      'The people of Eastern Europe cry out, for what they do not know. God, however, knows what they need and has made provision for them.We need only bring them the word of that provision.',
   },
   {
     imageUrl: '/img/hero_images/orphanAdoption_main.jpg',
@@ -38,7 +38,7 @@ const plantingGallery = [
     imageUrl: '/img/hero_images/youth_main.jpg',
     title: 'Youth Outreach',
     description:
-      'Because of contacts that this organization has within the university system of Belarus, we are able to have open access to the campuses across the country.',
+      'Because of contacts that this organization has within the university system of Eastern Europe, we are able to have open access to the campuses across the country.',
   },
 ];
 const Slider = () => {

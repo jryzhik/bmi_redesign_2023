@@ -21,13 +21,13 @@ const videoArray = [
     title: 'Best Year', description: '2018 Report', videoUrl: 'https://www.youtube.com/embed/dckLZMHIxMs'
   },
   {
-    title: 'Pure Heart Church', description: 'Brest, Belarus', videoUrl: 'https://www.youtube.com/embed/2cYJ20K8om0'
+    title: 'Pure Heart Church', description: 'Brest, Eastern Europe', videoUrl: 'https://www.youtube.com/embed/2cYJ20K8om0'
   },
   {
     title: 'Power of One', description: 'WSB', videoUrl: 'https://www.youtube.com/embed/gr16pxv8aB0'
   },
   {
-    title: 'Come to Belarus', description: 'Invite to Missions', videoUrl: 'https://www.youtube.com/embed/d6liJS2UYV0'
+    title: 'Come to Eastern Europe', description: 'Invite to Missions', videoUrl: 'https://www.youtube.com/embed/d6liJS2UYV0'
   },
   {
     title: 'Good & Evil', description: 'Evangelism Tool', videoUrl: 'https://www.youtube.com/embed/Jsj1ayNSnqo'
@@ -58,7 +58,7 @@ export default function Videos() {
       <div className='flexContainerTopItems'>
         <HeaderNComponent
           primaryHeaderText='Mission Video Gallery'
-          SecondaryComponent={<P color={theme.colors.CHARCOAL} text='View the impactful transformation the Spirit of the Lord is doing in Belarus through our ministry.' />}
+          SecondaryComponent={<P color={theme.colors.CHARCOAL} text='View the impactful transformation the Spirit of the Lord is doing in Eastern Europe through our ministry.' />}
           secondaryAllign='center'
         />
         <div className={styles.containerWidth}>

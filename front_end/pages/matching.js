@@ -58,7 +58,7 @@ export default function matching({ numbers }) {
                />
                <DonationMasterForm
                   headerText={'Spread life through the Bible'}
-                  secondaryText={'Help us get a Bible to every household in Belarus.'}
+                  secondaryText={'Help us get a Bible to every household in Eastern Europe.'}
                   secondaryAllign="center"
                   color={theme.colors.WHITE}
                   widgetID='LvG0Zg'

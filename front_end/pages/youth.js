@@ -58,7 +58,7 @@ export default function orphans() {
               >
                 <P
                   color={theme.colors.BLACK}
-                  text="Because of contacts that this organization has within the university system of Belarus, we are able to have open access to the campuses across the country."
+                  text="Because of contacts that this organization has within the university system of Eastern Europe, we are able to have open access to the campuses across the country."
                 />
                 <P
                   color={theme.colors.BLACK}
@@ -88,7 +88,7 @@ export default function orphans() {
           <DonationMasterForm
             headerText={'Help us reach every student'}
             secondaryText={
-              'We aim to provide freedom to the youth and young adults of Belarus through the powerful Word of Jesus Christ.'
+              'We aim to provide freedom to the youth and young adults of Eastern Europe through the powerful Word of Jesus Christ.'
             }
             secondaryAllign="center"
             color={theme.colors.BLACK}

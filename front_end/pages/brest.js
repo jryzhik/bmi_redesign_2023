@@ -49,7 +49,7 @@ export default function brest() {
                     <div style={{ paddingBottom: "1rem" }} />
                     <DonationMasterForm
                         headerText={"Help us construct the community church"}
-                        secondaryText={"Your support financially allows us to provide help in planting local churches across Belarus."}
+                        secondaryText={"Your support financially allows us to provide help in planting local churches across Eastern Europe."}
                         secondaryAllign='center'
                         color={theme.colors.WHITE}
                         widgetID='jNWewL'

@@ -79,7 +79,7 @@ export default function daycare() {
                 />
                 <P
                   color={theme.colors.WHITE}
-                  text="Presently we have 16 Daycare Centers in Belarus! Our main goal for these centers is to build Christ’s Kingdom by introducing children to Jesus Christ. Christian volunteers work with the children throughout the school year (September-May), organize special events for them during the holidays, and provide a place for children during the summer break."
+                  text="Presently we have 16 Daycare Centers in Eastern Europe! Our main goal for these centers is to build Christ’s Kingdom by introducing children to Jesus Christ. Christian volunteers work with the children throughout the school year (September-May), organize special events for them during the holidays, and provide a place for children during the summer break."
                 />
                 <P
                   color={theme.colors.WHITE}

@@ -60,7 +60,7 @@ export default function orphans() {
               >
                 <P
                   color={theme.colors.WHITE}
-                  text="It has been estimated by the Belarus government that 90% of children growing up in institutionalized social milieu will become institutionalized by adulthood either in prison or mental facilities. Consequently, their children will then have to be institutionalized, creating a never-ending cycle."
+                  text="It has been estimated that 90% of children growing up in institutionalized social milieu will become institutionalized by adulthood either in prison or mental facilities. Consequently, their children will then have to be institutionalized, creating a never-ending cycle."
                 />
               </div>
             }
@@ -71,7 +71,7 @@ export default function orphans() {
           <div style={{marginTop: '-3em'}} className={textStyles.container}>
             <P
               color={theme.colors.WHITE}
-              text="What we are doing is placing orphans in Christian families. This allows the children to be exposed to a family lifestyle and, even more importantly, to be brought to church on Sunday. You may ask why there are so many orphans in Belarus, and the main reason is alcoholism and drug addiction. These are rampant in the society and are merely one of the symptoms of the spiritual hunger and thirst that our mission is attempting to satisfy."
+              text="What we are doing is placing orphans in Christian families. This allows the children to be exposed to a family lifestyle and, even more importantly, to be brought to church on Sunday. You may ask why there are so many orphans in this region, and the main reason is alcoholism and drug addiction. These are rampant in the society and are merely one of the symptoms of the spiritual hunger and thirst that our mission is attempting to satisfy."
             />
           </div>
           <H2 color={theme.colors.WHITE} text="Saving Children" />

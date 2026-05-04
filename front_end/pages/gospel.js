@@ -38,7 +38,7 @@ export default function gospel() {
               >
                 <P
                   color={theme.colors.WHITE}
-                  text="The people of Belarus cry out, for what they do not know. God, however, knows what they need and has made provision for them.We need only bring them the word of that provision.Their hearts are primed and ready to respond to the word of God but that cannot happen unless someone tells them the good news. In our evangelical mission in schools, neighborhoods, collective farms, prisons, and orphanages we make that all important initial contact."
+                  text="The people of Eastern Europe cry out, for what they do not know. God, however, knows what they need and has made provision for them.We need only bring them the word of that provision.Their hearts are primed and ready to respond to the word of God but that cannot happen unless someone tells them the good news. In our evangelical mission in schools, neighborhoods, collective farms, prisons, and orphanages we make that all important initial contact."
                 />{' '}
               </div>
             }
@@ -58,7 +58,7 @@ export default function gospel() {
           <DonationMasterForm
             headerText={'Support the sharing of the Gospel'}
             secondaryText={
-              'We are bold in proclaiming the Good News in Christ to our fellow brothers and sisters in Belarus.'
+              'We are bold in proclaiming the Good News in Christ to our fellow brothers and sisters in Eastern Europe.'
             }
             secondaryAllign="center"
             color={theme.colors.WHITE}
