@@ -315,7 +315,7 @@ export default function Home({ news, numbers }) {
                role="PARTNERSHIP DIRECTOR"
                organization="LBC"
                quoteText={
-                  ‘There is a great openness; and we have the privilege of partnering with Eastern European pastors to start churches and reach people for the Lord.’
+                  "There is a great openness; and we have the privilege of partnering with Eastern European pastors to start churches and reach people for the Lord."
                }
             />
 
