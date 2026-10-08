@@ -100,7 +100,7 @@ const Tickets = () => {
                 <h2 className={styles.cardTitle}>{item.title}</h2>
                 <p className={styles.cardDescr}>{item.description} </p>
                 <div className={styles.cardPrice}>
-                  <span className={styles.cardPriceValue}>{item.price}</span>
+                  <span className={styles.cardPriceValue}>${item.price.toLocaleString('en-US')}</span>
                   <span>/ {item.id !== 3 ? 'seat' : 'table'}</span>
                 </div>
               </div>
@@ -140,9 +140,8 @@ const Tickets = () => {
           <span className={`${styles.shape} ${styles.shapeRightTop}`}></span>
           <span className={`${styles.shape} ${styles.shapeLeftBottom}`}></span>
           <span className={`${styles.shape} ${styles.shapeRightBottom}`}></span>
-          <h2 className={styles.contentBoxTitle}>Reaching Beyond to the Pagan Nations</h2>
-          <P text="In this next phase of ministry, our goal is to send 1,000,000 Bibles and to train pastors in the regions (Russia, Kazakhstan, Kyrgystan…) to start new churches." />
-          <P text="Together, let's spread the life-changing Word of God across Eastern Europe and beyond." />
+          <h2 className={styles.contentBoxTitle}>Adopt a City</h2>
+          <P text="In this next phase of ministry, our goal is to plant new churches across Eastern Europe, each one partnered with a church here for the long term, just as First Redeemer did in Brest." />
         </div>
       </div>
     </section>

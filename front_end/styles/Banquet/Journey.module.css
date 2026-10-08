@@ -13,7 +13,8 @@
 .list {
 	display: grid;
 	grid-template-columns: 425px 425px;
-	flex-wrap: wrap;
+	grid-template-rows: repeat(3, auto);
+	grid-auto-flow: column;
 	margin: 0 auto;
 	max-width: 900px;
 	column-gap: 55px;
@@ -48,22 +49,14 @@
 	left: 25px;
 }
 
-.item:last-child {
-	display: flex;
-	justify-content: space-between;
-	align-items: end;
-}
-
-.item:last-child span {
-	font-size: 20px;
-}
-
 @media screen and (max-width: 768px) {
 		.journey {
 			padding: 0 20px 50px 20px;
 		}
 		.list {
 			grid-template-columns: 1fr;
+			grid-template-rows: none;
+			grid-auto-flow: row;
 		}
 		.item:after {
 			width: 90%;

@@ -20,7 +20,8 @@
 	width: 240px;
 	height: 240px;
 	border-radius: 50%;
-	object-fit: 100%;
+	object-fit: cover;
+	object-position: center 20%;
 	margin-bottom: 30px;
 }
 .guestName {

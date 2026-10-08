@@ -8,14 +8,20 @@ import Tickets from '../components/banquets/Tickets';
 import Performance from '../components/banquets/Performance';
 import Slider from '../components/banquets/Slider';
 import Hero from '../components/banquets/Hero';
+import EventBar from '../components/banquets/EventBar';
+
+const title = 'Belarus Mission Annual Banquet 2026 - So the World May Believe';
+const description =
+    "Join us Tuesday, November 17, 2026 at 7:00 PM at the Forsyth Conference Center in Cumming, GA for Byelorussian Mission's annual banquet, with keynote speaker Dr. Jeff Jackson and featured musician Joel Chernoff.";
+const heroImage = 'https://byelorussianmission.org/img/banquet/banquet-2026-hero-bg.jpg';
 
 const Banquet = () => {
+    // End time is not confirmed yet, so only the start time is listed.
     const eventStructuredData = {
         "@context": "https://schema.org",
         "@type": "Event",
-        "name": "Belarus Mission Annual Banquet: Beyond the Borders",
-        "startDate": "2025-11-22T18:00:00-05:00",
-        "endDate": "2025-11-22T21:00:00-05:00",
+        "name": "Belarus Mission Annual Banquet: So the World May Believe",
+        "startDate": "2026-11-17T19:00:00-05:00",
         "eventStatus": "https://schema.org/EventScheduled",
         "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
         "location": {
@@ -30,12 +36,8 @@ const Banquet = () => {
                 "addressCountry": "US"
             }
         },
-        "image": [
-            "https://byelorussianmission.org/img/banquet/banquet-1x1.jpg",
-            "https://byelorussianmission.org/img/banquet/banquet-4x3.jpg",
-            "https://byelorussianmission.org/img/banquet/banquet-16x9.jpg"
-        ],
-        "description": "Join Belarus Mission for an unforgettable evening featuring Inspire Music Band, keynote speaker Paul K. Steffens (15th generation descendant of Martin Luther), gourmet dinner, and powerful testimonies. Help us send 1 million Bibles to unreached nations in Russia, Kazakhstan, and Kyrgyzstan.",
+        "image": [heroImage],
+        "description": description,
         "offers": [
             {
                 "@type": "Offer",
@@ -43,8 +45,7 @@ const Banquet = () => {
                 "url": "https://byelorussianmission.org/banquet",
                 "price": 100,
                 "priceCurrency": "USD",
-                "availability": "https://schema.org/InStock",
-                "validFrom": "2024-10-01T12:00:00-05:00"
+                "availability": "https://schema.org/InStock"
             },
             {
                 "@type": "Offer",
@@ -52,19 +53,19 @@ const Banquet = () => {
                 "url": "https://byelorussianmission.org/banquet",
                 "price": 1000,
                 "priceCurrency": "USD",
-                "availability": "https://schema.org/InStock",
-                "validFrom": "2024-10-01T12:00:00-05:00"
+                "availability": "https://schema.org/InStock"
             }
         ],
         "performer": [
             {
-                "@type": "PerformingGroup",
-                "name": "Inspire Music Band"
+                "@type": "Person",
+                "name": "Dr. Jeff Jackson",
+                "description": "Keynote Speaker, First Redeemer Church, Cumming"
             },
             {
                 "@type": "Person",
-                "name": "Paul K. Steffens",
-                "description": "Keynote Speaker - 15th Generation Descendant of Martin Luther"
+                "name": "Joel Chernoff",
+                "description": "Featured Musician, Founder of LAMB"
             }
         ],
         "organizer": {
@@ -77,8 +78,12 @@ const Banquet = () => {
     return (
         <>
             <Head>
-                <title>Belarus Mission Annual Banquet 2025 - Beyond the Borders</title>
-                <meta name="description" content="Join us November 22, 2025 for Belarus Mission's Annual Fundraising Banquet featuring Inspire Music Band and keynote speaker Paul K. Steffens." />
+                <title>{title}</title>
+                <meta name="description" content={description} />
+                <meta property="og:type" content="website" />
+                <meta property="og:title" content={title} />
+                <meta property="og:description" content={description} />
+                <meta property="og:image" content={heroImage} />
 
                 {/* Event Structured Data */}
                 <script
@@ -87,6 +92,7 @@ const Banquet = () => {
                 />
             </Head>
             <Hero />
+            <EventBar />
             <Welcome />
             <Journey />
             <Guests />

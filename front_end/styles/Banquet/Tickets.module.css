@@ -63,17 +63,6 @@
 	position: relative;
 }
 
-.cardPriceValue::before {
-	content: '$';
-	position: absolute;
-	left: -15px;
-	top: -3px;
-	font-size: 18px;
-}
-
-.cardPrice {
-	padding-left: 15px;
-}
 
 .cardPrice span:last-child {
 	color: #5A5A5A;

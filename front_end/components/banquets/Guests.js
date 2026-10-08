@@ -10,9 +10,14 @@ const guests = [
   //   imgSource: '/img/banquet/guest-1.png',
   // },
   {
-    name: 'Dr. Paul Steffans',
-    jobTitle: '15th Generation Descendant of Reformer - Martin Luther',
-    imgSource: '/img/banquet/guest-2.png',
+    name: 'Dr. Jeff Jackson',
+    jobTitle: 'Keynote Speaker, First Redeemer Church, Cumming',
+    imgSource: '/img/banquet/jeff-jackson.jpg',
+  },
+  {
+    name: 'Joel Chernoff',
+    jobTitle: 'Featured Musician, Founder of LAMB',
+    imgSource: '/img/banquet/joel-chernoff.jpg',
   },
   {
     name: 'Rev. Andrew & Inna Ryzhkov',
@@ -29,8 +34,8 @@ const Guests = () => {
         </div>
         <div className={styles.wrapper}>
           {guests.map((member) => (
-            <div className={styles.guest}>
-              <img className={styles.guestImage} src={member.imgSource} />
+            <div className={styles.guest} key={member.name}>
+              <img className={styles.guestImage} src={member.imgSource} alt={member.name} />
               <div className={styles.guestName}>{member.name}</div>
               <P className={styles.guestJob} text={member.jobTitle} />
             </div>

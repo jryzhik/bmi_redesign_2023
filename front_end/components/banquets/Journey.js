@@ -2,11 +2,10 @@ import H2 from '../fonts/H2';
 import styles from '../../styles/Banquet/Journey.module.css';
 const journeyItems = [
   {order: 1, title: 'Delicious Dinner'},
-  {order: 4, title: 'Live Music Performances'},
-  {order: 2, title: 'Vision from the Founders'},
-  {order: 5, title: 'Inspiring Testimonies & Video'},
-  {order: 3, title: 'Keynote Message'},
-  {order: 6, title: 'Secret Part '},
+  {order: 2, title: 'Live Music with Joel Chernoff'},
+  {order: 3, title: 'Vision from the Founders'},
+  {order: 4, title: 'Inspiring Testimonies & Video'},
+  {order: 5, title: 'Keynote Message from Dr. Jeff Jackson'},
 ];
 
 const Journey = () => {
@@ -20,7 +19,6 @@ const Journey = () => {
           <li className={styles.item} key={index}>
             <div className={styles.order}>0{item.order}.</div>
             {item.title}
-            <span>{item.order === 6 && 'and more...'}</span>
           </li>
         ))}
       </ul>

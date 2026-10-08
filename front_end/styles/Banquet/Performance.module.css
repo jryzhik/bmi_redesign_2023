@@ -29,6 +29,13 @@
 }
 
 .content h2 {
+	margin-bottom: 12px;
+}
+
+.subtitle {
+	color: #FF691D;
+	font-size: 24px;
+	font-weight: 600;
 	margin-bottom: 30px;
 }
 

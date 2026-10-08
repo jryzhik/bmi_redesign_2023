@@ -7,12 +7,12 @@ const Performance = () => {
     <section id="performance" className={styles.performance}>
       <div className={styles.wrapper}>
         <div className={styles.image}>
-          <img src="/img/banquet/performance.gif" alt="Image" />
+          <img src="/img/banquet/joel-chernoff.jpg" alt="Joel Chernoff" />
         </div>
         <div className={styles.content}>
           <H2 className={styles.title} text="Live Performance" />
-          <P text='Inspire Music Band came together in 2018 under the leadership of Leonardo Gusenkov, a multi-talented musician with        a passion for engaging audiences. The band is a family affair, featuring Leonardo alongside his brothers Mathew (drums) and Solomon (bass/trumpet), their father Valeriy (audio engineer with 25+ years of experience), and talented musicians Victor Afichuk (piano/accordion) and Matthew Sidorov (guitar).' />
-          <P text="With their rich musical heritage and diverse repertoire spanning Jewish, European, Southern Gospel, and contemporary styles, Inspire Music has performed on both coasts of the United States. Their commitment to musical excellence and ability to create an unforgettable atmosphere makes this year's banquet a special treat you won't want to miss!" />
+          <h3 className={styles.subtitle}>Joel Chernoff</h3>
+          <P text="Joel Chernoff is one of the pioneers of Messianic worship music. In 1972 he founded the group LAMB, writing songs that blended Jewish and Israeli melodies with contemporary praise at a time when almost no one was doing it. Recording for Sparrow Records, LAMB released more than a dozen albums, sold hundreds of thousands of copies, and placed songs in the Top 10 of the Contemporary Christian Music charts through the 1970s and 80s. The sound they introduced is known today as Messianic Praise and Worship. Joel now serves as General Secretary and CEO of the Messianic Jewish Alliance of America and chairs the Joseph Project International, the largest importer of humanitarian aid in the State of Israel. We are honored to have him lead us in worship this evening." />
         </div>
       </div>
     </section>

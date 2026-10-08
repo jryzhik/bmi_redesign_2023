@@ -1,57 +1,65 @@
 .hero {
-	background-image: url(../../public/img/banquet/hero-bg.jpg);
+	position: relative;
+	background-image:
+		linear-gradient(180deg, rgba(38, 92, 82, 0.55) 0%, rgba(38, 92, 82, 0.25) 35%, rgba(38, 92, 82, 0) 60%),
+		url(../../public/img/banquet/banquet-2026-hero-bg.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
-	min-height: 700px;
+	background-position: center bottom;
+	min-height: 960px;
 	width: 100%;
-	background-position: center 40%;
-	border-radius: 0px 0px 7px 7px;
 }
 
 .wrapper {
-	display: grid;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	text-align: center;
-	gap: 25px;
-	padding-top: 125px;
-	padding-left: 20px;
-	padding-right: 20px;
-	color: #FFF;
+	gap: 22px;
+	padding: 120px 20px 0 20px;
 }
 
-@media screen and (max-width: 768px) {
-	.wrapper {
-		padding-top: 80px;
+.eyebrow {
+	color: #FAF6DF;
+	font-size: 13px;
+	letter-spacing: 2.5px;
+	text-transform: uppercase;
+}
+
+.title {
+	margin: 0;
+	line-height: 0;
+}
+
+.lockup {
+	width: 600px;
+	max-width: 100%;
+	height: auto;
+}
+
+@media screen and (max-width: 1200px) {
+	.hero {
+		min-height: 820px;
+	}
+	.lockup {
+		width: 500px;
 	}
 }
 
-
-
-.nav {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 5px;
-	
+@media screen and (max-width: 768px) {
+	.hero {
+		min-height: 700px;
+		background-position: 49% bottom;
+	}
+	.wrapper {
+		padding-top: 96px;
+		gap: 16px;
+	}
+	.eyebrow {
+		font-size: 10px;
+		letter-spacing: 2px;
+	}
+	.lockup {
+		width: 330px;
+	}
 }
-
-.nav span:first-child {
-	text-transform: uppercase;
-	font-weight: 900;
-	font-size: 12px;
-	letter-spacing: 1px;
-}
-
-.wrapper p {
-	font-size: 12px;
-}
-
-.content h1 {
-	margin-bottom: 30px;
-}
-
-.content p {
-	max-width: 700px;
-	margin: 0 auto;
-	font-size: 21px;
-}
-
