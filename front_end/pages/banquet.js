@@ -7,6 +7,7 @@ import Guests from '../components/banquets/Guests';
 import Tickets from '../components/banquets/Tickets';
 import Performance from '../components/banquets/Performance';
 import Slider from '../components/banquets/Slider';
+import Keynote from '../components/banquets/Keynote';
 import Hero from '../components/banquets/Hero';
 import EventBar from '../components/banquets/EventBar';
 
@@ -98,6 +99,7 @@ const Banquet = () => {
             <Guests />
             <Tickets />
             <Performance />
+            <Keynote />
             <Slider />
             <Impact />
         </>

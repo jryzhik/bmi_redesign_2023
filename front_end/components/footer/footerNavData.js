@@ -25,10 +25,10 @@ export const footerNavData = [
       links: [
          { text: 'Brest Bible Church', link: '/brest' },
          { text: 'DayCare Centers', link: '/daycare' },
-         { text: 'Evangelism', link: '/plant' },
-         { text: 'Orphan Adoption', link: '/gospel' },
-         { text: 'Youth Outreach', link: '/orphans' },
-         { text: 'Books Printing', link: '/youth' },
+         { text: 'Church Planting', link: '/plant' },
+         { text: 'Evangelism', link: '/gospel' },
+         { text: 'Orphan Adoption', link: '/orphans' },
+         { text: 'Youth Outreach', link: '/youth' },
       ],
    },
    {

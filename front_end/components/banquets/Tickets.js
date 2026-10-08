@@ -141,7 +141,7 @@ const Tickets = () => {
           <span className={`${styles.shape} ${styles.shapeLeftBottom}`}></span>
           <span className={`${styles.shape} ${styles.shapeRightBottom}`}></span>
           <h2 className={styles.contentBoxTitle}>Adopt a City</h2>
-          <P text="In this next phase of ministry, our goal is to plant new churches across Eastern Europe, each one partnered with a church here for the long term, just as First Redeemer did in Brest." />
+          <P text="In this next phase of ministry, our goal is to plant 50 new churches across Eastern Europe, each one partnered with a church here for the long term, just as First Redeemer did in Brest." />
         </div>
       </div>
     </section>
