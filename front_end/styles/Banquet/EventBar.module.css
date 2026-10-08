@@ -44,6 +44,19 @@
 	line-height: 1.3;
 }
 
+.valueSecondary {
+	color: #6D6B65;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 1.35;
+}
+
+@media screen and (min-width: 1024px) {
+	.valueSecondary {
+		white-space: nowrap;
+	}
+}
+
 .button {
 	padding: 18px 32px;
 	background-color: #FF691D;
@@ -59,6 +72,17 @@
 
 .button:hover {
 	background-color: #E8580E;
+}
+
+@media screen and (min-width: 1024px) {
+	.eventBar {
+		/* Overlap the hero right up to the figure's feet (see Hero.module.css). */
+		margin-top: calc(8px - 4.7vw);
+		background: linear-gradient(180deg, transparent calc(4.7vw - 8px), #FFF calc(4.7vw - 8px));
+	}
+	.panel {
+		padding: 20px 32px;
+	}
 }
 
 @media screen and (max-width: 900px) {

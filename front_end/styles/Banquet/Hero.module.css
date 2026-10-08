@@ -46,6 +46,25 @@
 	}
 }
 
+/*
+ * Laptops and desktops: size the hero from the viewport so the event bar
+ * lands above the fold. The image is width-driven here (2/3 of the width
+ * tall), so the figure's feet sit 4.7vw above the hero's bottom edge and
+ * the bar overlap (see EventBar.module.css) stops just short of them.
+ */
+@media screen and (min-width: 1024px) {
+	.hero {
+		min-height: clamp(520px, calc(90vh - 121px + 4.7vw), min(960px, 66vw));
+	}
+	.wrapper {
+		padding-top: 64px;
+		gap: 12px;
+	}
+	.lockup {
+		width: clamp(300px, calc(190vh - 486px - 46.4vw), 600px);
+	}
+}
+
 @media screen and (max-width: 768px) {
 	.hero {
 		min-height: 700px;
