@@ -205,15 +205,15 @@ export const paymentProviderButtonsContent = [
 ];
 
 export const HeroSlider = [
-   // {
-   //    imageUrl: '/img/banquet/hero-bg.jpg',
-   //    color2: '#DD9B29',
-   //    color1: '#DD9B29',
-   //    headerText: 'Beyond the Borders',
-   //    subText: 'Banquet - Forsyth Conference Center | Nov 22nd | 6PM',
-   //    imageFocus: '50% 20%',
-   //    link: 'banquet#tickets',
-   // },
+   {
+      imageUrl: '/img/banquet/banquet-2026-hero-bg.jpg',
+      color2: '#265C52',
+      color1: '#265C52',
+      headerText: 'So the World May Believe',
+      subText: 'Annual Banquet | Forsyth Conference Center | Tuesday, Nov 17 | 7:00 PM',
+      imageFocus: '50% 75%',
+      link: 'banquet#tickets',
+   },
    {
       imageUrl: '/img/hero_images/home_hero/BibleLiterature-min.jpg',
       color2: '#60989F',
