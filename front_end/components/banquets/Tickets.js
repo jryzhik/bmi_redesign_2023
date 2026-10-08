@@ -24,7 +24,7 @@ const tickets = [
     colorPrimary: '#C2EDFF',
     colorSecondary: '#E7F8FF',
     price: 100,
-    link: 'https://2ay5glqvmz7.typeform.com/to/I4smDxD6',
+    link: 'https://2ay5glqvmz7.typeform.com/to/VXQe4FGQ',
     items: [
       {title: 'Prime Seating', validate: true},
       {title: 'Network Time', validate: true},
@@ -58,7 +58,7 @@ const tickets = [
     colorPrimary: '#FFDE2F',
     colorSecondary: '#FFF5C3',
     price: 1000,
-    link: 'https://2ay5glqvmz7.typeform.com/to/bz6wBa8e',
+    link: 'https://2ay5glqvmz7.typeform.com/to/MTLRAtM0',
     items: [
       {title: 'Prime Seating', validate: true},
       {title: 'Network Time', validate: true},
