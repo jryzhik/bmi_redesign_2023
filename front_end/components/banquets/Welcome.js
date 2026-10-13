@@ -14,7 +14,7 @@ const Welcome = () => {
             with Franklin Graham. Now new believers need churches to grow in, and we are inviting churches here to adopt a
             city.
           </p>
-          <p>Join us for an evening of dinner, worship with Joel Chernoff, and a message from Dr. Jeff Jackson.</p>
+          <p>Join us for an evening of dinner, worship with Joel Chernoff, and a message from Preston Thompson.</p>
         </div>
         <div className={styles.divider} aria-hidden="true"></div>
         <figure className={styles.verse}>

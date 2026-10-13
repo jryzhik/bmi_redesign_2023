@@ -14,7 +14,7 @@ import EventBar from '../components/banquets/EventBar';
 
 const title = 'Belarus Mission Annual Banquet 2026 - So the World May Believe';
 const description =
-    "Join us Tuesday, November 17, 2026 at 7:00 PM at the Forsyth Conference Center in Cumming, GA for Byelorussian Mission's annual banquet, with keynote speaker Dr. Jeff Jackson and featured musician Joel Chernoff.";
+    "Join us Tuesday, November 17, 2026 at 7:00 PM at the Forsyth Conference Center in Cumming, GA for Byelorussian Mission's annual banquet, with keynote speaker Preston Thompson and featured musician Joel Chernoff.";
 const heroImage = 'https://byelorussianmission.org/img/banquet/banquet-2026-hero-bg.jpg';
 
 const Banquet = () => {
@@ -61,8 +61,8 @@ const Banquet = () => {
         "performer": [
             {
                 "@type": "Person",
-                "name": "Dr. Jeff Jackson",
-                "description": "Keynote Speaker, First Redeemer Church, Cumming"
+                "name": "Preston Thompson",
+                "description": "Keynote Speaker, Redeemer Baptist Church"
             },
             {
                 "@type": "Person",

@@ -10,9 +10,9 @@ const guests = [
   //   imgSource: '/img/banquet/guest-1.png',
   // },
   {
-    name: 'Dr. Jeff Jackson',
-    jobTitle: 'Keynote Speaker, First Redeemer Church, Cumming',
-    imgSource: '/img/banquet/jeff-jackson.jpg',
+    name: 'Preston Thompson',
+    jobTitle: 'Keynote Speaker, Redeemer Baptist Church',
+    imgSource: '/img/banquet/preston-thompson.jpg',
   },
   {
     name: 'Joel Chernoff',

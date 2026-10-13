@@ -5,7 +5,7 @@ const journeyItems = [
   {order: 2, title: 'Live Music with Joel Chernoff'},
   {order: 3, title: 'Vision from the Founders'},
   {order: 4, title: 'Inspiring Testimonies & Video'},
-  {order: 5, title: 'Keynote Message from Dr. Jeff Jackson'},
+  {order: 5, title: 'Keynote Message from Preston Thompson'},
 ];
 
 const Journey = () => {

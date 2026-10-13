@@ -28,6 +28,21 @@
 	padding: 55px 0 55px 60px;
 }
 
+/* A small source photo shown at near-native size on its own backdrop color. */
+.portrait {
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	background-color: #F5E4DA;
+	padding-top: 40px;
+}
+
+.portrait img {
+	width: 300px;
+	max-width: 100%;
+	height: auto;
+}
+
 .content h2 {
 	margin-bottom: 12px;
 }
