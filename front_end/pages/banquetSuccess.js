@@ -74,7 +74,7 @@ export default function BanquetSuccess() {
                 <H1 text="You're on the list!" />
                 <P text={`${ticketCount} ${ticketCount === 1 ? 'seat' : 'seats'} reserved`} />
                 <P text="Mark your calendar for an unforgettable evening" />
-                <P text="November 22nd | 6PM | Forsyth Conference Center" />
+                <P text="November 17th | 7:00 PM | Forsyth Conference Center" />
             </div>
         </>
     );
