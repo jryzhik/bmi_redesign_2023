@@ -35,6 +35,7 @@ export default function Document() {
                             s.parentNode.insertBefore(t,s)}(window, document,'script',
                             'https://connect.facebook.net/en_US/fbevents.js');
                             fbq('init', '1103676561967720');
+                            fbq('init', '1760667001682131');
                             fbq('track', 'PageView');
                         `,
                     }}
