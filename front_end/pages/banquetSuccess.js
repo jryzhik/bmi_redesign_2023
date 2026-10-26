@@ -9,9 +9,20 @@ export default function BanquetSuccess() {
     const router = useRouter();
 
     useEffect(() => {
-        // Get ticket count from URL (default to 1 if not specified)
-        const ticketCount = parseInt(router.query.tickets || '1');
+        // Wait for the real URL query. Before this, router.query is empty, so the
+        // events fired once as 1 ticket and then again with the real count.
+        if (!router.isReady) return;
+
+        // Get ticket count from URL (default to 1 if missing or not a number)
+        const ticketCount = parseInt(router.query.tickets, 10) || 1;
         const ticketValue = ticketCount * 100;
+
+        // Count each sign-up once, even if the page is refreshed.
+        const fireKey = `banquet_conv_${ticketCount}`;
+        try {
+            if (sessionStorage.getItem(fireKey)) return;
+            sessionStorage.setItem(fireKey, '1');
+        } catch (e) {}
 
         // Google Tag Conversion
         const fireGoogleConversion = () => {
@@ -58,10 +69,10 @@ export default function BanquetSuccess() {
         fireGoogleConversion();
         fireMetaConversion();
 
-    }, [router.query.tickets]);
+    }, [router.isReady, router.query.tickets]);
 
     // Get ticket count for display (optional)
-    const ticketCount = parseInt(router.query.tickets || '1');
+    const ticketCount = parseInt(router.query.tickets, 10) || 1;
 
     return (
         <>
