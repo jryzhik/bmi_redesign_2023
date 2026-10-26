@@ -50,7 +50,10 @@ export const footerNavData = [
    },
    {
       section: 'Contact Us',
-      links: [{ text: 'Contact', link: '/contact' }],
+      links: [
+         { text: 'Contact', link: '/contact' },
+         { text: 'Privacy Policy', link: '/privacy' },
+      ],
    },
    {
       section: 'Donate',
