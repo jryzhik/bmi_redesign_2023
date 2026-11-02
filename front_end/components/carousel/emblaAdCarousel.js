@@ -62,7 +62,6 @@ const EmblaAdCarousel = (props) => {
             }}
          >
             <Image
-               priority={true}
                src={imageUrl}
                alt="Background"
                width={1440}
@@ -75,7 +74,6 @@ const EmblaAdCarousel = (props) => {
                   objectPosition: imageFocus,
                   width: '99.2%',
                   height: '100%',
-                  priority: true,
                }}
             />
          </div>

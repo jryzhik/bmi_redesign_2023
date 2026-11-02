@@ -19,9 +19,6 @@ export default function Document() {
                         `,
                     }}
                 />
-                {/* Hotjar -  tracking */}
-                <script src="https://t.contentsquare.net/uxa/c90a1c34deb60.js"/>
-
                 {/* Microsoft Clarity */}
                 <script
                     dangerouslySetInnerHTML={{

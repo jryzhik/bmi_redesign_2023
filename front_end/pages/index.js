@@ -166,12 +166,6 @@ export default function Home({ news, numbers }) {
             <title>Byelorussian Mission Inc.</title>
             <link rel="icon" href="/favicon.ico" />
             <link rel="apple-touch-icon" href="/favicon_100.ico"></link>
-            <link
-               rel="preload"
-               as="image"
-               href="/_next/image?url=%2Fimg%2Fhero_images%2Fhome_hero%2FBaptismSmile.jpg&w=3840&q=80"
-               imageSrcSet="/_next/image?url=%2Fimg%2Fhero_images%2Fhome_hero%2FBaptismSmile.jpg&w=1920&q=80 1x, /_next/image?url=%2Fimg%2Fhero_images%2Fhome_hero%2FBaptismSmile.jpg&w=3840&q=80 2x"
-            />
          </Head>
 
          <EmblaCarousel
@@ -346,7 +340,9 @@ export default function Home({ news, numbers }) {
    );
 }
 
-export async function getServerSideProps() {
+// Built ahead of time and refreshed in the background at most every 5 minutes,
+// so visitors get a cached page instead of waiting on MongoDB and the API.
+export async function getStaticProps() {
    try {
       const client = await clientPromise;
       const db = client.db('masterdb');
@@ -361,9 +357,10 @@ export async function getServerSideProps() {
             news: JSON.parse(JSON.stringify(news)),
             numbers: data,
          },
+         revalidate: 300,
       };
    } catch (e) {
       console.error(e);
-      return { props: { news: [{}], numbers: {}, ok: false, reason: e.message, cause: e.cause } };
+      return { props: { news: [{}], numbers: {}, ok: false, reason: e.message ?? null, cause: e.cause ? String(e.cause) : null }, revalidate: 60 };
    }
 }

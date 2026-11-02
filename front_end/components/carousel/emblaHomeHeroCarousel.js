@@ -13,7 +13,7 @@ const EmblaHomeHeroCarousel = (props) => {
    const { slides } = props;
    const id = useId();
 
-   return slides.map(({ headerText, subText, imageUrl, imageFocus, color1, color2, link }) => {
+   return slides.map(({ headerText, subText, imageUrl, imageFocus, color1, color2, link }, index) => {
       const ContentWrapper = link ? Link : 'div';
       const wrapperProps = link ? { href: `/${link}` } : {};
       const isBanquetLink = link && link.startsWith('banquet');
@@ -68,7 +68,8 @@ const EmblaHomeHeroCarousel = (props) => {
                   }}
                >
                   <Image
-                     priority={true}
+                     priority={index === 0}
+                     sizes="100vw"
                      src={imageUrl}
                      alt="Background"
                      width={1440}
