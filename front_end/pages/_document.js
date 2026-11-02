@@ -22,6 +22,19 @@ export default function Document() {
                 {/* Hotjar -  tracking */}
                 <script src="https://t.contentsquare.net/uxa/c90a1c34deb60.js"/>
 
+                {/* Microsoft Clarity */}
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                            (function(c,l,a,r,i,t,y){
+                                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+                            })(window, document, "clarity", "script", "z7frehf5j5");
+                        `,
+                    }}
+                />
+
                 {/* Meta Pixel Code - Add this */}
                 <script
                     dangerouslySetInnerHTML={{
