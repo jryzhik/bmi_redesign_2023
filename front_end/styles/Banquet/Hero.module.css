@@ -47,15 +47,18 @@
 }
 
 /*
- * Laptops and desktops: the title art stays full size and the hero is
- * only as tall as it needs to be to fit it above the figure. The image is
- * width-driven here (2/3 of the width tall), so the fingertips sit 31.2vw
- * above the hero's bottom edge and the feet 4.7vw above it; the event bar
- * overlap (see EventBar.module.css) stops just short of the feet.
+ * Laptops and desktops: keep the title art full size and bring the event bar
+ * above the fold. The image is width-driven here (2/3 of the width tall), so
+ * it is positioned to put the figure's fingertips just under the title art
+ * (390px down, where 35.47vw is the fingertips' depth in the image). The hero
+ * then ends a little below his waist (15.07vw further down), so the bar covers
+ * him from the waist, unless the window is short: then it rises to stay on
+ * screen, but never past his chin (7.6vw below the fingertips).
  */
 @media screen and (min-width: 1024px) {
 	.hero {
-		min-height: calc(382px + 31.2vw);
+		background-position: center top, center calc(390px - 35.47vw);
+		min-height: max(calc(466px + 7.6vw), min(calc(405px + 15.07vw), calc(100vh - 80px)));
 	}
 	.wrapper {
 		padding-top: 60px;
@@ -63,19 +66,21 @@
 	}
 }
 
+/* Smaller title art (500px), so everything sits 47px higher. */
 @media screen and (min-width: 1024px) and (max-width: 1200px) {
 	.hero {
-		min-height: calc(335px + 31.2vw);
+		background-position: center top, center calc(343px - 35.47vw);
+		min-height: max(calc(419px + 7.6vw), min(calc(358px + 15.07vw), calc(100vh - 80px)));
 	}
 }
 
 @media screen and (max-width: 768px) {
 	.hero {
-		min-height: 700px;
+		min-height: 600px;
 		background-position: 49% bottom;
 	}
 	.wrapper {
-		padding-top: 96px;
+		padding-top: 72px;
 		gap: 16px;
 	}
 	.eyebrow {

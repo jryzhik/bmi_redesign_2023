@@ -1,7 +1,21 @@
 .welcome {
 	background-color: #FFF;
-	padding: 96px 20px;
+	padding: 48px 20px 96px 20px;
 	margin-bottom: 80px;
+}
+
+.header {
+	max-width: 1100px;
+	margin: 0 auto 48px auto;
+}
+
+.headline {
+	max-width: 860px;
+	color: #4F4D48;
+	font-size: 44px;
+	font-weight: 700;
+	line-height: 1.12;
+	letter-spacing: -0.5px;
 }
 
 .wrapper {
@@ -30,6 +44,23 @@
 
 .intro p:not(:last-child) {
 	margin-bottom: 18px;
+}
+
+.cta {
+	display: inline-block;
+	margin-top: 10px;
+	padding: 16px 30px;
+	background-color: #FF691D;
+	border-radius: 100px;
+	color: #FFF;
+	font-size: 12px;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	transition: background-color 0.2s ease;
+}
+
+.cta:hover {
+	background-color: #E8580E;
 }
 
 .divider {
@@ -86,8 +117,14 @@
 
 @media screen and (max-width: 900px) {
 	.welcome {
-		padding: 64px 20px;
+		padding: 48px 20px 64px 20px;
 		margin-bottom: 50px;
+	}
+	.header {
+		margin-bottom: 28px;
+	}
+	.headline {
+		font-size: 30px;
 	}
 	.wrapper {
 		grid-template-columns: 1fr;

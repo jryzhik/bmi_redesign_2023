@@ -19,19 +19,17 @@ function openTypeformPopup(url) {
 const tickets = [
   {
     id: 1,
-    title: 'Standard',
-    description: 'Perfect for those who value impactful events and memorable evenings',
+    title: 'Individual Seat',
+    description: 'Come on your own or reserve seats for friends, up to 10 at a time.',
     colorPrimary: '#C2EDFF',
     colorSecondary: '#E7F8FF',
     price: 100,
     link: 'https://2ay5glqvmz7.typeform.com/to/VXQe4FGQ',
     items: [
-      {title: 'Prime Seating', validate: true},
-      {title: 'Network Time', validate: true},
       {title: 'Gourmet Dinner', validate: true},
-      {title: 'Reserved Parking', validate: false},
-      {title: 'VIP Table', validate: false},
-      {title: 'Private Table for 10', validate: false},
+      {title: 'Live Worship & Keynote', validate: true},
+      {title: 'Prime Seating', validate: true},
+      {title: 'Fellowship Time', validate: true},
     ],
   },
   // {
@@ -53,19 +51,17 @@ const tickets = [
   // },
   {
     id: 3,
-    title: 'Full Table',
-    description: 'Perfect for generous groups who value impactful giving and the power of the Gospel',
+    title: 'Host a Table',
+    description: 'Bring 10 friends from your church, small group or family to your own VIP table.',
     colorPrimary: '#FFDE2F',
     colorSecondary: '#FFF5C3',
     price: 1000,
     link: 'https://2ay5glqvmz7.typeform.com/to/MTLRAtM0',
     items: [
-      {title: 'Prime Seating', validate: true},
-      {title: 'Network Time', validate: true},
-      {title: 'Gourmet Dinner', validate: true},
-      {title: 'Reserved Parking', validate: true},
-      {title: 'VIP Table', validate: true},
+      {title: 'Everything in Individual Seat', validate: true},
       {title: 'Private Table for 10', validate: true},
+      {title: 'VIP Table', validate: true},
+      {title: 'Reserved Parking', validate: true},
     ],
   },
 ];
@@ -84,7 +80,8 @@ const Tickets = () => {
   return (
     <section id="tickets" className={styles.tickets}>
       <div className={styles.title}>
-        <H2 text="We’ll be very happy to see you at the banquet" />
+        <H2 text="Reserve Your Seat" />
+        <P text="Come by yourself, bring a friend, or host a table for your church or small group." />
       </div>
       <div className={styles.parent}>
         <div className={styles.wrapper}>
@@ -106,8 +103,8 @@ const Tickets = () => {
               </div>
               <div className={styles.cardBody} style={{backgroundColor: item.colorSecondary}}>
                 <ul>
-                  {item.items.map((item, index) => (
-                    <li key={item.index}>
+                  {item.items.map((item) => (
+                    <li key={item.title}>
                       {item.validate === true ? (
                         <div className={styles.cardBodyIconCheck}>
                           <svg width="9" height="7" viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -128,7 +125,7 @@ const Tickets = () => {
                 {item.id !== 3 && <Quantity item={item} />}
                 {item.id === 3 && (
                   <a className={styles.cardButton} onClick={() => openTypeformPopup(item.link)} href="#3">
-                    Reserve Your Table
+                    Reserve My Table
                   </a>
                 )}
               </div>

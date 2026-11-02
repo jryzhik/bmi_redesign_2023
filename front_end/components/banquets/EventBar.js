@@ -13,7 +13,7 @@ const EventBar = () => {
         <div className={styles.item}>
           <span className={`${styles.label} ${specialGothicExpanded.className}`}>Venue</span>
           <span className={styles.value}>Forsyth Conference Center</span>
-          <span className={styles.valueSecondary}>3410 Ronald Reagan Blvd, Cumming, GA</span>
+          <span className={styles.valueSecondary}>3410 Ronald Reagan Blvd, Cumming, GA · Free parking</span>
         </div>
         <a className={`${styles.button} ${specialGothicExpanded.className}`} href="#tickets">
           Reserve Your Seat

@@ -76,9 +76,9 @@
 
 @media screen and (min-width: 1024px) {
 	.eventBar {
-		/* Overlap the hero right up to the figure's feet (see Hero.module.css). */
-		margin-top: calc(8px - 4.7vw);
-		background: linear-gradient(180deg, transparent calc(4.7vw - 8px), #FFF calc(4.7vw - 8px));
+		/* Straddle the hero's bottom edge, across the figure's waist (see Hero.module.css). */
+		margin-top: -56px;
+		background: linear-gradient(180deg, transparent 56px, #FFF 56px);
 	}
 	.panel {
 		padding: 20px 32px;

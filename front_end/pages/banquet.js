@@ -10,6 +10,10 @@ import Slider from '../components/banquets/Slider';
 import LastYear from '../components/banquets/LastYear';
 import Keynote from '../components/banquets/Keynote';
 import Hero from '../components/banquets/Hero';
+import Location from '../components/banquets/Location';
+import Faq from '../components/banquets/Faq';
+import FinalCta from '../components/banquets/FinalCta';
+import StickyCta from '../components/banquets/StickyCta';
 import EventBar from '../components/banquets/EventBar';
 
 const title = 'Belarus Mission Annual Banquet 2026 - So the World May Believe';
@@ -99,11 +103,15 @@ const Banquet = () => {
             <Journey />
             <Guests />
             <LastYear />
+            <Location />
             <Tickets />
+            <Faq />
             <Performance />
             <Keynote />
+            <FinalCta />
             <Slider />
             <Impact />
+            <StickyCta />
         </>
     );
 };

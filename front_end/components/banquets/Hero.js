@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section className={styles.hero}>
       <div className={styles.wrapper}>
-        <p className={`${styles.eyebrow} ${specialGothicExpanded.className}`}>Byelorussian Mission · Annual Banquet</p>
+        <p className={`${styles.eyebrow} ${specialGothicExpanded.className}`}>Annual Mission Banquet · Cumming, GA</p>
         <h1 className={styles.title}>
           <img className={styles.lockup} src="/img/banquet/theme-lockup-light.png" alt="So the World May Believe" />
         </h1>

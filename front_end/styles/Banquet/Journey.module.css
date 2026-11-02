@@ -18,7 +18,7 @@
 	margin: 0 auto;
 	max-width: 900px;
 	column-gap: 55px;
-	row-gap: 30px;
+	row-gap: 40px;
 	counter-reset: list 0;
 }
 
@@ -28,6 +28,37 @@
 	position: relative;
 	letter-spacing: -1.5px;
 	padding-top: 5px;
+}
+
+.text {
+	display: block;
+	margin-top: 8px;
+	color: #6D6B65;
+	font-size: 17px;
+	font-weight: 400;
+	line-height: 1.45;
+	letter-spacing: 0;
+}
+
+.ctaWrap {
+	margin-top: 56px;
+	text-align: center;
+}
+
+.cta {
+	display: inline-block;
+	padding: 16px 30px;
+	background-color: #FF691D;
+	border-radius: 100px;
+	color: #FFF;
+	font-size: 12px;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	transition: background-color 0.2s ease;
+}
+
+.cta:hover {
+	background-color: #E8580E;
 }
 
 .order {

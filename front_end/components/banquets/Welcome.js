@@ -5,16 +5,28 @@ import {delaGothic, specialGothic, specialGothicExpanded} from './fonts';
 const Welcome = () => {
   return (
     <section id="welcome" className={`${styles.welcome} ${specialGothic.className}`}>
+      <header className={styles.header}>
+        <span className={`${styles.label} ${specialGothicExpanded.className}`}>The Evening</span>
+        <h2 className={styles.headline}>Dinner, worship and a front-row seat to what God is doing across the world.</h2>
+      </header>
       <div className={styles.wrapper}>
         <div className={styles.intro}>
-          <span className={`${styles.label} ${specialGothicExpanded.className}`}>The Evening</span>
           <p>
-            Since 2000, Byelorussian Mission has become the leading beacon of light in Eastern Europe. Twelve years of pastor
-            training brought churches together across denominations, and that unity opened the door for the Festival of Hope
-            with Franklin Graham. Now new believers need churches to grow in, and we are inviting churches here to adopt a
-            city.
+            Once a year, believers who share a heart for the nations gather for one evening: a gourmet dinner, live worship
+            with Joel Chernoff, and firsthand stories from the churches this ministry serves.
           </p>
-          <p>Join us for an evening of dinner, worship with Joel Chernoff, and a message from Preston Thompson.</p>
+          <p>
+            Since 2000, Byelorussian Mission has trained pastors and planted churches across Eastern Europe. Twelve years of
+            pastor training brought churches together across denominations, and that unity opened the door for the Festival
+            of Hope with Franklin Graham.
+          </p>
+          <p>
+            Now new believers need churches to grow in. On November 17 you will hear what God is doing, meet the people
+            behind it, and see how your church can adopt a city.
+          </p>
+          <a className={`${styles.cta} ${specialGothicExpanded.className}`} href="#tickets">
+            Reserve Your Seat
+          </a>
         </div>
         <div className={styles.divider} aria-hidden="true"></div>
         <figure className={styles.verse}>

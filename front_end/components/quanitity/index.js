@@ -62,7 +62,7 @@ const Quantity = ({ item }) => {
          </div>
 
          <a className={styles.cardButton} onClick={() => openTypeformPopup(`${item.link}#quantity=${count}`)} href={`#${item.id}`}>
-            {item.id == 3 ? 'Reserve Your table' : 'Reserve Your Spot'}
+            {count === 1 ? 'Reserve My Seat' : `Reserve ${count} Seats`}
          </a>
       </>
    );

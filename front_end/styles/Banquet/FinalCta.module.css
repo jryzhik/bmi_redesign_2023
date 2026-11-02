@@ -1,0 +1,56 @@
+.finalCta {
+	padding: 80px 20px;
+	background-color: #265C52;
+}
+
+.wrapper {
+	max-width: 800px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.headline {
+	color: #FAF6DF;
+	font-size: 44px;
+	font-weight: 700;
+	line-height: 1.1;
+	margin-bottom: 14px;
+}
+
+.text {
+	color: rgba(250, 246, 223, 0.85);
+	font-size: 19px;
+	line-height: 1.5;
+	margin-bottom: 32px;
+}
+
+.button {
+	display: inline-block;
+	padding: 18px 34px;
+	background-color: #FF691D;
+	border-radius: 100px;
+	color: #FFF;
+	font-size: 13px;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+	transition: background-color 0.2s ease;
+}
+
+.button:hover {
+	background-color: #E8580E;
+}
+
+@media screen and (max-width: 768px) {
+	.finalCta {
+		padding: 56px 20px;
+	}
+	.headline {
+		font-size: 32px;
+	}
+	.text {
+		font-size: 17px;
+	}
+	.button {
+		display: block;
+	}
+}
