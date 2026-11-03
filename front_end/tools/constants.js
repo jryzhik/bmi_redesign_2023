@@ -212,7 +212,7 @@ export const HeroSlider = [
       headerText: 'So the World May Believe',
       subText: 'Annual Banquet | Forsyth Conference Center | Tuesday, Nov 17 | 7:00 PM',
       imageFocus: '50% 75%',
-      link: 'banquet#tickets',
+      link: 'banquet',
    },
    {
       imageUrl: '/img/hero_images/home_hero/BibleLiterature-min.jpg',

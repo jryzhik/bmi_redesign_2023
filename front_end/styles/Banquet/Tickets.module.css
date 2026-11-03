@@ -3,6 +3,11 @@
 	scroll-margin-top: 100px;
 }
 
+/* Focused only so keyboard users continue from here after a Reserve button. */
+.tickets:focus {
+	outline: none;
+}
+
 .parent {
 	max-width: 920px;
 	margin: 0 auto;

@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '../../styles/Banquet/Location.module.css';
 import {specialGothic, specialGothicExpanded} from './fonts';
+import {scrollToReserve} from './scrollToReserve';
 
 const venue = 'Forsyth Conference Center, 3410 Ronald Reagan Blvd, Cumming, GA 30041';
 const mapSrc = `https://www.google.com/maps?q=${encodeURIComponent(venue)}&z=14&output=embed`;
@@ -32,7 +33,7 @@ const Location = () => {
             </li>
           </ul>
           <div className={styles.actions}>
-            <a className={`${styles.primary} ${specialGothicExpanded.className}`} href="#tickets">
+            <a className={`${styles.primary} ${specialGothicExpanded.className}`} href="#reserve" onClick={scrollToReserve}>
               Reserve Your Seat
             </a>
             <a

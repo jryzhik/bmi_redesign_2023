@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '../../styles/Banquet/EventBar.module.css';
 import {specialGothic, specialGothicExpanded} from './fonts';
+import {scrollToReserve} from './scrollToReserve';
 
 const EventBar = () => {
   return (
@@ -15,7 +16,7 @@ const EventBar = () => {
           <span className={styles.value}>Forsyth Conference Center</span>
           <span className={styles.valueSecondary}>3410 Ronald Reagan Blvd, Cumming, GA · Free parking</span>
         </div>
-        <a className={`${styles.button} ${specialGothicExpanded.className}`} href="#tickets">
+        <a className={`${styles.button} ${specialGothicExpanded.className}`} href="#reserve" onClick={scrollToReserve}>
           Reserve Your Seat
         </a>
       </div>

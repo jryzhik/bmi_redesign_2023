@@ -1,6 +1,7 @@
 import H2 from '../fonts/H2';
 import styles from '../../styles/Banquet/Journey.module.css';
 import {specialGothicExpanded} from './fonts';
+import {scrollToReserve} from './scrollToReserve';
 
 const journeyItems = [
   {order: 1, title: 'Delicious Dinner', text: 'A gourmet dinner shared with friends old and new.'},
@@ -42,7 +43,7 @@ const Journey = () => {
         ))}
       </ul>
       <div className={styles.ctaWrap}>
-        <a className={`${styles.cta} ${specialGothicExpanded.className}`} href="#tickets">
+        <a className={`${styles.cta} ${specialGothicExpanded.className}`} href="#reserve" onClick={scrollToReserve}>
           Reserve Your Seat
         </a>
       </div>

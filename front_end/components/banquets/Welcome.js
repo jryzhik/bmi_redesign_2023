@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '../../styles/Banquet/Welcome.module.css';
 import {delaGothic, specialGothic, specialGothicExpanded} from './fonts';
+import {scrollToReserve} from './scrollToReserve';
 
 const Welcome = () => {
   return (
@@ -24,7 +25,7 @@ const Welcome = () => {
             Now new believers need churches to grow in. On November 17 you will hear what God is doing, meet the people
             behind it, and see how your church can adopt a city.
           </p>
-          <a className={`${styles.cta} ${specialGothicExpanded.className}`} href="#tickets">
+          <a className={`${styles.cta} ${specialGothicExpanded.className}`} href="#reserve" onClick={scrollToReserve}>
             Reserve Your Seat
           </a>
         </div>

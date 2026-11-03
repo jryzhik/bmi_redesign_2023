@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import styles from '../../styles/Banquet/StickyCta.module.css';
 import {specialGothic, specialGothicExpanded} from './fonts';
+import {scrollToReserve} from './scrollToReserve';
 
 // Phones only (hidden in CSS above 768px). Keeps a Reserve button on screen
 // except where another Reserve button, the tickets or the giving form already is.
@@ -19,12 +20,12 @@ const StickyCta = () => {
     const update = () => {
       frame = 0;
       const impact = document.getElementById('impact');
-      const otherButtons = [...document.querySelectorAll('a[href="#tickets"]')].filter(
+      const otherButtons = [...document.querySelectorAll('a[href="#reserve"]')].filter(
         (a) => !a.matches(ownLinkSelector),
       );
       const hide =
         otherButtons.some(isOnScreen) ||
-        isOnScreen(document.getElementById('tickets')) ||
+        isOnScreen(document.getElementById('reserve')) ||
         (impact && impact.getBoundingClientRect().top < window.innerHeight);
       setShow(!hide);
     };
@@ -51,7 +52,12 @@ const StickyCta = () => {
         <strong>Nov 17 · 7:00 PM</strong>
         <span>Cumming, GA</span>
       </div>
-      <a className={`${styles.button} ${specialGothicExpanded.className}`} href="#tickets" tabIndex={show ? 0 : -1}>
+      <a
+        className={`${styles.button} ${specialGothicExpanded.className}`}
+        href="#reserve"
+        onClick={scrollToReserve}
+        tabIndex={show ? 0 : -1}
+      >
         Reserve Your Seat
       </a>
     </div>

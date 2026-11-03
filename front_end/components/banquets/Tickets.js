@@ -78,7 +78,7 @@ const Tickets = () => {
   }, []);
 
   return (
-    <section id="tickets" className={styles.tickets}>
+    <section id="reserve" className={styles.tickets} tabIndex={-1}>
       <div className={styles.title}>
         <H2 text="Reserve Your Seat" />
         <P text="Come by yourself, bring a friend, or host a table for your church or small group." />
