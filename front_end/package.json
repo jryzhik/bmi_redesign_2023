@@ -3,7 +3,9 @@
   "scripts": {
     "dev": "next dev -p 8080",
     "build": "next build",
-    "start": "next start -p 8080"
+    "start": "next start -p 8080",
+    "postbuild": "next-sitemap"
+
   },
   "dependencies": {
     "@emailjs/browser": "^4.3.3",
@@ -24,6 +26,7 @@
     "mongodb": "^5.7.0",
     "next": "15.5.8",
     "next-page-transitions": "^1.0.0-beta.2",
+    "next-sitemap": "^4.2.3",
     "node-fetch": "^3.3.2",
     "qs": "^6.13.0",
     "react": "18.2.0",

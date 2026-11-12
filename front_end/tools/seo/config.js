@@ -1,17 +1,5 @@
-const SEO_CONFIG = {
-   siteName: 'Byelorussian Mission',
-   separator: ' | ',
+import siteConfig from './siteConfig';
 
-   defaultTitle: 'Byelorussian Mission',
-
-   titles: {
-      Contact: 'Contact Us',
-      Home: 'Home',
-      About: 'About Our Company',
-      Blog: 'Our Blog',
-      Donate: 'Support Our Mission',
-      Calendar: 'Events Calendar',
-   },
-};
+const SEO_CONFIG = siteConfig;
 
 export default SEO_CONFIG;

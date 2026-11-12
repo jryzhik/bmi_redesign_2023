@@ -163,7 +163,6 @@ export default function Home({ news, numbers }) {
    return (
       <div className="overflow_x">
          <Head>
-            <title>Byelorussian Mission Inc.</title>
             <link rel="icon" href="/favicon.ico" />
             <link rel="apple-touch-icon" href="/favicon_100.ico"></link>
          </Head>
