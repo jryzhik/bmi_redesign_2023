@@ -1,0 +1,12 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /private/
+
+# Host
+Host: https://byelorussianmission.org
+
+# Sitemaps
+Sitemap: https://byelorussianmission.org/sitemap.xml

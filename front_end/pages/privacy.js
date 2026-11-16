@@ -1,5 +1,4 @@
 import React from 'react';
-import Head from 'next/head';
 import H1 from '../components/fonts/H1';
 import H2 from '../components/fonts/H2';
 import P from '../components/fonts/P';
@@ -51,9 +50,6 @@ const sections = [
 export default function Privacy() {
   return (
     <>
-      <Head>
-        <title>Privacy Policy | Byelorussian Mission</title>
-      </Head>
       <div style={{ padding: '6em 1.5em 4em', maxWidth: '760px', margin: '0 auto' }}>
         <H1 text="Privacy Policy" />
         {sections.map((s) => (

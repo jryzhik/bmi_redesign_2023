@@ -1,18 +1,9 @@
 import SEO_CONFIG from './config';
+import routeSeo from './routes';
 
 export default function seoAutoTitleName(pathname) {
-   // Check custom title
-   const customTitle = SEO_CONFIG.titles[pathname];
+   const metadata = routeSeo.getRouteSeo(pathname);
+   const title = metadata.title || SEO_CONFIG.defaultTitle;
 
-   // Generate title from pathname if custom title doesn't exist
-   const title =
-      customTitle ||
-      pathname
-         .split('/')
-         .filter(Boolean)
-         .pop()
-         ?.replace(/[-_]/g, ' ')
-         .replace(/\b\w/g, (char) => char.toUpperCase());
-
-   return `${title || SEO_CONFIG.defaultTitle}${SEO_CONFIG.separator}${SEO_CONFIG.siteName}`;
+   return title === SEO_CONFIG.defaultTitle ? title : `${title}${SEO_CONFIG.titleSeparator}${SEO_CONFIG.siteName}`;
 }
