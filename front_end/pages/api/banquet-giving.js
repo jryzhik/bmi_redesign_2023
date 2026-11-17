@@ -12,7 +12,7 @@ import {
    toCents,
 } from '../../tools/banquetGiving';
 
-const stripe = stripePackage(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
+const stripe = stripePackage(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY, { maxNetworkRetries: 2 });
 
 const SITE_URL = 'https://byelorussianmission.org';
 const ALLOWED_HOSTS = /^(localhost(:\d+)?|byelorussianmission\.org|(www\.)?belarusmission\.org)$/;
@@ -32,6 +32,19 @@ const originOf = (req) => {
 const productId = (kind, fund) => `bmi_banquet26_${kind}_${fund}`;
 const productName = (kind, fund) =>
    `${kind === 'monthly' ? 'Monthly gift' : 'One-time gift'} · ${fundName(fund)} (${CAMPAIGN})`;
+
+// When the whole room taps at once, Stripe can ask us to slow down (it allows about
+// 100 requests a second). Wait a moment and try again rather than show the guest an error.
+const withRetry = async (call) => {
+   for (let attempt = 0; ; attempt++) {
+      try {
+         return await call();
+      } catch (e) {
+         if (e.code !== 'rate_limit' || attempt >= 7) throw e;
+         await new Promise((resolve) => setTimeout(resolve, 250 + Math.random() * 500 * (attempt + 1)));
+      }
+   }
+};
 
 const ensureProducts = async (fund) => {
    for (const kind of ['once', 'monthly']) {
@@ -122,12 +135,12 @@ const createSession = async (req, res) => {
 
    let session;
    try {
-      session = await stripe.checkout.sessions.create(params);
+      session = await withRetry(() => stripe.checkout.sessions.create(params));
    } catch (e) {
       // First gift to this fund: its products don't exist yet.
       if (e.code !== 'resource_missing') throw e;
       await ensureProducts(fund);
-      session = await stripe.checkout.sessions.create(params);
+      session = await withRetry(() => stripe.checkout.sessions.create(params));
    }
    return res.json({ url: session.url });
 };
