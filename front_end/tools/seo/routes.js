@@ -54,6 +54,8 @@ const ROUTE_SEO = {
    // Public pages remain crawlable so search engines can process noindex.
    '/search': { index: false, follow: true, sitemap: false },
    '/pay': { index: false, follow: true, sitemap: false },
+   '/give': { title: 'Give', index: false, follow: false, sitemap: false },
+   '/give/*': { title: 'Give', index: false, follow: false, sitemap: false },
    '/matching': { index: false, follow: true, sitemap: false },
    '/completion': { index: false, follow: false, sitemap: false },
    '/banquetSuccess': { index: false, follow: false, sitemap: false },

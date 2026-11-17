@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { PageTransition } from 'next-page-transitions';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -7,9 +8,11 @@ import styles from '../styles/globals.css';
 
 export default function MyApp({ Component, pageProps, router }) {
    const pageSeo = typeof Component.seo === 'function' ? Component.seo({ pageProps, router }) : Component.seo;
+   // Pages such as /give set hideSiteChrome to show without the site menu and footer.
+   const Shell = Component.hideSiteChrome ? Fragment : Layout;
 
    return (
-      <Layout>
+      <Shell>
          <Seo route={router.pathname} pathname={router.asPath} {...pageSeo} />
          <Analytics />
          <SpeedInsights />
@@ -19,6 +22,6 @@ export default function MyApp({ Component, pageProps, router }) {
                 and threw off the scroll position on phones. */}
             <Component {...pageProps} key={router.asPath.split('#')[0]} />
          </PageTransition>
-      </Layout>
+      </Shell>
    );
 }
