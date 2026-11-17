@@ -27,7 +27,10 @@ export default function GiveThanks() {
             <h1 className={`${styles.heading} ${styles.thanksHeading} ${plex.className}`}>
                Thank you{firstName ? `, ${firstName}` : ''}.
             </h1>
-            <p>Your gift has been received. May God bless you for your generosity.</p>
+            <p>
+               {gift && !gift.gift ? 'Your monthly gift is set up.' : 'Your gift has been received.'} May God bless you for
+               your generosity.
+            </p>
             {gift ? (
                <dl className={styles.summary}>
                   {gift.gift ? (
@@ -43,7 +46,7 @@ export default function GiveThanks() {
                         <dt>Monthly gift</dt>
                         <dd>
                            <strong className={plex.className}>{formatCents(gift.monthly)}</strong>
-                           <span>Started tonight, until you cancel</span>
+                           <span>Starts {gift.monthlyStart}, until you cancel</span>
                         </dd>
                      </div>
                   ) : null}
@@ -55,10 +58,13 @@ export default function GiveThanks() {
                   </div>
                </dl>
             ) : null}
-            <p>
-               A receipt is on its way{gift?.email ? ` to ${gift.email}` : ' to your email'}. Please keep it for your tax
-               records.
-            </p>
+            {!gift || gift.gift ? (
+               <p>
+                  A receipt is on its way{gift?.email ? ` to ${gift.email}` : ' to your email'}. Please keep it for your
+                  tax records.
+               </p>
+            ) : null}
+            {gift?.monthly ? <p>You’ll get a receipt by email each month when your monthly gift is charged.</p> : null}
             {!gift || gift.monthly ? (
                <p className={styles.fine}>
                   You can change or cancel a monthly gift at any time at <a href="/give/manage">{MANAGE_URL}</a>.

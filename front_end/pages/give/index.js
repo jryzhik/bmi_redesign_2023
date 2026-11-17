@@ -163,7 +163,7 @@ export default function Give() {
                   />
                </label>
             </div>
-            <p className={styles.hint}>Monthly gifts start tonight and continue until you cancel.</p>
+            <p className={styles.hint}>Monthly gifts start next month and continue until you cancel.</p>
          </section>
 
          <section className={styles.step}>

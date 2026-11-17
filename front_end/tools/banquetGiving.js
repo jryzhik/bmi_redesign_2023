@@ -49,25 +49,38 @@ export const formatCents = (cents) => {
    });
 };
 
+// Monthly gifts begin one month after the night of the gift (the 31st becomes the
+// last day of a shorter month).
+export const monthlyStart = (from = new Date()) => {
+   const start = new Date(from);
+   const day = start.getUTCDate();
+   start.setUTCDate(1);
+   start.setUTCMonth(start.getUTCMonth() + 1);
+   const lastDay = new Date(Date.UTC(start.getUTCFullYear(), start.getUTCMonth() + 1, 0)).getUTCDate();
+   start.setUTCDate(Math.min(day, lastDay));
+   return start;
+};
+
+// "December 17", as the guests at the banquet see the date.
+export const formatStart = (date) =>
+   date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', timeZone: 'America/New_York' });
+
 // The one plain summary: what is charged tonight, what is charged each month, which fund.
-export const giftSummary = ({ giftCents, monthlyCents, fund }) => {
-   const lines = [];
-   if (giftCents && monthlyCents) {
-      lines.push({
-         label: 'Charged tonight',
-         value: formatCents(giftCents + monthlyCents),
-         detail: `${formatCents(giftCents)} gift + ${formatCents(monthlyCents)} first monthly gift`,
-      });
-   } else if (giftCents) {
-      lines.push({ label: 'Charged tonight', value: formatCents(giftCents), detail: 'One-time gift' });
-   } else if (monthlyCents) {
-      lines.push({ label: 'Charged tonight', value: formatCents(monthlyCents), detail: 'First monthly gift' });
-   }
-   lines.push(
+// `short` is the one-line form shown above the pay button on Stripe's page.
+export const giftSummary = ({ giftCents, monthlyCents, fund, start = monthlyStart() }) => {
+   const from = formatStart(start);
+   return [
+      giftCents
+         ? { label: 'Charged tonight', value: formatCents(giftCents), detail: 'One-time gift' }
+         : { label: 'Charged tonight', value: 'Nothing', detail: `Your first monthly gift is ${from}` },
       monthlyCents
-         ? { label: 'Charged each month', value: formatCents(monthlyCents), detail: 'Until you cancel' }
+         ? {
+              label: 'Charged each month',
+              value: formatCents(monthlyCents),
+              detail: `Starting ${from}, until you cancel`,
+              short: `${formatCents(monthlyCents)} starting ${from}`,
+           }
          : { label: 'Charged each month', value: 'Nothing', detail: 'No monthly gift' },
-   );
-   lines.push({ label: 'Fund', value: fundName(fund) });
-   return lines;
+      { label: 'Fund', value: fundName(fund) },
+   ];
 };

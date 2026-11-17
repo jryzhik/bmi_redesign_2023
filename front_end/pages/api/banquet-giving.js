@@ -6,9 +6,11 @@ import {
    MAX_CENTS,
    MIN_CENTS,
    formatCents,
+   formatStart,
    fundName,
    giftSummary,
    matchMonthlyCents,
+   monthlyStart,
    toCents,
 } from '../../tools/banquetGiving';
 
@@ -56,6 +58,51 @@ const ensureProducts = async (fund) => {
    }
 };
 
+const monthlyPrice = (cents, fund) => ({
+   currency: 'usd',
+   unit_amount: cents,
+   recurring: { interval: 'month' },
+   product: productId('monthly', fund),
+});
+
+// For a gift that was both one-time and monthly: tonight's payment saved the card, and this
+// schedules the monthly gift on it, first charged a month after the gift. Safe to call more
+// than once for the same checkout. Returns '' when there is nothing to do.
+const startMonthlyGift = async (session, existing) => {
+   const monthlyCents = toCents(session.metadata?.monthly);
+   if (session.mode !== 'payment' || !monthlyCents || session.payment_status !== 'paid') return '';
+   if (existing === undefined) {
+      const { data } = await stripe.subscriptions.list({ customer: session.customer, status: 'all', limit: 1 });
+      existing = data[0];
+   }
+   if (existing) return existing.id;
+
+   const fund = session.metadata.fund_key;
+   const payment = await stripe.paymentIntents.retrieve(session.payment_intent);
+   const create = () =>
+      stripe.subscriptions.create(
+         {
+            customer: session.customer,
+            items: [{ price_data: monthlyPrice(monthlyCents, fund) }],
+            default_payment_method: payment.payment_method,
+            billing_cycle_anchor: Math.floor(monthlyStart(new Date(session.created * 1000)).getTime() / 1000),
+            proration_behavior: 'none',
+            description: `${CAMPAIGN} monthly gift · ${session.metadata.fund}`,
+            metadata: session.metadata,
+         },
+         { idempotencyKey: `banquet-monthly-${session.id}` },
+      );
+   let subscription;
+   try {
+      subscription = await withRetry(create);
+   } catch (e) {
+      if (e.code !== 'resource_missing') throw e;
+      await ensureProducts(fund);
+      subscription = await withRetry(create);
+   }
+   return subscription.id;
+};
+
 const createSession = async (req, res) => {
    const { fund, monthlyKind } = req.body || {};
    if (!FUNDS.some((item) => item.key === fund)) {
@@ -75,38 +122,19 @@ const createSession = async (req, res) => {
       }
    }
 
-   const summary = giftSummary({ giftCents, monthlyCents, fund });
+   const start = monthlyStart();
+   const summary = giftSummary({ giftCents, monthlyCents, fund, start });
    const metadata = {
       campaign: CAMPAIGN,
       fund: fundName(fund),
+      fund_key: fund,
       one_time: (giftCents / 100).toFixed(2),
       monthly: (monthlyCents / 100).toFixed(2),
       monthly_choice: monthlyCents ? monthlyKind || 'custom' : 'none',
    };
    const origin = originOf(req);
 
-   const lineItems = [];
-   if (monthlyCents) {
-      lineItems.push({
-         quantity: 1,
-         price_data: {
-            currency: 'usd',
-            unit_amount: monthlyCents,
-            recurring: { interval: 'month' },
-            product: productId('monthly', fund),
-         },
-      });
-   }
-   if (giftCents) {
-      lineItems.push({
-         quantity: 1,
-         price_data: { currency: 'usd', unit_amount: giftCents, product: productId('once', fund) },
-      });
-   }
-
    const params = {
-      mode: monthlyCents ? 'subscription' : 'payment',
-      line_items: lineItems,
       // Cards, plus Apple Pay and Google Pay, which Stripe offers under "card".
       payment_method_types: ['card'],
       // No Link button or bank-payment offer: Stripe adds those on its own, with a cash-back promotion.
@@ -116,23 +144,37 @@ const createSession = async (req, res) => {
       metadata,
       custom_text: {
          submit: {
-            message: summary.map((line) => `**${line.label}:** ${line.value}`).join('  ·  '),
+            message: summary.map((line) => `**${line.label}:** ${line.short || line.value}`).join('  ·  '),
          },
       },
       success_url: `${origin}/give/thanks?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/give`,
    };
 
-   if (monthlyCents) {
-      // The one-time gift, if any, is charged with the first monthly gift on the same receipt.
-      params.subscription_data = { description: `${CAMPAIGN} monthly gift · ${fundName(fund)}`, metadata };
-   } else {
+   if (giftCents) {
+      // Tonight's gift is charged now. If there is a monthly gift too, the card is kept and
+      // startMonthlyGift schedules it once the payment has gone through.
+      params.mode = 'payment';
+      params.line_items = [
+         { quantity: 1, price_data: { currency: 'usd', unit_amount: giftCents, product: productId('once', fund) } },
+      ];
       params.submit_type = 'donate';
       params.customer_creation = 'always';
       params.payment_intent_data = { description: `${CAMPAIGN} gift · ${fundName(fund)}`, metadata };
+      if (monthlyCents) params.payment_intent_data.setup_future_usage = 'off_session';
       // Gives one-time gifts the same emailed receipt document as monthly gifts. The tax
       // wording on every receipt is Stripe's default invoice footer (Settings > Invoice template).
       params.invoice_creation = { enabled: true, invoice_data: { metadata } };
+   } else {
+      // A monthly gift on its own: nothing is charged tonight, the first charge is next month.
+      params.mode = 'subscription';
+      params.line_items = [{ quantity: 1, price_data: monthlyPrice(monthlyCents, fund) }];
+      params.subscription_data = {
+         description: `${CAMPAIGN} monthly gift · ${fundName(fund)}`,
+         metadata,
+         billing_cycle_anchor: Math.floor(start.getTime() / 1000),
+         proration_behavior: 'none',
+      };
    }
 
    let session;
@@ -157,12 +199,18 @@ const sessionSummary = async (req, res) => {
    if (session.metadata?.campaign !== CAMPAIGN) {
       return res.status(404).json({ error: { message: 'Unknown gift.' } });
    }
+   try {
+      await startMonthlyGift(session);
+   } catch (e) {
+      // The staff report tries again and shows any monthly gift that still hasn't started.
+      console.error('banquet-giving monthly', session.id, e);
+   }
    return res.json({
-      paid: session.payment_status === 'paid',
       name: session.customer_details?.name || '',
       email: session.customer_details?.email || '',
       gift: toCents(session.metadata.one_time),
       monthly: toCents(session.metadata.monthly),
+      monthlyStart: formatStart(monthlyStart(new Date(session.created * 1000))),
       fund: session.metadata.fund,
    });
 };
@@ -206,9 +254,25 @@ const report = async (req, res) => {
 
    const rows = [];
    const since = Math.floor(new Date('2026-11-01T00:00:00-04:00').getTime() / 1000);
+   const monthlyByCustomer = {};
+   for await (const subscription of stripe.subscriptions.list({ limit: 100, status: 'all', created: { gte: since } })) {
+      monthlyByCustomer[subscription.customer] = subscription;
+   }
    for await (const session of stripe.checkout.sessions.list({ limit: 100, created: { gte: since } })) {
-      if (session.metadata?.campaign !== CAMPAIGN || session.payment_status !== 'paid') continue;
+      if (session.metadata?.campaign !== CAMPAIGN || session.status !== 'complete') continue;
       const details = session.customer_details || {};
+      // Also catches a monthly gift whose guest closed the page before the thank-you screen.
+      let monthlyStatus = '';
+      if (toCents(session.metadata.monthly)) {
+         const subscription = monthlyByCustomer[session.customer];
+         try {
+            if (!subscription) await startMonthlyGift(session, null);
+            monthlyStatus = subscription?.status === 'canceled' ? 'cancelled' : 'scheduled';
+         } catch (e) {
+            console.error('banquet-giving monthly', session.id, e);
+            monthlyStatus = `NOT STARTED: ${e.message}`;
+         }
+      }
       const address = details.address || {};
       rows.push({
          When: new Date(session.created * 1000).toLocaleString('en-US', { timeZone: 'America/New_York' }),
@@ -221,6 +285,10 @@ const report = async (req, res) => {
          'One-time': session.metadata.one_time,
          Monthly: session.metadata.monthly,
          'Monthly choice': session.metadata.monthly_choice,
+         'Monthly starts': toCents(session.metadata.monthly)
+            ? formatStart(monthlyStart(new Date(session.created * 1000)))
+            : '',
+         'Monthly status': monthlyStatus,
          Fund: session.metadata.fund,
          Tag: session.metadata.campaign,
          Mode: session.livemode ? 'live' : 'TEST',
