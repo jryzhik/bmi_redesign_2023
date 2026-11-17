@@ -109,6 +109,8 @@ const createSession = async (req, res) => {
       line_items: lineItems,
       // Cards, plus Apple Pay and Google Pay, which Stripe offers under "card".
       payment_method_types: ['card'],
+      // No Link button or bank-payment offer: Stripe adds those on its own, with a cash-back promotion.
+      wallet_options: { link: { display: 'never' } },
       billing_address_collection: 'required',
       phone_number_collection: { enabled: true },
       metadata,
