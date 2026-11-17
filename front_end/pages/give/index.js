@@ -75,7 +75,7 @@ export default function Give() {
          window.location.assign(result.url);
       } catch (e) {
          setSending(false);
-         setError(e.message || 'Something went wrong. Please try again, or use the card on your table.');
+         setError(e.message || 'Something went wrong. Please try again, or use the giving card on your table.');
       }
    };
 
@@ -218,7 +218,11 @@ export default function Give() {
             </p>
          </section>
 
-         <p className={styles.later}>Prefer to give later or by check? Use the card on your table.</p>
+         <p className={styles.later}>
+            Prefer to give later or by check?
+            <br />
+            Use the giving card on your table.
+         </p>
       </GiveShell>
    );
 }
