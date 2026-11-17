@@ -210,7 +210,7 @@ export default function Give() {
                </p>
             ) : null}
             <button type="button" className={`${styles.pay} ${plex.className}`} disabled={!ready || sending} onClick={submit}>
-               {sending ? 'One moment…' : 'Continue to payment'}
+               {sending ? 'One moment…' : 'Continue to donate'}
             </button>
             <p className={styles.fine}>
                Next you’ll add your name, email, phone and mailing address, then pay by card, Apple Pay or Google Pay.
