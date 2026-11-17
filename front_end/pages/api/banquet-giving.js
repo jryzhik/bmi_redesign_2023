@@ -70,7 +70,7 @@ const monthlyPrice = (cents, fund) => ({
 // than once for the same checkout. Returns '' when there is nothing to do.
 const startMonthlyGift = async (session, existing) => {
    const monthlyCents = toCents(session.metadata?.monthly);
-   if (session.mode !== 'payment' || !monthlyCents || session.payment_status !== 'paid') return '';
+   if (session.mode !== 'payment' || !monthlyCents || session.status !== 'complete') return '';
    if (existing === undefined) {
       const { data } = await stripe.subscriptions.list({ customer: session.customer, status: 'all', limit: 1 });
       existing = data[0];
@@ -79,6 +79,8 @@ const startMonthlyGift = async (session, existing) => {
 
    const fund = session.metadata.fund_key;
    const payment = await stripe.paymentIntents.retrieve(session.payment_intent);
+   // A bank transfer takes a few days to clear ("processing"); the monthly gift is scheduled meanwhile.
+   if (!['succeeded', 'processing'].includes(payment.status)) return '';
    const create = () =>
       stripe.subscriptions.create(
          {
@@ -135,8 +137,8 @@ const createSession = async (req, res) => {
    const origin = originOf(req);
 
    const params = {
-      // Cards, plus Apple Pay and Google Pay, which Stripe offers under "card".
-      payment_method_types: ['card'],
+      // No payment_method_types: Stripe offers every method switched on in the Dashboard
+      // (Settings > Payment methods): cards, Apple Pay, Google Pay, bank transfer, Cash App.
       billing_address_collection: 'required',
       phone_number_collection: { enabled: true },
       metadata,
@@ -287,6 +289,9 @@ const report = async (req, res) => {
             ? formatStart(monthlyStart(new Date(session.created * 1000)))
             : '',
          'Monthly status': monthlyStatus,
+         Payment: { paid: 'paid', unpaid: 'bank transfer pending', no_payment_required: 'nothing due tonight' }[
+            session.payment_status
+         ],
          Fund: session.metadata.fund,
          Tag: session.metadata.campaign,
          Mode: session.livemode ? 'live' : 'TEST',

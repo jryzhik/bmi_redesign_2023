@@ -213,8 +213,8 @@ export default function Give() {
                {sending ? 'One moment…' : 'Continue to donate'}
             </button>
             <p className={styles.fine}>
-               Next you’ll add your name, email, phone and mailing address, then pay by card, Apple Pay or Google Pay.
-               Nothing is charged until you confirm there.
+               Next you’ll add your name, email, phone and mailing address, then choose how to pay: card, Apple Pay,
+               Google Pay, your bank or Cash App. Nothing is charged until you confirm there.
             </p>
          </section>
 
