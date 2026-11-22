@@ -54,7 +54,14 @@ const ROUTE_SEO = {
    // Public pages remain crawlable so search engines can process noindex.
    '/search': { index: false, follow: true, sitemap: false },
    '/pay': { index: false, follow: true, sitemap: false },
-   '/give': { title: 'Give', index: false, follow: false, sitemap: false },
+   '/give': {
+      title: 'Giving Tuesday 2026',
+      description:
+         'Give to Byelorussian Mission this Giving Tuesday, December 1, 2026. One-time and monthly gifts toward our $500,000 goal for the year ahead.',
+      index: false,
+      follow: false,
+      sitemap: false,
+   },
    '/give/*': { title: 'Give', index: false, follow: false, sitemap: false },
    '/matching': { index: false, follow: true, sitemap: false },
    '/completion': { index: false, follow: false, sitemap: false },

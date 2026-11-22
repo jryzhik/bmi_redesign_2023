@@ -35,7 +35,7 @@ export default function GiveThanks() {
                <dl className={styles.summary}>
                   {gift.gift ? (
                      <div>
-                        <dt>One-time gift tonight</dt>
+                        <dt>One-time gift</dt>
                         <dd>
                            <strong className={plex.className}>{formatCents(gift.gift)}</strong>
                         </dd>

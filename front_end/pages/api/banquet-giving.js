@@ -2,6 +2,7 @@ import crypto from 'crypto';
 import stripePackage from 'stripe';
 import {
    CAMPAIGN,
+   CAMPAIGNS,
    FUNDS,
    MAX_CENTS,
    MIN_CENTS,
@@ -31,9 +32,10 @@ const originOf = (req) => {
 
 // One product per fund and kind, with fixed ids, so the Stripe catalog doesn't
 // collect a new product for every gift.
-const productId = (kind, fund) => `bmi_banquet26_${kind}_${fund}`;
-const productName = (kind, fund) =>
-   `${kind === 'monthly' ? 'Monthly gift' : 'One-time gift'} · ${fundName(fund)} (${CAMPAIGN})`;
+const PRODUCT_PREFIX = { '2026 Banquet': 'bmi_banquet26', 'Giving Tuesday 2026': 'bmi_gt26' };
+const productId = (kind, fund, campaign = CAMPAIGN) => `${PRODUCT_PREFIX[campaign]}_${kind}_${fund}`;
+const productName = (kind, fund, campaign) =>
+   `${kind === 'monthly' ? 'Monthly gift' : 'One-time gift'} · ${fundName(fund)} (${campaign})`;
 
 // When the whole room taps at once, Stripe can ask us to slow down (it allows about
 // 100 requests a second). Wait a moment and try again rather than show the guest an error.
@@ -48,24 +50,24 @@ const withRetry = async (call) => {
    }
 };
 
-const ensureProducts = async (fund) => {
+const ensureProducts = async (fund, campaign = CAMPAIGN) => {
    for (const kind of ['once', 'monthly']) {
       try {
-         await stripe.products.create({ id: productId(kind, fund), name: productName(kind, fund) });
+         await stripe.products.create({ id: productId(kind, fund, campaign), name: productName(kind, fund, campaign) });
       } catch (e) {
          if (e.code !== 'resource_already_exists') throw e;
       }
    }
 };
 
-const monthlyPrice = (cents, fund) => ({
+const monthlyPrice = (cents, fund, campaign) => ({
    currency: 'usd',
    unit_amount: cents,
    recurring: { interval: 'month' },
-   product: productId('monthly', fund),
+   product: productId('monthly', fund, campaign),
 });
 
-// For a gift that was both one-time and monthly: tonight's payment saved the card, and this
+// For a gift that was both one-time and monthly: the first payment saved the card, and this
 // schedules the monthly gift on it, first charged a month after the gift. Safe to call more
 // than once for the same checkout. Returns '' when there is nothing to do.
 const startMonthlyGift = async (session, existing) => {
@@ -78,6 +80,7 @@ const startMonthlyGift = async (session, existing) => {
    if (existing) return existing.id;
 
    const fund = session.metadata.fund_key;
+   const { campaign } = session.metadata;
    const payment = await stripe.paymentIntents.retrieve(session.payment_intent);
    // A bank transfer takes a few days to clear ("processing"); the monthly gift is scheduled meanwhile.
    if (!['succeeded', 'processing'].includes(payment.status)) return '';
@@ -85,11 +88,11 @@ const startMonthlyGift = async (session, existing) => {
       stripe.subscriptions.create(
          {
             customer: session.customer,
-            items: [{ price_data: monthlyPrice(monthlyCents, fund) }],
+            items: [{ price_data: monthlyPrice(monthlyCents, fund, campaign) }],
             default_payment_method: payment.payment_method,
             billing_cycle_anchor: Math.floor(monthlyStart(new Date(session.created * 1000)).getTime() / 1000),
             proration_behavior: 'none',
-            description: `${CAMPAIGN} monthly gift · ${session.metadata.fund}`,
+            description: `${campaign} monthly gift · ${session.metadata.fund}`,
             metadata: session.metadata,
          },
          { idempotencyKey: `banquet-monthly-${session.id}` },
@@ -99,7 +102,7 @@ const startMonthlyGift = async (session, existing) => {
       subscription = await withRetry(create);
    } catch (e) {
       if (e.code !== 'resource_missing') throw e;
-      await ensureProducts(fund);
+      await ensureProducts(fund, campaign);
       subscription = await withRetry(create);
    }
    return subscription.id;
@@ -152,7 +155,7 @@ const createSession = async (req, res) => {
    };
 
    if (giftCents) {
-      // Tonight's gift is charged now. If there is a monthly gift too, the card is kept and
+      // The one-time gift is charged now. If there is a monthly gift too, the card is kept and
       // startMonthlyGift schedules it once the payment has gone through.
       params.mode = 'payment';
       params.line_items = [
@@ -166,7 +169,7 @@ const createSession = async (req, res) => {
       // wording on every receipt is Stripe's default invoice footer (Settings > Invoice template).
       params.invoice_creation = { enabled: true, invoice_data: { metadata } };
    } else {
-      // A monthly gift on its own: nothing is charged tonight, the first charge is next month.
+      // A monthly gift on its own: nothing is charged today, the first charge is next month.
       params.mode = 'subscription';
       params.line_items = [{ quantity: 1, price_data: monthlyPrice(monthlyCents, fund) }];
       params.subscription_data = {
@@ -196,7 +199,7 @@ const sessionSummary = async (req, res) => {
       return res.status(400).json({ error: { message: 'Unknown gift.' } });
    }
    const session = await stripe.checkout.sessions.retrieve(id);
-   if (session.metadata?.campaign !== CAMPAIGN) {
+   if (!CAMPAIGNS.includes(session.metadata?.campaign)) {
       return res.status(404).json({ error: { message: 'Unknown gift.' } });
    }
    try {
@@ -244,7 +247,7 @@ const csvCell = (value) => `"${String(value ?? '').replace(/"/g, '""')}"`;
 const htmlText = (value) =>
    String(value ?? '').replace(/[&<>"]/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[char]);
 
-// Staff list of every online banquet gift, read straight from Stripe.
+// Staff list of every online gift from /give (banquet and Giving Tuesday), read straight from Stripe.
 const report = async (req, res) => {
    const key = String(req.query.report || '');
    const hash = crypto.createHash('sha256').update(key).digest('hex');
@@ -259,7 +262,7 @@ const report = async (req, res) => {
       monthlyByCustomer[subscription.customer] = subscription;
    }
    for await (const session of stripe.checkout.sessions.list({ limit: 100, created: { gte: since } })) {
-      if (session.metadata?.campaign !== CAMPAIGN || session.status !== 'complete') continue;
+      if (!CAMPAIGNS.includes(session.metadata?.campaign) || session.status !== 'complete') continue;
       const details = session.customer_details || {};
       // Also catches a monthly gift whose guest closed the page before the thank-you screen.
       let monthlyStatus = '';
@@ -289,7 +292,7 @@ const report = async (req, res) => {
             ? formatStart(monthlyStart(new Date(session.created * 1000)))
             : '',
          'Monthly status': monthlyStatus,
-         Payment: { paid: 'paid', unpaid: 'bank transfer pending', no_payment_required: 'nothing due tonight' }[
+         Payment: { paid: 'paid', unpaid: 'bank transfer pending', no_payment_required: 'nothing due yet' }[
             session.payment_status
          ],
          Fund: session.metadata.fund,
@@ -302,18 +305,22 @@ const report = async (req, res) => {
    const columns = rows.length ? Object.keys(rows[0]) : ['No gifts yet'];
    if (req.query.format === 'csv') {
       res.setHeader('Content-Type', 'text/csv; charset=utf-8');
-      res.setHeader('Content-Disposition', 'attachment; filename="2026-banquet-online-gifts.csv"');
+      res.setHeader('Content-Disposition', 'attachment; filename="online-gifts.csv"');
       return res.send([columns, ...rows.map((row) => columns.map((column) => row[column]))].map((line) => line.map(csvCell).join(',')).join('\n'));
    }
 
-   const total = (column) => rows.reduce((sum, row) => sum + toCents(row[column]), 0);
+   const total = (column, tag) =>
+      rows.reduce((sum, row) => sum + (!tag || row.Tag === tag ? toCents(row[column]) : 0), 0);
+   const totals = (tag) =>
+      `<strong>${rows.filter((row) => !tag || row.Tag === tag).length}</strong> gifts &nbsp;·&nbsp; One-time total <strong>${formatCents(total('One-time', tag))}</strong> &nbsp;·&nbsp; Monthly total <strong>${formatCents(total('Monthly', tag))}</strong> a month (${formatCents(total('Monthly', tag) * 12)} over 12 months)`;
    res.setHeader('Content-Type', 'text/html; charset=utf-8');
    res.setHeader('Cache-Control', 'no-store');
    return res.send(`<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex">
-<title>${CAMPAIGN} online gifts</title>
+<title>Online gifts</title>
 <style>body{font:15px/1.4 -apple-system,Segoe UI,Roboto,sans-serif;margin:24px;color:#1d335c}table{border-collapse:collapse;margin-top:16px}th,td{border:1px solid #d8dbe2;padding:6px 10px;text-align:left;white-space:nowrap}th{background:#f3f1ea}</style>
-<h1>${CAMPAIGN}: online gifts</h1>
-<p><strong>${rows.length}</strong> gifts &nbsp;·&nbsp; One-time total <strong>${formatCents(total('One-time'))}</strong> &nbsp;·&nbsp; Monthly total <strong>${formatCents(total('Monthly'))}</strong> a month (${formatCents(total('Monthly') * 12)} over 12 months)</p>
+<h1>Online gifts</h1>
+<p>All: ${totals()}</p>
+${CAMPAIGNS.map((tag) => `<p>${htmlText(tag)}: ${totals(tag)}</p>`).join('\n')}
 <p><a href="?report=${encodeURIComponent(key)}&format=csv">Download as a spreadsheet (CSV)</a> &nbsp;·&nbsp; Refresh this page for the latest.</p>
 <table><tr>${columns.map((column) => `<th>${htmlText(column)}</th>`).join('')}</tr>
 ${rows.map((row) => `<tr>${columns.map((column) => `<td>${htmlText(row[column])}</td>`).join('')}</tr>`).join('\n')}</table>`);

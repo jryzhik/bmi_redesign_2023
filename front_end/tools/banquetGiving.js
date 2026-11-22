@@ -1,9 +1,13 @@
-// Settings for the banquet giving page (/give). The page and its API route both
-// read from here so the pledge card, the summary and the Stripe checkout agree.
+// Settings for the giving page (/give). The page and its API route both read from
+// here so the page, the summary and the Stripe checkout agree.
 
-export const CAMPAIGN = '2026 Banquet';
+// The page opened for the 2026 banquet and now serves Giving Tuesday. New gifts are
+// tagged with CAMPAIGN; earlier campaigns stay listed so the staff report, the
+// thank-you page and their monthly gifts keep working.
+export const CAMPAIGN = 'Giving Tuesday 2026';
+export const CAMPAIGNS = ['2026 Banquet', CAMPAIGN];
 
-// Same amounts, in the same order, as the paper pledge card.
+// Same amounts, in the same order, as the banquet's paper pledge card.
 export const GIFT_AMOUNTS = [100000, 50000, 25000, 5000, 1000, 500, 250, 100];
 
 export const MONTHLY_OPTIONS = [
@@ -61,18 +65,18 @@ export const monthlyStart = (from = new Date()) => {
    return start;
 };
 
-// "December 17", as the guests at the banquet see the date.
+// "December 17", in the mission's own time zone.
 export const formatStart = (date) =>
    date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', timeZone: 'America/New_York' });
 
-// The one plain summary: what is charged tonight, what is charged each month, which fund.
+// The one plain summary: what is charged today, what is charged each month, which fund.
 // `short` is the one-line form shown above the pay button on Stripe's page.
 export const giftSummary = ({ giftCents, monthlyCents, fund, start = monthlyStart() }) => {
    const from = formatStart(start);
    return [
       giftCents
-         ? { label: 'Charged tonight', value: formatCents(giftCents), detail: 'One-time gift' }
-         : { label: 'Charged tonight', value: 'Nothing', detail: `Your first monthly gift is ${from}` },
+         ? { label: 'Charged today', value: formatCents(giftCents), detail: 'One-time gift' }
+         : { label: 'Charged today', value: 'Nothing', detail: `Your first monthly gift is ${from}` },
       monthlyCents
          ? {
               label: 'Charged each month',

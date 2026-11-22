@@ -12,7 +12,7 @@ export default function GiveShell({ children }) {
       <div className={`${styles.page} ${slab.className}`}>
          <header className={styles.header}>
             <Image src={logo} alt="Byelorussian Mission" width={228} height={24} priority />
-            <span className={`${styles.eyebrow} ${plex.className}`}>2026 Annual Banquet</span>
+            <span className={`${styles.eyebrow} ${plex.className}`}>Giving Tuesday · December 1, 2026</span>
          </header>
          {children}
       </div>

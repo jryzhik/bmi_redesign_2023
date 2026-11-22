@@ -29,6 +29,22 @@
 	text-transform: uppercase;
 }
 
+.intro {
+	padding: 4px 8px 10px;
+	text-align: center;
+}
+
+.intro h1 {
+	margin: 0 0 10px;
+	color: var(--navy);
+	font-size: 28px;
+	line-height: 1.15;
+}
+
+.intro p {
+	margin: 0;
+}
+
 .step {
 	margin-top: 14px;
 	padding: 20px 16px;

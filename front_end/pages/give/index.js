@@ -75,16 +75,24 @@ export default function Give() {
          window.location.assign(result.url);
       } catch (e) {
          setSending(false);
-         setError(e.message || 'Something went wrong. Please try again, or use the giving card on your table.');
+         setError(e.message || 'Something went wrong. Please try again.');
       }
    };
 
    return (
       <GiveShell>
+         <section className={styles.intro}>
+            <h1 className={plex.className}>Give this Giving Tuesday</h1>
+            <p>
+               At our annual banquet we shared a goal of $500,000 for the year ahead. Whether you were with us that
+               evening or couldn’t be there, you can be part of it today.
+            </p>
+         </section>
+
          <section className={styles.step}>
-            <h1 className={`${styles.heading} ${plex.className}`}>
-               <span className={styles.number}>1</span> My best one-time gift tonight
-            </h1>
+            <h2 className={`${styles.heading} ${plex.className}`}>
+               <span className={styles.number}>1</span> My Giving Tuesday gift
+            </h2>
             <div className={styles.amounts}>
                {GIFT_AMOUNTS.map((amount) => (
                   <button
@@ -112,7 +120,7 @@ export default function Give() {
                   onChange={(event) => update({ gift: 'other', giftOther: event.target.value.replace(/[^0-9.,]/g, '') })}
                />
             </label>
-            <p className={styles.hint}>Charged tonight.</p>
+            <p className={styles.hint}>A one-time gift, charged today.</p>
          </section>
 
          <section className={styles.step}>
@@ -127,7 +135,7 @@ export default function Give() {
                   disabled={!canMatch}
                   onClick={() => update({ monthlyKind: monthlyKind === 'match' ? null : 'match' })}
                >
-                  <span className={`${styles.rowTitle} ${plex.className}`}>Match tonight’s gift over 12 months</span>
+                  <span className={`${styles.rowTitle} ${plex.className}`}>Match today’s gift over 12 months</span>
                   <span className={styles.rowNote}>
                      {canMatch
                         ? `${formatCents(giftCents)} again, as ${formatCents(matchCents)} a month`
@@ -214,14 +222,14 @@ export default function Give() {
             </button>
             <p className={styles.fine}>
                Next you’ll add your name, email, phone and mailing address, then choose how to pay: card, Apple Pay,
-               Google Pay, your bank or Cash App. Nothing is charged until you confirm there.
+               Google Pay or your bank. Nothing is charged until you confirm there.
             </p>
          </section>
 
          <p className={styles.later}>
-            Prefer to give later or by check?
+            Prefer to give by check? Make it payable to Byelorussian Mission, Inc.
             <br />
-            Use the giving card on your table.
+            3395 Chamblee Gap Road, Cumming, GA 30040
          </p>
       </GiveShell>
    );
