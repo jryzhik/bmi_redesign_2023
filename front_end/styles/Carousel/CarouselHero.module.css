@@ -46,3 +46,28 @@
       margin: 9vh 0;
    }
 }
+
+/* Slides with align: 'left'. On wide screens the text sits on the empty left side of the
+   artwork and needs no shade; on phones it stays centered over a shade. The !important
+   rules override the inline centering every other slide uses. */
+@media (min-width: 1001px) {
+   .textLeft {
+      align-items: flex-start !important;
+      padding-left: 7vw;
+   }
+
+   .textLeft > div {
+      align-items: flex-start !important;
+      justify-content: flex-start;
+      max-width: 46vw !important;
+   }
+
+   .textLeft h1,
+   .textLeft h2 {
+      text-align: left !important;
+   }
+
+   .shadePhoneOnly {
+      display: none;
+   }
+}

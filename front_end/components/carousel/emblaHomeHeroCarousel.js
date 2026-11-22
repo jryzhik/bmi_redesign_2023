@@ -5,6 +5,7 @@ import P from '../fonts/P';
 import TITLE from '../fonts/TITLE';
 import ST from '../fonts/ST';
 import H1 from '../fonts/H1';
+import H2 from '../fonts/H2';
 import theme from '../../styles/theme';
 import Styles from '../../styles/Carousel/CarouselHero.module.css';
 import styles from '../../styles/Hero/Hero.module.css';
@@ -13,15 +14,18 @@ const EmblaHomeHeroCarousel = (props) => {
    const { slides } = props;
    const id = useId();
 
-   return slides.map(({ headerText, subText, imageUrl, imageFocus, color1, color2, link }, index) => {
+   return slides.map((slide, index) => {
+      const { headerText, subText, subHeading, buttonText, align, imageUrl, imageFocus, color1, color2, link } = slide;
+      // align: 'left' is for artwork that keeps its left side empty for the text (wide screens only).
+      const left = align === 'left';
       const ContentWrapper = link ? Link : 'div';
       const wrapperProps = link ? { href: `/${link}` } : {};
-      const isBanquetLink = link && link.startsWith('banquet');
 
       return (
          <article className={Styles.slideEmblaHero}>
             <ContentWrapper {...wrapperProps}>
                <div
+                  className={left ? Styles.textLeft : undefined}
                   style={{
                      display: 'flex',
                      flexDirection: 'column',
@@ -48,10 +52,14 @@ const EmblaHomeHeroCarousel = (props) => {
                   >
                      <H1 text={headerText} textAlign={'center'} color={theme.colors.WHITE} />
 
-                     <P text={subText} textAlign={'center'} color={theme.colors.WHITE} />
+                     {subHeading ? (
+                        <H2 text={subHeading} style={{ textAlign: 'center' }} color={theme.colors.WHITE} />
+                     ) : (
+                        <P text={subText} textAlign={'center'} color={theme.colors.WHITE} />
+                     )}
                   </div>
 
-                  {isBanquetLink && <button className={Styles.card_button}>Reserve Your Spot</button>}
+                  {buttonText && <button className={Styles.card_button}>{buttonText}</button>}
                </div>
 
                <div
@@ -87,7 +95,7 @@ const EmblaHomeHeroCarousel = (props) => {
                </div>
 
                <div
-                  className={styles.gradientOverlay}
+                  className={`${styles.gradientOverlay} ${left ? Styles.shadePhoneOnly : ''}`}
                   style={{
                      backgroundImage: `linear-gradient(${color1},${color2}, transparent)`,
                      zIndex: -80,

@@ -206,14 +206,28 @@ export const paymentProviderButtonsContent = [
 
 export const HeroSlider = [
    {
-      imageUrl: '/img/banquet/banquet-2026-hero-bg.jpg',
-      color2: '#265C52',
-      color1: '#265C52',
-      headerText: 'So the World May Believe',
-      subText: 'Annual Banquet | Forsyth Conference Center | Tuesday, Nov 17 | 7:00 PM',
-      imageFocus: '50% 75%',
-      link: 'banquet',
+      imageUrl: '/img/hero_images/home_hero/giving-tuesday.webp',
+      // Shade behind the centered text on phones; hidden on wide screens (align: 'left').
+      color1: 'rgba(7, 11, 24, 0.8)',
+      color2: 'rgba(7, 11, 24, 0.5)',
+      align: 'left',
+      headerText: 'One Tuesday, Legacy Impact',
+      subHeading: 'Fund 6 Ministries, year long',
+      imageFocus: '72% 50%',
+      link: 'give',
+      buttonText: 'Learn where to Give',
    },
+   // Hidden after the 2026 banquet. Uncomment to bring the banquet slide back.
+   // {
+   //    imageUrl: '/img/banquet/banquet-2026-hero-bg.jpg',
+   //    color2: '#265C52',
+   //    color1: '#265C52',
+   //    headerText: 'So the World May Believe',
+   //    subText: 'Annual Banquet | Forsyth Conference Center | Tuesday, Nov 17 | 7:00 PM',
+   //    imageFocus: '50% 75%',
+   //    link: 'banquet',
+   //    buttonText: 'Reserve Your Spot',
+   // },
    {
       imageUrl: '/img/hero_images/home_hero/BibleLiterature-min.jpg',
       color2: '#60989F',
