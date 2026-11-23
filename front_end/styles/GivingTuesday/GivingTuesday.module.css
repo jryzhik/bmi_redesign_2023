@@ -1,15 +1,55 @@
 /* Layout for the Giving Tuesday page. Type comes from the site's own H1, H2, H3 and P
    components; this file only places things. */
 .page {
+	/* How far the gradient takes to fade into the photo at the foot of the page. */
+	--fade: 15em;
+	position: relative;
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+	overflow: hidden;
+}
+
+/* As on the ministry pages, the gradient turns clear at its end and the photo shows through. */
+.gradient {
+	position: relative;
+	z-index: 1;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	gap: 6em;
-	padding: 9em 0 8em;
-	background: linear-gradient(180deg, #0e1830 0, #1e335b 56em, #3d6aa3 100%);
-	border-bottom-left-radius: 7px;
-	border-bottom-right-radius: 7px;
-	overflow: hidden;
+	margin-bottom: calc(-1 * var(--fade) - 1em);
+	padding: 9em 0 calc(var(--fade) + 3em);
+	/* The last stops ease the blue out, so the fade has no visible starting line. */
+	background: linear-gradient(
+		180deg,
+		#0e1830 0,
+		#1e335b 56em,
+		#3d6aa3 calc(100% - var(--fade)),
+		rgba(61, 106, 163, 0.93) calc(100% - 0.8 * var(--fade)),
+		rgba(61, 106, 163, 0.74) calc(100% - 0.6 * var(--fade)),
+		rgba(61, 106, 163, 0.45) calc(100% - 0.4 * var(--fade)),
+		rgba(61, 106, 163, 0.17) calc(100% - 0.2 * var(--fade)),
+		rgba(61, 106, 163, 0) 100%
+	);
+}
+
+.bottom {
+	height: max(63vw, 34em);
+}
+
+.bottom img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	/* On narrow screens the sides are cropped; keep the reader in view. */
+	object-position: 12% 50%;
+}
+
+@media (max-width: 700px) {
+	.page {
+		--fade: 9em;
+	}
 }
 
 .hero {
