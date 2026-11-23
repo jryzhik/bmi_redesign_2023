@@ -37,7 +37,7 @@ const gifts = [
       alt: 'A group of children and adults holding books and gift bags',
    },
    {
-      title: '30 day care centers',
+      title: '50 day care centers',
       text: 'give children at risk a hot meal, help with homework, and Bible lessons.',
       image: '/img/giving-tuesday/daycare-meal.jpg',
       alt: 'Boys at a day care center table with plates of hot food',

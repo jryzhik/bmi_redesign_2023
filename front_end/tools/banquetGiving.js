@@ -29,10 +29,10 @@ export const DEFAULT_FUND = 'general';
 // The year-end goal on the Giving Tuesday page. Set RAISED_DOLLARS to the amount raised so
 // far and the progress bar appears; while it is null the page shows the goal without a bar.
 export const GOAL_DOLLARS = 500000;
-export const RAISED_DOLLARS = 56342;
+export const RAISED_DOLLARS = 76330;
 
 // Shown on the Giving Tuesday page once filled in; left out while empty.
-export const CHURCH_CAPTION = 'First Redeemer Church | Cumming, Georgia'; // under the January / Today photos
+export const CHURCH_CAPTION = 'Revival Church, Brest | Building sponsored by First Redeemer Church'; // under the January / Today photos
 export const QUESTIONS_CONTACT = { name: 'our office', phone: '(770) 356-3592' };
 
 export const MANAGE_URL = 'byelorussianmission.org/give/manage';
