@@ -54,13 +54,11 @@ const ROUTE_SEO = {
    // Public pages remain crawlable so search engines can process noindex.
    '/search': { index: false, follow: true, sitemap: false },
    '/pay': { index: false, follow: true, sitemap: false },
-   '/give': {
+   '/giving-tuesday': {
       title: 'Giving Tuesday 2026',
       description:
-         'Give to Byelorussian Mission this Giving Tuesday, December 1, 2026. One-time and monthly gifts toward our $500,000 goal for the year ahead.',
-      index: false,
-      follow: false,
-      sitemap: false,
+         'In May, nearly 31,000 people came to hear the gospel in Minsk. This Giving Tuesday, December 1, 2026, help give new believers in Belarus a church to grow in.',
+      ogImage: 'https://byelorussianmission.org/img/hero_images/home_hero/giving-tuesday.webp',
    },
    '/give/*': { title: 'Give', index: false, follow: false, sitemap: false },
    '/matching': { index: false, follow: true, sitemap: false },

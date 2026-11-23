@@ -1,5 +1,10 @@
 module.exports = {
    // productionBrowserSourceMaps: true,
+   // /give was the banquet giving page; its QR code and sent links now open the Giving Tuesday page.
+   // /give/thanks and /give/manage are still their own pages.
+   async redirects() {
+      return [{ source: '/give', destination: '/giving-tuesday', permanent: false }];
+   },
    async rewrites() {
       return [
          {

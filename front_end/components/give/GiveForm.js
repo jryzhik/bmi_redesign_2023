@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
-import GiveShell, { plex } from '../../components/give/GiveShell';
+import H3 from '../fonts/H3';
+import theme from '../../styles/theme';
+import { plex, slab } from './GiveShell';
 import styles from '../../styles/Give/Give.module.css';
 import {
    DEFAULT_FUND,
@@ -17,7 +19,9 @@ import {
 const SAVED_KEY = 'banquet-giving';
 const EMPTY = { gift: null, giftOther: '', monthlyKind: null, monthlyOther: '', fund: DEFAULT_FUND };
 
-export default function Give() {
+// The pledge card: a one-time gift, an optional monthly pledge, a fund, and one plain
+// summary, then on to Stripe to pay. Lives at the end of the Giving Tuesday page.
+export default function GiveForm() {
    const [choice, setChoice] = useState(EMPTY);
    const [sending, setSending] = useState(false);
    const [error, setError] = useState('');
@@ -80,19 +84,12 @@ export default function Give() {
    };
 
    return (
-      <GiveShell>
-         <section className={styles.intro}>
-            <h1 className={plex.className}>Give this Giving Tuesday</h1>
-            <p>
-               At our annual banquet we shared a goal of $500,000 for the year ahead. Whether you were with us that
-               evening or couldn’t be there, you can be part of it today.
-            </p>
-         </section>
-
+      <div className={`${styles.form} ${slab.className}`}>
          <section className={styles.step}>
-            <h2 className={`${styles.heading} ${plex.className}`}>
-               <span className={styles.number}>1</span> My Giving Tuesday gift
-            </h2>
+            <div className={styles.heading}>
+               <span className={`${styles.number} ${plex.className}`}>1</span>
+               <H3 text="My Giving Tuesday gift" color={theme.colors.NAVY} />
+            </div>
             <div className={styles.amounts}>
                {GIFT_AMOUNTS.map((amount) => (
                   <button
@@ -124,9 +121,11 @@ export default function Give() {
          </section>
 
          <section className={styles.step}>
-            <h2 className={`${styles.heading} ${plex.className}`}>
-               <span className={styles.number}>2</span> My 12-month pledge <span className={styles.optional}>optional</span>
-            </h2>
+            <div className={styles.heading}>
+               <span className={`${styles.number} ${plex.className}`}>2</span>
+               <H3 text="My 12-month pledge" color={theme.colors.NAVY} />
+               <span className={styles.optional}>optional</span>
+            </div>
             <div className={styles.rows}>
                <button
                   type="button"
@@ -175,24 +174,29 @@ export default function Give() {
          </section>
 
          <section className={styles.step}>
-            <h2 className={`${styles.heading} ${plex.className}`}>Where your gift goes</h2>
+            <div className={styles.heading}>
+               <H3 text="Where your gift goes" color={theme.colors.NAVY} />
+            </div>
             <div className={styles.funds}>
                {FUNDS.map((item) => (
                   <button
                      type="button"
                      key={item.key}
-                     className={`${styles.option} ${styles.fund} ${plex.className} ${fund === item.key ? styles.selected : ''}`}
+                     className={`${styles.row} ${fund === item.key ? styles.selected : ''}`}
                      aria-pressed={fund === item.key}
                      onClick={() => update({ fund: item.key })}
                   >
-                     {item.name}
+                     <span className={`${styles.rowTitle} ${plex.className}`}>{item.name}</span>
+                     <span className={styles.rowNote}>{item.note}</span>
                   </button>
                ))}
             </div>
          </section>
 
          <section className={styles.step} aria-live="polite">
-            <h2 className={`${styles.heading} ${plex.className}`}>Your gift</h2>
+            <div className={styles.heading}>
+               <H3 text="Your gift" color={theme.colors.NAVY} />
+            </div>
             {ready ? (
                <dl className={styles.summary}>
                   {giftSummary({ giftCents, monthlyCents, fund }).map((line) => (
@@ -226,13 +230,6 @@ export default function Give() {
             </p>
          </section>
 
-         <p className={styles.later}>
-            Prefer to give by check? Make it payable to Byelorussian Mission, Inc.
-            <br />
-            3395 Chamblee Gap Road, Cumming, GA 30040
-         </p>
-      </GiveShell>
+      </div>
    );
 }
-
-Give.hideSiteChrome = true;

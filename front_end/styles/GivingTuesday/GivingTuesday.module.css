@@ -1,0 +1,192 @@
+/* Layout for the Giving Tuesday page. Type comes from the site's own H1, H2, H3 and P
+   components; this file only places things. */
+.page {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 6em;
+	padding: 9em 0 8em;
+	background: linear-gradient(180deg, #0e1830 0, #1e335b 56em, #3d6aa3 100%);
+	border-bottom-left-radius: 7px;
+	border-bottom-right-radius: 7px;
+	overflow: hidden;
+}
+
+.hero {
+	box-sizing: border-box;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 3em 4em;
+	width: 100%;
+	max-width: 1180px;
+	padding: 0 5vw;
+}
+
+.heroText {
+	display: flex;
+	flex: 1 1 440px;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 1.5em;
+}
+
+.heroButton {
+	width: 14em;
+	text-decoration: none;
+}
+
+.heroMap {
+	flex: 1 1 400px;
+	max-width: 620px;
+	color: #ec9d26;
+}
+
+.section {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2.5em;
+	width: 100%;
+	padding: 0 5vw;
+	/* Keeps a heading clear of the fixed menu when "Give today" jumps to it. */
+	scroll-margin-top: 6em;
+}
+
+/* A readable column for body text under a centered heading. */
+.text {
+	display: flex;
+	flex-direction: column;
+	gap: 1.3125em;
+	width: 100%;
+	max-width: 33em;
+}
+
+.centered {
+	text-align: center;
+}
+
+.stats {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 2.5em 2em;
+	width: 100%;
+	max-width: 900px;
+}
+
+.stat {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5em;
+	min-width: 12em;
+}
+
+.photos {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 1.25em;
+	width: 100%;
+	max-width: 900px;
+}
+
+.photos figure {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75em;
+	margin: 0;
+}
+
+.photos img {
+	display: block;
+	width: 100%;
+	aspect-ratio: 16 / 10;
+	border-radius: 7px;
+	object-fit: cover;
+}
+
+/* One block is 1,000 people; the dot is the one church among them. */
+.density {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 1.5em;
+}
+
+.densityPair {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	gap: 2.5em 6em;
+}
+
+.densityItem {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+}
+
+.blocks {
+	display: grid;
+	grid-template-columns: repeat(4, 44px);
+	gap: 6px;
+}
+
+.blocks span {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 44px;
+	border-radius: 6px;
+	background: rgba(255, 255, 255, 0.2);
+}
+
+.blocks i {
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	background: #ec9d26;
+}
+
+.gifts {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 3em 2em;
+	width: 100%;
+	max-width: 1000px;
+}
+
+.gift {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.5em;
+	width: 17em;
+	text-align: center;
+}
+
+.gift img {
+	width: 240px;
+	height: 240px;
+	margin-bottom: 1em;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.goalBars {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 2em;
+	width: 100%;
+	max-width: 820px;
+}
+
+.goalNumbers {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 2em 6em;
+}

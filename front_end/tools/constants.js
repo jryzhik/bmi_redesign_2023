@@ -214,7 +214,7 @@ export const HeroSlider = [
       headerText: 'One Tuesday, Legacy Impact',
       subHeading: 'Fund 6 Ministries, year long',
       imageFocus: '72% 50%',
-      link: 'give',
+      link: 'giving-tuesday',
       buttonText: 'Learn where to Give',
    },
    // Hidden after the 2026 banquet. Uncomment to bring the banquet slide back.

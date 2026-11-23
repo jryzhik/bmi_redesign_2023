@@ -4,7 +4,7 @@ import logo from '../../assets/icons/logos/text_and_letter.svg';
 import styles from '../../styles/Give/Give.module.css';
 
 export const plex = IBM_Plex_Sans({ subsets: ['latin'], weight: ['600'] });
-const slab = Roboto_Slab({ subsets: ['latin'], weight: ['400', '600'] });
+export const slab = Roboto_Slab({ subsets: ['latin'], weight: ['400', '600'] });
 
 // The plain frame shared by the giving pages: logo on top, one column, no site menu.
 export default function GiveShell({ children }) {

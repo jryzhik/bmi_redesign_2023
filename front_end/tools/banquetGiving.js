@@ -17,14 +17,23 @@ export const MONTHLY_OPTIONS = [
 ];
 
 export const FUNDS = [
-   { key: 'general', name: 'General Fund' },
-   { key: 'orphan', name: 'Orphan Sponsorship' },
-   { key: 'bible', name: '2030 Bible Fund' },
-   { key: 'construction', name: 'Construction Fund' },
-   { key: 'daycare', name: 'DayCare Centers' },
-   { key: 'conferences', name: 'Conferences' },
+   { key: 'general', name: 'General Fund', note: 'wherever the need is greatest' },
+   { key: 'orphan', name: 'Orphan Sponsorship', note: 'children in Christian foster families' },
+   { key: 'bible', name: '2030 Bible Fund', note: 'Bibles and discipleship books' },
+   { key: 'construction', name: 'Construction Fund', note: 'church buildings' },
+   { key: 'daycare', name: 'DayCare Centers', note: 'meals, tutoring and Bible lessons' },
+   { key: 'conferences', name: 'Conferences', note: 'training for pastors and youth leaders' },
 ];
 export const DEFAULT_FUND = 'general';
+
+// The year-end goal on the Giving Tuesday page. Set RAISED_DOLLARS to the amount raised so
+// far and the progress bar appears; while it is null the page shows the goal without a bar.
+export const GOAL_DOLLARS = 500000;
+export const RAISED_DOLLARS = null;
+
+// Shown on the Giving Tuesday page once filled in; left out while empty.
+export const CHURCH_CAPTION = ''; // name and city of the church in the January / Today photos
+export const QUESTIONS_CONTACT = null; // e.g. { name: 'Jane Doe', phone: '(555) 555-0100' }
 
 export const MANAGE_URL = 'byelorussianmission.org/give/manage';
 

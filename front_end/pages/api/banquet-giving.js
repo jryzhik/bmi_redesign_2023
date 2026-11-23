@@ -151,7 +151,7 @@ const createSession = async (req, res) => {
          },
       },
       success_url: `${origin}/give/thanks?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${origin}/give`,
+      cancel_url: `${origin}/giving-tuesday#give`,
    };
 
    if (giftCents) {

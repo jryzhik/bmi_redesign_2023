@@ -45,6 +45,24 @@
 	margin: 0;
 }
 
+/* The pledge card as it sits at the end of the Giving Tuesday page: a white card on the
+   page's navy background. Headings inside it are the site's own H3. */
+.form {
+	--navy: #1d335c;
+	--line: #cfd4de;
+	--soft: #f7f5ef;
+	box-sizing: border-box;
+	width: 100%;
+	max-width: 560px;
+	padding: 6px 16px 20px;
+	border-radius: 24px;
+	background: #fff;
+	color: #1f2430;
+	font-size: 17px;
+	line-height: 1.45;
+	text-align: left;
+}
+
 .step {
 	margin-top: 14px;
 	padding: 20px 16px;
@@ -54,6 +72,8 @@
 
 .step p {
 	margin: 12px 0 0;
+	/* The site's own paragraph spacing is set for large body text; these are small notes. */
+	line-height: 1.45;
 }
 
 .heading {
@@ -63,12 +83,11 @@
 	gap: 10px;
 	margin: 0 0 16px;
 	color: var(--navy);
-	font-size: 22px;
-	line-height: 1.2;
 }
 
 .number {
 	display: inline-flex;
+	flex: none;
 	align-items: center;
 	justify-content: center;
 	width: 30px;
@@ -95,6 +114,16 @@
 	gap: 10px;
 }
 
+.funds .row {
+	padding: 10px 16px;
+}
+
+@media (max-width: 440px) {
+	.funds {
+		grid-template-columns: 1fr;
+	}
+}
+
 .option,
 .row,
 .other {
@@ -110,11 +139,6 @@
 	min-height: 58px;
 	padding: 8px 12px;
 	font-size: 21px;
-}
-
-.fund {
-	font-size: 16px;
-	line-height: 1.2;
 }
 
 .rows {
