@@ -173,7 +173,7 @@ export default function Home({ news, numbers }) {
             style={{ marginBottom: '7rem' }}
             autoplay={{
                playOnInit: true,
-               delay: 5000,
+               delay: 8000,
                stopOnInteraction: false,
                stopOnFocusIn: false,
             }}
