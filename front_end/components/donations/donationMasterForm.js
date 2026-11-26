@@ -20,6 +20,24 @@ export default function DonationMasterForm({ headerText, secondaryText, secondar
         }
     }, []);
 
+    // Givebutter's "Thank you page" setting: after a gift, its form (in a frame from
+    // givebutter.com) asks this page to go to the thank-you address. Our copy of the widget
+    // script predates that, so the request is handled here, the way Givebutter's own script does.
+    useEffect(() => {
+        const onMessage = (event) => {
+            if (event.origin !== 'https://givebutter.com') return;
+            const data = event.data;
+            if (!data || typeof data !== 'object' || data.givebutter !== true) return;
+            if (data.event !== 'post_checkout.redirect' || typeof data.redirectUrl !== 'string') return;
+            try {
+                const url = new URL(data.redirectUrl);
+                if (url.protocol === 'https:') window.location.assign(url.href);
+            } catch (e) {}
+        };
+        window.addEventListener('message', onMessage);
+        return () => window.removeEventListener('message', onMessage);
+    }, []);
+
     const handleApplePay = () => {
         window.open(`https://givebutter.com/${giveButterID}`, '_blank');
     };
