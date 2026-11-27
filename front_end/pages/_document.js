@@ -6,7 +6,7 @@ export default function Document() {
          <Head>
             {/* Google Tag - Already installed */}
 
-            <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-M8B5XL9C" />
+            <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-N9DZ4M7S" />
             <script
                dangerouslySetInnerHTML={{
                   __html: `
